@@ -93,7 +93,7 @@ export interface DurationSpec {
 
 export interface UsesSpec {
   max: number | FormulaValue | RuntimeValueRef;
-  recovery: readonly { period: RecoveryPeriod; amount?: number | FormulaValue | RuntimeValueRef }[];
+  recovery: readonly { period: RecoveryPeriod; amount?: number | FormulaValue | RuntimeValueRef | "all" }[];
   sharedResourceId?: string;
   usageLimit?: UsageLimitData;
 }
