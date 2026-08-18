@@ -3,7 +3,8 @@ name: Probe SRD 5.2 Spells
 on:
   pull_request:
     paths:
-      - "scripts/probe-srd52-spell-fields.mjs"
+      - "scripts/*srd52-spell*.mjs"
+      - "packages/schema/src/spell.ts"
       - ".github/workflows/probe-srd52-spells.yml"
   workflow_dispatch:
 
@@ -17,8 +18,17 @@ jobs:
           node-version: 22
       - name: Probe SRD 5.2 spell fields
         run: node scripts/probe-srd52-spell-fields.mjs
-      - name: Upload probe
+      - name: Import SRD 5.2 spells
+        run: node scripts/import-srd52-spells.mjs
+      - name: Audit SRD 5.2 spell coverage
+        run: node scripts/audit-srd52-spells.mjs
+      - name: Upload spell audit
+        if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: srd52-spell-probe
-          path: packages/content/data/srd-5.2/spell-probe
+          name: srd52-spell-audit
+          path: |
+            packages/content/data/srd-5.2/spell-probe
+            packages/content/data/srd-5.2/spells.json
+            packages/content/data/srd-5.2/spells-import-report.json
+            packages/content/data/srd-5.2/spells-coverage-audit.json
