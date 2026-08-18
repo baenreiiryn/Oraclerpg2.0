@@ -28,7 +28,7 @@ function healingFormula(h){
 const comp=JSON.parse(await fs.readFile(FILE,"utf8"));
 const byName=new Map(comp.items.map(x=>[x.name,x]));
 const files=await walk(foundryRoot);
-let targetReconciled=0,rangeOrigins=0,rangeScaling=0,durationScaling=0,healingAdded=0;
+let targetReconciled=0,rangeOrigins=0,rangeScaling=0,durationScaling=0,healingAdded=0,officialCorrections=0;
 const notes=[];
 for(const file of files){
   const f=YAML.parse(await fs.readFile(file,"utf8"));
@@ -61,7 +61,18 @@ for(const file of files){
     } else notes.push({spell:f.name,type:"healing-formula-unparsed"});
   }
 }
+
+// Official SRD/2024 source wins over provider disagreements.
+const dream=byName.get("Dream");
+if(dream){dream.data.range={type:"point",origin:"point",distance:{type:"feet",amount:10}};const a=dream.data.activities?.[0];if(a)a.range={normal:{value:10,unit:"ft"}};officialCorrections++;}
+const goodberry=byName.get("Goodberry");
+if(goodberry){goodberry.data.range={type:"point",origin:"self",distance:{type:"self"}};const a=goodberry.data.activities?.[0];if(a)a.range={normal:{unit:"self"}};officialCorrections++;}
+const eyebite=byName.get("Eyebite");
+if(eyebite){eyebite.data.range={type:"point",origin:"self",distance:{type:"self"}};officialCorrections++;}
+const mirage=byName.get("Mirage Arcane");
+if(mirage){mirage.data.range={type:"point",origin:"point",distance:{type:"sight"}};officialCorrections++;}
+
 await fs.writeFile(FILE,JSON.stringify(comp,null,2)+"\n");
-const report={generatedAt:new Date().toISOString(),targetReconciled,rangeOrigins,rangeScaling,durationScaling,healingAdded,notes};
+const report={generatedAt:new Date().toISOString(),targetReconciled,rangeOrigins,rangeScaling,durationScaling,healingAdded,officialCorrections,notes};
 await fs.writeFile(REPORT,JSON.stringify(report,null,2)+"\n");
 console.log(JSON.stringify(report,null,2));
