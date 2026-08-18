@@ -59,8 +59,13 @@ function addModifier(data, domain, value, predicate) {
 function enrichContainer(data, source) {
   const cap = source.containerCapacity;
   if (!cap || data.itemKind !== "container") return;
-  if (cap.volume != null || cap.weightless === true) data.capacity ??= {};
+  if (cap.volume != null || cap.weight != null || cap.weightless === true) data.capacity ??= {};
   if (cap.volume != null) data.capacity.volumeUnit = "cubicFoot";
+  if (cap.weight != null) {
+    const raw = Array.isArray(cap.weight) ? cap.weight[0] : cap.weight;
+    const weight = num(raw);
+    if (weight != null) data.capacity.weight = { value: weight, unit: "lb" };
+  }
   if (cap.weightless === true) data.capacity.contentsWeightless = true;
   if (Array.isArray(cap.item)) {
     data.compartments = cap.item.map((group, index) => {
