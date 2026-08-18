@@ -1,3 +1,4 @@
+# Temporary PR persistence for verified artifact
 name: Sync SRD 5.2 Items
 
 on:
@@ -32,6 +33,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event_name == 'pull_request' && github.head_ref || github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -59,7 +62,7 @@ jobs:
           name: srd52-items
           path: packages/content/data/srd-5.2
       - name: Commit generated compendium
-        if: github.event_name == 'push' && steps.importer.outcome == 'success' && steps.enricher.outcome == 'success' && steps.coverage.outcome == 'success'
+        if: steps.importer.outcome == 'success' && steps.enricher.outcome == 'success' && steps.coverage.outcome == 'success'
         run: |
           if [ -z "$(git status --porcelain -- packages/content/data/srd-5.2)" ]; then
             echo "No content changes"
