@@ -96,6 +96,9 @@ export interface ModifierTarget {
   sense?: string;
   language?: string;
   itemProperty?: string;
+  movementCapability?: string;
+  itemDamageMode?: "base" | "versatile" | "additional";
+  itemDamageField?: "number" | "denomination" | "bonus" | "type" | "formula";
 }
 
 export interface ModifierData {
@@ -181,7 +184,8 @@ export interface AttackOverrideData {
   target: "unarmedStrike" | "weaponAttack" | "specificActivity";
   activityId?: string;
   mode: "replace" | "addMode" | "modify";
-  ability?: AbilityId;
+  ability?: AbilityId | "spellcasting";
+  attackBonus?: RuntimeValueRef;
   damage?: readonly { formula?: string; value?: RuntimeValueRef; damageType?: DamageTypeId; inheritDamageType?: boolean }[];
   predicate?: PredicateData;
 }
