@@ -135,6 +135,17 @@ export interface SummonScalingData {
   formula: string;
 }
 
+/** Shared behavior for summon activities whose creature identity lives in summonProfiles. */
+export interface SummonBehaviorData {
+  placement?: { range?: DistanceValue; requiresUnoccupiedSpace?: boolean; requiresSight?: boolean };
+  allegiance?: "ally" | "friendly" | "neutral" | "hostile" | "special";
+  initiative?: "sharesSummoner" | "own" | "fixed" | "special";
+  turnOrder?: "immediatelyAfterSummoner" | "immediatelyBeforeSummoner" | "normal" | "special";
+  command?: { actionCost: "none" | "action" | "bonusAction" | "special"; verbal?: boolean };
+  fallback?: "dodgeAndAvoidDanger" | "dodge" | "defend" | "special";
+  despawn?: readonly ("zeroHp" | "effectEnds" | "summonerDeath" | "manual" | "special")[];
+}
+
 export interface ActivityData {
   id: string;
   name: string;
@@ -160,6 +171,7 @@ export interface ActivityData {
   invocation?: InvocationSpec;
   summon?: SummonSpec;
   summonProfiles?: readonly SummonProfileData[];
+  summonBehavior?: SummonBehaviorData;
   summonScaling?: readonly SummonScalingData[];
   summonMatch?: readonly ("proficiency" | "attacks" | "saves")[];
   transformation?: TransformationData;
