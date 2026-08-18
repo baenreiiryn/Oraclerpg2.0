@@ -1,15 +1,19 @@
 import type {
   AbilityId, ConditionId, DamageTypeId, DistanceValue, FormulaValue, RecoveryPeriod, TimeUnit
 } from "./primitives.js";
+import type {
+  ActionReplacementData, EffectData, ManualAdjudicationData, MultiattackData, OutcomeDependentCostData,
+  PredicateData, RuntimeValueRef, SummonSpec, TriggerData, UsageLimitData
+} from "./mechanics.js";
 
 export type ActivityKind =
-  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "special";
+  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "multiattack" | "special";
 
 export interface ActivityActivation {
   type: TimeUnit;
   cost?: number;
-  trigger?: string;
-  condition?: string;
+  trigger?: TriggerData;
+  predicate?: PredicateData;
 }
 
 export interface ActivityRange {
@@ -20,15 +24,16 @@ export interface ActivityRange {
 
 export interface ActivityTarget {
   type: "self" | "creature" | "object" | "point" | "space" | "special";
-  count?: number | FormulaValue;
+  count?: number | FormulaValue | RuntimeValueRef;
   disposition?: "ally" | "enemy" | "any";
   area?: {
     shape: "cone" | "cube" | "cylinder" | "emanation" | "line" | "sphere" | "square" | "wall" | "special";
     size?: DistanceValue;
+    length?: DistanceValue;
     height?: DistanceValue;
     width?: DistanceValue;
   };
-  restrictions?: readonly string[];
+  restrictions?: readonly PredicateData[];
 }
 
 export interface AttackComponent {
@@ -36,7 +41,7 @@ export interface AttackComponent {
   mode: "melee" | "ranged" | "meleeOrRanged";
   ability?: AbilityId;
   proficient?: boolean;
-  bonus?: FormulaValue;
+  bonus?: FormulaValue | RuntimeValueRef;
 }
 
 export interface SaveComponent {
@@ -45,25 +50,29 @@ export interface SaveComponent {
     | { type: "fixed"; value: number }
     | { type: "ability"; ability: AbilityId; base?: number; proficiency?: boolean }
     | { type: "spellcasting" }
-    | { type: "formula"; formula: string };
+    | { type: "formula"; formula: string }
+    | { type: "runtime"; value: RuntimeValueRef };
   onSuccess?: "none" | "half" | "reduced" | "special";
 }
 
 export interface CheckComponent {
   ability?: AbilityId;
   skill?: string;
-  dc?: number | FormulaValue;
+  dc?: number | FormulaValue | RuntimeValueRef;
 }
 
 export interface DamagePart {
-  damageType: DamageTypeId;
-  formula: string;
+  damageType?: DamageTypeId;
+  formula?: string;
+  value?: RuntimeValueRef;
   scaling?: ScalingRule;
   versatileFormula?: string;
+  inheritDamageType?: boolean;
 }
 
 export interface HealingPart {
-  formula: string;
+  formula?: string;
+  value?: RuntimeValueRef;
   type?: "healing" | "temporaryHp" | "maxHp";
   scaling?: ScalingRule;
 }
@@ -75,20 +84,22 @@ export interface ConditionEffect {
 }
 
 export interface DurationSpec {
-  type: "instant" | "timed" | "concentration" | "untilRest" | "permanent" | "special";
-  value?: number;
+  type: "instant" | "timed" | "concentration" | "untilRest" | "untilTrigger" | "permanent" | "special";
+  value?: number | RuntimeValueRef;
   unit?: "round" | "minute" | "hour" | "day";
+  endTrigger?: TriggerData;
 }
 
 export interface UsesSpec {
-  max: number | FormulaValue;
-  recovery: readonly { period: RecoveryPeriod; amount?: number | FormulaValue }[];
+  max: number | FormulaValue | RuntimeValueRef;
+  recovery: readonly { period: RecoveryPeriod; amount?: number | FormulaValue | RuntimeValueRef }[];
   sharedResourceId?: string;
+  usageLimit?: UsageLimitData;
 }
 
 export interface ResourceCost {
   resource: "spellSlot" | "hitDie" | "itemCharge" | "classResource" | "custom";
-  amount: number | FormulaValue;
+  amount: number | FormulaValue | RuntimeValueRef;
   resourceId?: string;
   level?: number;
 }
@@ -115,6 +126,14 @@ export interface ActivityData {
   duration?: DurationSpec;
   uses?: UsesSpec;
   costs?: readonly ResourceCost[];
+  outcomeCost?: OutcomeDependentCostData;
   scaling?: readonly ScalingRule[];
+  effects?: readonly EffectData[];
+  predicates?: readonly PredicateData[];
+  triggers?: readonly TriggerData[];
+  summon?: SummonSpec;
+  multiattack?: MultiattackData;
+  replacements?: readonly ActionReplacementData[];
+  manualAdjudication?: ManualAdjudicationData;
   description?: string;
 }
