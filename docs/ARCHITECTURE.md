@@ -8,14 +8,17 @@ Foundry VTT, 5etools, PDFs, user JSON, future APIs and other external formats ar
 
 ## 2. Reference architecture
 
-Foundry VTT is a design reference for:
+The current official Foundry D&D system is a design reference for:
 
 - typed documents and subtypes;
 - explicit data models;
 - initialization, cleaning and validation;
 - schema migration;
 - reusable embedded/related documents;
-- separation between generic document identity and game-system-specific data.
+- separation between generic document identity and game-system-specific data;
+- D&D 2024 mechanical representation.
+
+For OracleRPG v1.00, only the Foundry system's 2024 rules paths and data are relevant. Legacy 2014 handling is intentionally excluded from the Oracle canonical model.
 
 OracleRPG does not reproduce Foundry documents one-to-one. It adopts useful architectural ideas while keeping an application-independent domain model.
 
@@ -102,15 +105,15 @@ Rules:
 
 ## 8. Game-system identity
 
-These dimensions are independent:
+OracleRPG v1.00 has one canonical D&D target:
 
 ```text
-gameSystem   = dnd5e
-rulesVersion = 2014 | 2024 | ...
-contentSource = srd-5.1 | srd-5.2 | homebrew | user | ...
+gameSystem    = dnd2024
+rulesVersion  = 2024
+contentSource = srd-5.2 | homebrew | user | ...
 ```
 
-A source package is not a game system.
+A source package is not a game system. `dnd5e` may appear only when identifying the external Foundry project/provider in provenance or documentation; it is not an OracleRPG canonical system identifier.
 
 ## 9. Import safety
 
@@ -133,8 +136,8 @@ Unknown or unsupported source constructs produce diagnostics. They must not be s
 
 The compendium architecture must support source and license metadata per package/entity. Import capability does not imply permission to redistribute imported data.
 
-SRD packages and user/private imports are separate distribution concerns from the schema/import technology itself.
+SRD 5.2 packages and user/private imports are separate distribution concerns from the schema/import technology itself.
 
 ## 11. v1.00 constraint
 
-Do not optimize the canonical model for UI forms, database tables or a single importer before the core schemas have been exercised by representative fixtures.
+Do not optimize the canonical model for UI forms, database tables or a single importer before the core schemas have been exercised by representative D&D 2024 fixtures.
