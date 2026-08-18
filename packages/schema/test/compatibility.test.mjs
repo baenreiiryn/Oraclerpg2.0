@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 
 import {
   classCompatibilityFixtures,
-  validateCanonicalContent
+  validateCanonicalContent,
+  validateInventoryItemInstance
 } from "../dist/index.js";
 
 test("audited class compatibility fixtures validate", () => {
@@ -11,6 +12,25 @@ test("audited class compatibility fixtures validate", () => {
     const result = validateCanonicalContent(type, fixture);
     assert.equal(result.ok, true, `${type} fixture failed: ${JSON.stringify(result.issues)}`);
   }
+});
+
+test("inventory item instance keeps runtime state separate from canonical item definition", () => {
+  const issues = validateInventoryItemInstance({
+    id: "inventory-item-1",
+    definition: { canonicalId: "dnd2024:2024:item:longsword:srd-5.2", entityType: "item" },
+    quantity: 1,
+    equipped: true,
+    attuned: false,
+    identified: true,
+    containerInstanceId: "scabbard-instance-1",
+    currentUses: { value: 3, max: 5 }
+  });
+  assert.deepEqual(issues, []);
+});
+
+test("inventory validator rejects canonical ids used as container instance ids only when blank/runtime data is malformed", () => {
+  const issues = validateInventoryItemInstance({ id: "x", definition: {}, quantity: -1, containerInstanceId: "", currentUses: { value: -1 } });
+  assert.ok(issues.length >= 4);
 });
 
 test("validator rejects unknown content type", () => {
