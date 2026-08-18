@@ -1,9 +1,14 @@
 import type { ActivityData } from "./activity.js";
 import type { AbilityId, ChoiceRef, EntityRef, SourceText } from "./primitives.js";
+import type {
+  ChoiceDependencyData, CrossResourceRuleData, EffectData, EntityBenefitGrantData, FeaturePatchData,
+  LinkedLifecycleData, ManualAdjudicationData, ModifierData, PredicateData, RandomPropertyGrantData,
+  StateVariableData
+} from "./mechanics.js";
 
 export type FeatureKind =
   | "feat" | "classFeature" | "subclassFeature" | "speciesFeature"
-  | "backgroundFeature" | "monsterFeature" | "optionalFeature";
+  | "backgroundFeature" | "monsterFeature" | "optionalFeature" | "darkGift" | "charm";
 
 export interface PrerequisiteData {
   minimumLevel?: number;
@@ -11,15 +16,19 @@ export interface PrerequisiteData {
   requiredEntities?: readonly EntityRef[];
   requiredTags?: readonly string[];
   campaign?: readonly string[];
+  predicate?: PredicateData;
   special?: string;
 }
 
 export interface GrantData {
-  type: "entity" | "proficiency" | "expertise" | "language" | "sense" | "movement" | "ability" | "spell" | "resource" | "custom";
+  type: "entity" | "proficiency" | "expertise" | "language" | "sense" | "movement" | "ability" | "spell" | "resource" | "benefits" | "custom";
   entity?: EntityRef;
+  benefit?: EntityBenefitGrantData;
   choice?: ChoiceRef;
   value?: unknown;
   level?: number;
+  choiceId?: string;
+  dependency?: ChoiceDependencyData;
 }
 
 export interface AdvancementStep {
@@ -27,6 +36,7 @@ export interface AdvancementStep {
   grants?: readonly GrantData[];
   choices?: readonly ChoiceRef[];
   scaleValues?: Readonly<Record<string, string | number>>;
+  patches?: readonly FeaturePatchData[];
 }
 
 export interface FeatureData {
@@ -38,6 +48,14 @@ export interface FeatureData {
   activities?: readonly ActivityData[];
   grants?: readonly GrantData[];
   advancement?: readonly AdvancementStep[];
+  effects?: readonly EffectData[];
+  modifiers?: readonly ModifierData[];
+  states?: readonly StateVariableData[];
+  patches?: readonly FeaturePatchData[];
+  crossResourceRules?: readonly CrossResourceRuleData[];
+  randomProperties?: readonly RandomPropertyGrantData[];
+  lifecycle?: readonly LinkedLifecycleData[];
+  manualAdjudication?: ManualAdjudicationData;
   properties?: readonly string[];
   text?: SourceText;
 }
