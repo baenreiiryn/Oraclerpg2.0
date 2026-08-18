@@ -6,7 +6,7 @@ The project is being built from the data model outward: first canonical schemas,
 
 ## v1.00 goal
 
-Deliver a structured D&D 5e foundation capable of storing, importing, relating and using SRD content without coupling the OracleRPG data model to any external source format.
+Deliver a structured D&D 2024 foundation capable of storing, importing, relating and using SRD 5.2 content without coupling the OracleRPG data model to any external source format.
 
 ## Architectural rule
 
@@ -14,10 +14,10 @@ Deliver a structured D&D 5e foundation capable of storing, importing, relating a
 
 ## References, not dependencies
 
-- Foundry VTT D&D5e: reference for typed game documents, data models, validation and migration patterns.
-- 5etools: reference/source format for structured D&D 5e data and homebrew-compatible content.
+- Foundry VTT D&D5e system: reference for typed game documents, data models, validation and migration patterns. OracleRPG does not adopt Foundry's system identifier.
+- 5etools: reference/source format for structured D&D data and homebrew-compatible content, with the OracleRPG v1.00 target restricted to D&D 2024-compatible rules/content.
 - 5etools-to-Foundry importers: reference for source normalization and mapping strategies.
-- D&D SRD: authority/manifest for deciding which SRD content belongs in an OracleRPG SRD package.
+- D&D SRD 5.2: authority/manifest for deciding which D&D 2024 SRD content belongs in the OracleRPG package.
 
 OracleRPG must not require Foundry VTT or 5etools at runtime.
 
@@ -57,17 +57,17 @@ The v1.00 roadmap intentionally starts without authentication, database infrastr
 
 ## System identity
 
-Game system, rules version and content source are distinct concepts.
-
-Example:
+For OracleRPG v1.00, the canonical D&D system target is explicitly D&D 2024:
 
 ```text
-gameSystem: dnd5e
-rulesVersion: 2014
-contentSource: srd-5.1
+gameSystem: dnd2024
+rulesVersion: 2024
+contentSource: srd-5.2
 ```
 
-This keeps the model ready for 2014 rules, 2024 rules, SRD packages and homebrew without treating each combination as a different game system.
+`dnd5e` is not the OracleRPG game-system identifier. It may appear only when referring to the external Foundry VTT D&D5e project/provider as an import/reference source.
+
+Game system, rules version and content source remain distinct concepts so future systems or rules revisions can coexist without contaminating the canonical model.
 
 ## Current stage
 
