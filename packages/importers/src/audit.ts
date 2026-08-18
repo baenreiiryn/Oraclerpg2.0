@@ -40,12 +40,13 @@ export interface FiveEToolsSublistEnvelope {
 export function auditFiveEToolsSublistEnvelope(source: FiveEToolsSublistEnvelope): CompatibilityAuditReport {
   const entityType = source.fileType.replace(/-sublist$/, "");
   const entityCount = source.items.length;
+  const version = source.siteVersion ? { sourceVersion: source.siteVersion } : {};
 
   if (entityCount === 0) {
     return {
       provider: "5etools",
       sourceFormat: source.fileType,
-      sourceVersion: source.siteVersion,
+      ...version,
       detectedEntityTypes: [entityType],
       entityCount,
       status: "empty",
@@ -60,7 +61,7 @@ export function auditFiveEToolsSublistEnvelope(source: FiveEToolsSublistEnvelope
   return {
     provider: "5etools",
     sourceFormat: source.fileType,
-    sourceVersion: source.siteVersion,
+    ...version,
     detectedEntityTypes: [entityType],
     entityCount,
     status: "partial",
