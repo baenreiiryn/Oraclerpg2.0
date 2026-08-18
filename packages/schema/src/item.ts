@@ -1,16 +1,23 @@
 import type { ActivityData, UsesSpec } from "./activity.js";
-import type { CurrencyId, DamageTypeId, EntityRef, FormulaValue, SourceText } from "./primitives.js";
+import type { AbilityId, CurrencyId, DamageTypeId, EntityRef, FormulaValue, SourceText } from "./primitives.js";
 import type {
   ActionReplacementData, EffectData, EntityBenefitGrantData, ItemSentienceData, ManualAdjudicationData,
   ModifierData, PredicateData, RandomPropertyGrantData, StateVariableData, TriggerData
 } from "./mechanics.js";
 
-export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "pack" | "loot" | "charm" | "upgrade";
+export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "pack" | "mount" | "loot" | "charm" | "upgrade";
 export type RarityId = "common" | "uncommon" | "rare" | "veryRare" | "legendary" | "artifact" | "varies" | "unknown";
 
 export interface PriceValue {
   amount: number;
   currency: CurrencyId;
+}
+
+export interface AbilityAdjustmentData {
+  ability: AbilityId;
+  mode: "set" | "bonus";
+  value: number;
+  description?: string;
 }
 
 /** A quantity-aware reference used by containers, ammunition bundles, kits, and equipment packs. */
@@ -30,6 +37,9 @@ export interface PhysicalItemData {
   magical?: boolean;
   attunement?: "none" | "required" | "optional" | "special";
   properties?: readonly string[];
+  abilityAdjustments?: readonly AbilityAdjustmentData[];
+  damageResistances?: readonly DamageTypeId[];
+  damageImmunities?: readonly DamageTypeId[];
   uses?: UsesSpec;
   activities?: readonly ActivityData[];
   grantedFeatures?: readonly EntityRef[];
@@ -119,6 +129,14 @@ export interface PackData extends PhysicalItemData {
   unpackBehavior?: "addContents" | "replacePack";
 }
 
+/** A purchasable mount listing; the linked monster carries its full combat stat block. */
+export interface MountData extends PhysicalItemData {
+  itemKind: "mount";
+  speed: number;
+  carryingCapacity?: number;
+  creature?: EntityRef;
+}
+
 export interface EquipmentData extends PhysicalItemData {
   itemKind: "equipment";
   equipmentType?: string;
@@ -142,4 +160,4 @@ export interface UpgradeData extends PhysicalItemData {
 }
 
 export type CanonicalItemData =
-  | WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | PackData | EquipmentData | LootData | CharmData | UpgradeData;
+  | WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | PackData | MountData | EquipmentData | LootData | CharmData | UpgradeData;
