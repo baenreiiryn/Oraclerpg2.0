@@ -1,10 +1,15 @@
 {
-  "generatedAt": "2026-08-18T21:48:20.525Z",
+  "generatedAt": "2026-08-18T21:52:46.676Z",
   "upstreamCount": 550,
   "oracleCount": 550,
   "issueCount": 0,
   "status": "supported",
   "coverage": {
+    "weight": {
+      "checked": 324,
+      "passed": 324,
+      "failed": 0
+    },
     "packContents": {
       "checked": 12,
       "passed": 12,
@@ -38,6 +43,11 @@
     "containerCapacity": {
       "checked": 17,
       "passed": 17,
+      "failed": 0
+    },
+    "containerWeightUnit": {
+      "checked": 6,
+      "passed": 6,
       "failed": 0
     },
     "containerWeightless": {
