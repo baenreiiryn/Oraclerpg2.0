@@ -9,21 +9,21 @@ const DAMAGE = {
   A: "acid", B: "bludgeoning", C: "cold", F: "fire", O: "force", L: "lightning", N: "necrotic",
   P: "piercing", I: "poison", Y: "psychic", R: "radiant", S: "slashing", T: "thunder"
 };
+const DAMAGE_IDS = new Set(Object.values(DAMAGE));
 
-// Fields whose mechanical meaning must not be silently discarded. If a record has one
-// of these and the mapper does not explicitly handle it, that record is skipped and
-// reported rather than imported partially.
 const MECHANICS_FIELDS = new Set([
   "ability", "ac", "ammoType", "armor", "attachedSpells", "bonusAc", "bonusSavingThrow",
-  "bonusSpellAttack", "bonusSpellSaveDc", "bonusWeapon", "charges", "conditionImmune",
+  "bonusSpellAttack", "bonusSpellSaveDc", "bonusWeapon", "carryingCapacity", "charges", "conditionImmune",
   "containerCapacity", "dmg1", "dmg2", "dmgType", "immune", "mastery", "packContents",
   "property", "recharge", "rechargeAmount", "resist", "speed", "stealth", "strength",
   "vulnerable", "weapon", "weaponCategory"
 ]);
 const HANDLED_MECHANICS_FIELDS = new Set([
-  "ac", "ammoType", "armor", "bonusAc", "bonusSavingThrow", "bonusSpellAttack", "bonusSpellSaveDc",
-  "bonusWeapon", "charges", "containerCapacity", "dmg1", "dmg2", "dmgType", "mastery", "packContents",
-  "property", "recharge", "rechargeAmount", "stealth", "strength", "weapon", "weaponCategory"
+  "ability", "ac", "ammoType", "armor", "attachedSpells", "bonusAc", "bonusSavingThrow",
+  "bonusSpellAttack", "bonusSpellSaveDc", "bonusWeapon", "carryingCapacity", "charges",
+  "containerCapacity", "dmg1", "dmg2", "dmgType", "immune", "mastery", "packContents",
+  "property", "recharge", "rechargeAmount", "resist", "speed", "stealth", "strength",
+  "weapon", "weaponCategory"
 ]);
 
 const slug = value => String(value)
@@ -33,11 +33,24 @@ const slug = value => String(value)
   .replace(/[^a-z0-9]+/g, "-")
   .replace(/^-|-$/g, "");
 
-const canonicalId = name => `dnd2024:2024:item:${slug(name)}:srd-5.2`;
+const itemCanonicalId = name => `dnd2024:2024:item:${slug(name)}:srd-5.2`;
+const spellCanonicalId = name => `dnd2024:2024:spell:${slug(name)}:srd-5.2`;
+const monsterCanonicalId = name => `dnd2024:2024:monster:${slug(name)}:srd-5.2`;
 const parseUidName = uid => String(uid ?? "").split("|")[0].trim();
 const itemRef = uid => {
   const name = parseUidName(uid);
-  return { canonicalId: canonicalId(name), name, entityType: "item" };
+  return { canonicalId: itemCanonicalId(name), name, entityType: "item" };
+};
+const spellRef = uid => {
+  const raw = String(uid ?? "");
+  const withoutLevel = raw.split("#")[0];
+  const name = parseUidName(withoutLevel);
+  return { canonicalId: spellCanonicalId(name), name, entityType: "spell" };
+};
+const monsterRef = name => ({ canonicalId: monsterCanonicalId(name), name, entityType: "monster" });
+const parseSpellLevelOverride = uid => {
+  const match = String(uid ?? "").match(/#(\d+)$/);
+  return match ? Number(match[1]) : undefined;
 };
 const parseNumber = value => {
   if (value == null) return undefined;
@@ -118,10 +131,11 @@ function inferContainerType(name) {
 
 function itemUses(record) {
   if (record.charges == null) return undefined;
+  const max = Number(record.charges);
   const recovery = [];
-  if (record.recharge === "dawn") recovery.push({ period: "dawn", amount: record.rechargeAmount ? { formula: parseFormula(record.rechargeAmount) } : "all" });
-  else if (record.recharge) recovery.push({ period: "special", amount: record.rechargeAmount ? { formula: parseFormula(record.rechargeAmount) } : "all" });
-  return { max: Number(record.charges), recovery };
+  if (record.recharge === "dawn") recovery.push({ period: "dawn", amount: record.rechargeAmount ? { formula: parseFormula(record.rechargeAmount) } : max });
+  else if (record.recharge) recovery.push({ period: "special", amount: record.rechargeAmount ? { formula: parseFormula(record.rechargeAmount) } : max });
+  return { max, recovery };
 }
 
 function commonModifiers(record, itemKind) {
@@ -138,16 +152,98 @@ function commonModifiers(record, itemKind) {
   return modifiers.length ? modifiers : undefined;
 }
 
+function abilityAdjustments(record) {
+  if (!record.ability || typeof record.ability !== "object") return undefined;
+  const out = [];
+  if (record.ability.static && typeof record.ability.static === "object") {
+    for (const [ability, value] of Object.entries(record.ability.static)) {
+      out.push({ ability, mode: "set", value: Number(value) });
+    }
+  }
+  for (const [ability, value] of Object.entries(record.ability)) {
+    if (ability === "static") continue;
+    if (typeof value === "number") out.push({ ability, mode: "bonus", value });
+  }
+  return out.length ? out : undefined;
+}
+
+function damageList(value) {
+  if (!Array.isArray(value)) return undefined;
+  const ids = value.map(v => String(v).toLowerCase()).filter(v => DAMAGE_IDS.has(v));
+  return ids.length ? ids : undefined;
+}
+
+function flattenAttachedSpells(attachedSpells) {
+  const out = [];
+  if (!attachedSpells) return out;
+  if (Array.isArray(attachedSpells)) {
+    attachedSpells.forEach(uid => out.push({ uid, mode: "linked" }));
+    return out;
+  }
+  for (const [mode, value] of Object.entries(attachedSpells)) {
+    if (Array.isArray(value)) {
+      value.forEach(uid => out.push({ uid, mode }));
+      continue;
+    }
+    if (value && typeof value === "object") {
+      for (const [key, spells] of Object.entries(value)) {
+        if (!Array.isArray(spells)) continue;
+        spells.forEach(uid => out.push({ uid, mode, key }));
+      }
+    }
+  }
+  return out;
+}
+
+function attachedSpellActivities(record) {
+  const flattened = flattenAttachedSpells(record.attachedSpells);
+  if (!flattened.length) return undefined;
+  return flattened.map((entry, index) => {
+    const name = parseUidName(entry.uid);
+    const level = parseSpellLevelOverride(entry.uid);
+    const activity = {
+      id: `attached-spell-${slug(name)}-${index + 1}`,
+      name: `Cast ${name}`,
+      kind: "invoke",
+      invocation: { entity: spellRef(entry.uid), mode: "castSpell", ...(level != null ? { spellLevel: level } : {}) }
+    };
+    if (entry.mode === "charges") {
+      const cost = Number(entry.key ?? 0);
+      activity.costs = [{ resource: "itemCharge", amount: cost }];
+    } else if (entry.mode === "daily") {
+      const count = Number(String(entry.key ?? "1").replace(/\D/g, "")) || 1;
+      activity.uses = { max: count, recovery: [{ period: "dawn", amount: count }] };
+    } else if (entry.mode === "will") {
+      // At-will relationship is fully represented by the absence of a resource cost.
+    } else {
+      activity.manualAdjudication = {
+        required: true,
+        reason: `5etools attachedSpells mode '${entry.mode}'${entry.key ? ` (${entry.key})` : ""} does not fully encode activation/consumption semantics; preserve and resolve using the item rules text.`,
+        fallback: "promptGM"
+      };
+    }
+    return activity;
+  });
+}
+
 function baseFields(record, itemKind) {
   const modifiers = commonModifiers(record, itemKind);
   const uses = itemUses(record);
+  const abilities = abilityAdjustments(record);
+  const resistances = damageList(record.resist);
+  const immunities = damageList(record.immune);
+  const activities = attachedSpellActivities(record);
   return {
     ...(record.weight != null ? { weight: Number(record.weight) } : {}),
     ...(record.value != null ? { price: { amount: Number(record.value), currency: "cp" } } : {}),
     ...(record.rarity && record.rarity !== "none" ? { rarity: record.rarity === "very rare" ? "veryRare" : record.rarity } : {}),
     ...(record.reqAttune ? { attunement: "required" } : {}),
     ...(record.property?.length ? { properties: record.property.map(normalizeProperty) } : {}),
+    ...(abilities ? { abilityAdjustments: abilities } : {}),
+    ...(resistances ? { damageResistances: resistances } : {}),
+    ...(immunities ? { damageImmunities: immunities } : {}),
     ...(uses ? { uses } : {}),
+    ...(activities ? { activities } : {}),
     ...(modifiers ? { modifiers } : {}),
     ...(record.entries || record.additionalEntries ? { text: sourceText(record) } : {})
   };
@@ -160,9 +256,20 @@ function unresolvedMechanics(record) {
 function mapRecord(record, baseLookup) {
   const inherited = record.baseItem ? baseLookup.get(String(record.baseItem).toLowerCase()) : undefined;
   const r = inherited ? { ...inherited, ...record, entries: record.entries ?? inherited.entries } : record;
+  const type = String(r.type ?? "").split("|")[0];
 
   if (record.packContents?.length) {
     return { itemKind: "pack", packType: record.arrow ? "ammunition" : "equipment", contents: packContents(record), unpackBehavior: "replacePack", ...baseFields(record, "pack") };
+  }
+
+  if (type === "MNT") {
+    return {
+      itemKind: "mount",
+      speed: Number(record.speed ?? r.speed ?? 0),
+      ...(record.carryingCapacity != null ? { carryingCapacity: Number(record.carryingCapacity) } : {}),
+      creature: monsterRef(record.name),
+      ...baseFields(record, "mount")
+    };
   }
 
   const isContainer = Boolean(record.containerCapacity) || /\b(quiver|backpack|pouch|sack|chest|case|bottle|flask|jug|vial|waterskin)\b/i.test(record.name);
@@ -179,7 +286,6 @@ function mapRecord(record, baseLookup) {
     };
   }
 
-  const type = String(r.type ?? "").split("|")[0];
   if (r.weapon || r.weaponCategory || r.dmg1) {
     const range = typeof r.range === "string" ? r.range.split("/").map(Number) : [];
     const reach = r.reach != null ? Number(r.reach) : undefined;
@@ -253,12 +359,16 @@ for (const source of candidates) {
   try {
     const data = mapRecord(source, baseLookup);
     records.push({
-      id: canonicalId(source.name), canonicalId: canonicalId(source.name), entityType: "item", name: source.name,
+      id: itemCanonicalId(source.name), canonicalId: itemCanonicalId(source.name), entityType: "item", name: source.name,
       system: { gameSystem: "dnd2024", rulesVersion: "2024" },
       source: { sourceId: "srd-5.2", book: source.source, ...(source.page != null ? { page: source.page } : {}), license: "CC-BY-4.0", licenseUrl: "https://creativecommons.org/licenses/by/4.0/" },
-      provenance: { origin: "import", provider: "5etools", sourceKey: key, importedAt: new Date().toISOString(), adapterVersion: "0.2.0", mapperVersion: "0.2.0" },
+      provenance: { origin: "import", provider: "5etools", sourceKey: key, importedAt: new Date().toISOString(), adapterVersion: "0.3.0", mapperVersion: "0.3.0" },
       schemaVersion: 1, data,
-      relations: data.itemKind === "pack" ? data.contents.map(c => ({ type: "contains", targetCanonicalId: c.item.canonicalId, metadata: { quantity: c.quantity } })) : [],
+      relations: [
+        ...(data.itemKind === "pack" ? data.contents.map(c => ({ type: "contains", targetCanonicalId: c.item.canonicalId, metadata: { quantity: c.quantity } })) : []),
+        ...(data.itemKind === "mount" && data.creature ? [{ type: "represents", targetCanonicalId: data.creature.canonicalId }] : []),
+        ...((data.activities ?? []).filter(a => a.invocation?.entity).map(a => ({ type: "invokes", targetCanonicalId: a.invocation.entity.canonicalId })))
+      ],
       metadata: { tags: ["srd-5.2", "5etools", data.itemKind] }
     });
   } catch (error) {
