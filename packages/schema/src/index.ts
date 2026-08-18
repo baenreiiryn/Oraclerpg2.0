@@ -14,4 +14,5 @@ export * from "./feature.js";
 export * from "./progression.js";
 export * from "./content.js";
 export * from "./validation.js";
+export * from "./migration.js";
 export * from "./compatibility-fixtures.js";
