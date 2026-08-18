@@ -5,9 +5,11 @@ on:
     paths:
       - "scripts/import-srd52-items.mjs"
       - "scripts/enrich-srd52-items.mjs"
+      - "scripts/normalize-srd52-item-units.mjs"
       - "scripts/audit-srd52-item-coverage.mjs"
       - "scripts/probe-srd52-item-fields.mjs"
       - "packages/schema/src/item.ts"
+      - "packages/schema/src/inventory.ts"
       - "packages/schema/src/activity.ts"
       - "packages/schema/src/enums.ts"
       - ".github/workflows/sync-srd52-items.yml"
@@ -15,9 +17,11 @@ on:
     paths:
       - "scripts/import-srd52-items.mjs"
       - "scripts/enrich-srd52-items.mjs"
+      - "scripts/normalize-srd52-item-units.mjs"
       - "scripts/audit-srd52-item-coverage.mjs"
       - "scripts/probe-srd52-item-fields.mjs"
       - "packages/schema/src/item.ts"
+      - "packages/schema/src/inventory.ts"
       - "packages/schema/src/activity.ts"
       - "packages/schema/src/enums.ts"
       - ".github/workflows/sync-srd52-items.yml"
@@ -44,9 +48,14 @@ jobs:
         if: steps.importer.outcome == 'success'
         continue-on-error: true
         run: node scripts/enrich-srd52-items.mjs
+      - name: Normalize physical units
+        id: units
+        if: steps.importer.outcome == 'success' && steps.enricher.outcome == 'success'
+        continue-on-error: true
+        run: node scripts/normalize-srd52-item-units.mjs
       - name: Compare 5etools and Oracle structural coverage
         id: coverage
-        if: steps.importer.outcome == 'success' && steps.enricher.outcome == 'success'
+        if: steps.importer.outcome == 'success' && steps.enricher.outcome == 'success' && steps.units.outcome == 'success'
         continue-on-error: true
         run: node scripts/audit-srd52-item-coverage.mjs
       - name: Probe structured field shapes
@@ -59,7 +68,7 @@ jobs:
           name: srd52-items
           path: packages/content/data/srd-5.2
       - name: Commit generated compendium
-        if: github.event_name == 'push' && steps.importer.outcome == 'success' && steps.enricher.outcome == 'success' && steps.coverage.outcome == 'success'
+        if: github.event_name == 'push' && steps.importer.outcome == 'success' && steps.enricher.outcome == 'success' && steps.units.outcome == 'success' && steps.coverage.outcome == 'success'
         run: |
           if [ -z "$(git status --porcelain -- packages/content/data/srd-5.2)" ]; then
             echo "No content changes"
@@ -71,5 +80,5 @@ jobs:
           git commit -m "Populate SRD 5.2 item compendium"
           git push
       - name: Fail on import or coverage diagnostics
-        if: steps.importer.outcome != 'success' || steps.enricher.outcome != 'success' || steps.coverage.outcome != 'success'
+        if: steps.importer.outcome != 'success' || steps.enricher.outcome != 'success' || steps.units.outcome != 'success' || steps.coverage.outcome != 'success'
         run: exit 1
