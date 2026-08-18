@@ -13,5 +13,7 @@ export interface ImportResult<T> {
   diagnostics: readonly ImportDiagnostic[];
 }
 
+export * from "./audit.js";
+
 // Source-specific adapters will live under src/sources/<provider>/.
 // They may depend on canonical schemas; canonical schemas must never depend on them.
