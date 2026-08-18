@@ -1,13 +1,14 @@
 import type {
-  AbilityId, ConditionId, DamageTypeId, DistanceValue, FormulaValue, RecoveryPeriod, TimeUnit
+  AbilityId, ConditionId, DamageTypeId, DistanceValue, EntityRef, FormulaValue, RecoveryPeriod, TimeUnit
 } from "./primitives.js";
 import type {
   ActionReplacementData, AttackOverrideData, EffectData, InvocationSpec, ManualAdjudicationData, MultiattackData,
   OutcomeDependentCostData, PredicateData, RuntimeValueRef, SummonSpec, TriggerData, UsageLimitData
 } from "./mechanics.js";
+import type { TransformationData } from "./class-mechanics.js";
 
 export type ActivityKind =
-  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "invoke"
+  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "transform" | "enchant" | "invoke"
   | "multiattack" | "special";
 
 export interface ActivityActivation {
@@ -111,6 +112,16 @@ export interface ScalingRule {
   formula?: string;
 }
 
+/** One selectable summon outcome. Used when one casting can create different canonical creatures/forms. */
+export interface SummonProfileData {
+  id: string;
+  name?: string;
+  entity?: EntityRef;
+  count?: number | FormulaValue | RuntimeValueRef;
+  predicate?: PredicateData;
+  cost?: number | RuntimeValueRef;
+}
+
 export interface ActivityData {
   id: string;
   name: string;
@@ -134,6 +145,8 @@ export interface ActivityData {
   triggers?: readonly TriggerData[];
   invocation?: InvocationSpec;
   summon?: SummonSpec;
+  summonProfiles?: readonly SummonProfileData[];
+  transformation?: TransformationData;
   multiattack?: MultiattackData;
   replacements?: readonly ActionReplacementData[];
   attackOverrides?: readonly AttackOverrideData[];
