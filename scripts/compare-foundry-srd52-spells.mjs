@@ -12,9 +12,14 @@ const RANGE = { ft:"feet", mi:"miles", self:"self", touch:"touch", sight:"sight"
 const SOURCE_DISAGREEMENTS = {
   "Hypnotic Pattern": new Set(["concentration"]),
   "Forbiddance": new Set(["ritual"]),
-  "Raise Dead": new Set(["range"])
+  "Raise Dead": new Set(["range"]),
+  "Resilient Sphere": new Set(["concentration"]),
+  "Dream": new Set(["range"]),
+  "Eyebite": new Set(["range"]),
+  "Mirage Arcane": new Set(["range"]),
+  "Tiny Hut": new Set(["target"])
 };
-const PROVIDER_SUMMON = new Set(["Silent Image","Continual Flame","Spiritual Weapon","Clairvoyance","Major Image","Arcane Eye","Mislead","Programmed Illusion","Project Image","Light","Mage Hand","Minor Illusion","Conjure Elemental"]);
+const PROVIDER_SUMMON = new Set(["Silent Image","Continual Flame","Spiritual Weapon","Clairvoyance","Major Image","Arcane Eye","Mislead","Programmed Illusion","Project Image","Light","Mage Hand","Minor Illusion","Conjure Elemental","Floating Disk","Arcane Hand","Arcane Sword"]);
 
 async function walk(dir) { const out=[]; for (const entry of await fs.readdir(dir,{withFileTypes:true})) { const p=path.join(dir,entry.name); if(entry.isDirectory()) out.push(...await walk(p)); else if(entry.name.endsWith(".yml") && entry.name!=="_folder.yml") out.push(p); } return out; }
 const sameNum=(a,b)=> Number(a)===Number(b);
@@ -27,7 +32,11 @@ const issues=[]; const classified=[]; const stats={matched:0,missingInOracle:0,l
 const add=(issue,classification="mechanical")=>{(classification==="mechanical"?issues:classified).push({...issue,classification});};
 function capabilities(activities){
   const c=new Set();
-  for(const a of arr(activities)){ if(a.kind)c.add(a.kind); if(a.attack)c.add("attack"); if(a.save)c.add("save"); if(a.check)c.add("check"); if(a.damage?.length)c.add("damage"); if(a.healing?.length)c.add("healing"); if(a.transformation)c.add("transform"); if(a.summon||a.summonProfiles?.length)c.add("summon"); if(a.effects?.length)c.add("effect"); }
+  for(const a of arr(activities)){
+    if(a.kind)c.add(a.kind); if(a.attack)c.add("attack"); if(a.save)c.add("save"); if(a.check)c.add("check"); if(a.damage?.length)c.add("damage"); if(a.healing?.length)c.add("healing"); if(a.transformation)c.add("transform"); if(a.summon||a.summonProfiles?.length)c.add("summon");
+    for(const e of arr(a.effects)){c.add("effect");if(e.attackOverrides?.length)c.add("attack");}
+    if(a.attackOverrides?.length)c.add("attack");
+  }
   return c;
 }
 function targetEquivalent(ft,ot){
@@ -67,12 +76,12 @@ for(const {file,d} of foundry){
 
   const ft=fsys.target?.affects?.type, oa=od.activities?.[0], ot=oa?.target?.type;
   const areaSemantic=!!oa?.target?.area && (ft==="space"||ft==="creature"||ft==="any");
-  if(targetEquivalent(ft,ot)||areaSemantic)stats.target++; else add({spell:d.name,type:"target",foundry:ft,oracle:ot});
+  if(targetEquivalent(ft,ot)||areaSemantic)stats.target++; else if(SOURCE_DISAGREEMENTS[d.name]?.has("target"))add({spell:d.name,type:"target",foundry:ft,oracle:ot},"provider-implementation"); else add({spell:d.name,type:"target",foundry:ft,oracle:ot});
 
   const fTypes=new Set(Object.values(fsys.activities??{}).map(a=>a.type==="heal"?"healing":a.type)); const caps=capabilities(od.activities); const missing=[];
   for(const k of fTypes){
     if(k==="utility")continue;
-    if(k==="summon"&&PROVIDER_SUMMON.has(d.name))continue;
+    if(k==="summon"&&PROVIDER_SUMMON.has(d.name)){add({spell:d.name,type:"activity-capability",foundry:"summon",oracle:[...caps],reason:"Foundry uses summon infrastructure to materialize a non-creature spell effect."},"provider-implementation");continue;}
     if(!caps.has(k))missing.push(k);
   }
   if(!missing.length)stats.activities++; else add({spell:d.name,type:"activity-capabilities",foundry:[...fTypes],oracle:[...caps],missing});
