@@ -1,0 +1,24 @@
+name: Probe SRD 5.2 Spells
+
+on:
+  pull_request:
+    paths:
+      - "scripts/probe-srd52-spell-fields.mjs"
+      - ".github/workflows/probe-srd52-spells.yml"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probe SRD 5.2 spell fields
+        run: node scripts/probe-srd52-spell-fields.mjs
+      - name: Upload probe
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-spell-probe
+          path: packages/content/data/srd-5.2/spell-probe
