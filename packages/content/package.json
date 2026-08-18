@@ -1,0 +1,11 @@
+{
+  "name": "@oraclerpg/content",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "typecheck": "node -e \"process.exit(0)\"",
+    "build": "node -e \"process.exit(0)\"",
+    "test": "node --test"
+  }
+}
