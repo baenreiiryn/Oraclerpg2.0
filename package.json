@@ -1,0 +1,15 @@
+{
+  "name": "oraclerpg-2",
+  "version": "0.0.0",
+  "private": true,
+  "description": "OracleRPG 2.0 monorepo",
+  "packageManager": "pnpm@10.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "typecheck": "pnpm -r typecheck",
+    "test": "pnpm -r test",
+    "build": "pnpm -r build"
+  }
+}
