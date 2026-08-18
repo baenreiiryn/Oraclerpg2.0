@@ -3,7 +3,7 @@ import type { CanonicalItemData } from "./item.js";
 import type { MonsterData } from "./monster.js";
 import type { BackgroundData, ClassData, SpeciesData, SubclassData } from "./progression.js";
 import type { SpellData } from "./spell.js";
-import type { RichEntry } from "./primitives.js";
+import type { JsonValue, RichEntry } from "./primitives.js";
 import type { VehicleData } from "./vehicle.js";
 
 export interface RuleData {
@@ -14,7 +14,7 @@ export interface RuleData {
 export interface TableData {
   formula?: string;
   columns: readonly string[];
-  rows: readonly (readonly unknown[])[];
+  rows: readonly (readonly JsonValue[])[];
 }
 
 export interface ConditionData {
