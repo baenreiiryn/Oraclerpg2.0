@@ -7,10 +7,17 @@ import type {
 
 export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "pack" | "mount" | "vehiclePurchase" | "loot" | "charm" | "upgrade";
 export type RarityId = "common" | "uncommon" | "rare" | "veryRare" | "legendary" | "artifact" | "varies" | "unknown";
+export type WeightUnitId = "lb" | "oz" | "kg" | "g" | "ton" | "custom";
 
 export interface PriceValue {
   amount: number;
   currency: CurrencyId;
+}
+
+export interface WeightValue {
+  value: number;
+  unit: WeightUnitId;
+  customUnit?: string;
 }
 
 export interface AbilityAdjustmentData {
@@ -61,8 +68,9 @@ export interface ItemStackRef {
 
 export interface PhysicalItemData {
   itemKind: ItemKind;
+  /** Template/reference quantity only. Runtime inventory quantity belongs to InventoryItemInstanceData. */
   quantity?: number;
-  weight?: number;
+  weight?: WeightValue;
   price?: PriceValue;
   rarity?: RarityId;
   magical?: boolean;
@@ -145,7 +153,7 @@ export interface ContainerCompartmentData {
   id: string;
   label?: string;
   maxItems?: number;
-  maxWeight?: number;
+  maxWeight?: WeightValue;
   acceptedItems?: readonly EntityRef[];
   acceptedItemLimits?: readonly ContainerAcceptedItemData[];
   acceptedTags?: readonly string[];
@@ -156,13 +164,14 @@ export interface ContainerData extends PhysicalItemData {
   itemKind: "container";
   containerType?: "quiver" | "pouch" | "sack" | "backpack" | "chest" | "case" | "vessel" | "other";
   capacity?: {
-    weight?: number;
+    weight?: WeightValue;
     items?: number;
     volume?: number;
     volumeUnit?: "cubicFoot" | "pint" | "gallon" | "liter" | "other";
     contentsWeightless?: boolean;
   };
   compartments?: readonly ContainerCompartmentData[];
+  /** Defined/default package contents only; current runtime contents belong to inventory instances. */
   contents?: readonly ItemStackRef[];
   restrictsTo?: readonly string[];
 }
