@@ -117,6 +117,15 @@ export interface ConditionInteractionData {
   };
 }
 
+export interface AfflictionInteractionData {
+  action: "apply" | "remove" | "suppress" | "prevent" | "immunity";
+  afflictionType: "disease" | "curse" | "poison" | "custom";
+  entity?: EntityRef;
+  count?: number | RuntimeValueRef;
+  choice?: "any" | "chosen" | "all";
+  predicate?: PredicateData;
+}
+
 export interface EffectDurationData {
   type: "instant" | "timed" | "concentration" | "untilRest" | "untilTrigger" | "permanent" | "special";
   value?: RuntimeValueRef;
@@ -145,6 +154,7 @@ export interface EffectData {
   duration?: EffectDurationData;
   modifiers?: readonly ModifierData[];
   conditions?: readonly ConditionInteractionData[];
+  afflictions?: readonly AfflictionInteractionData[];
   area?: AreaEffectData;
   grantedActivities?: readonly string[];
   grantedEntities?: readonly EntityRef[];
@@ -159,6 +169,29 @@ export interface ActionReplacementData {
   count?: number;
   usage?: UsageLimitData;
   predicate?: PredicateData;
+}
+
+export interface AttackOverrideData {
+  target: "unarmedStrike" | "weaponAttack" | "specificActivity";
+  activityId?: string;
+  mode: "replace" | "addMode" | "modify";
+  ability?: AbilityId;
+  damage?: readonly { formula?: string; value?: RuntimeValueRef; damageType?: DamageTypeId; inheritDamageType?: boolean }[];
+  predicate?: PredicateData;
+}
+
+export interface InvocationSpec {
+  entity: EntityRef;
+  mode: "castSpell" | "useActivity" | "applyBenefits";
+  spellLevel?: number | RuntimeValueRef;
+  saveDc?: RuntimeValueRef;
+  attackBonus?: RuntimeValueRef;
+  ability?: AbilityId | { choice: readonly AbilityId[] };
+  ignoreComponents?: readonly ("v" | "s" | "m")[];
+  concentration?: "normal" | "notRequired" | "required";
+  durationOverride?: EffectDurationData;
+  targetOverride?: string;
+  destinationRule?: string;
 }
 
 export interface OutcomeDependentCostData {
