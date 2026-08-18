@@ -1,0 +1,12 @@
+{
+  "name": "@oraclerpg/importers",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": { ".": "./src/index.ts" },
+  "scripts": { "typecheck": "tsc --noEmit -p tsconfig.json", "build": "tsc -p tsconfig.json", "test": "node --test" },
+  "dependencies": {
+    "@oraclerpg/core": "workspace:*",
+    "@oraclerpg/schema": "workspace:*"
+  }
+}
