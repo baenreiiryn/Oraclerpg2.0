@@ -5,12 +5,20 @@ import type {
   ModifierData, PredicateData, RandomPropertyGrantData, StateVariableData, TriggerData
 } from "./mechanics.js";
 
-export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "loot" | "charm" | "upgrade";
+export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "pack" | "loot" | "charm" | "upgrade";
 export type RarityId = "common" | "uncommon" | "rare" | "veryRare" | "legendary" | "artifact" | "varies" | "unknown";
 
 export interface PriceValue {
   amount: number;
   currency: CurrencyId;
+}
+
+/** A quantity-aware reference used by containers, ammunition bundles, kits, and equipment packs. */
+export interface ItemStackRef {
+  item: EntityRef;
+  quantity: number;
+  unit?: string;
+  consumedWithParent?: boolean;
 }
 
 export interface PhysicalItemData {
@@ -80,12 +88,23 @@ export interface ToolData extends PhysicalItemData {
 
 export interface ContainerData extends PhysicalItemData {
   itemKind: "container";
+  containerType?: "quiver" | "pouch" | "sack" | "backpack" | "chest" | "case" | "vessel" | "other";
   capacity?: {
     weight?: number;
     items?: number;
     volume?: number;
+    volumeUnit?: "cubicFoot" | "pint" | "gallon" | "liter" | "other";
   };
-  contents?: readonly EntityRef[];
+  contents?: readonly ItemStackRef[];
+  restrictsTo?: readonly string[];
+}
+
+/** A purchased bundle whose contents become independent inventory items when unpacked. */
+export interface PackData extends PhysicalItemData {
+  itemKind: "pack";
+  packType?: "equipment" | "ammunition" | "toolKit" | "bundle" | "other";
+  contents: readonly ItemStackRef[];
+  unpackBehavior?: "addContents" | "replacePack";
 }
 
 export interface EquipmentData extends PhysicalItemData {
@@ -111,4 +130,4 @@ export interface UpgradeData extends PhysicalItemData {
 }
 
 export type CanonicalItemData =
-  | WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | EquipmentData | LootData | CharmData | UpgradeData;
+  | WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | PackData | EquipmentData | LootData | CharmData | UpgradeData;
