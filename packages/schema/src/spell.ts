@@ -11,7 +11,6 @@ export type SpellCastingTimeUnit = "action" | "bonusAction" | "reaction" | "minu
 export interface SpellCastingTimeData {
   amount: number;
   unit: SpellCastingTimeUnit;
-  /** Structured trigger text for reaction spells or other conditional casting times. */
   condition?: string;
   note?: string;
 }
@@ -32,7 +31,6 @@ export interface SpellDurationData {
   unit?: "round" | "minute" | "hour" | "day";
   concentration?: boolean;
   upTo?: boolean;
-  /** Canonical permanent-ending modes exposed by the SRD source. */
   ends?: readonly ("dispel" | "trigger")[];
 }
 
@@ -63,7 +61,6 @@ export interface SpellMechanicIndexData {
   grantsDamageImmunity?: readonly DamageTypeId[];
   grantsDamageVulnerability?: readonly DamageTypeId[];
   grantsConditionImmunity?: readonly ConditionId[];
-  /** Source-level geometric/search tags retained for discovery and auditing. */
   areaTags?: readonly string[];
   miscTags?: readonly string[];
 }
@@ -71,6 +68,7 @@ export interface SpellMechanicIndexData {
 export interface SpellData {
   level: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9;
   school: SpellSchoolId;
+  aliases?: readonly string[];
   ritual?: boolean;
   concentration?: boolean;
   spellcastingAbility?: AbilityId;
