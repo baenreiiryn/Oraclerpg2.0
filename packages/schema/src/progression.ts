@@ -1,4 +1,5 @@
 import type { ClassMechanicsData } from "./class-mechanics.js";
+import type { ClassRuleData } from "./class-rules.js";
 import type { AbilityId, ChoiceRef, EntityRef, SizeId, SourceText } from "./primitives.js";
 import type { AdvancementStep, GrantData } from "./feature.js";
 import type { ChoiceDependencyData, EquipmentBundleData, FeaturePatchData, PredicateData } from "./mechanics.js";
@@ -29,6 +30,7 @@ export interface ClassData {
   equipmentBundles?: readonly EquipmentBundleData[];
   spellcasting?: SpellcastingProgression;
   mechanics?: ClassMechanicsData;
+  classRules?: ClassRuleData;
   advancement: readonly AdvancementStep[];
   subclassLevel?: number;
   text?: SourceText;
@@ -37,6 +39,7 @@ export interface ClassData {
 export interface SubclassData {
   parentClass: EntityRef;
   mechanics?: ClassMechanicsData;
+  classRules?: ClassRuleData;
   advancement: readonly AdvancementStep[];
   text?: SourceText;
 }
