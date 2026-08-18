@@ -6,7 +6,6 @@ const REPORT="packages/content/data/srd-5.2/spells-enrichment-report.json";
 const DAMAGE=new Set(["acid","bludgeoning","cold","fire","force","lightning","necrotic","piercing","poison","psychic","radiant","slashing","thunder"]);
 const CONDITION=new Set(["blinded","charmed","deafened","frightened","grappled","incapacitated","invisible","paralyzed","petrified","poisoned","prone","restrained","stunned","unconscious"]);
 const SKILL={acr:"acrobatics",ani:"animalHandling",arc:"arcana",ath:"athletics",dec:"deception",his:"history",ins:"insight",inv:"investigation",itm:"intimidation",med:"medicine",nat:"nature",prc:"perception",prf:"performance",rel:"religion",slt:"sleightOfHand",ste:"stealth",sur:"survival"};
-const ABILITY={str:"str",dex:"dex",con:"con",int:"int",wis:"wis",cha:"cha"};
 const slug=v=>String(v).normalize("NFKD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
 const num=v=>{const n=Number(v);return Number.isFinite(n)?n:undefined;};
 const runtime=v=>{const n=num(v);return n!==undefined?{type:"constant",value:n}:{type:"formula",formula:String(v)};};
@@ -22,16 +21,18 @@ function formulaPart(part={}) {
 function targetOf(t) {
   if(!t)return undefined;
   const affects=t.affects??{}; const template=t.template;
-  const type=affects.type==="creature"?"creature":affects.type==="object"?"object":affects.type==="self"?"self":template?"point":"special";
+  const raw=affects.type;
+  const type=raw==="creature"||raw==="willing"?"creature":raw==="object"?"object":raw==="creatureOrObject"?"creatureOrObject":raw==="self"?"self":raw==="space"?"space":template?"point":"special";
   const out={type};
+  if(raw==="willing") out.restrictions=[{type:"custom",description:"Target must be willing."}];
   if(affects.count!=null){const n=num(affects.count);out.count=n!==undefined?n:{formula:String(affects.count)};}
   if(template){const shape=template.type??"special";out.area={shape,...(template.size!=null?{size:{value:num(template.size),unit:template.units==="mi"?"mile":"ft"}}:{}),...(template.width!=null?{width:{value:num(template.width),unit:"ft"}}:{}),...(template.height!=null?{height:{value:num(template.height),unit:"ft"}}:{})};}
   return out;
 }
 function rangeOf(r){if(!r)return undefined;const units=r.units==="mi"?"mile":r.units==="ft"?"ft":r.units==="touch"?"touch":r.units==="self"?"self":r.units==="sight"?"sight":r.units==="any"?"unlimited":"special";return {normal:{...(num(r.value)!==undefined?{value:num(r.value)}:{}),unit:units}};}
 function durationOf(d){if(!d)return undefined;const value=num(d.value);const unit=d.units==="round"?"round":d.units==="minute"?"minute":d.units==="hour"?"hour":d.units==="day"?"day":undefined;return unit?{type:"timed",...(value!==undefined?{value}:{}),unit}:{type:"special"};}
-function damageOf(d){if(!d?.parts)return undefined;return d.parts.map(p=>{const types=(p.types??[]).filter(x=>DAMAGE.has(x));const formula=formulaPart(p);return {...(formula?{formula}:{}),...(types.length===1?{damageType:types[0]}:{}),...(types.length>1?{damageTypes:types,chooseDamageType:true}:{}),...(p.scaling?{scaling:{type:"spellSlotLevel",...(p.scaling.formula?{formula:String(p.scaling.formula)}:{}),...(p.scaling.number!=null?{formula:`+${p.scaling.number} dice/slot`}:{})}}:{})};});}
-function healingOf(h){if(!h)return undefined;const formula=h.custom?.formula??(h.number&&h.denomination?`${h.number}d${h.denomination}${h.bonus?` + ${h.bonus}`:""}`:h.bonus??undefined);return formula?[{formula:String(formula),type:(h.types??[]).includes("temphp")?"temporaryHp":"healing",...(h.scaling?{scaling:{type:"spellSlotLevel",formula:String(h.scaling.formula??h.scaling.number??"")}}:{})}]:undefined;}
+function damageOf(d){if(!d?.parts)return undefined;return d.parts.map(p=>{const types=(p.types??[]).filter(x=>DAMAGE.has(x));const formula=formulaPart(p);return {...(formula?{formula}:{}),...(types.length===1?{damageType:types[0]}:{}),...(types.length>1?{damageTypes:types,chooseDamageType:true}:{}),...(p.scaling?.formula?{scaling:{type:"spellSlotLevel",formula:String(p.scaling.formula)}}:{})};});}
+function healingOf(h){if(!h)return undefined;const formula=h.custom?.formula??(h.number&&h.denomination?`${h.number}d${h.denomination}${h.bonus?` + ${h.bonus}`:""}`:h.bonus??undefined);return formula?[{formula:String(formula),type:(h.types??[]).includes("temphp")?"temporaryHp":"healing",...(h.scaling?.formula?{scaling:{type:"spellSlotLevel",formula:String(h.scaling.formula)}}:{})}]:undefined;}
 function transformData(activity,index){const profile=activity.profiles?.[0];const all=[];if(profile?.types?.length)all.push({type:"creatureType",creatureTypes:profile.types});if(profile?.cr!=null)all.push({type:"comparison",left:{type:"runtime",path:"candidate.challengeRating"},operator:"lte",right:{type:"constant",value:Number(profile.cr)}});if(profile?.sizes?.length)all.push({type:"size",sizes:profile.sizes.map(x=>x==="sm"?"small":x==="med"?"medium":x==="lg"?"large":x)});const keep=activity.settings?.keep??[];return {id:`transform-${index+1}`,source:{type:"entityChoice",entityType:"monster",...(all.length?{filter:all.length===1?all[0]:{type:"and",all}}:{})},statistics:{default:"replace",...(keep.length?{retain:keep}:{} )},creatureType:{mode:keep.includes("type")?"retain":"replace"},spellcasting:{allowed:keep.includes("spells")},...(activity.settings?.tempFormula?{tempHp:{type:"formula",formula:String(activity.settings.tempFormula)}}:{})};}
 function summonProfiles(profiles=[]){return profiles.map((p,i)=>({id:`profile-${i+1}`,...(p.name?{name:p.name}:{}),...(entityFromUuid(p.uuid)?{entity:entityFromUuid(p.uuid)}:{}),...(p.count!=null?{count:runtime(p.count)}:{}),...(p.level?.min!=null?{predicate:{type:"comparison",left:{type:"runtime",path:"spell.slotLevel"},operator:"gte",right:{type:"constant",value:Number(p.level.min)}}}:{})}));}
 function effectsFor(activity, foundrySpell, unhandled) {
@@ -66,7 +67,13 @@ function mapActivity(a,i,foundrySpell,unhandled){const type=a.type==="heal"?"hea
 
 const [compendium,foundry]=await Promise.all([JSON.parse(await fs.readFile(FILE,"utf8")),load(FOUNDRY)]);
 const enrich=new Map((foundry.spell??[]).filter(s=>s.source==="XPHB").map(s=>[s.name,s]));const unhandled=new Map();let enrichedSpells=0,addedActivities=0;
-for(const record of compendium.items){const f=enrich.get(record.name);if(!f?.activities?.length)continue;const mapped=f.activities.map((a,i)=>mapActivity(a,i,f,unhandled));record.data.activities=mapped;record.metadata.tags=[...new Set([...(record.metadata.tags??[]),"foundry-enriched"])];enrichedSpells++;addedActivities+=mapped.length;}
+for(const record of compendium.items){
+  const sourceName=String(record.provenance?.sourceKey??"").split("|")[0];
+  const candidates=[record.name,sourceName,...(record.data.aliases??[])];
+  const f=candidates.map(n=>enrich.get(n)).find(Boolean);
+  if(!f?.activities?.length)continue;
+  const mapped=f.activities.map((a,i)=>mapActivity(a,i,f,unhandled));record.data.activities=mapped;record.metadata.tags=[...new Set([...(record.metadata.tags??[]),"foundry-enriched"])];enrichedSpells++;addedActivities+=mapped.length;
+}
 await fs.writeFile(FILE,JSON.stringify(compendium,null,2)+"\n");
 const report={generatedAt:new Date().toISOString(),enrichedSpells,addedActivities,unhandledEffectOrActivityFields:Object.fromEntries([...unhandled.entries()].sort((a,b)=>b[1]-a[1]))};
 await fs.writeFile(REPORT,JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report,null,2));
