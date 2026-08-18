@@ -5,6 +5,8 @@ on:
     paths:
       - "scripts/*srd52-spell*.mjs"
       - "packages/schema/src/spell.ts"
+      - "packages/schema/src/activity.ts"
+      - "packages/schema/src/enums.ts"
       - ".github/workflows/probe-srd52-spells.yml"
   workflow_dispatch:
 
@@ -22,6 +24,8 @@ jobs:
         run: node scripts/probe-srd52-spell-foundry.mjs
       - name: Import SRD 5.2 spells
         run: node scripts/import-srd52-spells.mjs
+      - name: Enrich SRD 5.2 spell activities
+        run: node scripts/enrich-srd52-spells.mjs
       - name: Audit SRD 5.2 spell coverage
         run: node scripts/audit-srd52-spells.mjs
       - name: Upload spell audit
@@ -33,4 +37,5 @@ jobs:
             packages/content/data/srd-5.2/spell-probe
             packages/content/data/srd-5.2/spells.json
             packages/content/data/srd-5.2/spells-import-report.json
+            packages/content/data/srd-5.2/spells-enrichment-report.json
             packages/content/data/srd-5.2/spells-coverage-audit.json
