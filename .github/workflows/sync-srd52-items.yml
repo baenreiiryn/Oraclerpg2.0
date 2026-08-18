@@ -1,0 +1,34 @@
+name: Sync SRD 5.2 Items
+
+on:
+  push:
+    paths:
+      - "scripts/import-srd52-items.mjs"
+      - ".github/workflows/sync-srd52-items.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate canonical SRD item compendium
+        run: node scripts/import-srd52-items.mjs
+      - name: Commit generated compendium
+        run: |
+          if git diff --quiet -- packages/content/data/srd-5.2; then
+            echo "No content changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/content/data/srd-5.2
+          git commit -m "Populate SRD 5.2 item compendium"
+          git push
