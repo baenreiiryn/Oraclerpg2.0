@@ -92,7 +92,8 @@ export interface MovementPermissionData {
   subject: "self" | "target" | "transformedSelf";
   permissions: readonly (
     | "enterCreatureSpace" | "shareCreatureSpace" | "climbDifficultSurfaces" | "climbCeilings"
-    | "ignoreDifficultTerrain" | "ignoreOpportunityAttacks" | "hover" | "custom"
+    | "ignoreDifficultTerrain" | "ignoreOpportunityAttacks" | "hover"
+    | "moveOnVerticalSurface" | "moveAcrossLiquid" | "ignoreFallingDuringMovement" | "custom"
   )[];
   predicate?: PredicateData;
   duration?: { endTriggers: readonly TriggerData[] };
@@ -156,6 +157,97 @@ export interface EntityRelationshipPredicateData {
   predicate?: PredicateData;
 }
 
+export interface RollDiceCostData {
+  sourceRoll: "sneakAttack" | "damage" | "healing" | "resourcePool" | "custom";
+  sourceId?: string;
+  die?: "d4" | "d6" | "d8" | "d10" | "d12" | "d20";
+  dice: RuntimeValueRef;
+  timing: "beforeRoll" | "afterRollBeforeOutcome";
+  maximumEffects?: RuntimeValueRef;
+  combineCosts?: boolean;
+  predicate?: PredicateData;
+}
+
+export interface EffectStackingPolicyData {
+  key: string;
+  policy: "stack" | "noStack" | "highest" | "lowest" | "replace" | "chooseOne";
+  comparisonValue?: RuntimeValueRef;
+  chooser?: "recipient" | "source" | "gm" | "automatic";
+  predicate?: PredicateData;
+}
+
+export interface SelectionPolicyData {
+  collectionId: string;
+  repeatable?: boolean;
+  uniqueBy?: "entity" | "option" | "tag" | "source" | "custom";
+  replacement?: {
+    trigger: TriggerData;
+    count: RuntimeValueRef;
+    blockedIfReferencedBy?: readonly string[];
+    predicate?: PredicateData;
+  };
+  prerequisiteDependencies?: readonly {
+    selectedEntityId: string;
+    requiresEntityIds?: readonly string[];
+    blocksReplacementWhileRequired?: boolean;
+  }[];
+}
+
+export interface AttunementCapacityData {
+  target: "self";
+  maximum: RuntimeValueRef;
+  predicate?: PredicateData;
+  progression?: readonly { level: number; maximum: RuntimeValueRef }[];
+}
+
+export interface CreatedEntityCollectionPolicyData {
+  collectionId: string;
+  entityType: string;
+  maximumActive: RuntimeValueRef;
+  requireDistinctSourceChoices?: boolean;
+  overflow: "reject" | "removeOldest" | "removeNewest" | "chooseExisting";
+  onSourceSelectionReplaced?: "removeCreatedEntity" | "keepUntilExpiry" | "custom";
+  onEntityRemoved?: {
+    preserveContainedEntities?: boolean;
+    containedEntityDestination?: "sameSpace" | "ownerSpace" | "custom";
+  };
+  predicate?: PredicateData;
+}
+
+export interface EmbeddedEntityActivityData {
+  hostPredicate: PredicateData;
+  embeddedEntity: EntityRef | { sourceCollectionId: string; filter?: PredicateData };
+  grantedTo: "holder" | "wearer" | "attunedCreature" | "owner" | "custom";
+  activation: "magicAction" | "action" | "bonusAction" | "reaction" | "special";
+  uses?: RuntimeValueRef;
+  perCreatureCooldown?: TriggerData;
+  usesSourceAbility?: boolean;
+  sourceAbility?: "ownerSpellcasting" | "creatorSpellcasting" | "embeddedEntity" | "custom";
+  concentrationByUser?: boolean;
+  expiresOn?: readonly TriggerData[];
+}
+
+export interface InformationRevealData {
+  trigger: TriggerData;
+  targetPredicate?: PredicateData;
+  fields: readonly (
+    | "damageImmunities" | "damageResistances" | "damageVulnerabilities" | "conditionImmunities"
+    | "creatureType" | "armorClass" | "hitPoints" | "savingThrows" | "senses" | "custom"
+  )[];
+  revealMode: "exact" | "presenceOnly" | "comparison" | "custom";
+  duration?: { endTriggers?: readonly TriggerData[] };
+}
+
+export interface EntityAssociationStateData {
+  collectionId: string;
+  associationId: string;
+  associateOn: TriggerData;
+  sourceEntity: "triggerSource" | "target" | "creator" | "custom";
+  cardinality: "oneToOne" | "manyToOne" | "oneToMany";
+  preservedWhileEntityExists?: boolean;
+  clearOn?: readonly TriggerData[];
+}
+
 export interface ClassRuleData {
   spellActionReplacements?: readonly SpellActionReplacementData[];
   spellChoiceInvocations?: readonly SpellChoiceInvocationData[];
@@ -171,4 +263,12 @@ export interface ClassRuleData {
   projectedEffects?: readonly ProjectedEffectData[];
   chainEffects?: readonly ChainEffectData[];
   relationshipPredicates?: readonly EntityRelationshipPredicateData[];
+  rollDiceCosts?: readonly RollDiceCostData[];
+  effectStackingPolicies?: readonly EffectStackingPolicyData[];
+  selectionPolicies?: readonly SelectionPolicyData[];
+  attunementCapacity?: readonly AttunementCapacityData[];
+  createdEntityCollections?: readonly CreatedEntityCollectionPolicyData[];
+  embeddedEntityActivities?: readonly EmbeddedEntityActivityData[];
+  informationReveals?: readonly InformationRevealData[];
+  entityAssociations?: readonly EntityAssociationStateData[];
 }
