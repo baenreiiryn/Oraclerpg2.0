@@ -1,5 +1,5 @@
 import {
-  ABILITY_IDS, ACTIVITY_KIND_IDS, CONDITION_IDS, CONTENT_TYPE_IDS, CREATURE_TYPE_IDS,
+  ABILITY_IDS, ACTIVITY_KIND_IDS, CONTENT_TYPE_IDS, CREATURE_TYPE_IDS,
   DAMAGE_TYPE_IDS, FEATURE_KIND_IDS, ITEM_KIND_IDS, MOVEMENT_TYPE_IDS, SIZE_IDS
 } from "./enums.js";
 
@@ -48,7 +48,7 @@ function validateRuntimeValue(value: unknown, path: string, issues: ValidationIs
       if (!isNonEmptyString(value.stateId)) issue(issues, `${path}.stateId`, "required", "state runtime value requires stateId");
       break;
     case "runtime":
-      if (!isNonEmptyString(value.path)) issue(issues, `${path}.path`, "required", "runtime reference requires a typed path string");
+      if (!isNonEmptyString(value.path)) issue(issues, `${path}.path`, "required", "runtime reference requires a path");
       break;
   }
 }
@@ -78,20 +78,23 @@ function validateClassMechanics(value: unknown, path: string, issues: Validation
     value.spellCollections.forEach((collection, index) => {
       if (!isObject(collection)) return issue(issues, `${path}.spellCollections[${index}]`, "type", "Spell collection must be an object");
       if (!isNonEmptyString(collection.id)) issue(issues, `${path}.spellCollections[${index}].id`, "required", "Spell collection id is required");
-      if (!isNonEmptyString(collection.owner)) issue(issues, `${path}.spellCollections[${index}].owner`, "required", "Spell collection owner is required");
+      if (!isNonEmptyString(collection.kind)) issue(issues, `${path}.spellCollections[${index}].kind`, "required", "Spell collection kind is required");
     });
   }
   if (Array.isArray(value.transformations)) {
     value.transformations.forEach((transformation, index) => {
-      if (!isObject(transformation) || !isNonEmptyString(transformation.id)) issue(issues, `${path}.transformations[${index}].id`, "required", "Transformation id is required");
-      if (isObject(transformation?.source) && transformation.source.type === "fixedEntities" && Array.isArray(transformation.source.entities)) {
-        transformation.source.entities.forEach((ref, refIndex) => validateEntityRef(ref, `${path}.transformations[${index}].source.entities[${refIndex}]`, issues));
+      if (!isObject(transformation)) return issue(issues, `${path}.transformations[${index}]`, "type", "Transformation must be an object");
+      if (!isNonEmptyString(transformation.id)) issue(issues, `${path}.transformations[${index}].id`, "required", "Transformation id is required");
+      const source = transformation.source;
+      if (isObject(source) && source.type === "fixedEntities" && Array.isArray(source.entities)) {
+        source.entities.forEach((ref, refIndex) => validateEntityRef(ref, `${path}.transformations[${index}].source.entities[${refIndex}]`, issues));
       }
     });
   }
   if (Array.isArray(value.storedRollPools)) {
     value.storedRollPools.forEach((pool, index) => {
-      if (!isObject(pool) || !isNonEmptyString(pool.id)) issue(issues, `${path}.storedRollPools[${index}].id`, "required", "Stored roll pool id is required");
+      if (!isObject(pool)) return issue(issues, `${path}.storedRollPools[${index}]`, "type", "Stored roll pool must be an object");
+      if (!isNonEmptyString(pool.id)) issue(issues, `${path}.storedRollPools[${index}].id`, "required", "Stored roll pool id is required");
     });
   }
 }
