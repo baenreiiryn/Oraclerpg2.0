@@ -4,6 +4,10 @@
   "private": true,
   "type": "module",
   "exports": { ".": "./src/index.ts" },
-  "scripts": { "typecheck": "tsc --noEmit -p tsconfig.json", "build": "tsc -p tsconfig.json", "test": "node --test" },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "test": "pnpm run build && node --test test/compatibility.test.mjs"
+  },
   "dependencies": { "@oraclerpg/core": "workspace:*" }
 }
