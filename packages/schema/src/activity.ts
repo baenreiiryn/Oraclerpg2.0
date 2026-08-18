@@ -106,6 +106,9 @@ export interface ResourceCost {
   amount: number | FormulaValue | RuntimeValueRef;
   resourceId?: string;
   level?: number;
+  /** For Hit Die costs where the activity is specialized by die denomination. */
+  dieSize?: 4 | 6 | 8 | 10 | 12;
+  scaling?: ScalingRule;
 }
 
 export interface ScalingRule {
