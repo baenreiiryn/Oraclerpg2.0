@@ -121,6 +121,7 @@ export const druidFixture = {
           entityType: "monster",
           knownCollectionId: "wild-shape-known-forms",
           filter: {
+            type: "and",
             all: [
               { type: "creatureType", creatureTypes: ["beast"] },
               { type: "custom", description: "CR and fly-speed limits derive from Druid level" }
