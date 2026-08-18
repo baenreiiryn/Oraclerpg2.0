@@ -53,15 +53,17 @@ function validateRuntimeValue(value: unknown, path: string, issues: ValidationIs
   }
 }
 
+function validatePredicate(value: unknown, path: string, issues: ValidationIssue[]): void {
+  if (!isObject(value) || !isNonEmptyString(value.type)) issue(issues, path, "predicate", "Predicate requires a type");
+}
+
 function validateActivity(value: unknown, path: string, issues: ValidationIssue[]): void {
   if (!isObject(value)) return issue(issues, path, "type", "Expected activity object");
   if (!isNonEmptyString(value.id)) issue(issues, `${path}.id`, "required", "Activity id is required");
   if (!isNonEmptyString(value.name)) issue(issues, `${path}.name`, "required", "Activity name is required");
   if (!inEnum(value.kind, ACTIVITY_KIND_IDS)) issue(issues, `${path}.kind`, "enum", "Unknown activity kind");
   if (isObject(value.target) && Array.isArray(value.target.restrictions)) {
-    value.target.restrictions.forEach((predicate, index) => {
-      if (!isObject(predicate) || !isNonEmptyString(predicate.type)) issue(issues, `${path}.target.restrictions[${index}]`, "predicate", "Predicate requires a type");
-    });
+    value.target.restrictions.forEach((predicate, index) => validatePredicate(predicate, `${path}.target.restrictions[${index}]`, issues));
   }
   if (Array.isArray(value.damage)) {
     value.damage.forEach((part, index) => {
@@ -99,6 +101,72 @@ function validateClassMechanics(value: unknown, path: string, issues: Validation
   }
 }
 
+function validateClassRules(value: unknown, path: string, issues: ValidationIssue[]): void {
+  if (!isObject(value)) return issue(issues, path, "type", "Expected class rules object");
+
+  if (Array.isArray(value.rollDiceCosts)) value.rollDiceCosts.forEach((entry, index) => {
+    const p = `${path}.rollDiceCosts[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Roll dice cost must be an object");
+    if (!isNonEmptyString(entry.sourceRoll)) issue(issues, `${p}.sourceRoll`, "required", "sourceRoll is required");
+    validateRuntimeValue(entry.dice, `${p}.dice`, issues);
+  });
+
+  if (Array.isArray(value.effectStackingPolicies)) value.effectStackingPolicies.forEach((entry, index) => {
+    const p = `${path}.effectStackingPolicies[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Stacking policy must be an object");
+    if (!isNonEmptyString(entry.key)) issue(issues, `${p}.key`, "required", "stacking key is required");
+    if (!["stack","noStack","highest","lowest","replace","chooseOne"].includes(String(entry.policy))) issue(issues, `${p}.policy`, "enum", "Unknown stacking policy");
+  });
+
+  if (Array.isArray(value.selectionPolicies)) value.selectionPolicies.forEach((entry, index) => {
+    const p = `${path}.selectionPolicies[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Selection policy must be an object");
+    if (!isNonEmptyString(entry.collectionId)) issue(issues, `${p}.collectionId`, "required", "collectionId is required");
+  });
+
+  if (Array.isArray(value.attunementCapacity)) value.attunementCapacity.forEach((entry, index) => {
+    const p = `${path}.attunementCapacity[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Attunement capacity must be an object");
+    validateRuntimeValue(entry.maximum, `${p}.maximum`, issues);
+  });
+
+  if (Array.isArray(value.createdEntityCollections)) value.createdEntityCollections.forEach((entry, index) => {
+    const p = `${path}.createdEntityCollections[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Created entity collection policy must be an object");
+    if (!isNonEmptyString(entry.collectionId)) issue(issues, `${p}.collectionId`, "required", "collectionId is required");
+    if (!isNonEmptyString(entry.entityType)) issue(issues, `${p}.entityType`, "required", "entityType is required");
+    validateRuntimeValue(entry.maximumActive, `${p}.maximumActive`, issues);
+  });
+
+  if (Array.isArray(value.embeddedEntityActivities)) value.embeddedEntityActivities.forEach((entry, index) => {
+    const p = `${path}.embeddedEntityActivities[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Embedded entity activity must be an object");
+    validatePredicate(entry.hostPredicate, `${p}.hostPredicate`, issues);
+    if (!isNonEmptyString(entry.grantedTo)) issue(issues, `${p}.grantedTo`, "required", "grantedTo is required");
+  });
+
+  if (Array.isArray(value.informationReveals)) value.informationReveals.forEach((entry, index) => {
+    const p = `${path}.informationReveals[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Information reveal must be an object");
+    if (!Array.isArray(entry.fields) || entry.fields.length === 0) issue(issues, `${p}.fields`, "required", "At least one revealed field is required");
+    if (!isObject(entry.trigger)) issue(issues, `${p}.trigger`, "required", "trigger is required");
+  });
+
+  if (Array.isArray(value.movementPermissions)) value.movementPermissions.forEach((entry, index) => {
+    const p = `${path}.movementPermissions[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Movement permission must be an object");
+    if (!Array.isArray(entry.permissions) || entry.permissions.length === 0) issue(issues, `${p}.permissions`, "required", "Movement permissions cannot be empty");
+  });
+
+  if (Array.isArray(value.entityAssociations)) value.entityAssociations.forEach((entry, index) => {
+    const p = `${path}.entityAssociations[${index}]`;
+    if (!isObject(entry)) return issue(issues, p, "type", "Entity association must be an object");
+    if (!isNonEmptyString(entry.collectionId)) issue(issues, `${p}.collectionId`, "required", "collectionId is required");
+    if (!isNonEmptyString(entry.associationId)) issue(issues, `${p}.associationId`, "required", "associationId is required");
+    if (!isObject(entry.associateOn)) issue(issues, `${p}.associateOn`, "required", "associateOn trigger is required");
+  });
+}
+
 export function validateCanonicalContent(type: unknown, data: unknown): ValidationResult {
   const issues: ValidationIssue[] = [];
   if (!inEnum(type, CONTENT_TYPE_IDS)) {
@@ -130,12 +198,14 @@ export function validateCanonicalContent(type: unknown, data: unknown): Validati
       if (!inEnum(data.featureKind, FEATURE_KIND_IDS)) issue(issues, "data.featureKind", "enum", "Unknown feature kind");
       if (Array.isArray(data.activities)) data.activities.forEach((activity, index) => validateActivity(activity, `data.activities[${index}]`, issues));
       if (data.classMechanics !== undefined) validateClassMechanics(data.classMechanics, "data.classMechanics", issues);
+      if (data.classRules !== undefined) validateClassRules(data.classRules, "data.classRules", issues);
       break;
     }
     case "class":
     case "subclass": {
       if (!Array.isArray(data.advancement)) issue(issues, "data.advancement", "required", `${type} advancement must be an array`);
       if (data.mechanics !== undefined) validateClassMechanics(data.mechanics, "data.mechanics", issues);
+      if (data.classRules !== undefined) validateClassRules(data.classRules, "data.classRules", issues);
       break;
     }
     case "species": {
