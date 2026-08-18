@@ -86,6 +86,17 @@ export interface ToolData extends PhysicalItemData {
   ability?: string;
 }
 
+/** One independent capacity rule/compartment of a container. */
+export interface ContainerCompartmentData {
+  id: string;
+  label?: string;
+  maxItems?: number;
+  maxWeight?: number;
+  acceptedItems?: readonly EntityRef[];
+  acceptedTags?: readonly string[];
+  description?: string;
+}
+
 export interface ContainerData extends PhysicalItemData {
   itemKind: "container";
   containerType?: "quiver" | "pouch" | "sack" | "backpack" | "chest" | "case" | "vessel" | "other";
@@ -95,6 +106,7 @@ export interface ContainerData extends PhysicalItemData {
     volume?: number;
     volumeUnit?: "cubicFoot" | "pint" | "gallon" | "liter" | "other";
   };
+  compartments?: readonly ContainerCompartmentData[];
   contents?: readonly ItemStackRef[];
   restrictsTo?: readonly string[];
 }
