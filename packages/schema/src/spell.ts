@@ -18,10 +18,14 @@ export interface SpellCastingTimeData {
 export type SpellRangeType = "point" | "cone" | "cube" | "emanation" | "line" | "sphere";
 export type SpellRangeDistanceType = "self" | "touch" | "feet" | "miles" | "sight" | "unlimited";
 export interface SpellRangeData {
+  /** Shape/origin encoding from the rules source. Area geometry belongs here, while executable targeting lives on Activities. */
   type: SpellRangeType;
+  /** Explicit origin prevents self-centered cones/emanations/lines from being confused with a distant point. */
+  origin?: "self" | "point" | "target" | "special";
   distance: {
     type: SpellRangeDistanceType;
     amount?: number;
+    scaling?: ScalingRule;
   };
 }
 
@@ -32,6 +36,8 @@ export interface SpellDurationData {
   concentration?: boolean;
   upTo?: boolean;
   ends?: readonly ("dispel" | "trigger")[];
+  /** Duration changes when a higher-level slot is used. */
+  scaling?: ScalingRule;
 }
 
 export interface SpellMaterialCostData {
