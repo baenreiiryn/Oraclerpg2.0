@@ -15,68 +15,36 @@ The canonical schema now includes the shared mechanics discovered by item, monst
 
 ## Implemented class/subclass mechanics layer
 
-The class-oriented coverage discovered in the Wizard, Barbarian, Bard, Cleric and Druid audits has now been implemented through `class-mechanics.ts` and `class-rules.ts`.
+The class-oriented coverage discovered in the Wizard, Barbarian, Bard, Cleric and Druid audits has been implemented through `class-mechanics.ts` and `class-rules.ts`.
 
-Implemented structures include:
+Implemented structures include spell collections/preparation/slot pools, stored rolls, transferable dice/resources, wards/damage interception, spell modifications, transformations, created/proxy entities, containment, runtime choices, resource allocation, generated actions, retargeting, cost modification, behavior constraints, object/age/attunement modification, chain effects and persistent entity collections.
 
-- SpellCollectionData, SpellPreparationRuleData and SpellSlotPoolData.
-- SpellFilterData, SpellModificationData, CastOutcomeCostData and SpellChoiceInvocationData.
-- SpellActionReplacementData for replacing one attack with a qualifying spell/cantrip.
-- EntityCollectionData for persistent non-spell collections such as known Wild Shape forms.
-- ResourceAllocationData, ResourceDicePoolData, TransferableResourceData and ResourceMutationData.
-- StoredRollPoolData, RollReplacementData and RerollRuleData.
-- DamageInterceptionData, DamageMitigationData, ResolutionOverrideData and DiceResolutionModifierData.
-- RollTableOutcomeData and DistributedPoolData.
-- TransformationData and transformation form patches.
-- CreatedEntityData, ProxyOriginData, EffectAnchorData and ProjectedEffectData.
-- ContainmentData, ConditionLevelData, CoverageData and MovementPermissionData.
-- TeleportExchangeData, RuntimeChoiceStateData, GeneratedActionData and TargetRetargetData.
-- BehaviorConstraintData and EntityRelationshipPredicateData.
-- CostModificationData, including material/consumed-component handling and chance-to-retain rules.
-- ObjectTransformationData, AgeModificationData and AttunementModificationData.
-- ChainEffectData for secondary/chained targets and effects.
+## Validation foundation implemented
 
-## Capabilities represented through combinations of primitives
+The schema package now also includes:
 
-The following do not require one-off schemas:
-
-- conditional roll ability override: ModifierData + PredicateData;
-- spellcasting/concentration prohibitions: ModifierData/EffectData suppression or prevention;
-- dynamic save DCs: RuntimeValueRef + StateVariableData;
-- selectable effects and level progression: choices + FeaturePatchData;
-- inherited damage types and source-context values: runtime references;
-- repeat saves: ConditionInteractionData.repeatSave;
-- target-scoped lockouts: state + target-scoped usage limits;
-- post-roll reactions: structured triggers + roll modifiers/rerolls;
-- relative movement values: RuntimeValueRef(runtime path);
-- autonomous item behavior and timed obligations: sentience + triggers/state;
-- Wild Shape/Titan-style partial stat replacement: TransformationData + EntityCollectionData + form patches;
-- spellbook/prepared/always-prepared distinctions: SpellCollectionData + SpellPreparationRuleData;
-- wards and projected wards: created/resource-backed entities + DamageInterceptionData;
-- Portent-style stored dice: StoredRollPoolData + RollReplacementData;
-- Bardic Inspiration-style transferable dice: ResourceDicePoolData + TransferableResourceData;
-- dynamic spell selection such as Divine Intervention/Natural Recovery: SpellChoiceInvocationData + SpellFilterData;
-- moving zones and proxy spell origins: EffectAnchorData + ProxyOriginData;
+- canonical enum registries in `enums.ts`;
+- stricter primitive aliases backed by those registries;
+- typed JSON/query values instead of arbitrary `unknown` payloads in core containers;
+- runtime validation through `validateCanonicalContent` and `assertCanonicalContent`;
+- typed compatibility fixtures for Wizard, Bard, Cleric, Druid and Abjurer;
+- executable positive and negative regression tests;
+- GitHub Actions CI for typecheck and tests;
+- schema migration/versioning contracts in `migration.ts`.
 
 ## Current compatibility status
 
-The supplied regression probes for items, monsters, spells, species, backgrounds and the five class files are representable by the current schema without a raw source-payload escape hatch.
+The supplied regression probes for items, monsters, spells, species, backgrounds and the previously audited class files are representable by the current schema without a raw source-payload escape hatch.
 
-See:
-
-- `docs/COMPATIBILITY-REGRESSION-2026-08-18.md`
-- `docs/CLASS-COMPATIBILITY-REGRESSION-2026-08-18.md`
+The next class-file round should be treated as a stress test against both compile-time contracts and runtime validation. New source files remain probes only; they are not imported into the compendium during this phase.
 
 ## Remaining engineering work
 
-Representation coverage is no longer the main blocker for the tested probes. Before source adapters/importers are implemented, the next work is:
-
-1. replace permissive strings, `unknown` values and generic runtime paths with stricter domain enums/typed references where possible;
-2. implement runtime validators for canonical schemas;
-3. create executable TypeScript compatibility fixtures from the audited mechanics;
-4. add schema typecheck/tests to CI;
-5. define migrations/versioning before persisted compendium content exists;
-6. only after those contracts are stable, implement source adapters/importers.
+1. Continue replacing permissive free-form strings and runtime paths with domain-specific enums/reference types when new probes prove the domain is stable enough.
+2. Expand validators deeper into every nested mechanics structure as coverage grows.
+3. Add more typed fixtures for every newly discovered edge case.
+4. Keep all schema changes migration-aware even before persisted content exists.
+5. Implement source adapters/importers only after the compatibility surface is stable.
 
 ## Audit policy
 
