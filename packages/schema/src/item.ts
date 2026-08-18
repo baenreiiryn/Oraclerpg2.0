@@ -1,7 +1,11 @@
 import type { ActivityData, UsesSpec } from "./activity.js";
 import type { CurrencyId, DamageTypeId, EntityRef, FormulaValue, SourceText } from "./primitives.js";
+import type {
+  ActionReplacementData, EffectData, EntityBenefitGrantData, ItemSentienceData, ManualAdjudicationData,
+  ModifierData, PredicateData, RandomPropertyGrantData, StateVariableData, TriggerData
+} from "./mechanics.js";
 
-export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "loot";
+export type ItemKind = "weapon" | "armor" | "equipment" | "consumable" | "tool" | "container" | "loot" | "charm" | "upgrade";
 export type RarityId = "common" | "uncommon" | "rare" | "veryRare" | "legendary" | "artifact" | "varies" | "unknown";
 
 export interface PriceValue {
@@ -21,6 +25,17 @@ export interface PhysicalItemData {
   uses?: UsesSpec;
   activities?: readonly ActivityData[];
   grantedFeatures?: readonly EntityRef[];
+  benefitGrants?: readonly EntityBenefitGrantData[];
+  effects?: readonly EffectData[];
+  modifiers?: readonly ModifierData[];
+  states?: readonly StateVariableData[];
+  triggers?: readonly TriggerData[];
+  actionReplacements?: readonly ActionReplacementData[];
+  randomProperties?: readonly RandomPropertyGrantData[];
+  sentience?: ItemSentienceData;
+  manualAdjudication?: ManualAdjudicationData;
+  consumeSelf?: boolean;
+  destruction?: SourceText;
   text?: SourceText;
 }
 
@@ -83,4 +98,17 @@ export interface LootData extends PhysicalItemData {
   lootType?: string;
 }
 
-export type CanonicalItemData = WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | EquipmentData | LootData;
+export interface CharmData extends PhysicalItemData {
+  itemKind: "charm";
+  lifetime?: { value: number; unit: "hour" | "day" };
+  choices?: readonly string[];
+}
+
+export interface UpgradeData extends PhysicalItemData {
+  itemKind: "upgrade";
+  appliesTo?: readonly string[];
+  installationPredicate?: PredicateData;
+}
+
+export type CanonicalItemData =
+  | WeaponData | ArmorData | ConsumableData | ToolData | ContainerData | EquipmentData | LootData | CharmData | UpgradeData;
