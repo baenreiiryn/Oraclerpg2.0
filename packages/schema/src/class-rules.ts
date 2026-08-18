@@ -12,6 +12,38 @@ export interface SpellActionReplacementData {
   predicate?: PredicateData;
 }
 
+export interface SpellChoiceInvocationData {
+  trigger: TriggerData;
+  spellFilter: SpellFilterData;
+  sourceCollectionId?: string;
+  castAt: "normal" | "lowestLevel" | "fixedLevel" | "custom";
+  fixedLevel?: number;
+  slotCost: "normal" | "none" | "custom";
+  ignoreMaterialComponents?: boolean;
+  ignoreConsumedComponents?: boolean;
+  usageResourceId?: string;
+  predicate?: PredicateData;
+}
+
+export interface EntityCollectionData {
+  id: string;
+  entityTypes: readonly string[];
+  capacity: RuntimeValueRef;
+  filter?: PredicateData;
+  initial?: readonly EntityRef[];
+  chooseOn?: TriggerData;
+  replace?: {
+    trigger: TriggerData;
+    count: RuntimeValueRef;
+    filter?: PredicateData;
+  };
+  progression?: readonly {
+    level: number;
+    capacity?: RuntimeValueRef;
+    filter?: PredicateData;
+  }[];
+}
+
 export interface ResourceMutationData {
   resourceId: string;
   trigger: TriggerData;
@@ -126,6 +158,8 @@ export interface EntityRelationshipPredicateData {
 
 export interface ClassRuleData {
   spellActionReplacements?: readonly SpellActionReplacementData[];
+  spellChoiceInvocations?: readonly SpellChoiceInvocationData[];
+  entityCollections?: readonly EntityCollectionData[];
   resourceMutations?: readonly ResourceMutationData[];
   behaviorConstraints?: readonly BehaviorConstraintData[];
   effectAnchors?: readonly EffectAnchorData[];
