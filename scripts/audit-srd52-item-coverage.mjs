@@ -46,6 +46,7 @@ for (const source of upstream) {
   if (!record) { issues.push({ name: source.name, source: source.source, field: "record", detail: "Missing Oracle record" }); continue; }
   const data = record.data;
 
+  if (source.weight != null) mark("weight", data.weight?.value === Number(source.weight) && data.weight?.unit === "lb", source, "Physical weight value/unit missing or incorrect");
   if ((source.rarity && source.rarity !== "none") || source.wondrous || source.reqAttune || source.staff || source.rod || source.potion || source.scroll)
     mark("magical", data.magical === true, source, "Magical item is not marked magical");
   if (source.curse === true) mark("curse", data.cursed === true, source, "Curse marker missing");
@@ -70,6 +71,10 @@ for (const source of upstream) {
 
   if (source.containerCapacity) {
     mark("containerCapacity", (data.itemKind === "container" && !!data.capacity) || Array.isArray(data.compartments), source, "Container capacity missing");
+    if (source.containerCapacity.weight != null) {
+      const raw = Array.isArray(source.containerCapacity.weight) ? source.containerCapacity.weight[0] : source.containerCapacity.weight;
+      mark("containerWeightUnit", data.capacity?.weight?.value === Number(raw) && data.capacity?.weight?.unit === "lb", source, "Container weight capacity lacks explicit lb unit");
+    }
     if (source.containerCapacity.volume != null) mark("containerVolumeUnit", data.capacity?.volumeUnit === "cubicFoot", source, "Container volume lacks unit");
     if (source.containerCapacity.weightless === true) mark("containerWeightless", data.capacity?.contentsWeightless === true, source, "Weightless container rule missing");
     if (Array.isArray(source.containerCapacity.item)) {
