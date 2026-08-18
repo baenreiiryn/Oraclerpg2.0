@@ -1,0 +1,1454 @@
+{
+  "ability": [
+    {
+      "name": "Amulet of Health",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "con": 19
+        }
+      }
+    },
+    {
+      "name": "Belt of Cloud Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 27
+        }
+      }
+    },
+    {
+      "name": "Belt of Dwarvenkind",
+      "source": "XDMG",
+      "value": {
+        "con": 2
+      }
+    },
+    {
+      "name": "Belt of Fire Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 25
+        }
+      }
+    },
+    {
+      "name": "Belt of Frost Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 23
+        }
+      }
+    },
+    {
+      "name": "Belt of Hill Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 21
+        }
+      }
+    },
+    {
+      "name": "Belt of Stone Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 23
+        }
+      }
+    },
+    {
+      "name": "Belt of Storm Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 29
+        }
+      }
+    },
+    {
+      "name": "Gauntlets of Ogre Power",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 19
+        }
+      }
+    },
+    {
+      "name": "Headband of Intellect",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "int": 19
+        }
+      }
+    },
+    {
+      "name": "Ioun Stone, Agility",
+      "source": "XDMG",
+      "value": {
+        "dex": 2
+      }
+    },
+    {
+      "name": "Ioun Stone, Fortitude",
+      "source": "XDMG",
+      "value": {
+        "con": 2
+      }
+    },
+    {
+      "name": "Ioun Stone, Insight",
+      "source": "XDMG",
+      "value": {
+        "wis": 2
+      }
+    },
+    {
+      "name": "Ioun Stone, Intellect",
+      "source": "XDMG",
+      "value": {
+        "int": 2
+      }
+    },
+    {
+      "name": "Ioun Stone, Leadership",
+      "source": "XDMG",
+      "value": {
+        "cha": 2
+      }
+    },
+    {
+      "name": "Ioun Stone, Strength",
+      "source": "XDMG",
+      "value": {
+        "str": 2
+      }
+    },
+    {
+      "name": "Manual of Bodily Health",
+      "source": "XDMG",
+      "value": {
+        "con": 2
+      }
+    },
+    {
+      "name": "Manual of Gainful Exercise",
+      "source": "XDMG",
+      "value": {
+        "str": 2
+      }
+    },
+    {
+      "name": "Manual of Quickness of Action",
+      "source": "XDMG",
+      "value": {
+        "dex": 2
+      }
+    },
+    {
+      "name": "Potion of Cloud Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 27
+        }
+      }
+    },
+    {
+      "name": "Potion of Fire Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 25
+        }
+      }
+    },
+    {
+      "name": "Potion of Frost Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 23
+        }
+      }
+    },
+    {
+      "name": "Potion of Hill Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 21
+        }
+      }
+    },
+    {
+      "name": "Potion of Stone Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 23
+        }
+      }
+    },
+    {
+      "name": "Potion of Storm Giant Strength",
+      "source": "XDMG",
+      "value": {
+        "static": {
+          "str": 29
+        }
+      }
+    },
+    {
+      "name": "Tome of Clear Thought",
+      "source": "XDMG",
+      "value": {
+        "int": 2
+      }
+    },
+    {
+      "name": "Tome of Leadership and Influence",
+      "source": "XDMG",
+      "value": {
+        "cha": 2
+      }
+    },
+    {
+      "name": "Tome of Understanding",
+      "source": "XDMG",
+      "value": {
+        "wis": 2
+      }
+    }
+  ],
+  "resist": [
+    {
+      "name": "Belt of Dwarvenkind",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Black Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "acid"
+      ]
+    },
+    {
+      "name": "Blue Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "lightning"
+      ]
+    },
+    {
+      "name": "Boots of the Winterlands",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "Brass Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Bronze Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "lightning"
+      ]
+    },
+    {
+      "name": "Brooch of Shielding",
+      "source": "XDMG",
+      "value": [
+        "force"
+      ]
+    },
+    {
+      "name": "Cloak of Arachnida",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Copper Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "acid"
+      ]
+    },
+    {
+      "name": "Gold Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Green Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Helm of Brilliance",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Potion of Acid Resistance",
+      "source": "XDMG",
+      "value": [
+        "acid"
+      ]
+    },
+    {
+      "name": "Potion of Cold Resistance",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "Potion of Fire Resistance",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Potion of Force Resistance",
+      "source": "XDMG",
+      "value": [
+        "force"
+      ]
+    },
+    {
+      "name": "Potion of Invulnerability",
+      "source": "XDMG",
+      "value": [
+        "acid",
+        "bludgeoning",
+        "cold",
+        "fire",
+        "force",
+        "lightning",
+        "necrotic",
+        "piercing",
+        "poison",
+        "psychic",
+        "radiant",
+        "slashing",
+        "thunder"
+      ]
+    },
+    {
+      "name": "Potion of Lightning Resistance",
+      "source": "XDMG",
+      "value": [
+        "lightning"
+      ]
+    },
+    {
+      "name": "Potion of Necrotic Resistance",
+      "source": "XDMG",
+      "value": [
+        "necrotic"
+      ]
+    },
+    {
+      "name": "Potion of Poison Resistance",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Potion of Psychic Resistance",
+      "source": "XDMG",
+      "value": [
+        "psychic"
+      ]
+    },
+    {
+      "name": "Potion of Radiant Resistance",
+      "source": "XDMG",
+      "value": [
+        "radiant"
+      ]
+    },
+    {
+      "name": "Potion of Thunder Resistance",
+      "source": "XDMG",
+      "value": [
+        "thunder"
+      ]
+    },
+    {
+      "name": "Red Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Ring of Acid Resistance",
+      "source": "XDMG",
+      "value": [
+        "acid"
+      ]
+    },
+    {
+      "name": "Ring of Cold Resistance",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "Ring of Elemental Command (Air)",
+      "source": "XDMG",
+      "value": [
+        "lightning"
+      ]
+    },
+    {
+      "name": "Ring of Elemental Command (Earth)",
+      "source": "XDMG",
+      "value": [
+        "acid"
+      ]
+    },
+    {
+      "name": "Ring of Elemental Command (Fire)",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Ring of Fire Resistance",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Ring of Force Resistance",
+      "source": "XDMG",
+      "value": [
+        "force"
+      ]
+    },
+    {
+      "name": "Ring of Lightning Resistance",
+      "source": "XDMG",
+      "value": [
+        "lightning"
+      ]
+    },
+    {
+      "name": "Ring of Necrotic Resistance",
+      "source": "XDMG",
+      "value": [
+        "necrotic"
+      ]
+    },
+    {
+      "name": "Ring of Poison Resistance",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Ring of Psychic Resistance",
+      "source": "XDMG",
+      "value": [
+        "psychic"
+      ]
+    },
+    {
+      "name": "Ring of Radiant Resistance",
+      "source": "XDMG",
+      "value": [
+        "radiant"
+      ]
+    },
+    {
+      "name": "Ring of Thunder Resistance",
+      "source": "XDMG",
+      "value": [
+        "thunder"
+      ]
+    },
+    {
+      "name": "Ring of Warmth",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "Silver Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "Staff of Fire",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    },
+    {
+      "name": "Staff of Frost",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    },
+    {
+      "name": "White Dragon Scale Mail",
+      "source": "XDMG",
+      "value": [
+        "cold"
+      ]
+    }
+  ],
+  "immune": [
+    {
+      "name": "Periapt of Proof against Poison",
+      "source": "XDMG",
+      "value": [
+        "poison"
+      ]
+    },
+    {
+      "name": "Ring of Elemental Command (Fire)",
+      "source": "XDMG",
+      "value": [
+        "fire"
+      ]
+    }
+  ],
+  "speed": [
+    {
+      "name": "Camel",
+      "source": "XPHB",
+      "value": 50
+    },
+    {
+      "name": "Draft Horse",
+      "source": "XPHB",
+      "value": 40
+    },
+    {
+      "name": "Elephant",
+      "source": "XPHB",
+      "value": 40
+    },
+    {
+      "name": "Mastiff",
+      "source": "XPHB",
+      "value": 40
+    },
+    {
+      "name": "Mule",
+      "source": "XPHB",
+      "value": 40
+    },
+    {
+      "name": "Pony",
+      "source": "XPHB",
+      "value": 40
+    },
+    {
+      "name": "Riding Horse",
+      "source": "XPHB",
+      "value": 60
+    },
+    {
+      "name": "Warhorse",
+      "source": "XPHB",
+      "value": 60
+    }
+  ],
+  "attachedSpells": [
+    {
+      "name": "Amulet of the Planes",
+      "source": "XDMG",
+      "value": [
+        "plane shift|xphb"
+      ]
+    },
+    {
+      "name": "Boots of Levitation",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "levitate|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Candle of Invocation",
+      "source": "XDMG",
+      "value": {
+        "limited": {
+          "1": [
+            "gate|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cape of the Mountebank",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1": [
+            "dimension door|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Chime of Opening",
+      "source": "XDMG",
+      "value": [
+        "knock|xphb"
+      ]
+    },
+    {
+      "name": "Circlet of Blasting",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1e": [
+            "scorching ray|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cloak of Arachnida",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1e": [
+            "web|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cloak of the Bat",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1e": [
+            "polymorph|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Crystal Ball",
+      "source": "XDMG",
+      "value": [
+        "scrying|xphb"
+      ]
+    },
+    {
+      "name": "Crystal Ball of Mind Reading",
+      "source": "XDMG",
+      "value": [
+        "detect thoughts|xphb",
+        "scrying|xphb"
+      ]
+    },
+    {
+      "name": "Crystal Ball of Telepathy",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "scrying|xphb"
+        ],
+        "daily": {
+          "1e": [
+            "suggestion|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Crystal Ball of True Seeing",
+      "source": "XDMG",
+      "value": [
+        "scrying|xphb"
+      ]
+    },
+    {
+      "name": "Cube of Force",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "mage armor|xphb",
+            "shield|xphb"
+          ],
+          "3": [
+            "leomund's tiny hut|xphb"
+          ],
+          "4": [
+            "mordenkainen's private sanctum|xphb",
+            "otiluke's resilient sphere|xphb"
+          ],
+          "5": [
+            "wall of force|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cubic Gate",
+      "source": "XDMG",
+      "value": [
+        "gate|xphb",
+        "plane shift|xphb"
+      ]
+    },
+    {
+      "name": "Efreeti Bottle",
+      "source": "XDMG",
+      "value": {
+        "limited": {
+          "3": [
+            "wish|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Eyes of Charming",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "charm person|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Figurine of Wondrous Power, Silver Raven",
+      "source": "XDMG",
+      "value": [
+        "animal messenger|xphb"
+      ]
+    },
+    {
+      "name": "Hat of Disguise",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "disguise self|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Hat of Many Spells",
+      "source": "XDMG",
+      "value": [
+        "enlarge/reduce|xphb",
+        "faerie fire|xphb",
+        "fireball|xphb",
+        "gust of wind|xphb",
+        "invisibility|xphb",
+        "lightning bolt|xphb",
+        "phantasmal force|xphb",
+        "polymorph|xphb",
+        "stinking cloud|xphb"
+      ]
+    },
+    {
+      "name": "Helm of Brilliance",
+      "source": "XDMG",
+      "value": {
+        "limited": {
+          "10": [
+            "prismatic spray|xphb"
+          ],
+          "20": [
+            "wall of fire|xphb"
+          ],
+          "30": [
+            "fireball|xphb"
+          ],
+          "40": [
+            "daylight|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Helm of Comprehending Languages",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "comprehend languages|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Helm of Telepathy",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "detect thoughts|xphb"
+        ],
+        "daily": {
+          "1e": [
+            "suggestion|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Helm of Teleportation",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "teleport|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Medallion of Thoughts",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "detect thoughts|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Necklace of Fireballs",
+      "source": "XDMG",
+      "value": {
+        "limited": {
+          "9": [
+            "fireball|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Necklace of Prayer Beads",
+      "source": "XDMG",
+      "value": {
+        "other": [
+          "bless|xphb",
+          "cure wounds|xphb",
+          "greater restoration|xphb",
+          "guardian of faith|xphb",
+          "shining smite|xphb",
+          "wind walk|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Oil of Etherealness",
+      "source": "XDMG",
+      "value": [
+        "etherealness|xphb"
+      ]
+    },
+    {
+      "name": "Oil of Slipperiness",
+      "source": "XDMG",
+      "value": [
+        "freedom of movement|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Animal Friendship",
+      "source": "XDMG",
+      "value": [
+        "animal friendship|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Clairvoyance",
+      "source": "XDMG",
+      "value": [
+        "clairvoyance|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Diminution",
+      "source": "XDMG",
+      "value": [
+        "enlarge/reduce|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Gaseous Form",
+      "source": "XDMG",
+      "value": [
+        "gaseous form|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Growth",
+      "source": "XDMG",
+      "value": [
+        "enlarge/reduce|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Heroism",
+      "source": "XDMG",
+      "value": [
+        "bless|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Mind Reading",
+      "source": "XDMG",
+      "value": [
+        "detect thoughts|xphb"
+      ]
+    },
+    {
+      "name": "Potion of Speed",
+      "source": "XDMG",
+      "value": [
+        "haste|xphb"
+      ]
+    },
+    {
+      "name": "Ring of Animal Influence",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "animal friendship|xphb",
+            "fear|xphb",
+            "speak with animals|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Elemental Command (Air)",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "0": [
+            "feather fall|xphb"
+          ],
+          "1": [
+            "wind wall|xphb"
+          ],
+          "2": [
+            "gust of wind|xphb"
+          ],
+          "3": [
+            "chain lightning|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Elemental Command (Earth)",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "2": [
+            "stone shape|xphb"
+          ],
+          "3": [
+            "stoneskin|xphb",
+            "wall of stone|xphb"
+          ],
+          "5": [
+            "earthquake|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Elemental Command (Fire)",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "burning hands|xphb"
+          ],
+          "2": [
+            "fireball|xphb"
+          ],
+          "3": [
+            "wall of fire|xphb"
+          ],
+          "4": [
+            "fire storm|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Elemental Command (Water)",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "create or destroy water|xphb"
+          ],
+          "2": [
+            "ice storm|xphb",
+            "water walk|xphb"
+          ],
+          "3": [
+            "wall of ice|xphb"
+          ],
+          "5": [
+            "tsunami|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Jumping",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "jump|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Ring of Shooting Stars",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "dancing lights|xphb",
+          "light|xphb"
+        ],
+        "charges": {
+          "1": [
+            "faerie fire|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Telekinesis",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "telekinesis|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Ring of Three Wishes",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "wish|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Ring of Water Walking",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "water walk|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Robe of Stars",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "magic missile|xphb#5"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Rod of Alertness",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "detect evil and good|xphb",
+          "detect magic|xphb",
+          "detect poison and disease|xphb",
+          "see invisibility|xphb"
+        ]
+      }
+    },
+    {
+      "name": "Rod of Resurrection",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "heal|xphb"
+          ],
+          "5": [
+            "resurrection|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Sending Stones",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1e": [
+            "sending|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Charming",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "charm person|xphb",
+            "command|xphb",
+            "comprehend languages|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Fire",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "burning hands|xphb"
+          ],
+          "3": [
+            "fireball|xphb"
+          ],
+          "4": [
+            "wall of fire|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Frost",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "fog cloud|xphb"
+          ],
+          "4": [
+            "ice storm|xphb",
+            "wall of ice|xphb"
+          ],
+          "5": [
+            "cone of cold|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Healing",
+      "source": "XDMG",
+      "value": {
+        "will": [
+          "cure wounds|xphb"
+        ],
+        "charges": {
+          "2": [
+            "lesser restoration|xphb"
+          ],
+          "5": [
+            "mass cure wounds|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Power",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "magic missile|xphb",
+            "ray of enfeeblement|xphb"
+          ],
+          "2": [
+            "levitate|xphb"
+          ],
+          "5": [
+            "cone of cold|xphb",
+            "fireball|xphb",
+            "hold monster|xphb",
+            "lightning bolt|xphb",
+            "wall of force|xphb"
+          ],
+          "6": [
+            "globe of invulnerability|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of Swarming Insects",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "4": [
+            "giant insect|xphb"
+          ],
+          "5": [
+            "insect plague|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of the Magi",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "0": [
+            "arcane lock|xphb",
+            "detect magic|xphb",
+            "enlarge/reduce|xphb",
+            "light|xphb",
+            "mage hand|xphb",
+            "protection from evil and good|xphb"
+          ],
+          "2": [
+            "flaming sphere|xphb",
+            "invisibility|xphb",
+            "knock|xphb",
+            "web|xphb"
+          ],
+          "3": [
+            "dispel magic|xphb"
+          ],
+          "4": [
+            "ice storm|xphb",
+            "wall of fire|xphb"
+          ],
+          "5": [
+            "passwall|xphb",
+            "telekinesis|xphb"
+          ],
+          "7": [
+            "conjure elemental|xphb",
+            "fireball|xphb",
+            "lightning bolt|xphb",
+            "plane shift|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Staff of the Woodlands",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "animal friendship|xphb",
+            "speak with animals|xphb"
+          ],
+          "2": [
+            "barkskin|xphb",
+            "locate animals or plants|xphb",
+            "pass without trace|xphb"
+          ],
+          "3": [
+            "speak with plants|xphb"
+          ],
+          "5": [
+            "awaken|xphb"
+          ],
+          "6": [
+            "wall of thorns|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Trident of Fish Command",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "dominate beast|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Binding",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "2": [
+            "hold person|xphb"
+          ],
+          "5": [
+            "hold monster|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Fear",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "command|xphb"
+          ],
+          "3": [
+            "fear|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Fireballs",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "fireball|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Lightning Bolts",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "lightning bolt|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Magic Detection",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "detect magic|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Magic Missiles",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "magic missile|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Polymorph",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "polymorph|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Web",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "web|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wand of Wonder",
+      "source": "XDMG",
+      "value": {
+        "charges": {
+          "1": [
+            "darkness|xphb",
+            "enlarge/reduce|xphb",
+            "faerie fire|xphb",
+            "fireball|xphb",
+            "greater restoration|xphb",
+            "gust of wind|xphb",
+            "invisibility|xphb",
+            "lightning bolt|xphb",
+            "polymorph|xphb",
+            "slow|xphb",
+            "stinking cloud|xphb"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wind Fan",
+      "source": "XDMG",
+      "value": {
+        "daily": {
+          "1e": [
+            "gust of wind|xphb"
+          ]
+        }
+      }
+    }
+  ]
+}

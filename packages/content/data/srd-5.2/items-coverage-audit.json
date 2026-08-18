@@ -1,0 +1,165 @@
+{
+  "generatedAt": "2026-08-18T21:24:24.591Z",
+  "upstreamCount": 550,
+  "oracleCount": 550,
+  "issueCount": 0,
+  "status": "supported",
+  "coverage": {
+    "packContents": {
+      "checked": 12,
+      "passed": 12,
+      "failed": 0
+    },
+    "magical": {
+      "checked": 307,
+      "passed": 307,
+      "failed": 0
+    },
+    "reqAttuneTags": {
+      "checked": 24,
+      "passed": 24,
+      "failed": 0
+    },
+    "ability": {
+      "checked": 28,
+      "passed": 28,
+      "failed": 0
+    },
+    "attachedSpells": {
+      "checked": 69,
+      "passed": 69,
+      "failed": 0
+    },
+    "poisonTypes": {
+      "checked": 13,
+      "passed": 13,
+      "failed": 0
+    },
+    "containerCapacity": {
+      "checked": 17,
+      "passed": 17,
+      "failed": 0
+    },
+    "containerWeightless": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "containerVolumeUnit": {
+      "checked": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "grantsLanguage": {
+      "checked": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "resist": {
+      "checked": 42,
+      "passed": 42,
+      "failed": 0
+    },
+    "modifySpeed": {
+      "checked": 11,
+      "passed": 11,
+      "failed": 0
+    },
+    "grantsProficiency": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "bonusWeaponDamage": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "light": {
+      "checked": 16,
+      "passed": 16,
+      "failed": 0
+    },
+    "charges": {
+      "checked": 50,
+      "passed": 50,
+      "failed": 0
+    },
+    "containerItemLimits": {
+      "checked": 4,
+      "passed": 4,
+      "failed": 0
+    },
+    "vehiclePurchase": {
+      "checked": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "vehAc": {
+      "checked": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "vehHp": {
+      "checked": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "vehDmgThresh": {
+      "checked": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "vehSpeed": {
+      "checked": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "crew": {
+      "checked": 6,
+      "passed": 6,
+      "failed": 0
+    },
+    "capCargo": {
+      "checked": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "focus": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "bonusProficiencyBonus": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "capPassenger": {
+      "checked": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "immune": {
+      "checked": 2,
+      "passed": 2,
+      "failed": 0
+    },
+    "curse": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    },
+    "spellScrollLevel": {
+      "checked": 10,
+      "passed": 10,
+      "failed": 0
+    },
+    "bonusAbilityCheck": {
+      "checked": 1,
+      "passed": 1,
+      "failed": 0
+    }
+  },
+  "issues": []
+}
