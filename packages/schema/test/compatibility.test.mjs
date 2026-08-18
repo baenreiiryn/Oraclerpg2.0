@@ -38,3 +38,21 @@ test("validator rejects invalid feature activity kind", () => {
   assert.equal(result.ok, false);
   assert.ok(result.issues.some((it) => it.path.endsWith(".kind")));
 });
+
+test("validator rejects malformed advanced class rules", () => {
+  const result = validateCanonicalContent("class", {
+    hitDie: 8,
+    advancement: [],
+    classRules: {
+      rollDiceCosts: [{ sourceRoll: "sneakAttack", dice: null, timing: "beforeRoll" }],
+      effectStackingPolicies: [{ key: "aura", policy: "impossible" }],
+      createdEntityCollections: [{ collectionId: "items", entityType: "item", maximumActive: null }],
+      informationReveals: [{ trigger: {}, fields: [], revealMode: "exact" }]
+    }
+  });
+  assert.equal(result.ok, false);
+  assert.ok(result.issues.some((it) => it.path.includes("rollDiceCosts")));
+  assert.ok(result.issues.some((it) => it.path.endsWith(".policy")));
+  assert.ok(result.issues.some((it) => it.path.includes("createdEntityCollections")));
+  assert.ok(result.issues.some((it) => it.path.endsWith(".fields")));
+});
