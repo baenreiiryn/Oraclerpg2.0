@@ -30,7 +30,10 @@ jobs:
       - name: Enrich SRD 5.2 spell activities
         run: node scripts/enrich-srd52-spells.mjs
       - name: Complete canonical spell effects
+        continue-on-error: true
         run: node scripts/complete-srd52-spell-enrichment.mjs
+      - name: Resolve canonical runtime statuses
+        run: node scripts/resolve-srd52-spell-semantic-leftovers.mjs
       - name: Audit SRD 5.2 spell coverage
         run: node scripts/audit-srd52-spells.mjs
       - name: Upload spell audit
