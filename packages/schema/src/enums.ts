@@ -15,7 +15,7 @@ export const CREATURE_TYPE_IDS = [
 ] as const;
 export const MOVEMENT_TYPE_IDS = ["walk", "burrow", "climb", "fly", "swim"] as const;
 export const RECOVERY_PERIOD_IDS = ["turn", "round", "shortRest", "longRest", "dawn", "day", "week", "charges", "special"] as const;
-export const ITEM_KIND_IDS = ["weapon", "armor", "equipment", "consumable", "tool", "container", "loot", "charm", "upgrade"] as const;
+export const ITEM_KIND_IDS = ["weapon", "armor", "equipment", "consumable", "tool", "container", "pack", "loot", "charm", "upgrade"] as const;
 export const FEATURE_KIND_IDS = [
   "feat", "classFeature", "subclassFeature", "speciesFeature", "backgroundFeature",
   "monsterFeature", "optionalFeature", "darkGift", "charm"
