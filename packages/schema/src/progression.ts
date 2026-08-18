@@ -1,11 +1,19 @@
 import type { AbilityId, ChoiceRef, EntityRef, SizeId, SourceText } from "./primitives.js";
 import type { AdvancementStep, GrantData } from "./feature.js";
+import type { ChoiceDependencyData, EquipmentBundleData, FeaturePatchData, PredicateData } from "./mechanics.js";
 
 export interface SpellcastingProgression {
   type: "full" | "half" | "third" | "pact" | "none" | "custom";
   ability?: AbilityId;
   preparation?: "prepared" | "known" | "alwaysPrepared" | "spellbook" | "custom";
   progression?: readonly Readonly<Record<string, number>>[];
+}
+
+export interface NamedChoiceData {
+  id: string;
+  choice: ChoiceRef;
+  dependency?: ChoiceDependencyData;
+  predicate?: PredicateData;
 }
 
 export interface ClassData {
@@ -17,6 +25,7 @@ export interface ClassData {
   toolProficiencies?: readonly string[];
   skillChoices?: ChoiceRef;
   startingEquipment?: readonly GrantData[];
+  equipmentBundles?: readonly EquipmentBundleData[];
   spellcasting?: SpellcastingProgression;
   advancement: readonly AdvancementStep[];
   subclassLevel?: number;
@@ -31,10 +40,13 @@ export interface SubclassData {
 
 export interface SpeciesData {
   size: readonly SizeId[];
+  sizeChoice?: NamedChoiceData;
   speed: number;
   creatureType?: string;
   grants?: readonly GrantData[];
-  choices?: readonly ChoiceRef[];
+  choices?: readonly NamedChoiceData[];
+  advancement?: readonly AdvancementStep[];
+  patches?: readonly FeaturePatchData[];
   text?: SourceText;
 }
 
@@ -45,6 +57,8 @@ export interface BackgroundData {
   languages?: ChoiceRef;
   originFeat?: EntityRef | ChoiceRef;
   equipment?: readonly GrantData[];
+  equipmentBundles?: readonly EquipmentBundleData[];
+  choices?: readonly NamedChoiceData[];
   grants?: readonly GrantData[];
   text?: SourceText;
 }
