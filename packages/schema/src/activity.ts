@@ -2,12 +2,13 @@ import type {
   AbilityId, ConditionId, DamageTypeId, DistanceValue, FormulaValue, RecoveryPeriod, TimeUnit
 } from "./primitives.js";
 import type {
-  ActionReplacementData, EffectData, ManualAdjudicationData, MultiattackData, OutcomeDependentCostData,
-  PredicateData, RuntimeValueRef, SummonSpec, TriggerData, UsageLimitData
+  ActionReplacementData, AttackOverrideData, EffectData, InvocationSpec, ManualAdjudicationData, MultiattackData,
+  OutcomeDependentCostData, PredicateData, RuntimeValueRef, SummonSpec, TriggerData, UsageLimitData
 } from "./mechanics.js";
 
 export type ActivityKind =
-  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "multiattack" | "special";
+  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "invoke"
+  | "multiattack" | "special";
 
 export interface ActivityActivation {
   type: TimeUnit;
@@ -131,9 +132,11 @@ export interface ActivityData {
   effects?: readonly EffectData[];
   predicates?: readonly PredicateData[];
   triggers?: readonly TriggerData[];
+  invocation?: InvocationSpec;
   summon?: SummonSpec;
   multiattack?: MultiattackData;
   replacements?: readonly ActionReplacementData[];
+  attackOverrides?: readonly AttackOverrideData[];
   manualAdjudication?: ManualAdjudicationData;
   description?: string;
 }
