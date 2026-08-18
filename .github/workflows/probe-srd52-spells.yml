@@ -38,6 +38,8 @@ jobs:
         run: node scripts/complete-srd52-spell-enrichment.mjs
       - name: Resolve canonical runtime statuses
         run: node scripts/resolve-srd52-spell-semantic-leftovers.mjs
+      - name: Reconcile official Foundry spell semantics
+        run: node scripts/reconcile-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
       - name: Normalize formulas and scaling
         run: node scripts/normalize-srd52-spell-formulas.mjs
       - name: Apply complex spell regressions
@@ -59,6 +61,7 @@ jobs:
             packages/content/data/srd-5.2/spells-import-report.json
             packages/content/data/srd-5.2/spells-enrichment-report.json
             packages/content/data/srd-5.2/spells-semantic-audit.json
+            packages/content/data/srd-5.2/spells-foundry-reconciliation.json
             packages/content/data/srd-5.2/spells-formula-audit.json
             packages/content/data/srd-5.2/spells-coverage-audit.json
             packages/content/data/srd-5.2/spells-regression-audit.json
