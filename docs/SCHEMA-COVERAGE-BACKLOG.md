@@ -53,15 +53,40 @@ The following do not require separate one-off schemas:
 - elapsed-time obligations/conflicts: ItemSentienceData.obligations + TriggerData;
 - anatomy/capability requirements: PredicateData(anatomy/manual/custom).
 
-## Remaining work is validation, not missing representation
+## New gaps discovered by class/subclass audits
 
-The compatibility audits now show representation coverage for the tested files. The next engineering tasks are:
+These capabilities are not yet represented cleanly enough to mark the new class files fully supported:
 
-1. replace permissive sketches (`string`, `unknown`, generic query records) with validated domain enums/structures where appropriate;
-2. implement runtime validators for the TypeScript contracts;
-3. create executable compatibility fixtures/tests from audited mechanics without importing source content into the compendium;
-4. define migration/versioning rules before persisted content exists;
-5. implement source adapters only after validation is stable.
+- SpellCollectionData / SpellbookData: persistent learned-spell collections distinct from prepared spells, including add/copy/replace rules, capacity/ownership, source restrictions and spellbook-dependent features.
+- SpellPreparationRuleData: prepared-spell capacity, always-prepared exceptions, replacement cadence, multi-list access and preparation sourced from another collection such as a spellbook.
+- SpellSlotPoolData: explicit slot progression/resource pools and constrained recovery rules.
+- ResourceAllocationData: choose multiple resources to recover/spend under a combined budget (for example Arcane Recovery/Natural Recovery, where total recovered slot levels are capped and individual slot levels are restricted).
+- StoredRollPoolData: roll and store one or more die results, consume them later as roll replacements, discard unused values on reset and change pool size by level (Portent/Greater Portent).
+- RerollRuleData: reroll a resolved/failed D20 Test, optionally with Advantage/Disadvantage, and mandate use of the new result.
+- DamageInterceptionData: redirect incoming damage to a ward/secondary HP pool, apply resistances/vulnerabilities in a defined order and pass overflow damage to the original target (Arcane Ward/Projected Ward).
+- DamageMitigationData: reduce/halve incoming damage by formula or resource expenditure, including post-hit reactions and critical-hit interaction.
+- ResolutionOverrideData: alter success/failure outcomes rather than only the numeric roll (Evasion-style no-damage/half-damage mappings, force an attack to miss, automatic save success/failure, cancel critical-triggered consequences).
+- DiceResolutionModifierData: maximize dice, replace dice, change die size/count, or otherwise modify how an existing damage/healing roll resolves (Supreme Healing, Overchannel, Potent Cantrip edge cases).
+- SpellModificationData: filter spells by class/school/level/tags and modify an existing cast's range, target count, school, components, concentration, effective slot level, damage type, save behavior, summon count/statistics, or granted secondary effects without copying the spell.
+- CastOutcomeCostData: spend/refund a spell slot or other resource depending on whether the invoked spell succeeds at its purpose (Spell Breaker).
+- TransferableResourceData: grant a die/resource to another actor with source ownership, recipient limits, duration, later consumption and scaling from the grantor (Bardic Inspiration and Combat Inspiration).
+- RollTableOutcomeData: roll on a canonical table, persist the selected result, optionally choose instead of rolling under constraints, then later unleash/consume that stored outcome (College of Spirits).
+- DistributedPoolData: divide a finite healing/damage/resource pool among multiple selected targets with per-target caps (Preserve Life).
+- TransformationData: replace game statistics from a referenced stat block while retaining selected source statistics/features/proficiencies/resources, define equipment merge/wear/drop behavior, duration/end conditions, type/size overrides and later feature patches (Wild Shape, Polymorph modifications, Titan Form, Vermin Form).
+- CreatedEntityData: create a temporary or persistent canonical object/entity tied to a feature, with replacement/destruction lifecycle and bearer-based effects (Transmuter's Stone, Star Map, illusion-made-real cases).
+- EffectAnchorData / ProxyOriginData: create a movable non-creature anchor/illusion from which range/origin can be measured or spells can be cast, without treating it as a normal summon (Invoke Duplicity, movable preservation zones where appropriate).
+- ConditionLevelData: increment/decrement/cap leveled conditions such as Exhaustion rather than treating them as simple booleans.
+- ContainmentData: swallow/contain another creature, apply internal conditions/cover, capacity limits, concentration/lifecycle rules and forced release placement.
+- CoverageData: grant Half/Three-Quarters/Total Cover as a structured effect and allow effects to suppress or alter cover.
+- TeleportExchangeData: swap positions of two entities or teleport multiple linked targets with destination constraints.
+- RuntimeChoiceStateData: persistent mutually exclusive modes/options whose downstream features depend on the current selection (Storm Aura environment, Circle of the Land choice, Starry Form constellation, Transmuter's Stone benefits).
+- GeneratedActionData: add an attack/move/cast inside another action or as part of spending a resource, distinct from replacing an attack (Agile Strikes, Bladesinger cantrip-in-Extra-Attack, Battle Magic).
+- TargetRetargetData: redirect an already-resolved/triggering attack to another legal target while reusing the same attack roll (Instinctive Charm).
+- ResourceDicePoolData: resources measured as dice rather than scalar uses, with die-size/count progression and selective spending (Bardic Inspiration variants, Warrior of the Gods).
+
+## Remaining work after this audit
+
+The earlier audited item/monster/spell/species/background examples remain representable, but the new class files are only partially covered until the class-oriented primitives above are implemented. After implementation, rerun the same files as regression probes before changing importers.
 
 ## Audit policy
 
