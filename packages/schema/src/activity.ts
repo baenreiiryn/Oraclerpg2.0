@@ -25,7 +25,7 @@ export interface ActivityRange {
 }
 
 export interface ActivityTarget {
-  type: "self" | "creature" | "object" | "point" | "space" | "special";
+  type: "self" | "creature" | "object" | "creatureOrObject" | "point" | "space" | "special";
   count?: number | FormulaValue | RuntimeValueRef;
   disposition?: "ally" | "enemy" | "any";
   area?: {
@@ -65,7 +65,6 @@ export interface CheckComponent {
 
 export interface DamagePart {
   damageType?: DamageTypeId;
-  /** Alternative damage types when the caster chooses one type for this part. */
   damageTypes?: readonly DamageTypeId[];
   chooseDamageType?: boolean;
   formula?: string;
@@ -122,7 +121,6 @@ export interface GenericRollData {
   purpose?: "utility" | "duration" | "resource" | "chance" | "custom";
 }
 
-/** One selectable summon outcome. Used when one casting can create different canonical creatures/forms. */
 export interface SummonProfileData {
   id: string;
   name?: string;
