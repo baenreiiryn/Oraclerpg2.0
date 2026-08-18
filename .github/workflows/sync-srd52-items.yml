@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - "scripts/import-srd52-items.mjs"
+      - "scripts/probe-srd52-item-fields.mjs"
       - ".github/workflows/sync-srd52-items.yml"
   pull_request:
     paths:
       - "scripts/import-srd52-items.mjs"
+      - "scripts/probe-srd52-item-fields.mjs"
       - ".github/workflows/sync-srd52-items.yml"
   workflow_dispatch:
 
@@ -27,6 +29,9 @@ jobs:
         id: importer
         continue-on-error: true
         run: node scripts/import-srd52-items.mjs
+      - name: Probe structured field shapes
+        if: always()
+        run: node scripts/probe-srd52-item-fields.mjs
       - name: Upload generated compendium and report
         if: always()
         uses: actions/upload-artifact@v4
