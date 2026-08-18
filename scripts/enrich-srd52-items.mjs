@@ -11,7 +11,11 @@ const itemId = name => `dnd2024:2024:item:${slug(name)}:srd-5.2`;
 const vehicleId = name => `dnd2024:2024:vehicle:${slug(name)}:srd-5.2`;
 const itemRef = uid => { const name = String(uid).split("|")[0]; return { canonicalId: itemId(name), name, entityType: "item" }; };
 const vehicleRef = name => ({ canonicalId: vehicleId(name), name, entityType: "vehicle" });
-const num = value => { const n = Number(String(value ?? "").replace(/^\+/, "")); return Number.isFinite(n) ? n : undefined; };
+const num = value => {
+  if (value == null || value === "") return undefined;
+  const n = Number(String(value).replace(/^\+/, ""));
+  return Number.isFinite(n) ? n : undefined;
+};
 
 async function load(url) {
   const response = await fetch(url, { headers: { "user-agent": "OracleRPG2-SRD-Enricher" } });
@@ -55,7 +59,7 @@ function addModifier(data, domain, value, predicate) {
 function enrichContainer(data, source) {
   const cap = source.containerCapacity;
   if (!cap || data.itemKind !== "container") return;
-  data.capacity ??= {};
+  if (cap.volume != null || cap.weightless === true) data.capacity ??= {};
   if (cap.volume != null) data.capacity.volumeUnit = "cubicFoot";
   if (cap.weightless === true) data.capacity.contentsWeightless = true;
   if (Array.isArray(cap.item)) {
@@ -122,6 +126,7 @@ for (const record of oracle.items) {
   const isShip = String(source.type ?? "").split("|")[0] === "SHP" || source.vehAc != null || source.seeAlsoVehicle;
   if (isShip) {
     data.itemKind = "vehiclePurchase";
+    delete data.equipmentType;
     data.vehicle = vehicleRef(source.seeAlsoVehicle?.[0] ?? source.name);
     if (source.vehAc != null) data.armorClass = Number(source.vehAc);
     if (source.vehHp != null) data.hitPoints = Number(source.vehHp);
