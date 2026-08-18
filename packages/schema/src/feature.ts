@@ -1,4 +1,5 @@
 import type { ActivityData } from "./activity.js";
+import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { AbilityId, ChoiceRef, EntityRef, SourceText } from "./primitives.js";
 import type {
   ChoiceDependencyData, CrossResourceRuleData, EffectData, EntityBenefitGrantData, FeaturePatchData,
@@ -55,6 +56,7 @@ export interface FeatureData {
   crossResourceRules?: readonly CrossResourceRuleData[];
   randomProperties?: readonly RandomPropertyGrantData[];
   lifecycle?: readonly LinkedLifecycleData[];
+  classMechanics?: ClassMechanicsData;
   manualAdjudication?: ManualAdjudicationData;
   properties?: readonly string[];
   text?: SourceText;
