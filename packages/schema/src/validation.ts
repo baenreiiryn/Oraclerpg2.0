@@ -20,9 +20,17 @@ const isObject = (value: unknown): value is Record<string, unknown> => !!value &
 const isNonEmptyString = (value: unknown): value is string => typeof value === "string" && value.trim().length > 0;
 const isFiniteNumber = (value: unknown): value is number => typeof value === "number" && Number.isFinite(value);
 const inEnum = <T extends readonly string[]>(value: unknown, values: T): value is T[number] => typeof value === "string" && values.includes(value);
+const WEIGHT_UNITS = ["lb", "oz", "kg", "g", "ton", "custom"] as const;
 
 function issue(issues: ValidationIssue[], path: string, code: string, message: string): void {
   issues.push({ path, code, message });
+}
+
+function validateWeight(value: unknown, path: string, issues: ValidationIssue[]): void {
+  if (!isObject(value)) return issue(issues, path, "type", "Weight must be an object with value and unit");
+  if (!isFiniteNumber(value.value) || value.value < 0) issue(issues, `${path}.value`, "type", "Weight value must be a non-negative number");
+  if (!inEnum(value.unit, WEIGHT_UNITS)) issue(issues, `${path}.unit`, "enum", "Unknown weight unit");
+  if (value.unit === "custom" && !isNonEmptyString(value.customUnit)) issue(issues, `${path}.customUnit`, "required", "Custom weight unit requires customUnit");
 }
 
 function validateEntityRef(value: unknown, path: string, issues: ValidationIssue[]): void {
@@ -191,6 +199,14 @@ export function validateCanonicalContent(type: unknown, data: unknown): Validati
     }
     case "item": {
       if (!inEnum(data.itemKind, ITEM_KIND_IDS)) issue(issues, "data.itemKind", "enum", "Unknown item kind");
+      if (data.weight !== undefined) validateWeight(data.weight, "data.weight", issues);
+      if (data.itemKind === "container" && isObject(data.capacity) && data.capacity.weight !== undefined) validateWeight(data.capacity.weight, "data.capacity.weight", issues);
+      if (Array.isArray(data.compartments)) data.compartments.forEach((compartment, index) => {
+        if (isObject(compartment) && compartment.maxWeight !== undefined) validateWeight(compartment.maxWeight, `data.compartments[${index}].maxWeight`, issues);
+      });
+      for (const runtimeOnly of ["equipped", "attuned", "identified", "containerInstanceId", "currentUses"]) {
+        if (hasOwn(data, runtimeOnly)) issue(issues, `data.${runtimeOnly}`, "runtimeState", `${runtimeOnly} belongs to InventoryItemInstanceData, not canonical compendium content`);
+      }
       if (Array.isArray(data.activities)) data.activities.forEach((activity, index) => validateActivity(activity, `data.activities[${index}]`, issues));
       break;
     }
