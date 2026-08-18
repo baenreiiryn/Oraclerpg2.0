@@ -1,11 +1,11 @@
 import type { ActivityData } from "./activity.js";
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
-import type { AbilityId, ChoiceRef, EntityRef, SourceText } from "./primitives.js";
+import type { AbilityId, ChoiceRef, EntityRef, JsonValue, SourceText } from "./primitives.js";
 import type {
   ChoiceDependencyData, CrossResourceRuleData, EffectData, EntityBenefitGrantData, FeaturePatchData,
   LinkedLifecycleData, ManualAdjudicationData, ModifierData, PredicateData, RandomPropertyGrantData,
-  StateVariableData
+  RuntimeValueRef, StateVariableData
 } from "./mechanics.js";
 
 export type FeatureKind =
@@ -27,7 +27,7 @@ export interface GrantData {
   entity?: EntityRef;
   benefit?: EntityBenefitGrantData;
   choice?: ChoiceRef;
-  value?: unknown;
+  value?: JsonValue | RuntimeValueRef;
   level?: number;
   choiceId?: string;
   dependency?: ChoiceDependencyData;
