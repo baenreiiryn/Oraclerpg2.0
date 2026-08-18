@@ -49,21 +49,27 @@ Canonical IDs:
 Example shape (illustrative only):
 
 ```text
-dnd5e:2014:monster:wolf:srd-5.1
+dnd2024:2024:monster:wolf:srd-5.2
 ```
 
 The final canonical ID grammar will be locked in an ADR before content population.
 
 ## System identity
 
+OracleRPG v1.00 targets the 2024 D&D rules. The canonical identity is:
+
 ```ts
 interface SystemRef {
-  gameSystem: "dnd5e" | string;
-  rulesVersion: "2014" | "2024" | string;
+  gameSystem: "dnd2024" | string;
+  rulesVersion: "2024" | string;
 }
 ```
 
-Rules version is intentionally not encoded as part of `gameSystem`.
+The default content authority for the open SRD package is `srd-5.2`.
+
+`dnd5e` is not a canonical OracleRPG system ID. That identifier may appear only in provenance or documentation when referring to the external Foundry VTT D&D5e system/provider used as an architectural/import reference.
+
+Rules version remains separate from `gameSystem` so the contract can evolve without conflating system identity, rules revision and content source.
 
 ## Source metadata
 
@@ -77,7 +83,7 @@ interface SourceRef {
 }
 ```
 
-`sourceId` identifies the content authority/package, for example `srd-5.1` or a private homebrew package.
+`sourceId` identifies the content authority/package, for example `srd-5.2` or a private homebrew package.
 
 ## Import provenance
 
@@ -93,7 +99,7 @@ interface Provenance {
 }
 ```
 
-Content source and importer provider are different concepts. For example, an SRD record may be imported through a 5etools adapter while its authoritative content source remains `srd-5.1`.
+Content source and importer provider are different concepts. For example, an SRD 5.2 record may be imported through a 5etools adapter while its authoritative content source remains `srd-5.2`.
 
 ## Relationships
 
