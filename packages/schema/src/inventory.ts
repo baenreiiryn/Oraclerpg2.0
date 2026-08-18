@@ -24,6 +24,7 @@ export interface InventoryContainerIndexEntry {
   childInstanceIds: readonly string[];
 }
 
+/** Runtime validator kept beside the instance schema so compendium validation cannot accidentally absorb inventory state. */
 export function validateInventoryItemInstance(value: unknown): readonly string[] {
   const issues: string[] = [];
   if (!value || typeof value !== "object" || Array.isArray(value)) return ["Inventory item instance must be an object"];
