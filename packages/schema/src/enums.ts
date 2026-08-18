@@ -21,7 +21,7 @@ export const FEATURE_KIND_IDS = [
   "monsterFeature", "optionalFeature", "darkGift", "charm"
 ] as const;
 export const ACTIVITY_KIND_IDS = [
-  "attack", "save", "check", "damage", "healing", "utility", "summon", "enchant", "invoke", "multiattack", "special"
+  "attack", "save", "check", "damage", "healing", "utility", "summon", "transform", "enchant", "invoke", "multiattack", "special"
 ] as const;
 export const CONTENT_TYPE_IDS = [
   "monster", "vehicle", "item", "spell", "feature", "class", "subclass", "species", "background", "rule", "table", "condition"

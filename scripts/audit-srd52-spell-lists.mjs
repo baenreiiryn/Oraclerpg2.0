@@ -1,0 +1,6 @@
+import fs from "node:fs/promises";
+const URL="https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/spells/sources.json";
+const OUT="packages/content/data/srd-5.2/spells-list-audit.json";
+const r=await fetch(URL);if(!r.ok)throw new Error(`Spell sources: ${r.status}`);const sources=await r.json();const comp=JSON.parse(await fs.readFile("packages/content/data/srd-5.2/spells.json","utf8"));const issues=[];const perClass={};let relations=0;
+for(const rec of comp.items){const expected=(sources?.XPHB?.[rec.name]?.class??[]).filter(x=>x.source==="XPHB").map(x=>x.name).sort();const actual=(rec.data.spellLists??[]).map(x=>x.name).sort();relations+=actual.length;for(const c of actual)perClass[c]=(perClass[c]??0)+1;if(JSON.stringify(expected)!==JSON.stringify(actual))issues.push({name:rec.name,expected,actual});}
+const report={status:issues.length?"failed":"supported",spellCount:comp.items.length,relationCount:relations,perClass:Object.fromEntries(Object.entries(perClass).sort()),issueCount:issues.length,issues};await fs.writeFile(OUT,JSON.stringify(report,null,2)+"\n");console.log(JSON.stringify(report,null,2));if(issues.length)process.exitCode=1;

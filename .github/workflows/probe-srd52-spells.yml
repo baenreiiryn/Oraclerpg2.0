@@ -1,0 +1,68 @@
+name: Probe SRD 5.2 Spells
+
+on:
+  pull_request:
+    paths:
+      - "scripts/*srd52-spell*.mjs"
+      - "packages/schema/src/spell.ts"
+      - "packages/schema/src/activity.ts"
+      - "packages/schema/src/enums.ts"
+      - "packages/schema/src/mechanics.ts"
+      - ".github/workflows/probe-srd52-spells.yml"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install YAML parser for Foundry pack comparison
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D 6.0.x reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Probe SRD 5.2 spell fields
+        run: node scripts/probe-srd52-spell-fields.mjs
+      - name: Probe 5etools Foundry enrichment
+        run: node scripts/probe-srd52-spell-foundry.mjs
+      - name: Import SRD 5.2 spells
+        run: node scripts/import-srd52-spells.mjs
+      - name: Preserve aliases and classify source metadata
+        run: node scripts/normalize-srd52-spell-source-meta.mjs
+      - name: Enrich SRD 5.2 spell activities
+        run: node scripts/enrich-srd52-spells.mjs
+      - name: Complete canonical spell effects
+        continue-on-error: true
+        run: node scripts/complete-srd52-spell-enrichment.mjs
+      - name: Resolve canonical runtime statuses
+        run: node scripts/resolve-srd52-spell-semantic-leftovers.mjs
+      - name: Reconcile official Foundry spell semantics
+        run: node scripts/reconcile-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+      - name: Normalize formulas and scaling
+        run: node scripts/normalize-srd52-spell-formulas.mjs
+      - name: Apply complex spell regressions
+        run: node scripts/apply-srd52-spell-regressions.mjs
+      - name: Audit 5etools to Oracle spell coverage
+        run: node scripts/audit-srd52-spells.mjs
+      - name: Verify complex spell regressions
+        run: node scripts/verify-srd52-spell-regressions.mjs
+      - name: Compare Foundry SRD 5.2 spells to Oracle
+        run: node scripts/compare-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+      - name: Upload spell audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-spell-audit
+          path: |
+            packages/content/data/srd-5.2/spell-probe
+            packages/content/data/srd-5.2/spells.json
+            packages/content/data/srd-5.2/spells-import-report.json
+            packages/content/data/srd-5.2/spells-enrichment-report.json
+            packages/content/data/srd-5.2/spells-semantic-audit.json
+            packages/content/data/srd-5.2/spells-foundry-reconciliation.json
+            packages/content/data/srd-5.2/spells-formula-audit.json
+            packages/content/data/srd-5.2/spells-coverage-audit.json
+            packages/content/data/srd-5.2/spells-regression-audit.json
+            packages/content/data/srd-5.2/spells-foundry-comparison.json

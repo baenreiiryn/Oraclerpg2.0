@@ -1,13 +1,14 @@
 import type {
-  AbilityId, ConditionId, DamageTypeId, DistanceValue, FormulaValue, RecoveryPeriod, TimeUnit
+  AbilityId, ConditionId, DamageTypeId, DistanceValue, EntityRef, FormulaValue, RecoveryPeriod, TimeUnit
 } from "./primitives.js";
 import type {
   ActionReplacementData, AttackOverrideData, EffectData, InvocationSpec, ManualAdjudicationData, MultiattackData,
   OutcomeDependentCostData, PredicateData, RuntimeValueRef, SummonSpec, TriggerData, UsageLimitData
 } from "./mechanics.js";
+import type { TransformationData } from "./class-mechanics.js";
 
 export type ActivityKind =
-  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "enchant" | "invoke"
+  | "attack" | "save" | "check" | "damage" | "healing" | "utility" | "summon" | "transform" | "enchant" | "invoke"
   | "multiattack" | "special";
 
 export interface ActivityActivation {
@@ -24,7 +25,7 @@ export interface ActivityRange {
 }
 
 export interface ActivityTarget {
-  type: "self" | "creature" | "object" | "point" | "space" | "special";
+  type: "self" | "creature" | "object" | "creatureOrObject" | "point" | "space" | "special";
   count?: number | FormulaValue | RuntimeValueRef;
   disposition?: "ally" | "enemy" | "any";
   area?: {
@@ -64,6 +65,8 @@ export interface CheckComponent {
 
 export interface DamagePart {
   damageType?: DamageTypeId;
+  damageTypes?: readonly DamageTypeId[];
+  chooseDamageType?: boolean;
   formula?: string;
   value?: RuntimeValueRef;
   scaling?: ScalingRule;
@@ -103,12 +106,47 @@ export interface ResourceCost {
   amount: number | FormulaValue | RuntimeValueRef;
   resourceId?: string;
   level?: number;
+  /** For Hit Die costs where the activity is specialized by die denomination. */
+  dieSize?: 4 | 6 | 8 | 10 | 12;
+  scaling?: ScalingRule;
 }
 
 export interface ScalingRule {
   type: "characterLevel" | "classLevel" | "spellSlotLevel" | "proficiencyBonus" | "custom";
   progression?: Readonly<Record<string, string | number>>;
   formula?: string;
+}
+
+export interface GenericRollData {
+  id: string;
+  name?: string;
+  formula: string;
+  purpose?: "utility" | "duration" | "resource" | "chance" | "custom";
+}
+
+export interface SummonProfileData {
+  id: string;
+  name?: string;
+  entity?: EntityRef;
+  count?: number | FormulaValue | RuntimeValueRef;
+  predicate?: PredicateData;
+  cost?: number | RuntimeValueRef;
+}
+
+export interface SummonScalingData {
+  target: "armorClass" | "hitDice" | "hitPoints" | "attackDamage" | "saveDamage" | "healing" | "custom";
+  formula: string;
+}
+
+/** Shared behavior for summon activities whose creature identity lives in summonProfiles. */
+export interface SummonBehaviorData {
+  placement?: { range?: DistanceValue; requiresUnoccupiedSpace?: boolean; requiresSight?: boolean };
+  allegiance?: "ally" | "friendly" | "neutral" | "hostile" | "special";
+  initiative?: "sharesSummoner" | "own" | "fixed" | "special";
+  turnOrder?: "immediatelyAfterSummoner" | "immediatelyBeforeSummoner" | "normal" | "special";
+  command?: { actionCost: "none" | "action" | "bonusAction" | "special"; verbal?: boolean };
+  fallback?: "dodgeAndAvoidDanger" | "dodge" | "defend" | "special";
+  despawn?: readonly ("zeroHp" | "effectEnds" | "summonerDeath" | "manual" | "special")[];
 }
 
 export interface ActivityData {
@@ -123,6 +161,7 @@ export interface ActivityData {
   check?: CheckComponent;
   damage?: readonly DamagePart[];
   healing?: readonly HealingPart[];
+  rolls?: readonly GenericRollData[];
   conditions?: readonly ConditionEffect[];
   duration?: DurationSpec;
   uses?: UsesSpec;
@@ -134,6 +173,11 @@ export interface ActivityData {
   triggers?: readonly TriggerData[];
   invocation?: InvocationSpec;
   summon?: SummonSpec;
+  summonProfiles?: readonly SummonProfileData[];
+  summonBehavior?: SummonBehaviorData;
+  summonScaling?: readonly SummonScalingData[];
+  summonMatch?: readonly ("proficiency" | "attacks" | "saves")[];
+  transformation?: TransformationData;
   multiattack?: MultiattackData;
   replacements?: readonly ActionReplacementData[];
   attackOverrides?: readonly AttackOverrideData[];
