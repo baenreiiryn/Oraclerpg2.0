@@ -1,5 +1,6 @@
 export const CANONICAL_SCHEMA_VERSION = 1 as const;
 
+export * from "./enums.js";
 export * from "./primitives.js";
 export * from "./mechanics.js";
 export * from "./class-mechanics.js";
@@ -12,3 +13,5 @@ export * from "./spell.js";
 export * from "./feature.js";
 export * from "./progression.js";
 export * from "./content.js";
+export * from "./validation.js";
+export * from "./compatibility-fixtures.js";
