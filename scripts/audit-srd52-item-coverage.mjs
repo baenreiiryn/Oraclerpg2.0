@@ -69,7 +69,7 @@ for (const source of upstream) {
   if (source.packContents) mark("packContents", data.itemKind === "pack" && Array.isArray(data.contents) && data.contents.length === source.packContents.length, source, "Pack contents missing/incomplete");
 
   if (source.containerCapacity) {
-    mark("containerCapacity", data.itemKind === "container" && !!data.capacity || Array.isArray(data.compartments), source, "Container capacity missing");
+    mark("containerCapacity", (data.itemKind === "container" && !!data.capacity) || Array.isArray(data.compartments), source, "Container capacity missing");
     if (source.containerCapacity.volume != null) mark("containerVolumeUnit", data.capacity?.volumeUnit === "cubicFoot", source, "Container volume lacks unit");
     if (source.containerCapacity.weightless === true) mark("containerWeightless", data.capacity?.contentsWeightless === true, source, "Weightless container rule missing");
     if (Array.isArray(source.containerCapacity.item)) {
@@ -81,7 +81,7 @@ for (const source of upstream) {
 
   const isShip = String(source.type ?? "").split("|")[0] === "SHP" || source.vehAc != null || source.seeAlsoVehicle;
   if (isShip) {
-    mark("vehiclePurchase", data.itemKind === "vehiclePurchase" && !!data.vehicle, source, "Vehicle purchase/reference missing");
+    mark("vehiclePurchase", data.itemKind === "vehiclePurchase" && !!data.vehicle && data.equipmentType == null, source, "Vehicle purchase/reference missing or retains incompatible equipment fields");
     if (source.vehAc != null) mark("vehAc", data.armorClass === Number(source.vehAc), source, "Vehicle AC missing");
     if (source.vehHp != null) mark("vehHp", data.hitPoints === Number(source.vehHp), source, "Vehicle HP missing");
     if (source.vehDmgThresh != null) mark("vehDmgThresh", data.damageThreshold === Number(source.vehDmgThresh), source, "Vehicle damage threshold missing");
@@ -90,6 +90,16 @@ for (const source of upstream) {
     if (source.capPassenger != null) mark("capPassenger", data.passengers === Number(source.capPassenger), source, "Passenger capacity missing");
     if (source.capCargo != null) mark("capCargo", data.cargoCapacity === Number(source.capCargo), source, "Cargo capacity missing");
   }
+
+  const unexpectedZero = (data.modifiers ?? []).filter(m => {
+    const domain = m?.target?.domain;
+    if (!["abilityCheck", "proficiencyBonus", "damageRoll"].includes(domain)) return false;
+    if (Number(m?.value?.value) !== 0) return false;
+    if (domain === "abilityCheck") return source.bonusAbilityCheck == null;
+    if (domain === "proficiencyBonus") return source.bonusProficiencyBonus == null;
+    return source.bonusWeaponDamage == null;
+  });
+  if (unexpectedZero.length) issues.push({ name: source.name, source: source.source, field: "spuriousModifier", detail: "Generated zero-value modifier without an upstream mechanic" });
 }
 
 const report = {
