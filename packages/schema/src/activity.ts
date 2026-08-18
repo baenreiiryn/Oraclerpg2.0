@@ -65,6 +65,9 @@ export interface CheckComponent {
 
 export interface DamagePart {
   damageType?: DamageTypeId;
+  /** Alternative damage types when the caster chooses one type for this part. */
+  damageTypes?: readonly DamageTypeId[];
+  chooseDamageType?: boolean;
   formula?: string;
   value?: RuntimeValueRef;
   scaling?: ScalingRule;
@@ -112,6 +115,13 @@ export interface ScalingRule {
   formula?: string;
 }
 
+export interface GenericRollData {
+  id: string;
+  name?: string;
+  formula: string;
+  purpose?: "utility" | "duration" | "resource" | "chance" | "custom";
+}
+
 /** One selectable summon outcome. Used when one casting can create different canonical creatures/forms. */
 export interface SummonProfileData {
   id: string;
@@ -120,6 +130,11 @@ export interface SummonProfileData {
   count?: number | FormulaValue | RuntimeValueRef;
   predicate?: PredicateData;
   cost?: number | RuntimeValueRef;
+}
+
+export interface SummonScalingData {
+  target: "armorClass" | "hitDice" | "hitPoints" | "attackDamage" | "saveDamage" | "healing" | "custom";
+  formula: string;
 }
 
 export interface ActivityData {
@@ -134,6 +149,7 @@ export interface ActivityData {
   check?: CheckComponent;
   damage?: readonly DamagePart[];
   healing?: readonly HealingPart[];
+  rolls?: readonly GenericRollData[];
   conditions?: readonly ConditionEffect[];
   duration?: DurationSpec;
   uses?: UsesSpec;
@@ -146,6 +162,8 @@ export interface ActivityData {
   invocation?: InvocationSpec;
   summon?: SummonSpec;
   summonProfiles?: readonly SummonProfileData[];
+  summonScaling?: readonly SummonScalingData[];
+  summonMatch?: readonly ("proficiency" | "attacks" | "saves")[];
   transformation?: TransformationData;
   multiattack?: MultiattackData;
   replacements?: readonly ActionReplacementData[];
