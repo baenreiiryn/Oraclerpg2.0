@@ -9,6 +9,7 @@ export * from "./activity.js";
 export * from "./monster.js";
 export * from "./vehicle.js";
 export * from "./item.js";
+export * from "./inventory.js";
 export * from "./spell.js";
 export * from "./feature.js";
 export * from "./progression.js";
