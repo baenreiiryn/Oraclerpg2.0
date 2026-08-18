@@ -18,6 +18,8 @@ jobs:
           node-version: 22
       - name: Probe SRD 5.2 spell fields
         run: node scripts/probe-srd52-spell-fields.mjs
+      - name: Probe 5etools Foundry enrichment
+        run: node scripts/probe-srd52-spell-foundry.mjs
       - name: Import SRD 5.2 spells
         run: node scripts/import-srd52-spells.mjs
       - name: Audit SRD 5.2 spell coverage
