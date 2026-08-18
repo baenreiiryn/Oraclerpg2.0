@@ -83,14 +83,19 @@ export type ModifierMode =
 export interface ModifierTarget {
   domain:
     | "attackRoll" | "damageRoll" | "savingThrow" | "abilityCheck" | "skillCheck" | "initiative" | "armorClass"
-    | "movement" | "damageResistance" | "damageImmunity" | "condition" | "spellcasting" | "concentration"
-    | "unarmedStrike" | "activity" | "resource" | "custom";
+    | "movement" | "movementCapability" | "difficultTerrain" | "damageResistance" | "damageImmunity" | "condition"
+    | "spellcasting" | "concentration" | "unarmedStrike" | "activity" | "resource" | "abilityScore"
+    | "hitPointMaximum" | "temporaryHitPointMaximum" | "deathSave" | "sense" | "language" | "proficiencyBonus"
+    | "itemProperty" | "itemMagicalBonus" | "itemDamage" | "custom";
   ability?: AbilityId;
   skill?: string;
   damageType?: DamageTypeId;
   movementType?: MovementTypeId;
   condition?: ConditionId;
   activityId?: string;
+  sense?: string;
+  language?: string;
+  itemProperty?: string;
 }
 
 export interface ModifierData {
@@ -153,6 +158,7 @@ export interface EffectData {
   predicate?: PredicateData;
   duration?: EffectDurationData;
   modifiers?: readonly ModifierData[];
+  attackOverrides?: readonly AttackOverrideData[];
   conditions?: readonly ConditionInteractionData[];
   afflictions?: readonly AfflictionInteractionData[];
   area?: AreaEffectData;
