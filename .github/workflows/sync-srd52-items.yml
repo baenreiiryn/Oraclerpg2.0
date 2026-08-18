@@ -5,6 +5,10 @@ on:
     paths:
       - "scripts/import-srd52-items.mjs"
       - ".github/workflows/sync-srd52-items.yml"
+  pull_request:
+    paths:
+      - "scripts/import-srd52-items.mjs"
+      - ".github/workflows/sync-srd52-items.yml"
   workflow_dispatch:
 
 permissions:
@@ -20,8 +24,17 @@ jobs:
         with:
           node-version: 22
       - name: Generate canonical SRD item compendium
+        id: importer
+        continue-on-error: true
         run: node scripts/import-srd52-items.mjs
+      - name: Upload generated compendium and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-items
+          path: packages/content/data/srd-5.2
       - name: Commit generated compendium
+        if: github.event_name == 'push' && steps.importer.outcome == 'success'
         run: |
           if git diff --quiet -- packages/content/data/srd-5.2; then
             echo "No content changes"
@@ -32,3 +45,6 @@ jobs:
           git add packages/content/data/srd-5.2
           git commit -m "Populate SRD 5.2 item compendium"
           git push
+      - name: Fail on import diagnostics
+        if: steps.importer.outcome != 'success'
+        run: exit 1
