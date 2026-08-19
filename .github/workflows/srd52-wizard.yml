@@ -5,14 +5,8 @@ on:
   pull_request:
     branches: [main]
     paths:
-      - 'packages/schema/src/wizard-mechanics.ts'
-      - 'packages/schema/src/index.ts'
-      - 'scripts/import-srd52-wizard.mjs'
-      - 'scripts/canonicalize-srd52-wizard.mjs'
-      - 'scripts/audit-srd52-wizard.mjs'
-      - 'scripts/audit-srd52-compendium-final.mjs'
-      - 'scripts/compare-5etools-srd52-wizard.mjs'
-      - 'scripts/compare-foundry-srd52-wizard.mjs'
+      - 'packages/schema/src/**'
+      - 'scripts/*srd52-*.mjs'
       - '.github/workflows/srd52-wizard.yml'
   workflow_dispatch:
 
@@ -34,50 +28,61 @@ jobs:
         run: node scripts/import-srd52-wizard.mjs
       - name: Canonicalize Wizard mechanics for Oracle schema
         run: node scripts/canonicalize-srd52-wizard.mjs
+      - name: Canonicalize class equipment categories
+        run: node scripts/canonicalize-srd52-class-equipment.mjs
       - name: Audit Wizard and Evoker structure
         run: node scripts/audit-srd52-wizard.mjs
-      - name: Compare imported Wizard with 5etools source
+      - name: Compare Wizard with 5etools source
         run: node scripts/compare-5etools-srd52-wizard.mjs
+      - name: Re-audit Ranger on cumulative compendium
+        run: node scripts/audit-srd52-ranger.mjs
+      - name: Compare Ranger with 5etools source
+        run: node scripts/compare-5etools-srd52-ranger.mjs
+      - name: Re-audit Sorcerer on cumulative compendium
+        run: node scripts/audit-srd52-sorcerer.mjs
+      - name: Compare Sorcerer with 5etools source
+        run: node scripts/compare-5etools-srd52-sorcerer.mjs
       - name: Final SRD 5.2 compendium integrity audit
         run: node scripts/audit-srd52-compendium-final.mjs
       - name: Checkout Foundry D&D 2024 architecture reference
         run: git clone --depth 1 --filter=blob:none --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Compare Oracle architecture with Foundry Wizard
         run: node scripts/compare-foundry-srd52-wizard.mjs ../foundry-dnd5e/packs/_source/classes24
-      - name: Verify cumulative class set
+      - name: Verify cumulative release gate
         run: |
           node - <<'NODE'
           const fs=require('fs'),root='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
-          for(const f of ['wizard-coverage-audit.json','wizard-5etools-comparison.json','wizard-foundry-comparison.json','compendium-final-audit.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(`${f}: ${JSON.stringify(a)}`)}
+          for(const f of ['ranger-coverage-audit.json','ranger-5etools-comparison.json','sorcerer-coverage-audit.json','sorcerer-5etools-comparison.json','warlock-coverage-audit.json','warlock-5etools-comparison.json','wizard-coverage-audit.json','wizard-5etools-comparison.json','wizard-foundry-comparison.json','compendium-final-audit.json']){const a=read(f);if(String(a.status).toUpperCase()!=='SUPPORTED'||a.issues?.length)throw new Error(`${f}: ${JSON.stringify(a)}`)}
           const cls=read('classes.json'),subs=read('subclasses.json'),features=read('class-features.json');
+          if(cls.count!==12||subs.count!==12)throw new Error(`Expected 12 classes/subclasses, got ${cls.count}/${subs.count}`);
           for(const n of ['Rogue','Sorcerer','Warlock','Wizard'])if(!cls.items.some(x=>x.name===n))throw new Error(`Cumulative class missing: ${n}`);
           if(!subs.items.some(x=>x.name==='Fiend Patron'&&x.data?.parentClass?.name==='Warlock'))throw new Error('Fiend Patron missing');
           if(!subs.items.some(x=>x.name==='Evoker'&&x.data?.parentClass?.name==='Wizard'))throw new Error('Evoker missing');
-          const get=n=>features.items.find(x=>x.name===n&&x.data?.category==='wizard');
-          const book=get('Spellcasting')?.data?.classMechanics?.spellCollections?.find(x=>x.id==='wizard-spellbook');
+          const wizard=n=>features.items.find(x=>x.name===n&&x.data?.category==='wizard');
+          const book=wizard('Spellcasting')?.data?.classMechanics?.spellCollections?.find(x=>x.id==='wizard-spellbook');
           if(!book?.additions||book.capacity===null)throw new Error('Wizard spellbook is not schema-canonical');
-          const recovery=get('Arcane Recovery')?.data?.classRules?.spellSlotRecoveryBudgets?.[0];
+          const recovery=wizard('Arcane Recovery')?.data?.classRules?.spellSlotRecoveryBudgets?.[0];
           if(recovery?.poolId!=='wizard-spell-slots'||recovery?.maxSlotLevel!==5)throw new Error('Arcane Recovery is not schema-canonical');
-          console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,status:'SUPPORTED'},null,2));
+          console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,classFeatures:features.count,status:'SUPPORTED'},null,2));
           NODE
       - uses: actions/upload-artifact@v4
         with:
-          name: srd52-wizard
+          name: srd52-final-compendium
           path: |
             packages/content/data/srd-5.2/classes.json
             packages/content/data/srd-5.2/subclasses.json
             packages/content/data/srd-5.2/class-features.json
-            packages/content/data/srd-5.2/wizard-import-report.json
-            packages/content/data/srd-5.2/wizard-coverage-audit.json
-            packages/content/data/srd-5.2/wizard-5etools-comparison.json
-            packages/content/data/srd-5.2/wizard-foundry-comparison.json
+            packages/content/data/srd-5.2/ranger-*.json
+            packages/content/data/srd-5.2/sorcerer-*.json
+            packages/content/data/srd-5.2/warlock-*.json
+            packages/content/data/srd-5.2/wizard-*.json
             packages/content/data/srd-5.2/compendium-final-audit.json
-      - name: Persist cumulative Wizard compendium on Wizard branch
+      - name: Persist final cumulative compendium on Wizard branch
         if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-wizard'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/wizard-*.json packages/content/data/srd-5.2/compendium-final-audit.json
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/ranger-*.json packages/content/data/srd-5.2/sorcerer-*.json packages/content/data/srd-5.2/warlock-*.json packages/content/data/srd-5.2/wizard-*.json packages/content/data/srd-5.2/compendium-final-audit.json
           if ! git diff --cached --quiet; then
             git commit -m 'Persist final SRD 5.2 compendium audit [skip ci]'
             git push origin HEAD:${{ github.head_ref }}
