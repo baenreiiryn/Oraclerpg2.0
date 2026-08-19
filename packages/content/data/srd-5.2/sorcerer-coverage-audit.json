@@ -1,0 +1,50 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 9,
+  "subclassCount": 9,
+  "classFeatureCount": 198,
+  "sorcererFeatures": 9,
+  "metamagicOptions": 10,
+  "draconicFeatures": 5,
+  "progression": {
+    "sorceryPoints": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        20,
+        20
+      ]
+    ],
+    "metamagic": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        17,
+        6
+      ]
+    ],
+    "prepared": [
+      [
+        1,
+        2
+      ],
+      [
+        20,
+        22
+      ]
+    ]
+  }
+}
