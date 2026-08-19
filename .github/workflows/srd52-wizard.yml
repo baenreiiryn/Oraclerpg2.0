@@ -29,8 +29,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Checkout Foundry D&D 2024 architecture reference
-        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Import Wizard from 5etools SRD 5.2
         run: node scripts/import-srd52-wizard.mjs
       - name: Canonicalize Wizard mechanics for Oracle schema
@@ -39,6 +37,8 @@ jobs:
         run: node scripts/audit-srd52-wizard.mjs
       - name: Compare imported Wizard with 5etools source
         run: node scripts/compare-5etools-srd52-wizard.mjs
+      - name: Checkout Foundry D&D 2024 architecture reference
+        run: git clone --depth 1 --filter=blob:none --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Compare Oracle architecture with Foundry Wizard
         run: node scripts/compare-foundry-srd52-wizard.mjs ../foundry-dnd5e/packs/_source/classes24
       - name: Verify cumulative class set
