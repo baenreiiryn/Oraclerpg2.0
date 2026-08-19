@@ -9,9 +9,12 @@ permissions:
 
 jobs:
   media:
+    if: github.actor != 'github-actions[bot]'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -44,7 +47,9 @@ jobs:
       - name: Resolve 5etools media assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: node scripts/sync-srd52-media.mjs
+        run: |
+          node scripts/sync-srd52-media.mjs
+          node scripts/finalize-srd52-media.mjs
       - name: Validate media model and coverage
         run: |
           node - <<'NODE'
@@ -64,6 +69,8 @@ jobs:
             if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
             if(audit.collections[file].entities!==count) throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);
           }
+          if(!audit.safeguards?.monsterFeatureBestiaryArtworkBlocked) throw new Error('Monster-feature artwork safeguard missing');
+          if(audit.collections['monster-features.json'].withMedia!==0) throw new Error('Monster Features must not inherit Bestiary creature artwork');
           if(!audit.totals.withMedia) throw new Error('No upstream media assets were resolved');
           for(const [file,stats] of Object.entries(audit.collections)){
             const doc=JSON.parse(fs.readFileSync(`${root}/${file}`,'utf8'));
@@ -78,6 +85,7 @@ jobs:
                 if(asset.provider!=='5etools-img') throw new Error(`${entity.name}: unexpected provider`);
                 if(!asset.sourceUrl.startsWith('https://raw.githubusercontent.com/')) throw new Error(`${entity.name}: invalid source URL`);
                 if(asset.storagePolicy!=='mirrorOnDemand') throw new Error(`${entity.name}: invalid storage policy`);
+                if((asset.role==='token'||asset.role==='portrait') && entity.entityType!=='monster') throw new Error(`${entity.name}: creature-only media role on ${entity.entityType}`);
               }
             }
             if(stats.withMedia>stats.entities) throw new Error(`${file}: invalid coverage`);
@@ -96,3 +104,21 @@ jobs:
             packages/content/data/srd-5.2/species-features.json
             packages/content/data/srd-5.2/feats.json
             packages/content/data/srd-5.2/media-coverage-audit.json
+      - name: Persist enriched compendium on PR branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            packages/content/data/srd-5.2/items.json \
+            packages/content/data/srd-5.2/spells.json \
+            packages/content/data/srd-5.2/monsters.json \
+            packages/content/data/srd-5.2/monster-features.json \
+            packages/content/data/srd-5.2/species.json \
+            packages/content/data/srd-5.2/species-features.json \
+            packages/content/data/srd-5.2/feats.json \
+            packages/content/data/srd-5.2/media-coverage-audit.json
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m 'Persist SRD 5.2 media-enriched compendium [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi
