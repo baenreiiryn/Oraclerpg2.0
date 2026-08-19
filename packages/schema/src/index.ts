@@ -3,6 +3,7 @@ export const CANONICAL_SCHEMA_VERSION = 1 as const;
 export * from "./enums.js";
 export * from "./primitives.js";
 export * from "./mechanics.js";
+export * from "./feature-rules.js";
 export * from "./class-mechanics.js";
 export * from "./class-rules.js";
 export * from "./activity.js";

@@ -1,0 +1,30 @@
+name: Compare Foundry SRD 5.2 Species and Feats
+
+on:
+  pull_request:
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate and enrich Oracle species and feats
+        run: |
+          node scripts/sync-srd52-species-feats.mjs
+          node scripts/normalize-srd52-species-feats.mjs
+          node scripts/enrich-srd52-species-feats.mjs
+          node scripts/finalize-srd52-species-feats.mjs
+          node scripts/postprocess-srd52-species-feats.mjs
+      - name: Clone Foundry D&D 6.0.x
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git /tmp/dnd5e
+      - name: Install YAML parser
+        run: python -m pip install pyyaml
+      - name: Compare Foundry and Oracle
+        run: python scripts/compare-foundry-srd52-species-feats.py packages/content/data/srd-5.2 /tmp/dnd5e
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-species-feats-foundry-comparison
+          path: packages/content/data/srd-5.2/species-feats-foundry-comparison.json

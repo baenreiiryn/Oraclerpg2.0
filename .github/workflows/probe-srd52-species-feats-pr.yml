@@ -1,0 +1,19 @@
+name: Probe SRD 5.2 Species and Feats PR
+
+on:
+  pull_request:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probe 5etools SRD 5.2 species and feats
+        run: node scripts/probe-srd52-species-feats.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-species-feats-probe
+          path: tmp/species-feat-probe/report.json
