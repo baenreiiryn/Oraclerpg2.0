@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 4,
+  "count": 5,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -2118,6 +2118,656 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 385742
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:fighter:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:fighter:srd-5.2",
+      "entityType": "class",
+      "name": "Fighter",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Fighter",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 10,
+        "primaryAbilities": [
+          "strength",
+          "dexterity"
+        ],
+        "savingThrowProficiencies": [
+          "strength",
+          "constitution"
+        ],
+        "armorTraining": [
+          "light",
+          "medium",
+          "heavy",
+          "shield"
+        ],
+        "weaponProficiencies": [
+          "simple",
+          "martial"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Acrobatics",
+            "Animal Handling",
+            "Athletics",
+            "History",
+            "Insight",
+            "Intimidation",
+            "Persuasion",
+            "Perception",
+            "Survival"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, 4 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Chain Mail",
+                  "canonicalId": "dnd2024:2024:item:chain-mail:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Greatsword",
+                  "canonicalId": "dnd2024:2024:item:greatsword:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Flail",
+                  "canonicalId": "dnd2024:2024:item:flail:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Javelin",
+                  "canonicalId": "dnd2024:2024:item:javelin:srd-5.2"
+                },
+                "quantity": 8
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dungeoneer's Pack",
+                  "canonicalId": "dnd2024:2024:item:dungeoneer-s-pack:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "currency": {
+                  "amount": 4,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer's Pack, 11 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Studded Leather Armor",
+                  "canonicalId": "dnd2024:2024:item:studded-leather-armor:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Scimitar",
+                  "canonicalId": "dnd2024:2024:item:scimitar:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Shortsword",
+                  "canonicalId": "dnd2024:2024:item:shortsword:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Longbow",
+                  "canonicalId": "dnd2024:2024:item:longbow:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Arrows",
+                  "canonicalId": "dnd2024:2024:item:arrows:srd-5.2"
+                },
+                "quantity": 20
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Quiver",
+                  "canonicalId": "dnd2024:2024:item:quiver:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dungeoneer's Pack",
+                  "canonicalId": "dnd2024:2024:item:dungeoneer-s-pack:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "currency": {
+                  "amount": 11,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "C",
+            "label": "155 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 155,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fighting Style",
+                  "canonicalId": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Second Wind",
+                  "canonicalId": "dnd2024:2024:feature:fighter:second-wind:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Weapon Mastery",
+                  "canonicalId": "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 2,
+              "actionSurgeUses": 0,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 3,
+              "attackActionCount": 1
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Action Surge",
+                  "canonicalId": "dnd2024:2024:feature:fighter:action-surge:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Tactical Mind",
+                  "canonicalId": "dnd2024:2024:feature:fighter:tactical-mind:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 2,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 3,
+              "attackActionCount": 1
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "secondWindUses": 2,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 3,
+              "attackActionCount": 1
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:fighter:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 1
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Extra Attack",
+                  "canonicalId": "dnd2024:2024:feature:fighter:extra-attack:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Tactical Shift",
+                  "canonicalId": "dnd2024:2024:feature:fighter:tactical-shift:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 7,
+            "grants": [],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 0,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Indomitable",
+                  "canonicalId": "dnd2024:2024:feature:fighter:indomitable:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Tactical Master",
+                  "canonicalId": "dnd2024:2024:feature:fighter:tactical-master:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 3,
+              "actionSurgeUses": 1,
+              "indomitableUses": 1,
+              "weaponMasteryCount": 4,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 10,
+            "grants": [],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 1,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 2
+            }
+          },
+          {
+            "level": 11,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Two Extra Attacks",
+                  "canonicalId": "dnd2024:2024:feature:fighter:two-extra-attacks:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 1,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 1,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 13,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Indomitable",
+                  "canonicalId": "dnd2024:2024:feature:fighter:indomitable:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Studied Attacks",
+                  "canonicalId": "dnd2024:2024:feature:fighter:studied-attacks:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 2,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 2,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 2,
+              "weaponMasteryCount": 5,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 1,
+              "indomitableUses": 2,
+              "weaponMasteryCount": 6,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Action Surge",
+                  "canonicalId": "dnd2024:2024:feature:fighter:action-surge:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Indomitable",
+                  "canonicalId": "dnd2024:2024:feature:fighter:indomitable:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 2,
+              "indomitableUses": 3,
+              "weaponMasteryCount": 6,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 18,
+            "grants": [],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 2,
+              "indomitableUses": 3,
+              "weaponMasteryCount": 6,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:fighter:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 2,
+              "indomitableUses": 3,
+              "weaponMasteryCount": 6,
+              "attackActionCount": 3
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Three Extra Attacks",
+                  "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "secondWindUses": 4,
+              "actionSurgeUses": 2,
+              "indomitableUses": 3,
+              "weaponMasteryCount": 6,
+              "attackActionCount": 4
+            }
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      },
+      "artwork": {
+        "image": "systems/dnd5e/icons/classes/fighter.webp"
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbfighterwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Fighter.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Fighter.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 325352
             }
           }
         ]

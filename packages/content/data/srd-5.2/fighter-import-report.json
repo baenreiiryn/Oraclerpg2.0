@@ -1,0 +1,41 @@
+{
+  "status": "IMPORTED",
+  "class": "Fighter",
+  "subclass": "Champion",
+  "source": {
+    "classFeatureRecords": 27,
+    "subclassFeatureRecords": 7
+  },
+  "oracle": {
+    "classFeatures": 14,
+    "subclassFeatures": 6
+  },
+  "scales": {
+    "secondWind": {
+      "1": 2,
+      "4": 3,
+      "10": 4
+    },
+    "actionSurge": {
+      "2": 1,
+      "17": 2
+    },
+    "indomitable": {
+      "9": 1,
+      "13": 2,
+      "17": 3
+    },
+    "weaponMastery": {
+      "1": 3,
+      "4": 4,
+      "10": 5,
+      "16": 6
+    },
+    "attacks": {
+      "1": 1,
+      "5": 2,
+      "11": 3,
+      "20": 4
+    }
+  }
+}

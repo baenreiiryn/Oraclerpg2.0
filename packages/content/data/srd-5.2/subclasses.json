@@ -3,8 +3,117 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 4,
+  "count": 5,
   "items": [
+    {
+      "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
+      "entityType": "subclass",
+      "name": "Champion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Fighter:Champion",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Fighter",
+          "canonicalId": "dnd2024:2024:class:fighter:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Improved Critical",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:improved-critical:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Remarkable Athlete",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Additional Fighting Style",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:additional-fighting-style:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Heroic Warrior",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Superior Critical",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:superior-critical:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Survivor",
+                  "canonicalId": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
     {
       "id": "dnd2024:2024:subclass:druid:land:srd-5.2",
       "canonicalId": "dnd2024:2024:subclass:druid:land:srd-5.2",
