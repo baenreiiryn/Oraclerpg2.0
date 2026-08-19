@@ -1,0 +1,29 @@
+name: Verify Monster Feature Compendium
+
+on:
+  pull_request:
+    paths:
+      - "packages/content/data/srd-5.2/monster-features.json"
+      - "packages/schema/src/monster-feature.ts"
+      - "packages/schema/src/activity.ts"
+      - "scripts/verify-srd52-monster-feature-templates.mjs"
+      - ".github/workflows/verify-monster-features.yml"
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: pnpm install
+      - name: Build schema
+        run: pnpm --filter @oraclerpg/schema build
+      - name: Verify reusable monster feature templates
+        run: node scripts/verify-srd52-monster-feature-templates.mjs
