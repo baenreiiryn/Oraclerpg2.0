@@ -1,0 +1,2773 @@
+{
+  "format": "oraclerpg-compendium",
+  "version": 1,
+  "contentSource": "srd-5.2",
+  "entityType": "species",
+  "count": 9,
+  "items": [
+    {
+      "id": "dnd2024:2024:species:dragonborn:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:dragonborn:srd-5.2",
+      "entityType": "species",
+      "name": "Dragonborn",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Dragonborn",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 60,
+        "resistanceChoice": {
+          "damageTypes": [
+            "acid",
+            "lightning",
+            "fire",
+            "poison",
+            "cold"
+          ],
+          "count": 1
+        },
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-draconic-ancestry:srd-5.2",
+            "name": "Draconic Ancestry",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+            "name": "Breath Weapon",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+            "name": "Damage Resistance",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-draconic-flight:srd-5.2",
+            "name": "Draconic Flight",
+            "entityType": "feature"
+          }
+        ],
+        "variants": [
+          {
+            "id": "dragonborn-black",
+            "name": "Dragonborn (Black)",
+            "resistances": [
+              "acid"
+            ],
+            "parameters": {
+              "color": "Black",
+              "damageType": "Acid"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Acid"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "acid"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-blue",
+            "name": "Dragonborn (Blue)",
+            "resistances": [
+              "lightning"
+            ],
+            "parameters": {
+              "color": "Blue",
+              "damageType": "Lightning"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Lightning"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "lightning"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-brass",
+            "name": "Dragonborn (Brass)",
+            "resistances": [
+              "fire"
+            ],
+            "parameters": {
+              "color": "Brass",
+              "damageType": "Fire"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Fire"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "fire"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-bronze",
+            "name": "Dragonborn (Bronze)",
+            "resistances": [
+              "lightning"
+            ],
+            "parameters": {
+              "color": "Bronze",
+              "damageType": "Lightning"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Lightning"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "lightning"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-copper",
+            "name": "Dragonborn (Copper)",
+            "resistances": [
+              "acid"
+            ],
+            "parameters": {
+              "color": "Copper",
+              "damageType": "Acid"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Acid"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "acid"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-gold",
+            "name": "Dragonborn (Gold)",
+            "resistances": [
+              "fire"
+            ],
+            "parameters": {
+              "color": "Gold",
+              "damageType": "Fire"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Fire"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "fire"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-green",
+            "name": "Dragonborn (Green)",
+            "resistances": [
+              "poison"
+            ],
+            "parameters": {
+              "color": "Green",
+              "damageType": "Poison"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Poison"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "poison"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-red",
+            "name": "Dragonborn (Red)",
+            "resistances": [
+              "fire"
+            ],
+            "parameters": {
+              "color": "Red",
+              "damageType": "Fire"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Fire"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "fire"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-silver",
+            "name": "Dragonborn (Silver)",
+            "resistances": [
+              "cold"
+            ],
+            "parameters": {
+              "color": "Silver",
+              "damageType": "Cold"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Cold"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "cold"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          },
+          {
+            "id": "dragonborn-white",
+            "name": "Dragonborn (White)",
+            "resistances": [
+              "cold"
+            ],
+            "parameters": {
+              "color": "White",
+              "damageType": "Cold"
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+                  "name": "Breath Weapon",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "Cold"
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "cold"
+                }
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Breath Weapon",
+                  "entries": [
+                    "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} {{damageType}} damage. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                    "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Damage Resistance",
+                  "entries": [
+                    "You have {@variantrule Resistance|XPHB} to {{damageType}} damage."
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 5-7 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Draconic Ancestry",
+              "entries": [
+                "Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and {@variantrule Damage|XPHB} {@variantrule Resistance|XPHB} traits as well as your appearance.",
+                {
+                  "type": "table",
+                  "caption": "Draconic Ancestors",
+                  "columns": [
+                    "Dragon",
+                    "Damage Type"
+                  ],
+                  "rows": [
+                    [
+                      "Black",
+                      "Acid"
+                    ],
+                    [
+                      "Blue",
+                      "Lightning"
+                    ],
+                    [
+                      "Brass",
+                      "Fire"
+                    ],
+                    [
+                      "Bronze",
+                      "Lightning"
+                    ],
+                    [
+                      "Copper",
+                      "Acid"
+                    ],
+                    [
+                      "Gold",
+                      "Fire"
+                    ],
+                    [
+                      "Green",
+                      "Poison"
+                    ],
+                    [
+                      "Red",
+                      "Fire"
+                    ],
+                    [
+                      "Silver",
+                      "Cold"
+                    ],
+                    [
+                      "White",
+                      "Cold"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Breath Weapon",
+              "entries": [
+                "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Damage Resistance",
+              "entries": [
+                "You have {@variantrule Resistance|XPHB} to the damage type determined by your Draconic Ancestry trait."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 60 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Draconic Flight",
+              "entries": [
+                "When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a {@variantrule Bonus Action|XPHB}, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the {@condition Incapacitated|XPHB} condition. During that time, you have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 60
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbdragonbornwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Dragonborn.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Dragonborn.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 74610
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:dwarf:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:dwarf:srd-5.2",
+      "entityType": "species",
+      "name": "Dwarf",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Dwarf",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 120,
+        "resistances": [
+          "poison"
+        ],
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-dwarven-resilience:srd-5.2",
+            "name": "Dwarven Resilience",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-dwarven-toughness:srd-5.2",
+            "name": "Dwarven Toughness",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-stonecunning:srd-5.2",
+            "name": "Stonecunning",
+            "entityType": "feature"
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 4-5 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 120 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Dwarven Resilience",
+              "entries": [
+                "You have {@variantrule Resistance|XPHB} to Poison damage. You also have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Poisoned|XPHB} condition."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Dwarven Toughness",
+              "entries": [
+                "Your {@variantrule Hit Points|XPHB|Hit Point} maximum increases by 1, and it increases by 1 again whenever you gain a level."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Stonecunning",
+              "entries": [
+                "As a {@variantrule Bonus Action|XPHB}, you gain {@sense Tremorsense|XPHB} with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this {@sense Tremorsense|XPHB}. The stone can be natural or worked.",
+                "You can use this {@variantrule Bonus Action|XPHB} a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 120
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbdwarfwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Dwarf.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Dwarf.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 37324
+            }
+          },
+          {
+            "id": "artwork:racespskdwarfwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSK/Dwarf.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSK/Dwarf.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 151940
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:elf:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:elf:srd-5.2",
+      "entityType": "species",
+      "name": "Elf",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Elf",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 60,
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-elven-lineage:srd-5.2",
+            "name": "Elven Lineage",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-fey-ancestry:srd-5.2",
+            "name": "Fey Ancestry",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-keen-senses:srd-5.2",
+            "name": "Keen Senses",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-trance:srd-5.2",
+            "name": "Trance",
+            "entityType": "feature"
+          }
+        ],
+        "choices": [
+          {
+            "id": "skill-proficiency",
+            "choice": {
+              "kind": "enum",
+              "count": 1,
+              "options": [
+                "insight",
+                "perception",
+                "survival"
+              ]
+            }
+          }
+        ],
+        "variants": [
+          {
+            "id": "elf-drow-lineage",
+            "name": "Elf; Drow Lineage",
+            "darkvision": 120,
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:dancing-lights:srd-5.2",
+                      "name": "dancing lights",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:faerie-fire:srd-5.2",
+                      "name": "faerie fire",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:darkness:srd-5.2",
+                      "name": "darkness",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:faerie-fire:srd-5.2",
+                      "name": "faerie fire",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:darkness:srd-5.2",
+                      "name": "darkness",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Elven Lineage (Drow)",
+                  "entries": [
+                    "You are part of a lineage that grants you supernatural abilities. The range of your {@sense Darkvision|XPHB} increases to 120 feet. You also know the {@spell Dancing Lights|XPHB} cantrip.",
+                    "When you reach character level 3, you learn the {@spell Faerie Fire|XPHB} spell. When you reach character level 5, you also learn the {@spell Darkness|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage)."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Darkvision",
+                  "entries": [
+                    "You have {@sense Darkvision|XPHB} with a range of 120 feet."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+                  "name": "Darkvision",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "range": 120
+                }
+              }
+            ]
+          },
+          {
+            "id": "elf-high-elf-lineage",
+            "name": "Elf; High Elf Lineage",
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "query": "level=0|class=Wizard"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:detect-magic:srd-5.2",
+                      "name": "detect magic",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:misty-step:srd-5.2",
+                      "name": "misty step",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:detect-magic:srd-5.2",
+                      "name": "detect magic",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:misty-step:srd-5.2",
+                      "name": "misty step",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Elven Lineage (High Elf)",
+                  "entries": [
+                    "You are part of a lineage that grants you supernatural abilities. You know the {@spell Prestidigitation|XPHB} cantrip. Whenever you finish a {@variantrule Long Rest|XPHB}, you can replace that cantrip with a different {@filter cantrip from the Wizard spell list|spells|level=0|class=Wizard}.",
+                    "When you reach character level 3, you learn the {@spell Detect Magic|XPHB} spell. When you reach character level 5, you also learn the {@spell Misty Step|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage)."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": []
+          },
+          {
+            "id": "elf-wood-elf-lineage",
+            "name": "Elf; Wood Elf Lineage",
+            "speed": 35,
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:druidcraft:srd-5.2",
+                      "name": "druidcraft",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:longstrider:srd-5.2",
+                      "name": "longstrider",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:pass-without-trace:srd-5.2",
+                      "name": "pass without trace",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:longstrider:srd-5.2",
+                      "name": "longstrider",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:pass-without-trace:srd-5.2",
+                      "name": "pass without trace",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Elven Lineage (Wood Elf)",
+                  "entries": [
+                    "You are part of a lineage that grants you supernatural abilities. Your {@variantrule Speed|XPHB} increases to 35 feet. You also know the {@spell Druidcraft|XPHB} cantrip.",
+                    "When you reach character level 3, you learn the {@spell Longstrider|XPHB} spell. When you reach character level 5, you also learn the {@spell Pass without Trace|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage)."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": []
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 5-6 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 60 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Elven Lineage",
+              "entries": [
+                "You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.",
+                "When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).",
+                {
+                  "type": "table",
+                  "caption": "Elven Lineages",
+                  "columns": [
+                    "Lineage",
+                    "Level 1",
+                    "Level 3",
+                    "Level 5"
+                  ],
+                  "rows": [
+                    [
+                      "Drow",
+                      "The range of your {@sense Darkvision|XPHB} increases to 120 feet. You also know the {@spell Dancing Lights|XPHB} cantrip.",
+                      "{@spell Faerie Fire|XPHB}",
+                      "{@spell Darkness|XPHB}"
+                    ],
+                    [
+                      "High Elf",
+                      "You know the {@spell Prestidigitation|XPHB} cantrip. Whenever you finish a {@variantrule Long Rest|XPHB}, you can replace that cantrip with a different {@filter cantrip from the Wizard spell list|spells|level=0|class=Wizard}.",
+                      "{@spell Detect Magic|XPHB}",
+                      "{@spell Misty Step|XPHB}"
+                    ],
+                    [
+                      "Wood Elf",
+                      "Your {@variantrule Speed|XPHB} increases to 35 feet. You also know the {@spell Druidcraft|XPHB} cantrip.",
+                      "{@spell Longstrider|XPHB}",
+                      "{@spell Pass without Trace|XPHB}"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Fey Ancestry",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Charmed|XPHB} condition."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Keen Senses",
+              "entries": [
+                "You have proficiency in the {@skill Insight|XPHB}, {@skill Perception|XPHB}, or {@skill Survival|XPHB} skill."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Trance",
+              "entries": [
+                "You don't need to sleep, and magic can't put you to sleep. You can finish a {@variantrule Long Rest|XPHB} in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness."
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 60
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbelfwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Elf.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Elf.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 65618
+            }
+          },
+          {
+            "id": "artwork:racespskelfwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSK/Elf.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSK/Elf.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 48030
+            }
+          },
+          {
+            "id": "artwork:racespszelfwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSZ/Elf.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSZ/Elf.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 48560
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:gnome:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:gnome:srd-5.2",
+      "entityType": "species",
+      "name": "Gnome",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Gnome",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "small"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 60,
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-gnomish-cunning:srd-5.2",
+            "name": "Gnomish Cunning",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-gnomish-lineage:srd-5.2",
+            "name": "Gnomish Lineage",
+            "entityType": "feature"
+          }
+        ],
+        "variants": [
+          {
+            "id": "gnome-forest-gnome-lineage",
+            "name": "Gnome; Forest Gnome Lineage",
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:minor-illusion:srd-5.2",
+                      "name": "minor illusion",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:speak-with-animals:srd-5.2",
+                      "name": "speak with animals",
+                      "entityType": "spell"
+                    },
+                    "freeUses": "proficiencyBonus",
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:speak-with-animals:srd-5.2",
+                      "name": "speak with animals",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Gnomish Lineage (Forest Gnome)",
+                  "entries": [
+                    "You know the {@spell Minor Illusion|XPHB} cantrip. You also always have the {@spell Speak with Animals|XPHB} spell prepared. You can cast it without a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. You can also use any spell slots you have to cast the spell."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": []
+          },
+          {
+            "id": "gnome-rock-gnome-lineage",
+            "name": "Gnome; Rock Gnome Lineage",
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:mending:srd-5.2",
+                      "name": "mending",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:prestidigitation:srd-5.2",
+                      "name": "prestidigitation",
+                      "entityType": "spell"
+                    }
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Gnomish Lineage (Rock Gnome)",
+                  "entries": [
+                    "You know the {@spell Mending|XPHB} and {@spell Prestidigitation|XPHB} cantrips. In addition, you can spend 10 minutes casting {@spell Prestidigitation|XPHB} to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from {@spell Prestidigitation|XPHB}; the device produces that effect whenever you or another creature takes a {@variantrule Bonus Action|XPHB} to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell's ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a {@action Utilize|XPHB} action."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": []
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Small (about 3-4 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 60 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Gnomish Cunning",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on Intelligence, Wisdom, and Charisma saving throws."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Gnomish Lineage",
+              "entries": [
+                "You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage):",
+                {
+                  "type": "list",
+                  "items": [
+                    "{\"type\":\"item\",\"name\":\"Forest Gnome\",\"entries\":[\"You know the {@spell Minor Illusion|XPHB} cantrip. You also always have the {@spell Speak with Animals|XPHB} spell prepared. You can cast it without a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. You can also use any spell slots you have to cast the spell.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Rock Gnome\",\"entries\":[\"You know the {@spell Mending|XPHB} and {@spell Prestidigitation|XPHB} cantrips. In addition, you can spend 10 minutes casting {@spell Prestidigitation|XPHB} to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from {@spell Prestidigitation|XPHB}; the device produces that effect whenever you or another creature takes a {@variantrule Bonus Action|XPHB} to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell's ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a {@action Utilize|XPHB} action.\"]}"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 60
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbgnomewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Gnome.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Gnome.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 58994
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:goliath:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:goliath:srd-5.2",
+      "entityType": "species",
+      "name": "Goliath",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Goliath",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "medium"
+        ],
+        "speed": 35,
+        "creatureType": "humanoid",
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-giant-ancestry:srd-5.2",
+            "name": "Giant Ancestry",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-large-form:srd-5.2",
+            "name": "Large Form",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-powerful-build:srd-5.2",
+            "name": "Powerful Build",
+            "entityType": "feature"
+          }
+        ],
+        "variants": [
+          {
+            "id": "goliath-cloud-giant-ancestry",
+            "name": "Goliath; Cloud Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Cloud)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Cloud's Jaunt\",\"entries\":[\"As a {@variantrule Bonus Action|XPHB}, you magically teleport up to 30 feet to an unoccupied space you can see.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-cloud-s-jaunt:srd-5.2",
+                  "name": "Cloud's Jaunt",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          },
+          {
+            "id": "goliath-fire-giant-ancestry",
+            "name": "Goliath; Fire Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Fire)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Fire's Burn\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d10} Fire damage to that target.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-fire-s-burn:srd-5.2",
+                  "name": "Fire's Burn",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          },
+          {
+            "id": "goliath-frost-giant-ancestry",
+            "name": "Goliath; Frost Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Frost)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Frost's Chill\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d6} Cold damage to that target and reduce its {@variantrule Speed|XPHB} by 10 feet until the start of your next turn.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-frost-s-chill:srd-5.2",
+                  "name": "Frost's Chill",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          },
+          {
+            "id": "goliath-hill-giant-ancestry",
+            "name": "Goliath; Hill Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Hill)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Hill's Tumble\",\"entries\":[\"When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the {@condition Prone|XPHB} condition.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-hill-s-tumble:srd-5.2",
+                  "name": "Hill's Tumble",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          },
+          {
+            "id": "goliath-stone-giant-ancestry",
+            "name": "Goliath; Stone Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Stone)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Stone's Endurance\",\"entries\":[\"When you take damage, you can take a {@variantrule Reaction|XPHB} to roll {@dice 1d12}. Add your Constitution modifier to the number rolled and reduce the damage by that total.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-stone-s-endurance:srd-5.2",
+                  "name": "Stone's Endurance",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          },
+          {
+            "id": "goliath-storm-giant-ancestry",
+            "name": "Goliath; Storm Giant Ancestry",
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Giant Ancestry (Storm)",
+                  "entries": [
+                    "You are descended from Giants, granting you a supernatural boon; you can use this boon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                    {
+                      "type": "list",
+                      "items": [
+                        "{\"type\":\"item\",\"name\":\"Storm's Thunder\",\"entries\":[\"When you take damage from a creature within 60 feet of you, you can take a {@variantrule Reaction|XPHB} to deal {@damage 1d8} Thunder damage to that creature.\"]}"
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [],
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "canonicalId": "dnd2024:2024:feature:species-storm-s-thunder:srd-5.2",
+                  "name": "Storm's Thunder",
+                  "entityType": "feature"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 7-8 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Giant Ancestry",
+              "entries": [
+                "You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                {
+                  "type": "list",
+                  "items": [
+                    "{\"type\":\"item\",\"name\":\"Cloud's Jaunt (Cloud Giant)\",\"entries\":[\"As a {@variantrule Bonus Action|XPHB}, you magically teleport up to 30 feet to an unoccupied space you can see.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Fire's Burn (Fire Giant)\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d10} Fire damage to that target.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Frost's Chill (Frost Giant)\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d6} Cold damage to that target and reduce its {@variantrule Speed|XPHB} by 10 feet until the start of your next turn.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Hill's Tumble (Hill Giant)\",\"entries\":[\"When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the {@condition Prone|XPHB} condition.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Stone's Endurance (Stone Giant)\",\"entries\":[\"When you take damage, you can take a {@variantrule Reaction|XPHB} to roll {@dice 1d12}. Add your Constitution modifier to the number rolled and reduce the damage by that total.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Storm's Thunder (Storm Giant)\",\"entries\":[\"When you take damage from a creature within 60 feet of you, you can take a {@variantrule Reaction|XPHB} to deal {@damage 1d8} Thunder damage to that creature.\"]}"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Large Form",
+              "entries": [
+                "Starting at character level 5, you can change your size to Large as a {@variantrule Bonus Action|XPHB} if you're in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have {@variantrule Advantage|XPHB} on Strength checks, and your {@variantrule Speed|XPHB} increases by 10 feet. Once you use this trait, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Powerful Build",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on any ability check you make to end the {@condition Grappled|XPHB} condition. You also count as one size larger when determining your carrying capacity."
+              ]
+            }
+          ]
+        },
+        "featureParameters": []
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesmpmmgoliathwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/MPMM/Goliath.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/MPMM/Goliath.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 1148892
+            }
+          },
+          {
+            "id": "artwork:racesvgmgoliathwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/VGM/Goliath.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/VGM/Goliath.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 44226
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:halfling:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:halfling:srd-5.2",
+      "entityType": "species",
+      "name": "Halfling",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Halfling",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "small"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-brave:srd-5.2",
+            "name": "Brave",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-halfling-nimbleness:srd-5.2",
+            "name": "Halfling Nimbleness",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-luck:srd-5.2",
+            "name": "Luck",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-naturally-stealthy:srd-5.2",
+            "name": "Naturally Stealthy",
+            "entityType": "feature"
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Small (about 2-3 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Brave",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Frightened|XPHB} condition."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Halfling Nimbleness",
+              "entries": [
+                "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Luck",
+              "entries": [
+                "When you roll a 1 on the {@dice d20} of a {@variantrule D20 Test|XPHB}, you can reroll the die, and you must use the new roll."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Naturally Stealthy",
+              "entries": [
+                "You can take the {@action Hide|XPHB} action even when you are obscured only by a creature that is at least one size larger than you."
+              ]
+            }
+          ]
+        },
+        "featureParameters": []
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbhalflingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Halfling.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Halfling.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 41888
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:human:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:human:srd-5.2",
+      "entityType": "species",
+      "name": "Human",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Human",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "small",
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-resourceful:srd-5.2",
+            "name": "Resourceful",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-skillful:srd-5.2",
+            "name": "Skillful",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-versatile:srd-5.2",
+            "name": "Versatile",
+            "entityType": "feature"
+          }
+        ],
+        "choices": [
+          {
+            "id": "size",
+            "choice": {
+              "kind": "enum",
+              "count": 1,
+              "options": [
+                "S",
+                "M"
+              ]
+            }
+          },
+          {
+            "id": "skill-proficiency",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "query": {
+                "all": [
+                  {
+                    "field": "category",
+                    "operator": "eq",
+                    "value": "skill"
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "origin-feat",
+            "choice": {
+              "kind": "entity",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "featCategory",
+                    "operator": "eq",
+                    "value": "origin"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 4-7 feet tall) or Small (about 2-4 feet tall), chosen when you select this species\"]}",
+            {
+              "type": "entries",
+              "name": "Resourceful",
+              "entries": [
+                "You gain {@variantrule Heroic Inspiration|XPHB} whenever you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Skillful",
+              "entries": [
+                "You gain proficiency in one skill of your choice."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Versatile",
+              "entries": [
+                "You gain an {@filter Origin feat|feats|category=o} of your choice."
+              ]
+            }
+          ]
+        },
+        "featureParameters": []
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbhumanwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Human.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Human.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 41630
+            }
+          },
+          {
+            "id": "artwork:racespskhumanwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSK/Human.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSK/Human.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 246458
+            }
+          },
+          {
+            "id": "artwork:racespsxhumanwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSX/Human.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSX/Human.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 97678
+            }
+          },
+          {
+            "id": "artwork:racespszhumanwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSZ/Human.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSZ/Human.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 41812
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:orc:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:orc:srd-5.2",
+      "entityType": "species",
+      "name": "Orc",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Orc",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 120,
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-adrenaline-rush:srd-5.2",
+            "name": "Adrenaline Rush",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-relentless-endurance:srd-5.2",
+            "name": "Relentless Endurance",
+            "entityType": "feature"
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 6-7 feet tall)\"]}",
+            {
+              "type": "entries",
+              "name": "Adrenaline Rush",
+              "entries": [
+                "You can take the {@action Dash|XPHB} action as a {@variantrule Bonus Action|XPHB}. When you do so, you gain a number of {@variantrule Temporary Hit Points|XPHB} equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}.",
+                "You can use this trait a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 120 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Relentless Endurance",
+              "entries": [
+                "When you are reduced to 0 {@variantrule Hit Points|XPHB} but not killed outright, you can drop to 1 {@variantrule Hit Points|XPHB|Hit Point} instead. Once you use this trait, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 120
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesmpmmorcwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/MPMM/Orc.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/MPMM/Orc.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 343772
+            }
+          },
+          {
+            "id": "artwork:racespsxorcwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PSX/Orc.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PSX/Orc.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 58150
+            }
+          },
+          {
+            "id": "artwork:racesvgmorcwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/VGM/Orc.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/VGM/Orc.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 44554
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:species:tiefling:srd-5.2",
+      "canonicalId": "dnd2024:2024:species:tiefling:srd-5.2",
+      "entityType": "species",
+      "name": "Tiefling",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:species:Tiefling",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "size": [
+          "small",
+          "medium"
+        ],
+        "speed": 30,
+        "creatureType": "humanoid",
+        "darkvision": 60,
+        "resistanceChoice": {
+          "damageTypes": [
+            "poison",
+            "necrotic",
+            "fire"
+          ],
+          "count": 1
+        },
+        "features": [
+          {
+            "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+            "name": "Darkvision",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-fiendish-legacy:srd-5.2",
+            "name": "Fiendish Legacy",
+            "entityType": "feature"
+          },
+          {
+            "canonicalId": "dnd2024:2024:feature:species-otherworldly-presence:srd-5.2",
+            "name": "Otherworldly Presence",
+            "entityType": "feature"
+          }
+        ],
+        "choices": [
+          {
+            "id": "size",
+            "choice": {
+              "kind": "enum",
+              "count": 1,
+              "options": [
+                "S",
+                "M"
+              ]
+            }
+          }
+        ],
+        "variants": [
+          {
+            "id": "tiefling-abyssal-legacy",
+            "name": "Tiefling; Abyssal Legacy",
+            "darkvision": 120,
+            "resistances": [
+              "poison"
+            ],
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:thaumaturgy:srd-5.2",
+                      "name": "thaumaturgy",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:poison-spray:srd-5.2",
+                      "name": "poison spray",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:ray-of-sickness:srd-5.2",
+                      "name": "ray of sickness",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:hold-person:srd-5.2",
+                      "name": "hold person",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:ray-of-sickness:srd-5.2",
+                      "name": "ray of sickness",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:hold-person:srd-5.2",
+                      "name": "hold person",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Fiendish Legacy (Abyssal)",
+                  "entries": [
+                    "You are the recipient of a legacy that grants you supernatural abilities. You have {@variantrule Resistance|XPHB} to Poison damage. You also know the {@spell Poison Spray|XPHB} cantrip.",
+                    "When you reach character level 3, you learn the {@spell Ray of Sickness|XPHB} spell. When you reach character level 5, you also learn the {@spell Hold Person|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy)."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+                  "name": "Darkvision",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "range": 120
+                }
+              },
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "poison"
+                }
+              }
+            ]
+          },
+          {
+            "id": "tiefling-chthonic-legacy",
+            "name": "Tiefling; Chthonic Legacy",
+            "resistances": [
+              "necrotic"
+            ],
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:thaumaturgy:srd-5.2",
+                      "name": "thaumaturgy",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:chill-touch:srd-5.2",
+                      "name": "chill touch",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:false-life:srd-5.2",
+                      "name": "false life",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:ray-of-enfeeblement:srd-5.2",
+                      "name": "ray of enfeeblement",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:false-life:srd-5.2",
+                      "name": "false life",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:ray-of-enfeeblement:srd-5.2",
+                      "name": "ray of enfeeblement",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Fiendish Legacy (Chthonic)",
+                  "entries": [
+                    "You are the recipient of a legacy that grants you supernatural abilities. You have {@variantrule Resistance|XPHB} to Necrotic damage. You also know the {@spell Chill Touch|XPHB} cantrip.",
+                    "When you reach character level 3, you learn the {@spell False Life|XPHB} spell. When you reach character level 5, you also learn the {@spell Ray of Enfeeblement|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy)."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "necrotic"
+                }
+              }
+            ]
+          },
+          {
+            "id": "tiefling-infernal-legacy",
+            "name": "Tiefling; Infernal Legacy",
+            "resistances": [
+              "fire"
+            ],
+            "spellGrants": [
+              {
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:thaumaturgy:srd-5.2",
+                      "name": "thaumaturgy",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "known",
+                    "characterLevel": 1,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:fire-bolt:srd-5.2",
+                      "name": "fire bolt",
+                      "entityType": "spell"
+                    }
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:hellish-rebuke:srd-5.2",
+                      "name": "hellish rebuke",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "innate",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:darkness:srd-5.2",
+                      "name": "darkness",
+                      "entityType": "spell"
+                    },
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 3,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:hellish-rebuke:srd-5.2",
+                      "name": "hellish rebuke",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  },
+                  {
+                    "mode": "prepared",
+                    "characterLevel": 5,
+                    "spell": {
+                      "canonicalId": "dnd2024:2024:spell:darkness:srd-5.2",
+                      "name": "darkness",
+                      "entityType": "spell"
+                    },
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "text": {
+              "rules": [
+                {
+                  "type": "entries",
+                  "name": "Fiendish Legacy (Infernal)",
+                  "entries": [
+                    "You are the recipient of a legacy that grants you supernatural abilities. You have {@variantrule Resistance|XPHB} to Fire damage. You also know the {@spell Fire Bolt|XPHB} cantrip.",
+                    "When you reach character level 3, you learn the {@spell Hellish Rebuke|XPHB} spell. When you reach character level 5, you also learn the {@spell Darkness|XPHB} spell. You always have these spells prepared, and you can cast each spell once without a spell slot. Once you cast either of these spells with this trait, you can't cast that spell with it again until you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                    "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy)."
+                  ]
+                }
+              ]
+            },
+            "featureParameters": [
+              {
+                "feature": {
+                  "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+                  "name": "Damage Resistance",
+                  "entityType": "feature"
+                },
+                "values": {
+                  "damageType": "fire"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "{\"type\":\"item\",\"name\":\"Size:\",\"entries\":[\"Medium (about 4-7 feet tall) or Small (about 3-4 feet tall), chosen when you select this species\"]}",
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 60 feet."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Fiendish Legacy",
+              "entries": [
+                "You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.",
+                "When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).",
+                {
+                  "type": "table",
+                  "caption": "Fiendish Legacies",
+                  "columns": [
+                    "Legacy",
+                    "Level 1",
+                    "Level 3",
+                    "Level 5"
+                  ],
+                  "rows": [
+                    [
+                      "Abyssal",
+                      "You have {@variantrule Resistance|XPHB} to Poison damage. You also know the {@spell Poison Spray|XPHB} cantrip.",
+                      "{@spell Ray of Sickness|XPHB}",
+                      "{@spell Hold Person|XPHB}"
+                    ],
+                    [
+                      "Chthonic",
+                      "You have {@variantrule Resistance|XPHB} to Necrotic damage. You also know the {@spell Chill Touch|XPHB} cantrip.",
+                      "{@spell False Life|XPHB}",
+                      "{@spell Ray of Enfeeblement|XPHB}"
+                    ],
+                    [
+                      "Infernal",
+                      "You have {@variantrule Resistance|XPHB} to Fire damage. You also know the {@spell Fire Bolt|XPHB} cantrip.",
+                      "{@spell Hellish Rebuke|XPHB}",
+                      "{@spell Darkness|XPHB}"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Otherworldly Presence",
+              "entries": [
+                "You know the {@spell Thaumaturgy|XPHB} cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy Trait."
+              ]
+            }
+          ]
+        },
+        "featureParameters": [
+          {
+            "feature": {
+              "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+              "name": "Darkvision",
+              "entityType": "feature"
+            },
+            "values": {
+              "range": 60
+            }
+          }
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:racesphbtieflingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "races/PHB/Tiefling.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/races/PHB/Tiefling.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 50452
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
