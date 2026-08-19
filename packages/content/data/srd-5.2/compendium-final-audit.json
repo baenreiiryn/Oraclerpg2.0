@@ -1,0 +1,40 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "totals": {
+    "classes": 12,
+    "subclasses": 12,
+    "classFeatures": 274,
+    "items": 550,
+    "spells": 340
+  },
+  "validatedClasses": [
+    "Barbarian",
+    "Bard",
+    "Cleric",
+    "Druid",
+    "Fighter",
+    "Monk",
+    "Paladin",
+    "Ranger",
+    "Rogue",
+    "Sorcerer",
+    "Warlock",
+    "Wizard"
+  ],
+  "validatedSubclasses": [
+    "Path of the Berserker",
+    "College of Lore",
+    "Life Domain",
+    "Circle of the Land",
+    "Champion",
+    "Warrior of the Open Hand",
+    "Oath of Devotion",
+    "Hunter",
+    "Thief",
+    "Draconic Sorcery",
+    "Fiend Patron",
+    "Evoker"
+  ],
+  "validationReports": 24
+}

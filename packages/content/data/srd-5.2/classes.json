@@ -1103,11 +1103,7 @@
                 }
               },
               {
-                "entity": {
-                  "entityType": "item",
-                  "name": "Holy Symbol",
-                  "canonicalId": "dnd2024:2024:item:holy-symbol:srd-5.2"
-                }
+                "equipmentCategory": "holySymbol"
               },
               {
                 "entity": {
@@ -6782,11 +6778,7 @@
                 }
               },
               {
-                "entity": {
-                  "entityType": "item",
-                  "name": "Spellbook",
-                  "canonicalId": "dnd2024:2024:item:spellbook:srd-5.2"
-                }
+                "equipmentCategory": "spellbook"
               },
               {
                 "entity": {
