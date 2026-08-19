@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 8,
+  "count": 9,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -285,6 +285,102 @@
                   "entityType": "feature",
                   "name": "Peerless Skill",
                   "canonicalId": "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:sorcerer:draconic-sorcery:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:sorcerer:draconic-sorcery:srd-5.2",
+      "entityType": "subclass",
+      "name": "Draconic Sorcery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Sorcerer:Draconic",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Sorcerer",
+          "canonicalId": "dnd2024:2024:class:sorcerer:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Draconic Spells",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Draconic Resilience",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Elemental Affinity",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dragon Wings",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dragon Companion",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2"
                 }
               }
             ]

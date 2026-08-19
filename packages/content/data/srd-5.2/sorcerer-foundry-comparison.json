@@ -1,0 +1,51 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 8,
+    "metamagicDocs": 10,
+    "subclassFeatureDocs": 5,
+    "scaleValues": [
+      "Max Prepared Spells",
+      "Cantrips Known",
+      "Sorcery Points"
+    ],
+    "draconicFeatureGrantLevels": [
+      3,
+      6,
+      14,
+      18
+    ],
+    "draconicSpellGrantLevels": [
+      3,
+      5,
+      7,
+      9
+    ]
+  },
+  "oracle": {
+    "classFeatures": 9,
+    "metamagicOptions": 10,
+    "subclassFeatures": 5,
+    "draconicSpellGrantLevels": [
+      3,
+      5,
+      7,
+      9
+    ]
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry stores Metamagic choices as ItemChoice entries pointing to separate feat-like documents; Oracle stores the same ten options as canonical feature entities in a scalable/replacable EntityCollection."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry models Draconic Spells as separate ItemGrant advancements at spell-unlock levels 3/5/7/9; Oracle keeps Draconic Spells as one canonical subclass feature whose spell grants carry minimumClassLevel values."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry expresses several class grants through Advancement documents; Oracle keeps canonical features separate and references them from 20 level advancement rows."
+    }
+  ]
+}

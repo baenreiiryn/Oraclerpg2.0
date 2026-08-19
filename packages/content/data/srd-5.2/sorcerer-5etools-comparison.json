@@ -1,0 +1,20 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "class": "Sorcerer",
+  "subclass": "Draconic Sorcery",
+  "source": {
+    "classFeatureRecords": 19,
+    "canonicalClassNames": 9,
+    "metamagicOptions": 10,
+    "subclassFeatureRecords": 6,
+    "canonicalSubclassNames": 5,
+    "preparedRows": 20,
+    "slotRows": 20
+  },
+  "oracle": {
+    "classFeatures": 9,
+    "metamagicOptions": 10,
+    "subclassFeatures": 5
+  }
+}

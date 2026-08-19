@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 174,
+  "count": 198,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -438,6 +438,60 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Ability Score Improvement:4",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Sorcerer levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
       "entityType": "feature",
@@ -750,6 +804,59 @@
               }
             }
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2",
+      "entityType": "feature",
+      "name": "Arcane Apotheosis",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Arcane Apotheosis:20",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "While your Innate Sorcery feature is active, you can use one Metamagic option on each of your turns without spending Sorcery Points on it."
+          ]
+        },
+        "classRules": {
+          "resourceDiscounts": [
+            {
+              "resourceId": "sorcery-points",
+              "amount": "metamagic-cost",
+              "minimum": 0,
+              "usage": {
+                "uses": 1,
+                "period": "turn"
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Innate Sorcery is active; apply to one Metamagic option on your turn."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "innate-sorcery:one-metamagic-free-per-turn"
         ]
       }
     },
@@ -1707,6 +1814,57 @@
         "properties": [
           "brutal-strike-options:forceful-blow,hamstring-blow"
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:careful-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:careful-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Careful Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Careful Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, spend 1 Sorcery Point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell, and it takes no damage if it would normally take half damage on a successful save."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -2793,6 +2951,57 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:distant-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:distant-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Distant Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Distant Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a range of at least 5 feet, you can spend 1 Sorcery Point to double the spell's range. Or when you cast a spell that has a range of Touch, you can spend 1 Sorcery Point to make the spell's range 30 feet."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2",
       "entityType": "feature",
@@ -3096,6 +3305,503 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Resilience",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Draconic Resilience:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "The magic in your body manifests physical traits of your draconic gift. Your {@variantrule Hit Points|XPHB|Hit Point} maximum increases by 3, and it increases by 1 whenever you gain another Sorcerer level.",
+            "Parts of you are also covered by dragon-like scales. While you aren't wearing armor, your base {@variantrule Armor Class|XPHB} equals 10 plus your Dexterity and Charisma modifiers."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "hitPointMaximum"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "formula",
+              "formula": "3 + max(0, @classes.sorcerer.level - 3)"
+            }
+          },
+          {
+            "target": {
+              "domain": "armorClass"
+            },
+            "mode": "base",
+            "value": {
+              "type": "formula",
+              "formula": "10 + @abilities.dex.mod + @abilities.cha.mod"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Not wearing armor."
+            }
+          }
+        ],
+        "properties": [
+          "hp-max:+3-at-level-3,+1-per-later-sorcerer-level",
+          "unarmored-ac:10+dex+cha"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Spells",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Draconic Spells:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "When you reach a Sorcerer level specified in the Draconic Spells table, you thereafter always have the listed spells prepared.",
+            {
+              "type": "table",
+              "caption": "Draconic Spells",
+              "colLabels": [
+                "Sorcerer Level",
+                "Spells"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "3rd",
+                  "{@spell Alter Self|XPHB}, {@spell Chromatic Orb|XPHB}, {@spell Command|XPHB}, {@spell Dragon's Breath|XPHB}"
+                ],
+                [
+                  "5th",
+                  "{@spell Fear|XPHB}, {@spell Fly|XPHB}"
+                ],
+                [
+                  "7th",
+                  "{@spell Arcane Eye|XPHB}, {@spell Charm Monster|XPHB}"
+                ],
+                [
+                  "9th",
+                  "{@spell Legend Lore|XPHB}, {@spell Summon Dragon|XPHB}"
+                ]
+              ]
+            }
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "alter self",
+                  "canonicalId": "dnd2024:2024:spell:alter-self:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "chromatic orb",
+                  "canonicalId": "dnd2024:2024:spell:chromatic-orb:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "command",
+                  "canonicalId": "dnd2024:2024:spell:command:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "dragon's breath",
+                  "canonicalId": "dnd2024:2024:spell:dragon-s-breath:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fear",
+                  "canonicalId": "dnd2024:2024:spell:fear:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fly",
+                  "canonicalId": "dnd2024:2024:spell:fly:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "arcane eye",
+                  "canonicalId": "dnd2024:2024:spell:arcane-eye:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "charm monster",
+                  "canonicalId": "dnd2024:2024:spell:charm-monster:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "legend lore",
+                  "canonicalId": "dnd2024:2024:spell:legend-lore:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "summon dragon",
+                  "canonicalId": "dnd2024:2024:spell:summon-dragon:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "always-prepared",
+          "counts-as-sorcerer-spells"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2",
+      "entityType": "feature",
+      "name": "Dragon Companion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Dragon Companion:18",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "You can cast {@spell Summon Dragon|XPHB} without a Material component. You can also cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a {@variantrule Long Rest|XPHB}.",
+            "Whenever you start casting the spell, you can modify it so that it doesn't require {@status Concentration|XPHB}. If you do so, the spell's duration becomes 1 minute for that casting."
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Dragon Companion",
+            "ability": "charisma",
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Summon Dragon",
+                  "canonicalId": "dnd2024:2024:spell:summon-dragon:srd-5.2"
+                },
+                "freeUses": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "recovery": "longRest",
+                "ignoreMaterialComponent": true
+              }
+            ]
+          }
+        ],
+        "classMechanics": {
+          "spellModifications": [
+            {
+              "id": "dragon-companion-no-concentration",
+              "filter": {
+                "spells": [
+                  "Summon Dragon"
+                ]
+              },
+              "changes": [
+                {
+                  "type": "concentration",
+                  "operation": "set",
+                  "value": false
+                },
+                {
+                  "type": "duration",
+                  "operation": "set",
+                  "value": {
+                    "value": 1,
+                    "unit": "minute"
+                  }
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        "properties": [
+          "summon-dragon:no-material-component",
+          "summon-dragon:free-once-per-long-rest",
+          "summon-dragon:optional-no-concentration-duration-1-minute"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2",
+      "entityType": "feature",
+      "name": "Dragon Wings",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Dragon Wings:14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can cause draconic wings to appear on your back. The wings last for 1 hour or until you dismiss them (no action required). For the duration, you have a {@variantrule Fly Speed|XPHB} of 60 feet.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you spend 3 Sorcery Points (no action required) to restore your use of it."
+          ]
+        },
+        "activities": [
+          {
+            "id": "dragon-wings",
+            "name": "Dragon Wings",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 1
+              },
+              "unit": "hour"
+            },
+            "description": "Gain a 60-foot Fly Speed for 1 hour; dismiss with no action."
+          }
+        ],
+        "movementRules": [
+          {
+            "id": "dragon-wings-flight",
+            "action": "setSpeed",
+            "subject": "self",
+            "distance": {
+              "value": 60,
+              "unit": "ft"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Dragon Wings is active."
+            }
+          }
+        ],
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Restore the expended Dragon Wings use (no action required)."
+            },
+            "consume": {
+              "resourceId": "sorcery-points",
+              "amount": {
+                "type": "constant",
+                "value": 3
+              }
+            },
+            "restore": {
+              "resourceId": "dragon-wings",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:druidic:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:druidic:srd-5.2",
       "entityType": "feature",
@@ -3143,6 +3849,89 @@
         "properties": [
           "language:druidic",
           "always-prepared:speak-with-animals"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2",
+      "entityType": "feature",
+      "name": "Elemental Affinity",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Elemental Affinity:6",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "Your draconic magic has an affinity with a damage type associated with dragons. Choose one of those types: Acid, Cold, Fire, Lightning, or Poison.",
+            "You have {@variantrule Resistance|XPHB} to that damage type, and when you cast a spell that deals damage of that type, you can add your Charisma modifier to one damage roll of that spell."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "draconic-elemental-affinity",
+              "entityTypes": [
+                "damageType"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "kind": "enum",
+                "options": [
+                  "acid",
+                  "cold",
+                  "fire",
+                  "lightning",
+                  "poison"
+                ]
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              }
+            }
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "elemental-affinity-damage",
+            "action": "extraDamage",
+            "value": {
+              "type": "runtime",
+              "path": "abilities.cha.mod"
+            },
+            "trigger": {
+              "event": "onDamage",
+              "oncePerTurn": false
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "A spell you cast deals the damage type chosen for Elemental Affinity; add Charisma modifier to one damage roll of that spell."
+            }
+          }
+        ],
+        "properties": [
+          "resistance:chosen-elemental-affinity",
+          "choices:acid,cold,fire,lightning,poison"
         ]
       }
     },
@@ -3210,6 +3999,58 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:empowered-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:empowered-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Empowered Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Empowered Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you roll damage for a spell, you can spend 1 Sorcery Point to reroll a number of the damage dice up to your Charisma modifier (minimum of one), and you must use the new rolls.",
+            "You can use Empowered Spell even if you've already used a different Metamagic option during the casting of the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": true
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
         }
       }
     },
@@ -3728,6 +4569,68 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Epic Boon:19",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Dimensional Travel|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Dimensional Travel"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "entityType": "feature",
@@ -3897,6 +4800,60 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:extended-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:extended-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Extended Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Extended Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a duration of 1 minute or longer, you can spend 1 Sorcery Point to double its duration to a maximum duration of 24 hours.",
+            "If the affected spell requires {@status Concentration|XPHB}, you have {@variantrule Advantage|XPHB} on any saving throw you make to maintain that {@status Concentration|XPHB}."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -4773,6 +5730,189 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2",
+      "entityType": "feature",
+      "name": "Font of Magic",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Font of Magic:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You can tap into the wellspring of magic within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects.",
+            "You have 2 Sorcery Points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer Features table. You can't have more Sorcery Points than the number shown in the table for your level. You regain all expended Sorcery Points when you finish a {@variantrule Long Rest|XPHB}.",
+            "You can use your Sorcery Points to fuel the options below, along with other features, such as Metamagic, that use those points.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Converting Spell Slots to Sorcery Points",
+                  "entries": [
+                    "You can expend a spell slot to gain a number of Sorcery Points equal to the slot's level (no action required)."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Creating Spell Slots",
+                  "entries": [
+                    "As a {@variantrule Bonus Action|XPHB}, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher than level 5.",
+                    "Any spell slot you create with this feature vanishes when you finish a {@variantrule Long Rest|XPHB}.",
+                    {
+                      "type": "table",
+                      "caption": "Creating Spell Slots",
+                      "colLabels": [
+                        "Spell Slot Level",
+                        "Sorcery Point Cost",
+                        "Min. Sorcerer Level"
+                      ],
+                      "colStyles": [
+                        "col-3 text-center",
+                        "col-3 text-center",
+                        "col-3 text-center"
+                      ],
+                      "rows": [
+                        [
+                          "1",
+                          "2",
+                          "2"
+                        ],
+                        [
+                          "2",
+                          "3",
+                          "3"
+                        ],
+                        [
+                          "3",
+                          "5",
+                          "5"
+                        ],
+                        [
+                          "4",
+                          "6",
+                          "7"
+                        ],
+                        [
+                          "5",
+                          "7",
+                          "9"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classRules": {
+          "resources": [
+            {
+              "id": "sorcery-points",
+              "max": {
+                "type": "runtime",
+                "path": "class.sorcerer.sorceryPoints"
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ],
+          "resourceExchanges": [
+            {
+              "id": "slot-to-sorcery-points",
+              "activation": "none",
+              "consume": {
+                "resource": "spellSlot",
+                "amount": {
+                  "type": "constant",
+                  "value": 1
+                }
+              },
+              "gain": {
+                "resource": "sorcery-points",
+                "amount": {
+                  "type": "runtime",
+                  "path": "selectedSpellSlot.level"
+                }
+              },
+              "description": "Expend a spell slot to gain Sorcery Points equal to the slot level."
+            },
+            {
+              "id": "sorcery-points-to-slot",
+              "activation": "bonusAction",
+              "consume": {
+                "resource": "sorcery-points"
+              },
+              "gain": {
+                "resource": "temporarySpellSlot"
+              },
+              "options": [
+                {
+                  "slotLevel": 1,
+                  "cost": 2,
+                  "minSorcererLevel": 2
+                },
+                {
+                  "slotLevel": 2,
+                  "cost": 3,
+                  "minSorcererLevel": 3
+                },
+                {
+                  "slotLevel": 3,
+                  "cost": 5,
+                  "minSorcererLevel": 5
+                },
+                {
+                  "slotLevel": 4,
+                  "cost": 6,
+                  "minSorcererLevel": 7
+                },
+                {
+                  "slotLevel": 5,
+                  "cost": 7,
+                  "minSorcererLevel": 9
+                }
+              ],
+              "expires": {
+                "event": "onRest",
+                "description": "Long Rest"
+              },
+              "description": "Create one spell slot of level 1–5 using the exact SRD cost/minimum-level table."
+            }
+          ]
+        },
+        "properties": [
+          "sorcery-points:max-by-class-level",
+          "created-spell-slots-expire:long-rest"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
       "entityType": "feature",
@@ -4939,6 +6079,59 @@
           "patient-defense-paid:temp-hp=2-martial-arts-dice",
           "step-of-wind-paid:carry-willing-large-or-smaller-within-5ft-no-opportunity-attacks"
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:heightened-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:heightened-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Heightened Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Heightened Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that forces a creature to make a saving throw, you can spend 2 Sorcery Points to give one target of the spell {@variantrule Disadvantage|XPHB} on saves against the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 2,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -5687,6 +6880,127 @@
                 "type": "custom",
                 "description": "Strength saving throw total is lower than your Strength score."
               }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2",
+      "entityType": "feature",
+      "name": "Innate Sorcery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Innate Sorcery:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "An event in your past left an indelible mark on you, infusing you with simmering magic. As a {@variantrule Bonus Action|XPHB}, you can unleash that magic for 1 minute, during which you gain the following benefits:",
+            {
+              "type": "list",
+              "items": [
+                "The spell save DC of your Sorcerer spells increases by 1.",
+                "You have {@variantrule Advantage|XPHB} on the attack rolls of Sorcerer spells you cast."
+              ]
+            },
+            "You can use this feature twice, and you regain all expended uses of it when you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "innate-sorcery",
+            "name": "Innate Sorcery",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 2
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 1
+              },
+              "unit": "minute"
+            },
+            "description": "For 1 minute, Sorcerer spell save DC increases by 1 and Sorcerer spell attack rolls have Advantage."
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "spellSaveDC"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 1
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Innate Sorcery is active and the spell is a Sorcerer spell."
+            }
+          },
+          {
+            "target": {
+              "domain": "spellAttackRoll"
+            },
+            "mode": "advantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Innate Sorcery is active and the spell is a Sorcerer spell."
+            }
+          }
+        ],
+        "classRules": {
+          "resources": [
+            {
+              "id": "innate-sorcery-uses",
+              "max": {
+                "type": "constant",
+                "value": 2
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
             }
           ]
         }
@@ -6626,6 +7940,90 @@
             "You can roll {@damage 1d6} in place of the normal damage of your {@variantrule Unarmed Strike|XPHB} or Monk weapons. This die changes as you gain Monk levels, as shown in the Martial Arts column of the Monk Features table."
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2",
+      "entityType": "feature",
+      "name": "Metamagic",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Metamagic:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "Because your magic flows from within, you can alter your spells to suit your needs; you gain two Metamagic options of your choice from \"{@filter Metamagic Options|optionalfeatures|feature type=MM|source=XPHB}\" later in this class's description. You use the chosen options to temporarily modify spells you cast. To use an option, you must spend the number of Sorcery Points that it costs.",
+            "You can use only one Metamagic option on a spell when you cast it unless otherwise noted in one of those options.",
+            "Whenever you gain a Sorcerer level, you can replace one of your Metamagic options with one you don't know. You gain two more options at Sorcerer level 10 and two more at Sorcerer level 17."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "sorcerer-metamagic-options",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.metamagicKnown"
+              },
+              "filter": {
+                "type": "predicate",
+                "predicate": {
+                  "type": "field",
+                  "field": "data.optionKind",
+                  "operator": "eq",
+                  "value": "metamagic"
+                }
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onLevelGain",
+                  "description": "Whenever you gain a Sorcerer level."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "predicate",
+                  "predicate": {
+                    "type": "field",
+                    "field": "data.optionKind",
+                    "operator": "eq",
+                    "value": "metamagic"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "properties": [
+          "metamagic-default-max-per-spell:1",
+          "metamagic-count:2@2,4@10,6@17"
+        ]
       }
     },
     {
@@ -8301,6 +9699,59 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:quickened-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:quickened-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Quickened Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Quickened Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a casting time of an action, you can spend 2 Sorcery Points to change the casting time to a {@variantrule Bonus Action|XPHB} for this casting. You can't modify a spell in this way if you've already cast a level 1+ spell on the current turn, nor can you cast a level 1+ spell on this turn after modifying a spell in this way."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 2,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2",
       "entityType": "feature",
@@ -9406,6 +10857,60 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:seeking-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:seeking-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Seeking Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Seeking Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "If you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the {@dice d20}, and you must use the new roll.",
+            "You can use Seeking Spell even if you've already used a different Metamagic option during the casting of the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": true
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "entityType": "feature",
@@ -9574,6 +11079,120 @@
         "properties": [
           "trigger:cast-divine-smite",
           "duration:until-start-of-next-turn"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2",
+      "entityType": "feature",
+      "name": "Sorcerous Restoration",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Sorcerous Restoration:5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "When you finish a {@variantrule Short Rest|XPHB}, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "classRules": {
+          "resourceMutations": [
+            {
+              "resourceId": "sorcery-points",
+              "trigger": {
+                "event": "onRest",
+                "description": "Short Rest"
+              },
+              "operation": "restore",
+              "value": {
+                "type": "formula",
+                "formula": "floor(@classes.sorcerer.level / 2)"
+              },
+              "usage": {
+                "uses": 1,
+                "recovery": "longRest"
+              },
+              "capAtMaximum": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2",
+      "entityType": "feature",
+      "name": "Sorcery Incarnate",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Sorcery Incarnate:7",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "If you have no uses of Innate Sorcery left, you can use it if you spend 2 Sorcery Points when you take the {@variantrule Bonus Action|XPHB} to activate it.",
+            "In addition, while your Innate Sorcery feature is active, you can use up to two of your {@filter Metamagic options|optionalfeatures|feature type=MM} on each spell you cast."
+          ]
+        },
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Activate Innate Sorcery with no uses remaining."
+            },
+            "consume": {
+              "resourceId": "sorcery-points",
+              "amount": {
+                "type": "constant",
+                "value": 2
+              }
+            },
+            "restore": {
+              "resourceId": "innate-sorcery-uses",
+              "amount": {
+                "type": "constant",
+                "value": 0
+              }
+            },
+            "description": "Spend 2 Sorcery Points instead of an Innate Sorcery use."
+          }
+        ],
+        "properties": [
+          "innate-sorcery:max-metamagic-per-spell:2"
         ]
       }
     },
@@ -10888,6 +12507,325 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2",
+      "entityType": "feature",
+      "name": "Spellcasting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Spellcasting:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "Drawing from your innate magic, you can cast spells. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Sorcerer spells, which appear in the {@filter Sorcerer spell list|spells|class=Sorcerer} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips",
+                  "entries": [
+                    "You know four Sorcerer cantrips of your choice. {@spell Light|XPHB}, {@spell Prestidigitation|XPHB}, {@spell Shocking Grasp|XPHB}, and {@spell Sorcerous Burst|XPHB} are recommended. Whenever you gain a Sorcerer level, you can replace one of your cantrips from this feature with another Sorcerer cantrip of your choice.",
+                    "When you reach Sorcerer levels 4 and 10, you learn another Sorcerer cantrip of your choice, as shown in the Cantrips column of the Sorcerer Features table."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Sorcerer Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Sorcerer spells. {@spell Burning Hands|XPHB} and {@spell Detect Magic|XPHB} are recommended.",
+                    "The number of spells on your list increases as you gain Sorcerer levels, as shown in the Prepared Spells column of the Sorcerer Features table. Whenever that number increases, choose additional Sorcerer spells until the number of spells on your list matches the number in the Sorcerer Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 3 Sorcerer, your list of prepared spells can include six Sorcerer spells of level 1 or 2 in any combination.",
+                    "If another Sorcerer feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Sorcerer spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you gain a Sorcerer level, you can replace one spell on your list with another Sorcerer spell for which you have spell slots."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Charisma is your spellcasting ability for your Sorcerer spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use an {@item Arcane Focus|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Sorcerer spells."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classMechanics": {
+          "spellCollections": [
+            {
+              "id": "sorcerer-cantrips",
+              "kind": "known",
+              "sourceList": "Sorcerer",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.cantripsKnown"
+              },
+              "filter": {
+                "lists": [
+                  "Sorcerer"
+                ],
+                "levels": [
+                  0
+                ]
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "sorcerer-cantrips",
+                "filter": {
+                  "lists": [
+                    "Sorcerer"
+                  ],
+                  "levels": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "id": "sorcerer-prepared-spells",
+              "kind": "prepared",
+              "sourceList": "Sorcerer",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.preparedSpells"
+              },
+              "filter": {
+                "lists": [
+                  "Sorcerer"
+                ],
+                "minLevel": 1
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "sorcerer-prepared-spells",
+                "filter": {
+                  "lists": [
+                    "Sorcerer"
+                  ],
+                  "minLevel": 1
+                }
+              }
+            }
+          ],
+          "spellSlotPools": [
+            {
+              "id": "sorcerer-spell-slots",
+              "kind": "standard",
+              "progression": {
+                "1": {
+                  "1": 2
+                },
+                "2": {
+                  "1": 3
+                },
+                "3": {
+                  "1": 4,
+                  "2": 2
+                },
+                "4": {
+                  "1": 4,
+                  "2": 3
+                },
+                "5": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "6": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "7": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "8": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "9": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "10": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                },
+                "11": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1
+                },
+                "12": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1
+                },
+                "13": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1
+                },
+                "14": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1
+                },
+                "15": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1
+                },
+                "16": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1
+                },
+                "17": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "18": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "19": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 2,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "20": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 2,
+                  "7": 2,
+                  "8": 1,
+                  "9": 1
+                }
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "spellcasting-ability:charisma",
+          "spellcasting-focus:arcane-focus",
+          "prepared-spells-change:level-up"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "entityType": "feature",
@@ -11059,6 +12997,57 @@
             "description": "On a successful save, halve target Speed and the next attack roll against it has Advantage until the start of your next turn."
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:subtle-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:subtle-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Subtle Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Subtle Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -11879,6 +13868,57 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:transmuted-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:transmuted-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Transmuted Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Transmuted Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that deals a type of damage from the following list, you can spend 1 Sorcery Point to change that damage type to one of the other listed types: Acid, Cold, Fire, Lightning, Poison, Thunder."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:cleric:turn-undead:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:cleric:turn-undead:srd-5.2",
       "entityType": "feature",
@@ -11969,6 +14009,57 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:twinned-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:twinned-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Twinned Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Twinned Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell, such as {@spell Charm Person|XPHB}, that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
         }
       }
     },

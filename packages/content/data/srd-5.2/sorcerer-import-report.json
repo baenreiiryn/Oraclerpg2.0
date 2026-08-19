@@ -1,0 +1,12 @@
+{
+  "status": "SUPPORTED",
+  "class": "Sorcerer",
+  "subclass": "Draconic Sorcery",
+  "sourceClassFeatures": 19,
+  "canonicalClassFeatures": 9,
+  "metamagicOptions": 10,
+  "sourceSubclassFeatures": 6,
+  "canonicalSubclassFeatures": 5,
+  "progressionRows": 20,
+  "issues": []
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 8,
+  "count": 9,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -4879,6 +4879,762 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:sorcerer:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:sorcerer:srd-5.2",
+      "entityType": "class",
+      "name": "Sorcerer",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Sorcerer",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 6,
+        "primaryAbilities": [
+          "charisma"
+        ],
+        "savingThrowProficiencies": [
+          "constitution",
+          "charisma"
+        ],
+        "armorTraining": [],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Arcana",
+            "Deception",
+            "Insight",
+            "Intimidation",
+            "Persuasion",
+            "Religion"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Spear, 2 Daggers, Arcane Focus (Crystal), Dungeoneer's Pack, 28 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Spear",
+                  "canonicalId": "dnd2024:2024:item:spear:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 2
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Crystal",
+                  "canonicalId": "dnd2024:2024:item:crystal:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dungeoneer's Pack",
+                  "canonicalId": "dnd2024:2024:item:dungeoneer-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 28,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "50 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 50,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "full",
+          "ability": "charisma",
+          "preparation": "prepared",
+          "progression": [
+            {
+              "1": 2
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 1,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 2,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 2,
+              "7": 2,
+              "8": 1,
+              "9": 1
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Innate Sorcery",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 2,
+              "sorceryPoints": 0,
+              "metamagicKnown": 0,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Font of Magic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 4,
+              "sorceryPoints": 2,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 3
+              }
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 6,
+              "sorceryPoints": 3,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:sorcerer:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 7,
+              "sorceryPoints": 4,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sorcerous Restoration",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 9,
+              "sorceryPoints": 5,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 10,
+              "sorceryPoints": 6,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sorcery Incarnate",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 11,
+              "sorceryPoints": 7,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 12,
+              "sorceryPoints": 8,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 9,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 14,
+              "sorceryPoints": 9,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 15,
+              "sorceryPoints": 10,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 16,
+              "sorceryPoints": 11,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 16,
+              "sorceryPoints": 12,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 17,
+              "sorceryPoints": 13,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 17,
+              "sorceryPoints": 14,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 18,
+              "sorceryPoints": 15,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 18,
+              "sorceryPoints": 16,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 19,
+              "sorceryPoints": 17,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 20,
+              "sorceryPoints": 18,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 21,
+              "sorceryPoints": 19,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Arcane Apotheosis",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 22,
+              "sorceryPoints": 20,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 2,
+                "8": 1,
+                "9": 1
+              }
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
       }
     }
   ]
