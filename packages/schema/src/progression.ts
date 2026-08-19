@@ -1,7 +1,7 @@
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
-import type { AbilityId, ChoiceRef, EntityRef, SizeId, SourceText } from "./primitives.js";
-import type { AdvancementStep, GrantData } from "./feature.js";
+import type { AbilityId, ChoiceRef, DamageTypeId, EntityRef, SizeId, SourceText } from "./primitives.js";
+import type { AdvancementStep, GrantData, SpellGrantGroupData } from "./feature.js";
 import type { ChoiceDependencyData, EquipmentBundleData, FeaturePatchData, PredicateData } from "./mechanics.js";
 
 export interface SpellcastingProgression {
@@ -44,11 +44,34 @@ export interface SubclassData {
   text?: SourceText;
 }
 
+export interface SpeciesResistanceChoiceData {
+  damageTypes: readonly DamageTypeId[];
+  count?: number;
+}
+
+export interface SpeciesVariantData {
+  id: string;
+  name: string;
+  speed?: number;
+  darkvision?: number;
+  resistances?: readonly DamageTypeId[];
+  resistanceChoice?: SpeciesResistanceChoiceData;
+  spellGrants?: readonly SpellGrantGroupData[];
+  grants?: readonly GrantData[];
+  text?: SourceText;
+}
+
 export interface SpeciesData {
   size: readonly SizeId[];
   sizeChoice?: NamedChoiceData;
   speed: number;
   creatureType?: string;
+  darkvision?: number;
+  resistances?: readonly DamageTypeId[];
+  resistanceChoice?: SpeciesResistanceChoiceData;
+  features?: readonly EntityRef[];
+  spellGrants?: readonly SpellGrantGroupData[];
+  variants?: readonly SpeciesVariantData[];
   grants?: readonly GrantData[];
   choices?: readonly NamedChoiceData[];
   advancement?: readonly AdvancementStep[];
