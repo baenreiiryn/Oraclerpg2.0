@@ -1,0 +1,72 @@
+name: SRD 5.2 Sorcerer
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/import-srd52-sorcerer.mjs'
+      - 'scripts/audit-srd52-sorcerer.mjs'
+      - 'scripts/compare-5etools-srd52-sorcerer.mjs'
+      - 'scripts/compare-foundry-srd52-sorcerer.mjs'
+      - '.github/workflows/srd52-sorcerer.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sorcerer:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.head_ref == 'work/srd52-sorcerer')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install YAML comparison dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D 2024 architecture reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Import Sorcerer from 5etools SRD 5.2
+        run: node scripts/import-srd52-sorcerer.mjs
+      - name: Audit Sorcerer and Draconic Sorcery structure
+        run: node scripts/audit-srd52-sorcerer.mjs
+      - name: Compare imported Sorcerer with 5etools source
+        run: node scripts/compare-5etools-srd52-sorcerer.mjs
+      - name: Compare Oracle architecture with Foundry Sorcerer
+        run: node scripts/compare-foundry-srd52-sorcerer.mjs ../foundry-dnd5e/packs/_source/classes24/sorcerer
+      - name: Verify Sorcerer outputs
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),root='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
+          const cls=read('classes.json'),subs=read('subclasses.json'),features=read('class-features.json');
+          const sorcerer=cls.items.find(x=>x.name==='Sorcerer'),draconic=subs.items.find(x=>x.name==='Draconic Sorcery'&&x.data?.parentClass?.name==='Sorcerer');
+          for(const f of ['sorcerer-coverage-audit.json','sorcerer-5etools-comparison.json','sorcerer-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(JSON.stringify(a));}
+          if(!sorcerer||!draconic||sorcerer.data.advancement.length!==20)throw new Error('Sorcerer/Draconic Sorcery invalid');
+          const sf=features.items.filter(x=>x.data?.category==='sorcerer'),mm=features.items.filter(x=>x.data?.category==='sorcerer-metamagic'),df=features.items.filter(x=>x.data?.category==='sorcerer-draconic');
+          if(mm.length!==10||df.length!==5)throw new Error(`Sorcerer option/subclass counts invalid: ${mm.length}/${df.length}`);
+          console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,classFeatures:features.count,sorcererFeatures:sf.length,metamagicOptions:mm.length,draconicFeatures:df.length,status:'SUPPORTED'},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-sorcerer
+          path: |
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/class-features.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/sorcerer-import-report.json
+            packages/content/data/srd-5.2/sorcerer-coverage-audit.json
+            packages/content/data/srd-5.2/sorcerer-5etools-comparison.json
+            packages/content/data/srd-5.2/sorcerer-foundry-comparison.json
+      - name: Persist Sorcerer compendium on Sorcerer branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-sorcerer'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/sorcerer-import-report.json packages/content/data/srd-5.2/sorcerer-coverage-audit.json packages/content/data/srd-5.2/sorcerer-5etools-comparison.json packages/content/data/srd-5.2/sorcerer-foundry-comparison.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist SRD 5.2 Sorcerer compendium [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi
