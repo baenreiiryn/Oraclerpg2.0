@@ -2273,8 +2273,8 @@
               {
                 "entity": {
                   "entityType": "item",
-                  "name": "Arrows",
-                  "canonicalId": "dnd2024:2024:item:arrows:srd-5.2"
+                  "name": "Arrow",
+                  "canonicalId": "dnd2024:2024:item:arrow:srd-5.2"
                 },
                 "quantity": 20
               },
