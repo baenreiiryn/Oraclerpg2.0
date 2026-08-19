@@ -1,6 +1,6 @@
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
-import type { AbilityId, ChoiceRef, DamageTypeId, EntityRef, SizeId, SourceText } from "./primitives.js";
+import type { AbilityId, ChoiceRef, DamageTypeId, EntityRef, JsonValue, SizeId, SourceText } from "./primitives.js";
 import type { AdvancementStep, GrantData, SpellGrantGroupData } from "./feature.js";
 import type { ChoiceDependencyData, EquipmentBundleData, FeaturePatchData, PredicateData } from "./mechanics.js";
 
@@ -49,6 +49,11 @@ export interface SpeciesResistanceChoiceData {
   count?: number;
 }
 
+export interface SpeciesFeatureParameterData {
+  feature: EntityRef;
+  values: Readonly<Record<string, JsonValue>>;
+}
+
 export interface SpeciesVariantData {
   id: string;
   name: string;
@@ -57,6 +62,8 @@ export interface SpeciesVariantData {
   resistances?: readonly DamageTypeId[];
   resistanceChoice?: SpeciesResistanceChoiceData;
   spellGrants?: readonly SpellGrantGroupData[];
+  featureParameters?: readonly SpeciesFeatureParameterData[];
+  parameters?: Readonly<Record<string, JsonValue>>;
   grants?: readonly GrantData[];
   text?: SourceText;
 }
