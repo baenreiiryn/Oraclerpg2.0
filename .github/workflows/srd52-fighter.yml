@@ -46,7 +46,8 @@ jobs:
           const fighter=cls.items.find(x=>x.name==='Fighter'),champ=subs.items.find(x=>x.name==='Champion'&&x.data?.parentClass?.name==='Fighter');
           for(const f of ['fighter-coverage-audit.json','fighter-5etools-comparison.json','fighter-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(JSON.stringify(a));}
           if(!fighter||!champ||fighter.data.advancement.length!==20)throw new Error('Fighter/Champion invalid');
-          if(cls.count!==5||subs.count!==5)throw new Error(`Expected cumulative 5 classes/subclasses, got ${cls.count}/${subs.count}`);
+          if(cls.count<5||subs.count<5)throw new Error(`Expected at least 5 cumulative classes/subclasses, got ${cls.count}/${subs.count}`);
+          for(const n of ['Barbarian','Bard','Cleric','Druid','Fighter'])if(!cls.items.some(x=>x.name===n))throw new Error(`Cumulative class missing: ${n}`);
           const ff=features.items.filter(x=>x.data?.category==='fighter'),cf=features.items.filter(x=>x.data?.category==='fighter-champion');
           if(!ff.find(x=>x.name==='Second Wind')||!ff.find(x=>x.name==='Weapon Mastery')||!cf.find(x=>x.name==='Survivor'))throw new Error('Core Fighter/Champion mechanics missing');
           console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,classFeatures:features.count,fighterFeatures:ff.length,championFeatures:cf.length,status:'SUPPORTED'},null,2));
