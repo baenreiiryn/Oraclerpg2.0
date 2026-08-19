@@ -4711,53 +4711,51 @@
             }
           ]
         },
-        "classRules": {
-          "crossResourceRules": [
-            {
-              "trigger": {
-                "event": "onInitiative",
-                "description": "If you have no Wild Shape uses when Initiative is rolled, regain one."
-              },
-              "consume": {
-                "resourceId": "wild-shape",
-                "amount": {
-                  "type": "constant",
-                  "value": 0
-                }
-              },
-              "restore": {
-                "resourceId": "wild-shape",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
-              }
-            },
-            {
-              "trigger": {
-                "event": "custom",
-                "description": "Once per Long Rest, expend Wild Shape uses to create one spell slot; each use contributes two spell levels."
-              },
-              "consume": {
-                "resourceId": "wild-shape",
-                "amount": {
-                  "type": "runtime",
-                  "path": "choice.wildShapeUses"
-                }
-              },
-              "restore": {
-                "resourceId": "spell-slot:chosen",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
-              }
-            }
-          ]
-        },
         "properties": [
           "longevity:one-year-per-ten-years",
           "nature-magician:2-spell-levels-per-wild-shape-use"
+        ],
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "onInitiative",
+              "description": "If you have no Wild Shape uses when Initiative is rolled, regain one."
+            },
+            "consume": {
+              "resourceId": "wild-shape",
+              "amount": {
+                "type": "constant",
+                "value": 0
+              }
+            },
+            "restore": {
+              "resourceId": "wild-shape",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          },
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Once per Long Rest, expend Wild Shape uses to create one spell slot; each use contributes two spell levels."
+            },
+            "consume": {
+              "resourceId": "wild-shape",
+              "amount": {
+                "type": "runtime",
+                "path": "choice.wildShapeUses"
+              }
+            },
+            "restore": {
+              "resourceId": "spell-slot:chosen",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          }
         ]
       }
     },
@@ -5659,14 +5657,6 @@
             }
           ]
         },
-        "conditionInteractions": [
-          {
-            "action": "immunity",
-            "conditions": [
-              "poisoned"
-            ]
-          }
-        ],
         "modifiers": [
           {
             "target": {
@@ -5711,6 +5701,20 @@
               "type": "custom",
               "description": "Only while Tropical is the active Circle of the Land type."
             }
+          }
+        ],
+        "effects": [
+          {
+            "id": "natures-ward-poisoned-immunity",
+            "conditions": [
+              {
+                "action": "immunity",
+                "conditions": [
+                  "poisoned"
+                ]
+              }
+            ],
+            "description": "You have Immunity to the Poisoned condition."
           }
         ]
       }
@@ -6390,50 +6394,48 @@
             "In addition, you can expend one use of Wild Shape (no action required) to give yourself a level 1 spell slot, but you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
           ]
         },
-        "classRules": {
-          "crossResourceRules": [
-            {
-              "trigger": {
-                "event": "custom",
-                "description": "Once on each turn when you have no Wild Shape uses, expend a spell slot to regain one Wild Shape use."
-              },
-              "consume": {
-                "resourceId": "spell-slot:any",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
-              },
-              "restore": {
-                "resourceId": "wild-shape",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Once on each turn when you have no Wild Shape uses, expend a spell slot to regain one Wild Shape use."
+            },
+            "consume": {
+              "resourceId": "spell-slot:any",
+              "amount": {
+                "type": "constant",
+                "value": 1
               }
             },
-            {
-              "trigger": {
-                "event": "custom",
-                "description": "Once per Long Rest, expend one Wild Shape use to regain one level-1 spell slot."
-              },
-              "consume": {
-                "resourceId": "wild-shape",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
-              },
-              "restore": {
-                "resourceId": "spell-slot:1",
-                "amount": {
-                  "type": "constant",
-                  "value": 1
-                }
+            "restore": {
+              "resourceId": "wild-shape",
+              "amount": {
+                "type": "constant",
+                "value": 1
               }
             }
-          ]
-        }
+          },
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Once per Long Rest, expend one Wild Shape use to regain one level-1 spell slot."
+            },
+            "consume": {
+              "resourceId": "wild-shape",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            },
+            "restore": {
+              "resourceId": "spell-slot:1",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          }
+        ]
       }
     },
     {
@@ -6703,7 +6705,78 @@
         "properties": [
           "known-form-collection:druid-wild-shape-known-forms",
           "known-form-replace:one-on-long-rest"
-        ]
+        ],
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "druid-wild-shape-known-forms",
+              "entityTypes": [
+                "monster"
+              ],
+              "capacity": {
+                "type": "runtime",
+                "path": "class.druid.wildShapeKnownForms"
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Beast monster whose challenge rating is at most class.druid.wildShapeMaxCr; Fly Speed is forbidden before Druid level 8."
+              },
+              "chooseOn": {
+                "event": "onApply",
+                "description": "Choose Wild Shape known forms when the feature is gained."
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "After a Long Rest, you can replace one known form."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "Replacement must satisfy the current Wild Shape Beast CR and Fly Speed limits."
+                }
+              },
+              "progression": [
+                {
+                  "level": 2,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 4
+                  },
+                  "filter": {
+                    "type": "custom",
+                    "description": "Beast, CR <= 1/4, no Fly Speed."
+                  }
+                },
+                {
+                  "level": 4,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 6
+                  },
+                  "filter": {
+                    "type": "custom",
+                    "description": "Beast, CR <= 1/2, no Fly Speed."
+                  }
+                },
+                {
+                  "level": 8,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 8
+                  },
+                  "filter": {
+                    "type": "custom",
+                    "description": "Beast, CR <= 1; Fly Speed allowed."
+                  }
+                }
+              ]
+            }
+          ]
+        }
       }
     }
   ]
