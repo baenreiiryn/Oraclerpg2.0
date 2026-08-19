@@ -1182,21 +1182,18 @@
           "level": 1
         },
         "classRules": {
-          "resourceMutations": [
+          "spellSlotRecoveryBudgets": [
             {
-              "resourceId": "wizard-spell-slots",
+              "poolId": "wizard-spell-slots",
               "trigger": {
                 "event": "onShortRest",
                 "description": "Finish a Short Rest and use Arcane Recovery."
               },
-              "operation": "restoreSlotLevels",
-              "value": {
+              "budget": {
                 "type": "formula",
                 "formula": "ceil(@classes.wizard.level / 2)"
               },
-              "constraints": {
-                "maxSlotLevel": 5
-              },
+              "maxSlotLevel": 5,
               "usage": {
                 "uses": 1,
                 "recovery": "longRest"
@@ -17597,7 +17594,6 @@
               "id": "wizard-spellbook",
               "kind": "spellbook",
               "sourceList": "Wizard",
-              "capacity": null,
               "filter": {
                 "lists": [
                   "Wizard"
