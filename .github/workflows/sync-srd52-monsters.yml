@@ -1,0 +1,61 @@
+name: Sync SRD 5.2 Creatures
+
+on:
+  push:
+    paths:
+      - "scripts/import-srd52-monsters.mjs"
+      - "scripts/audit-srd52-monsters.mjs"
+      - "packages/content/data/srd-5.2/monster-features.json"
+      - "packages/content/data/srd-5.2/monster-feature-aliases.json"
+      - ".github/workflows/sync-srd52-monsters.yml"
+  pull_request:
+    paths:
+      - "scripts/import-srd52-monsters.mjs"
+      - "scripts/audit-srd52-monsters.mjs"
+      - "packages/content/data/srd-5.2/monsters.json"
+      - "packages/content/data/srd-5.2/monster-features.json"
+      - "packages/content/data/srd-5.2/monster-feature-aliases.json"
+      - ".github/workflows/sync-srd52-monsters.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: pnpm install
+      - name: Build schema
+        run: pnpm --filter @oraclerpg/schema build
+      - name: Import SRD creatures
+        run: node scripts/import-srd52-monsters.mjs
+      - name: Audit creature import
+        run: node scripts/audit-srd52-monsters.mjs
+      - name: Upload generated bestiary and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-creatures
+          path: |
+            packages/content/data/srd-5.2/monsters.json
+            packages/content/data/srd-5.2/monsters-import-report.json
+            packages/content/data/srd-5.2/monsters-coverage-audit.json
+      - name: Commit generated bestiary
+        if: github.event_name == 'push'
+        run: |
+          if [ -z "$(git status --porcelain -- packages/content/data/srd-5.2/monsters*)" ]; then exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/content/data/srd-5.2/monsters.json packages/content/data/srd-5.2/monsters-import-report.json packages/content/data/srd-5.2/monsters-coverage-audit.json
+          git commit -m "Populate SRD 5.2 bestiary"
+          git push
