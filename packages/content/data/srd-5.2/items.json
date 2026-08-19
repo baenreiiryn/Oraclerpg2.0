@@ -548,6 +548,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgamuletofhealthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Amulet of Health.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Amulet%20of%20Health.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6940
+            }
+          }
+        ]
       }
     },
     {
@@ -597,6 +616,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgamuletofproofagainstdetectionandlocationwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Amulet of Proof against Detection and Location.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Amulet%20of%20Proof%20against%20Detection%20and%20Location.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6186
+            }
+          }
         ]
       }
     },
@@ -702,6 +740,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgamuletoftheplaneswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Amulet of the Planes.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Amulet%20of%20the%20Planes.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8602
+            }
+          }
+        ]
       }
     },
     {
@@ -758,6 +815,25 @@
           "srd-5.2",
           "5etools",
           "armor"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmganimatedshieldwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Animated Shield.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Animated%20Shield.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8296
+            }
+          }
         ]
       }
     },
@@ -869,6 +945,25 @@
           "srd-5.2",
           "5etools",
           "armor"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgarmorofinvulnerabilitywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Armor of Invulnerability.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Armor%20of%20Invulnerability.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 15888
+            }
+          }
         ]
       }
     },
@@ -1263,6 +1358,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbagofbeanswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bag of Beans.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bag%20of%20Beans.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9794
+            }
+          }
+        ]
       }
     },
     {
@@ -1310,6 +1424,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbagofdevouringwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bag of Devouring.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bag%20of%20Devouring.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9598
+            }
+          }
         ]
       }
     },
@@ -1368,6 +1501,25 @@
           "srd-5.2",
           "5etools",
           "container"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbagofholdingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bag of Holding.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bag%20of%20Holding.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8984
+            }
+          }
         ]
       }
     },
@@ -2335,6 +2487,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbeltofdwarvenkindwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Belt of Dwarvenkind.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Belt%20of%20Dwarvenkind.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 11926
+            }
+          }
+        ]
       }
     },
     {
@@ -2547,6 +2718,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbeltofstonegiantstrengthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Belt of Stone Giant Strength.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Belt%20of%20Stone%20Giant%20Strength.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 67716
+            }
+          }
+        ]
       }
     },
     {
@@ -2599,6 +2789,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbeltofstormgiantstrengthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Belt of Storm Giant Strength.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Belt%20of%20Storm%20Giant%20Strength.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 70598
+            }
+          }
         ]
       }
     },
@@ -3114,6 +3323,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbootsofelvenkindwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Boots of Elvenkind.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Boots%20of%20Elvenkind.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 14042
+            }
+          }
+        ]
       }
     },
     {
@@ -3235,6 +3463,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbootsofspeedwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Boots of Speed.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Boots%20of%20Speed.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10142
+            }
+          }
+        ]
       }
     },
     {
@@ -3289,6 +3536,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbootsofstridingandspringingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Boots of Striding and Springing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Boots%20of%20Striding%20and%20Springing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10380
+            }
+          }
         ]
       }
     },
@@ -3353,6 +3619,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbootsofthewinterlandswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Boots of the Winterlands.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Boots%20of%20the%20Winterlands.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 19616
+            }
+          }
+        ]
       }
     },
     {
@@ -3398,6 +3683,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbowlofcommandingwaterelementalswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bowl of Commanding Water Elementals.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bowl%20of%20Commanding%20Water%20Elementals.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12528
+            }
+          }
         ]
       }
     },
@@ -3469,6 +3773,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbracersofarcherywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bracers of Archery.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bracers%20of%20Archery.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12552
+            }
+          }
+        ]
       }
     },
     {
@@ -3526,6 +3849,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbracersofdefensewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Bracers of Defense.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Bracers%20of%20Defense.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 23010
+            }
+          }
         ]
       }
     },
@@ -3633,6 +3975,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbrazierofcommandingfireelementalswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Brazier of Commanding Fire Elementals.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Brazier%20of%20Commanding%20Fire%20Elementals.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10932
+            }
+          }
         ]
       }
     },
@@ -3915,6 +4276,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbroochofshieldingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Brooch of Shielding.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Brooch%20of%20Shielding.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8472
+            }
+          }
+        ]
       }
     },
     {
@@ -3961,6 +4341,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgbroomofflyingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Broom of Flying.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Broom%20of%20Flying.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6878
+            }
+          }
         ]
       }
     },
@@ -4738,6 +5137,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcandleofinvocationwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Candle of Invocation.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Candle%20of%20Invocation.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5032
+            }
+          }
+        ]
       }
     },
     {
@@ -4855,6 +5273,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcapeofthemountebankwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cape of the Mountebank.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cape%20of%20the%20Mountebank.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8620
+            }
+          }
         ]
       }
     },
@@ -5331,6 +5768,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcenserofcontrollingairelementalswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Censer of Controlling Air Elementals.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Censer%20of%20Controlling%20Air%20Elementals.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 13866
+            }
+          }
+        ]
       }
     },
     {
@@ -5748,6 +6204,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgchimeofopeningwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Chime of Opening.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Chime%20of%20Opening.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5792
+            }
+          }
+        ]
       }
     },
     {
@@ -5868,6 +6343,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcircletofblastingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Circlet of Blasting.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Circlet%20of%20Blasting.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7504
+            }
+          }
         ]
       }
     },
@@ -6081,6 +6575,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcloakofdisplacementwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cloak of Displacement.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cloak%20of%20Displacement.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9130
+            }
+          }
+        ]
       }
     },
     {
@@ -6126,6 +6639,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcloakofelvenkindwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cloak of Elvenkind.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cloak%20of%20Elvenkind.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7768
+            }
+          }
         ]
       }
     },
@@ -6183,6 +6715,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcloakofinvisibilitywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cloak of Invisibility.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cloak%20of%20Invisibility.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 966
+            }
+          }
         ]
       }
     },
@@ -6251,6 +6802,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcloakofprotectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cloak of Protection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cloak%20of%20Protection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7586
+            }
+          }
         ]
       }
     },
@@ -6381,6 +6951,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcloakofthemantaraywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cloak of the Manta Ray.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cloak%20of%20the%20Manta%20Ray.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6590
+            }
+          }
         ]
       }
     },
@@ -7734,6 +8323,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcubeofforcewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cube of Force.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cube%20of%20Force.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6922
+            }
+          }
+        ]
       }
     },
     {
@@ -7851,6 +8459,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgcubicgatewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Cubic Gate.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Cubic%20Gate.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 17948
+            }
+          }
         ]
       }
     },
@@ -7990,6 +8617,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdaggerofvenomwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Dagger of Venom.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Dagger%20of%20Venom.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7980
+            }
+          }
         ]
       }
     },
@@ -8131,6 +8777,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdecanterofendlesswaterwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Decanter of Endless Water.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Decanter%20of%20Endless%20Water.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8360
+            }
+          }
         ]
       }
     },
@@ -8431,6 +9096,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdimensionalshackleswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Dimensional Shackles.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Dimensional%20Shackles.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10692
+            }
+          }
         ]
       }
     },
@@ -9154,6 +9838,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdustofdisappearancewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Dust of Disappearance.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Dust%20of%20Disappearance.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6578
+            }
+          }
+        ]
       }
     },
     {
@@ -9247,6 +9950,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdustofsneezingandchokingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Dust of Sneezing and Choking.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Dust%20of%20Sneezing%20and%20Choking.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8536
+            }
+          }
+        ]
       }
     },
     {
@@ -9329,6 +10051,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgdwarventhrowerwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Dwarven Thrower.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Dwarven%20Thrower.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6410
+            }
+          }
         ]
       }
     },
@@ -9421,6 +10162,25 @@
           "srd-5.2",
           "5etools",
           "container"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgefreetibottlewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Efreeti Bottle.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Efreeti%20Bottle.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7948
+            }
+          }
         ]
       }
     },
@@ -10058,6 +10818,25 @@
           "5etools",
           "container"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgeversmokingbottlewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Eversmoking Bottle.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Eversmoking%20Bottle.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10676
+            }
+          }
+        ]
       }
     },
     {
@@ -10373,6 +11152,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgeyesofcharmingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Eyes of Charming.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Eyes%20of%20Charming.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10612
+            }
+          }
+        ]
       }
     },
     {
@@ -10462,6 +11260,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgeyesoftheeaglewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Eyes of the Eagle.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Eyes%20of%20the%20Eagle.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10362
+            }
+          }
         ]
       }
     },
@@ -11450,6 +12267,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgfoldingboatwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Folding Boat.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Folding%20Boat.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9642
+            }
+          }
+        ]
       }
     },
     {
@@ -11631,6 +12467,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmggauntletsofogrepowerwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Gauntlets of Ogre Power.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Gauntlets%20of%20Ogre%20Power.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 14518
+            }
+          }
+        ]
       }
     },
     {
@@ -11715,6 +12570,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmggemofbrightnesswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Gem of Brightness.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Gem%20of%20Brightness.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7910
+            }
+          }
+        ]
       }
     },
     {
@@ -11772,6 +12646,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmggemofseeingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Gem of Seeing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Gem%20of%20Seeing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5412
+            }
+          }
         ]
       }
     },
@@ -12114,6 +13007,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgglovesofmissilesnaringwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Gloves of Missile Snaring.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Gloves%20of%20Missile%20Snaring.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12120
+            }
+          }
+        ]
       }
     },
     {
@@ -12292,6 +13204,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmggogglesofnightwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Goggles of Night.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Goggles%20of%20Night.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10632
+            }
+          }
         ]
       }
     },
@@ -13382,6 +14313,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgheadbandofintellectwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Headband of Intellect.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Headband%20of%20Intellect.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7264
+            }
+          }
+        ]
       }
     },
     {
@@ -13433,6 +14383,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsphbhealerskitwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/PHB/Healer's Kit.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/PHB/Healer's%20Kit.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 17394
+            }
+          }
         ]
       }
     },
@@ -13686,6 +14655,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmghelmofbrilliancewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Helm of Brilliance.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Helm%20of%20Brilliance.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 15962
+            }
+          }
+        ]
       }
     },
     {
@@ -13750,6 +14738,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmghelmofcomprehendinglanguageswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Helm of Comprehending Languages.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Helm%20of%20Comprehending%20Languages.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10762
+            }
+          }
         ]
       }
     },
@@ -13843,6 +14850,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmghelmoftelepathywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Helm of Telepathy.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Helm%20of%20Telepathy.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12266
+            }
+          }
+        ]
       }
     },
     {
@@ -13930,6 +14956,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmghelmofteleportationwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Helm of Teleportation.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Helm%20of%20Teleportation.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8466
+            }
+          }
         ]
       }
     },
@@ -14289,6 +15334,25 @@
           "srd-5.2",
           "5etools",
           "tool"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmghornofblastingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Horn of Blasting.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Horn%20of%20Blasting.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8490
+            }
+          }
         ]
       }
     },
@@ -14669,6 +15733,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgimmovablerodwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Immovable Rod.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Immovable%20Rod.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5272
+            }
+          }
         ]
       }
     },
@@ -15715,6 +16798,25 @@
           "5etools",
           "container"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgironflaskwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Iron Flask.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Iron%20Flask.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7970
+            }
+          }
+        ]
       }
     },
     {
@@ -16029,6 +17131,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgjavelinoflightningwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Javelin of Lightning.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Javelin%20of%20Lightning.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4160
+            }
+          }
         ]
       }
     },
@@ -16456,6 +17577,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmglanternofrevealingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Lantern of Revealing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Lantern%20of%20Revealing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7272
+            }
+          }
         ]
       }
     },
@@ -17322,6 +18462,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmaceofdisruptionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Mace of Disruption.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Mace%20of%20Disruption.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6940
+            }
+          }
+        ]
       }
     },
     {
@@ -17384,6 +18543,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmaceofsmitingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Mace of Smiting.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Mace%20of%20Smiting.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6472
+            }
+          }
         ]
       }
     },
@@ -17455,6 +18633,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmaceofterrorwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Mace of Terror.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Mace%20of%20Terror.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6986
+            }
+          }
         ]
       }
     },
@@ -17654,6 +18851,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmantleofspellresistancewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Mantle of Spell Resistance.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Mantle%20of%20Spell%20Resistance.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6330
+            }
+          }
+        ]
       }
     },
     {
@@ -17710,6 +18926,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualofbodilyhealthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Bodily Health.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Bodily%20Health.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 11684
+            }
+          }
+        ]
       }
     },
     {
@@ -17761,6 +18996,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualofclaygolemswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Clay Golems.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Clay%20Golems.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 80550
+            }
+          }
+        ]
       }
     },
     {
@@ -17811,6 +19065,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualoffleshgolemswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Flesh Golems.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Flesh%20Golems.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 74544
+            }
+          }
         ]
       }
     },
@@ -17919,6 +19192,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualofirongolemswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Iron Golems.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Iron%20Golems.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 84314
+            }
+          }
+        ]
       }
     },
     {
@@ -17975,6 +19267,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualofquicknessofactionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Quickness of Action.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Quickness%20of%20Action.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9786
+            }
+          }
+        ]
       }
     },
     {
@@ -18025,6 +19336,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmanualofstonegolemswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Manual of Stone Golems.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Manual%20of%20Stone%20Golems.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 114398
+            }
+          }
         ]
       }
     },
@@ -18393,6 +19723,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmedallionofthoughtswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Medallion of Thoughts.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Medallion%20of%20Thoughts.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6382
+            }
+          }
+        ]
       }
     },
     {
@@ -18603,6 +19952,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgmirroroflifetrappingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Mirror of Life Trapping.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Mirror%20of%20Life%20Trapping.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10324
+            }
+          }
         ]
       }
     },
@@ -18899,6 +20267,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgnecklaceofadaptationwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Necklace of Adaptation.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Necklace%20of%20Adaptation.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6732
+            }
+          }
+        ]
       }
     },
     {
@@ -18973,6 +20360,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgnecklaceoffireballswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Necklace of Fireballs.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Necklace%20of%20Fireballs.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7812
+            }
+          }
         ]
       }
     },
@@ -19206,6 +20612,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgnecklaceofprayerbeadswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Necklace of Prayer Beads.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Necklace%20of%20Prayer%20Beads.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9536
+            }
+          }
         ]
       }
     },
@@ -20339,6 +21764,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgperiaptofhealthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Periapt of Health.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Periapt%20of%20Health.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6726
+            }
+          }
+        ]
       }
     },
     {
@@ -20455,6 +21899,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgperiaptofwoundclosurewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Periapt of Wound Closure.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Periapt%20of%20Wound%20Closure.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9136
+            }
+          }
         ]
       }
     },
@@ -20667,6 +22130,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgpipesofhauntingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Pipes of Haunting.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Pipes%20of%20Haunting.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7622
+            }
+          }
+        ]
       }
     },
     {
@@ -20725,6 +22207,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgpipesofthesewerswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Pipes of the Sewers.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Pipes%20of%20the%20Sewers.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10234
+            }
+          }
         ]
       }
     },
@@ -23366,6 +24867,25 @@
           "5etools",
           "consumable"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgpotionofwaterbreathingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Potion of Water Breathing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Potion%20of%20Water%20Breathing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 44936
+            }
+          }
+        ]
       }
     },
     {
@@ -24588,6 +26108,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofanimalinfluencewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Animal Influence.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Animal%20Influence.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7678
+            }
+          }
+        ]
       }
     },
     {
@@ -24684,6 +26223,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofdjinnisummoningwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Djinni Summoning.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Djinni%20Summoning.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8102
+            }
+          }
         ]
       }
     },
@@ -25617,6 +27175,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofevasionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Evasion.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Evasion.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10574
+            }
+          }
+        ]
       }
     },
     {
@@ -25662,6 +27239,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringoffeatherfallingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Feather Falling.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Feather%20Falling.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12042
+            }
+          }
         ]
       }
     },
@@ -25805,6 +27401,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringoffreeactionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Free Action.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Free%20Action.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10036
+            }
+          }
+        ]
       }
     },
     {
@@ -25850,6 +27465,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofinvisibilitywebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Invisibility.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Invisibility.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6032
+            }
+          }
         ]
       }
     },
@@ -26012,6 +27646,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofmindshieldingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Mind Shielding.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Mind%20Shielding.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12872
+            }
+          }
         ]
       }
     },
@@ -26177,6 +27830,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofprotectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Protection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Protection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 74754
+            }
+          }
+        ]
       }
     },
     {
@@ -26318,6 +27990,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofregenerationwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Regeneration.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Regeneration.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8088
+            }
+          }
         ]
       }
     },
@@ -26497,6 +28188,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofshootingstarswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Shooting Stars.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Shooting%20Stars.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7988
+            }
+          }
+        ]
       }
     },
     {
@@ -26545,6 +28255,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofspellstoringwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Spell Storing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Spell%20Storing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8852
+            }
+          }
+        ]
       }
     },
     {
@@ -26590,6 +28319,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofspellturningwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Spell Turning.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Spell%20Turning.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9128
+            }
+          }
         ]
       }
     },
@@ -26710,6 +28458,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringoftelekinesiswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Telekinesis.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Telekinesis.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8854
+            }
+          }
+        ]
       }
     },
     {
@@ -26767,6 +28534,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringoftheramwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of the Ram.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20the%20Ram.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 11458
+            }
+          }
         ]
       }
     },
@@ -26843,6 +28629,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofthreewisheswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Three Wishes.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Three%20Wishes.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10926
+            }
+          }
         ]
       }
     },
@@ -26942,6 +28747,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofwarmthwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Warmth.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Warmth.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 90228
+            }
+          }
+        ]
       }
     },
     {
@@ -27007,6 +28831,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofwaterwalkingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of Water Walking.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20Water%20Walking.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10140
+            }
+          }
+        ]
       }
     },
     {
@@ -27053,6 +28896,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgringofxrayvisionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Ring of X-ray Vision.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Ring%20of%20X-ray%20Vision.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9760
+            }
+          }
         ]
       }
     },
@@ -27177,6 +29039,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrobeofeyeswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Robe of Eyes.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Robe%20of%20Eyes.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 37112
+            }
+          }
         ]
       }
     },
@@ -27339,6 +29220,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrobeofstarswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Robe of Stars.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Robe%20of%20Stars.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9878
+            }
+          }
+        ]
       }
     },
     {
@@ -27447,6 +29347,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrobeofthearchmagiwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Robe of the Archmagi.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Robe%20of%20the%20Archmagi.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8770
+            }
+          }
         ]
       }
     },
@@ -27567,6 +29486,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrobeofusefulitemswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Robe of Useful Items.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Robe%20of%20Useful%20Items.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9302
+            }
+          }
+        ]
       }
     },
     {
@@ -27666,6 +29604,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrodofabsorptionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Rod of Absorption.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Rod%20of%20Absorption.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6092
+            }
+          }
         ]
       }
     },
@@ -27982,6 +29939,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrodoflordlymightwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Rod of Lordly Might.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Rod%20of%20Lordly%20Might.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4610
+            }
+          }
+        ]
       }
     },
     {
@@ -28105,6 +30081,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrodofresurrectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Rod of Resurrection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Rod%20of%20Resurrection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7630
+            }
+          }
+        ]
       }
     },
     {
@@ -28154,6 +30149,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgrodofrulershipwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Rod of Rulership.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Rod%20of%20Rulership.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6318
+            }
+          }
         ]
       }
     },
@@ -28352,6 +30366,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgropeofentanglementwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Rope of Entanglement.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Rope%20of%20Entanglement.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10738
+            }
+          }
         ]
       }
     },
@@ -28765,6 +30798,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgscarabofprotectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Scarab of Protection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Scarab%20of%20Protection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 14022
+            }
+          }
+        ]
       }
     },
     {
@@ -29142,6 +31194,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgsendingstoneswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Sending Stones.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Sending%20Stones.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12356
+            }
+          }
+        ]
       }
     },
     {
@@ -29478,6 +31549,25 @@
           "srd-5.2",
           "5etools",
           "armor"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgshieldofmissileattractionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Shield of Missile Attraction.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Shield%20of%20Missile%20Attraction.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12034
+            }
+          }
         ]
       }
     },
@@ -30277,6 +32367,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgslippersofspiderclimbingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Slippers of Spider Climbing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Slippers%20of%20Spider%20Climbing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 8210
+            }
+          }
+        ]
       }
     },
     {
@@ -30398,6 +32507,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgsovereigngluewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Sovereign Glue.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Sovereign%20Glue.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7602
+            }
+          }
         ]
       }
     },
@@ -31088,6 +33216,25 @@
           "5etools",
           "armor"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgspellguardshieldwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Spellguard Shield.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Spellguard%20Shield.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 17072
+            }
+          }
+        ]
       }
     },
     {
@@ -31626,6 +33773,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofcharmingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Charming.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Charming.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4988
+            }
+          }
+        ]
       }
     },
     {
@@ -31828,6 +33994,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffoffirewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Fire.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Fire.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6820
+            }
+          }
         ]
       }
     },
@@ -32059,6 +34244,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffoffrostwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Frost.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Frost.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5824
+            }
+          }
+        ]
       }
     },
     {
@@ -32244,6 +34448,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofhealingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Healing.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Healing.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7870
+            }
+          }
         ]
       }
     },
@@ -32654,6 +34877,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofpowerwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Power.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Power.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4508
+            }
+          }
+        ]
       }
     },
     {
@@ -32926,6 +35168,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofswarminginsectswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Swarming Insects.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Swarming%20Insects.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5604
+            }
+          }
         ]
       }
     },
@@ -33593,6 +35854,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofthemagiwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of the Magi.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20the%20Magi.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4840
+            }
+          }
+        ]
       }
     },
     {
@@ -33663,6 +35943,25 @@
           "srd-5.2",
           "5etools",
           "weapon"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofthepythonwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of the Python.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20the%20Python.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5870
+            }
+          }
         ]
       }
     },
@@ -34024,6 +36323,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofthewoodlandswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of the Woodlands.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20the%20Woodlands.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9116
+            }
+          }
+        ]
       }
     },
     {
@@ -34131,6 +36449,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofthunderandlightningwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Thunder and Lightning.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Thunder%20and%20Lightning.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4782
+            }
+          }
+        ]
       }
     },
     {
@@ -34219,6 +36556,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstaffofwitheringwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Staff of Withering.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Staff%20of%20Withering.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5654
+            }
+          }
+        ]
       }
     },
     {
@@ -34263,6 +36619,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstoneofcontrollingearthelementalswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Stone of Controlling Earth Elementals.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Stone%20of%20Controlling%20Earth%20Elementals.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 7860
+            }
+          }
         ]
       }
     },
@@ -34331,6 +36706,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgstoneofgoodluckwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Stone of Good Luck.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Stone%20of%20Good%20Luck.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6216
+            }
+          }
         ]
       }
     },
@@ -34478,6 +36872,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgsunbladewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Sun Blade.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Sun%20Blade.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4096
+            }
+          }
+        ]
       }
     },
     {
@@ -34620,6 +37033,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtalismanofthespherewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Talisman of the Sphere.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Talisman%20of%20the%20Sphere.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 10320
+            }
+          }
+        ]
       }
     },
     {
@@ -34705,6 +37137,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtalismanofultimateevilwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Talisman of Ultimate Evil.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Talisman%20of%20Ultimate%20Evil.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 14976
+            }
+          }
         ]
       }
     },
@@ -34826,6 +37277,25 @@
           "srd-5.2",
           "5etools",
           "tool"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsphbthievestoolswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/PHB/Thieves' Tools.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/PHB/Thieves'%20Tools.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12838
+            }
+          }
         ]
       }
     },
@@ -35089,6 +37559,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtomeofclearthoughtwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Tome of Clear Thought.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Tome%20of%20Clear%20Thought.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 12026
+            }
+          }
+        ]
       }
     },
     {
@@ -35145,6 +37634,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtomeofleadershipandinfluencewebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Tome of Leadership and Influence.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Tome%20of%20Leadership%20and%20Influence.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 15834
+            }
+          }
+        ]
       }
     },
     {
@@ -35200,6 +37708,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtomeofunderstandingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Tome of Understanding.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Tome%20of%20Understanding.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 14458
+            }
+          }
         ]
       }
     },
@@ -35552,6 +38079,25 @@
           "5etools",
           "weapon"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgtridentoffishcommandwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Trident of Fish Command.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Trident%20of%20Fish%20Command.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5688
+            }
+          }
+        ]
       }
     },
     {
@@ -35648,6 +38194,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmguniversalsolventwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Universal Solvent.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Universal%20Solvent.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6572
+            }
+          }
         ]
       }
     },
@@ -36011,6 +38576,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofbindingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Binding.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Binding.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5174
+            }
+          }
+        ]
       }
     },
     {
@@ -36078,6 +38662,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofenemydetectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Enemy Detection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Enemy%20Detection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5402
+            }
+          }
         ]
       }
     },
@@ -36225,6 +38828,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandoffearwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Fear.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Fear.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5834
+            }
+          }
+        ]
       }
     },
     {
@@ -36326,6 +38948,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandoffireballswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Fireballs.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Fireballs.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4322
+            }
+          }
         ]
       }
     },
@@ -36429,6 +39070,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandoflightningboltswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Lightning Bolts.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Lightning%20Bolts.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6920
+            }
+          }
+        ]
       }
     },
     {
@@ -36519,6 +39179,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofmagicdetectionwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Magic Detection.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Magic%20Detection.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 4856
+            }
+          }
         ]
       }
     },
@@ -36618,6 +39297,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofmagicmissileswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Magic Missiles.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Magic%20Missiles.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 17086
+            }
+          }
+        ]
       }
     },
     {
@@ -36688,6 +39386,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofparalysiswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Paralysis.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Paralysis.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6522
+            }
+          }
         ]
       }
     },
@@ -36791,6 +39508,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofpolymorphwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Polymorph.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Polymorph.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5456
+            }
+          }
+        ]
       }
     },
     {
@@ -36850,6 +39586,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofsecretswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Secrets.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Secrets.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5902
+            }
+          }
         ]
       }
     },
@@ -36952,6 +39707,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofwebwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Web.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Web.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 5112
+            }
+          }
         ]
       }
     },
@@ -37363,6 +40137,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwandofwonderwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wand of Wonder.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wand%20of%20Wonder.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6750
+            }
+          }
         ]
       }
     },
@@ -38028,6 +40821,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwindfanwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wind Fan.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wind%20Fan.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 9626
+            }
+          }
+        ]
       }
     },
     {
@@ -38093,6 +40905,25 @@
           "5etools",
           "equipment"
         ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwingedbootswebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Winged Boots.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Winged%20Boots.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 72626
+            }
+          }
+        ]
       }
     },
     {
@@ -38146,6 +40977,25 @@
           "srd-5.2",
           "5etools",
           "equipment"
+        ]
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:itemsdmgwingsofflyingwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "items/DMG/Wings of Flying.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/items/DMG/Wings%20of%20Flying.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 6264
+            }
+          }
         ]
       }
     },

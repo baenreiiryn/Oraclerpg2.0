@@ -1,0 +1,2312 @@
+{
+  "format": "oraclerpg-compendium",
+  "version": 1,
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "count": 34,
+  "items": [
+    {
+      "id": "dnd2024:2024:feature:species-adrenaline-rush:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-adrenaline-rush:srd-5.2",
+      "entityType": "feature",
+      "name": "Adrenaline Rush",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Adrenaline Rush",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Adrenaline Rush",
+              "entries": [
+                "You can take the {@action Dash|XPHB} action as a {@variantrule Bonus Action|XPHB}. When you do so, you gain a number of {@variantrule Temporary Hit Points|XPHB} equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}.",
+                "You can use this trait a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "actionRules": [
+          {
+            "id": "adrenaline-rush",
+            "activity": {
+              "id": "adrenaline-rush",
+              "name": "Adrenaline Rush",
+              "kind": "utility",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "self"
+              },
+              "uses": {
+                "max": {
+                  "type": "proficiencyBonus",
+                  "subject": "self"
+                },
+                "recovery": [
+                  {
+                    "period": "shortRest",
+                    "amount": "all"
+                  },
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "description": "Take the Dash action and gain Temporary Hit Points equal to Proficiency Bonus."
+            }
+          }
+        ],
+        "triggeredGrants": [
+          {
+            "id": "adrenaline-rush-thp",
+            "trigger": {
+              "event": "onActivate",
+              "actor": "self"
+            },
+            "grant": "temporaryHitPoints",
+            "value": {
+              "type": "proficiencyBonus",
+              "subject": "self"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-brave:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-brave:srd-5.2",
+      "entityType": "feature",
+      "name": "Brave",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Brave",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Brave",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Frightened|XPHB} condition."
+              ]
+            }
+          ]
+        },
+        "saveRules": [
+          {
+            "id": "brave",
+            "conditions": [
+              "frightened"
+            ],
+            "mode": "advantage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-breath-weapon:srd-5.2",
+      "entityType": "feature",
+      "name": "Breath Weapon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Breath Weapon",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Breath Weapon",
+              "entries": [
+                "When you take the {@action Attack|XPHB} action on your turn, you can replace one of your attacks with an exhalation of magical energy in either a 15-foot {@variantrule Cone [Area of Effect]|XPHB|Cone} or a 30-foot {@variantrule Line [Area of Effect]|XPHB|Line} that is 5 feet wide (choose the shape each time). Each creature in that area must make a Dexterity saving throw ({@dc 8} plus your Constitution modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature takes {@damage 1d10} damage of the type determined by your Draconic Ancestry trait. On a successful save, a creature takes half as much damage. This damage increases by {@damage 1d10} when you reach character levels 5 ({@damage 2d10}), 11 ({@damage 3d10}), and 17 ({@damage 4d10}).",
+                "You can use this Breath Weapon a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "speciesTemplate": {
+          "family": "attack",
+          "parameters": [
+            {
+              "id": "damageType",
+              "kind": "damageType",
+              "required": true
+            }
+          ],
+          "bindings": [
+            {
+              "parameterId": "damageType",
+              "path": "activities.0.damage.0.damageType"
+            }
+          ]
+        },
+        "activities": [
+          {
+            "id": "breath-weapon",
+            "name": "Breath Weapon",
+            "kind": "save",
+            "activation": {
+              "type": "action",
+              "cost": 1
+            },
+            "target": {
+              "type": "special",
+              "area": {
+                "shape": "special"
+              }
+            },
+            "save": {
+              "ability": "dex",
+              "dc": {
+                "type": "ability",
+                "ability": "con",
+                "base": 8,
+                "proficiency": true
+              },
+              "onSuccess": "half"
+            },
+            "damage": [
+              {
+                "formula": "1d10",
+                "damageType": "fire",
+                "scaling": {
+                  "type": "characterLevel",
+                  "progression": {
+                    "5": "2d10",
+                    "11": "3d10",
+                    "17": "4d10"
+                  }
+                }
+              }
+            ],
+            "uses": {
+              "max": {
+                "type": "proficiencyBonus",
+                "subject": "self"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "description": "Replaces one attack; choose a 15-foot cone or a 30-by-5-foot line each use."
+          }
+        ],
+        "actionRules": [
+          {
+            "id": "breath-replaces-attack",
+            "replacesAttack": true,
+            "activity": {
+              "id": "breath-weapon",
+              "name": "Breath Weapon",
+              "kind": "save"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-cloud-s-jaunt:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-cloud-s-jaunt:srd-5.2",
+      "entityType": "feature",
+      "name": "Cloud's Jaunt",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Cloud's Jaunt",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "actionRules": [
+          {
+            "id": "clouds-jaunt",
+            "activity": {
+              "id": "clouds-jaunt",
+              "name": "Cloud's Jaunt",
+              "kind": "utility",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "space"
+              },
+              "range": {
+                "normal": {
+                  "value": 30,
+                  "unit": "ft"
+                }
+              },
+              "uses": {
+                "max": {
+                  "type": "proficiencyBonus",
+                  "subject": "self"
+                },
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "description": "Teleport up to 30 feet to an unoccupied space you can see."
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Cloud's Jaunt."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-damage-resistance:srd-5.2",
+      "entityType": "feature",
+      "name": "Damage Resistance",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Damage Resistance",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Damage Resistance",
+              "entries": [
+                "You have {@variantrule Resistance|XPHB} to the damage type determined by your Draconic Ancestry trait."
+              ]
+            }
+          ]
+        },
+        "speciesTemplate": {
+          "family": "resistance",
+          "parameters": [
+            {
+              "id": "damageType",
+              "kind": "damageType",
+              "required": true
+            }
+          ],
+          "bindings": [
+            {
+              "parameterId": "damageType",
+              "path": "modifiers.0.target.damageType"
+            }
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "fire"
+            },
+            "mode": "grantResistance"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-darkvision:srd-5.2",
+      "entityType": "feature",
+      "name": "Darkvision",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Darkvision",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Darkvision",
+              "entries": [
+                "You have {@sense Darkvision|XPHB} with a range of 60 feet."
+              ]
+            }
+          ]
+        },
+        "speciesTemplate": {
+          "family": "sense",
+          "parameters": [
+            {
+              "id": "range",
+              "kind": "number",
+              "required": true
+            }
+          ],
+          "bindings": [
+            {
+              "parameterId": "range",
+              "path": "grants.0.value.range.value"
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "sense",
+            "value": {
+              "type": "darkvision",
+              "range": {
+                "value": 60,
+                "unit": "ft"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-draconic-ancestry:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-draconic-ancestry:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Ancestry",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Draconic Ancestry",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Draconic Ancestry",
+              "entries": [
+                "Your lineage stems from a dragon progenitor. Choose the kind of dragon from the Draconic Ancestors table. Your choice affects your Breath Weapon and {@variantrule Damage|XPHB} {@variantrule Resistance|XPHB} traits as well as your appearance.",
+                {
+                  "type": "table",
+                  "caption": "Draconic Ancestors",
+                  "columns": [
+                    "Dragon",
+                    "Damage Type"
+                  ],
+                  "rows": [
+                    [
+                      "Black",
+                      "Acid"
+                    ],
+                    [
+                      "Blue",
+                      "Lightning"
+                    ],
+                    [
+                      "Brass",
+                      "Fire"
+                    ],
+                    [
+                      "Bronze",
+                      "Lightning"
+                    ],
+                    [
+                      "Copper",
+                      "Acid"
+                    ],
+                    [
+                      "Gold",
+                      "Fire"
+                    ],
+                    [
+                      "Green",
+                      "Poison"
+                    ],
+                    [
+                      "Red",
+                      "Fire"
+                    ],
+                    [
+                      "Silver",
+                      "Cold"
+                    ],
+                    [
+                      "White",
+                      "Cold"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "resolved-by-species-variants"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-draconic-flight:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-draconic-flight:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Flight",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Draconic Flight",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Draconic Flight",
+              "entries": [
+                "When you reach character level 5, you can channel draconic magic to give yourself temporary flight. As a {@variantrule Bonus Action|XPHB}, you sprout spectral wings on your back that last for 10 minutes or until you retract the wings (no action required) or have the {@condition Incapacitated|XPHB} condition. During that time, you have a {@variantrule Fly Speed|XPHB} equal to your {@variantrule Speed|XPHB}. Your wings appear to be made of the same energy as your Breath Weapon. Once you use this trait, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 5
+          }
+        ],
+        "actionRules": [
+          {
+            "id": "draconic-flight",
+            "activity": {
+              "id": "draconic-flight",
+              "name": "Draconic Flight",
+              "kind": "utility",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "self"
+              },
+              "uses": {
+                "max": 1,
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "duration": {
+                "type": "timed",
+                "value": 10,
+                "unit": "minute"
+              }
+            }
+          }
+        ],
+        "triggeredGrants": [
+          {
+            "id": "draconic-flight-speed",
+            "trigger": {
+              "event": "onActivate",
+              "actor": "self"
+            },
+            "grant": "movement",
+            "movement": {
+              "type": "fly",
+              "equalsSpeed": true
+            },
+            "duration": {
+              "value": 10,
+              "unit": "minute"
+            },
+            "usage": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "scope": "rest",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-dwarven-resilience:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-dwarven-resilience:srd-5.2",
+      "entityType": "feature",
+      "name": "Dwarven Resilience",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Dwarven Resilience",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Dwarven Resilience",
+              "entries": [
+                "You have {@variantrule Resistance|XPHB} to Poison damage. You also have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Poisoned|XPHB} condition."
+              ]
+            }
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "poison"
+            },
+            "mode": "grantResistance"
+          }
+        ],
+        "saveRules": [
+          {
+            "id": "dwarf-poison-save",
+            "conditions": [
+              "poisoned"
+            ],
+            "mode": "advantage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-dwarven-toughness:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-dwarven-toughness:srd-5.2",
+      "entityType": "feature",
+      "name": "Dwarven Toughness",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Dwarven Toughness",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Dwarven Toughness",
+              "entries": [
+                "Your {@variantrule Hit Points|XPHB|Hit Point} maximum increases by 1, and it increases by 1 again whenever you gain a level."
+              ]
+            }
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "hitPointMaximum"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "characterLevel",
+              "subject": "self"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-elven-lineage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-elven-lineage:srd-5.2",
+      "entityType": "feature",
+      "name": "Elven Lineage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Elven Lineage",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Elven Lineage",
+              "entries": [
+                "You are part of a lineage that grants you supernatural abilities. Choose a lineage from the Elven Lineages table. You gain the level 1 benefit of that lineage.",
+                "When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level.",
+                "Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage).",
+                {
+                  "type": "table",
+                  "caption": "Elven Lineages",
+                  "columns": [
+                    "Lineage",
+                    "Level 1",
+                    "Level 3",
+                    "Level 5"
+                  ],
+                  "rows": [
+                    [
+                      "Drow",
+                      "The range of your {@sense Darkvision|XPHB} increases to 120 feet. You also know the {@spell Dancing Lights|XPHB} cantrip.",
+                      "{@spell Faerie Fire|XPHB}",
+                      "{@spell Darkness|XPHB}"
+                    ],
+                    [
+                      "High Elf",
+                      "You know the {@spell Prestidigitation|XPHB} cantrip. Whenever you finish a {@variantrule Long Rest|XPHB}, you can replace that cantrip with a different {@filter cantrip from the Wizard spell list|spells|level=0|class=Wizard}.",
+                      "{@spell Detect Magic|XPHB}",
+                      "{@spell Misty Step|XPHB}"
+                    ],
+                    [
+                      "Wood Elf",
+                      "Your {@variantrule Speed|XPHB} increases to 35 feet. You also know the {@spell Druidcraft|XPHB} cantrip.",
+                      "{@spell Longstrider|XPHB}",
+                      "{@spell Pass without Trace|XPHB}"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "resolved-by-species-variants"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-fey-ancestry:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-fey-ancestry:srd-5.2",
+      "entityType": "feature",
+      "name": "Fey Ancestry",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Fey Ancestry",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Fey Ancestry",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on saving throws you make to avoid or end the {@condition Charmed|XPHB} condition."
+              ]
+            }
+          ]
+        },
+        "saveRules": [
+          {
+            "id": "fey-ancestry",
+            "conditions": [
+              "charmed"
+            ],
+            "mode": "advantage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-fiendish-legacy:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-fiendish-legacy:srd-5.2",
+      "entityType": "feature",
+      "name": "Fiendish Legacy",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Fiendish Legacy",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Fiendish Legacy",
+              "entries": [
+                "You are the recipient of a legacy that grants you supernatural abilities. Choose a legacy from the Fiendish Legacies table. You gain the level 1 benefit of the chosen legacy.",
+                "When you reach character levels 3 and 5, you learn a higher-level spell, as shown on the table. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have of the appropriate level. Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the legacy).",
+                {
+                  "type": "table",
+                  "caption": "Fiendish Legacies",
+                  "columns": [
+                    "Legacy",
+                    "Level 1",
+                    "Level 3",
+                    "Level 5"
+                  ],
+                  "rows": [
+                    [
+                      "Abyssal",
+                      "You have {@variantrule Resistance|XPHB} to Poison damage. You also know the {@spell Poison Spray|XPHB} cantrip.",
+                      "{@spell Ray of Sickness|XPHB}",
+                      "{@spell Hold Person|XPHB}"
+                    ],
+                    [
+                      "Chthonic",
+                      "You have {@variantrule Resistance|XPHB} to Necrotic damage. You also know the {@spell Chill Touch|XPHB} cantrip.",
+                      "{@spell False Life|XPHB}",
+                      "{@spell Ray of Enfeeblement|XPHB}"
+                    ],
+                    [
+                      "Infernal",
+                      "You have {@variantrule Resistance|XPHB} to Fire damage. You also know the {@spell Fire Bolt|XPHB} cantrip.",
+                      "{@spell Hellish Rebuke|XPHB}",
+                      "{@spell Darkness|XPHB}"
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "resolved-by-species-variants"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-fire-s-burn:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-fire-s-burn:srd-5.2",
+      "entityType": "feature",
+      "name": "Fire's Burn",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Fire's Burn",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "damageRules": [
+          {
+            "id": "fires-burn",
+            "action": "extraDamage",
+            "formula": "1d10",
+            "damageTypes": [
+              "fire"
+            ],
+            "trigger": {
+              "event": "onHit",
+              "actor": "self"
+            },
+            "usage": {
+              "max": {
+                "type": "proficiencyBonus",
+                "subject": "self"
+              },
+              "scope": "rest",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Fire's Burn."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-frost-s-chill:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-frost-s-chill:srd-5.2",
+      "entityType": "feature",
+      "name": "Frost's Chill",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Frost's Chill",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "damageRules": [
+          {
+            "id": "frosts-chill",
+            "action": "extraDamage",
+            "formula": "1d6",
+            "damageTypes": [
+              "cold"
+            ],
+            "trigger": {
+              "event": "onHit",
+              "actor": "self"
+            },
+            "usage": {
+              "max": {
+                "type": "proficiencyBonus",
+                "subject": "self"
+              },
+              "scope": "rest",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "effects": [
+          {
+            "id": "frosts-chill-slow",
+            "trigger": {
+              "event": "onHit",
+              "actor": "target"
+            },
+            "modifiers": [
+              {
+                "target": {
+                  "domain": "movement"
+                },
+                "mode": "penalty",
+                "value": {
+                  "type": "constant",
+                  "value": 10
+                },
+                "duration": {
+                  "type": "untilTrigger",
+                  "endTrigger": {
+                    "event": "onTurnStart",
+                    "actor": "self"
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Frost's Chill."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-giant-ancestry:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-giant-ancestry:srd-5.2",
+      "entityType": "feature",
+      "name": "Giant Ancestry",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Giant Ancestry",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Giant Ancestry",
+              "entries": [
+                "You are descended from Giants. Choose one of the following benefits—a supernatural boon from your ancestry; you can use the chosen benefit a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}:",
+                {
+                  "type": "list",
+                  "items": [
+                    "{\"type\":\"item\",\"name\":\"Cloud's Jaunt (Cloud Giant)\",\"entries\":[\"As a {@variantrule Bonus Action|XPHB}, you magically teleport up to 30 feet to an unoccupied space you can see.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Fire's Burn (Fire Giant)\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d10} Fire damage to that target.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Frost's Chill (Frost Giant)\",\"entries\":[\"When you hit a target with an attack roll and deal damage to it, you can also deal {@damage 1d6} Cold damage to that target and reduce its {@variantrule Speed|XPHB} by 10 feet until the start of your next turn.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Hill's Tumble (Hill Giant)\",\"entries\":[\"When you hit a Large or smaller creature with an attack roll and deal damage to it, you can give that target the {@condition Prone|XPHB} condition.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Stone's Endurance (Stone Giant)\",\"entries\":[\"When you take damage, you can take a {@variantrule Reaction|XPHB} to roll {@dice 1d12}. Add your Constitution modifier to the number rolled and reduce the damage by that total.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Storm's Thunder (Storm Giant)\",\"entries\":[\"When you take damage from a creature within 60 feet of you, you can take a {@variantrule Reaction|XPHB} to deal {@damage 1d8} Thunder damage to that creature.\"]}"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "resolved-by-species-variants"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-gnomish-cunning:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-gnomish-cunning:srd-5.2",
+      "entityType": "feature",
+      "name": "Gnomish Cunning",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Gnomish Cunning",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Gnomish Cunning",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on Intelligence, Wisdom, and Charisma saving throws."
+              ]
+            }
+          ]
+        },
+        "saveRules": [
+          {
+            "id": "gnomish-cunning",
+            "abilities": [
+              "int",
+              "wis",
+              "cha"
+            ],
+            "mode": "advantage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-gnomish-lineage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-gnomish-lineage:srd-5.2",
+      "entityType": "feature",
+      "name": "Gnomish Lineage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Gnomish Lineage",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Gnomish Lineage",
+              "entries": [
+                "You are part of a lineage that grants you supernatural abilities. Choose one of the following options; whichever one you choose, Intelligence, Wisdom, or Charisma is your spellcasting ability for the spells you cast with this trait (choose the ability when you select the lineage):",
+                {
+                  "type": "list",
+                  "items": [
+                    "{\"type\":\"item\",\"name\":\"Forest Gnome\",\"entries\":[\"You know the {@spell Minor Illusion|XPHB} cantrip. You also always have the {@spell Speak with Animals|XPHB} spell prepared. You can cast it without a spell slot a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. You can also use any spell slots you have to cast the spell.\"]}",
+                    "{\"type\":\"item\",\"name\":\"Rock Gnome\",\"entries\":[\"You know the {@spell Mending|XPHB} and {@spell Prestidigitation|XPHB} cantrips. In addition, you can spend 10 minutes casting {@spell Prestidigitation|XPHB} to create a Tiny clockwork device (AC 5, 1 HP), such as a toy, fire starter, or music box. When you create the device, you determine its function by choosing one effect from {@spell Prestidigitation|XPHB}; the device produces that effect whenever you or another creature takes a {@variantrule Bonus Action|XPHB} to activate it with a touch. If the chosen effect has options within it, you choose one of those options for the device when you create it. For example, if you choose the spell's ignite-extinguish effect, you determine whether the device ignites or extinguishes fire; the device doesn't do both. You can have three such devices in existence at a time, and each falls apart 8 hours after its creation or when you dismantle it with a touch as a {@action Utilize|XPHB} action.\"]}"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "resolved-by-species-variants"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-halfling-nimbleness:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-halfling-nimbleness:srd-5.2",
+      "entityType": "feature",
+      "name": "Halfling Nimbleness",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Halfling Nimbleness",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Halfling Nimbleness",
+              "entries": [
+                "You can move through the space of any creature that is a size larger than you, but you can't stop in the same space."
+              ]
+            }
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "halfling-nimbleness",
+            "action": "moveThroughSpace",
+            "predicate": {
+              "type": "size",
+              "description": "Creature is at least one size larger than self."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-hill-s-tumble:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-hill-s-tumble:srd-5.2",
+      "entityType": "feature",
+      "name": "Hill's Tumble",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Hill's Tumble",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Hill's Tumble."
+          ]
+        },
+        "actionRules": [
+          {
+            "id": "hills-tumble",
+            "activity": {
+              "id": "hills-tumble",
+              "name": "Hill's Tumble",
+              "kind": "utility",
+              "target": {
+                "type": "creature",
+                "count": 1
+              },
+              "triggers": [
+                {
+                  "event": "onHit",
+                  "actor": "self"
+                }
+              ],
+              "predicates": [
+                {
+                  "type": "size",
+                  "sizes": [
+                    "tiny",
+                    "small",
+                    "medium",
+                    "large"
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "prone"
+                }
+              ],
+              "uses": {
+                "max": {
+                  "type": "proficiencyBonus",
+                  "subject": "self"
+                },
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "description": "When you hit a Large or smaller creature and deal damage, give it the Prone condition."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-keen-senses:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-keen-senses:srd-5.2",
+      "entityType": "feature",
+      "name": "Keen Senses",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Keen Senses",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Keen Senses",
+              "entries": [
+                "You have proficiency in the {@skill Insight|XPHB}, {@skill Perception|XPHB}, or {@skill Survival|XPHB} skill."
+              ]
+            }
+          ]
+        },
+        "proficiencyChoices": [
+          {
+            "kind": "enum",
+            "count": 1,
+            "options": [
+              "insight",
+              "perception",
+              "survival"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-large-form:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-large-form:srd-5.2",
+      "entityType": "feature",
+      "name": "Large Form",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Large Form",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Large Form",
+              "entries": [
+                "Starting at character level 5, you can change your size to Large as a {@variantrule Bonus Action|XPHB} if you're in a big enough space. This transformation lasts for 10 minutes or until you end it (no action required). For that duration, you have {@variantrule Advantage|XPHB} on Strength checks, and your {@variantrule Speed|XPHB} increases by 10 feet. Once you use this trait, you can't use it again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 5
+          }
+        ],
+        "actionRules": [
+          {
+            "id": "large-form",
+            "activity": {
+              "id": "large-form",
+              "name": "Large Form",
+              "kind": "transform",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "self"
+              },
+              "uses": {
+                "max": 1,
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "duration": {
+                "type": "timed",
+                "value": 10,
+                "unit": "minute"
+              },
+              "description": "Become Large, gain Advantage on Strength checks, and Speed increases by 10 feet."
+            }
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "abilityCheck",
+              "ability": "str"
+            },
+            "mode": "advantage",
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 10
+              },
+              "unit": "minute"
+            }
+          },
+          {
+            "target": {
+              "domain": "movement",
+              "movementType": "walk"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 10
+            },
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 10
+              },
+              "unit": "minute"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-luck:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-luck:srd-5.2",
+      "entityType": "feature",
+      "name": "Luck",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Luck",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Luck",
+              "entries": [
+                "When you roll a 1 on the {@dice d20} of a {@variantrule D20 Test|XPHB}, you can reroll the die, and you must use the new roll."
+              ]
+            }
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "halfling-luck",
+            "target": "d20Test",
+            "operation": "reroll",
+            "dieFaces": [
+              1
+            ],
+            "choose": "either"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-naturally-stealthy:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-naturally-stealthy:srd-5.2",
+      "entityType": "feature",
+      "name": "Naturally Stealthy",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Naturally Stealthy",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Naturally Stealthy",
+              "entries": [
+                "You can take the {@action Hide|XPHB} action even when you are obscured only by a creature that is at least one size larger than you."
+              ]
+            }
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "naturally-stealthy",
+            "action": "hideBehindCreature",
+            "predicate": {
+              "type": "size",
+              "description": "Obscuring creature is at least one size larger than self."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-otherworldly-presence:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-otherworldly-presence:srd-5.2",
+      "entityType": "feature",
+      "name": "Otherworldly Presence",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Otherworldly Presence",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Otherworldly Presence",
+              "entries": [
+                "You know the {@spell Thaumaturgy|XPHB} cantrip. When you cast it with this trait, the spell uses the same spellcasting ability you use for your Fiendish Legacy Trait."
+              ]
+            }
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Otherworldly Presence",
+            "ability": {
+              "choice": [
+                "int",
+                "wis",
+                "cha"
+              ]
+            },
+            "selections": [
+              {
+                "mode": "known",
+                "spell": {
+                  "canonicalId": "dnd2024:2024:spell:thaumaturgy:srd-5.2",
+                  "name": "Thaumaturgy",
+                  "entityType": "spell"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-powerful-build:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-powerful-build:srd-5.2",
+      "entityType": "feature",
+      "name": "Powerful Build",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Powerful Build",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Powerful Build",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on any ability check you make to end the {@condition Grappled|XPHB} condition. You also count as one size larger when determining your carrying capacity."
+              ]
+            }
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "powerful-build-grapple",
+            "target": "abilityCheck",
+            "operation": "advantage",
+            "predicate": {
+              "type": "hasCondition",
+              "condition": "grappled"
+            }
+          }
+        ],
+        "capacityRules": [
+          {
+            "id": "powerful-build-capacity",
+            "countAsSizeLarger": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-relentless-endurance:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-relentless-endurance:srd-5.2",
+      "entityType": "feature",
+      "name": "Relentless Endurance",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Relentless Endurance",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Relentless Endurance",
+              "entries": [
+                "When you are reduced to 0 {@variantrule Hit Points|XPHB} but not killed outright, you can drop to 1 {@variantrule Hit Points|XPHB|Hit Point} instead. Once you use this trait, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "triggeredGrants": [
+          {
+            "id": "relentless-endurance",
+            "trigger": {
+              "event": "onDropToZero",
+              "actor": "self"
+            },
+            "grant": "hitPoints",
+            "value": {
+              "type": "constant",
+              "value": 1
+            },
+            "usage": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "scope": "rest",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-resourceful:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-resourceful:srd-5.2",
+      "entityType": "feature",
+      "name": "Resourceful",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Resourceful",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Resourceful",
+              "entries": [
+                "You gain {@variantrule Heroic Inspiration|XPHB} whenever you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "triggeredGrants": [
+          {
+            "id": "resourceful",
+            "trigger": {
+              "event": "onRest",
+              "actor": "self",
+              "description": "After finishing a Long Rest."
+            },
+            "grant": "heroicInspiration",
+            "value": {
+              "type": "constant",
+              "value": 1
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-skillful:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-skillful:srd-5.2",
+      "entityType": "feature",
+      "name": "Skillful",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Skillful",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Skillful",
+              "entries": [
+                "You gain proficiency in one skill of your choice."
+              ]
+            }
+          ]
+        },
+        "proficiencyChoices": [
+          {
+            "kind": "tagQuery",
+            "count": 1,
+            "query": {
+              "all": [
+                {
+                  "field": "category",
+                  "operator": "eq",
+                  "value": "skill"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-stone-s-endurance:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-stone-s-endurance:srd-5.2",
+      "entityType": "feature",
+      "name": "Stone's Endurance",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Stone's Endurance",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "damageRules": [
+          {
+            "id": "stones-endurance",
+            "action": "reduceIncoming",
+            "formula": "1d12 + @ability.con.mod",
+            "value": {
+              "type": "abilityModifier",
+              "ability": "con",
+              "subject": "self"
+            },
+            "trigger": {
+              "event": "onDamageTaken",
+              "actor": "self"
+            },
+            "usage": {
+              "max": {
+                "type": "proficiencyBonus",
+                "subject": "self"
+              },
+              "scope": "rest",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Stone's Endurance."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-stonecunning:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-stonecunning:srd-5.2",
+      "entityType": "feature",
+      "name": "Stonecunning",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Stonecunning",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Stonecunning",
+              "entries": [
+                "As a {@variantrule Bonus Action|XPHB}, you gain {@sense Tremorsense|XPHB} with a range of 60 feet for 10 minutes. You must be on a stone surface or touching a stone surface to use this {@sense Tremorsense|XPHB}. The stone can be natural or worked.",
+                "You can use this {@variantrule Bonus Action|XPHB} a number of times equal to your {@variantrule Proficiency|XPHB|Proficiency Bonus}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "actionRules": [
+          {
+            "id": "stonecunning",
+            "activity": {
+              "id": "stonecunning",
+              "name": "Stonecunning",
+              "kind": "utility",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "self"
+              },
+              "uses": {
+                "max": {
+                  "type": "proficiencyBonus",
+                  "subject": "self"
+                },
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "duration": {
+                "type": "timed",
+                "value": 10,
+                "unit": "minute"
+              },
+              "predicates": [
+                {
+                  "type": "hasTag",
+                  "tags": [
+                    "touchingStoneSurface"
+                  ]
+                }
+              ]
+            }
+          }
+        ],
+        "triggeredGrants": [
+          {
+            "id": "stonecunning-tremorsense",
+            "trigger": {
+              "event": "onActivate",
+              "actor": "self"
+            },
+            "grant": "sense",
+            "sense": {
+              "type": "tremorsense",
+              "range": {
+                "value": 60,
+                "unit": "ft"
+              }
+            },
+            "duration": {
+              "value": 10,
+              "unit": "minute"
+            },
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "touchingStoneSurface"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-storm-s-thunder:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-storm-s-thunder:srd-5.2",
+      "entityType": "feature",
+      "name": "Storm's Thunder",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Storm's Thunder",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "actionRules": [
+          {
+            "id": "storms-thunder",
+            "activity": {
+              "id": "storms-thunder",
+              "name": "Storm's Thunder",
+              "kind": "damage",
+              "activation": {
+                "type": "reaction",
+                "cost": 1,
+                "trigger": {
+                  "event": "onDamageTaken",
+                  "actor": "self"
+                }
+              },
+              "range": {
+                "normal": {
+                  "value": 60,
+                  "unit": "ft"
+                }
+              },
+              "target": {
+                "type": "creature",
+                "count": 1,
+                "disposition": "enemy"
+              },
+              "damage": [
+                {
+                  "formula": "1d8",
+                  "damageType": "thunder"
+                }
+              ],
+              "uses": {
+                "max": {
+                  "type": "proficiencyBonus",
+                  "subject": "self"
+                },
+                "recovery": [
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "Goliath Giant Ancestry option: Storm's Thunder."
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-trance:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-trance:srd-5.2",
+      "entityType": "feature",
+      "name": "Trance",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Trance",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Trance",
+              "entries": [
+                "You don't need to sleep, and magic can't put you to sleep. You can finish a {@variantrule Long Rest|XPHB} in 4 hours if you spend those hours in a trancelike meditation, during which you retain consciousness."
+              ]
+            }
+          ]
+        },
+        "restRules": [
+          {
+            "id": "trance-long-rest",
+            "rest": "longRest",
+            "duration": {
+              "value": 4,
+              "unit": "hour"
+            },
+            "sleepRequired": false,
+            "conscious": true
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:species-versatile:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:species-versatile:srd-5.2",
+      "entityType": "feature",
+      "name": "Versatile",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:speciesFeature:Versatile",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "speciesFeature",
+        "category": "species",
+        "text": {
+          "rules": [
+            {
+              "type": "entries",
+              "name": "Versatile",
+              "entries": [
+                "You gain an {@filter Origin feat|feats|category=o} of your choice."
+              ]
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "entity",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "featCategory",
+                    "operator": "eq",
+                    "value": "origin"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

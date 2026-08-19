@@ -1,0 +1,124 @@
+name: Sync SRD 5.2 Media
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  media:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install spell comparison dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D 6.0.x reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Regenerate SRD 5.2 spells
+        run: |
+          node scripts/probe-srd52-spell-fields.mjs
+          node scripts/probe-srd52-spell-foundry.mjs
+          node scripts/import-srd52-spells.mjs
+          node scripts/normalize-srd52-spell-source-meta.mjs
+          node scripts/enrich-srd52-spells.mjs
+          node scripts/complete-srd52-spell-enrichment.mjs || true
+          node scripts/resolve-srd52-spell-semantic-leftovers.mjs
+          node scripts/reconcile-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+          node scripts/normalize-srd52-spell-formulas.mjs
+          node scripts/apply-srd52-spell-regressions.mjs
+          node scripts/audit-srd52-spells.mjs
+          node scripts/verify-srd52-spell-regressions.mjs
+          node scripts/compare-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+      - name: Regenerate SRD 5.2 species and feats
+        run: |
+          node scripts/sync-srd52-species-feats.mjs
+          node scripts/normalize-srd52-species-feats.mjs
+          node scripts/enrich-srd52-species-feats.mjs
+          node scripts/finalize-srd52-species-feats.mjs
+          node scripts/postprocess-srd52-species-feats.mjs
+      - name: Resolve 5etools media assets
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/sync-srd52-media.mjs
+          node scripts/finalize-srd52-media.mjs
+      - name: Validate media model and coverage
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const root='packages/content/data/srd-5.2';
+          const required={
+            'items.json':550,
+            'spells.json':340,
+            'monsters.json':331,
+            'monster-features.json':405,
+            'species.json':9,
+            'species-features.json':34,
+            'feats.json':17,
+          };
+          const audit=JSON.parse(fs.readFileSync(`${root}/media-coverage-audit.json`,'utf8'));
+          for(const [file,count] of Object.entries(required)){
+            if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
+            if(audit.collections[file].entities!==count) throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);
+          }
+          if(!audit.safeguards?.monsterFeatureBestiaryArtworkBlocked) throw new Error('Monster-feature artwork safeguard missing');
+          if(audit.collections['monster-features.json'].withMedia!==0) throw new Error('Monster Features must not inherit Bestiary creature artwork');
+          if(!audit.totals.withMedia) throw new Error('No upstream media assets were resolved');
+          for(const [file,stats] of Object.entries(audit.collections)){
+            const doc=JSON.parse(fs.readFileSync(`${root}/${file}`,'utf8'));
+            for(const entity of doc.items??[]){
+              if(!entity.media) continue;
+              if(!Array.isArray(entity.media.assets)||!entity.media.assets.length) throw new Error(`${entity.name}: empty media assets`);
+              const ids=new Set();
+              for(const asset of entity.media.assets){
+                if(ids.has(asset.id)) throw new Error(`${entity.name}: duplicate media id ${asset.id}`);
+                ids.add(asset.id);
+                if(!['icon','portrait','token','artwork','thumbnail'].includes(asset.role)) throw new Error(`${entity.name}: invalid role ${asset.role}`);
+                if(asset.provider!=='5etools-img') throw new Error(`${entity.name}: unexpected provider`);
+                if(!asset.sourceUrl.startsWith('https://raw.githubusercontent.com/')) throw new Error(`${entity.name}: invalid source URL`);
+                if(asset.storagePolicy!=='mirrorOnDemand') throw new Error(`${entity.name}: invalid storage policy`);
+                if((asset.role==='token'||asset.role==='portrait') && entity.entityType!=='monster') throw new Error(`${entity.name}: creature-only media role on ${entity.entityType}`);
+              }
+            }
+            if(stats.withMedia>stats.entities) throw new Error(`${file}: invalid coverage`);
+          }
+          console.log(JSON.stringify({totals:audit.totals,coverage:audit.coverage,unmatched:audit.unmatched.length},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-media-enriched
+          path: |
+            packages/content/data/srd-5.2/items.json
+            packages/content/data/srd-5.2/spells.json
+            packages/content/data/srd-5.2/monsters.json
+            packages/content/data/srd-5.2/monster-features.json
+            packages/content/data/srd-5.2/species.json
+            packages/content/data/srd-5.2/species-features.json
+            packages/content/data/srd-5.2/feats.json
+            packages/content/data/srd-5.2/media-coverage-audit.json
+      - name: Persist enriched compendium on PR branch
+        if: github.event_name == 'pull_request'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add \
+            packages/content/data/srd-5.2/items.json \
+            packages/content/data/srd-5.2/spells.json \
+            packages/content/data/srd-5.2/monsters.json \
+            packages/content/data/srd-5.2/monster-features.json \
+            packages/content/data/srd-5.2/species.json \
+            packages/content/data/srd-5.2/species-features.json \
+            packages/content/data/srd-5.2/feats.json \
+            packages/content/data/srd-5.2/media-coverage-audit.json
+          if [ -n "$(git status --porcelain)" ]; then
+            git commit -m 'Persist SRD 5.2 media-enriched compendium [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi

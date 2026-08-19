@@ -1,3 +1,7 @@
+import type { EntityMediaData } from "./media.js";
+
+export * from "./media.js";
+
 export type GameSystemId = string;
 export type RulesVersionId = string;
 export type ContentSourceId = string;
@@ -47,6 +51,7 @@ export interface OracleEntity<TData = unknown> {
   source: SourceRef;
   provenance: Provenance;
   schemaVersion: number;
+  media?: EntityMediaData;
   data: TData;
   relations: readonly RelationRef[];
   metadata: EntityMetadata;

@@ -1,0 +1,1577 @@
+{
+  "format": "oraclerpg-compendium",
+  "version": 1,
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "count": 17,
+  "items": [
+    {
+      "id": "dnd2024:2024:feature:feat-ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Ability Score Improvement",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "general",
+        "featCategory": "general",
+        "repeatable": true,
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 4
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "amount": 2,
+            "maximum": 20
+          },
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "count": 2,
+            "maximum": 20
+          }
+        ],
+        "text": {
+          "rules": [
+            "Increase one ability score of your choice by 2, or increase two ability scores of your choice by 1. This feat can't increase an ability score above 20.",
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can take this feat more than once."
+              ]
+            }
+          ]
+        },
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-alert:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-alert:srd-5.2",
+      "entityType": "feature",
+      "name": "Alert",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Alert",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "origin",
+        "featCategory": "origin",
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Initiative Proficiency",
+              "entries": [
+                "When you roll {@variantrule Initiative|XPHB}, you can add your {@variantrule Proficiency|XPHB|Proficiency Bonus} to the roll."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Initiative Swap",
+              "entries": [
+                "Immediately after you roll {@variantrule Initiative|XPHB}, you can swap your {@variantrule Initiative|XPHB} with the {@variantrule Initiative|XPHB} of one willing ally in the same combat. You can't make this swap if you or the ally has the {@condition Incapacitated|XPHB} condition."
+              ]
+            }
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "initiative"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "proficiencyBonus",
+              "subject": "self"
+            }
+          }
+        ],
+        "actionRules": [
+          {
+            "id": "initiative-swap",
+            "activity": {
+              "id": "initiative-swap",
+              "name": "Initiative Swap",
+              "kind": "utility",
+              "target": {
+                "type": "creature",
+                "count": 1,
+                "disposition": "ally"
+              },
+              "triggers": [
+                {
+                  "event": "onInitiative",
+                  "actor": "self"
+                }
+              ],
+              "predicates": [
+                {
+                  "type": "lacksCondition",
+                  "condition": "incapacitated"
+                }
+              ],
+              "description": "Swap your Initiative with one willing ally in the same combat who is not Incapacitated."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-archery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-archery:srd-5.2",
+      "entityType": "feature",
+      "name": "Archery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Archery",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "fightingStyle",
+        "featCategory": "fightingStyle",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "requiredFeatures": [
+              "Fighting Style"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain a +2 bonus to attack rolls you make with Ranged weapons."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "attackRoll"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 2
+            },
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "rangedWeapon"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-combat-prowess:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-combat-prowess:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Combat Prowess",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Combat Prowess",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Peerless Aim",
+              "entries": [
+                "When you miss with an attack roll, you can hit instead. Once you use this benefit, you can't use it again until the start of your next turn."
+              ]
+            }
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "peerless-aim",
+            "target": "attackRoll",
+            "operation": "automaticSuccess",
+            "trigger": {
+              "event": "onMiss",
+              "actor": "self"
+            },
+            "usage": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "scope": "turn",
+              "recovery": [
+                {
+                  "period": "turn",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-dimensional-travel:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-dimensional-travel:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Dimensional Travel",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Dimensional Travel",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Blink Steps",
+              "entries": [
+                "Immediately after you take the {@action Attack|XPHB} action or the {@action Magic|XPHB} action, you can teleport up to 30 feet to an unoccupied space you can see."
+              ]
+            }
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "blink-steps",
+            "action": "teleport",
+            "distance": {
+              "value": 30,
+              "unit": "ft"
+            },
+            "afterActions": [
+              "attack",
+              "magic"
+            ]
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-fate:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-fate:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Fate",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Fate",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Improve Fate",
+              "entries": [
+                "When you or another creature within 60 feet of you succeeds on or fails a {@variantrule D20 Test|XPHB}, you can roll {@dice 2d4} and apply the total rolled as a bonus or penalty to the {@dice d20} roll. Once you use this benefit, you can't use it again until you roll {@variantrule Initiative|XPHB} or finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+              ]
+            }
+          ]
+        },
+        "actionRules": [
+          {
+            "id": "improve-fate",
+            "activity": {
+              "id": "improve-fate",
+              "name": "Improve Fate",
+              "kind": "utility",
+              "range": {
+                "normal": {
+                  "value": 60,
+                  "unit": "ft"
+                }
+              },
+              "target": {
+                "type": "creature",
+                "count": 1
+              },
+              "rolls": [
+                {
+                  "id": "fate-roll",
+                  "name": "Bonus/Penalty",
+                  "formula": "2d4",
+                  "purpose": "utility"
+                }
+              ],
+              "uses": {
+                "max": 1,
+                "recovery": [
+                  {
+                    "period": "shortRest",
+                    "amount": "all"
+                  },
+                  {
+                    "period": "longRest",
+                    "amount": "all"
+                  }
+                ]
+              },
+              "triggers": [
+                {
+                  "event": "onCheck",
+                  "description": "After a D20 Test succeeds or fails."
+                }
+              ],
+              "description": "Apply the roll as a bonus or penalty. Also recovers when Initiative is rolled."
+            },
+            "recoveryTriggers": [
+              {
+                "event": "onInitiative",
+                "actor": "self"
+              }
+            ]
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-irresistible-offense:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-irresistible-offense:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Irresistible Offense",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Irresistible Offense",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Overcome Defenses",
+              "entries": [
+                "The Bludgeoning, Piercing, and Slashing damage you deal always ignores {@variantrule Resistance|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Overwhelming Strike",
+              "entries": [
+                "When you roll a 20 on the {@dice d20} for an attack roll, you can deal extra damage to the target equal to the ability score increased by this feat. The extra damage's type is the same as the attack's type."
+              ]
+            }
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "overcome-defenses",
+            "action": "ignoreResistance",
+            "damageTypes": [
+              "bludgeoning",
+              "piercing",
+              "slashing"
+            ]
+          },
+          {
+            "id": "overwhelming-strike",
+            "action": "extraDamage",
+            "value": {
+              "type": "runtime",
+              "path": "feature.abilityScoreSelection.score",
+              "subject": "self"
+            },
+            "inheritDamageType": true,
+            "trigger": {
+              "event": "onCritical",
+              "actor": "self"
+            }
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-spell-recall:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-spell-recall:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Spell Recall",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Spell Recall",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19,
+            "spellcasting": true
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Free Casting",
+              "entries": [
+                "Whenever you cast a spell with a level 1-4 spell slot, roll {@dice 1d4}. If the number you roll is the same as the slot's level, the slot isn't expended."
+              ]
+            }
+          ]
+        },
+        "resourcePreservationRules": [
+          {
+            "id": "free-casting",
+            "resource": "spellSlot",
+            "trigger": {
+              "event": "manual",
+              "actor": "self",
+              "description": "When casting with a level 1–4 spell slot."
+            },
+            "predicate": {
+              "type": "comparison",
+              "description": "Spell slot level is between 1 and 4."
+            },
+            "check": {
+              "formula": "1d4",
+              "operator": "eq",
+              "compareTo": {
+                "type": "runtime",
+                "path": "spell.slotLevel",
+                "subject": "self"
+              }
+            },
+            "preserveOnSuccess": true
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-the-night-spirit:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-the-night-spirit:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of the Night Spirit",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of the Night Spirit",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Merge with Shadows",
+              "entries": [
+                "While within {@variantrule Dim Light|XPHB} or {@variantrule Darkness|XPHB}, you can give yourself the {@condition Invisible|XPHB} condition as a {@variantrule Bonus Action|XPHB}. The condition ends on you immediately after you take an action, a {@variantrule Bonus Action|XPHB}, or a {@variantrule Reaction|XPHB}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Shadowy Form",
+              "entries": [
+                "While within {@variantrule Dim Light|XPHB} or {@variantrule Darkness|XPHB}, you have {@variantrule Resistance|XPHB} to all damage except Psychic and Radiant."
+              ]
+            }
+          ]
+        },
+        "actionRules": [
+          {
+            "id": "merge-with-shadows",
+            "activity": {
+              "id": "merge-with-shadows",
+              "name": "Merge with Shadows",
+              "kind": "utility",
+              "activation": {
+                "type": "bonusAction",
+                "cost": 1
+              },
+              "target": {
+                "type": "self"
+              },
+              "predicates": [
+                {
+                  "type": "hasTag",
+                  "tags": [
+                    "dimLightOrDarkness"
+                  ]
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "invisible",
+                  "duration": {
+                    "type": "special"
+                  },
+                  "end": "Immediately after taking an action, Bonus Action, or Reaction."
+                }
+              ]
+            }
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "acid"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "bludgeoning"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "cold"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "fire"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "force"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "lightning"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "necrotic"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "piercing"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "poison"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "slashing"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          },
+          {
+            "target": {
+              "domain": "damageResistance",
+              "damageType": "thunder"
+            },
+            "mode": "grantResistance",
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "dimLightOrDarkness"
+              ]
+            }
+          }
+        ],
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-boon-of-truesight:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-boon-of-truesight:srd-5.2",
+      "entityType": "feature",
+      "name": "Boon of Truesight",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Boon of Truesight",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "epicBoon",
+        "featCategory": "epicBoon",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "minimumLevel": 19
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex",
+              "con",
+              "int",
+              "wis",
+              "cha"
+            ],
+            "maximum": 30
+          }
+        ],
+        "grants": [
+          {
+            "type": "sense",
+            "value": {
+              "type": "truesight",
+              "range": 60
+            }
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Truesight",
+              "entries": [
+                "You have {@sense Truesight|XPHB} with a range of 60 feet."
+              ]
+            }
+          ]
+        },
+        "abilityScoreOptionMode": "chooseOne"
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-defense:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-defense:srd-5.2",
+      "entityType": "feature",
+      "name": "Defense",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Defense",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "fightingStyle",
+        "featCategory": "fightingStyle",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "requiredFeatures": [
+              "Fighting Style"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "While you're wearing Light, Medium, or Heavy armor, you gain a +1 bonus to {@variantrule Armor Class|XPHB}."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "armorClass"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 1
+            },
+            "predicate": {
+              "type": "wearingArmor",
+              "armorCategories": [
+                "light",
+                "medium",
+                "heavy"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-grappler:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-grappler:srd-5.2",
+      "entityType": "feature",
+      "name": "Grappler",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Grappler",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "general",
+        "featCategory": "general",
+        "prerequisiteMode": "any",
+        "prerequisites": [
+          {
+            "minimumLevel": 4,
+            "abilities": {
+              "str": 13
+            }
+          },
+          {
+            "minimumLevel": 4,
+            "abilities": {
+              "dex": 13
+            }
+          }
+        ],
+        "abilityScoreOptions": [
+          {
+            "abilities": [
+              "str",
+              "dex"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Punch and Grab",
+              "entries": [
+                "When you hit a creature with an {@variantrule Unarmed Strike|XPHB} as part of the {@action Attack|XPHB} action on your turn, you can use both the Damage and the Grapple option. You can use this benefit only once per turn."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Attack Advantage",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on attack rolls against a creature {@condition Grappled|XPHB} by you."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Fast Wrestler",
+              "entries": [
+                "You don't have to spend extra movement to move a creature {@condition Grappled|XPHB} by you if the creature is your size or smaller."
+              ]
+            }
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "grappler-advantage",
+            "target": "attackRoll",
+            "operation": "advantage",
+            "predicate": {
+              "type": "hasCondition",
+              "condition": "grappled",
+              "description": "Target is Grappled by self."
+            }
+          }
+        ],
+        "actionRules": [
+          {
+            "id": "punch-and-grab",
+            "replacesAttack": false,
+            "activity": {
+              "id": "punch-and-grab",
+              "name": "Punch and Grab",
+              "kind": "utility",
+              "triggers": [
+                {
+                  "event": "onHit",
+                  "actor": "self"
+                }
+              ],
+              "predicates": [
+                {
+                  "type": "hasTag",
+                  "tags": [
+                    "unarmedStrike",
+                    "attackAction"
+                  ]
+                }
+              ],
+              "description": "Once per turn, use both Damage and Grapple options of the Unarmed Strike."
+            }
+          }
+        ],
+        "movementInteractionRules": [
+          {
+            "id": "fast-wrestler",
+            "action": "ignoreExtraCost",
+            "predicate": {
+              "type": "hasCondition",
+              "condition": "grappled",
+              "description": "Moving a creature Grappled by you that is your size or smaller."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-great-weapon-fighting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-great-weapon-fighting:srd-5.2",
+      "entityType": "feature",
+      "name": "Great Weapon Fighting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Great Weapon Fighting",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "fightingStyle",
+        "featCategory": "fightingStyle",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "requiredFeatures": [
+              "Fighting Style"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "When you roll damage for an attack you make with a Melee weapon that you are holding with two hands, you can treat any 1 or 2 on a damage die as a 3. The weapon must have the {@itemProperty 2h|XPHB|Two-Handed} or {@itemProperty V|XPHB|Versatile} property to gain this benefit."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "great-weapon-fighting",
+            "target": "damageRoll",
+            "operation": "minimumDieResult",
+            "dieFaces": [
+              1,
+              2
+            ],
+            "minimumDieResult": 3,
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "meleeWeapon",
+                "twoHandedOrVersatile"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-magic-initiate:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-magic-initiate:srd-5.2",
+      "entityType": "feature",
+      "name": "Magic Initiate",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Magic Initiate",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "origin",
+        "featCategory": "origin",
+        "repeatable": true,
+        "text": {
+          "rules": [
+            "You gain the following benefits.",
+            {
+              "type": "entries",
+              "name": "Two Cantrips",
+              "entries": [
+                "You learn two cantrips of your choice from the {@filter Cleric|spells|level=0;1|class=Cleric}, {@filter Druid|spells|level=0;1|class=Druid}, or {@filter Wizard|spells|level=0;1|class=Wizard} spell list. Intelligence, Wisdom, or Charisma is your spellcasting ability for this feat's spells (choose when you select this feat)."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Level 1 Spell",
+              "entries": [
+                "Choose a level 1 spell from the same list you selected for this feat's cantrips. You always have that spell prepared. You can cast it once without a spell slot, and you regain the ability to cast it in that way when you finish a {@variantrule Long Rest|XPHB}. You can also cast the spell using any spell slots you have."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Spell Change",
+              "entries": [
+                "Whenever you gain a new level, you can replace one of the spells you chose for this feat with a different spell of the same level from the chosen spell list."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can take this feat more than once, but you must choose a different spell list each time."
+              ]
+            }
+          ]
+        },
+        "spellGrantChoices": [
+          {
+            "id": "magic-initiate-spell-list",
+            "count": 1,
+            "options": [
+              {
+                "name": "Cleric Spells",
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "query": "level=0|class=Cleric",
+                    "count": 2
+                  },
+                  {
+                    "mode": "innate",
+                    "query": "level=1|class=Cleric",
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "query": "level=1|class=Cleric",
+                    "count": 1
+                  }
+                ]
+              },
+              {
+                "name": "Druid Spells",
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "query": "level=0|class=Druid",
+                    "count": 2
+                  },
+                  {
+                    "mode": "innate",
+                    "query": "level=1|class=Druid",
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "query": "level=1|class=Druid",
+                    "count": 1
+                  }
+                ]
+              },
+              {
+                "name": "Wizard Spells",
+                "ability": {
+                  "choice": [
+                    "int",
+                    "wis",
+                    "cha"
+                  ]
+                },
+                "selections": [
+                  {
+                    "mode": "known",
+                    "query": "level=0|class=Wizard",
+                    "count": 2
+                  },
+                  {
+                    "mode": "innate",
+                    "query": "level=1|class=Wizard",
+                    "freeUses": 1,
+                    "recovery": "longRest"
+                  },
+                  {
+                    "mode": "prepared",
+                    "query": "level=1|class=Wizard",
+                    "count": 1
+                  }
+                ]
+              }
+            ],
+            "distinctAcrossRepeats": true,
+            "sharedSelectionKey": "magic-initiate-list"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-savage-attacker:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-savage-attacker:srd-5.2",
+      "entityType": "feature",
+      "name": "Savage Attacker",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Savage Attacker",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "origin",
+        "featCategory": "origin",
+        "text": {
+          "rules": [
+            "You've trained to deal particularly damaging strikes. Once per turn when you hit a target with a weapon, you can roll the weapon's damage dice twice and use either roll against the target."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "savage-attacker",
+            "target": "damageRoll",
+            "operation": "rollTwiceChoose",
+            "choose": "either",
+            "trigger": {
+              "event": "onHit",
+              "actor": "self"
+            },
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "weaponAttack"
+              ]
+            },
+            "usage": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "scope": "turn"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-skilled:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-skilled:srd-5.2",
+      "entityType": "feature",
+      "name": "Skilled",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Skilled",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "origin",
+        "featCategory": "origin",
+        "repeatable": true,
+        "proficiencyChoices": [
+          {
+            "kind": "enum",
+            "count": 3,
+            "options": [
+              "anySkill",
+              "anyTool"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "You gain proficiency in any combination of three {@table Skill List; Skills|XPHB|skills} or {@filter tools|items|type=tool;artisan's tools;instrument;gaming set} of your choice.",
+            {
+              "type": "entries",
+              "name": "Repeatable",
+              "entries": [
+                "You can take this feat more than once."
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:feat-two-weapon-fighting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:feat-two-weapon-fighting:srd-5.2",
+      "entityType": "feature",
+      "name": "Two-Weapon Fighting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:feat:Two-Weapon Fighting",
+        "adapterVersion": "0.3.0",
+        "mapperVersion": "0.3.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "feat",
+        "category": "fightingStyle",
+        "featCategory": "fightingStyle",
+        "prerequisiteMode": "all",
+        "prerequisites": [
+          {
+            "requiredFeatures": [
+              "Fighting Style"
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "When you make an extra attack as a result of using a weapon that has the {@itemProperty L|XPHB|Light} property, you can add your ability modifier to the damage of that attack if you aren't already adding it to the damage."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "damageRoll"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "runtime",
+              "path": "attack.abilityModifier",
+              "subject": "self"
+            },
+            "predicate": {
+              "type": "hasTag",
+              "tags": [
+                "lightWeaponExtraAttack"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
