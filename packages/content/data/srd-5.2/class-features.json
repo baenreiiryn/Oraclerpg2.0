@@ -3,2092 +3,8 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 44,
+  "count": 23,
   "items": [
-    {
-      "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
-      "entityType": "feature",
-      "name": "Ability Score Improvement",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Ability Score Improvement:4",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Barbarian levels 8, 12, and 16."
-          ]
-        },
-        "grants": [
-          {
-            "type": "entity",
-            "choice": {
-              "kind": "tagQuery",
-              "count": 1,
-              "entityTypes": [
-                "feature"
-              ],
-              "query": {
-                "all": [
-                  {
-                    "field": "data.featureKind",
-                    "operator": "eq",
-                    "value": "feat"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:ability-score-improvement:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:ability-score-improvement:srd-5.2",
-      "entityType": "feature",
-      "name": "Ability Score Improvement",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Ability Score Improvement:4",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Cleric levels 8, 12, and 16."
-          ]
-        },
-        "grants": [
-          {
-            "type": "entity",
-            "choice": {
-              "kind": "tagQuery",
-              "count": 1,
-              "entityTypes": [
-                "feature"
-              ],
-              "query": {
-                "all": [
-                  {
-                    "field": "data.featureKind",
-                    "operator": "eq",
-                    "value": "feat"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:life:blessed-healer:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:life:blessed-healer:srd-5.2",
-      "entityType": "feature",
-      "name": "Blessed Healer",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Cleric:Life:Blessed Healer:6",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "cleric-life",
-        "text": {
-          "rules": [
-            "The healing spells you cast on others heal you as well. Immediately after you cast a spell with a spell slot that restores {@variantrule Hit Points|XPHB} to one or more creatures other than yourself, you regain {@variantrule Hit Points|XPHB} equal to 2 plus the spell slot's level."
-          ]
-        },
-        "triggeredGrants": [
-          {
-            "id": "blessed-healer",
-            "trigger": {
-              "event": "custom",
-              "description": "When you cast a spell with a spell slot that restores hit points to another creature."
-            },
-            "grant": "hitPoints",
-            "value": {
-              "type": "formula",
-              "formula": "2 + @spell.level"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:blessed-strikes:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:blessed-strikes:srd-5.2",
-      "entityType": "feature",
-      "name": "Blessed Strikes",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Blessed Strikes:7",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "Divine power infuses you in battle. You gain one of the following options of your choice (if you get either option from a Cleric subclass in an older book, use only the option you choose for this feature).",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "refClassFeature",
-                  "classFeature": "Divine Strike|Cleric|XPHB|7"
-                },
-                {
-                  "type": "refClassFeature",
-                  "classFeature": "Potent Spellcasting|Cleric|XPHB|7"
-                }
-              ]
-            }
-          ]
-        },
-        "classMechanics": {
-          "runtimeChoices": [
-            {
-              "id": "cleric-blessed-strikes",
-              "options": [
-                "Divine Strike",
-                "Potent Spellcasting"
-              ],
-              "chooseOn": {
-                "event": "onApply",
-                "description": "Choose one Blessed Strikes option."
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
-      "entityType": "feature",
-      "name": "Brutal Strike",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Brutal Strike:9",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "If you use Reckless Attack, you can forgo any {@variantrule Advantage|XPHB} on one Strength-based attack roll of your choice on your turn. The chosen attack roll mustn't have {@variantrule Disadvantage|XPHB}. If the chosen attack roll hits, the target takes an extra {@damage 1d10} damage of the same type dealt by the weapon or {@variantrule Unarmed Strike|XPHB}, and you can cause one Brutal Strike effect of your choice. You have the following effect options.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "entries",
-                  "name": "Forceful Blow",
-                  "entries": [
-                    "The target is pushed 15 feet straight away from you. You can then move up to half your {@variantrule Speed|XPHB} straight toward the target without provoking {@action Opportunity Attack|XPHB|Opportunity Attacks}."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Hamstring Blow",
-                  "entries": [
-                    "The target's {@variantrule Speed|XPHB} is reduced by 15 feet until the start of your next turn. A target can be affected by only one Hamstring Blow at a time—the most recent one."
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "damageRules": [
-          {
-            "id": "brutal-strike-damage",
-            "action": "extraDamage",
-            "formula": "1d10",
-            "inheritDamageType": true,
-            "trigger": {
-              "event": "onHit",
-              "description": "When the chosen Strength-based attack hits."
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "Use Reckless Attack, forgo Advantage on this attack, and the attack must not have Disadvantage."
-            }
-          }
-        ],
-        "movementInteractionRules": [
-          {
-            "id": "forceful-blow-push",
-            "action": "forcedMove",
-            "subject": "target",
-            "direction": "awayFromSource",
-            "distance": {
-              "value": 15,
-              "unit": "ft"
-            },
-            "trigger": {
-              "event": "onHit",
-              "description": "Forceful Blow"
-            }
-          },
-          {
-            "id": "forceful-blow-follow",
-            "action": "move",
-            "subject": "self",
-            "direction": "towardSource",
-            "distance": {
-              "type": "formula",
-              "formula": "@movement.walk / 2"
-            },
-            "trigger": {
-              "event": "onHit",
-              "description": "After Forceful Blow; this movement does not provoke Opportunity Attacks."
-            }
-          },
-          {
-            "id": "hamstring-blow",
-            "action": "setSpeed",
-            "subject": "target",
-            "distance": {
-              "type": "formula",
-              "formula": "@movement.walk - 15"
-            },
-            "trigger": {
-              "event": "onHit",
-              "description": "Hamstring Blow; lasts until start of your next turn."
-            }
-          }
-        ],
-        "properties": [
-          "brutal-strike-options:forceful-blow,hamstring-blow"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
-      "entityType": "feature",
-      "name": "Channel Divinity",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Channel Divinity:2",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You can channel divine energy directly from the Outer Planes to fuel magical effects. You start with two such effects: Divine Spark and Turn Undead, each of which is described below. Each time you use this class's Channel Divinity, choose which Channel Divinity effect from this class to create. You gain additional effect options at higher Cleric levels.",
-            "You can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a {@variantrule Short Rest|XPHB}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. You gain additional uses when you reach certain Cleric levels, as shown in the Channel Divinity column of the Cleric Features table.",
-            "If a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class's Spellcasting feature.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "refClassFeature",
-                  "classFeature": "Divine Spark|Cleric|XPHB|2|XPHB"
-                },
-                {
-                  "type": "refClassFeature",
-                  "classFeature": "Turn Undead|Cleric|XPHB|2|XPHB"
-                }
-              ]
-            }
-          ]
-        },
-        "grants": [
-          {
-            "type": "resource",
-            "value": {
-              "id": "channel-divinity",
-              "max": {
-                "type": "runtime",
-                "path": "class.cleric.channelDivinityUses"
-              },
-              "recovery": [
-                {
-                  "period": "shortRest",
-                  "amount": 1
-                },
-                {
-                  "period": "longRest",
-                  "amount": "all"
-                }
-              ]
-            }
-          }
-        ],
-        "properties": [
-          "shared-resource:channel-divinity"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
-      "entityType": "feature",
-      "name": "Danger Sense",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Danger Sense:2",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You gain an uncanny sense of when things aren't as they should be, giving you an edge when you dodge perils. You have {@variantrule Advantage|XPHB} on Dexterity saving throws unless you have the {@condition Incapacitated|XPHB} condition."
-          ]
-        },
-        "saveRules": [
-          {
-            "id": "danger-sense",
-            "abilities": [
-              "dexterity"
-            ],
-            "mode": "advantage",
-            "predicate": {
-              "type": "lacksCondition",
-              "condition": "incapacitated"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:life:disciple-of-life:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:life:disciple-of-life:srd-5.2",
-      "entityType": "feature",
-      "name": "Disciple of Life",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Cleric:Life:Disciple of Life:3",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "cleric-life",
-        "text": {
-          "rules": [
-            "When a spell you cast with a spell slot restores {@variantrule Hit Points|XPHB} to a creature, that creature regains additional {@variantrule Hit Points|XPHB} on the turn you cast the spell. The additional {@variantrule Hit Points|XPHB} equal 2 plus the spell slot's level."
-          ]
-        },
-        "classMechanics": {
-          "spellModifications": [
-            {
-              "id": "disciple-of-life",
-              "trigger": {
-                "event": "custom",
-                "description": "When a spell slot is used to cast a spell that restores hit points."
-              },
-              "filter": {},
-              "changes": [
-                {
-                  "type": "healing",
-                  "operation": "add",
-                  "value": {
-                    "type": "formula",
-                    "formula": "2 + @spell.level"
-                  }
-                }
-              ]
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2",
-      "entityType": "feature",
-      "name": "Divine Intervention",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Divine Intervention:10",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You can call on your deity or pantheon to intervene on your behalf. As a {@action Magic|XPHB} action, choose any Cleric spell of level 5 or lower that doesn't require a {@variantrule Reaction|XPHB} to cast. As part of the same action, you cast that spell without expending a spell slot or needing Material components. You can't use this feature again until you finish a {@variantrule Long Rest|XPHB}."
-          ]
-        },
-        "classRules": {
-          "spellChoiceInvocations": [
-            {
-              "trigger": {
-                "event": "onActivate",
-                "description": "Use Divine Intervention as a Magic action."
-              },
-              "spellFilter": {
-                "lists": [
-                  "Cleric"
-                ],
-                "maxLevel": 5,
-                "castingTime": [
-                  "action",
-                  "bonusAction"
-                ]
-              },
-              "castAt": "normal",
-              "slotCost": "none",
-              "ignoreMaterialComponents": true,
-              "usageResourceId": "divine-intervention"
-            }
-          ]
-        },
-        "grants": [
-          {
-            "type": "resource",
-            "value": {
-              "id": "divine-intervention",
-              "max": {
-                "type": "constant",
-                "value": 1
-              },
-              "recovery": [
-                {
-                  "period": "longRest",
-                  "amount": "all"
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:divine-order:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:divine-order:srd-5.2",
-      "entityType": "feature",
-      "name": "Divine Order",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Divine Order:1",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You have dedicated yourself to one of the following sacred roles of your choice.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "options",
-                  "count": 1,
-                  "entries": [
-                    {
-                      "type": "refClassFeature",
-                      "classFeature": "Protector|Cleric|XPHB|1|XPHB"
-                    },
-                    {
-                      "type": "refClassFeature",
-                      "classFeature": "Thaumaturge|Cleric|XPHB|1|XPHB"
-                    }
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "classMechanics": {
-          "runtimeChoices": [
-            {
-              "id": "cleric-divine-order",
-              "options": [
-                "Protector",
-                "Thaumaturge"
-              ],
-              "chooseOn": {
-                "event": "onApply",
-                "description": "Choose a Divine Order when gaining this feature."
-              }
-            }
-          ]
-        },
-        "properties": [
-          "choice:protector-or-thaumaturge"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
-      "entityType": "feature",
-      "name": "Divine Spark",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Divine Spark:2",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "As a {@action Magic|XPHB} action, you point your {@item Holy Symbol|XPHB} at another creature you can see within 30 feet of yourself and focus divine energy at it. Roll {@dice 1d8} and add your Wisdom modifier. You either restore {@variantrule Hit Points|XPHB} to the creature equal to that total or force the creature to make a Constitution saving throw. On a failed save, the creature takes Necrotic or Radiant damage (your choice) equal to that total. On a successful save, the creature takes half as much damage (round down).",
-            "You roll an additional {@dice d8} when you reach Cleric levels 7 ({@dice 2d8}), 13 ({@dice 3d8}), and 18 ({@dice 4d8})."
-          ]
-        },
-        "activities": [
-          {
-            "id": "divine-spark",
-            "name": "Divine Spark",
-            "kind": "save",
-            "activation": {
-              "type": "action"
-            },
-            "target": {
-              "type": "creature",
-              "count": 1
-            },
-            "range": {
-              "type": "distance",
-              "distance": {
-                "value": 30,
-                "unit": "ft"
-              }
-            },
-            "save": {
-              "ability": "constitution",
-              "dc": {
-                "type": "formula",
-                "formula": "8 + @abilities.wis.mod + @proficiency"
-              }
-            },
-            "uses": {
-              "sharedResourceId": "channel-divinity"
-            },
-            "description": "Expend Channel Divinity. Choose healing, radiant damage, or necrotic damage. Uses a number of d8s based on Cleric level plus Wisdom modifier."
-          }
-        ],
-        "properties": [
-          "healing-or-radiant-or-necrotic",
-          "scales:d8s"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:divine-strike:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:divine-strike:srd-5.2",
-      "entityType": "feature",
-      "name": "Divine Strike",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Divine Strike:7",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "Once on each of your turns when you hit a creature with an attack roll using a weapon, you can cause the target to take an extra {@damage 1d8} Necrotic or Radiant damage (your choice)."
-          ]
-        },
-        "damageRules": [
-          {
-            "id": "divine-strike",
-            "action": "extraDamage",
-            "formula": "1d8",
-            "damageTypes": [
-              "radiant",
-              "necrotic"
-            ],
-            "trigger": {
-              "event": "onHit",
-              "description": "Once on each of your turns when you hit a creature with an attack roll using a weapon."
-            },
-            "usage": {
-              "max": {
-                "type": "constant",
-                "value": 1
-              },
-              "scope": "turn"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
-      "entityType": "feature",
-      "name": "Epic Boon",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Epic Boon:19",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Irresistible Offense|XPHB} is recommended."
-          ]
-        },
-        "grants": [
-          {
-            "type": "entity",
-            "choice": {
-              "kind": "tagQuery",
-              "count": 1,
-              "entityTypes": [
-                "feature"
-              ],
-              "query": {
-                "all": [
-                  {
-                    "field": "data.featureKind",
-                    "operator": "eq",
-                    "value": "feat"
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "properties": [
-          "recommended:Boon of Irresistible Offense"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:epic-boon:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:epic-boon:srd-5.2",
-      "entityType": "feature",
-      "name": "Epic Boon",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Epic Boon:19",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Fate|XPHB} is recommended."
-          ]
-        },
-        "grants": [
-          {
-            "type": "entity",
-            "choice": {
-              "kind": "tagQuery",
-              "count": 1,
-              "entityTypes": [
-                "feature"
-              ],
-              "query": {
-                "all": [
-                  {
-                    "field": "data.featCategory",
-                    "operator": "eq",
-                    "value": "epicBoon"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2",
-      "entityType": "feature",
-      "name": "Extra Attack",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Extra Attack:5",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You can attack twice instead of once whenever you take the {@action Attack|XPHB} action on your turn."
-          ]
-        },
-        "classMechanics": {
-          "generatedActions": [
-            {
-              "trigger": {
-                "event": "custom",
-                "description": "When you take the Attack action on your turn."
-              },
-              "action": "attack",
-              "asPartOfTriggeringAction": true,
-              "count": {
-                "type": "constant",
-                "value": 1
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
-      "entityType": "feature",
-      "name": "Fast Movement",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Fast Movement:5",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "Your speed increases by 10 feet while you aren't wearing Heavy armor."
-          ]
-        },
-        "modifiers": [
-          {
-            "target": {
-              "domain": "movement",
-              "movementType": "walk"
-            },
-            "mode": "bonus",
-            "value": {
-              "type": "constant",
-              "value": 10
-            },
-            "predicate": {
-              "type": "not",
-              "predicate": {
-                "type": "wearingArmor",
-                "armorCategories": [
-                  "heavy"
-                ]
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
-      "entityType": "feature",
-      "name": "Feral Instinct",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Feral Instinct:7",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "Your instincts are so honed that you have {@variantrule Advantage|XPHB} on {@variantrule Initiative|XPHB} rolls."
-          ]
-        },
-        "rollRules": [
-          {
-            "id": "feral-instinct",
-            "target": "initiative",
-            "operation": "advantage"
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
-      "entityType": "feature",
-      "name": "Frenzy",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Frenzy:3",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "barbarian-berserker",
-        "text": {
-          "rules": [
-            "If you use Reckless Attack while your Rage is active, you deal extra damage to the first target you hit on your turn with a Strength-based attack. To determine the extra damage, roll a number of d6s equal to your Rage Damage bonus, and add them together. The damage has the same type as the weapon or {@variantrule Unarmed Strike|XPHB} used for the attack."
-          ]
-        },
-        "damageRules": [
-          {
-            "id": "frenzy-damage",
-            "action": "extraDamage",
-            "formula": "{@classScale barbarian.rageDamage}d6",
-            "inheritDamageType": true,
-            "trigger": {
-              "event": "onHit",
-              "description": "First target hit on your turn."
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "Rage is active, Reckless Attack was used, and the attack is Strength-based."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:greater-divine-intervention:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:greater-divine-intervention:srd-5.2",
-      "entityType": "feature",
-      "name": "Greater Divine Intervention",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Greater Divine Intervention:20",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You can call on even more powerful divine intervention. When you use your Divine Intervention feature, you can choose {@spell Wish|XPHB} when you select a spell. If you do so, you can't use Divine Intervention again until you finish {@dice 2d4} Long Rests."
-          ]
-        },
-        "classRules": {
-          "spellChoiceInvocations": [
-            {
-              "trigger": {
-                "event": "onActivate",
-                "description": "Use Divine Intervention and choose Wish."
-              },
-              "spellFilter": {
-                "tags": [
-                  "Wish"
-                ]
-              },
-              "castAt": "normal",
-              "slotCost": "none",
-              "ignoreMaterialComponents": true,
-              "usageResourceId": "divine-intervention"
-            }
-          ]
-        },
-        "properties": [
-          "wish-causes-cooldown:2d4-long-rests"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:improved-blessed-strikes:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:improved-blessed-strikes:srd-5.2",
-      "entityType": "feature",
-      "name": "Improved Blessed Strikes",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Improved Blessed Strikes:14",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "The option you chose for Blessed Strikes grows more powerful.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "entries",
-                  "name": "Divine Strike",
-                  "entries": [
-                    "The extra damage of your Divine Strike increases to {@damage 2d8}."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Potent Spellcasting",
-                  "entries": [
-                    "When you cast a Cleric cantrip and deal damage to a creature with it, you can give vitality to yourself or another creature within 60 feet of yourself, granting a number of {@variantrule Temporary Hit Points|XPHB} equal to twice your Wisdom modifier."
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "patches": [
-          {
-            "level": 14,
-            "setValues": {
-              "divineStrike.damage": "2d8",
-              "potentSpellcasting.temporaryHitPoints": "2 * @abilities.wis.mod"
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
-      "entityType": "feature",
-      "name": "Improved Brutal Strike",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Improved Brutal Strike:13",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You have honed new ways to attack furiously. The following effects are now among your Brutal Strike options.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "entries",
-                  "name": "Staggering Blow",
-                  "entries": [
-                    "The target has {@variantrule Disadvantage|XPHB} on the next saving throw it makes, and it can't make {@action Opportunity Attack|XPHB|Opportunity Attacks} until the start of your next turn."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Sundering Blow",
-                  "entries": [
-                    "Before the start of your next turn, the next attack roll made by another creature against the target gains a +5 bonus to the roll. An attack roll can gain only one Sundering Blow bonus."
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "effects": [
-          {
-            "id": "staggering-blow",
-            "duration": {
-              "type": "untilTrigger",
-              "endTrigger": {
-                "event": "onTurnStart",
-                "description": "Start of your next turn."
-              }
-            },
-            "modifiers": [
-              {
-                "target": {
-                  "domain": "savingThrow"
-                },
-                "mode": "disadvantage"
-              }
-            ],
-            "description": "Target also cannot make Opportunity Attacks."
-          },
-          {
-            "id": "sundering-blow",
-            "duration": {
-              "type": "untilTrigger",
-              "endTrigger": {
-                "event": "onAttack",
-                "description": "Consumed by the next qualifying attack from another creature."
-              }
-            },
-            "modifiers": [
-              {
-                "target": {
-                  "domain": "incomingAttackRoll"
-                },
-                "mode": "bonus",
-                "value": {
-                  "type": "constant",
-                  "value": 5
-                }
-              }
-            ]
-          }
-        ],
-        "properties": [
-          "adds-brutal-options:staggering-blow,sundering-blow"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2",
-      "entityType": "feature",
-      "name": "Improved Brutal Strike",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Improved Brutal Strike:17",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "The extra damage of your Brutal Strike increases to {@damage 2d10}. In addition, you can use two different Brutal Strike effects whenever you use your Brutal Strike feature."
-          ]
-        },
-        "damageRules": [
-          {
-            "id": "improved-brutal-strike-damage",
-            "action": "extraDamage",
-            "formula": "2d10",
-            "inheritDamageType": true,
-            "trigger": {
-              "event": "onHit",
-              "description": "Replaces the 1d10 Brutal Strike extra damage at Barbarian level 17."
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "A qualifying Brutal Strike."
-            }
-          }
-        ],
-        "properties": [
-          "brutal-strike-option-count:2",
-          "replaces-brutal-strike-damage:2d10"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2",
-      "entityType": "feature",
-      "name": "Indomitable Might",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Indomitable Might:18",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "If your total for a Strength check or Strength saving throw is less than your Strength score, you can use that score in place of the total."
-          ]
-        },
-        "classMechanics": {
-          "resolutionOverrides": [
-            {
-              "domain": "check",
-              "mode": "replaceTotal",
-              "value": {
-                "type": "abilityScore",
-                "ability": "strength"
-              },
-              "predicate": {
-                "type": "custom",
-                "description": "Strength check total is lower than your Strength score."
-              }
-            },
-            {
-              "domain": "save",
-              "mode": "replaceTotal",
-              "value": {
-                "type": "abilityScore",
-                "ability": "strength"
-              },
-              "predicate": {
-                "type": "custom",
-                "description": "Strength saving throw total is lower than your Strength score."
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
-      "entityType": "feature",
-      "name": "Instinctive Pounce",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Instinctive Pounce:7",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "As part of the {@variantrule Bonus Action|XPHB} you take to enter your Rage, you can move up to half your {@variantrule Speed|XPHB}."
-          ]
-        },
-        "movementInteractionRules": [
-          {
-            "id": "instinctive-pounce",
-            "action": "move",
-            "subject": "self",
-            "distance": {
-              "type": "formula",
-              "formula": "@movement.walk / 2"
-            },
-            "trigger": {
-              "event": "onActivate",
-              "description": "As part of the Bonus Action used to enter Rage."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
-      "entityType": "feature",
-      "name": "Intimidating Presence",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Intimidating Presence:14",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "barbarian-berserker",
-        "text": {
-          "rules": [
-            "As a {@variantrule Bonus Action|XPHB}, you can strike terror into others with your menacing presence and primal power. When you do so, each creature of your choice in a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} originating from you must make a Wisdom saving throw ({@dc 8} plus your Strength modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature has the {@condition Frightened|XPHB} condition for 1 minute. At the end of each of the {@condition Frightened|XPHB} creature's turns, the creature repeats the save, ending the effect on itself on a success.",
-            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you expend a use of your Rage (no action required) to restore your use of it."
-          ]
-        },
-        "activities": [
-          {
-            "id": "intimidating-presence",
-            "name": "Intimidating Presence",
-            "kind": "save",
-            "activation": {
-              "type": "bonusAction"
-            },
-            "target": {
-              "type": "creature",
-              "count": {
-                "type": "formula",
-                "formula": "@chosen"
-              },
-              "disposition": "enemy",
-              "area": {
-                "shape": "emanation",
-                "size": {
-                  "value": 30,
-                  "unit": "ft"
-                }
-              }
-            },
-            "save": {
-              "ability": "wisdom",
-              "dc": {
-                "type": "formula",
-                "formula": "8 + @abilities.str.mod + @proficiency"
-              }
-            },
-            "conditions": [
-              {
-                "condition": "frightened",
-                "duration": {
-                  "type": "timed",
-                  "value": {
-                    "type": "constant",
-                    "value": 1
-                  },
-                  "unit": "minute"
-                },
-                "end": "Repeat the save at the end of each turn, ending on success."
-              }
-            ],
-            "uses": {
-              "max": 1,
-              "sharedResourceId": "berserker-intimidating-presence",
-              "recovery": [
-                {
-                  "period": "longRest",
-                  "amount": "all"
-                }
-              ]
-            },
-            "description": "Once per Long Rest, or restore the use by expending one Rage use."
-          }
-        ],
-        "crossResourceRules": [
-          {
-            "trigger": {
-              "event": "custom",
-              "description": "Spend one Rage use to restore Intimidating Presence."
-            },
-            "consume": {
-              "resourceId": "barbarian-rage",
-              "amount": {
-                "type": "constant",
-                "value": 1
-              }
-            },
-            "restore": {
-              "resourceId": "berserker-intimidating-presence",
-              "amount": {
-                "type": "constant",
-                "value": 1
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:life:life-domain-spells:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:life:life-domain-spells:srd-5.2",
-      "entityType": "feature",
-      "name": "Life Domain Spells",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Cleric:Life:Life Domain Spells:3",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "cleric-life",
-        "text": {
-          "rules": [
-            "Your connection to this divine domain ensures you always have certain spells ready. When you reach a Cleric level specified in the Life Domain Spells table, you thereafter always have the listed spells prepared.",
-            {
-              "type": "table",
-              "caption": "Life Domain Spells",
-              "colLabels": [
-                "Cleric Level",
-                "Prepared Spells"
-              ],
-              "colStyles": [
-                "col-1 text-center",
-                "col-11"
-              ],
-              "rows": [
-                [
-                  "3rd",
-                  "{@spell Aid|XPHB}, {@spell Bless|XPHB}, {@spell Cure Wounds|XPHB}, {@spell Lesser Restoration|XPHB}"
-                ],
-                [
-                  "5th",
-                  "{@spell Mass Healing Word|XPHB}, {@spell Revivify|XPHB}"
-                ],
-                [
-                  "7th",
-                  "{@spell Aura of Life|XPHB}, {@spell Death Ward|XPHB}"
-                ],
-                [
-                  "9th",
-                  "{@spell Greater Restoration|XPHB}, {@spell Mass Cure Wounds|XPHB}"
-                ]
-              ]
-            }
-          ]
-        },
-        "spellGrants": [
-          {
-            "name": "Life Domain Spells",
-            "ability": "wisdom",
-            "selections": [
-              {
-                "mode": "prepared",
-                "query": "Life Domain spell list from source; always prepared",
-                "count": 10
-              }
-            ]
-          }
-        ],
-        "properties": [
-          "always-prepared",
-          "does-not-count-against-prepared-limit"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
-      "entityType": "feature",
-      "name": "Mindless Rage",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Mindless Rage:6",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "barbarian-berserker",
-        "text": {
-          "rules": [
-            "You have {@variantrule Immunity|XPHB} to the {@condition Charmed|XPHB} and {@condition Frightened|XPHB} conditions while your Rage is active. If you're {@condition Charmed|XPHB} or {@condition Frightened|XPHB} when you enter your Rage, the condition ends on you."
-          ]
-        },
-        "effects": [
-          {
-            "id": "mindless-rage-immunity",
-            "predicate": {
-              "type": "custom",
-              "description": "While Rage is active."
-            },
-            "conditions": [
-              {
-                "action": "immunity",
-                "conditions": [
-                  "charmed",
-                  "frightened"
-                ]
-              }
-            ]
-          },
-          {
-            "id": "mindless-rage-cleanse",
-            "trigger": {
-              "event": "onActivate",
-              "description": "When Rage begins."
-            },
-            "conditions": [
-              {
-                "action": "remove",
-                "conditions": [
-                  "charmed",
-                  "frightened"
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
-      "entityType": "feature",
-      "name": "Persistent Rage",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Persistent Rage:15",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "When you roll {@variantrule Initiative|XPHB}, you can regain all expended uses of Rage. After you regain uses of Rage in this way, you can't do so again until you finish a {@variantrule Long Rest|XPHB}.",
-            "In addition, your Rage is so fierce that it now lasts for 10 minutes without you needing to do anything to extend it from round to round. Your Rage ends early if you have the {@condition Unconscious|XPHB} condition (not just the {@condition Incapacitated|XPHB} condition) or don Heavy armor."
-          ]
-        },
-        "classRules": {
-          "resourceMutations": [
-            {
-              "resourceId": "barbarian-rage",
-              "trigger": {
-                "event": "onInitiative",
-                "description": "Regain all expended Rage uses once per Long Rest."
-              },
-              "operation": "restoreAll"
-            }
-          ]
-        },
-        "properties": [
-          "rage-no-round-extension-required",
-          "rage-ends-on-unconscious-or-heavy-armor",
-          "initiative-refresh-once-per-long-rest"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:potent-spellcasting:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:potent-spellcasting:srd-5.2",
-      "entityType": "feature",
-      "name": "Potent Spellcasting",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Potent Spellcasting:7",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "Add your Wisdom modifier to the damage you deal with any Cleric cantrip."
-          ]
-        },
-        "triggeredGrants": [
-          {
-            "id": "potent-spellcasting",
-            "trigger": {
-              "event": "onDamage",
-              "description": "When a Cleric cantrip deals damage to a creature."
-            },
-            "grant": "temporaryHitPoints",
-            "value": {
-              "type": "formula",
-              "formula": "@abilities.wis.mod"
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "Grant the temporary hit points to yourself or another creature within 60 feet."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:life:preserve-life:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:life:preserve-life:srd-5.2",
-      "entityType": "feature",
-      "name": "Preserve Life",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Cleric:Life:Preserve Life:3",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "cleric-life",
-        "text": {
-          "rules": [
-            "As a {@action Magic|XPHB} action, you present your {@item Holy Symbol|XPHB} and expend a use of your Channel Divinity to evoke healing energy that can restore a number of {@variantrule Hit Points|XPHB} equal to five times your Cleric level. Choose {@status Bloodied|XPHB} creatures within 30 feet of yourself (which can include you), and divide those {@variantrule Hit Points|XPHB} among them. This feature can restore a creature to no more than half its {@variantrule Hit Points|XPHB|Hit Point} maximum."
-          ]
-        },
-        "activities": [
-          {
-            "id": "preserve-life",
-            "name": "Preserve Life",
-            "kind": "heal",
-            "activation": {
-              "type": "action"
-            },
-            "target": {
-              "type": "creature",
-              "area": {
-                "shape": "emanation",
-                "size": {
-                  "value": 30,
-                  "unit": "ft"
-                }
-              }
-            },
-            "uses": {
-              "sharedResourceId": "channel-divinity"
-            },
-            "description": "Distribute healing equal to five times Cleric level among Bloodied creatures in range; no creature can be healed above half its hit point maximum."
-          }
-        ],
-        "classMechanics": {
-          "distributedPools": [
-            {
-              "total": {
-                "type": "formula",
-                "formula": "5 * @classes.cleric.level"
-              },
-              "targetPredicate": {
-                "type": "custom",
-                "description": "Bloodied creatures within 30 feet, including yourself."
-              },
-              "range": {
-                "type": "constant",
-                "value": 30
-              },
-              "perTargetMaximum": {
-                "type": "runtime",
-                "path": "target.hp.halfMaximum"
-              },
-              "application": "healing"
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
-      "entityType": "feature",
-      "name": "Primal Champion",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Primal Champion:20",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You embody primal power. Your Strength and Constitution scores increase by 4, to a maximum of 25."
-          ]
-        },
-        "modifiers": [
-          {
-            "target": {
-              "domain": "abilityScore",
-              "ability": "strength"
-            },
-            "mode": "bonus",
-            "value": {
-              "type": "constant",
-              "value": 4
-            }
-          },
-          {
-            "target": {
-              "domain": "abilityScore",
-              "ability": "strength"
-            },
-            "mode": "maximum",
-            "value": {
-              "type": "constant",
-              "value": 25
-            }
-          },
-          {
-            "target": {
-              "domain": "abilityScore",
-              "ability": "constitution"
-            },
-            "mode": "bonus",
-            "value": {
-              "type": "constant",
-              "value": 4
-            }
-          },
-          {
-            "target": {
-              "domain": "abilityScore",
-              "ability": "constitution"
-            },
-            "mode": "maximum",
-            "value": {
-              "type": "constant",
-              "value": 25
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
-      "entityType": "feature",
-      "name": "Primal Knowledge",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Primal Knowledge:3",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You gain proficiency in another skill of your choice from the skill list available to Barbarians at level 1.",
-            "In addition, while your Rage is active, you can channel primal power when you attempt certain tasks; whenever you make an ability check using one of the following skills, you can make it as a Strength check even if it normally uses a different ability: {@skill Acrobatics|XPHB}, {@skill Intimidation|XPHB}, {@skill Perception|XPHB}, {@skill Stealth|XPHB}, or {@skill Survival|XPHB}. When you use this ability, your Strength represents primal power coursing through you, honing your agility, bearing, and senses."
-          ]
-        },
-        "proficiencyChoices": [
-          {
-            "kind": "enum",
-            "count": 1,
-            "options": [
-              "Animal Handling",
-              "Athletics",
-              "Intimidation",
-              "Nature",
-              "Perception",
-              "Survival"
-            ]
-          }
-        ],
-        "abilitySubstitutions": [
-          {
-            "id": "primal-knowledge-strength",
-            "target": "abilityCheck",
-            "ability": "strength",
-            "skills": [
-              "Acrobatics",
-              "Intimidation",
-              "Perception",
-              "Stealth",
-              "Survival"
-            ],
-            "predicate": {
-              "type": "custom",
-              "description": "Only while Rage is active."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:protector:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:protector:srd-5.2",
-      "entityType": "feature",
-      "name": "Protector",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Protector:1",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "Trained for battle, you gain proficiency with {@filter Martial weapons|items|type=martial weapon} and training with {@filter Heavy armor|items|type=Heavy Armor}."
-          ]
-        },
-        "grants": [
-          {
-            "type": "proficiency",
-            "value": "martial-weapons"
-          },
-          {
-            "type": "proficiency",
-            "value": "heavy-armor"
-          }
-        ]
-      }
-    },
     {
       "id": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
@@ -2344,795 +260,6 @@
       }
     },
     {
-      "id": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
-      "entityType": "feature",
-      "name": "Reckless Attack",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Reckless Attack:2",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "You can throw aside all concern for defense to attack with increased ferocity. When you make your first attack roll on your turn, you can decide to attack recklessly. Doing so gives you {@variantrule Advantage|XPHB} on attack rolls using Strength until the start of your next turn, but attack rolls against you have {@variantrule Advantage|XPHB} during that time."
-          ]
-        },
-        "activities": [
-          {
-            "id": "reckless-attack",
-            "name": "Reckless Attack",
-            "kind": "utility",
-            "activation": {
-              "type": "free",
-              "trigger": {
-                "event": "onAttack",
-                "description": "When you make your first attack roll on your turn.",
-                "firstTimeOnTurn": true
-              }
-            },
-            "target": {
-              "type": "self"
-            },
-            "effects": [
-              {
-                "id": "reckless-attack-effect",
-                "duration": {
-                  "type": "untilTrigger",
-                  "endTrigger": {
-                    "event": "onTurnStart",
-                    "description": "Start of your next turn."
-                  }
-                },
-                "modifiers": [
-                  {
-                    "target": {
-                      "domain": "attackRoll",
-                      "ability": "strength"
-                    },
-                    "mode": "advantage"
-                  },
-                  {
-                    "target": {
-                      "domain": "incomingAttackRoll"
-                    },
-                    "mode": "advantage"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
-      "entityType": "feature",
-      "name": "Relentless Rage",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Barbarian:Relentless Rage:11",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "barbarian",
-        "text": {
-          "rules": [
-            "Your Rage can keep you fighting despite grievous wounds. If you drop to 0 {@variantrule Hit Points|XPHB} while your Rage is active and don't die outright, you can make a {@dc 10} Constitution saving throw. If you succeed, your {@variantrule Hit Points|XPHB} instead change to a number equal to twice your Barbarian level.",
-            "Each time you use this feature after the first, the DC increases by 5. When you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, the DC resets to 10."
-          ]
-        },
-        "states": [
-          {
-            "id": "relentless-rage-dc",
-            "valueType": "number",
-            "initial": {
-              "type": "constant",
-              "value": 10
-            },
-            "min": 10,
-            "transitions": [
-              {
-                "trigger": {
-                  "event": "custom",
-                  "description": "After each use after the first."
-                },
-                "operation": "add",
-                "value": {
-                  "type": "constant",
-                  "value": 5
-                }
-              },
-              {
-                "trigger": {
-                  "event": "onRest",
-                  "description": "Short or Long Rest."
-                },
-                "operation": "reset"
-              }
-            ]
-          }
-        ],
-        "triggeredGrants": [
-          {
-            "id": "relentless-rage",
-            "trigger": {
-              "event": "onDropToZero",
-              "description": "While Rage is active and you are not killed outright."
-            },
-            "grant": "setHitPoints",
-            "value": {
-              "type": "formula",
-              "formula": "2 * @classes.barbarian.level"
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "Succeeds on a Constitution saving throw against the current Relentless Rage DC."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
-      "entityType": "feature",
-      "name": "Retaliation",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Retaliation:10",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "barbarian-berserker",
-        "text": {
-          "rules": [
-            "When you take damage from a creature that is within 5 feet of you, you can take a {@variantrule Reaction|XPHB} to make one melee attack against that creature, using a weapon or an {@variantrule Unarmed Strike|XPHB}."
-          ]
-        },
-        "activities": [
-          {
-            "id": "retaliation",
-            "name": "Retaliation",
-            "kind": "attack",
-            "activation": {
-              "type": "reaction",
-              "trigger": {
-                "event": "onDamageTaken",
-                "description": "A creature within 5 feet damages you."
-              }
-            },
-            "target": {
-              "type": "creature",
-              "count": 1,
-              "restrictions": [
-                {
-                  "type": "custom",
-                  "description": "The creature that damaged you is within 5 feet."
-                }
-              ]
-            },
-            "attack": {
-              "classification": "special",
-              "mode": "melee"
-            },
-            "description": "Make one melee attack using a weapon or an Unarmed Strike against the triggering creature."
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:sear-undead:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:sear-undead:srd-5.2",
-      "entityType": "feature",
-      "name": "Sear Undead",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Sear Undead:5",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "Whenever you use Turn Undead, you can roll a number of d8s equal to your Wisdom modifier (minimum of {@dice 1d8}) and add the rolls together. Each Undead that fails its saving throw against that use of Turn Undead takes Radiant damage equal to the roll's total. This damage doesn't end the turn effect."
-          ]
-        },
-        "damageRules": [
-          {
-            "id": "sear-undead",
-            "action": "extraDamage",
-            "formula": "max(1, @abilities.wis.mod)d8",
-            "damageTypes": [
-              "radiant"
-            ],
-            "trigger": {
-              "event": "onFailedSave",
-              "description": "An Undead fails its save against your Turn Undead."
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "This Radiant damage does not end the Turn Undead effect."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:spellcasting:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:spellcasting:srd-5.2",
-      "entityType": "feature",
-      "name": "Spellcasting",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Spellcasting:1",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You have learned to cast spells through prayer and meditation. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Cleric spells, which appear on the {@filter Cleric spell list|spells|class=Cleric} later in the class's description.",
-            {
-              "type": "entries",
-              "entries": [
-                {
-                  "type": "entries",
-                  "name": "Cantrips",
-                  "entries": [
-                    "You know three cantrips of your choice from the {@filter Cleric spell list|spells|class=Cleric}. {@spell Guidance|XPHB}, {@spell Sacred Flame|XPHB}, and {@spell Thaumaturgy|XPHB} are recommended.",
-                    "Whenever you gain a Cleric level, you can replace one of your cantrips with another cantrip of your choice from the {@filter Cleric spell list|spells|class=Cleric}.",
-                    "When you reach Cleric levels 4 and 10, you learn another cantrip of your choice from the {@filter Cleric spell list|spells|class=Cleric}, as shown in the Cantrips column of the Cleric Features table."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Spell Slots",
-                  "entries": [
-                    "The Cleric Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a {@variantrule Long Rest|XPHB}."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Prepared Spells of Level 1+",
-                  "entries": [
-                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose four level 1 spells from the {@filter Cleric spell list|spells|class=Cleric}. {@spell Bless|XPHB}, {@spell Cure Wounds|XPHB}, {@spell Guiding Bolt|XPHB}, and {@spell Shield of Faith|XPHB} are recommended.",
-                    "The number of spells on your list increases as you gain Cleric levels, as shown in the Prepared Spells column of the Cleric Features table. Whenever that number increases, choose additional spells from the {@filter Cleric spell list|spells|class=Cleric} until the number of spells on your list matches the number on the table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 3 Cleric, your list of prepared spells can include six spells of levels 1 and 2 in any combination.",
-                    "If another Cleric feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Cleric spells for you."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Changing Your Prepared Spells",
-                  "entries": [
-                    "Whenever you finish a {@variantrule Long Rest|XPHB}, you can change your list of prepared spells, replacing any of the spells there with other Cleric spells for which you have spell slots."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Spellcasting Ability",
-                  "entries": [
-                    "Wisdom is your spellcasting ability for your Cleric spells."
-                  ]
-                },
-                {
-                  "type": "entries",
-                  "name": "Spellcasting Focus",
-                  "entries": [
-                    "You can use a {@item Holy Symbol|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Cleric spells."
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        "classMechanics": {
-          "spellCollections": [
-            {
-              "id": "cleric-prepared-spells",
-              "kind": "prepared",
-              "sourceList": "Cleric",
-              "capacity": {
-                "type": "runtime",
-                "path": "class.cleric.preparedSpells"
-              },
-              "filter": {
-                "lists": [
-                  "Cleric"
-                ]
-              },
-              "replace": {
-                "timing": "longRest",
-                "count": {
-                  "type": "runtime",
-                  "path": "class.cleric.preparedSpells"
-                },
-                "fromCollectionId": "cleric-prepared-spells",
-                "filter": {
-                  "lists": [
-                    "Cleric"
-                  ]
-                }
-              }
-            }
-          ],
-          "spellSlotPools": [
-            {
-              "id": "cleric-spell-slots",
-              "kind": "standard",
-              "progression": {
-                "1": {
-                  "1": 2
-                },
-                "2": {
-                  "1": 3
-                },
-                "3": {
-                  "1": 4,
-                  "2": 2
-                },
-                "4": {
-                  "1": 4,
-                  "2": 3
-                },
-                "5": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 2
-                },
-                "6": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3
-                },
-                "7": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 1
-                },
-                "8": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 2
-                },
-                "9": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 1
-                },
-                "10": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2
-                },
-                "11": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1
-                },
-                "12": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1
-                },
-                "13": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1,
-                  "7": 1
-                },
-                "14": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1,
-                  "7": 1
-                },
-                "15": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1,
-                  "7": 1,
-                  "8": 1
-                },
-                "16": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1,
-                  "7": 1,
-                  "8": 1
-                },
-                "17": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 2,
-                  "6": 1,
-                  "7": 1,
-                  "8": 1,
-                  "9": 1
-                },
-                "18": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 3,
-                  "6": 1,
-                  "7": 1,
-                  "8": 1,
-                  "9": 1
-                },
-                "19": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 3,
-                  "6": 2,
-                  "7": 1,
-                  "8": 1,
-                  "9": 1
-                },
-                "20": {
-                  "1": 4,
-                  "2": 3,
-                  "3": 3,
-                  "4": 3,
-                  "5": 3,
-                  "6": 2,
-                  "7": 2,
-                  "8": 1,
-                  "9": 1
-                }
-              },
-              "recovery": [
-                {
-                  "trigger": {
-                    "event": "onRest",
-                    "description": "Long Rest"
-                  },
-                  "restore": "all"
-                }
-              ]
-            }
-          ]
-        },
-        "properties": [
-          "spellcasting-ability:wisdom",
-          "spellcasting-focus:holy-symbol",
-          "prepared-spells"
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:life:supreme-healing:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:life:supreme-healing:srd-5.2",
-      "entityType": "feature",
-      "name": "Supreme Healing",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclassFeature:Cleric:Life:Supreme Healing:17",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "subclassFeature",
-        "category": "cleric-life",
-        "text": {
-          "rules": [
-            "When you would normally roll one or more dice to restore {@variantrule Hit Points|XPHB} to a creature with a spell or Channel Divinity, don't roll those dice for the healing; instead use the highest number possible for each die. For example, instead of restoring {@dice 2d6} {@variantrule Hit Points|XPHB} to a creature with a spell, you restore 12."
-          ]
-        },
-        "classMechanics": {
-          "diceResolutionModifiers": [
-            {
-              "domain": "healing",
-              "mode": "maximizeDice",
-              "trigger": {
-                "event": "custom",
-                "description": "When you would normally roll dice to restore hit points with a spell or Channel Divinity."
-              },
-              "predicate": {
-                "type": "custom",
-                "description": "Applies to healing dice only."
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:thaumaturge:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:thaumaturge:srd-5.2",
-      "entityType": "feature",
-      "name": "Thaumaturge",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Thaumaturge:1",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "You know one extra cantrip from the {@filter Cleric spell list|spells|class=Cleric}. In addition, your mystical connection to the divine gives you a bonus to your Intelligence ({@skill Arcana|XPHB} or {@skill Religion|XPHB}) checks. The bonus equals your Wisdom modifier (minimum of +1)."
-          ]
-        },
-        "grants": [
-          {
-            "type": "spell",
-            "choice": {
-              "kind": "tagQuery",
-              "count": 1,
-              "entityTypes": [
-                "spell"
-              ],
-              "query": {
-                "all": [
-                  {
-                    "field": "data.level",
-                    "operator": "eq",
-                    "value": 0
-                  },
-                  {
-                    "field": "data.spellLists.name",
-                    "operator": "in",
-                    "value": [
-                      "Cleric"
-                    ]
-                  }
-                ]
-              }
-            }
-          }
-        ],
-        "proficiencyChoices": [
-          {
-            "kind": "enum",
-            "count": 1,
-            "options": [
-              "Arcana",
-              "Religion"
-            ]
-          }
-        ],
-        "modifiers": [
-          {
-            "target": {
-              "domain": "skillCheck"
-            },
-            "mode": "replace",
-            "value": {
-              "type": "runtime",
-              "path": "abilities.wisdom.mod"
-            },
-            "predicate": {
-              "type": "custom",
-              "description": "Only the Arcana or Religion skill chosen with Thaumaturge; use Wisdom instead of Intelligence."
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "dnd2024:2024:feature:cleric:turn-undead:srd-5.2",
-      "canonicalId": "dnd2024:2024:feature:cleric:turn-undead:srd-5.2",
-      "entityType": "feature",
-      "name": "Turn Undead",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:classFeature:Cleric:Turn Undead:2",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "featureKind": "classFeature",
-        "category": "cleric",
-        "text": {
-          "rules": [
-            "As a {@action Magic|XPHB} action, you present your {@item Holy Symbol|XPHB} and censure Undead creatures. Each Undead of your choice within 30 feet of you must make a Wisdom saving throw. If the creature fails its save, it has the {@condition Frightened|XPHB} and {@condition Incapacitated|XPHB} conditions for 1 minute. For that duration, it tries to move as far from you as it can on its turns. This effect ends early on the creature if it takes any damage, if you have the {@condition Incapacitated|XPHB} condition, or if you die."
-          ]
-        },
-        "activities": [
-          {
-            "id": "turn-undead",
-            "name": "Turn Undead",
-            "kind": "save",
-            "activation": {
-              "type": "action"
-            },
-            "target": {
-              "type": "creature",
-              "area": {
-                "shape": "emanation",
-                "size": {
-                  "value": 30,
-                  "unit": "ft"
-                }
-              }
-            },
-            "save": {
-              "ability": "wisdom",
-              "dc": {
-                "type": "formula",
-                "formula": "8 + @abilities.wis.mod + @proficiency"
-              }
-            },
-            "uses": {
-              "sharedResourceId": "channel-divinity"
-            },
-            "description": "Each Undead in the emanation makes a Wisdom save; on failure it is Frightened and Incapacitated for 1 minute, must move away on its turns, and the effect ends early if it takes damage."
-          }
-        ],
-        "classRules": {
-          "behaviorConstraints": [
-            {
-              "subject": "affectedCreature",
-              "directives": [
-                {
-                  "type": "moveAwayFrom",
-                  "source": "self",
-                  "maximizeDistance": true
-                },
-                {
-                  "type": "cannotTake",
-                  "actions": [
-                    "action",
-                    "bonusAction",
-                    "reaction"
-                  ]
-                }
-              ],
-              "duration": {
-                "endTriggers": [
-                  {
-                    "event": "custom",
-                    "description": "1 minute expires or the target takes damage."
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      }
-    },
-    {
       "id": "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2",
       "entityType": "feature",
@@ -3257,6 +384,1329 @@
             }
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
+      "entityType": "feature",
+      "name": "Danger Sense",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Danger Sense:2",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You gain an uncanny sense of when things aren't as they should be, giving you an edge when you dodge perils. You have {@variantrule Advantage|XPHB} on Dexterity saving throws unless you have the {@condition Incapacitated|XPHB} condition."
+          ]
+        },
+        "saveRules": [
+          {
+            "id": "danger-sense",
+            "abilities": [
+              "dexterity"
+            ],
+            "mode": "advantage",
+            "predicate": {
+              "type": "lacksCondition",
+              "condition": "incapacitated"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Reckless Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Reckless Attack:2",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You can throw aside all concern for defense to attack with increased ferocity. When you make your first attack roll on your turn, you can decide to attack recklessly. Doing so gives you {@variantrule Advantage|XPHB} on attack rolls using Strength until the start of your next turn, but attack rolls against you have {@variantrule Advantage|XPHB} during that time."
+          ]
+        },
+        "activities": [
+          {
+            "id": "reckless-attack",
+            "name": "Reckless Attack",
+            "kind": "utility",
+            "activation": {
+              "type": "free",
+              "trigger": {
+                "event": "onAttack",
+                "description": "When you make your first attack roll on your turn.",
+                "firstTimeOnTurn": true
+              }
+            },
+            "target": {
+              "type": "self"
+            },
+            "effects": [
+              {
+                "id": "reckless-attack-effect",
+                "duration": {
+                  "type": "untilTrigger",
+                  "endTrigger": {
+                    "event": "onTurnStart",
+                    "description": "Start of your next turn."
+                  }
+                },
+                "modifiers": [
+                  {
+                    "target": {
+                      "domain": "attackRoll",
+                      "ability": "strength"
+                    },
+                    "mode": "advantage"
+                  },
+                  {
+                    "target": {
+                      "domain": "incomingAttackRoll"
+                    },
+                    "mode": "advantage"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
+      "entityType": "feature",
+      "name": "Primal Knowledge",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Primal Knowledge:3",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You gain proficiency in another skill of your choice from the skill list available to Barbarians at level 1.",
+            "In addition, while your Rage is active, you can channel primal power when you attempt certain tasks; whenever you make an ability check using one of the following skills, you can make it as a Strength check even if it normally uses a different ability: {@skill Acrobatics|XPHB}, {@skill Intimidation|XPHB}, {@skill Perception|XPHB}, {@skill Stealth|XPHB}, or {@skill Survival|XPHB}. When you use this ability, your Strength represents primal power coursing through you, honing your agility, bearing, and senses."
+          ]
+        },
+        "proficiencyChoices": [
+          {
+            "kind": "enum",
+            "count": 1,
+            "options": [
+              "Animal Handling",
+              "Athletics",
+              "Intimidation",
+              "Nature",
+              "Perception",
+              "Survival"
+            ]
+          }
+        ],
+        "abilitySubstitutions": [
+          {
+            "id": "primal-knowledge-strength",
+            "target": "abilityCheck",
+            "ability": "strength",
+            "skills": [
+              "Acrobatics",
+              "Intimidation",
+              "Perception",
+              "Stealth",
+              "Survival"
+            ],
+            "predicate": {
+              "type": "custom",
+              "description": "Only while Rage is active."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Ability Score Improvement:4",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Barbarian levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Extra Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Extra Attack:5",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You can attack twice instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "classMechanics": {
+          "generatedActions": [
+            {
+              "trigger": {
+                "event": "custom",
+                "description": "When you take the Attack action on your turn."
+              },
+              "action": "attack",
+              "asPartOfTriggeringAction": true,
+              "count": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
+      "entityType": "feature",
+      "name": "Fast Movement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Fast Movement:5",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "Your speed increases by 10 feet while you aren't wearing Heavy armor."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "movement",
+              "movementType": "walk"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 10
+            },
+            "predicate": {
+              "type": "not",
+              "predicate": {
+                "type": "wearingArmor",
+                "armorCategories": [
+                  "heavy"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
+      "entityType": "feature",
+      "name": "Feral Instinct",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Feral Instinct:7",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "Your instincts are so honed that you have {@variantrule Advantage|XPHB} on {@variantrule Initiative|XPHB} rolls."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "feral-instinct",
+            "target": "initiative",
+            "operation": "advantage"
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
+      "entityType": "feature",
+      "name": "Instinctive Pounce",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Instinctive Pounce:7",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "As part of the {@variantrule Bonus Action|XPHB} you take to enter your Rage, you can move up to half your {@variantrule Speed|XPHB}."
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "instinctive-pounce",
+            "action": "move",
+            "subject": "self",
+            "distance": {
+              "type": "formula",
+              "formula": "@movement.walk / 2"
+            },
+            "trigger": {
+              "event": "onActivate",
+              "description": "As part of the Bonus Action used to enter Rage."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
+      "entityType": "feature",
+      "name": "Brutal Strike",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Brutal Strike:9",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "If you use Reckless Attack, you can forgo any {@variantrule Advantage|XPHB} on one Strength-based attack roll of your choice on your turn. The chosen attack roll mustn't have {@variantrule Disadvantage|XPHB}. If the chosen attack roll hits, the target takes an extra {@damage 1d10} damage of the same type dealt by the weapon or {@variantrule Unarmed Strike|XPHB}, and you can cause one Brutal Strike effect of your choice. You have the following effect options.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Forceful Blow",
+                  "entries": [
+                    "The target is pushed 15 feet straight away from you. You can then move up to half your {@variantrule Speed|XPHB} straight toward the target without provoking {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Hamstring Blow",
+                  "entries": [
+                    "The target's {@variantrule Speed|XPHB} is reduced by 15 feet until the start of your next turn. A target can be affected by only one Hamstring Blow at a time—the most recent one."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "brutal-strike-damage",
+            "action": "extraDamage",
+            "formula": "1d10",
+            "inheritDamageType": true,
+            "trigger": {
+              "event": "onHit",
+              "description": "When the chosen Strength-based attack hits."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Use Reckless Attack, forgo Advantage on this attack, and the attack must not have Disadvantage."
+            }
+          }
+        ],
+        "movementInteractionRules": [
+          {
+            "id": "forceful-blow-push",
+            "action": "forcedMove",
+            "subject": "target",
+            "direction": "awayFromSource",
+            "distance": {
+              "value": 15,
+              "unit": "ft"
+            },
+            "trigger": {
+              "event": "onHit",
+              "description": "Forceful Blow"
+            }
+          },
+          {
+            "id": "forceful-blow-follow",
+            "action": "move",
+            "subject": "self",
+            "direction": "towardSource",
+            "distance": {
+              "type": "formula",
+              "formula": "@movement.walk / 2"
+            },
+            "trigger": {
+              "event": "onHit",
+              "description": "After Forceful Blow; this movement does not provoke Opportunity Attacks."
+            }
+          },
+          {
+            "id": "hamstring-blow",
+            "action": "setSpeed",
+            "subject": "target",
+            "distance": {
+              "type": "formula",
+              "formula": "@movement.walk - 15"
+            },
+            "trigger": {
+              "event": "onHit",
+              "description": "Hamstring Blow; lasts until start of your next turn."
+            }
+          }
+        ],
+        "properties": [
+          "brutal-strike-options:forceful-blow,hamstring-blow"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
+      "entityType": "feature",
+      "name": "Relentless Rage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Relentless Rage:11",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "Your Rage can keep you fighting despite grievous wounds. If you drop to 0 {@variantrule Hit Points|XPHB} while your Rage is active and don't die outright, you can make a {@dc 10} Constitution saving throw. If you succeed, your {@variantrule Hit Points|XPHB} instead change to a number equal to twice your Barbarian level.",
+            "Each time you use this feature after the first, the DC increases by 5. When you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, the DC resets to 10."
+          ]
+        },
+        "states": [
+          {
+            "id": "relentless-rage-dc",
+            "valueType": "number",
+            "initial": {
+              "type": "constant",
+              "value": 10
+            },
+            "min": 10,
+            "transitions": [
+              {
+                "trigger": {
+                  "event": "custom",
+                  "description": "After each use after the first."
+                },
+                "operation": "add",
+                "value": {
+                  "type": "constant",
+                  "value": 5
+                }
+              },
+              {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Short or Long Rest."
+                },
+                "operation": "reset"
+              }
+            ]
+          }
+        ],
+        "triggeredGrants": [
+          {
+            "id": "relentless-rage",
+            "trigger": {
+              "event": "onDropToZero",
+              "description": "While Rage is active and you are not killed outright."
+            },
+            "grant": "setHitPoints",
+            "value": {
+              "type": "formula",
+              "formula": "2 * @classes.barbarian.level"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Succeeds on a Constitution saving throw against the current Relentless Rage DC."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
+      "entityType": "feature",
+      "name": "Improved Brutal Strike",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Improved Brutal Strike:13",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You have honed new ways to attack furiously. The following effects are now among your Brutal Strike options.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Staggering Blow",
+                  "entries": [
+                    "The target has {@variantrule Disadvantage|XPHB} on the next saving throw it makes, and it can't make {@action Opportunity Attack|XPHB|Opportunity Attacks} until the start of your next turn."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Sundering Blow",
+                  "entries": [
+                    "Before the start of your next turn, the next attack roll made by another creature against the target gains a +5 bonus to the roll. An attack roll can gain only one Sundering Blow bonus."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "effects": [
+          {
+            "id": "staggering-blow",
+            "duration": {
+              "type": "untilTrigger",
+              "endTrigger": {
+                "event": "onTurnStart",
+                "description": "Start of your next turn."
+              }
+            },
+            "modifiers": [
+              {
+                "target": {
+                  "domain": "savingThrow"
+                },
+                "mode": "disadvantage"
+              }
+            ],
+            "description": "Target also cannot make Opportunity Attacks."
+          },
+          {
+            "id": "sundering-blow",
+            "duration": {
+              "type": "untilTrigger",
+              "endTrigger": {
+                "event": "onAttack",
+                "description": "Consumed by the next qualifying attack from another creature."
+              }
+            },
+            "modifiers": [
+              {
+                "target": {
+                  "domain": "incomingAttackRoll"
+                },
+                "mode": "bonus",
+                "value": {
+                  "type": "constant",
+                  "value": 5
+                }
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "adds-brutal-options:staggering-blow,sundering-blow"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
+      "entityType": "feature",
+      "name": "Persistent Rage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Persistent Rage:15",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "When you roll {@variantrule Initiative|XPHB}, you can regain all expended uses of Rage. After you regain uses of Rage in this way, you can't do so again until you finish a {@variantrule Long Rest|XPHB}.",
+            "In addition, your Rage is so fierce that it now lasts for 10 minutes without you needing to do anything to extend it from round to round. Your Rage ends early if you have the {@condition Unconscious|XPHB} condition (not just the {@condition Incapacitated|XPHB} condition) or don Heavy armor."
+          ]
+        },
+        "classRules": {
+          "resourceMutations": [
+            {
+              "resourceId": "barbarian-rage",
+              "trigger": {
+                "event": "onInitiative",
+                "description": "Regain all expended Rage uses once per Long Rest."
+              },
+              "operation": "restoreAll"
+            }
+          ]
+        },
+        "properties": [
+          "rage-no-round-extension-required",
+          "rage-ends-on-unconscious-or-heavy-armor",
+          "initiative-refresh-once-per-long-rest"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2",
+      "entityType": "feature",
+      "name": "Improved Brutal Strike",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Improved Brutal Strike:17",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "The extra damage of your Brutal Strike increases to {@damage 2d10}. In addition, you can use two different Brutal Strike effects whenever you use your Brutal Strike feature."
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "improved-brutal-strike-damage",
+            "action": "extraDamage",
+            "formula": "2d10",
+            "inheritDamageType": true,
+            "trigger": {
+              "event": "onHit",
+              "description": "Replaces the 1d10 Brutal Strike extra damage at Barbarian level 17."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "A qualifying Brutal Strike."
+            }
+          }
+        ],
+        "properties": [
+          "brutal-strike-option-count:2",
+          "replaces-brutal-strike-damage:2d10"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2",
+      "entityType": "feature",
+      "name": "Indomitable Might",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Indomitable Might:18",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "If your total for a Strength check or Strength saving throw is less than your Strength score, you can use that score in place of the total."
+          ]
+        },
+        "classMechanics": {
+          "resolutionOverrides": [
+            {
+              "domain": "check",
+              "mode": "replaceTotal",
+              "value": {
+                "type": "abilityScore",
+                "ability": "strength"
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Strength check total is lower than your Strength score."
+              }
+            },
+            {
+              "domain": "save",
+              "mode": "replaceTotal",
+              "value": {
+                "type": "abilityScore",
+                "ability": "strength"
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Strength saving throw total is lower than your Strength score."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Epic Boon:19",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Irresistible Offense|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Irresistible Offense"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
+      "entityType": "feature",
+      "name": "Primal Champion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Barbarian:Primal Champion:20",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "barbarian",
+        "text": {
+          "rules": [
+            "You embody primal power. Your Strength and Constitution scores increase by 4, to a maximum of 25."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "abilityScore",
+              "ability": "strength"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          {
+            "target": {
+              "domain": "abilityScore",
+              "ability": "strength"
+            },
+            "mode": "maximum",
+            "value": {
+              "type": "constant",
+              "value": 25
+            }
+          },
+          {
+            "target": {
+              "domain": "abilityScore",
+              "ability": "constitution"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 4
+            }
+          },
+          {
+            "target": {
+              "domain": "abilityScore",
+              "ability": "constitution"
+            },
+            "mode": "maximum",
+            "value": {
+              "type": "constant",
+              "value": 25
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
+      "entityType": "feature",
+      "name": "Frenzy",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Frenzy:3",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "barbarian-berserker",
+        "text": {
+          "rules": [
+            "If you use Reckless Attack while your Rage is active, you deal extra damage to the first target you hit on your turn with a Strength-based attack. To determine the extra damage, roll a number of d6s equal to your Rage Damage bonus, and add them together. The damage has the same type as the weapon or {@variantrule Unarmed Strike|XPHB} used for the attack."
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "frenzy-damage",
+            "action": "extraDamage",
+            "formula": "{@classScale barbarian.rageDamage}d6",
+            "inheritDamageType": true,
+            "trigger": {
+              "event": "onHit",
+              "description": "First target hit on your turn."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Rage is active, Reckless Attack was used, and the attack is Strength-based."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
+      "entityType": "feature",
+      "name": "Mindless Rage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Mindless Rage:6",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "barbarian-berserker",
+        "text": {
+          "rules": [
+            "You have {@variantrule Immunity|XPHB} to the {@condition Charmed|XPHB} and {@condition Frightened|XPHB} conditions while your Rage is active. If you're {@condition Charmed|XPHB} or {@condition Frightened|XPHB} when you enter your Rage, the condition ends on you."
+          ]
+        },
+        "effects": [
+          {
+            "id": "mindless-rage-immunity",
+            "predicate": {
+              "type": "custom",
+              "description": "While Rage is active."
+            },
+            "conditions": [
+              {
+                "action": "immunity",
+                "conditions": [
+                  "charmed",
+                  "frightened"
+                ]
+              }
+            ]
+          },
+          {
+            "id": "mindless-rage-cleanse",
+            "trigger": {
+              "event": "onActivate",
+              "description": "When Rage begins."
+            },
+            "conditions": [
+              {
+                "action": "remove",
+                "conditions": [
+                  "charmed",
+                  "frightened"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
+      "entityType": "feature",
+      "name": "Retaliation",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Retaliation:10",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "barbarian-berserker",
+        "text": {
+          "rules": [
+            "When you take damage from a creature that is within 5 feet of you, you can take a {@variantrule Reaction|XPHB} to make one melee attack against that creature, using a weapon or an {@variantrule Unarmed Strike|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "retaliation",
+            "name": "Retaliation",
+            "kind": "attack",
+            "activation": {
+              "type": "reaction",
+              "trigger": {
+                "event": "onDamageTaken",
+                "description": "A creature within 5 feet damages you."
+              }
+            },
+            "target": {
+              "type": "creature",
+              "count": 1,
+              "restrictions": [
+                {
+                  "type": "custom",
+                  "description": "The creature that damaged you is within 5 feet."
+                }
+              ]
+            },
+            "attack": {
+              "classification": "special",
+              "mode": "melee"
+            },
+            "description": "Make one melee attack using a weapon or an Unarmed Strike against the triggering creature."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
+      "entityType": "feature",
+      "name": "Intimidating Presence",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Barbarian:Berserker:Intimidating Presence:14",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "barbarian-berserker",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can strike terror into others with your menacing presence and primal power. When you do so, each creature of your choice in a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} originating from you must make a Wisdom saving throw ({@dc 8} plus your Strength modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}). On a failed save, a creature has the {@condition Frightened|XPHB} condition for 1 minute. At the end of each of the {@condition Frightened|XPHB} creature's turns, the creature repeats the save, ending the effect on itself on a success.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you expend a use of your Rage (no action required) to restore your use of it."
+          ]
+        },
+        "activities": [
+          {
+            "id": "intimidating-presence",
+            "name": "Intimidating Presence",
+            "kind": "save",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "creature",
+              "count": {
+                "type": "formula",
+                "formula": "@chosen"
+              },
+              "disposition": "enemy",
+              "area": {
+                "shape": "emanation",
+                "size": {
+                  "value": 30,
+                  "unit": "ft"
+                }
+              }
+            },
+            "save": {
+              "ability": "wisdom",
+              "dc": {
+                "type": "formula",
+                "formula": "8 + @abilities.str.mod + @proficiency"
+              }
+            },
+            "conditions": [
+              {
+                "condition": "frightened",
+                "duration": {
+                  "type": "timed",
+                  "value": {
+                    "type": "constant",
+                    "value": 1
+                  },
+                  "unit": "minute"
+                },
+                "end": "Repeat the save at the end of each turn, ending on success."
+              }
+            ],
+            "uses": {
+              "max": 1,
+              "sharedResourceId": "berserker-intimidating-presence",
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "description": "Once per Long Rest, or restore the use by expending one Rage use."
+          }
+        ],
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Spend one Rage use to restore Intimidating Presence."
+            },
+            "consume": {
+              "resourceId": "barbarian-rage",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            },
+            "restore": {
+              "resourceId": "berserker-intimidating-presence",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          }
+        ]
       }
     }
   ]
