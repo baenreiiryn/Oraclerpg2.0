@@ -6598,8 +6598,33 @@
                 "entityType": "monster",
                 "knownCollectionId": "druid-wild-shape-known-forms",
                 "filter": {
-                  "type": "custom",
-                  "description": "Choose only a known Beast form whose challenge rating is at most class.druid.wildShapeMaxCr; before Druid level 8, the form must not have a Fly Speed."
+                  "type": "and",
+                  "all": [
+                    {
+                      "type": "creatureType",
+                      "creatureTypes": [
+                        "beast"
+                      ]
+                    },
+                    {
+                      "type": "comparison",
+                      "left": {
+                        "type": "runtime",
+                        "path": "data.challengeRating",
+                        "subject": "target"
+                      },
+                      "operator": "lte",
+                      "right": {
+                        "type": "runtime",
+                        "path": "class.druid.wildShapeMaxCr",
+                        "subject": "self"
+                      }
+                    },
+                    {
+                      "type": "custom",
+                      "description": "Before Druid level 8 the selected Beast must not have a Fly Speed; starting at level 8 Fly Speed is allowed."
+                    }
+                  ]
                 }
               },
               "activation": {
@@ -6718,8 +6743,33 @@
                 "path": "class.druid.wildShapeKnownForms"
               },
               "filter": {
-                "type": "custom",
-                "description": "Beast monster whose challenge rating is at most class.druid.wildShapeMaxCr; Fly Speed is forbidden before Druid level 8."
+                "type": "and",
+                "all": [
+                  {
+                    "type": "creatureType",
+                    "creatureTypes": [
+                      "beast"
+                    ]
+                  },
+                  {
+                    "type": "comparison",
+                    "left": {
+                      "type": "runtime",
+                      "path": "data.challengeRating",
+                      "subject": "target"
+                    },
+                    "operator": "lte",
+                    "right": {
+                      "type": "runtime",
+                      "path": "class.druid.wildShapeMaxCr",
+                      "subject": "self"
+                    }
+                  },
+                  {
+                    "type": "custom",
+                    "description": "Before Druid level 8 the selected Beast must not have a Fly Speed; starting at level 8 Fly Speed is allowed."
+                  }
+                ]
               },
               "chooseOn": {
                 "event": "onApply",
@@ -6735,8 +6785,33 @@
                   "value": 1
                 },
                 "filter": {
-                  "type": "custom",
-                  "description": "Replacement must satisfy the current Wild Shape Beast CR and Fly Speed limits."
+                  "type": "and",
+                  "all": [
+                    {
+                      "type": "creatureType",
+                      "creatureTypes": [
+                        "beast"
+                      ]
+                    },
+                    {
+                      "type": "comparison",
+                      "left": {
+                        "type": "runtime",
+                        "path": "data.challengeRating",
+                        "subject": "target"
+                      },
+                      "operator": "lte",
+                      "right": {
+                        "type": "runtime",
+                        "path": "class.druid.wildShapeMaxCr",
+                        "subject": "self"
+                      }
+                    },
+                    {
+                      "type": "custom",
+                      "description": "Before Druid level 8 the selected Beast must not have a Fly Speed; starting at level 8 Fly Speed is allowed."
+                    }
+                  ]
                 }
               },
               "progression": [
@@ -6747,8 +6822,32 @@
                     "value": 4
                   },
                   "filter": {
-                    "type": "custom",
-                    "description": "Beast, CR <= 1/4, no Fly Speed."
+                    "type": "and",
+                    "all": [
+                      {
+                        "type": "creatureType",
+                        "creatureTypes": [
+                          "beast"
+                        ]
+                      },
+                      {
+                        "type": "comparison",
+                        "left": {
+                          "type": "runtime",
+                          "path": "data.challengeRating",
+                          "subject": "target"
+                        },
+                        "operator": "lte",
+                        "right": {
+                          "type": "constant",
+                          "value": 0.25
+                        }
+                      },
+                      {
+                        "type": "custom",
+                        "description": "The Beast must not have a Fly Speed."
+                      }
+                    ]
                   }
                 },
                 {
@@ -6758,8 +6857,32 @@
                     "value": 6
                   },
                   "filter": {
-                    "type": "custom",
-                    "description": "Beast, CR <= 1/2, no Fly Speed."
+                    "type": "and",
+                    "all": [
+                      {
+                        "type": "creatureType",
+                        "creatureTypes": [
+                          "beast"
+                        ]
+                      },
+                      {
+                        "type": "comparison",
+                        "left": {
+                          "type": "runtime",
+                          "path": "data.challengeRating",
+                          "subject": "target"
+                        },
+                        "operator": "lte",
+                        "right": {
+                          "type": "constant",
+                          "value": 0.5
+                        }
+                      },
+                      {
+                        "type": "custom",
+                        "description": "The Beast must not have a Fly Speed."
+                      }
+                    ]
                   }
                 },
                 {
@@ -6769,8 +6892,28 @@
                     "value": 8
                   },
                   "filter": {
-                    "type": "custom",
-                    "description": "Beast, CR <= 1; Fly Speed allowed."
+                    "type": "and",
+                    "all": [
+                      {
+                        "type": "creatureType",
+                        "creatureTypes": [
+                          "beast"
+                        ]
+                      },
+                      {
+                        "type": "comparison",
+                        "left": {
+                          "type": "runtime",
+                          "path": "data.challengeRating",
+                          "subject": "target"
+                        },
+                        "operator": "lte",
+                        "right": {
+                          "type": "constant",
+                          "value": 1
+                        }
+                      }
+                    ]
                   }
                 }
               ]
