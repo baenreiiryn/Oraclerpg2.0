@@ -2,6 +2,17 @@ name: SRD 5.2 Monk
 
 on:
   pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/import-srd52-monk.mjs'
+      - 'scripts/audit-srd52-monk.mjs'
+      - 'scripts/compare-5etools-srd52-monk.mjs'
+      - 'scripts/compare-foundry-srd52-monk.mjs'
+      - 'packages/schema/**'
+      - 'packages/content/data/srd-5.2/classes.json'
+      - 'packages/content/data/srd-5.2/subclasses.json'
+      - 'packages/content/data/srd-5.2/class-features.json'
+      - '.github/workflows/srd52-monk.yml'
   workflow_dispatch:
 
 permissions:
