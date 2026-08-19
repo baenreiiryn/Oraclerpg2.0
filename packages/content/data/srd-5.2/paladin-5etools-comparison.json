@@ -1,0 +1,16 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "source": {
+    "classFeatures": 24,
+    "subclassFeatures": 6,
+    "preparedRows": 20,
+    "slotRows": 20
+  },
+  "oracle": {
+    "classFeatures": 17,
+    "subclassFeatures": 5
+  },
+  "class": "Paladin",
+  "subclass": "Oath of Devotion"
+}
