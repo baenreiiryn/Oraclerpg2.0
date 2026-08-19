@@ -1,0 +1,66 @@
+{
+  "status": "SUPPORTED",
+  "classCount": 1,
+  "subclassCount": 1,
+  "classFeatureDefinitions": 16,
+  "subclassFeatureDefinitions": 5,
+  "wildShape": {
+    "transformation": true,
+    "recommendedForms": {
+      "Rat": true,
+      "Riding Horse": true,
+      "Spider": true,
+      "Wolf": true
+    },
+    "eligibleSrdForms": {
+      "level2": 40,
+      "level4": 48,
+      "level8": 69
+    },
+    "samples": {
+      "level2": [
+        "Baboon",
+        "Badger",
+        "Boar",
+        "Camel",
+        "Cat",
+        "Constrictor Snake",
+        "Crab",
+        "Deer",
+        "Draft Horse",
+        "Elk",
+        "Frog",
+        "Giant Badger"
+      ],
+      "level4": [
+        "Ape",
+        "Baboon",
+        "Badger",
+        "Black Bear",
+        "Boar",
+        "Camel",
+        "Cat",
+        "Constrictor Snake",
+        "Crab",
+        "Crocodile",
+        "Deer",
+        "Draft Horse"
+      ],
+      "level8": [
+        "Ape",
+        "Baboon",
+        "Badger",
+        "Bat",
+        "Black Bear",
+        "Blood Hawk",
+        "Boar",
+        "Brown Bear",
+        "Camel",
+        "Cat",
+        "Constrictor Snake",
+        "Crab"
+      ]
+    }
+  },
+  "issues": []
+}

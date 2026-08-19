@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 3,
+  "count": 4,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -1546,6 +1546,578 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 315312
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:druid:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:druid:srd-5.2",
+      "entityType": "class",
+      "name": "Druid",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Druid",
+        "adapterVersion": "0.5.0",
+        "mapperVersion": "0.5.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 8,
+        "primaryAbilities": [
+          "wisdom"
+        ],
+        "savingThrowProficiencies": [
+          "intelligence",
+          "wisdom"
+        ],
+        "armorTraining": [
+          "light",
+          "shield"
+        ],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "toolProficiencies": [
+          "herbalism-kit"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Animal Handling",
+            "Arcana",
+            "Insight",
+            "Medicine",
+            "Nature",
+            "Perception",
+            "Religion",
+            "Survival"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Leather Armor, Shield, Sickle, Druidic Focus (Quarterstaff), Explorer's Pack, Herbalism Kit, and 9 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Leather Armor",
+                  "canonicalId": "dnd2024:2024:item:leather-armor:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Shield",
+                  "canonicalId": "dnd2024:2024:item:shield:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Sickle",
+                  "canonicalId": "dnd2024:2024:item:sickle:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Quarterstaff",
+                  "canonicalId": "dnd2024:2024:item:quarterstaff:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Explorer's Pack",
+                  "canonicalId": "dnd2024:2024:item:explorer-s-pack:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Herbalism Kit",
+                  "canonicalId": "dnd2024:2024:item:herbalism-kit:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 9,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "50 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 50,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Druidic",
+                  "canonicalId": "dnd2024:2024:feature:druid:druidic:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Magician",
+                  "canonicalId": "dnd2024:2024:feature:druid:magician:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Primal Order",
+                  "canonicalId": "dnd2024:2024:feature:druid:primal-order:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:druid:spellcasting:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Warden",
+                  "canonicalId": "dnd2024:2024:feature:druid:warden:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 2,
+              "preparedSpells": 4,
+              "wildShapeUses": 0,
+              "wildShapeKnownForms": 0,
+              "wildShapeMaxCr": 0,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Wild Companion",
+                  "canonicalId": "dnd2024:2024:feature:druid:wild-companion:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Wild Shape",
+                  "canonicalId": "dnd2024:2024:feature:druid:wild-shape:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 2,
+              "preparedSpells": 5,
+              "wildShapeUses": 2,
+              "wildShapeKnownForms": 4,
+              "wildShapeMaxCr": 0.25,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 2,
+              "preparedSpells": 6,
+              "wildShapeUses": 2,
+              "wildShapeKnownForms": 4,
+              "wildShapeMaxCr": 0.25,
+              "wildShapeFlyAllowed": false
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:druid:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:druid:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 7,
+              "wildShapeUses": 2,
+              "wildShapeKnownForms": 6,
+              "wildShapeMaxCr": 0.5,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Wild Resurgence",
+                  "canonicalId": "dnd2024:2024:feature:druid:wild-resurgence:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 9,
+              "wildShapeUses": 2,
+              "wildShapeKnownForms": 6,
+              "wildShapeMaxCr": 0.5,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 10,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 6,
+              "wildShapeMaxCr": 0.5,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Elemental Fury",
+                  "canonicalId": "dnd2024:2024:feature:druid:elemental-fury:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Potent Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:druid:potent-spellcasting:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Primal Strike",
+                  "canonicalId": "dnd2024:2024:feature:druid:primal-strike:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 11,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 6,
+              "wildShapeMaxCr": 0.5,
+              "wildShapeFlyAllowed": false
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:druid:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 12,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 9,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 3,
+              "preparedSpells": 14,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 10,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 15,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 16,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:druid:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 16,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 17,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 17,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Improved Elemental Fury",
+                  "canonicalId": "dnd2024:2024:feature:druid:improved-elemental-fury:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 18,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:druid:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 18,
+              "wildShapeUses": 3,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 17,
+            "grants": [],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 19,
+              "wildShapeUses": 4,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Beast Spells",
+                  "canonicalId": "dnd2024:2024:feature:druid:beast-spells:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 20,
+              "wildShapeUses": 4,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:druid:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 21,
+              "wildShapeUses": 4,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Archdruid",
+                  "canonicalId": "dnd2024:2024:feature:druid:archdruid:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantrips": 4,
+              "preparedSpells": 22,
+              "wildShapeUses": 4,
+              "wildShapeKnownForms": 8,
+              "wildShapeMaxCr": 1,
+              "wildShapeFlyAllowed": true
+            }
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbdruidwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Druid.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Druid.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 385742
             }
           }
         ]
