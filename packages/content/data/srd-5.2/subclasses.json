@@ -1,0 +1,104 @@
+{
+  "format": "oraclerpg-compendium",
+  "version": 1,
+  "contentSource": "srd-5.2",
+  "entityType": "subclass",
+  "count": 1,
+  "items": [
+    {
+      "id": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
+      "entityType": "subclass",
+      "name": "Path of the Berserker",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Barbarian:Berserker",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Barbarian",
+          "canonicalId": "dnd2024:2024:class:barbarian:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Frenzy",
+                  "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Mindless Rage",
+                  "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Retaliation",
+                  "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Intimidating Presence",
+                  "canonicalId": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "{@i Channel Rage into Violent Fury}",
+            "Barbarians who walk the Path of the Berserker direct their Rage primarily toward violence. Their path is one of untrammeled fury, and they thrill in the chaos of battle as they allow their Rage to seize and empower them.",
+            {
+              "type": "refSubclassFeature",
+              "subclassFeature": "Frenzy|Barbarian|XPHB|Berserker|XPHB|3"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

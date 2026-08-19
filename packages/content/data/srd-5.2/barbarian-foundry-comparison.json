@@ -1,0 +1,36 @@
+{
+  "status": "SUPPORTED",
+  "foundry": {
+    "class": "Barbarian",
+    "subclass": "Path of the Berserker",
+    "classFeatureDocuments": 19,
+    "subclassFeatureDocuments": 4,
+    "scaleValues": [
+      "Rage Damage",
+      "Weapon Masteries Known",
+      "Brutal Strike",
+      "Rages"
+    ]
+  },
+  "oracle": {
+    "classFeatureDefinitions": 19,
+    "subclassFeatureDefinitions": 4
+  },
+  "classifiedDifferences": [
+    {
+      "name": "Improved Brutal Strike (2)",
+      "type": "naming",
+      "reason": "Foundry suffixes the level-17 improvement with “(2)”; Oracle preserves the SRD/5etools name and distinguishes it by canonical level ID."
+    },
+    {
+      "name": "Unarmed Strike",
+      "type": "provider-embedding",
+      "reason": "Foundry embeds the shared Unarmed Strike item in the Barbarian class folder. Oracle already stores Unarmed Strike in the item/rules layer, so it is not duplicated as a class feature."
+    },
+    {
+      "type": "representation",
+      "reason": "Foundry stores some choices and improvements as Advancement documents; Oracle keeps reusable feature entities plus explicit AdvancementStep/scaleValues."
+    }
+  ],
+  "issues": []
+}

@@ -1,0 +1,16 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "class": "Barbarian",
+    "subclass": "Path of the Berserker",
+    "classFeatureRecords": 26,
+    "subclassFeatureRecords": 5
+  },
+  "oracle": {
+    "classCount": 1,
+    "subclassCount": 1,
+    "classFeatures": 19,
+    "subclassFeatures": 4
+  },
+  "issues": []
+}

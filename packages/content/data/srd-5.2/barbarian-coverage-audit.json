@@ -1,0 +1,140 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "classFeatureRecords": 26,
+    "subclassFeatureRecords": 5
+  },
+  "oracle": {
+    "classes": 1,
+    "subclasses": 1,
+    "classFeatureDefinitions": 19,
+    "subclassFeatureDefinitions": 4,
+    "structuredDefinitions": 23
+  },
+  "progression": {
+    "levels": 20,
+    "rows": [
+      {
+        "level": 1,
+        "rages": 2,
+        "rageDamage": 2,
+        "weaponMastery": 2
+      },
+      {
+        "level": 2,
+        "rages": 2,
+        "rageDamage": 2,
+        "weaponMastery": 2
+      },
+      {
+        "level": 3,
+        "rages": 3,
+        "rageDamage": 2,
+        "weaponMastery": 2
+      },
+      {
+        "level": 4,
+        "rages": 3,
+        "rageDamage": 2,
+        "weaponMastery": 3
+      },
+      {
+        "level": 5,
+        "rages": 3,
+        "rageDamage": 2,
+        "weaponMastery": 3
+      },
+      {
+        "level": 6,
+        "rages": 4,
+        "rageDamage": 2,
+        "weaponMastery": 3
+      },
+      {
+        "level": 7,
+        "rages": 4,
+        "rageDamage": 2,
+        "weaponMastery": 3
+      },
+      {
+        "level": 8,
+        "rages": 4,
+        "rageDamage": 2,
+        "weaponMastery": 3
+      },
+      {
+        "level": 9,
+        "rages": 4,
+        "rageDamage": 3,
+        "weaponMastery": 3
+      },
+      {
+        "level": 10,
+        "rages": 4,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 11,
+        "rages": 4,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 12,
+        "rages": 5,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 13,
+        "rages": 5,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 14,
+        "rages": 5,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 15,
+        "rages": 5,
+        "rageDamage": 3,
+        "weaponMastery": 4
+      },
+      {
+        "level": 16,
+        "rages": 5,
+        "rageDamage": 4,
+        "weaponMastery": 4
+      },
+      {
+        "level": 17,
+        "rages": 6,
+        "rageDamage": 4,
+        "weaponMastery": 4
+      },
+      {
+        "level": 18,
+        "rages": 6,
+        "rageDamage": 4,
+        "weaponMastery": 4
+      },
+      {
+        "level": 19,
+        "rages": 6,
+        "rageDamage": 4,
+        "weaponMastery": 4
+      },
+      {
+        "level": 20,
+        "rages": 6,
+        "rageDamage": 4,
+        "weaponMastery": 4
+      }
+    ]
+  },
+  "issues": []
+}
