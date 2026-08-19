@@ -1,4 +1,5 @@
 import type { ActivityData } from "./activity.js";
+import type { MonsterFeatureInstanceData } from "./monster-feature.js";
 import type {
   AbilityId, ConditionId, CreatureTypeId, DamageTypeId, EntityRef, FormulaValue, MovementTypeId, SizeId, SourceText
 } from "./primitives.js";
@@ -75,7 +76,14 @@ export interface MonsterData {
   treasure?: readonly string[];
   gear?: readonly EntityRef[];
 
+  /**
+   * Actor-owned copies of reusable monster features. These snapshots may be customized
+   * independently from their compendium definitions and are the preferred representation.
+   */
+  features?: readonly MonsterFeatureInstanceData[];
+  /** @deprecated Transitional reference-only representation kept for older fixtures/importers. */
   traits?: readonly EntityRef[];
+  /** Transitional denormalized activity collections; importers may derive these from features. */
   actions?: readonly ActivityData[];
   bonusActions?: readonly ActivityData[];
   reactions?: readonly ActivityData[];
