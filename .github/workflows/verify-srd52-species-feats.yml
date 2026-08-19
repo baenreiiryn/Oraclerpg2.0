@@ -12,15 +12,19 @@ jobs:
         with:
           node-version: 22
       - name: Generate species and feats
-        run: node scripts/sync-srd52-species-feats.mjs
+        run: |
+          node scripts/sync-srd52-species-feats.mjs
+          node scripts/normalize-srd52-species-feats.mjs
       - name: Basic coverage assertions
         run: |
           node - <<'NODE'
           const fs=require('fs');
           const a=JSON.parse(fs.readFileSync('packages/content/data/srd-5.2/species-feats-coverage-audit.json','utf8'));
+          const species=JSON.parse(fs.readFileSync('packages/content/data/srd-5.2/species.json','utf8'));
           if(a.speciesCount!==9) throw new Error(`Expected 9 species, got ${a.speciesCount}`);
           if(a.featCount!==17) throw new Error(`Expected 17 feats, got ${a.featCount}`);
           if(!a.allSpeciesHaveFeatures||!a.allFeatsCategorized) throw new Error('Coverage assertions failed');
+          for(const s of species.items){ if(s.data.variants?.length && s.data.spellGrants) throw new Error(`${s.name} leaks variant spell grants onto base species`); }
           NODE
       - uses: actions/upload-artifact@v4
         with:
