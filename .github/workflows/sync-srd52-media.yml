@@ -64,10 +64,20 @@ jobs:
             'species-features.json':34,
             'feats.json':17,
           };
+          const evolving={
+            'classes.json':1,
+            'subclasses.json':1,
+            'class-features.json':23,
+          };
           const audit=JSON.parse(fs.readFileSync(`${root}/media-coverage-audit.json`,'utf8'));
           for(const [file,count] of Object.entries(required)){
             if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
             if(audit.collections[file].entities!==count) throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);
+          }
+          for(const [file,min] of Object.entries(evolving)){
+            if(!fs.existsSync(`${root}/${file}`)) continue;
+            if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
+            if(audit.collections[file].entities<min) throw new Error(`${file}: expected at least ${min}, got ${audit.collections[file].entities}`);
           }
           if(!audit.safeguards?.monsterFeatureBestiaryArtworkBlocked) throw new Error('Monster-feature artwork safeguard missing');
           if(audit.collections['monster-features.json'].withMedia!==0) throw new Error('Monster Features must not inherit Bestiary creature artwork');
@@ -103,6 +113,9 @@ jobs:
             packages/content/data/srd-5.2/species.json
             packages/content/data/srd-5.2/species-features.json
             packages/content/data/srd-5.2/feats.json
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/class-features.json
             packages/content/data/srd-5.2/media-coverage-audit.json
       - name: Persist enriched compendium on PR branch
         if: github.event_name == 'pull_request'
@@ -117,6 +130,9 @@ jobs:
             packages/content/data/srd-5.2/species.json \
             packages/content/data/srd-5.2/species-features.json \
             packages/content/data/srd-5.2/feats.json \
+            packages/content/data/srd-5.2/classes.json \
+            packages/content/data/srd-5.2/subclasses.json \
+            packages/content/data/srd-5.2/class-features.json \
             packages/content/data/srd-5.2/media-coverage-audit.json
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m 'Persist SRD 5.2 media-enriched compendium [skip ci]'

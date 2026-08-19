@@ -2,7 +2,7 @@ import type { ActivityData } from "./activity.js";
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
 import type {
-  CapacityRuleData, DamageRuleData, FeatureActionRuleData, MovementInteractionRuleData,
+  AbilitySubstitutionRuleData, CapacityRuleData, DamageRuleData, FeatureActionRuleData, MovementInteractionRuleData,
   ResourcePreservationRuleData, RestRuleData, RollRuleData, SaveRuleData, TriggeredGrantRuleData
 } from "./feature-rules.js";
 import type { MonsterFeatureTemplateData } from "./monster-feature.js";
@@ -123,6 +123,7 @@ export interface FeatureData {
   patches?: readonly FeaturePatchData[];
   crossResourceRules?: readonly CrossResourceRuleData[];
   rollRules?: readonly RollRuleData[];
+  abilitySubstitutions?: readonly AbilitySubstitutionRuleData[];
   resourcePreservationRules?: readonly ResourcePreservationRuleData[];
   triggeredGrants?: readonly TriggeredGrantRuleData[];
   restRules?: readonly RestRuleData[];

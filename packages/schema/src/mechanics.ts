@@ -82,7 +82,7 @@ export type ModifierMode =
 
 export interface ModifierTarget {
   domain:
-    | "attackRoll" | "damageRoll" | "savingThrow" | "abilityCheck" | "skillCheck" | "initiative" | "armorClass"
+    | "attackRoll" | "incomingAttackRoll" | "damageRoll" | "savingThrow" | "abilityCheck" | "skillCheck" | "initiative" | "armorClass"
     | "movement" | "movementCapability" | "difficultTerrain" | "damageResistance" | "damageImmunity" | "condition"
     | "spellcasting" | "concentration" | "unarmedStrike" | "activity" | "resource" | "abilityScore"
     | "hitPointMaximum" | "temporaryHitPointMaximum" | "deathSave" | "sense" | "language" | "proficiencyBonus"

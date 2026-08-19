@@ -1,14 +1,16 @@
 import fs from 'node:fs/promises';
 
 const ROOT='packages/content/data/srd-5.2';
-const files=['items.json','spells.json','monsters.json','monster-features.json','species.json','species-features.json','feats.json'];
+const files=['items.json','spells.json','monsters.json','monster-features.json','species.json','species-features.json','feats.json','classes.json','subclasses.json','class-features.json'];
 const collections={};
 const unmatched=[];
 const totals={entities:0,withMedia:0,assets:0};
 
 for(const file of files){
   const p=`${ROOT}/${file}`;
-  const doc=JSON.parse(await fs.readFile(p,'utf8'));
+  let raw;
+  try{raw=await fs.readFile(p,'utf8');}catch{continue;}
+  const doc=JSON.parse(raw);
   const stats={entities:doc.items?.length??0,withMedia:0,assets:0,byRole:{}};
   for(const entity of doc.items??[]){
     // Bestiary artwork depicts creatures, not features with the same name.

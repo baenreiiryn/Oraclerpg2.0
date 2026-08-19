@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T03:50:17.464Z",
+  "generatedAt": "2026-08-19T04:17:06.804Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -54,14 +54,34 @@
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
+    },
+    "classes.json": {
+      "entities": 1,
+      "withMedia": 1,
+      "assets": 1,
+      "byRole": {
+        "artwork": 1
+      }
+    },
+    "subclasses.json": {
+      "entities": 1,
+      "withMedia": 0,
+      "assets": 0,
+      "byRole": {}
+    },
+    "class-features.json": {
+      "entities": 23,
+      "withMedia": 0,
+      "assets": 0,
+      "byRole": {}
     }
   },
   "totals": {
-    "entities": 1686,
-    "withMedia": 466,
-    "assets": 659
+    "entities": 1711,
+    "withMedia": 467,
+    "assets": 660
   },
-  "coverage": 0.2763938315539739,
+  "coverage": 0.27293980128579776,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7381,6 +7401,150 @@
       "collection": "feats.json",
       "canonicalId": "dnd2024:2024:feature:feat-two-weapon-fighting:srd-5.2",
       "name": "Two-Weapon Fighting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
+      "name": "Path of the Berserker",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
+      "name": "Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2",
+      "name": "Unarmored Defense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
+      "name": "Danger Sense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
+      "name": "Reckless Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
+      "name": "Primal Knowledge",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2",
+      "name": "Extra Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
+      "name": "Fast Movement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
+      "name": "Feral Instinct",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
+      "name": "Instinctive Pounce",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
+      "name": "Brutal Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
+      "name": "Relentless Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
+      "name": "Improved Brutal Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
+      "name": "Persistent Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2",
+      "name": "Improved Brutal Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2",
+      "name": "Indomitable Might",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
+      "name": "Primal Champion",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
+      "name": "Frenzy",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
+      "name": "Mindless Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
+      "name": "Retaliation",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
+      "name": "Intimidating Presence",
       "entityType": "feature"
     }
   ],

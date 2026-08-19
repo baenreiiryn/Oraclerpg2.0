@@ -17,6 +17,17 @@ export interface RollRuleData {
   description?: string;
 }
 
+/** Replaces the ability used by a roll without replacing the roll's other proficiency/rule inputs. */
+export interface AbilitySubstitutionRuleData {
+  id: string;
+  target: "abilityCheck" | "attackRoll" | "savingThrow" | "damageRoll";
+  ability: AbilityId;
+  skills?: readonly string[];
+  trigger?: TriggerData;
+  predicate?: PredicateData;
+  description?: string;
+}
+
 export interface ResourcePreservationRuleData {
   id: string;
   resource: "spellSlot" | "hitDie" | "classResource" | "itemCharge" | "custom";
@@ -34,7 +45,7 @@ export interface ResourcePreservationRuleData {
 export interface TriggeredGrantRuleData {
   id: string;
   trigger: TriggerData;
-  grant: "heroicInspiration" | "temporaryHitPoints" | "hitPoints" | "sense" | "movement" | "custom";
+  grant: "heroicInspiration" | "temporaryHitPoints" | "hitPoints" | "setHitPoints" | "sense" | "movement" | "custom";
   value?: RuntimeValueRef;
   sense?: { type: string; range: DistanceValue };
   movement?: { type: "walk" | "climb" | "fly" | "swim" | "burrow"; distance?: DistanceValue; equalsSpeed?: boolean };
@@ -61,7 +72,9 @@ export interface CapacityRuleData {
 
 export interface MovementInteractionRuleData {
   id: string;
-  action: "ignoreExtraCost" | "moveThroughSpace" | "hideBehindCreature" | "teleport" | "speedBonus";
+  action: "ignoreExtraCost" | "moveThroughSpace" | "hideBehindCreature" | "teleport" | "speedBonus" | "move" | "forcedMove" | "setSpeed";
+  subject?: "self" | "target" | "ally" | "enemy";
+  direction?: "towardSource" | "awayFromSource" | "any";
   distance?: DistanceValue | RuntimeValueRef;
   predicate?: PredicateData;
   trigger?: TriggerData;
