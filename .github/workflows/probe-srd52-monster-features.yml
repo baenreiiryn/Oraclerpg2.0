@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - "scripts/probe-srd52-monster-features.mjs"
+      - "scripts/compare-foundry-srd52-monster-features.mjs"
       - "packages/schema/src/monster-feature.ts"
       - "packages/schema/src/monster.ts"
       - "packages/schema/src/feature.ts"
@@ -18,8 +19,14 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install YAML parser
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D 6.0.x reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Probe SRD 5.2 monster features
         run: node scripts/probe-srd52-monster-features.mjs
+      - name: Compare Foundry reusable monster feature catalog
+        run: node scripts/compare-foundry-srd52-monster-features.mjs ../foundry-dnd5e/packs/_source/monsterfeatures24
       - name: Upload monster feature probe
         if: always()
         uses: actions/upload-artifact@v4
