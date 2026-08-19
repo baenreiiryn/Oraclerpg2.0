@@ -71,7 +71,7 @@ export interface MovementInteractionRuleData {
 
 export interface DamageRuleData {
   id: string;
-  action: "ignoreResistance" | "extraDamage" | "replaceDamageType";
+  action: "ignoreResistance" | "extraDamage" | "replaceDamageType" | "reduceIncoming";
   damageTypes?: readonly DamageTypeId[];
   formula?: string;
   value?: RuntimeValueRef;
