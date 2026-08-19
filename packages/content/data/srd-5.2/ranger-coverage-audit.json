@@ -1,0 +1,43 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 8,
+  "subclassCount": 8,
+  "classFeatureCount": 174,
+  "rangerFeatures": 16,
+  "hunterFeatures": 5,
+  "progression": {
+    "favoredEnemy": [
+      [
+        1,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        9,
+        4
+      ],
+      [
+        13,
+        5
+      ],
+      [
+        17,
+        6
+      ]
+    ],
+    "prepared": [
+      [
+        1,
+        2
+      ],
+      [
+        20,
+        15
+      ]
+    ]
+  }
+}

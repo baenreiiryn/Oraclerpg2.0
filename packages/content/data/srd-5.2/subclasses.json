@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 7,
+  "count": 8,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -285,6 +285,102 @@
                   "entityType": "feature",
                   "name": "Peerless Skill",
                   "canonicalId": "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:ranger:hunter:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:ranger:hunter:srd-5.2",
+      "entityType": "subclass",
+      "name": "Hunter",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Ranger:Hunter",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Ranger",
+          "canonicalId": "dnd2024:2024:class:ranger:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Hunter's Lore",
+                  "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-lore:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Hunter's Prey",
+                  "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-prey:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Defensive Tactics",
+                  "canonicalId": "dnd2024:2024:feature:ranger:hunter:defensive-tactics:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 11,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Superior Hunter's Prey",
+                  "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-prey:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Superior Hunter's Defense",
+                  "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-defense:srd-5.2"
                 }
               }
             ]
