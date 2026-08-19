@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 7,
+  "count": 8,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -4138,6 +4138,744 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 223426
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:ranger:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:ranger:srd-5.2",
+      "entityType": "class",
+      "name": "Ranger",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Ranger",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 10,
+        "primaryAbilities": [
+          "dexterity",
+          "wisdom"
+        ],
+        "savingThrowProficiencies": [
+          "strength",
+          "dexterity"
+        ],
+        "armorTraining": [
+          "light",
+          "medium",
+          "shield"
+        ],
+        "weaponProficiencies": [
+          "simple",
+          "martial"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 3,
+          "options": [
+            "Animal Handling",
+            "Athletics",
+            "Insight",
+            "Investigation",
+            "Nature",
+            "Perception",
+            "Stealth",
+            "Survival"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Sprig of Mistletoe, Explorer's Pack, 7 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Studded Leather Armor",
+                  "canonicalId": "dnd2024:2024:item:studded-leather-armor:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Scimitar",
+                  "canonicalId": "dnd2024:2024:item:scimitar:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Shortsword",
+                  "canonicalId": "dnd2024:2024:item:shortsword:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Longbow",
+                  "canonicalId": "dnd2024:2024:item:longbow:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Arrows (20)",
+                  "canonicalId": "dnd2024:2024:item:arrows-20:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Quiver",
+                  "canonicalId": "dnd2024:2024:item:quiver:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Sprig of Mistletoe",
+                  "canonicalId": "dnd2024:2024:item:sprig-of-mistletoe:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Explorer's Pack",
+                  "canonicalId": "dnd2024:2024:item:explorer-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 7,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "150 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 150,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "half",
+          "ability": "wisdom",
+          "preparation": "prepared",
+          "progression": [
+            {
+              "1": 2
+            },
+            {
+              "1": 2
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Favored Enemy",
+                  "canonicalId": "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:ranger:spellcasting:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Weapon Mastery",
+                  "canonicalId": "dnd2024:2024:feature:ranger:weapon-mastery:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 2,
+              "favoredEnemyUses": 2,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Deft Explorer",
+                  "canonicalId": "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fighting Style",
+                  "canonicalId": "dnd2024:2024:feature:ranger:fighting-style:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 3,
+              "favoredEnemyUses": 2,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 4,
+              "favoredEnemyUses": 2,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 3
+              }
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:ranger:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 5,
+              "favoredEnemyUses": 2,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 3
+              }
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Extra Attack",
+                  "canonicalId": "dnd2024:2024:feature:ranger:extra-attack:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 6,
+              "favoredEnemyUses": 3,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            }
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Roving",
+                  "canonicalId": "dnd2024:2024:feature:ranger:roving:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 6,
+              "favoredEnemyUses": 3,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            }
+          },
+          {
+            "level": 7,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 7,
+              "favoredEnemyUses": 3,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 7,
+              "favoredEnemyUses": 3,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Expertise",
+                  "canonicalId": "dnd2024:2024:feature:ranger:expertise:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 9,
+              "favoredEnemyUses": 4,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Tireless",
+                  "canonicalId": "dnd2024:2024:feature:ranger:tireless:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 9,
+              "favoredEnemyUses": 4,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 10,
+              "favoredEnemyUses": 4,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 10,
+              "favoredEnemyUses": 4,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 13,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Relentless Hunter",
+                  "canonicalId": "dnd2024:2024:feature:ranger:relentless-hunter:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 11,
+              "favoredEnemyUses": 5,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Nature's Veil",
+                  "canonicalId": "dnd2024:2024:feature:ranger:nature-s-veil:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 11,
+              "favoredEnemyUses": 5,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 12,
+              "favoredEnemyUses": 5,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 12,
+              "favoredEnemyUses": 5,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Precise Hunter",
+                  "canonicalId": "dnd2024:2024:feature:ranger:precise-hunter:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 14,
+              "favoredEnemyUses": 6,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Feral Senses",
+                  "canonicalId": "dnd2024:2024:feature:ranger:feral-senses:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 14,
+              "favoredEnemyUses": 6,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:ranger:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 15,
+              "favoredEnemyUses": 6,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Foe Slayer",
+                  "canonicalId": "dnd2024:2024:feature:ranger:foe-slayer:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 15,
+              "favoredEnemyUses": 6,
+              "weaponMasteriesKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbrangerwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Ranger.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Ranger.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 253356
             }
           }
         ]

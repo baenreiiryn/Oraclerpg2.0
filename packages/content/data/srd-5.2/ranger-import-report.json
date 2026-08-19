@@ -1,0 +1,11 @@
+{
+  "status": "SUPPORTED",
+  "class": "Ranger",
+  "subclass": "Hunter",
+  "sourceClassFeatures": 23,
+  "canonicalClassFeatures": 16,
+  "sourceSubclassFeatures": 6,
+  "canonicalSubclassFeatures": 5,
+  "progressionRows": 20,
+  "issues": []
+}

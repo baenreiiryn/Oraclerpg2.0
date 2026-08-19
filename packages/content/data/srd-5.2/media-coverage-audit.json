@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T11:15:28.431Z",
+  "generatedAt": "2026-08-19T11:24:08.530Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 7,
-      "withMedia": 7,
-      "assets": 7,
+      "entities": 8,
+      "withMedia": 8,
+      "assets": 8,
       "byRole": {
-        "artwork": 7
+        "artwork": 8
       }
     },
     "subclasses.json": {
-      "entities": 7,
+      "entities": 8,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 153,
+      "entities": 174,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1853,
-    "withMedia": 473,
-    "assets": 666
+    "entities": 1876,
+    "withMedia": 474,
+    "assets": 667
   },
-  "coverage": 0.25526173772261196,
+  "coverage": 0.2526652452025586,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7423,6 +7423,12 @@
     },
     {
       "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:ranger:hunter:srd-5.2",
+      "name": "Hunter",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "subclasses.json",
       "canonicalId": "dnd2024:2024:subclass:cleric:life:srd-5.2",
       "name": "Life Domain",
       "entityType": "subclass"
@@ -7484,6 +7490,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2",
       "name": "Ability Score Improvement",
       "entityType": "feature"
     },
@@ -7627,6 +7639,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:defensive-tactics:srd-5.2",
+      "name": "Defensive Tactics",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:deflect-attacks:srd-5.2",
       "name": "Deflect Attacks",
       "entityType": "feature"
@@ -7635,6 +7653,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:deflect-energy:srd-5.2",
       "name": "Deflect Energy",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2",
+      "name": "Deft Explorer",
       "entityType": "feature"
     },
     {
@@ -7747,6 +7771,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "name": "Evasion",
       "entityType": "feature"
@@ -7754,6 +7784,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2",
+      "name": "Expertise",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:expertise:srd-5.2",
       "name": "Expertise",
       "entityType": "feature"
     },
@@ -7783,6 +7819,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:extra-attack:srd-5.2",
+      "name": "Extra Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
       "name": "Faithful Steed",
       "entityType": "feature"
@@ -7795,8 +7837,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2",
+      "name": "Favored Enemy",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
       "name": "Feral Instinct",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:feral-senses:srd-5.2",
+      "name": "Feral Senses",
       "entityType": "feature"
     },
     {
@@ -7813,6 +7867,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:fighting-style:srd-5.2",
+      "name": "Fighting Style",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:fleet-step:srd-5.2",
       "name": "Fleet Step",
       "entityType": "feature"
@@ -7821,6 +7881,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:flurry-of-blows:srd-5.2",
       "name": "Flurry of Blows",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:foe-slayer:srd-5.2",
+      "name": "Foe Slayer",
       "entityType": "feature"
     },
     {
@@ -7857,6 +7923,18 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2",
       "name": "Holy Nimbus",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-lore:srd-5.2",
+      "name": "Hunter's Lore",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-prey:srd-5.2",
+      "name": "Hunter's Prey",
       "entityType": "feature"
     },
     {
@@ -7993,6 +8071,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:nature-s-veil:srd-5.2",
+      "name": "Nature's Veil",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2",
       "name": "Nature's Ward",
       "entityType": "feature"
@@ -8049,6 +8133,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:potent-spellcasting:srd-5.2",
       "name": "Potent Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:precise-hunter:srd-5.2",
+      "name": "Precise Hunter",
       "entityType": "feature"
     },
     {
@@ -8113,6 +8203,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:relentless-hunter:srd-5.2",
+      "name": "Relentless Hunter",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
       "name": "Relentless Rage",
       "entityType": "feature"
@@ -8133,6 +8229,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
       "name": "Retaliation",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:roving:srd-5.2",
+      "name": "Roving",
       "entityType": "feature"
     },
     {
@@ -8197,6 +8299,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:spellcasting:srd-5.2",
+      "name": "Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "name": "Step of the Wind",
       "entityType": "feature"
@@ -8223,6 +8331,18 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:superior-defense:srd-5.2",
       "name": "Superior Defense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-defense:srd-5.2",
+      "name": "Superior Hunter's Defense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-prey:srd-5.2",
+      "name": "Superior Hunter's Prey",
       "entityType": "feature"
     },
     {
@@ -8271,6 +8391,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "name": "Three Extra Attacks",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:tireless:srd-5.2",
+      "name": "Tireless",
       "entityType": "feature"
     },
     {
@@ -8330,6 +8456,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:ranger:weapon-mastery:srd-5.2",
       "name": "Weapon Mastery",
       "entityType": "feature"
     },

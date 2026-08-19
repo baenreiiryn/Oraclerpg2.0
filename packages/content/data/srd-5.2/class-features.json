@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 153,
+  "count": 174,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -358,6 +358,60 @@
         "text": {
           "rules": [
             "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Ability Score Improvement:4",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16."
           ]
         },
         "grants": [
@@ -2287,6 +2341,97 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:hunter:defensive-tactics:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:defensive-tactics:srd-5.2",
+      "entityType": "feature",
+      "name": "Defensive Tactics",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Ranger:Hunter:Defensive Tactics:7",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "ranger-hunter",
+        "text": {
+          "rules": [
+            "You gain one of the following feature options of your choice. Whenever you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, you can replace the chosen option with the other one.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Escape the Horde",
+                  "entries": [
+                    "{@action Opportunity Attack|XPHB|Opportunity Attacks} have {@variantrule Disadvantage|XPHB} against you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Multiattack Defense",
+                  "entries": [
+                    "When a creature hits you with an attack roll, that creature has {@variantrule Disadvantage|XPHB} on all other attack rolls against you this turn."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "hunter-defensive-tactic",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Escape the Horde or Multiattack Defense."
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Short or Long Rest"
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "The other Defensive Tactics option."
+                }
+              }
+            }
+          ]
+        },
+        "properties": [
+          "option:Escape the Horde:opportunity-attacks-disadvantage",
+          "option:Multiattack Defense:subsequent-attacks-disadvantage"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:deflect-attacks:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:deflect-attacks:srd-5.2",
       "entityType": "feature",
@@ -2408,6 +2553,92 @@
         },
         "properties": [
           "deflect-attacks:all-damage-types"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2",
+      "entityType": "feature",
+      "name": "Deft Explorer",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Deft Explorer:2",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Thanks to your travels, you gain the following benefits.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Expertise",
+                  "entries": [
+                    "Choose one of your skill proficiencies with which you lack {@variantrule Expertise|XPHB}. You gain {@variantrule Expertise|XPHB} in that skill."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Languages",
+                  "entries": [
+                    "You know two languages of your choice from the language tables in {@book chapter 2|XPHB|2|Choose Languages}."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "proficiency",
+            "value": {
+              "kind": "expertise",
+              "choice": {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "skill"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "proficient",
+                      "operator": "eq",
+                      "value": true
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "type": "language",
+            "value": {
+              "choice": {
+                "kind": "enum",
+                "count": 2,
+                "options": []
+              }
+            }
+          }
         ]
       }
     },
@@ -3435,6 +3666,68 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Epic Boon:19",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Dimensional Travel|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Dimensional Travel"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "entityType": "feature",
@@ -3541,6 +3834,68 @@
         ],
         "properties": [
           "expertise-repeat:level-9"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:expertise:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:expertise:srd-5.2",
+      "entityType": "feature",
+      "name": "Expertise",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Expertise:9",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Choose two of your skill proficiencies with which you lack {@variantrule Expertise|XPHB}. You gain {@variantrule Expertise|XPHB} in those skills."
+          ]
+        },
+        "grants": [
+          {
+            "type": "proficiency",
+            "value": {
+              "kind": "expertise",
+              "choice": {
+                "kind": "tagQuery",
+                "count": 2,
+                "entityTypes": [
+                  "skill"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "proficient",
+                      "operator": "eq",
+                      "value": true
+                    },
+                    {
+                      "field": "expertise",
+                      "operator": "neq",
+                      "value": true
+                    }
+                  ]
+                }
+              }
+            }
+          }
         ]
       }
     },
@@ -3702,6 +4057,42 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:extra-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:extra-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Extra Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Extra Attack:5",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You can attack twice instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "properties": [
+          "attack-action-count:2"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
       "entityType": "feature",
@@ -3809,6 +4200,61 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2",
+      "entityType": "feature",
+      "name": "Favored Enemy",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Favored Enemy:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You always have the {@spell Hunter's Mark|XPHB} spell prepared. You can cast it twice without expending a spell slot, and you regain all expended uses of this ability when you finish a {@variantrule Long Rest|XPHB}.",
+            "The number of times you can cast the spell without a spell slot increases when you reach certain Ranger levels, as shown in the Favored Enemy column of the Ranger Features table."
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Favored Enemy",
+            "ability": "wisdom",
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Hunter's Mark",
+                  "canonicalId": "dnd2024:2024:spell:hunter-s-mark:srd-5.2"
+                },
+                "freeUses": {
+                  "type": "runtime",
+                  "path": "class.ranger.favoredEnemyUses"
+                },
+                "recovery": "longRest"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2",
       "entityType": "feature",
@@ -3845,6 +4291,42 @@
             "target": "initiative",
             "operation": "advantage"
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:feral-senses:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:feral-senses:srd-5.2",
+      "entityType": "feature",
+      "name": "Feral Senses",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Feral Senses:18",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Your connection to the forces of nature grants you {@sense Blindsight|XPHB} with a range of 30 feet."
+          ]
+        },
+        "properties": [
+          "blindsight:30-ft"
         ]
       }
     },
@@ -4019,6 +4501,93 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:fighting-style:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:fighting-style:srd-5.2",
+      "entityType": "feature",
+      "name": "Fighting Style",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Fighting Style:2",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You gain a {@filter Fighting Style feat|feats|category=FS} of your choice. Instead of choosing one of those feats, you can choose the option below.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "refFeat",
+                  "feat": "Druidic Warrior|XPHB"
+                }
+              ]
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "fightingStyle"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "spellGrantChoices": [
+          {
+            "id": "ranger-druidic-warrior",
+            "count": 1,
+            "options": [
+              {
+                "name": "Druidic Warrior",
+                "ability": "wisdom",
+                "selections": [
+                  {
+                    "mode": "known",
+                    "query": "Choose two Druid cantrips; they count as Ranger spells.",
+                    "count": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:fleet-step:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:fleet-step:srd-5.2",
       "entityType": "feature",
@@ -4085,6 +4654,54 @@
             "You can expend 1 Focus Point to make two Unarmed Strikes as a {@variantrule Bonus Action|XPHB}."
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:foe-slayer:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:foe-slayer:srd-5.2",
+      "entityType": "feature",
+      "name": "Foe Slayer",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Foe Slayer:20",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "The damage die of your Hunter's Mark is a {@damage d10} rather than a {@damage d6}."
+          ]
+        },
+        "patches": [
+          {
+            "targetId": "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2",
+            "changes": [
+              {
+                "path": "huntersMark.damageDie",
+                "operation": "set",
+                "value": "d10"
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "hunters-mark-damage-die:d10"
+        ]
       }
     },
     {
@@ -4493,6 +5110,133 @@
         "properties": [
           "aura-bright-light:sunlight",
           "restore-use-cost:level-5-spell-slot"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:hunter:hunter-s-lore:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-lore:srd-5.2",
+      "entityType": "feature",
+      "name": "Hunter's Lore",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Ranger:Hunter:Hunter's Lore:3",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "ranger-hunter",
+        "text": {
+          "rules": [
+            "You can call on the forces of nature to reveal certain strengths and weaknesses of your prey. While a creature is marked by your Hunter's Mark, you know whether that creature has any Immunities, Resistances, or Vulnerabilities, and if the creature has any, you know what they are."
+          ]
+        },
+        "properties": [
+          "reveal-marked-target:immunities,resistances,vulnerabilities"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:hunter:hunter-s-prey:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:hunter-s-prey:srd-5.2",
+      "entityType": "feature",
+      "name": "Hunter's Prey",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Ranger:Hunter:Hunter's Prey:3",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "ranger-hunter",
+        "text": {
+          "rules": [
+            "You gain one of the following feature options of your choice. Whenever you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}, you can replace the chosen option with the other one.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Colossus Slayer",
+                  "entries": [
+                    "Your tenacity can wear down even the most resilient foes. When you hit a creature with a weapon, the weapon deals an extra {@damage 1d8} damage to the target if it's missing any of its {@variantrule Hit Points|XPHB}. You can deal this extra damage only once per turn."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Horde Breaker",
+                  "entries": [
+                    "Once on each of your turns when you make an attack with a weapon, you can make another attack with the same weapon against a different creature that is within 5 feet of the original target, that is within the weapon's range, and that you haven't attacked this turn."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "hunter-prey-option",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Colossus Slayer or Horde Breaker."
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Short or Long Rest"
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "The other Hunter’s Prey option."
+                }
+              }
+            }
+          ]
+        },
+        "properties": [
+          "option:Colossus Slayer:once-per-turn:+1d8-if-target-missing-hp",
+          "option:Horde Breaker:extra-attack-different-adjacent-target"
         ]
       }
     },
@@ -6325,6 +7069,77 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:nature-s-veil:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:nature-s-veil:srd-5.2",
+      "entityType": "feature",
+      "name": "Nature's Veil",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Nature's Veil:14",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You invoke spirits of nature to magically hide yourself. As a {@variantrule Bonus Action|XPHB}, you can give yourself the {@condition Invisible|XPHB} condition until the end of your next turn.",
+            "You can use this feature a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "natures-veil",
+            "name": "Nature's Veil",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "runtime",
+                "path": "abilities.wis.mod|min1"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "conditions": [
+              {
+                "condition": "invisible",
+                "duration": {
+                  "type": "untilTrigger",
+                  "endTrigger": {
+                    "event": "onTurnEnd",
+                    "description": "End of your next turn"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2",
       "entityType": "feature",
@@ -7043,6 +7858,51 @@
             "predicate": {
               "type": "custom",
               "description": "Only damage rolls of Druid cantrips."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:precise-hunter:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:precise-hunter:srd-5.2",
+      "entityType": "feature",
+      "name": "Precise Hunter",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Precise Hunter:17",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You have {@variantrule Advantage|XPHB} on attack rolls against the creature currently marked by your Hunter's Mark."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "attackRoll"
+            },
+            "mode": "advantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Target is currently marked by your Hunter's Mark."
             }
           }
         ]
@@ -7915,6 +8775,51 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:relentless-hunter:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:relentless-hunter:srd-5.2",
+      "entityType": "feature",
+      "name": "Relentless Hunter",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Relentless Hunter:13",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Taking damage can't break your {@status Concentration|XPHB} on Hunter's Mark."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "concentration"
+            },
+            "mode": "prevent",
+            "predicate": {
+              "type": "custom",
+              "description": "Damage cannot break concentration on Hunter's Mark."
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
       "entityType": "feature",
@@ -8205,6 +9110,60 @@
             },
             "description": "Make one melee attack using a weapon or an Unarmed Strike against the triggering creature."
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:roving:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:roving:srd-5.2",
+      "entityType": "feature",
+      "name": "Roving",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Roving:6",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Your {@variantrule Speed|XPHB} increases by 10 feet while you aren't wearing Heavy armor. You also have a {@variantrule Climb Speed|XPHB} and a {@variantrule Swim Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "movement",
+              "movementType": "walk"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 10
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Not wearing Heavy armor."
+            }
+          }
+        ],
+        "properties": [
+          "climb-speed-equals-speed",
+          "swim-speed-equals-speed"
         ]
       }
     },
@@ -9702,6 +10661,233 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:ranger:spellcasting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:spellcasting:srd-5.2",
+      "entityType": "feature",
+      "name": "Spellcasting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Spellcasting:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "You have learned to channel the magical essence of nature to cast spells. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Ranger spells, which appear in the {@filter Ranger spell list|spells|class=Ranger} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Ranger Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two {@filter level 1 Ranger spells|spells|class=Ranger|level=1}. {@spell Cure Wounds|XPHB} and {@spell Ensnaring Strike|XPHB} are recommended.",
+                    "The number of spells on your list increases as you gain Ranger levels, as shown in the Prepared Spells column of the Ranger Features table. Whenever that number increases, choose additional Ranger spells until the number of spells on your list matches the number in the Ranger Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 5 Ranger, your list of prepared spells can include six Ranger spells of level 1 or 2 in any combination.",
+                    "If another Ranger feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Ranger spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you finish a {@variantrule Long Rest|XPHB}, you can replace one spell on your list with another Ranger spell for which you have spell slots."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Wisdom is your spellcasting ability for your Ranger spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use a {@item Druidic Focus|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Ranger spells."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classMechanics": {
+          "spellCollections": [
+            {
+              "id": "ranger-prepared-spells",
+              "kind": "prepared",
+              "sourceList": "Ranger",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.ranger.preparedSpells"
+              },
+              "filter": {
+                "lists": [
+                  "Ranger"
+                ]
+              },
+              "replace": {
+                "timing": "longRest",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "ranger-prepared-spells",
+                "filter": {
+                  "lists": [
+                    "Ranger"
+                  ]
+                }
+              }
+            }
+          ],
+          "spellSlotPools": [
+            {
+              "id": "ranger-spell-slots",
+              "kind": "standard",
+              "progression": {
+                "1": {
+                  "1": 2
+                },
+                "2": {
+                  "1": 2
+                },
+                "3": {
+                  "1": 3
+                },
+                "4": {
+                  "1": 3
+                },
+                "5": {
+                  "1": 4,
+                  "2": 2
+                },
+                "6": {
+                  "1": 4,
+                  "2": 2
+                },
+                "7": {
+                  "1": 4,
+                  "2": 3
+                },
+                "8": {
+                  "1": 4,
+                  "2": 3
+                },
+                "9": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "10": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "11": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "12": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "13": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "14": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "15": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "16": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "17": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "18": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "19": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                },
+                "20": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                }
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "spellcasting-ability:wisdom",
+          "spellcasting-focus:druidic-focus"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "entityType": "feature",
@@ -9987,6 +11173,103 @@
         "properties": [
           "focus-cost:3",
           "resistance:all-except-force"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-defense:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-defense:srd-5.2",
+      "entityType": "feature",
+      "name": "Superior Hunter's Defense",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Ranger:Hunter:Superior Hunter's Defense:15",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "ranger-hunter",
+        "text": {
+          "rules": [
+            "When you take damage, you can take a {@variantrule Reaction|XPHB} to give yourself {@variantrule Resistance|XPHB} to that damage and any other damage of the same type until the end of the current turn."
+          ]
+        },
+        "activities": [
+          {
+            "id": "superior-hunters-defense",
+            "name": "Superior Hunter's Defense",
+            "kind": "utility",
+            "activation": {
+              "type": "reaction",
+              "trigger": {
+                "event": "onDamageTaken"
+              }
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Gain resistance to the triggering damage and other damage of the same type until end of current turn."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-prey:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-prey:srd-5.2",
+      "entityType": "feature",
+      "name": "Superior Hunter's Prey",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Ranger:Hunter:Superior Hunter's Prey:11",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "ranger-hunter",
+        "text": {
+          "rules": [
+            "Once per turn when you deal damage to a creature marked by your Hunter's Mark, you can also deal that spell's extra damage to a different creature that you can see within 30 feet of the first creature."
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "superior-hunters-prey",
+            "action": "extraDamage",
+            "trigger": {
+              "event": "onDamage",
+              "oncePerTurn": true
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Damage a creature marked by Hunter's Mark; apply Hunter's Mark extra damage to another creature within 30 feet."
+            }
+          }
         ]
       }
     },
@@ -10499,6 +11782,99 @@
         },
         "properties": [
           "attack-action-count:4"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:tireless:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:tireless:srd-5.2",
+      "entityType": "feature",
+      "name": "Tireless",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Tireless:10",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Primal forces now help fuel you on your journeys, granting you the following benefits.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Temporary Hit Points",
+                  "entries": [
+                    "As a {@action Magic|XPHB} action, you can give yourself a number of {@variantrule Temporary Hit Points|XPHB} equal to {@dice 1d8} plus your Wisdom modifier (minimum of 1). You can use this action a number of times equal to your Wisdom modifier (minimum of once), and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Decrease Exhaustion",
+                  "entries": [
+                    "Whenever you finish a {@variantrule Short Rest|XPHB}, your {@condition Exhaustion|XPHB} level, if any, decreases by 1."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "activities": [
+          {
+            "id": "tireless-thp",
+            "name": "Tireless — Temporary Hit Points",
+            "kind": "healing",
+            "activation": {
+              "type": "action"
+            },
+            "target": {
+              "type": "self"
+            },
+            "healing": [
+              {
+                "formula": "1d8 + max(1, @abilities.wis.mod)",
+                "type": "temporary"
+              }
+            ],
+            "uses": {
+              "max": {
+                "type": "runtime",
+                "path": "abilities.wis.mod|min1"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "effects": [
+          {
+            "id": "tireless-exhaustion",
+            "trigger": {
+              "event": "onRest",
+              "description": "Short Rest"
+            },
+            "description": "Decrease Exhaustion level by 1 after a Short Rest."
+          }
         ]
       }
     },
@@ -11185,6 +12561,75 @@
                 "filter": {
                   "type": "custom",
                   "description": "Eligible proficient weapons with mastery properties."
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:ranger:weapon-mastery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:ranger:weapon-mastery:srd-5.2",
+      "entityType": "feature",
+      "name": "Weapon Mastery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Ranger:Weapon Mastery:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "ranger",
+        "text": {
+          "rules": [
+            "Your training with weapons allows you to use the {@variantrule weapon mastery properties|XPHB|mastery properties} of two kinds of {@filter weapons|items|type=simple weapon;martial weapon} of your choice with which you have proficiency, such as {@item Longbow|XPHB|Longbows} and {@item Shortsword|XPHB|Shortswords}.",
+            "Whenever you finish a {@variantrule Long Rest|XPHB}, you can change the kinds of weapons you chose. For example, you could switch to using the {@variantrule weapon mastery properties|XPHB|mastery properties} of {@item Scimitar|XPHB|Scimitars} and {@item Longsword|XPHB|Longswords}."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "ranger-weapon-masteries",
+              "entityTypes": [
+                "item"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 2
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Proficient weapon with a mastery property."
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Long Rest"
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 2
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "Eligible proficient weapons."
                 }
               }
             }
