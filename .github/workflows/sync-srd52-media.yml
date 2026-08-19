@@ -15,6 +15,32 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+      - name: Install spell comparison dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D 6.0.x reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Regenerate SRD 5.2 spells
+        run: |
+          node scripts/probe-srd52-spell-fields.mjs
+          node scripts/probe-srd52-spell-foundry.mjs
+          node scripts/import-srd52-spells.mjs
+          node scripts/normalize-srd52-spell-source-meta.mjs
+          node scripts/enrich-srd52-spells.mjs
+          node scripts/complete-srd52-spell-enrichment.mjs || true
+          node scripts/resolve-srd52-spell-semantic-leftovers.mjs
+          node scripts/reconcile-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+          node scripts/normalize-srd52-spell-formulas.mjs
+          node scripts/apply-srd52-spell-regressions.mjs
+          node scripts/audit-srd52-spells.mjs
+          node scripts/verify-srd52-spell-regressions.mjs
+          node scripts/compare-foundry-srd52-spells.mjs ../foundry-dnd5e/packs/_source/spells24
+      - name: Regenerate SRD 5.2 species and feats
+        run: |
+          node scripts/sync-srd52-species-feats.mjs
+          node scripts/normalize-srd52-species-feats.mjs
+          node scripts/enrich-srd52-species-feats.mjs
+          node scripts/finalize-srd52-species-feats.mjs
+          node scripts/postprocess-srd52-species-feats.mjs
       - name: Resolve 5etools media assets
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -24,15 +50,30 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const root='packages/content/data/srd-5.2';
+          const required={
+            'items.json':550,
+            'spells.json':340,
+            'monsters.json':331,
+            'monster-features.json':405,
+            'species.json':9,
+            'species-features.json':34,
+            'feats.json':17,
+          };
           const audit=JSON.parse(fs.readFileSync(`${root}/media-coverage-audit.json`,'utf8'));
-          if(!audit.totals.entities) throw new Error('No entities were audited');
+          for(const [file,count] of Object.entries(required)){
+            if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
+            if(audit.collections[file].entities!==count) throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);
+          }
           if(!audit.totals.withMedia) throw new Error('No upstream media assets were resolved');
           for(const [file,stats] of Object.entries(audit.collections)){
             const doc=JSON.parse(fs.readFileSync(`${root}/${file}`,'utf8'));
             for(const entity of doc.items??[]){
               if(!entity.media) continue;
               if(!Array.isArray(entity.media.assets)||!entity.media.assets.length) throw new Error(`${entity.name}: empty media assets`);
+              const ids=new Set();
               for(const asset of entity.media.assets){
+                if(ids.has(asset.id)) throw new Error(`${entity.name}: duplicate media id ${asset.id}`);
+                ids.add(asset.id);
                 if(!['icon','portrait','token','artwork','thumbnail'].includes(asset.role)) throw new Error(`${entity.name}: invalid role ${asset.role}`);
                 if(asset.provider!=='5etools-img') throw new Error(`${entity.name}: unexpected provider`);
                 if(!asset.sourceUrl.startsWith('https://raw.githubusercontent.com/')) throw new Error(`${entity.name}: invalid source URL`);
