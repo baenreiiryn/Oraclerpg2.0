@@ -1,0 +1,58 @@
+name: SRD 5.2 Ranger
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/import-srd52-ranger.mjs'
+      - 'scripts/audit-srd52-ranger.mjs'
+      - 'packages/content/data/srd-5.2/classes.json'
+      - 'packages/content/data/srd-5.2/subclasses.json'
+      - 'packages/content/data/srd-5.2/class-features.json'
+      - '.github/workflows/srd52-ranger.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  ranger:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Import Ranger from 5etools SRD 5.2
+        run: node scripts/import-srd52-ranger.mjs
+      - name: Audit Ranger and Hunter
+        run: node scripts/audit-srd52-ranger.mjs
+      - name: Resolve class media
+        env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          node scripts/sync-srd52-media.mjs
+          node scripts/finalize-srd52-media.mjs
+      - name: Verify Ranger outputs
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),r='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${r}/${f}`));
+          const a=read('ranger-coverage-audit.json'); if(a.status!=='SUPPORTED'||a.issues.length)throw Error(JSON.stringify(a));
+          const c=read('classes.json'),s=read('subclasses.json'); if(!c.items.find(x=>x.name==='Ranger')||!s.items.find(x=>x.name==='Hunter'&&x.data?.parentClass?.name==='Ranger'))throw Error('Ranger/Hunter absent');
+          console.log(a);
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-ranger
+          path: |
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/class-features.json
+            packages/content/data/srd-5.2/ranger-import-report.json
+            packages/content/data/srd-5.2/ranger-coverage-audit.json
+            packages/content/data/srd-5.2/media-coverage-audit.json
+      - name: Persist Ranger compendium on PR branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-ranger'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/ranger-import-report.json packages/content/data/srd-5.2/ranger-coverage-audit.json packages/content/data/srd-5.2/media-coverage-audit.json
+          if ! git diff --cached --quiet; then git commit -m 'Persist SRD 5.2 Ranger compendium [skip ci]' && git push origin HEAD:${{ github.head_ref }}; fi
