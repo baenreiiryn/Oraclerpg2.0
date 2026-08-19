@@ -42,6 +42,14 @@ export interface SpellGrantGroupData {
   selections: readonly SpellGrantSelectionData[];
 }
 
+export interface SpellGrantChoiceData {
+  id: string;
+  count?: number;
+  options: readonly SpellGrantGroupData[];
+  distinctAcrossRepeats?: boolean;
+  sharedSelectionKey?: string;
+}
+
 export interface SpeciesFeatureTemplateParameterData {
   id: string;
   kind: "number" | "string" | "boolean" | "damageType" | "distance" | "ability" | "entityRef";
@@ -101,8 +109,10 @@ export interface FeatureData {
   repeatable?: boolean;
   prerequisiteMode?: "all" | "any";
   prerequisites?: readonly PrerequisiteData[];
+  abilityScoreOptionMode?: "all" | "chooseOne";
   abilityScoreOptions?: readonly AbilityScoreOptionData[];
   spellGrants?: readonly SpellGrantGroupData[];
+  spellGrantChoices?: readonly SpellGrantChoiceData[];
   proficiencyChoices?: readonly ChoiceRef[];
   activities?: readonly ActivityData[];
   grants?: readonly GrantData[];
