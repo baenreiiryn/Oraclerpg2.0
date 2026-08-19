@@ -106,6 +106,22 @@ export interface MonsterFeatureMaterializationResult {
   unboundParameters: readonly string[];
 }
 
+export interface MonsterFeatureValidationIssue {
+  path: string;
+  code: "required" | "duplicate" | "binding" | "parameter" | "type";
+  message: string;
+}
+
+const MONSTER_FEATURE_FAMILIES: readonly MonsterFeatureFamily[] = [
+  "naturalAttack", "breathWeapon", "multiattack", "trait", "movementTrait", "aura",
+  "spellcasting", "reaction", "legendaryAction", "lairAction", "special"
+];
+
+const MONSTER_FEATURE_PARAMETER_KINDS: readonly MonsterFeatureParameterKind[] = [
+  "damageType", "damageFormula", "areaShape", "distance", "ability", "saveAbility", "saveDc",
+  "attackBonus", "condition", "recharge", "number", "boolean", "string", "entityRef"
+];
+
 function cloneJson<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
@@ -133,6 +149,46 @@ function setPath(target: Record<string, unknown>, path: string, value: JsonValue
   else (cursor as Record<string, unknown>)[last] = nextValue;
 }
 
+export function validateMonsterFeatureDefinition(definition: MonsterFeatureDefinitionData): MonsterFeatureValidationIssue[] {
+  const issues: MonsterFeatureValidationIssue[] = [];
+  if (definition.featureKind !== "monsterFeature") {
+    issues.push({ path: "featureKind", code: "type", message: "Monster feature definitions must use featureKind=monsterFeature" });
+  }
+  if (!MONSTER_FEATURE_FAMILIES.includes(definition.monsterTemplate.family)) {
+    issues.push({ path: "monsterTemplate.family", code: "type", message: "Unknown monster feature family" });
+  }
+  const parameters = definition.monsterTemplate.parameters ?? [];
+  const parameterIds = new Set<string>();
+  parameters.forEach((parameter, index) => {
+    if (!parameter.id.trim()) issues.push({ path: `monsterTemplate.parameters[${index}].id`, code: "required", message: "Parameter id is required" });
+    if (parameterIds.has(parameter.id)) issues.push({ path: `monsterTemplate.parameters[${index}].id`, code: "duplicate", message: `Duplicate parameter id: ${parameter.id}` });
+    parameterIds.add(parameter.id);
+    if (!MONSTER_FEATURE_PARAMETER_KINDS.includes(parameter.kind)) {
+      issues.push({ path: `monsterTemplate.parameters[${index}].kind`, code: "parameter", message: `Unknown parameter kind: ${parameter.kind}` });
+    }
+  });
+  (definition.monsterTemplate.bindings ?? []).forEach((binding, index) => {
+    if (!parameterIds.has(binding.parameterId)) {
+      issues.push({ path: `monsterTemplate.bindings[${index}].parameterId`, code: "binding", message: `Binding references unknown parameter: ${binding.parameterId}` });
+    }
+    if (!binding.path.trim()) issues.push({ path: `monsterTemplate.bindings[${index}].path`, code: "required", message: "Binding path is required" });
+  });
+  return issues;
+}
+
+export function validateMonsterFeatureInstance(instance: MonsterFeatureInstanceData): MonsterFeatureValidationIssue[] {
+  const issues: MonsterFeatureValidationIssue[] = [];
+  if (!instance.id.trim()) issues.push({ path: "id", code: "required", message: "Instance id is required" });
+  if (!instance.name.trim()) issues.push({ path: "name", code: "required", message: "Instance name is required" });
+  if (!instance.provenance.definition?.canonicalId?.trim()) {
+    issues.push({ path: "provenance.definition.canonicalId", code: "required", message: "Feature instance must retain its compendium definition reference" });
+  }
+  if (instance.data.featureKind !== "monsterFeature") {
+    issues.push({ path: "data.featureKind", code: "type", message: "Monster feature instance snapshot must remain a monsterFeature" });
+  }
+  return issues;
+}
+
 /**
  * Creates an actor-owned snapshot from a compendium template. The definition object is never mutated.
  */
@@ -143,6 +199,9 @@ export function materializeMonsterFeature(
   parameterValues: Readonly<Record<string, JsonValue>> = {},
   definitionRevision?: string
 ): MonsterFeatureMaterializationResult {
+  const definitionIssues = validateMonsterFeatureDefinition(definition);
+  if (definitionIssues.length) throw new Error(`Invalid monster feature definition: ${JSON.stringify(definitionIssues)}`);
+
   const data = cloneJson<FeatureData>(definition);
   const values: Record<string, JsonValue> = {};
   const unboundParameters: string[] = [];
@@ -152,6 +211,9 @@ export function materializeMonsterFeature(
     if (value === undefined) {
       if (parameter.required) unboundParameters.push(parameter.id);
       continue;
+    }
+    if (parameter.allowedValues && !parameter.allowedValues.some((allowed) => JSON.stringify(allowed) === JSON.stringify(value))) {
+      throw new Error(`Invalid value for monster feature parameter ${parameter.id}`);
     }
     values[parameter.id] = value;
   }
