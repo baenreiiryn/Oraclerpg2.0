@@ -9,6 +9,7 @@ const read=async f=>JSON.parse(await fs.readFile(`${ROOT}/${f}`,'utf8'));
 const [classes,subs,features]=await Promise.all(['classes.json','subclasses.json','class-features.json'].map(read));
 const issues=[];
 const req=(ok,msg)=>{if(!ok) issues.push(msg)};
+const advancements=v=>Array.isArray(v)?v:Object.values(v??{});
 
 const ranger=classes.items.find(x=>x.name==='Ranger');
 const hunter=subs.items.find(x=>x.name==='Hunter'&&x.data?.parentClass?.name==='Ranger');
@@ -39,7 +40,7 @@ for(const d of docs){
 for(const d of sdocs) req(hunterNames.has(d.name),`Foundry Hunter feature not represented: ${d.name}`);
 
 const os=l=>ranger?.data?.advancement?.find(x=>x.level===l)?.scaleValues??{};
-const scales=(classYaml?.system?.advancement??[]).filter(x=>x.type==='ScaleValue');
+const scales=advancements(classYaml?.system?.advancement).filter(x=>x.type==='ScaleValue');
 const byTitle=new Map(scales.map(x=>[x.title,x.configuration?.scale??{}]));
 const favored=byTitle.get('Favored Enemy')??{};
 for(const [l,v] of [[1,2],[5,3],[9,4],[13,5],[17,6]]) req(favored[String(l)]?.value===v&&os(l).favoredEnemyUses===v,`Favored Enemy mismatch at level ${l}`);
@@ -65,7 +66,7 @@ req(hget("Hunter's Prey")?.data?.classRules?.entityCollections?.length,'Oracle H
 req(hget('Defensive Tactics')?.data?.classRules?.entityCollections?.length,'Oracle Defensive Tactics choice/replace structure missing');
 req(!!hget("Hunter's Lore")&&!!hget("Superior Hunter's Prey")&&!!hget("Superior Hunter's Defense"),'Oracle Hunter progression features missing');
 
-const foundrySubclassLevels=(hunterYaml?.system?.advancement??[]).filter(x=>x.type==='ItemGrant').map(x=>x.level).sort((a,b)=>a-b);
+const foundrySubclassLevels=advancements(hunterYaml?.system?.advancement).filter(x=>x.type==='ItemGrant').map(x=>x.level).sort((a,b)=>a-b);
 req(JSON.stringify(foundrySubclassLevels)==='[3,7,11,15]','Foundry Hunter advancement levels differ');
 const oracleSubclassLevels=(hunter?.data?.advancement??[]).filter(x=>x.features?.length).map(x=>x.level).sort((a,b)=>a-b);
 req(JSON.stringify(oracleSubclassLevels)==='[3,7,11,15]','Oracle Hunter advancement levels differ');
