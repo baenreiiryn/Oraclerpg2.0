@@ -24,6 +24,8 @@ jobs:
         run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Import Fighter from 5etools SRD 5.2
         run: node scripts/import-srd52-fighter.mjs
+      - name: Normalize Fighter references
+        run: node scripts/patch-srd52-fighter.mjs
       - name: Audit Fighter and Champion
         run: node scripts/audit-srd52-fighter.mjs
       - name: Compare 5etools to Oracle
