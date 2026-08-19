@@ -60,14 +60,12 @@ jobs:
             packages/content/data/srd-5.2/cleric-foundry-comparison.json
             packages/content/data/srd-5.2/media-coverage-audit.json
       - name: Persist Cleric compendium on PR branch
-        if: github.event_name == 'pull_request'
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-cleric'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/cleric-import-report.json packages/content/data/srd-5.2/cleric-coverage-audit.json packages/content/data/srd-5.2/cleric-5etools-comparison.json packages/content/data/srd-5.2/cleric-foundry-comparison.json
           if ! git diff --cached --quiet; then
             git commit -m 'Persist SRD 5.2 Cleric compendium [skip ci]'
-            git fetch origin ${{ github.head_ref }}
-            git rebase origin/${{ github.head_ref }}
             git push origin HEAD:${{ github.head_ref }}
           fi
