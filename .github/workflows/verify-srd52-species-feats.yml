@@ -1,0 +1,32 @@
+name: Verify SRD 5.2 Species and Feats
+
+on:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate species and feats
+        run: node scripts/sync-srd52-species-feats.mjs
+      - name: Basic coverage assertions
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');
+          const a=JSON.parse(fs.readFileSync('packages/content/data/srd-5.2/species-feats-coverage-audit.json','utf8'));
+          if(a.speciesCount!==9) throw new Error(`Expected 9 species, got ${a.speciesCount}`);
+          if(a.featCount!==17) throw new Error(`Expected 17 feats, got ${a.featCount}`);
+          if(!a.allSpeciesHaveFeatures||!a.allFeatsCategorized) throw new Error('Coverage assertions failed');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-species-feats-generated
+          path: |
+            packages/content/data/srd-5.2/species.json
+            packages/content/data/srd-5.2/species-features.json
+            packages/content/data/srd-5.2/feats.json
+            packages/content/data/srd-5.2/species-feats-coverage-audit.json
