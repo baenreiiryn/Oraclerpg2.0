@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 202,
+  "count": 260,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -492,6 +492,120 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Ability Score Improvement:4",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Sorcerer levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Ability Score Improvement:4",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Warlock levels 8, 12, and 16."
+          ],
+          "level": 4
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
       "entityType": "feature",
@@ -808,6 +922,167 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:agonizing-blast:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:agonizing-blast:srd-5.2",
+      "entityType": "feature",
+      "name": "Agonizing Blast",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Agonizing Blast",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|damage type=acid;bludgeoning;cold;fire;force;lightning;necrotic;piercing;poison;psychic;radiant;slashing;thunder} that deals damage. You can add your Charisma modifier to that spell's damage rolls.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock",
+                  "entry": "a Warlock Cantrip That Deals Damage",
+                  "entrySummary": "Warlock Cantrip That Deals Damage"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|damage type=acid;bludgeoning;cold;fire;force;lightning;necrotic;piercing;poison;psychic;radiant;slashing;thunder} that deals damage. You can add your Charisma modifier to that spell's damage rolls.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ],
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock",
+                  "entry": "a Warlock Cantrip That Deals Damage",
+                  "entrySummary": "Warlock Cantrip That Deals Damage"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2",
+      "entityType": "feature",
+      "name": "Arcane Apotheosis",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Arcane Apotheosis:20",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "While your Innate Sorcery feature is active, you can use one Metamagic option on each of your turns without spending Sorcery Points on it."
+          ]
+        },
+        "classRules": {
+          "resourceDiscounts": [
+            {
+              "resourceId": "sorcery-points",
+              "amount": "metamagic-cost",
+              "minimum": 0,
+              "usage": {
+                "uses": 1,
+                "period": "turn"
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Innate Sorcery is active; apply to one Metamagic option on your turn."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "innate-sorcery:one-metamagic-free-per-turn"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:archdruid:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:archdruid:srd-5.2",
       "entityType": "feature",
@@ -910,6 +1185,156 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:armor-of-shadows:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:armor-of-shadows:srd-5.2",
+      "entityType": "feature",
+      "name": "Armor of Shadows",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Armor of Shadows",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Mage Armor|XPHB} on yourself without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": []
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "mage armor|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Mage Armor|XPHB} on yourself without expending a spell slot."
+          ],
+          "prerequisite": null,
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "mage armor|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:ascendant-step:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:ascendant-step:srd-5.2",
+      "entityType": "feature",
+      "name": "Ascendant Step",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Ascendant Step",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Levitate|XPHB} on yourself without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "levitate|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Levitate|XPHB} on yourself without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "levitate|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
       }
     },
     {
@@ -1764,6 +2189,57 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:careful-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:careful-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Careful Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Careful Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that forces other creatures to make a saving throw, you can protect some of those creatures from the spell's full force. To do so, spend 1 Sorcery Point and choose a number of those creatures up to your Charisma modifier (minimum of one creature). A chosen creature automatically succeeds on its saving throw against the spell, and it takes no damage if it would normally take half damage on a successful save."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
       "entityType": "feature",
@@ -2156,6 +2632,76 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:contact-patron:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:contact-patron:srd-5.2",
+      "entityType": "feature",
+      "name": "Contact Patron",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Contact Patron:9",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "In the past, you usually contacted your patron through intermediaries. Now you can communicate directly; you always have the {@spell Contact Other Plane|XPHB} spell prepared. With this feature, you can cast the spell without expending a spell slot to contact your patron, and you automatically succeed on the spell's saving throw.",
+            "Once you cast the spell with this feature, you can't do so in this way again until you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "In the past, you usually contacted your patron through intermediaries. Now you can communicate directly; you always have the {@spell Contact Other Plane|XPHB} spell prepared. With this feature, you can cast the spell without expending a spell slot to contact your patron, and you automatically succeed on the spell's saving throw.",
+            "Once you cast the spell with this feature, you can't do so in this way again until you finish a {@variantrule Long Rest|XPHB}."
+          ],
+          "level": 9
+        },
+        "spellGrants": [
+          {
+            "name": "Contact Patron",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Contact Other Plane",
+                  "canonicalId": "dnd2024:2024:spell:contact-other-plane:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false,
+                "freeUses": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "recovery": "longRest"
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "contact-other-plane:always-prepared",
+          "contact-other-plane:free-once-per-long-rest",
+          "contact-other-plane:auto-save-success"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:bard:countercharm:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:bard:countercharm:srd-5.2",
       "entityType": "feature",
@@ -2544,6 +3090,126 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:fiend:dark-one-s-blessing:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:fiend:dark-one-s-blessing:srd-5.2",
+      "entityType": "feature",
+      "name": "Dark One's Blessing",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Warlock:Fiend:Dark One's Blessing:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "warlock-fiend",
+        "text": {
+          "rules": [
+            "When you reduce an enemy to 0 {@variantrule Hit Points|XPHB}, you gain {@variantrule Temporary Hit Points|XPHB} equal to your Charisma modifier plus your Warlock level (minimum of 1 {@variantrule Temporary Hit Points|XPHB|Temporary Hit Point}). You also gain this benefit if someone else reduces an enemy within 10 feet of you to 0 {@variantrule Hit Points|XPHB}."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "When you reduce an enemy to 0 {@variantrule Hit Points|XPHB}, you gain {@variantrule Temporary Hit Points|XPHB} equal to your Charisma modifier plus your Warlock level (minimum of 1 {@variantrule Temporary Hit Points|XPHB|Temporary Hit Point}). You also gain this benefit if someone else reduces an enemy within 10 feet of you to 0 {@variantrule Hit Points|XPHB}."
+          ],
+          "level": 3
+        },
+        "classRules": {
+          "temporaryHitPoints": [
+            {
+              "trigger": {
+                "event": "custom",
+                "description": "When an enemy within the feature range dies."
+              },
+              "value": {
+                "type": "formula",
+                "formula": "@classes.warlock.level + @abilities.cha.mod"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:fiend:dark-one-s-own-luck:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:fiend:dark-one-s-own-luck:srd-5.2",
+      "entityType": "feature",
+      "name": "Dark One's Own Luck",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Warlock:Fiend:Dark One's Own Luck:6",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "warlock-fiend",
+        "text": {
+          "rules": [
+            "You can call on your fiendish patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add {@dice 1d10} to your roll. You can do so after seeing the roll but before any of the roll's effects occur.",
+            "You can use this feature a number of times equal to your Charisma modifier (minimum of once), but you can use it no more than once per roll. You regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "You can call on your fiendish patron to alter fate in your favor. When you make an ability check or a saving throw, you can use this feature to add {@dice 1d10} to your roll. You can do so after seeing the roll but before any of the roll's effects occur.",
+            "You can use this feature a number of times equal to your Charisma modifier (minimum of once), but you can use it no more than once per roll. You regain all expended uses when you finish a {@variantrule Long Rest|XPHB}."
+          ],
+          "level": 6
+        },
+        "activities": [
+          {
+            "id": "dark-ones-own-luck",
+            "name": "Dark One's Own Luck",
+            "kind": "utility",
+            "activation": {
+              "type": "none"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "runtime",
+                "path": "abilities.cha.mod"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "description": "Add 1d10 to an eligible ability check or saving throw, as defined by the source rules."
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2",
       "entityType": "feature",
@@ -2895,6 +3561,76 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:devil-s-sight:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:devil-s-sight:srd-5.2",
+      "entityType": "feature",
+      "name": "Devil's Sight",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Devil's Sight",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can see normally in {@variantrule Dim Light|XPHB} and {@variantrule Darkness|XPHB}—both magical and nonmagical—within 120 feet of yourself."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can see normally in {@variantrule Dim Light|XPHB} and {@variantrule Darkness|XPHB}—both magical and nonmagical—within 120 feet of yourself."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2",
       "entityType": "feature",
@@ -3095,6 +3831,57 @@
         "properties": [
           "uses-resource:monk-focus"
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:distant-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:distant-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Distant Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Distant Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a range of at least 5 feet, you can spend 1 Sorcery Point to double the spell's range. Or when you cast a spell that has a range of Touch, you can spend 1 Sorcery Point to make the spell's range 30 feet."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -3401,6 +4188,503 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Resilience",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Draconic Resilience:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "The magic in your body manifests physical traits of your draconic gift. Your {@variantrule Hit Points|XPHB|Hit Point} maximum increases by 3, and it increases by 1 whenever you gain another Sorcerer level.",
+            "Parts of you are also covered by dragon-like scales. While you aren't wearing armor, your base {@variantrule Armor Class|XPHB} equals 10 plus your Dexterity and Charisma modifiers."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "hitPointMaximum"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "formula",
+              "formula": "3 + max(0, @classes.sorcerer.level - 3)"
+            }
+          },
+          {
+            "target": {
+              "domain": "armorClass"
+            },
+            "mode": "base",
+            "value": {
+              "type": "formula",
+              "formula": "10 + @abilities.dex.mod + @abilities.cha.mod"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Not wearing armor."
+            }
+          }
+        ],
+        "properties": [
+          "hp-max:+3-at-level-3,+1-per-later-sorcerer-level",
+          "unarmored-ac:10+dex+cha"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Spells",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Draconic Spells:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "When you reach a Sorcerer level specified in the Draconic Spells table, you thereafter always have the listed spells prepared.",
+            {
+              "type": "table",
+              "caption": "Draconic Spells",
+              "colLabels": [
+                "Sorcerer Level",
+                "Spells"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "3rd",
+                  "{@spell Alter Self|XPHB}, {@spell Chromatic Orb|XPHB}, {@spell Command|XPHB}, {@spell Dragon's Breath|XPHB}"
+                ],
+                [
+                  "5th",
+                  "{@spell Fear|XPHB}, {@spell Fly|XPHB}"
+                ],
+                [
+                  "7th",
+                  "{@spell Arcane Eye|XPHB}, {@spell Charm Monster|XPHB}"
+                ],
+                [
+                  "9th",
+                  "{@spell Legend Lore|XPHB}, {@spell Summon Dragon|XPHB}"
+                ]
+              ]
+            }
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "alter self",
+                  "canonicalId": "dnd2024:2024:spell:alter-self:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "chromatic orb",
+                  "canonicalId": "dnd2024:2024:spell:chromatic-orb:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "command",
+                  "canonicalId": "dnd2024:2024:spell:command:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "dragon's breath",
+                  "canonicalId": "dnd2024:2024:spell:dragon-s-breath:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fear",
+                  "canonicalId": "dnd2024:2024:spell:fear:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fly",
+                  "canonicalId": "dnd2024:2024:spell:fly:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "arcane eye",
+                  "canonicalId": "dnd2024:2024:spell:arcane-eye:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "charm monster",
+                  "canonicalId": "dnd2024:2024:spell:charm-monster:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "legend lore",
+                  "canonicalId": "dnd2024:2024:spell:legend-lore:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Draconic Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "summon dragon",
+                  "canonicalId": "dnd2024:2024:spell:summon-dragon:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "always-prepared",
+          "counts-as-sorcerer-spells"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2",
+      "entityType": "feature",
+      "name": "Dragon Companion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Dragon Companion:18",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "You can cast {@spell Summon Dragon|XPHB} without a Material component. You can also cast it once without a spell slot, and you regain the ability to cast it in this way when you finish a {@variantrule Long Rest|XPHB}.",
+            "Whenever you start casting the spell, you can modify it so that it doesn't require {@status Concentration|XPHB}. If you do so, the spell's duration becomes 1 minute for that casting."
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Dragon Companion",
+            "ability": "charisma",
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Summon Dragon",
+                  "canonicalId": "dnd2024:2024:spell:summon-dragon:srd-5.2"
+                },
+                "freeUses": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "recovery": "longRest",
+                "ignoreMaterialComponent": true
+              }
+            ]
+          }
+        ],
+        "classMechanics": {
+          "spellModifications": [
+            {
+              "id": "dragon-companion-no-concentration",
+              "filter": {
+                "spells": [
+                  "Summon Dragon"
+                ]
+              },
+              "changes": [
+                {
+                  "type": "concentration",
+                  "operation": "set",
+                  "value": false
+                },
+                {
+                  "type": "duration",
+                  "operation": "set",
+                  "value": {
+                    "value": 1,
+                    "unit": "minute"
+                  }
+                }
+              ],
+              "optional": true
+            }
+          ]
+        },
+        "properties": [
+          "summon-dragon:no-material-component",
+          "summon-dragon:free-once-per-long-rest",
+          "summon-dragon:optional-no-concentration-duration-1-minute"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2",
+      "entityType": "feature",
+      "name": "Dragon Wings",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Dragon Wings:14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can cause draconic wings to appear on your back. The wings last for 1 hour or until you dismiss them (no action required). For the duration, you have a {@variantrule Fly Speed|XPHB} of 60 feet.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you spend 3 Sorcery Points (no action required) to restore your use of it."
+          ]
+        },
+        "activities": [
+          {
+            "id": "dragon-wings",
+            "name": "Dragon Wings",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 1
+              },
+              "unit": "hour"
+            },
+            "description": "Gain a 60-foot Fly Speed for 1 hour; dismiss with no action."
+          }
+        ],
+        "movementRules": [
+          {
+            "id": "dragon-wings-flight",
+            "action": "setSpeed",
+            "subject": "self",
+            "distance": {
+              "value": 60,
+              "unit": "ft"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Dragon Wings is active."
+            }
+          }
+        ],
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Restore the expended Dragon Wings use (no action required)."
+            },
+            "consume": {
+              "resourceId": "sorcery-points",
+              "amount": {
+                "type": "constant",
+                "value": 3
+              }
+            },
+            "restore": {
+              "resourceId": "dragon-wings",
+              "amount": {
+                "type": "constant",
+                "value": 1
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:druidic:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:druidic:srd-5.2",
       "entityType": "feature",
@@ -3448,6 +4732,385 @@
         "properties": [
           "language:druidic",
           "always-prepared:speak-with-animals"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:eldritch-invocations:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:eldritch-invocations:srd-5.2",
+      "entityType": "feature",
+      "name": "Eldritch Invocations",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Eldritch Invocations:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice, such as Pact of the Tome. Invocations are described in the \"{@filter Eldritch Invocation Options|optionalfeatures|feature type=EI|source=XPHB}\" section later in this class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Prerequisites",
+                  "entries": [
+                    "If an invocation has a prerequisite, you must meet it to learn that invocation. For example, if an invocation requires you to be a level 5+ Warlock, you can select the invocation once you reach Warlock level 5."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Replacing and Gaining Invocations",
+                  "entries": [
+                    "Whenever you gain a Warlock level, you can replace one of your invocations with another one for which you qualify. You can't replace an invocation if it's a prerequisite for another invocation that you have."
+                  ]
+                }
+              ]
+            },
+            "When you gain certain Warlock levels, you gain more invocations of your choice, as shown in the Invocations column of the Warlock Features table.",
+            "You can't pick the same invocation more than once unless its description says otherwise."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "You have unearthed Eldritch Invocations, pieces of forbidden knowledge that imbue you with an abiding magical ability or other lessons. You gain one invocation of your choice, such as Pact of the Tome. Invocations are described in the \"{@filter Eldritch Invocation Options|optionalfeatures|feature type=EI|source=XPHB}\" section later in this class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Prerequisites",
+                  "entries": [
+                    "If an invocation has a prerequisite, you must meet it to learn that invocation. For example, if an invocation requires you to be a level 5+ Warlock, you can select the invocation once you reach Warlock level 5."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Replacing and Gaining Invocations",
+                  "entries": [
+                    "Whenever you gain a Warlock level, you can replace one of your invocations with another one for which you qualify. You can't replace an invocation if it's a prerequisite for another invocation that you have."
+                  ]
+                }
+              ]
+            },
+            "When you gain certain Warlock levels, you gain more invocations of your choice, as shown in the Invocations column of the Warlock Features table.",
+            "You can't pick the same invocation more than once unless its description says otherwise."
+          ],
+          "level": 1
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "warlock-eldritch-invocations",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "runtime",
+                "path": "class.warlock.invocationsKnown"
+              },
+              "filter": {
+                "type": "predicate",
+                "predicate": {
+                  "type": "field",
+                  "field": "data.optionKind",
+                  "operator": "eq",
+                  "value": "eldritchInvocation"
+                }
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onLevelGain",
+                  "description": "Whenever you gain a Warlock level."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "predicate",
+                  "predicate": {
+                    "type": "field",
+                    "field": "data.optionKind",
+                    "operator": "eq",
+                    "value": "eldritchInvocation"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "properties": [
+          "invocations:1@1,3@2,5@5,6@7,7@9,8@12,9@15,10@18"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:eldritch-master:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:eldritch-master:srd-5.2",
+      "entityType": "feature",
+      "name": "Eldritch Master",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Eldritch Master:20",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "When you use your Magical Cunning feature, you regain all your expended Pact Magic spell slots."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "When you use your Magical Cunning feature, you regain all your expended Pact Magic spell slots."
+          ],
+          "level": 20
+        },
+        "classRules": {
+          "resourceMutations": [
+            {
+              "resourceId": "warlock-pact-slots",
+              "trigger": {
+                "event": "custom",
+                "description": "Use Magical Cunning."
+              },
+              "operation": "restore",
+              "value": {
+                "type": "runtime",
+                "path": "resources.warlock-pact-slots.max"
+              },
+              "capAtMaximum": true
+            }
+          ]
+        },
+        "properties": [
+          "magical-cunning:restore-all-pact-slots"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:eldritch-spear:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:eldritch-spear:srd-5.2",
+      "entityType": "feature",
+      "name": "Eldritch Spear",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Eldritch Spear",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|damage type=acid;bludgeoning;cold;fire;force;lightning;necrotic;piercing;poison;psychic;radiant;slashing;thunder|range=point} that deals damage and has a range of 10+ feet. When you cast that spell, its range increases by a number of feet equal to 30 times your Warlock level.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock",
+                  "entry": "a Warlock Cantrip That Deals Damage",
+                  "entrySummary": "Warlock Cantrip That Deals Damage"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|damage type=acid;bludgeoning;cold;fire;force;lightning;necrotic;piercing;poison;psychic;radiant;slashing;thunder|range=point} that deals damage and has a range of 10+ feet. When you cast that spell, its range increases by a number of feet equal to 30 times your Warlock level.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ],
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock",
+                  "entry": "a Warlock Cantrip That Deals Damage",
+                  "entrySummary": "Warlock Cantrip That Deals Damage"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2",
+      "entityType": "feature",
+      "name": "Elemental Affinity",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Sorcerer:Draconic:Elemental Affinity:6",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "sorcerer-draconic",
+        "text": {
+          "rules": [
+            "Your draconic magic has an affinity with a damage type associated with dragons. Choose one of those types: Acid, Cold, Fire, Lightning, or Poison.",
+            "You have {@variantrule Resistance|XPHB} to that damage type, and when you cast a spell that deals damage of that type, you can add your Charisma modifier to one damage roll of that spell."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "draconic-elemental-affinity",
+              "entityTypes": [
+                "damageType"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "kind": "enum",
+                "options": [
+                  "acid",
+                  "cold",
+                  "fire",
+                  "lightning",
+                  "poison"
+                ]
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              }
+            }
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "elemental-affinity-damage",
+            "action": "extraDamage",
+            "value": {
+              "type": "runtime",
+              "path": "abilities.cha.mod"
+            },
+            "trigger": {
+              "event": "onDamage",
+              "oncePerTurn": false
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "A spell you cast deals the damage type chosen for Elemental Affinity; add Charisma modifier to one damage roll of that spell."
+            }
+          }
+        ],
+        "properties": [
+          "resistance:chosen-elemental-affinity",
+          "choices:acid,cold,fire,lightning,poison"
         ]
       }
     },
@@ -3561,6 +5224,58 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:empowered-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:empowered-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Empowered Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Empowered Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you roll damage for a spell, you can spend 1 Sorcery Point to reroll a number of the damage dice up to your Charisma modifier (minimum of one), and you must use the new rolls.",
+            "You can use Empowered Spell even if you've already used a different Metamagic option during the casting of the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": true
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -4140,6 +5855,136 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Epic Boon:19",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Dimensional Travel|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Dimensional Travel"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Epic Boon:19",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Fate|XPHB} is recommended."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Fate|XPHB} is recommended."
+          ],
+          "level": 19
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Fate"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "entityType": "feature",
@@ -4416,6 +6261,60 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:extended-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:extended-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Extended Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Extended Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a duration of 1 minute or longer, you can spend 1 Sorcery Point to double its duration to a maximum duration of 24 hours.",
+            "If the affected spell requires {@status Concentration|XPHB}, you have {@variantrule Advantage|XPHB} on any saving throw you make to maintain that {@status Concentration|XPHB}."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -4923,6 +6822,441 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:fiend:fiend-spells:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:fiend:fiend-spells:srd-5.2",
+      "entityType": "feature",
+      "name": "Fiend Spells",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Warlock:Fiend:Fiend Spells:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "warlock-fiend",
+        "text": {
+          "rules": [
+            "The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Fiend Spells table, you thereafter always have the listed spells prepared.",
+            {
+              "type": "table",
+              "caption": "Fiend Spells",
+              "colLabels": [
+                "Warlock Level",
+                "Spells"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "3",
+                  "{@spell Burning Hands|XPHB}, {@spell Command|XPHB}, {@spell Scorching Ray|XPHB}, {@spell Suggestion|XPHB}"
+                ],
+                [
+                  "5",
+                  "{@spell Fireball|XPHB}, {@spell Stinking Cloud|XPHB}"
+                ],
+                [
+                  "7",
+                  "{@spell Fire Shield|XPHB}, {@spell Wall of Fire|XPHB}"
+                ],
+                [
+                  "9",
+                  "{@spell Geas|XPHB}, {@spell Insect Plague|XPHB}"
+                ]
+              ]
+            }
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "The magic of your patron ensures you always have certain spells ready; when you reach a Warlock level specified in the Fiend Spells table, you thereafter always have the listed spells prepared.",
+            {
+              "type": "table",
+              "caption": "Fiend Spells",
+              "colLabels": [
+                "Warlock Level",
+                "Spells"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "3",
+                  "{@spell Burning Hands|XPHB}, {@spell Command|XPHB}, {@spell Scorching Ray|XPHB}, {@spell Suggestion|XPHB}"
+                ],
+                [
+                  "5",
+                  "{@spell Fireball|XPHB}, {@spell Stinking Cloud|XPHB}"
+                ],
+                [
+                  "7",
+                  "{@spell Fire Shield|XPHB}, {@spell Wall of Fire|XPHB}"
+                ],
+                [
+                  "9",
+                  "{@spell Geas|XPHB}, {@spell Insect Plague|XPHB}"
+                ]
+              ]
+            }
+          ],
+          "level": 3
+        },
+        "spellGrants": [
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "burning hands",
+                  "canonicalId": "dnd2024:2024:spell:burning-hands:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "command",
+                  "canonicalId": "dnd2024:2024:spell:command:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "scorching ray",
+                  "canonicalId": "dnd2024:2024:spell:scorching-ray:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 3,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "suggestion",
+                  "canonicalId": "dnd2024:2024:spell:suggestion:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fireball",
+                  "canonicalId": "dnd2024:2024:spell:fireball:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 5,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "stinking cloud",
+                  "canonicalId": "dnd2024:2024:spell:stinking-cloud:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "fire shield",
+                  "canonicalId": "dnd2024:2024:spell:fire-shield:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 7,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "wall of fire",
+                  "canonicalId": "dnd2024:2024:spell:wall-of-fire:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "geas",
+                  "canonicalId": "dnd2024:2024:spell:geas:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          },
+          {
+            "name": "Fiend Spells",
+            "ability": "charisma",
+            "minimumClassLevel": 9,
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "insect plague",
+                  "canonicalId": "dnd2024:2024:spell:insect-plague:srd-5.2"
+                },
+                "alwaysPrepared": true,
+                "countsAgainstPreparedLimit": false
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "always-prepared",
+          "counts-as-warlock-spells"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:fiend:fiendish-resilience:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:fiend:fiendish-resilience:srd-5.2",
+      "entityType": "feature",
+      "name": "Fiendish Resilience",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Warlock:Fiend:Fiendish Resilience:10",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "warlock-fiend",
+        "text": {
+          "rules": [
+            "Choose one damage type, other than Force, whenever you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. You have {@variantrule Resistance|XPHB} to that damage type until you choose a different one with this feature."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "Choose one damage type, other than Force, whenever you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. You have {@variantrule Resistance|XPHB} to that damage type until you choose a different one with this feature."
+          ],
+          "level": 10
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "fiendish-resilience-damage-type",
+              "entityTypes": [
+                "damageType"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "kind": "enum",
+                "options": [
+                  "acid",
+                  "cold",
+                  "fire",
+                  "lightning",
+                  "necrotic",
+                  "poison",
+                  "psychic",
+                  "radiant",
+                  "thunder"
+                ]
+              },
+              "chooseOn": {
+                "event": "onRest"
+              }
+            }
+          ]
+        },
+        "properties": [
+          "resistance:selected-damage-type",
+          "selection:after-short-or-long-rest"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:fiendish-vigor:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:fiendish-vigor:srd-5.2",
+      "entityType": "feature",
+      "name": "Fiendish Vigor",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Fiendish Vigor",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell False Life|XPHB} on yourself without expending a spell slot. When you cast the spell with this feature, you don't roll the die for the {@variantrule Temporary Hit Points|XPHB}; you automatically get the highest number on the die."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "false life|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell False Life|XPHB} on yourself without expending a spell slot. When you cast the spell with this feature, you don't roll the die for the {@variantrule Temporary Hit Points|XPHB}; you automatically get the highest number on the die."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "false life|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
       "entityType": "feature",
@@ -5365,6 +7699,189 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2",
+      "entityType": "feature",
+      "name": "Font of Magic",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Font of Magic:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "You can tap into the wellspring of magic within yourself. This wellspring is represented by Sorcery Points, which allow you to create a variety of magical effects.",
+            "You have 2 Sorcery Points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer Features table. You can't have more Sorcery Points than the number shown in the table for your level. You regain all expended Sorcery Points when you finish a {@variantrule Long Rest|XPHB}.",
+            "You can use your Sorcery Points to fuel the options below, along with other features, such as Metamagic, that use those points.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Converting Spell Slots to Sorcery Points",
+                  "entries": [
+                    "You can expend a spell slot to gain a number of Sorcery Points equal to the slot's level (no action required)."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Creating Spell Slots",
+                  "entries": [
+                    "As a {@variantrule Bonus Action|XPHB}, you can transform unexpended Sorcery Points into one spell slot. The Creating Spell Slots table shows the cost of creating a spell slot of a given level, and it lists the minimum Sorcerer level you must be to create a slot. You can create a spell slot no higher than level 5.",
+                    "Any spell slot you create with this feature vanishes when you finish a {@variantrule Long Rest|XPHB}.",
+                    {
+                      "type": "table",
+                      "caption": "Creating Spell Slots",
+                      "colLabels": [
+                        "Spell Slot Level",
+                        "Sorcery Point Cost",
+                        "Min. Sorcerer Level"
+                      ],
+                      "colStyles": [
+                        "col-3 text-center",
+                        "col-3 text-center",
+                        "col-3 text-center"
+                      ],
+                      "rows": [
+                        [
+                          "1",
+                          "2",
+                          "2"
+                        ],
+                        [
+                          "2",
+                          "3",
+                          "3"
+                        ],
+                        [
+                          "3",
+                          "5",
+                          "5"
+                        ],
+                        [
+                          "4",
+                          "6",
+                          "7"
+                        ],
+                        [
+                          "5",
+                          "7",
+                          "9"
+                        ]
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classRules": {
+          "resources": [
+            {
+              "id": "sorcery-points",
+              "max": {
+                "type": "runtime",
+                "path": "class.sorcerer.sorceryPoints"
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ],
+          "resourceExchanges": [
+            {
+              "id": "slot-to-sorcery-points",
+              "activation": "none",
+              "consume": {
+                "resource": "spellSlot",
+                "amount": {
+                  "type": "constant",
+                  "value": 1
+                }
+              },
+              "gain": {
+                "resource": "sorcery-points",
+                "amount": {
+                  "type": "runtime",
+                  "path": "selectedSpellSlot.level"
+                }
+              },
+              "description": "Expend a spell slot to gain Sorcery Points equal to the slot level."
+            },
+            {
+              "id": "sorcery-points-to-slot",
+              "activation": "bonusAction",
+              "consume": {
+                "resource": "sorcery-points"
+              },
+              "gain": {
+                "resource": "temporarySpellSlot"
+              },
+              "options": [
+                {
+                  "slotLevel": 1,
+                  "cost": 2,
+                  "minSorcererLevel": 2
+                },
+                {
+                  "slotLevel": 2,
+                  "cost": 3,
+                  "minSorcererLevel": 3
+                },
+                {
+                  "slotLevel": 3,
+                  "cost": 5,
+                  "minSorcererLevel": 5
+                },
+                {
+                  "slotLevel": 4,
+                  "cost": 6,
+                  "minSorcererLevel": 7
+                },
+                {
+                  "slotLevel": 5,
+                  "cost": 7,
+                  "minSorcererLevel": 9
+                }
+              ],
+              "expires": {
+                "event": "onRest",
+                "description": "Long Rest"
+              },
+              "description": "Create one spell slot of level 1–5 using the exact SRD cost/minimum-level table."
+            }
+          ]
+        },
+        "properties": [
+          "sorcery-points:max-by-class-level",
+          "created-spell-slots-expire:long-rest"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
       "entityType": "feature",
@@ -5411,6 +7928,78 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:gaze-of-two-minds:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:gaze-of-two-minds:srd-5.2",
+      "entityType": "feature",
+      "name": "Gaze of Two Minds",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Gaze of Two Minds",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can use a {@variantrule Bonus Action|XPHB} to touch a willing creature and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can take a {@variantrule Bonus Action|XPHB} on subsequent turns to maintain this connection, extending the duration until the end of your next turn. The connection ends if you don't maintain it in this way.",
+            "While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you can cast spells as if you were in your space or the other creature's space if the two of you are within 60 feet of each other."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can use a {@variantrule Bonus Action|XPHB} to touch a willing creature and perceive through its senses until the end of your next turn. As long as the creature is on the same plane of existence as you, you can take a {@variantrule Bonus Action|XPHB} on subsequent turns to maintain this connection, extending the duration until the end of your next turn. The connection ends if you don't maintain it in this way.",
+            "While perceiving through the other creature's senses, you benefit from any special senses possessed by that creature, and you can cast spells as if you were in your space or the other creature's space if the two of you are within 60 feet of each other."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
       }
     },
     {
@@ -5531,6 +8120,59 @@
           "patient-defense-paid:temp-hp=2-martial-arts-dice",
           "step-of-wind-paid:carry-willing-large-or-smaller-within-5ft-no-opportunity-attacks"
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:heightened-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:heightened-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Heightened Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Heightened Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that forces a creature to make a saving throw, you can spend 2 Sorcery Points to give one target of the spell {@variantrule Disadvantage|XPHB} on saves against the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 2,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -5829,6 +8471,70 @@
         "properties": [
           "option:Colossus Slayer:once-per-turn:+1d8-if-target-missing-hp",
           "option:Horde Breaker:extra-attack-different-adjacent-target"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:fiend:hurl-through-hell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:fiend:hurl-through-hell:srd-5.2",
+      "entityType": "feature",
+      "name": "Hurl Through Hell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Warlock:Fiend:Hurl Through Hell:14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "warlock-fiend",
+        "text": {
+          "rules": [
+            "Once per turn when you hit a creature with an attack roll, you can try to instantly transport the target through the Lower Planes. The target must succeed on a Charisma saving throw against your spell save DC, or the target disappears and hurtles through a nightmare landscape. The target takes {@damage 8d10} Psychic damage if it isn't a Fiend, and it has the {@condition Incapacitated|XPHB} condition until the end of your next turn, when it returns to the space it previously occupied or the nearest unoccupied space.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you expend a Pact Magic spell slot (no action required) to restore your use of it."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "Once per turn when you hit a creature with an attack roll, you can try to instantly transport the target through the Lower Planes. The target must succeed on a Charisma saving throw against your spell save DC, or the target disappears and hurtles through a nightmare landscape. The target takes {@damage 8d10} Psychic damage if it isn't a Fiend, and it has the {@condition Incapacitated|XPHB} condition until the end of your next turn, when it returns to the space it previously occupied or the nearest unoccupied space.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB} unless you expend a Pact Magic spell slot (no action required) to restore your use of it."
+          ],
+          "level": 14
+        },
+        "activities": [
+          {
+            "id": "hurl-through-hell",
+            "name": "Hurl Through Hell",
+            "kind": "utility",
+            "activation": {
+              "type": "special"
+            },
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "description": "Apply the source-defined banishment and damage rider after an eligible hit."
+          }
         ]
       }
     },
@@ -6327,6 +9033,127 @@
                 "type": "custom",
                 "description": "Strength saving throw total is lower than your Strength score."
               }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2",
+      "entityType": "feature",
+      "name": "Innate Sorcery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Innate Sorcery:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "An event in your past left an indelible mark on you, infusing you with simmering magic. As a {@variantrule Bonus Action|XPHB}, you can unleash that magic for 1 minute, during which you gain the following benefits:",
+            {
+              "type": "list",
+              "items": [
+                "The spell save DC of your Sorcerer spells increases by 1.",
+                "You have {@variantrule Advantage|XPHB} on the attack rolls of Sorcerer spells you cast."
+              ]
+            },
+            "You can use this feature twice, and you regain all expended uses of it when you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "innate-sorcery",
+            "name": "Innate Sorcery",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 2
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "duration": {
+              "type": "timed",
+              "value": {
+                "type": "constant",
+                "value": 1
+              },
+              "unit": "minute"
+            },
+            "description": "For 1 minute, Sorcerer spell save DC increases by 1 and Sorcerer spell attack rolls have Advantage."
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "spellSaveDC"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "constant",
+              "value": 1
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Innate Sorcery is active and the spell is a Sorcerer spell."
+            }
+          },
+          {
+            "target": {
+              "domain": "spellAttackRoll"
+            },
+            "mode": "advantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Innate Sorcery is active and the spell is a Sorcerer spell."
+            }
+          }
+        ],
+        "classRules": {
+          "resources": [
+            {
+              "id": "innate-sorcery-uses",
+              "max": {
+                "type": "constant",
+                "value": 2
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
             }
           ]
         }
@@ -6932,6 +9759,147 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:lifedrinker:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:lifedrinker:srd-5.2",
+      "entityType": "feature",
+      "name": "Lifedrinker",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Lifedrinker",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "Once per turn when you hit a creature with your pact weapon, you can deal an extra {@damage 1d6} Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your {@variantrule Hit Point Dice|XPHB} to roll it and regain a number of {@variantrule Hit Points|XPHB} equal to the roll plus your Constitution modifier (minimum of 1 {@variantrule Hit Points|XPHB|Hit Point})."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 9,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              },
+              "optionalfeature": [
+                "pact of the blade|xphb"
+              ]
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "Once per turn when you hit a creature with your pact weapon, you can deal an extra {@damage 1d6} Necrotic, Psychic, or Radiant damage (your choice) to the creature, and you can expend one of your {@variantrule Hit Point Dice|XPHB} to roll it and regain a number of {@variantrule Hit Points|XPHB} equal to the roll plus your Constitution modifier (minimum of 1 {@variantrule Hit Points|XPHB|Hit Point})."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 9,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              },
+              "optionalfeature": [
+                "pact of the blade|xphb"
+              ]
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:magical-cunning:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:magical-cunning:srd-5.2",
+      "entityType": "feature",
+      "name": "Magical Cunning",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Magical Cunning:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "You can perform an esoteric rite for 1 minute. At the end of it, you regain expended Pact Magic spell slots but no more than a number equal to half your maximum (round up). Once you use this feature, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+          ],
+          "level": 2
+        },
+        "classRules": {
+          "resourceMutations": [
+            {
+              "resourceId": "warlock-pact-slots",
+              "trigger": {
+                "event": "custom",
+                "description": "Perform the 1-minute Magical Cunning rite."
+              },
+              "operation": "restore",
+              "value": {
+                "type": "formula",
+                "formula": "ceil(@resources.warlock-pact-slots.max / 2)"
+              },
+              "usage": {
+                "uses": 1,
+                "recovery": "longRest"
+              },
+              "capAtMaximum": true
+            }
+          ]
+        },
+        "properties": [
+          "activation:1-minute-rite",
+          "restore:half-max-pact-slots-rounded-up",
+          "recovery:long-rest"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:bard:lore:magical-discoveries:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:bard:lore:magical-discoveries:srd-5.2",
       "entityType": "feature",
@@ -7321,6 +10289,262 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:mask-of-many-faces:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:mask-of-many-faces:srd-5.2",
+      "entityType": "feature",
+      "name": "Mask of Many Faces",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Mask of Many Faces",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Disguise Self|XPHB} without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "disguise self|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Disguise Self|XPHB} without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "disguise self|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:master-of-myriad-forms:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:master-of-myriad-forms:srd-5.2",
+      "entityType": "feature",
+      "name": "Master of Myriad Forms",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Master of Myriad Forms",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Alter Self|XPHB} without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "alter self|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Alter Self|XPHB} without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "alter self|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2",
+      "entityType": "feature",
+      "name": "Metamagic",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Metamagic:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "Because your magic flows from within, you can alter your spells to suit your needs; you gain two Metamagic options of your choice from \"{@filter Metamagic Options|optionalfeatures|feature type=MM|source=XPHB}\" later in this class's description. You use the chosen options to temporarily modify spells you cast. To use an option, you must spend the number of Sorcery Points that it costs.",
+            "You can use only one Metamagic option on a spell when you cast it unless otherwise noted in one of those options.",
+            "Whenever you gain a Sorcerer level, you can replace one of your Metamagic options with one you don't know. You gain two more options at Sorcerer level 10 and two more at Sorcerer level 17."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "sorcerer-metamagic-options",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.metamagicKnown"
+              },
+              "filter": {
+                "type": "predicate",
+                "predicate": {
+                  "type": "field",
+                  "field": "data.optionKind",
+                  "operator": "eq",
+                  "value": "metamagic"
+                }
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onLevelGain",
+                  "description": "Whenever you gain a Sorcerer level."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "predicate",
+                  "predicate": {
+                    "type": "field",
+                    "field": "data.optionKind",
+                    "operator": "eq",
+                    "value": "metamagic"
+                  }
+                }
+              }
+            }
+          ]
+        },
+        "properties": [
+          "metamagic-default-max-per-spell:1",
+          "metamagic-count:2@2,4@10,6@17"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
       "entityType": "feature",
@@ -7385,6 +10609,92 @@
             ]
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:misty-visions:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:misty-visions:srd-5.2",
+      "entityType": "feature",
+      "name": "Misty Visions",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Misty Visions",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Silent Image|XPHB} without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "silent image|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Silent Image|XPHB} without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "silent image|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
       }
     },
     {
@@ -7548,6 +10858,79 @@
             },
             "description": "Spend 1 Focus Point to take Disengage and Dash as a Bonus Action; jump distance doubles for the turn."
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2",
+      "entityType": "feature",
+      "name": "Mystic Arcanum",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Mystic Arcanum:11",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.",
+            "You can cast your arcanum spell once without expending a spell slot, and you must finish a {@variantrule Long Rest|XPHB} before you can cast it in this way again.",
+            "As shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell). You regain all uses of your Mystic Arcanum when you finish a {@variantrule Long Rest|XPHB}.",
+            "Whenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level."
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "Your patron grants you a magical secret called an arcanum. Choose one level 6 Warlock spell as this arcanum.",
+            "You can cast your arcanum spell once without expending a spell slot, and you must finish a {@variantrule Long Rest|XPHB} before you can cast it in this way again.",
+            "As shown in the Warlock Features table, you gain another Warlock spell of your choice that can be cast in this way when you reach Warlock levels 13 (level 7 spell), 15 (level 8 spell), and 17 (level 9 spell). You regain all uses of your Mystic Arcanum when you finish a {@variantrule Long Rest|XPHB}.",
+            "Whenever you gain a Warlock level, you can replace one of your arcanum spells with another Warlock spell of the same level."
+          ],
+          "level": 11
+        },
+        "classRules": {
+          "mysticArcanum": {
+            "11": {
+              "spellLevel": 6,
+              "count": 1,
+              "recovery": "longRest"
+            },
+            "13": {
+              "spellLevel": 7,
+              "count": 1,
+              "recovery": "longRest"
+            },
+            "15": {
+              "spellLevel": 8,
+              "count": 1,
+              "recovery": "longRest"
+            },
+            "17": {
+              "spellLevel": 9,
+              "count": 1,
+              "recovery": "longRest"
+            }
+          }
+        },
+        "properties": [
+          "one-spell-each:6th,7th,8th,9th",
+          "cast-without-slot:once-per-long-rest-each"
         ]
       }
     },
@@ -8175,6 +11558,92 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:one-with-shadows:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:one-with-shadows:srd-5.2",
+      "entityType": "feature",
+      "name": "One with Shadows",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:One with Shadows",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "While you're in an area of {@variantrule Dim Light|XPHB} or {@variantrule Darkness|XPHB}, you can cast {@spell Invisibility|XPHB} on yourself without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "invisibility|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "While you're in an area of {@variantrule Dim Light|XPHB} or {@variantrule Darkness|XPHB}, you can cast {@spell Invisibility|XPHB} on yourself without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "invisibility|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "entityType": "feature",
@@ -8247,6 +11716,651 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:otherworldly-leap:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:otherworldly-leap:srd-5.2",
+      "entityType": "feature",
+      "name": "Otherworldly Leap",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Otherworldly Leap",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Jump|XPHB} on yourself without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "jump|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Jump|XPHB} on yourself without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "jump|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:pact-magic:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:pact-magic:srd-5.2",
+      "entityType": "feature",
+      "name": "Pact Magic",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Warlock:Pact Magic:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock",
+        "text": {
+          "rules": [
+            "Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Warlock spells, which appear in the {@filter Warlock spell list|spells|class=Warlock} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips",
+                  "entries": [
+                    "You know two Warlock cantrips of your choice. {@spell Eldritch Blast|XPHB} and {@spell Prestidigitation|XPHB} are recommended. Whenever you gain a Warlock level, you can replace one of your cantrips from this feature with another Warlock cantrip of your choice.",
+                    "When you reach Warlock levels 4 and 10, you learn another Warlock cantrip of your choice, as shown in the Cantrips column of the Warlock Features table."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Warlock Features table shows how many spell slots you have to cast your Warlock spells of levels 1–5. The table also shows the level of those slots, all of which are the same level. You regain all expended Pact Magic spell slots when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+                    "For example, when you're a level 5 Warlock, you have two level 3 spell slots. To cast the level 1 spell {@spell Witch Bolt|XPHB}, you must spend one of those slots, and you cast it as a level 3 spell."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Warlock spells. {@spell Charm Person|XPHB} and {@spell Hex|XPHB} are recommended."
+                  ]
+                }
+              ]
+            },
+            "The number of spells on your list increases as you gain Warlock levels, as shown in the Prepared Spells column of the Warlock Features table. Whenever that number increases, choose additional Warlock spells until the number of spells on your list matches the number in the table. The chosen spells must be of a level no higher than what's shown in the table's Slot Level column for your level. When you reach level 6, for example, you learn a new Warlock spell, which can be of levels 1–3.",
+            "If another Warlock feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Warlock spells for you.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you gain a Warlock level, you can replace one spell on your list with another Warlock spell of an eligible level."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Charisma is the spellcasting ability for your Warlock spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use an {@item Arcane Focus|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Warlock spells."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "sourcePayload": {
+          "entries": [
+            "Through occult ceremony, you have formed a pact with a mysterious entity to gain magical powers. The entity is a voice in the shadows—its identity unclear—but its boon to you is concrete: the ability to cast spells. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Warlock spells, which appear in the {@filter Warlock spell list|spells|class=Warlock} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips",
+                  "entries": [
+                    "You know two Warlock cantrips of your choice. {@spell Eldritch Blast|XPHB} and {@spell Prestidigitation|XPHB} are recommended. Whenever you gain a Warlock level, you can replace one of your cantrips from this feature with another Warlock cantrip of your choice.",
+                    "When you reach Warlock levels 4 and 10, you learn another Warlock cantrip of your choice, as shown in the Cantrips column of the Warlock Features table."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Warlock Features table shows how many spell slots you have to cast your Warlock spells of levels 1–5. The table also shows the level of those slots, all of which are the same level. You regain all expended Pact Magic spell slots when you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}.",
+                    "For example, when you're a level 5 Warlock, you have two level 3 spell slots. To cast the level 1 spell {@spell Witch Bolt|XPHB}, you must spend one of those slots, and you cast it as a level 3 spell."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Warlock spells. {@spell Charm Person|XPHB} and {@spell Hex|XPHB} are recommended."
+                  ]
+                }
+              ]
+            },
+            "The number of spells on your list increases as you gain Warlock levels, as shown in the Prepared Spells column of the Warlock Features table. Whenever that number increases, choose additional Warlock spells until the number of spells on your list matches the number in the table. The chosen spells must be of a level no higher than what's shown in the table's Slot Level column for your level. When you reach level 6, for example, you learn a new Warlock spell, which can be of levels 1–3.",
+            "If another Warlock feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Warlock spells for you.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you gain a Warlock level, you can replace one spell on your list with another Warlock spell of an eligible level."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Charisma is the spellcasting ability for your Warlock spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use an {@item Arcane Focus|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Warlock spells."
+                  ]
+                }
+              ]
+            }
+          ],
+          "level": 1
+        },
+        "classMechanics": {
+          "spellCollections": [
+            {
+              "id": "warlock-cantrips",
+              "kind": "known",
+              "sourceList": "Warlock",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.warlock.cantripsKnown"
+              },
+              "filter": {
+                "lists": [
+                  "Warlock"
+                ],
+                "levels": [
+                  0
+                ]
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "warlock-cantrips"
+              }
+            },
+            {
+              "id": "warlock-prepared-spells",
+              "kind": "prepared",
+              "sourceList": "Warlock",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.warlock.preparedSpells"
+              },
+              "filter": {
+                "lists": [
+                  "Warlock"
+                ],
+                "minLevel": 1,
+                "maxLevel": 5
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "warlock-prepared-spells"
+              }
+            }
+          ],
+          "spellSlotPools": [
+            {
+              "id": "warlock-pact-slots",
+              "kind": "pact",
+              "progression": {
+                "1": {
+                  "slots": 1,
+                  "slotLevel": 1
+                },
+                "2": {
+                  "slots": 2,
+                  "slotLevel": 1
+                },
+                "3": {
+                  "slots": 2,
+                  "slotLevel": 2
+                },
+                "4": {
+                  "slots": 2,
+                  "slotLevel": 2
+                },
+                "5": {
+                  "slots": 2,
+                  "slotLevel": 3
+                },
+                "6": {
+                  "slots": 2,
+                  "slotLevel": 3
+                },
+                "7": {
+                  "slots": 2,
+                  "slotLevel": 4
+                },
+                "8": {
+                  "slots": 2,
+                  "slotLevel": 4
+                },
+                "9": {
+                  "slots": 2,
+                  "slotLevel": 5
+                },
+                "10": {
+                  "slots": 2,
+                  "slotLevel": 5
+                },
+                "11": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "12": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "13": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "14": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "15": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "16": {
+                  "slots": 3,
+                  "slotLevel": 5
+                },
+                "17": {
+                  "slots": 4,
+                  "slotLevel": 5
+                },
+                "18": {
+                  "slots": 4,
+                  "slotLevel": 5
+                },
+                "19": {
+                  "slots": 4,
+                  "slotLevel": 5
+                },
+                "20": {
+                  "slots": 4,
+                  "slotLevel": 5
+                }
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Short or Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "spellcasting-ability:charisma",
+          "spellcasting-focus:arcane-focus",
+          "pact-slots:short-or-long-rest",
+          "prepared-spells-change:level-up"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:pact-of-the-blade:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:pact-of-the-blade:srd-5.2",
+      "entityType": "feature",
+      "name": "Pact of the Blade",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Pact of the Blade",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can conjure a pact weapon in your hand—a Simple or Martial Melee weapon of your choice with which you bond—or create a bond with a magic weapon you touch; you can't bond with a magic weapon if someone else is attuned to it or another Warlock is bonded with it. Until the bond ends, you have proficiency with the weapon, and you can use it as a {@variantrule Spellcasting Focus|XPHB}.",
+            "Whenever you attack with the bonded weapon, you can use your Charisma modifier for the attack and damage rolls instead of using Strength or Dexterity; and you can cause the weapon to deal Necrotic, Psychic, or Radiant damage or its normal damage type.",
+            "Your bond with the weapon ends if you use this feature's {@variantrule Bonus Action|XPHB} again, if the weapon is more than 5 feet away from you for 1 minute or more, or if you die. A conjured weapon disappears when the bond ends."
+          ]
+        },
+        "requirements": {
+          "prerequisite": []
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "As a {@variantrule Bonus Action|XPHB}, you can conjure a pact weapon in your hand—a Simple or Martial Melee weapon of your choice with which you bond—or create a bond with a magic weapon you touch; you can't bond with a magic weapon if someone else is attuned to it or another Warlock is bonded with it. Until the bond ends, you have proficiency with the weapon, and you can use it as a {@variantrule Spellcasting Focus|XPHB}.",
+            "Whenever you attack with the bonded weapon, you can use your Charisma modifier for the attack and damage rolls instead of using Strength or Dexterity; and you can cause the weapon to deal Necrotic, Psychic, or Radiant damage or its normal damage type.",
+            "Your bond with the weapon ends if you use this feature's {@variantrule Bonus Action|XPHB} again, if the weapon is more than 5 feet away from you for 1 minute or more, or if you die. A conjured weapon disappears when the bond ends."
+          ],
+          "prerequisite": null,
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:pact-of-the-chain:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:pact-of-the-chain:srd-5.2",
+      "entityType": "feature",
+      "name": "Pact of the Chain",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Pact of the Chain",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You learn the {@spell Find Familiar|XPHB} spell and can cast it as a {@action Magic|XPHB} action without expending a spell slot.",
+            "When you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: {@creature Imp|XMM}, {@creature Pseudodragon|XMM}, {@creature Quasit|XMM}, {@creature Skeleton|XMM}, {@creature Slaad Tadpole|XMM}, {@creature Sphinx of Wonder|XMM}, {@creature Sprite|XMM}, or {@creature Venomous Snake|XMM} (see appendix B for the familiar's stat block).",
+            "Additionally, when you take the {@action Attack|XPHB} action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its {@variantrule Reaction|XPHB}."
+          ]
+        },
+        "requirements": {
+          "prerequisite": []
+        },
+        "spellPayload": [
+          {
+            "ability": "cha",
+            "innate": {
+              "_": {
+                "ritual": [
+                  "find familiar|xphb"
+                ]
+              }
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You learn the {@spell Find Familiar|XPHB} spell and can cast it as a {@action Magic|XPHB} action without expending a spell slot.",
+            "When you cast the spell, you choose one of the normal forms for your familiar or one of the following special forms: {@creature Imp|XMM}, {@creature Pseudodragon|XMM}, {@creature Quasit|XMM}, {@creature Skeleton|XMM}, {@creature Slaad Tadpole|XMM}, {@creature Sphinx of Wonder|XMM}, {@creature Sprite|XMM}, or {@creature Venomous Snake|XMM} (see appendix B for the familiar's stat block).",
+            "Additionally, when you take the {@action Attack|XPHB} action, you can forgo one of your own attacks to allow your familiar to make one attack of its own with its {@variantrule Reaction|XPHB}."
+          ],
+          "prerequisite": null,
+          "additionalSpells": [
+            {
+              "ability": "cha",
+              "innate": {
+                "_": {
+                  "ritual": [
+                    "find familiar|xphb"
+                  ]
+                }
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:pact-of-the-tome:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:pact-of-the-tome:srd-5.2",
+      "entityType": "feature",
+      "name": "Pact of the Tome",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Pact of the Tome",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "Stitching together strands of shadow, you conjure forth a book in your hand at the end of a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. This Book of Shadows (you determine its appearance) contains eldritch magic that only you can access, granting you the benefits below. The book disappears if you conjure another book with this feature or if you die.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips and Rituals",
+                  "entries": [
+                    "When the book appears, choose three {@filter cantrips|spells|level=0}, and choose two {@filter level 1 spells|spells|level=1|components & miscellaneous=ritual} that have the {@variantrule Ritual|XPHB} tag. The spells can be from any class's spell list, and they must be spells you don't already have prepared. While the book is on your person, you have the chosen spells prepared, and they function as Warlock spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use the book as a {@variantrule Spellcasting Focus|XPHB}."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": {
+          "prerequisite": []
+        },
+        "spellPayload": [
+          {
+            "ability": "cha",
+            "known": {
+              "_": [
+                {
+                  "choose": "level=0",
+                  "count": 3
+                }
+              ]
+            },
+            "prepared": {
+              "_": [
+                {
+                  "choose": "level=1|components & miscellaneous=ritual",
+                  "count": 2
+                }
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "Stitching together strands of shadow, you conjure forth a book in your hand at the end of a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. This Book of Shadows (you determine its appearance) contains eldritch magic that only you can access, granting you the benefits below. The book disappears if you conjure another book with this feature or if you die.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips and Rituals",
+                  "entries": [
+                    "When the book appears, choose three {@filter cantrips|spells|level=0}, and choose two {@filter level 1 spells|spells|level=1|components & miscellaneous=ritual} that have the {@variantrule Ritual|XPHB} tag. The spells can be from any class's spell list, and they must be spells you don't already have prepared. While the book is on your person, you have the chosen spells prepared, and they function as Warlock spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use the book as a {@variantrule Spellcasting Focus|XPHB}."
+                  ]
+                }
+              ]
+            }
+          ],
+          "prerequisite": null,
+          "additionalSpells": [
+            {
+              "ability": "cha",
+              "known": {
+                "_": [
+                  {
+                    "choose": "level=0",
+                    "count": 3
+                  }
+                ]
+              },
+              "prepared": {
+                "_": [
+                  {
+                    "choose": "level=1|components & miscellaneous=ritual",
+                    "count": 2
+                  }
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
       }
     },
     {
@@ -9096,6 +13210,59 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:quickened-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:quickened-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Quickened Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Quickened Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that has a casting time of an action, you can spend 2 Sorcery Points to change the casting time to a {@variantrule Bonus Action|XPHB} for this casting. You can't modify a spell in this way if you've already cast a level 1+ spell on the current turn, nor can you cast a level 1+ spell on this turn after modifying a spell in this way."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 2,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 2
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2",
       "entityType": "feature",
@@ -9832,6 +13999,114 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:repelling-blast:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:repelling-blast:srd-5.2",
+      "entityType": "feature",
+      "name": "Repelling Blast",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Repelling Blast",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|spell attack=m;r;o} that requires an attack roll. When you hit a Large or smaller creature with that cantrip, you can push the creature up to 10 feet straight away from you.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock|spell attack=m;r;o",
+                  "entry": "a Warlock Cantrip That Deals Damage via an Attack Roll",
+                  "entrySummary": "Warlock Cantrip That Deals Damage via an Attack Roll"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "Choose one of your known {@filter Warlock cantrips|spells|level=0|class=Warlock|spell attack=m;r;o} that requires an attack roll. When you hit a Large or smaller creature with that cantrip, you can push the creature up to 10 feet straight away from you.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Repeatable",
+                  "entries": [
+                    "You can gain this invocation more than once. Each time you do so, choose a different eligible cantrip."
+                  ]
+                }
+              ]
+            }
+          ],
+          "prerequisite": [
+            {
+              "spell": [
+                {
+                  "choose": "level=0|class=Warlock|spell attack=m;r;o",
+                  "entry": "a Warlock Cantrip That Deals Damage via an Attack Roll",
+                  "entrySummary": "Warlock Cantrip That Deals Damage via an Attack Roll"
+                }
+              ],
+              "level": {
+                "level": 2,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2",
       "entityType": "feature",
@@ -10312,6 +14587,60 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:seeking-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:seeking-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Seeking Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Seeking Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "If you make an attack roll for a spell and miss, you can spend 1 Sorcery Point to reroll the {@dice d20}, and you must use the new roll.",
+            "You can use Seeking Spell even if you've already used a different Metamagic option during the casting of the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": true
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point",
+            "amount": 1
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "entityType": "feature",
@@ -10578,6 +14907,120 @@
               "type": "sameAsAttack"
             }
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2",
+      "entityType": "feature",
+      "name": "Sorcerous Restoration",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Sorcerous Restoration:5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "When you finish a {@variantrule Short Rest|XPHB}, you can regain expended Sorcery Points, but no more than a number equal to half your Sorcerer level (round down). Once you use this feature, you can't do so again until you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "classRules": {
+          "resourceMutations": [
+            {
+              "resourceId": "sorcery-points",
+              "trigger": {
+                "event": "onRest",
+                "description": "Short Rest"
+              },
+              "operation": "restore",
+              "value": {
+                "type": "formula",
+                "formula": "floor(@classes.sorcerer.level / 2)"
+              },
+              "usage": {
+                "uses": 1,
+                "recovery": "longRest"
+              },
+              "capAtMaximum": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2",
+      "entityType": "feature",
+      "name": "Sorcery Incarnate",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Sorcery Incarnate:7",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "If you have no uses of Innate Sorcery left, you can use it if you spend 2 Sorcery Points when you take the {@variantrule Bonus Action|XPHB} to activate it.",
+            "In addition, while your Innate Sorcery feature is active, you can use up to two of your {@filter Metamagic options|optionalfeatures|feature type=MM} on each spell you cast."
+          ]
+        },
+        "crossResourceRules": [
+          {
+            "trigger": {
+              "event": "custom",
+              "description": "Activate Innate Sorcery with no uses remaining."
+            },
+            "consume": {
+              "resourceId": "sorcery-points",
+              "amount": {
+                "type": "constant",
+                "value": 2
+              }
+            },
+            "restore": {
+              "resourceId": "innate-sorcery-uses",
+              "amount": {
+                "type": "constant",
+                "value": 0
+              }
+            },
+            "description": "Spend 2 Sorcery Points instead of an Innate Sorcery use."
+          }
+        ],
+        "properties": [
+          "innate-sorcery:max-metamagic-per-spell:2"
         ]
       }
     },
@@ -11892,6 +16335,325 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2",
+      "entityType": "feature",
+      "name": "Spellcasting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Sorcerer:Spellcasting:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer",
+        "text": {
+          "rules": [
+            "Drawing from your innate magic, you can cast spells. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Sorcerer spells, which appear in the {@filter Sorcerer spell list|spells|class=Sorcerer} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Cantrips",
+                  "entries": [
+                    "You know four Sorcerer cantrips of your choice. {@spell Light|XPHB}, {@spell Prestidigitation|XPHB}, {@spell Shocking Grasp|XPHB}, and {@spell Sorcerous Burst|XPHB} are recommended. Whenever you gain a Sorcerer level, you can replace one of your cantrips from this feature with another Sorcerer cantrip of your choice.",
+                    "When you reach Sorcerer levels 4 and 10, you learn another Sorcerer cantrip of your choice, as shown in the Cantrips column of the Sorcerer Features table."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Sorcerer Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two level 1 Sorcerer spells. {@spell Burning Hands|XPHB} and {@spell Detect Magic|XPHB} are recommended.",
+                    "The number of spells on your list increases as you gain Sorcerer levels, as shown in the Prepared Spells column of the Sorcerer Features table. Whenever that number increases, choose additional Sorcerer spells until the number of spells on your list matches the number in the Sorcerer Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 3 Sorcerer, your list of prepared spells can include six Sorcerer spells of level 1 or 2 in any combination.",
+                    "If another Sorcerer feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Sorcerer spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you gain a Sorcerer level, you can replace one spell on your list with another Sorcerer spell for which you have spell slots."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Charisma is your spellcasting ability for your Sorcerer spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use an {@item Arcane Focus|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Sorcerer spells."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classMechanics": {
+          "spellCollections": [
+            {
+              "id": "sorcerer-cantrips",
+              "kind": "known",
+              "sourceList": "Sorcerer",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.cantripsKnown"
+              },
+              "filter": {
+                "lists": [
+                  "Sorcerer"
+                ],
+                "levels": [
+                  0
+                ]
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "sorcerer-cantrips",
+                "filter": {
+                  "lists": [
+                    "Sorcerer"
+                  ],
+                  "levels": [
+                    0
+                  ]
+                }
+              }
+            },
+            {
+              "id": "sorcerer-prepared-spells",
+              "kind": "prepared",
+              "sourceList": "Sorcerer",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.sorcerer.preparedSpells"
+              },
+              "filter": {
+                "lists": [
+                  "Sorcerer"
+                ],
+                "minLevel": 1
+              },
+              "replace": {
+                "timing": "levelUp",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "sorcerer-prepared-spells",
+                "filter": {
+                  "lists": [
+                    "Sorcerer"
+                  ],
+                  "minLevel": 1
+                }
+              }
+            }
+          ],
+          "spellSlotPools": [
+            {
+              "id": "sorcerer-spell-slots",
+              "kind": "standard",
+              "progression": {
+                "1": {
+                  "1": 2
+                },
+                "2": {
+                  "1": 3
+                },
+                "3": {
+                  "1": 4,
+                  "2": 2
+                },
+                "4": {
+                  "1": 4,
+                  "2": 3
+                },
+                "5": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "6": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "7": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "8": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "9": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "10": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                },
+                "11": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1
+                },
+                "12": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1
+                },
+                "13": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1
+                },
+                "14": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1
+                },
+                "15": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1
+                },
+                "16": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1
+                },
+                "17": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "18": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 1,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "19": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 2,
+                  "7": 1,
+                  "8": 1,
+                  "9": 1
+                },
+                "20": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 3,
+                  "6": 2,
+                  "7": 2,
+                  "8": 1,
+                  "9": 1
+                }
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "spellcasting-ability:charisma",
+          "spellcasting-focus:arcane-focus",
+          "prepared-spells-change:level-up"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:rogue:steady-aim:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:rogue:steady-aim:srd-5.2",
       "entityType": "feature",
@@ -12184,6 +16946,57 @@
             "description": "On a successful save, halve target Speed and the next attack roll against it has Advantage until the start of your next turn."
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:subtle-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:subtle-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Subtle Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Subtle Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell, you can spend 1 Sorcery Point to cast it without any Verbal, Somatic, or Material components, except Material components that are consumed by the spell or that have a cost specified in the spell."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -13036,6 +17849,82 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:thirsting-blade:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:thirsting-blade:srd-5.2",
+      "entityType": "feature",
+      "name": "Thirsting Blade",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Thirsting Blade",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You gain the Extra Attack feature for your pact weapon only. With that feature, you can attack twice with the weapon instead of once when you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              },
+              "optionalfeature": [
+                "pact of the blade|xphb"
+              ]
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You gain the Extra Attack feature for your pact weapon only. With that feature, you can attack twice with the weapon instead of once when you take the {@action Attack|XPHB} action on your turn."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 5,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              },
+              "optionalfeature": [
+                "pact of the blade|xphb"
+              ]
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "entityType": "feature",
@@ -13162,6 +18051,57 @@
             "description": "Decrease Exhaustion level by 1 after a Short Rest."
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:transmuted-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:transmuted-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Transmuted Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Transmuted Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell that deals a type of damage from the following list, you can spend 1 Sorcery Point to change that damage type to one of the other listed types: Acid, Cold, Fire, Lightning, Poison, Thunder."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
+        }
       }
     },
     {
@@ -13305,6 +18245,57 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:sorcerer:metamagic:twinned-spell:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:twinned-spell:srd-5.2",
+      "entityType": "feature",
+      "name": "Twinned Spell",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:MM:Twinned Spell",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "sorcerer-metamagic",
+        "optionKind": "metamagic",
+        "text": {
+          "rules": [
+            "When you cast a spell, such as {@spell Charm Person|XPHB}, that can be cast with a higher-level spell slot to target an additional creature, you can spend 1 Sorcery Point to increase the spell's effective level by 1."
+          ]
+        },
+        "metamagic": {
+          "resource": "sorcery-points",
+          "cost": 1,
+          "sourceConsumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": [],
+          "additionalSpells": [],
+          "canCombineWithOtherMetamagic": false
+        },
+        "sourcePayload": {
+          "consumes": {
+            "name": "Sorcery Point"
+          },
+          "prerequisite": null,
+          "additionalSpells": null
         }
       }
     },
@@ -13777,6 +18768,92 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:warlock:invocation:visions-of-distant-realms:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:visions-of-distant-realms:srd-5.2",
+      "entityType": "feature",
+      "name": "Visions of Distant Realms",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Visions of Distant Realms",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Arcane Eye|XPHB} without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 9,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "arcane eye|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Arcane Eye|XPHB} without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 9,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "arcane eye|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:warden:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:warden:srd-5.2",
       "entityType": "feature",
@@ -14197,6 +19274,92 @@
               }
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:whispers-of-the-grave:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:whispers-of-the-grave:srd-5.2",
+      "entityType": "feature",
+      "name": "Whispers of the Grave",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Whispers of the Grave",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You can cast {@spell Speak with Dead|XPHB} without expending a spell slot."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 7,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [
+          {
+            "innate": {
+              "_": [
+                "speak with dead|xphb"
+              ]
+            }
+          }
+        ],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You can cast {@spell Speak with Dead|XPHB} without expending a spell slot."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 7,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": [
+            {
+              "innate": {
+                "_": [
+                  "speak with dead|xphb"
+                ]
+              }
+            }
+          ],
+          "consumes": null,
+          "repeatable": null
         }
       }
     },
@@ -14880,6 +20043,76 @@
               ]
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:warlock:invocation:witch-sight:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:warlock:invocation:witch-sight:srd-5.2",
+      "entityType": "feature",
+      "name": "Witch Sight",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:optionalFeature:EI:Witch Sight",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "warlock-invocation",
+        "optionKind": "eldritchInvocation",
+        "text": {
+          "rules": [
+            "You have {@sense Truesight|XPHB} with a range of 30 feet."
+          ]
+        },
+        "requirements": {
+          "prerequisite": [
+            {
+              "level": {
+                "level": 15,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ]
+        },
+        "spellPayload": [],
+        "resourcePayload": null,
+        "sourcePayload": {
+          "entries": [
+            "You have {@sense Truesight|XPHB} with a range of 30 feet."
+          ],
+          "prerequisite": [
+            {
+              "level": {
+                "level": 15,
+                "class": {
+                  "name": "Warlock",
+                  "source": "XPHB",
+                  "visibleStats": true
+                }
+              }
+            }
+          ],
+          "additionalSpells": null,
+          "consumes": null,
+          "repeatable": null
         }
       }
     },
