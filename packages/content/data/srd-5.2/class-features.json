@@ -10307,7 +10307,7 @@
           }
         ],
         "properties": [
-          "jump-distance:+dex-mod-feet"
+          "jump-calculation-ability:dexterity"
         ]
       }
     },
@@ -12956,8 +12956,7 @@
           ]
         },
         "properties": [
-          "round-1:second-turn-at-initiative-minus-10",
-          "once-per-short-or-long-rest"
+          "round-1:second-turn-at-initiative-minus-10"
         ],
         "activities": [
           {
@@ -12970,23 +12969,7 @@
             "target": {
               "type": "self"
             },
-            "uses": {
-              "max": {
-                "type": "constant",
-                "value": 1
-              },
-              "recovery": [
-                {
-                  "period": "shortRest",
-                  "amount": "all"
-                },
-                {
-                  "period": "longRest",
-                  "amount": "all"
-                }
-              ]
-            },
-            "description": "Take a second turn on the first round at initiative count 10 lower than your normal initiative."
+            "description": "In the first round of every combat, take a second turn at your normal Initiative minus 10."
           }
         ]
       }
@@ -13754,9 +13737,42 @@
           ]
         },
         "properties": [
-          "magic-items:ignore-class-restrictions",
-          "attunement-slots:+1",
-          "charges:chance-not-expended"
+          "magic-item-attunement-max:4",
+          "magic-item-charge-preservation:d6-on-6",
+          "spell-scroll:any",
+          "spell-scroll-ability:intelligence",
+          "spell-scroll-auto-cast:cantrip-or-level-1",
+          "spell-scroll-higher-level-check:intelligence-arcana-dc-10-plus-spell-level",
+          "spell-scroll-failed-check:scroll-disintegrates"
+        ],
+        "rollRules": [
+          {
+            "id": "use-magic-device-charges",
+            "target": "resourceExpenditure",
+            "predicate": {
+              "type": "custom",
+              "description": "A magic item property would expend one or more charges."
+            },
+            "die": "1d6",
+            "preserveOn": [
+              6
+            ]
+          },
+          {
+            "id": "use-magic-device-scroll",
+            "target": "abilityCheck",
+            "predicate": {
+              "type": "custom",
+              "description": "Casting a spell of level 2 or higher from a Spell Scroll."
+            },
+            "ability": "intelligence",
+            "skill": "arcana",
+            "dc": {
+              "type": "formula",
+              "formula": "10 + @spell.level"
+            },
+            "onFailure": "scroll-disintegrates"
+          }
         ]
       }
     },

@@ -4943,7 +4943,7 @@
         "equipmentBundles": [
           {
             "id": "A",
-            "label": "Structured starting equipment from SRD 5.2 Rogue",
+            "label": "Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves' Tools, Burglar's Pack, and 8 GP",
             "grants": [
               {
                 "entity": {
@@ -5001,6 +5001,12 @@
                   "entityType": "item",
                   "name": "Burglar's Pack",
                   "canonicalId": "dnd2024:2024:item:burglar-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 8,
+                  "currency": "gp"
                 }
               }
             ]

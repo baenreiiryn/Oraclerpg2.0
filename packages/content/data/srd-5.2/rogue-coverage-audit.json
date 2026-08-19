@@ -14,6 +14,16 @@
     "11": 6,
     "19": 10
   },
+  "equipment": {
+    "bundleAHas8GP": true,
+    "bundleB100GP": true
+  },
+  "thief2024": {
+    "jumpUsesDexterity": true,
+    "useMagicDeviceAttunement4": true,
+    "useMagicDeviceScrolls": true,
+    "thiefsReflexesUnlimited": true
+  },
   "thiefLevels": [
     3,
     9,
