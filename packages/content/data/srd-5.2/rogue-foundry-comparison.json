@@ -1,0 +1,37 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 16,
+    "subclassFeatureDocs": 5,
+    "scaleValues": [
+      "Sneak Attack"
+    ],
+    "thiefLevels": [
+      3,
+      9,
+      13,
+      17
+    ]
+  },
+  "oracle": {
+    "classFeatures": 23,
+    "subclassFeatures": 5,
+    "thiefLevels": [
+      3,
+      9,
+      13,
+      17
+    ]
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry embeds Cunning Strike option activities inside Cunning Strike/Devious Strikes documents; Oracle keeps the SRD 5.2 5etools option records as separate canonical feature options linked by an entity collection."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry duplicates Expertise and language selection through Trait advancements; Oracle stores the choices on structured grants while keeping the canonical class feature."
+    }
+  ]
+}

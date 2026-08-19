@@ -1,0 +1,20 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "source": {
+    "classFeatureRecords": 32,
+    "canonicalNames": 23,
+    "subclassFeatureRecords": 6,
+    "canonicalSubclassNames": 5
+  },
+  "oracle": {
+    "classFeatures": 23,
+    "subclassFeatures": 5
+  },
+  "thiefLevels": [
+    3,
+    9,
+    13,
+    17
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T11:27:29.615Z",
+  "generatedAt": "2026-08-19T12:21:13.814Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 8,
-      "withMedia": 8,
-      "assets": 8,
+      "entities": 9,
+      "withMedia": 9,
+      "assets": 9,
       "byRole": {
-        "artwork": 8
+        "artwork": 9
       }
     },
     "subclasses.json": {
-      "entities": 8,
+      "entities": 9,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 174,
+      "entities": 202,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1876,
-    "withMedia": 474,
-    "assets": 667
+    "entities": 1906,
+    "withMedia": 475,
+    "assets": 668
   },
-  "coverage": 0.2526652452025586,
+  "coverage": 0.24921301154249736,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7447,6 +7447,12 @@
     },
     {
       "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:rogue:thief:srd-5.2",
+      "name": "Thief",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "subclasses.json",
       "canonicalId": "dnd2024:2024:subclass:monk:open-hand:srd-5.2",
       "name": "Warrior of the Open Hand",
       "entityType": "subclass"
@@ -7496,6 +7502,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:ability-score-improvement:srd-5.2",
       "name": "Ability Score Improvement",
       "entityType": "feature"
     },
@@ -7627,6 +7639,18 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:cunning-action:srd-5.2",
+      "name": "Cunning Action",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:cunning-strike:srd-5.2",
+      "name": "Cunning Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
       "name": "Cutting Words",
       "entityType": "feature"
@@ -7635,6 +7659,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2",
       "name": "Danger Sense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2",
+      "name": "Daze (Cost: 2d6)",
       "entityType": "feature"
     },
     {
@@ -7659,6 +7689,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2",
       "name": "Deft Explorer",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2",
+      "name": "Devious Strikes",
       "entityType": "feature"
     },
     {
@@ -7723,6 +7759,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:elusive:srd-5.2",
+      "name": "Elusive",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:empowered-strikes:srd-5.2",
       "name": "Empowered Strikes",
       "entityType": "feature"
@@ -7777,7 +7819,19 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
+      "name": "Evasion",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:evasion:srd-5.2",
       "name": "Evasion",
       "entityType": "feature"
     },
@@ -7790,6 +7844,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:ranger:expertise:srd-5.2",
+      "name": "Expertise",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:expertise:srd-5.2",
       "name": "Expertise",
       "entityType": "feature"
     },
@@ -7827,6 +7887,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
       "name": "Faithful Steed",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:fast-hands:srd-5.2",
+      "name": "Fast Hands",
       "entityType": "feature"
     },
     {
@@ -7963,6 +8029,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:improved-cunning-strike:srd-5.2",
+      "name": "Improved Cunning Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:improved-elemental-fury:srd-5.2",
       "name": "Improved Elemental Fury",
       "entityType": "feature"
@@ -7995,6 +8067,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:jack-of-all-trades:srd-5.2",
       "name": "Jack of All Trades",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:knock-out-cost-6d6:srd-5.2",
+      "name": "Knock Out (Cost: 6d6)",
       "entityType": "feature"
     },
     {
@@ -8089,6 +8167,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:obscure-cost-3d6:srd-5.2",
+      "name": "Obscure (Cost: 3d6)",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "name": "Open Hand Technique",
       "entityType": "feature"
@@ -8121,6 +8205,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
       "name": "Persistent Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:poison-cost-1d6:srd-5.2",
+      "name": "Poison (Cost: 1d6)",
       "entityType": "feature"
     },
     {
@@ -8215,6 +8305,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:reliable-talent:srd-5.2",
+      "name": "Reliable Talent",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
       "name": "Remarkable Athlete",
       "entityType": "feature"
@@ -8257,8 +8353,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:second-story-work:srd-5.2",
+      "name": "Second-Story Work",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "name": "Self-Restoration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:slippery-mind:srd-5.2",
+      "name": "Slippery Mind",
       "entityType": "feature"
     },
     {
@@ -8271,6 +8379,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2",
       "name": "Smite of Protection",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2",
+      "name": "Sneak Attack",
       "entityType": "feature"
     },
     {
@@ -8305,8 +8419,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:steady-aim:srd-5.2",
+      "name": "Steady Aim",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "name": "Step of the Wind",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:stroke-of-luck:srd-5.2",
+      "name": "Stroke of Luck",
       "entityType": "feature"
     },
     {
@@ -8359,6 +8485,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:supreme-sneak:srd-5.2",
+      "name": "Supreme Sneak",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
       "name": "Survivor",
       "entityType": "feature"
@@ -8389,6 +8521,18 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:thief-s-reflexes:srd-5.2",
+      "name": "Thief's Reflexes",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thieves-cant:srd-5.2",
+      "name": "Thieves' Cant",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "name": "Three Extra Attacks",
       "entityType": "feature"
@@ -8397,6 +8541,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:ranger:tireless:srd-5.2",
       "name": "Tireless",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:trip-cost-1d6:srd-5.2",
+      "name": "Trip (Cost: 1d6)",
       "entityType": "feature"
     },
     {
@@ -8431,8 +8581,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:uncanny-dodge:srd-5.2",
+      "name": "Uncanny Dodge",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:uncanny-metabolism:srd-5.2",
       "name": "Uncanny Metabolism",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:use-magic-device:srd-5.2",
+      "name": "Use Magic Device",
       "entityType": "feature"
     },
     {
@@ -8467,6 +8629,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:wholeness-of-body:srd-5.2",
       "name": "Wholeness of Body",
       "entityType": "feature"
@@ -8487,6 +8655,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:wild-shape:srd-5.2",
       "name": "Wild Shape",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:rogue:withdraw-cost-1d6:srd-5.2",
+      "name": "Withdraw (Cost: 1d6)",
       "entityType": "feature"
     },
     {
