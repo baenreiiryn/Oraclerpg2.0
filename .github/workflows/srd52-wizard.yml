@@ -1,3 +1,4 @@
+# Validation-only workflow; Vercel deployment remains disabled for work/* branches.
 name: SRD 5.2 Wizard
 
 on:
