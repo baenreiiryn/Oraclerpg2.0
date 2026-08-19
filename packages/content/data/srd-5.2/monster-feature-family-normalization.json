@@ -1,0 +1,89 @@
+{
+  "generatedAt": "2026-08-19T01:38:51.406Z",
+  "draconicBreathCanonicalId": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2",
+  "removedDefinitions": [
+    {
+      "name": "Fire Breath {@recharge}",
+      "canonicalId": "dnd2024:2024:feature:fire-breath-recharge:srd-5.2",
+      "targetCanonicalId": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2"
+    },
+    {
+      "name": "Poison Breath {@recharge}",
+      "canonicalId": "dnd2024:2024:feature:poison-breath-recharge:srd-5.2",
+      "targetCanonicalId": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2"
+    }
+  ],
+  "renamedDefinitions": [
+    {
+      "fromName": "Acid Spray {@recharge}",
+      "toName": "Acid Spray",
+      "fromCanonicalId": "dnd2024:2024:feature:acid-spray-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:acid-spray:srd-5.2"
+    },
+    {
+      "fromName": "Blinding Breath {@recharge}",
+      "toName": "Blinding Breath",
+      "fromCanonicalId": "dnd2024:2024:feature:blinding-breath-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:blinding-breath:srd-5.2"
+    },
+    {
+      "fromName": "Boulder Toss {@recharge}",
+      "toName": "Boulder Toss",
+      "fromCanonicalId": "dnd2024:2024:feature:boulder-toss-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:boulder-toss:srd-5.2"
+    },
+    {
+      "fromName": "Cacophony {@recharge}",
+      "toName": "Cacophony",
+      "fromCanonicalId": "dnd2024:2024:feature:cacophony-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:cacophony:srd-5.2"
+    },
+    {
+      "fromName": "Frost Breath {@recharge}",
+      "toName": "Frost Breath",
+      "fromCanonicalId": "dnd2024:2024:feature:frost-breath-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:frost-breath:srd-5.2"
+    },
+    {
+      "fromName": "Nightmare {@recharge}",
+      "toName": "Nightmare",
+      "fromCanonicalId": "dnd2024:2024:feature:nightmare-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:nightmare:srd-5.2"
+    },
+    {
+      "fromName": "Possession {@recharge}",
+      "toName": "Possession",
+      "fromCanonicalId": "dnd2024:2024:feature:possession-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:possession:srd-5.2"
+    },
+    {
+      "fromName": "Rock {@recharge}",
+      "toName": "Rock",
+      "fromCanonicalId": "dnd2024:2024:feature:rock-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:rock:srd-5.2"
+    },
+    {
+      "fromName": "Spores {@recharge}",
+      "toName": "Spores",
+      "fromCanonicalId": "dnd2024:2024:feature:spores-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:spores:srd-5.2"
+    },
+    {
+      "fromName": "Unsettling Visage {@recharge}",
+      "toName": "Unsettling Visage",
+      "fromCanonicalId": "dnd2024:2024:feature:unsettling-visage-recharge:srd-5.2",
+      "toCanonicalId": "dnd2024:2024:feature:unsettling-visage:srd-5.2"
+    }
+  ],
+  "mergedDefinitions": [
+    {
+      "name": "Steam Breath {@recharge}",
+      "canonicalId": "dnd2024:2024:feature:steam-breath-recharge:srd-5.2",
+      "targetCanonicalId": "dnd2024:2024:feature:steam-breath:srd-5.2"
+    }
+  ],
+  "remappedAliases": 13,
+  "rechargeAliases": 42,
+  "structuredRechargeDefinitions": 33,
+  "resultingDefinitionCount": 405
+}

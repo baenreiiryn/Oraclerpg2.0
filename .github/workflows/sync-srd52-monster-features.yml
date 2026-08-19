@@ -1,0 +1,77 @@
+name: Sync SRD 5.2 Creature Features
+
+on:
+  push:
+    paths:
+      - "scripts/import-srd52-monster-features.mjs"
+      - "scripts/normalize-srd52-monster-feature-families.mjs"
+      - "scripts/audit-srd52-monster-feature-coverage.mjs"
+      - "packages/schema/src/monster-feature.ts"
+      - "packages/schema/src/feature.ts"
+      - "packages/schema/src/activity.ts"
+      - ".github/workflows/sync-srd52-monster-features.yml"
+  pull_request:
+    paths:
+      - "scripts/import-srd52-monster-features.mjs"
+      - "scripts/normalize-srd52-monster-feature-families.mjs"
+      - "scripts/audit-srd52-monster-feature-coverage.mjs"
+      - "packages/content/data/srd-5.2/monster-features.json"
+      - "packages/content/data/srd-5.2/monster-feature-aliases.json"
+      - "packages/schema/src/monster-feature.ts"
+      - "packages/schema/src/feature.ts"
+      - "packages/schema/src/activity.ts"
+      - ".github/workflows/sync-srd52-monster-features.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.15.0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install
+        run: pnpm install
+      - name: Build schema
+        run: pnpm --filter @oraclerpg/schema build
+      - name: Generate creature feature compendium
+        run: node scripts/import-srd52-monster-features.mjs
+      - name: Normalize generalized creature feature families
+        run: node scripts/normalize-srd52-monster-feature-families.mjs
+      - name: Audit complete SRD creature feature coverage
+        run: node scripts/audit-srd52-monster-feature-coverage.mjs
+      - name: Upload generated feature compendium and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-creature-features
+          path: |
+            packages/content/data/srd-5.2/monster-features.json
+            packages/content/data/srd-5.2/monster-feature-aliases.json
+            packages/content/data/srd-5.2/monster-features-import-report.json
+            packages/content/data/srd-5.2/monster-feature-family-normalization.json
+            packages/content/data/srd-5.2/monster-features-coverage-audit.json
+      - name: Commit generated creature feature compendium
+        if: github.event_name == 'push'
+        run: |
+          if [ -z "$(git status --porcelain -- packages/content/data/srd-5.2)" ]; then
+            echo "No content changes"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add packages/content/data/srd-5.2/monster-features.json
+          git add packages/content/data/srd-5.2/monster-feature-aliases.json
+          git add packages/content/data/srd-5.2/monster-features-import-report.json
+          git add packages/content/data/srd-5.2/monster-feature-family-normalization.json
+          git add packages/content/data/srd-5.2/monster-features-coverage-audit.json
+          git commit -m "Populate SRD 5.2 creature feature compendium"
+          git push
