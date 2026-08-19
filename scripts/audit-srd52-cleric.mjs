@@ -1,0 +1,9 @@
+import fs from 'node:fs/promises';
+const root='packages/content/data/srd-5.2';const read=async f=>JSON.parse(await fs.readFile(`${root}/${f}`,'utf8'));
+const cls=(await read('classes.json')).items.find(x=>x.name==='Cleric');const sub=(await read('subclasses.json')).items.find(x=>x.name==='Life Domain');const feats=(await read('class-features.json')).items.filter(x=>x.data?.category==='cleric'||x.data?.category==='cleric-life');
+const meaningful=x=>Object.keys(x.data??{}).some(k=>!['featureKind','category','text','properties'].includes(k));
+const allowedTextual=new Set([]);const issues=[];
+if(!cls)issues.push('Missing Cleric');if(!sub)issues.push('Missing Life Domain');if(cls?.data?.advancement?.length!==20)issues.push('Cleric progression is not 20 levels');
+for(const name of ['Divine Order','Spellcasting','Channel Divinity','Divine Spark','Turn Undead','Sear Undead','Blessed Strikes','Divine Intervention','Greater Divine Intervention']){const x=feats.find(y=>y.name===name&&y.data.category==='cleric');if(!x)issues.push(`Missing ${name}`);else if(!meaningful(x)&&!allowedTextual.has(name))issues.push(`Unstructured ${name}`);}
+for(const name of ['Life Domain Spells','Disciple of Life','Preserve Life','Blessed Healer','Supreme Healing']){const x=feats.find(y=>y.name===name&&y.data.category==='cleric-life');if(!x)issues.push(`Missing ${name}`);else if(!meaningful(x))issues.push(`Unstructured ${name}`);}
+const result={status:issues.length?'PARTIAL':'SUPPORTED',classCount:cls?1:0,subclassCount:sub?1:0,classFeatureDefinitions:feats.filter(x=>x.data.category==='cleric').length,subclassFeatureDefinitions:feats.filter(x=>x.data.category==='cleric-life').length,issues};await fs.writeFile(`${root}/cleric-coverage-audit.json`,JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));if(issues.length)process.exit(1);
