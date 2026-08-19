@@ -25,7 +25,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Melf's Acid Arrow|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -184,7 +184,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Acid Splash|XPHB",
-        "importedAt": "2026-08-19T04:10:57.288Z",
+        "importedAt": "2026-08-19T06:45:16.313Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -353,7 +353,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Aid|XPHB",
-        "importedAt": "2026-08-19T04:10:57.289Z",
+        "importedAt": "2026-08-19T06:45:16.313Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -724,7 +724,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Alarm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.289Z",
+        "importedAt": "2026-08-19T06:45:16.313Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -881,7 +881,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Alter Self|XPHB",
-        "importedAt": "2026-08-19T04:10:57.289Z",
+        "importedAt": "2026-08-19T06:45:16.314Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -1171,7 +1171,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Animal Friendship|XPHB",
-        "importedAt": "2026-08-19T04:10:57.290Z",
+        "importedAt": "2026-08-19T06:45:16.314Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -1360,7 +1360,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Animal Messenger|XPHB",
-        "importedAt": "2026-08-19T04:10:57.290Z",
+        "importedAt": "2026-08-19T06:45:16.314Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -1543,7 +1543,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Animal Shapes|XPHB",
-        "importedAt": "2026-08-19T04:10:57.290Z",
+        "importedAt": "2026-08-19T06:45:16.314Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -1785,7 +1785,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Animate Dead|XPHB",
-        "importedAt": "2026-08-19T04:10:57.290Z",
+        "importedAt": "2026-08-19T06:45:16.314Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -1947,7 +1947,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Animate Objects|XPHB",
-        "importedAt": "2026-08-19T04:10:57.292Z",
+        "importedAt": "2026-08-19T06:45:16.317Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -2149,7 +2149,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Antilife Shell|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.317Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -2284,7 +2284,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Antimagic Field|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.317Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -2429,7 +2429,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Antipathy/Sympathy|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.317Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -2720,7 +2720,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Arcane Eye|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.318Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -2844,7 +2844,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Bigby's Hand|XPHB",
-        "importedAt": "2026-08-19T04:10:57.297Z",
+        "importedAt": "2026-08-19T06:45:16.321Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3056,7 +3056,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Arcane Lock|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3180,7 +3180,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mordenkainen's Sword|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3342,7 +3342,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Arcane Vigor|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3601,7 +3601,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Nystul's Magic Aura|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3744,7 +3744,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Astral Projection|XPHB",
-        "importedAt": "2026-08-19T04:10:57.293Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -3914,7 +3914,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Augury|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4074,7 +4074,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Aura of Life|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4225,7 +4225,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Awaken|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4372,7 +4372,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Bane|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.319Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4603,7 +4603,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Banishment|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.320Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4809,7 +4809,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Barkskin|XPHB",
-        "importedAt": "2026-08-19T04:10:57.294Z",
+        "importedAt": "2026-08-19T06:45:16.321Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -4984,7 +4984,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Beacon of Hope|XPHB",
-        "importedAt": "2026-08-19T04:10:57.296Z",
+        "importedAt": "2026-08-19T06:45:16.321Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -5130,7 +5130,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Befuddlement|XPHB",
-        "importedAt": "2026-08-19T04:10:57.296Z",
+        "importedAt": "2026-08-19T06:45:16.321Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -5298,7 +5298,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Bestow Curse|XPHB",
-        "importedAt": "2026-08-19T04:10:57.297Z",
+        "importedAt": "2026-08-19T06:45:16.321Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -5579,7 +5579,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Evard's Black Tentacles|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -5732,7 +5732,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Blade Barrier|XPHB",
-        "importedAt": "2026-08-19T04:10:57.297Z",
+        "importedAt": "2026-08-19T06:45:16.322Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -5921,7 +5921,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Bless|XPHB",
-        "importedAt": "2026-08-19T04:10:57.297Z",
+        "importedAt": "2026-08-19T06:45:16.322Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6136,7 +6136,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Blight|XPHB",
-        "importedAt": "2026-08-19T04:10:57.297Z",
+        "importedAt": "2026-08-19T06:45:16.322Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6312,7 +6312,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Blindness/Deafness|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.322Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6525,7 +6525,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Blink|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.322Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6693,7 +6693,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Blur|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6813,7 +6813,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Burning Hands|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -6996,7 +6996,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Call Lightning|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -7142,7 +7142,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Calm Emotions|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -7320,7 +7320,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Chain Lightning|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -7487,7 +7487,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Charm Monster|XPHB",
-        "importedAt": "2026-08-19T04:10:57.298Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -7688,7 +7688,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Charm Person|XPHB",
-        "importedAt": "2026-08-19T04:10:57.301Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -7892,7 +7892,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Chill Touch|XPHB",
-        "importedAt": "2026-08-19T04:10:57.301Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8071,7 +8071,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Chromatic Orb|XPHB",
-        "importedAt": "2026-08-19T04:10:57.301Z",
+        "importedAt": "2026-08-19T06:45:16.323Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8236,7 +8236,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Circle of Death|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8405,7 +8405,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Clairvoyance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8561,7 +8561,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Clone|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8683,7 +8683,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Cloudkill|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -8863,7 +8863,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Color Spray|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9018,7 +9018,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Command|XPHB",
-        "importedAt": "2026-08-19T04:10:57.302Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9215,7 +9215,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Commune|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9331,7 +9331,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Commune with Nature|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9461,7 +9461,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Comprehend Languages|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9628,7 +9628,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Compulsion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.326Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9781,7 +9781,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Cone of Cold|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -9952,7 +9952,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Confusion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -10164,7 +10164,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Animals|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -10339,7 +10339,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Celestial|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -10540,7 +10540,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Elemental|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -10705,7 +10705,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Fey|XPHB",
-        "importedAt": "2026-08-19T04:10:57.307Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -10864,7 +10864,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Minor Elementals|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.327Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11030,7 +11030,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Conjure Woodland Beings|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11222,7 +11222,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Contact Other Plane|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11351,7 +11351,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Contagion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11611,7 +11611,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Contingency|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11746,7 +11746,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Continual Flame|XPHB",
-        "importedAt": "2026-08-19T04:10:57.308Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -11890,7 +11890,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Control Water|XPHB",
-        "importedAt": "2026-08-19T04:10:57.310Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -12106,7 +12106,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Control Weather|XPHB",
-        "importedAt": "2026-08-19T04:10:57.310Z",
+        "importedAt": "2026-08-19T06:45:16.328Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -12357,7 +12357,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Counterspell|XPHB",
-        "importedAt": "2026-08-19T04:10:57.310Z",
+        "importedAt": "2026-08-19T06:45:16.329Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -12492,7 +12492,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Create Food and Water|XPHB",
-        "importedAt": "2026-08-19T04:10:57.310Z",
+        "importedAt": "2026-08-19T06:45:16.329Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -12610,7 +12610,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Create or Destroy Water|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.329Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -12777,7 +12777,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Create Undead|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.329Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13056,7 +13056,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Creation|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.329Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13216,7 +13216,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Cure Wounds|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13398,7 +13398,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dancing Lights|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13547,7 +13547,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Darkness|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13692,7 +13692,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Darkvision|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -13863,7 +13863,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Daylight|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14025,7 +14025,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Death Ward|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14158,7 +14158,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Delayed Blast Fireball|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14430,7 +14430,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Demiplane|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14572,7 +14572,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Detect Evil and Good|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14709,7 +14709,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Detect Magic|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -14890,7 +14890,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Detect Poison and Disease|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15038,7 +15038,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Detect Thoughts|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.340Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15213,7 +15213,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dimension Door|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15382,7 +15382,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Disguise Self|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15538,7 +15538,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Disintegrate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.311Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15699,7 +15699,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dispel Evil and Good|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -15903,7 +15903,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dispel Magic|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16093,7 +16093,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dissonant Whispers|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16240,7 +16240,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Divination|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16374,7 +16374,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Divine Favor|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16519,7 +16519,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Divine Smite|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16657,7 +16657,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Divine Word|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -16898,7 +16898,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dominate Beast|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -17082,7 +17082,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dominate Monster|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -17281,7 +17281,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dominate Person|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -17465,7 +17465,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dragon's Breath|XPHB",
-        "importedAt": "2026-08-19T04:10:57.312Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -17650,7 +17650,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Dream|XPHB",
-        "importedAt": "2026-08-19T04:10:57.314Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -17894,7 +17894,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Druidcraft|XPHB",
-        "importedAt": "2026-08-19T04:10:57.314Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -18031,7 +18031,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Earthquake|XPHB",
-        "importedAt": "2026-08-19T04:10:57.314Z",
+        "importedAt": "2026-08-19T06:45:16.343Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -18278,7 +18278,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Eldritch Blast|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -18425,7 +18425,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Elementalism|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -18617,7 +18617,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Enhance Ability|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -18903,7 +18903,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Enlarge/Reduce|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -19166,7 +19166,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ensnaring Strike|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -19347,7 +19347,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Entangle|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -19507,7 +19507,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Enthrall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -19668,7 +19668,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Etherealness|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -19885,7 +19885,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Expeditious Retreat|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20021,7 +20021,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Eyebite|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20343,7 +20343,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fabricate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20464,7 +20464,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Faerie Fire|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20611,7 +20611,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mordenkainen's Faithful Hound|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20747,7 +20747,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "False Life|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -20879,7 +20879,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fear|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21052,7 +21052,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Feather Fall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.315Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21192,7 +21192,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Find Familiar|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21356,7 +21356,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Find Steed|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21662,7 +21662,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Find the Path|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21800,7 +21800,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Find Traps|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.344Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -21931,7 +21931,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Finger of Death|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22104,7 +22104,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fire Bolt|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22274,7 +22274,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fire Shield|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22456,7 +22456,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fire Storm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22605,7 +22605,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fireball|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22785,7 +22785,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Flame Blade|XPHB",
-        "importedAt": "2026-08-19T04:10:57.316Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -22955,7 +22955,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Flame Strike|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -23097,7 +23097,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Flaming Sphere|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -23287,7 +23287,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Flesh to Stone|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -23533,7 +23533,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Tenser's Floating Disk|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -23660,7 +23660,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fly|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -23852,7 +23852,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Fog Cloud|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -24011,7 +24011,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Forbiddance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -24167,7 +24167,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Forcecage|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -24336,7 +24336,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Foresight|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -24584,7 +24584,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Freedom of Movement|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -24802,7 +24802,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Otiluke's Freezing Sphere|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -25029,7 +25029,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Gaseous Form|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -25310,7 +25310,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Gate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -25561,7 +25561,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Geas|XPHB",
-        "importedAt": "2026-08-19T04:10:57.317Z",
+        "importedAt": "2026-08-19T06:45:16.345Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -25770,7 +25770,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Gentle Repose|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -25904,7 +25904,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Giant Insect|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26071,7 +26071,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Glibness|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26195,7 +26195,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Globe of Invulnerability|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26345,7 +26345,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Glyph of Warding|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26559,7 +26559,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Goodberry|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26682,7 +26682,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Grease|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26818,7 +26818,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Greater Invisibility|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -26970,7 +26970,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Greater Restoration|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -27137,7 +27137,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Guardian of Faith|XPHB",
-        "importedAt": "2026-08-19T04:10:57.318Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -27296,7 +27296,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Guards and Wards|XPHB",
-        "importedAt": "2026-08-19T04:10:57.321Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -27475,7 +27475,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Guidance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.321Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28051,7 +28051,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Guiding Bolt|XPHB",
-        "importedAt": "2026-08-19T04:10:57.321Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28237,7 +28237,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Gust of Wind|XPHB",
-        "importedAt": "2026-08-19T04:10:57.321Z",
+        "importedAt": "2026-08-19T06:45:16.346Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28392,7 +28392,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hallow|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28636,7 +28636,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hallucinatory Terrain|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28789,7 +28789,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Harm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -28926,7 +28926,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Haste|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -29250,7 +29250,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Heal|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -29389,7 +29389,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Healing Word|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -29556,7 +29556,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Heat Metal|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -29758,7 +29758,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hellish Rebuke|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -29907,7 +29907,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Heroes' Feast|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -30174,7 +30174,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Heroism|XPHB",
-        "importedAt": "2026-08-19T04:10:57.322Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -30350,7 +30350,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hex|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -30856,7 +30856,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Tasha's Hideous Laughter|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -31029,7 +31029,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hold Monster|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -31225,7 +31225,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hold Person|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -31442,7 +31442,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Holy Aura|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -31676,7 +31676,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hunter's Mark|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -31936,7 +31936,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Hypnotic Pattern|XPHB",
-        "importedAt": "2026-08-19T04:10:57.323Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -32173,7 +32173,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ice Knife|XPHB",
-        "importedAt": "2026-08-19T04:10:57.325Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -32359,7 +32359,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ice Storm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.325Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -32524,7 +32524,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Identify|XPHB",
-        "importedAt": "2026-08-19T04:10:57.326Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -32658,7 +32658,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Illusory Script|XPHB",
-        "importedAt": "2026-08-19T04:10:57.326Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -32796,7 +32796,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Imprisonment|XPHB",
-        "importedAt": "2026-08-19T04:10:57.326Z",
+        "importedAt": "2026-08-19T06:45:16.347Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33032,7 +33032,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Incendiary Cloud|XPHB",
-        "importedAt": "2026-08-19T04:10:57.326Z",
+        "importedAt": "2026-08-19T06:45:16.349Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33185,7 +33185,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Inflict Wounds|XPHB",
-        "importedAt": "2026-08-19T04:10:57.326Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33327,7 +33327,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Insect Plague|XPHB",
-        "importedAt": "2026-08-19T04:10:57.333Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33520,7 +33520,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Drawmij's Instant Summons|XPHB",
-        "importedAt": "2026-08-19T04:10:57.314Z",
+        "importedAt": "2026-08-19T06:45:16.341Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33650,7 +33650,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Invisibility|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33833,7 +33833,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Otto's Irresistible Dance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.342Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -33984,7 +33984,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Jump|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34157,7 +34157,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Knock|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34294,7 +34294,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Legend Lore|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34435,7 +34435,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Lesser Restoration|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34584,7 +34584,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Levitate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34739,7 +34739,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Light|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -34885,7 +34885,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Lightning Bolt|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35051,7 +35051,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Locate Animals or Plants|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35185,7 +35185,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Locate Creature|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35347,7 +35347,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Locate Object|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35515,7 +35515,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Longstrider|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35698,7 +35698,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mage Armor|XPHB",
-        "importedAt": "2026-08-19T04:10:57.335Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -35855,7 +35855,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mage Hand|XPHB",
-        "importedAt": "2026-08-19T04:10:57.335Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -36004,7 +36004,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Magic Circle|XPHB",
-        "importedAt": "2026-08-19T04:10:57.335Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -36196,7 +36196,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Magic Jar|XPHB",
-        "importedAt": "2026-08-19T04:10:57.335Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -36458,7 +36458,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Magic Missile|XPHB",
-        "importedAt": "2026-08-19T04:10:57.335Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -36622,7 +36622,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Magic Mouth|XPHB",
-        "importedAt": "2026-08-19T04:10:57.337Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -36761,7 +36761,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Magic Weapon|XPHB",
-        "importedAt": "2026-08-19T04:10:57.337Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37019,7 +37019,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mordenkainen's Magnificent Mansion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37151,7 +37151,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Major Image|XPHB",
-        "importedAt": "2026-08-19T04:10:57.337Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37322,7 +37322,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mass Cure Wounds|XPHB",
-        "importedAt": "2026-08-19T04:10:57.337Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37484,7 +37484,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mass Heal|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37603,7 +37603,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mass Healing Word|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37761,7 +37761,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mass Suggestion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -37942,7 +37942,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Maze|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38082,7 +38082,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Meld into Stone|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38227,7 +38227,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mending|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38380,7 +38380,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Message|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38529,7 +38529,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Meteor Swarm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38679,7 +38679,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mind Blank|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -38839,7 +38839,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mind Spike|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39015,7 +39015,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Minor Illusion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.351Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39180,7 +39180,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mirage Arcane|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39309,7 +39309,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mirror Image|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39581,7 +39581,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mislead|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39726,7 +39726,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Misty Step|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -39858,7 +39858,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Modify Memory|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40041,7 +40041,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Moonbeam|XPHB",
-        "importedAt": "2026-08-19T04:10:57.338Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40195,7 +40195,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Move Earth|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40331,7 +40331,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Nondetection|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40480,7 +40480,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Pass without Trace|XPHB",
-        "importedAt": "2026-08-19T04:10:57.342Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40630,7 +40630,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Passwall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.342Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40757,7 +40757,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Phantasmal Force|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -40960,7 +40960,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Phantasmal Killer|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41173,7 +41173,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Phantom Steed|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41298,7 +41298,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Planar Ally|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41417,7 +41417,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Planar Binding|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41617,7 +41617,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Plane Shift|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41775,7 +41775,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Plant Growth|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -41936,7 +41936,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Poison Spray|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42120,7 +42120,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Polymorph|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42304,7 +42304,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Power Word Heal|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42429,7 +42429,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Power Word Kill|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42575,7 +42575,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Power Word Stun|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42804,7 +42804,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Prayer of Healing|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -42946,7 +42946,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Prestidigitation|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -43131,7 +43131,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Prismatic Spray|XPHB",
-        "importedAt": "2026-08-19T04:10:57.343Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -43443,7 +43443,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Prismatic Wall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -43782,7 +43782,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Mordenkainen's Private Sanctum|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.353Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -43937,7 +43937,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Produce Flame|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -44112,7 +44112,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Programmed Illusion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -44253,7 +44253,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Project Image|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -44397,7 +44397,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Protection from Energy|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -44662,7 +44662,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Protection from Evil and Good|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -44848,7 +44848,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Protection from Poison|XPHB",
-        "importedAt": "2026-08-19T04:10:57.344Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -45014,7 +45014,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Purify Food and Drink|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -45144,7 +45144,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Raise Dead|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -45626,7 +45626,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ray of Enfeeblement|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -45844,7 +45844,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ray of Frost|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46075,7 +46075,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Ray of Sickness|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46221,7 +46221,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Regenerate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46375,7 +46375,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Reincarnate|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46544,7 +46544,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Remove Curse|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46688,7 +46688,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Otiluke's Resilient Sphere|XPHB",
-        "importedAt": "2026-08-19T04:10:57.339Z",
+        "importedAt": "2026-08-19T06:45:16.354Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -46843,7 +46843,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Resistance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -47120,7 +47120,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Resurrection|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -47932,7 +47932,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Reverse Gravity|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48088,7 +48088,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Revivify|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48236,7 +48236,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Rope Trick|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48351,7 +48351,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sacred Flame|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48532,7 +48532,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sanctuary|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48680,7 +48680,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Scorching Ray|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -48822,7 +48822,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Scrying|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49159,7 +49159,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Searing Smite|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49329,7 +49329,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Leomund's Secret Chest|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49467,7 +49467,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "See Invisibility|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49627,7 +49627,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Seeming|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49811,7 +49811,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sending|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -49941,7 +49941,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sequester|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -50089,7 +50089,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shapechange|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.356Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -50348,7 +50348,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shatter|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -50515,7 +50515,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shield|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -50659,7 +50659,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shield of Faith|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -50812,7 +50812,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shillelagh|XPHB",
-        "importedAt": "2026-08-19T04:10:57.347Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -51400,7 +51400,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shining Smite|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -51592,7 +51592,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Shocking Grasp|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -51757,7 +51757,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Silence|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -51935,7 +51935,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Silent Image|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52080,7 +52080,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Simulacrum|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52204,7 +52204,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sleep|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52373,7 +52373,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sleet Storm|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52521,7 +52521,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Slow|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52760,7 +52760,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sorcerous Burst|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -52928,7 +52928,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Spare the Dying|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53107,7 +53107,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Speak with Animals|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53266,7 +53266,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Speak with Dead|XPHB",
-        "importedAt": "2026-08-19T04:10:57.348Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53418,7 +53418,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Speak with Plants|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53562,7 +53562,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Spider Climb|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53738,7 +53738,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Spike Growth|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.357Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -53877,7 +53877,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Spirit Guardians|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54105,7 +54105,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Spiritual Weapon|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54256,7 +54256,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Starry Wisp|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54467,7 +54467,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Stinking Cloud|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54637,7 +54637,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Stone Shape|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54771,7 +54771,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Stoneskin|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -54962,7 +54962,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Storm of Vengeance|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -55241,7 +55241,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Suggestion|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -55421,7 +55421,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Summon Dragon|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -55646,7 +55646,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sunbeam|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -55960,7 +55960,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Sunburst|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -56150,7 +56150,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Symbol|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -56642,7 +56642,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Telekinesis|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -56813,7 +56813,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Rary's Telepathic Bond|XPHB",
-        "importedAt": "2026-08-19T04:10:57.346Z",
+        "importedAt": "2026-08-19T06:45:16.355Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -56951,7 +56951,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Teleport|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57196,7 +57196,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Teleportation Circle|XPHB",
-        "importedAt": "2026-08-19T04:10:57.349Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57356,7 +57356,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Thaumaturgy|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57527,7 +57527,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Thunderwave|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.358Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57711,7 +57711,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Time Stop|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57828,7 +57828,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Leomund's Tiny Hut|XPHB",
-        "importedAt": "2026-08-19T04:10:57.334Z",
+        "importedAt": "2026-08-19T06:45:16.350Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -57975,7 +57975,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Tongues|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58148,7 +58148,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Transport via Plants|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58267,7 +58267,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Tree Stride|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58395,7 +58395,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "True Polymorph|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58599,7 +58599,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "True Resurrection|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58728,7 +58728,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "True Seeing|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -58907,7 +58907,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "True Strike|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -59175,7 +59175,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Tsunami|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -59390,7 +59390,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Unseen Servant|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -59539,7 +59539,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Vampiric Touch|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -59698,7 +59698,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Vicious Mockery|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -59867,7 +59867,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Vitriolic Sphere|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -60040,7 +60040,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wall of Fire|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -60258,7 +60258,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wall of Force|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -60405,7 +60405,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wall of Ice|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.359Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -60626,7 +60626,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wall of Stone|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -60811,7 +60811,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wall of Thorns|XPHB",
-        "importedAt": "2026-08-19T04:10:57.350Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61039,7 +61039,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Warding Bond|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61302,7 +61302,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Water Breathing|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61460,7 +61460,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Water Walk|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61621,7 +61621,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Web|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61794,7 +61794,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Weird|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -61986,7 +61986,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wind Walk|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -62208,7 +62208,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wind Wall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -62406,7 +62406,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Wish|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -62625,7 +62625,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Word of Recall|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
@@ -62753,7 +62753,7 @@
         "origin": "import",
         "provider": "5etools",
         "sourceKey": "Zone of Truth|XPHB",
-        "importedAt": "2026-08-19T04:10:57.351Z",
+        "importedAt": "2026-08-19T06:45:16.360Z",
         "adapterVersion": "0.2.0",
         "mapperVersion": "0.2.0"
       },
