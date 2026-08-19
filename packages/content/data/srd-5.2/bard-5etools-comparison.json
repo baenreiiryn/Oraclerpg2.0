@@ -1,0 +1,15 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "class": "Bard",
+    "subclass": "College of Lore",
+    "classFeatureRecords": 18,
+    "subclassFeatureRecords": 5
+  },
+  "oracle": {
+    "classFeatures": 11,
+    "subclassFeatures": 4,
+    "structured": 15
+  },
+  "issues": []
+}

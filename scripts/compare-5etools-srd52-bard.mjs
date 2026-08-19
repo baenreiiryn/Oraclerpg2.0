@@ -1,0 +1,28 @@
+import fs from 'node:fs/promises';
+const ROOT='packages/content/data/srd-5.2';
+const URL='https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/class/class-bard.json';
+const source=await (await fetch(URL)).json();
+const cls=source.class.find(x=>x.name==='Bard'&&x.source==='XPHB'&&x.srd52);
+const sub=source.subclass.find(x=>x.className==='Bard'&&x.classSource==='XPHB'&&x.source==='XPHB'&&x.srd52&&['Lore','College of Lore'].includes(x.shortName??x.name));
+const cf=(source.classFeature??[]).filter(x=>x.className==='Bard'&&x.classSource==='XPHB'&&x.srd52);
+const sf=(source.subclassFeature??[]).filter(x=>x.className==='Bard'&&x.classSource==='XPHB'&&x.subclassSource==='XPHB'&&x.srd52&&['Lore','College of Lore'].includes(x.subclassShortName));
+const classes=JSON.parse(await fs.readFile(`${ROOT}/classes.json`,'utf8'));
+const subclasses=JSON.parse(await fs.readFile(`${ROOT}/subclasses.json`,'utf8'));
+const features=JSON.parse(await fs.readFile(`${ROOT}/class-features.json`,'utf8'));
+const bard=classes.items.find(x=>x.name==='Bard');const lore=subclasses.items.find(x=>x.name==='College of Lore');
+const classFeatures=features.items.filter(x=>x.data?.category==='bard'&&x.data?.featureKind==='classFeature');
+const subFeatures=features.items.filter(x=>x.data?.category==='bard-lore'&&x.data?.featureKind==='subclassFeature');
+const issues=[];const fail=m=>issues.push(m);
+if(!cls||!bard)fail('Bard missing');if(!sub||!lore)fail('College of Lore missing');
+if(bard?.data.hitDie!==8)fail('Hit Die mismatch');
+if(JSON.stringify(bard?.data.savingThrowProficiencies)!==JSON.stringify(['dexterity','charisma']))fail('Saving throws mismatch');
+if(bard?.data.advancement?.length!==20)fail('Advancement must contain 20 levels');
+const required=['Bardic Inspiration','Spellcasting','Expertise','Jack of All Trades','Font of Inspiration','Countercharm','Magical Secrets','Superior Inspiration','Words of Creation'];
+for(const n of required)if(!classFeatures.some(x=>x.name===n))fail(`Missing class feature: ${n}`);
+for(const n of ['Bonus Proficiencies','Cutting Words','Magical Discoveries','Peerless Skill'])if(!subFeatures.some(x=>x.name===n))fail(`Missing Lore feature: ${n}`);
+const checkpoints={1:['d6',2,4],5:['d8',3,9],10:['d10',4,15],15:['d12',4,18],20:['d12',4,22]};
+for(const [level,expect] of Object.entries(checkpoints)){const s=bard?.data.advancement?.[Number(level)-1]?.scaleValues;const got=[s?.bardicInspirationDie,s?.cantrips,s?.preparedSpells];if(JSON.stringify(got)!==JSON.stringify(expect))fail(`Progression L${level}: ${JSON.stringify(got)} != ${JSON.stringify(expect)}`);}
+const structured=[...classFeatures,...subFeatures].filter(x=>Object.keys(x.data??{}).some(k=>!['featureKind','category','text'].includes(k)));
+if(structured.length!==classFeatures.length+subFeatures.length)fail('Some Bard features are text-only');
+const report={status:issues.length?'PARTIAL':'SUPPORTED',source:{class:'Bard',subclass:sub?.name,classFeatureRecords:cf.length,subclassFeatureRecords:sf.length},oracle:{classFeatures:classFeatures.length,subclassFeatures:subFeatures.length,structured:structured.length},issues};
+await fs.writeFile(`${ROOT}/bard-5etools-comparison.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);

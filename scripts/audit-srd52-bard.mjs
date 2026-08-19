@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+const ROOT='packages/content/data/srd-5.2';
+const classes=JSON.parse(await fs.readFile(`${ROOT}/classes.json`,'utf8'));const subs=JSON.parse(await fs.readFile(`${ROOT}/subclasses.json`,'utf8'));const features=JSON.parse(await fs.readFile(`${ROOT}/class-features.json`,'utf8'));
+const bard=classes.items.find(x=>x.name==='Bard');const lore=subs.items.find(x=>x.name==='College of Lore');const cf=features.items.filter(x=>x.data?.category==='bard'&&x.data?.featureKind==='classFeature');const sf=features.items.filter(x=>x.data?.category==='bard-lore');
+const issues=[];const fail=m=>issues.push(m);
+if(!bard)fail('Bard missing');if(!lore)fail('College of Lore missing');if(bard?.data?.advancement?.length!==20)fail('Bard advancement incomplete');
+const required=['Bardic Inspiration','Spellcasting','Expertise','Jack of All Trades','Font of Inspiration','Countercharm','Magical Secrets','Superior Inspiration','Words of Creation'];for(const n of required)if(!cf.some(x=>x.name===n))fail(`Missing ${n}`);
+for(const n of ['Bonus Proficiencies','Cutting Words','Magical Discoveries','Peerless Skill'])if(!sf.some(x=>x.name===n))fail(`Missing ${n}`);
+for(const f of [...cf,...sf])if(!Object.keys(f.data??{}).some(k=>!['featureKind','category','text'].includes(k)))fail(`${f.name} is text-only`);
+if(!cf.find(x=>x.name==='Bardic Inspiration')?.data?.classMechanics?.dicePools?.length)fail('Bardic Inspiration dice pool missing');
+if(!cf.find(x=>x.name==='Spellcasting')?.data?.classMechanics?.spellSlotPools?.length)fail('Spell slot pool missing');
+if(!cf.find(x=>x.name==='Magical Secrets')?.data?.classMechanics?.spellCollections?.length)fail('Magical Secrets structured spell collection missing');
+const report={status:issues.length?'PARTIAL':'SUPPORTED',classCount:bard?1:0,subclassCount:lore?1:0,classFeatureDefinitions:cf.length,subclassFeatureDefinitions:sf.length,issues};await fs.writeFile(`${ROOT}/bard-coverage-audit.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);

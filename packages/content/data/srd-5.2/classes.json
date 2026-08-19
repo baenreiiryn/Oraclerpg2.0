@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 1,
+  "count": 2,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -522,6 +522,504 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 380086
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:bard:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:bard:srd-5.2",
+      "entityType": "class",
+      "name": "Bard",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Bard",
+        "adapterVersion": "0.4.0",
+        "mapperVersion": "0.4.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 8,
+        "primaryAbilities": [
+          "charisma"
+        ],
+        "savingThrowProficiencies": [
+          "dexterity",
+          "charisma"
+        ],
+        "armorTraining": [
+          "light"
+        ],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "toolChoices": {
+          "kind": "enum",
+          "count": 3,
+          "options": [
+            "Musical Instrument"
+          ]
+        },
+        "skillChoices": {
+          "kind": "tagQuery",
+          "count": 3,
+          "entityTypes": [
+            "proficiency"
+          ],
+          "query": {
+            "all": [
+              {
+                "field": "kind",
+                "operator": "eq",
+                "value": "skill"
+              }
+            ]
+          }
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Leather Armor, 2 Daggers, Musical Instrument, Entertainer's Pack, and 19 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Leather Armor",
+                  "canonicalId": "dnd2024:2024:item:leather-armor:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 2
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Entertainer's Pack",
+                  "canonicalId": "dnd2024:2024:item:entertainer-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 19,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "90 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 90,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "full",
+          "ability": "charisma",
+          "preparation": "prepared",
+          "focus": [
+            "musicalInstrument"
+          ]
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Bardic Inspiration",
+                  "canonicalId": "dnd2024:2024:feature:bard:bardic-inspiration:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:bard:spellcasting:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d6",
+              "cantrips": 2,
+              "preparedSpells": 4
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Expertise",
+                  "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Jack of All Trades",
+                  "canonicalId": "dnd2024:2024:feature:bard:jack-of-all-trades:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d6",
+              "cantrips": 2,
+              "preparedSpells": 5
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d6",
+              "cantrips": 2,
+              "preparedSpells": 6
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:bard:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d6",
+              "cantrips": 3,
+              "preparedSpells": 7
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Font of Inspiration",
+                  "canonicalId": "dnd2024:2024:feature:bard:font-of-inspiration:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d8",
+              "cantrips": 3,
+              "preparedSpells": 9
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d8",
+              "cantrips": 3,
+              "preparedSpells": 10
+            }
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Countercharm",
+                  "canonicalId": "dnd2024:2024:feature:bard:countercharm:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d8",
+              "cantrips": 3,
+              "preparedSpells": 11
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d8",
+              "cantrips": 3,
+              "preparedSpells": 12
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Expertise",
+                  "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d8",
+              "cantrips": 3,
+              "preparedSpells": 14
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 2,
+                "entityTypes": [
+                  "proficiency"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "kind",
+                      "operator": "eq",
+                      "value": "skill"
+                    },
+                    {
+                      "field": "proficient",
+                      "operator": "eq",
+                      "value": true
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Magical Secrets",
+                  "canonicalId": "dnd2024:2024:feature:bard:magical-secrets:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d10",
+              "cantrips": 4,
+              "preparedSpells": 15
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d10",
+              "cantrips": 4,
+              "preparedSpells": 16
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d10",
+              "cantrips": 4,
+              "preparedSpells": 16
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d10",
+              "cantrips": 4,
+              "preparedSpells": 17
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d10",
+              "cantrips": 4,
+              "preparedSpells": 17
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 18
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 18
+            }
+          },
+          {
+            "level": 17,
+            "grants": [],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 19
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Superior Inspiration",
+                  "canonicalId": "dnd2024:2024:feature:bard:superior-inspiration:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 20
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:bard:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 21
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Words of Creation",
+                  "canonicalId": "dnd2024:2024:feature:bard:words-of-creation:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "bardicInspirationDie": "d12",
+              "cantrips": 4,
+              "preparedSpells": 22
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbbardwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Bard.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Bard.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 287262
             }
           }
         ]

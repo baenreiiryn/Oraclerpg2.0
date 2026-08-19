@@ -1,0 +1,140 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "classFeatureRecords": 18,
+    "subclassFeatureRecords": 5
+  },
+  "oracle": {
+    "classes": 1,
+    "subclasses": 1,
+    "classFeatureDefinitions": 11,
+    "subclassFeatureDefinitions": 4,
+    "structuredDefinitions": 15
+  },
+  "progression": {
+    "levels": 20,
+    "rows": [
+      {
+        "level": 1,
+        "bardicInspirationDie": "d6",
+        "cantrips": 2,
+        "preparedSpells": 4
+      },
+      {
+        "level": 2,
+        "bardicInspirationDie": "d6",
+        "cantrips": 2,
+        "preparedSpells": 5
+      },
+      {
+        "level": 3,
+        "bardicInspirationDie": "d6",
+        "cantrips": 2,
+        "preparedSpells": 6
+      },
+      {
+        "level": 4,
+        "bardicInspirationDie": "d6",
+        "cantrips": 3,
+        "preparedSpells": 7
+      },
+      {
+        "level": 5,
+        "bardicInspirationDie": "d8",
+        "cantrips": 3,
+        "preparedSpells": 9
+      },
+      {
+        "level": 6,
+        "bardicInspirationDie": "d8",
+        "cantrips": 3,
+        "preparedSpells": 10
+      },
+      {
+        "level": 7,
+        "bardicInspirationDie": "d8",
+        "cantrips": 3,
+        "preparedSpells": 11
+      },
+      {
+        "level": 8,
+        "bardicInspirationDie": "d8",
+        "cantrips": 3,
+        "preparedSpells": 12
+      },
+      {
+        "level": 9,
+        "bardicInspirationDie": "d8",
+        "cantrips": 3,
+        "preparedSpells": 14
+      },
+      {
+        "level": 10,
+        "bardicInspirationDie": "d10",
+        "cantrips": 4,
+        "preparedSpells": 15
+      },
+      {
+        "level": 11,
+        "bardicInspirationDie": "d10",
+        "cantrips": 4,
+        "preparedSpells": 16
+      },
+      {
+        "level": 12,
+        "bardicInspirationDie": "d10",
+        "cantrips": 4,
+        "preparedSpells": 16
+      },
+      {
+        "level": 13,
+        "bardicInspirationDie": "d10",
+        "cantrips": 4,
+        "preparedSpells": 17
+      },
+      {
+        "level": 14,
+        "bardicInspirationDie": "d10",
+        "cantrips": 4,
+        "preparedSpells": 17
+      },
+      {
+        "level": 15,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 18
+      },
+      {
+        "level": 16,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 18
+      },
+      {
+        "level": 17,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 19
+      },
+      {
+        "level": 18,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 20
+      },
+      {
+        "level": 19,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 21
+      },
+      {
+        "level": 20,
+        "bardicInspirationDie": "d12",
+        "cantrips": 4,
+        "preparedSpells": 22
+      }
+    ]
+  },
+  "issues": []
+}

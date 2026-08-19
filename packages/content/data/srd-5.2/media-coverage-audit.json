@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T04:17:06.804Z",
+  "generatedAt": "2026-08-19T06:23:02.341Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 1,
-      "withMedia": 1,
-      "assets": 1,
+      "entities": 2,
+      "withMedia": 2,
+      "assets": 2,
       "byRole": {
-        "artwork": 1
+        "artwork": 2
       }
     },
     "subclasses.json": {
-      "entities": 1,
+      "entities": 2,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 23,
+      "entities": 38,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1711,
-    "withMedia": 467,
-    "assets": 660
+    "entities": 1728,
+    "withMedia": 468,
+    "assets": 661
   },
-  "coverage": 0.27293980128579776,
+  "coverage": 0.2708333333333333,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7410,6 +7410,12 @@
       "entityType": "subclass"
     },
     {
+      "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:bard:lore:srd-5.2",
+      "name": "College of Lore",
+      "entityType": "subclass"
+    },
+    {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
       "name": "Rage",
@@ -7545,6 +7551,96 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2",
       "name": "Intimidating Presence",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:bardic-inspiration:srd-5.2",
+      "name": "Bardic Inspiration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:spellcasting:srd-5.2",
+      "name": "Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2",
+      "name": "Expertise",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:jack-of-all-trades:srd-5.2",
+      "name": "Jack of All Trades",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:font-of-inspiration:srd-5.2",
+      "name": "Font of Inspiration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:countercharm:srd-5.2",
+      "name": "Countercharm",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:magical-secrets:srd-5.2",
+      "name": "Magical Secrets",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:superior-inspiration:srd-5.2",
+      "name": "Superior Inspiration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:words-of-creation:srd-5.2",
+      "name": "Words of Creation",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:bonus-proficiencies:srd-5.2",
+      "name": "Bonus Proficiencies",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
+      "name": "Cutting Words",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:magical-discoveries:srd-5.2",
+      "name": "Magical Discoveries",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2",
+      "name": "Peerless Skill",
       "entityType": "feature"
     }
   ],
