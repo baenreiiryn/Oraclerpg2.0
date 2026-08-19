@@ -55,51 +55,15 @@ jobs:
           node - <<'NODE'
           const fs=require('fs');
           const root='packages/content/data/srd-5.2';
-          const required={
-            'items.json':550,
-            'spells.json':340,
-            'monsters.json':331,
-            'monster-features.json':405,
-            'species.json':9,
-            'species-features.json':34,
-            'feats.json':17,
-          };
-          const evolving={
-            'classes.json':1,
-            'subclasses.json':1,
-            'class-features.json':23,
-          };
+          const required={'items.json':550,'spells.json':340,'monsters.json':331,'monster-features.json':405,'species.json':9,'species-features.json':34,'feats.json':17};
+          const evolving={'classes.json':1,'subclasses.json':1,'class-features.json':23};
           const audit=JSON.parse(fs.readFileSync(`${root}/media-coverage-audit.json`,'utf8'));
-          for(const [file,count] of Object.entries(required)){
-            if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
-            if(audit.collections[file].entities!==count) throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);
-          }
-          for(const [file,min] of Object.entries(evolving)){
-            if(!fs.existsSync(`${root}/${file}`)) continue;
-            if(!audit.collections[file]) throw new Error(`${file}: missing from media audit`);
-            if(audit.collections[file].entities<min) throw new Error(`${file}: expected at least ${min}, got ${audit.collections[file].entities}`);
-          }
-          if(!audit.safeguards?.monsterFeatureBestiaryArtworkBlocked) throw new Error('Monster-feature artwork safeguard missing');
-          if(audit.collections['monster-features.json'].withMedia!==0) throw new Error('Monster Features must not inherit Bestiary creature artwork');
-          if(!audit.totals.withMedia) throw new Error('No upstream media assets were resolved');
-          for(const [file,stats] of Object.entries(audit.collections)){
-            const doc=JSON.parse(fs.readFileSync(`${root}/${file}`,'utf8'));
-            for(const entity of doc.items??[]){
-              if(!entity.media) continue;
-              if(!Array.isArray(entity.media.assets)||!entity.media.assets.length) throw new Error(`${entity.name}: empty media assets`);
-              const ids=new Set();
-              for(const asset of entity.media.assets){
-                if(ids.has(asset.id)) throw new Error(`${entity.name}: duplicate media id ${asset.id}`);
-                ids.add(asset.id);
-                if(!['icon','portrait','token','artwork','thumbnail'].includes(asset.role)) throw new Error(`${entity.name}: invalid role ${asset.role}`);
-                if(asset.provider!=='5etools-img') throw new Error(`${entity.name}: unexpected provider`);
-                if(!asset.sourceUrl.startsWith('https://raw.githubusercontent.com/')) throw new Error(`${entity.name}: invalid source URL`);
-                if(asset.storagePolicy!=='mirrorOnDemand') throw new Error(`${entity.name}: invalid storage policy`);
-                if((asset.role==='token'||asset.role==='portrait') && entity.entityType!=='monster') throw new Error(`${entity.name}: creature-only media role on ${entity.entityType}`);
-              }
-            }
-            if(stats.withMedia>stats.entities) throw new Error(`${file}: invalid coverage`);
-          }
+          for(const [file,count] of Object.entries(required)){if(!audit.collections[file])throw new Error(`${file}: missing from media audit`);if(audit.collections[file].entities!==count)throw new Error(`${file}: expected ${count}, got ${audit.collections[file].entities}`);}
+          for(const [file,min] of Object.entries(evolving)){if(!fs.existsSync(`${root}/${file}`))continue;if(!audit.collections[file])throw new Error(`${file}: missing from media audit`);if(audit.collections[file].entities<min)throw new Error(`${file}: expected at least ${min}, got ${audit.collections[file].entities}`);}
+          if(!audit.safeguards?.monsterFeatureBestiaryArtworkBlocked)throw new Error('Monster-feature artwork safeguard missing');
+          if(audit.collections['monster-features.json'].withMedia!==0)throw new Error('Monster Features must not inherit Bestiary creature artwork');
+          if(!audit.totals.withMedia)throw new Error('No upstream media assets were resolved');
+          for(const [file,stats] of Object.entries(audit.collections)){const doc=JSON.parse(fs.readFileSync(`${root}/${file}`,'utf8'));for(const entity of doc.items??[]){if(!entity.media)continue;if(!Array.isArray(entity.media.assets)||!entity.media.assets.length)throw new Error(`${entity.name}: empty media assets`);const ids=new Set();for(const asset of entity.media.assets){if(ids.has(asset.id))throw new Error(`${entity.name}: duplicate media id ${asset.id}`);ids.add(asset.id);if(!['icon','portrait','token','artwork','thumbnail'].includes(asset.role))throw new Error(`${entity.name}: invalid role ${asset.role}`);if(asset.provider!=='5etools-img')throw new Error(`${entity.name}: unexpected provider`);if(!asset.sourceUrl.startsWith('https://raw.githubusercontent.com/'))throw new Error(`${entity.name}: invalid source URL`);if(asset.storagePolicy!=='mirrorOnDemand')throw new Error(`${entity.name}: invalid storage policy`);if((asset.role==='token'||asset.role==='portrait')&&entity.entityType!=='monster')throw new Error(`${entity.name}: creature-only media role on ${entity.entityType}`);}}if(stats.withMedia>stats.entities)throw new Error(`${file}: invalid coverage`);}
           console.log(JSON.stringify({totals:audit.totals,coverage:audit.coverage,unmatched:audit.unmatched.length},null,2));
           NODE
       - uses: actions/upload-artifact@v4
@@ -117,24 +81,13 @@ jobs:
             packages/content/data/srd-5.2/subclasses.json
             packages/content/data/srd-5.2/class-features.json
             packages/content/data/srd-5.2/media-coverage-audit.json
-      - name: Persist enriched compendium on PR branch
-        if: github.event_name == 'pull_request'
+      - name: Persist enriched compendium on manually dispatched branch
+        if: github.event_name == 'workflow_dispatch' && github.ref_name != 'main'
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add \
-            packages/content/data/srd-5.2/items.json \
-            packages/content/data/srd-5.2/spells.json \
-            packages/content/data/srd-5.2/monsters.json \
-            packages/content/data/srd-5.2/monster-features.json \
-            packages/content/data/srd-5.2/species.json \
-            packages/content/data/srd-5.2/species-features.json \
-            packages/content/data/srd-5.2/feats.json \
-            packages/content/data/srd-5.2/classes.json \
-            packages/content/data/srd-5.2/subclasses.json \
-            packages/content/data/srd-5.2/class-features.json \
-            packages/content/data/srd-5.2/media-coverage-audit.json
-          if [ -n "$(git status --porcelain)" ]; then
+          git add packages/content/data/srd-5.2
+          if ! git diff --cached --quiet; then
             git commit -m 'Persist SRD 5.2 media-enriched compendium [skip ci]'
-            git push origin HEAD:${{ github.head_ref }}
+            git push origin HEAD:${{ github.ref_name }}
           fi
