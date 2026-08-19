@@ -1,0 +1,46 @@
+name: Ranger Foundry Comparison
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/compare-foundry-srd52-ranger.mjs'
+      - 'packages/content/data/srd-5.2/classes.json'
+      - 'packages/content/data/srd-5.2/subclasses.json'
+      - 'packages/content/data/srd-5.2/class-features.json'
+      - '.github/workflows/ranger-foundry-comparison.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install YAML dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Compare Foundry to Oracle Ranger
+        run: node scripts/compare-foundry-srd52-ranger.mjs ../foundry-dnd5e/packs/_source/classes24/ranger
+      - uses: actions/upload-artifact@v4
+        with:
+          name: ranger-foundry-comparison
+          path: packages/content/data/srd-5.2/ranger-foundry-comparison.json
+      - name: Persist comparison report
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/ranger-foundry-comparison'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/ranger-foundry-comparison.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist Ranger Foundry comparison [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi
