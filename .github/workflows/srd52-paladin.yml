@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   paladin:
-    if: github.actor != 'github-actions[bot]'
+    if: github.event_name == 'workflow_dispatch' || (github.actor != 'github-actions[bot]' && github.head_ref == 'work/srd52-paladin')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
