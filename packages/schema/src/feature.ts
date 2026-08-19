@@ -42,6 +42,26 @@ export interface SpellGrantGroupData {
   selections: readonly SpellGrantSelectionData[];
 }
 
+export interface SpeciesFeatureTemplateParameterData {
+  id: string;
+  kind: "number" | "string" | "boolean" | "damageType" | "distance" | "ability" | "entityRef";
+  required?: boolean;
+  defaultValue?: JsonValue;
+  allowedValues?: readonly JsonValue[];
+}
+
+export interface SpeciesFeatureTemplateBindingData {
+  parameterId: string;
+  path: string;
+  operation?: "replace" | "merge";
+}
+
+export interface SpeciesFeatureTemplateData {
+  family: "sense" | "resistance" | "attack" | "spellcasting" | "movement" | "trait" | "special";
+  parameters?: readonly SpeciesFeatureTemplateParameterData[];
+  bindings?: readonly SpeciesFeatureTemplateBindingData[];
+}
+
 export interface PrerequisiteData {
   minimumLevel?: number;
   abilities?: Partial<Record<AbilityId, number>>;
@@ -107,6 +127,8 @@ export interface FeatureData {
   classRules?: ClassRuleData;
   /** Present when a monster feature is a reusable parameterized compendium template. */
   monsterTemplate?: MonsterFeatureTemplateData;
+  /** Present when a species feature is a reusable parameterized compendium template. */
+  speciesTemplate?: SpeciesFeatureTemplateData;
   manualAdjudication?: ManualAdjudicationData;
   properties?: readonly string[];
   text?: SourceText;
