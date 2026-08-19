@@ -1,6 +1,7 @@
 import type { ActivityData } from "./activity.js";
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
+import type { MonsterFeatureTemplateData } from "./monster-feature.js";
 import type { AbilityId, ChoiceRef, EntityRef, JsonValue, SourceText } from "./primitives.js";
 import type {
   ChoiceDependencyData, CrossResourceRuleData, EffectData, EntityBenefitGrantData, FeaturePatchData,
@@ -59,6 +60,8 @@ export interface FeatureData {
   lifecycle?: readonly LinkedLifecycleData[];
   classMechanics?: ClassMechanicsData;
   classRules?: ClassRuleData;
+  /** Present when a monster feature is a reusable parameterized compendium template. */
+  monsterTemplate?: MonsterFeatureTemplateData;
   manualAdjudication?: ManualAdjudicationData;
   properties?: readonly string[];
   text?: SourceText;
