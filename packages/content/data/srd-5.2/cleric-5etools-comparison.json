@@ -1,0 +1,14 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "class": "Cleric",
+    "subclass": "Life",
+    "classFeatureRecords": 22,
+    "subclassFeatureRecords": 6
+  },
+  "oracle": {
+    "classFeatures": 16,
+    "subclassFeatures": 5
+  },
+  "issues": []
+}

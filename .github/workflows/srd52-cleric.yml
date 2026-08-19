@@ -1,0 +1,71 @@
+name: SRD 5.2 Cleric
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  cleric:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install YAML comparison dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry D&D reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Import Cleric from 5etools SRD 5.2
+        run: |
+          node scripts/import-srd52-cleric.mjs
+          node scripts/patch-srd52-cleric.mjs
+      - name: Audit Cleric structure
+        run: node scripts/audit-srd52-cleric.mjs
+      - name: Compare 5etools to Oracle
+        run: node scripts/compare-5etools-srd52-cleric.mjs
+      - name: Compare Foundry to Oracle
+        run: node scripts/compare-foundry-srd52-cleric.mjs ../foundry-dnd5e/packs/_source/classes24/cleric
+      - name: Resolve class media
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          node scripts/sync-srd52-media.mjs
+          node scripts/finalize-srd52-media.mjs
+      - name: Verify Cleric outputs
+        run: |
+          node - <<'NODE'
+          const fs=require('fs');const root='packages/content/data/srd-5.2';const read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
+          const cls=read('classes.json').items.find(x=>x.name==='Cleric');const sub=read('subclasses.json').items.find(x=>x.name==='Life Domain');const feats=read('class-features.json').items.filter(x=>x.data?.category==='cleric'||x.data?.category==='cleric-life');
+          for(const f of ['cleric-coverage-audit.json','cleric-5etools-comparison.json','cleric-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(JSON.stringify(a));}
+          if(!cls||!sub||cls.data.advancement.length!==20)throw new Error('Cleric/Life output invalid');
+          console.log(JSON.stringify({cleric:true,life:true,features:feats.length,status:'SUPPORTED'},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-cleric
+          path: |
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/class-features.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/cleric-import-report.json
+            packages/content/data/srd-5.2/cleric-coverage-audit.json
+            packages/content/data/srd-5.2/cleric-5etools-comparison.json
+            packages/content/data/srd-5.2/cleric-foundry-comparison.json
+            packages/content/data/srd-5.2/media-coverage-audit.json
+      - name: Persist Cleric compendium on PR branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-cleric'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/cleric-import-report.json packages/content/data/srd-5.2/cleric-coverage-audit.json packages/content/data/srd-5.2/cleric-5etools-comparison.json packages/content/data/srd-5.2/cleric-foundry-comparison.json packages/content/data/srd-5.2/media-coverage-audit.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist SRD 5.2 Cleric compendium [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi

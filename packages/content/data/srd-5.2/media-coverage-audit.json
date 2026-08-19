@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T06:23:02.341Z",
+  "generatedAt": "2026-08-19T06:51:56.461Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 2,
-      "withMedia": 2,
-      "assets": 2,
+      "entities": 3,
+      "withMedia": 3,
+      "assets": 3,
       "byRole": {
-        "artwork": 2
+        "artwork": 3
       }
     },
     "subclasses.json": {
-      "entities": 2,
+      "entities": 3,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 38,
+      "entities": 59,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1728,
-    "withMedia": 468,
-    "assets": 661
+    "entities": 1751,
+    "withMedia": 469,
+    "assets": 662
   },
-  "coverage": 0.2708333333333333,
+  "coverage": 0.26784694460308395,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7405,32 +7405,86 @@
     },
     {
       "collection": "subclasses.json",
-      "canonicalId": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
-      "name": "Path of the Berserker",
-      "entityType": "subclass"
-    },
-    {
-      "collection": "subclasses.json",
       "canonicalId": "dnd2024:2024:subclass:bard:lore:srd-5.2",
       "name": "College of Lore",
       "entityType": "subclass"
     },
     {
+      "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:cleric:life:srd-5.2",
+      "name": "Life Domain",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
+      "name": "Path of the Berserker",
+      "entityType": "subclass"
+    },
+    {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
-      "name": "Rage",
+      "canonicalId": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2",
-      "name": "Unarmored Defense",
+      "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:weapon-mastery:srd-5.2",
-      "name": "Weapon Mastery",
+      "canonicalId": "dnd2024:2024:feature:cleric:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:bardic-inspiration:srd-5.2",
+      "name": "Bardic Inspiration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:life:blessed-healer:srd-5.2",
+      "name": "Blessed Healer",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:blessed-strikes:srd-5.2",
+      "name": "Blessed Strikes",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:bonus-proficiencies:srd-5.2",
+      "name": "Bonus Proficiencies",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
+      "name": "Brutal Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
+      "name": "Channel Divinity",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:countercharm:srd-5.2",
+      "name": "Countercharm",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
+      "name": "Cutting Words",
       "entityType": "feature"
     },
     {
@@ -7441,20 +7495,56 @@
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
-      "name": "Reckless Attack",
+      "canonicalId": "dnd2024:2024:feature:cleric:life:disciple-of-life:srd-5.2",
+      "name": "Disciple of Life",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
-      "name": "Primal Knowledge",
+      "canonicalId": "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2",
+      "name": "Divine Intervention",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
-      "name": "Ability Score Improvement",
+      "canonicalId": "dnd2024:2024:feature:cleric:divine-order:srd-5.2",
+      "name": "Divine Order",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
+      "name": "Divine Spark",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:divine-strike:srd-5.2",
+      "name": "Divine Strike",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2",
+      "name": "Expertise",
       "entityType": "feature"
     },
     {
@@ -7477,32 +7567,32 @@
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
-      "name": "Instinctive Pounce",
+      "canonicalId": "dnd2024:2024:feature:bard:font-of-inspiration:srd-5.2",
+      "name": "Font of Inspiration",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2",
-      "name": "Brutal Strike",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
+      "name": "Frenzy",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
-      "name": "Relentless Rage",
+      "canonicalId": "dnd2024:2024:feature:cleric:greater-divine-intervention:srd-5.2",
+      "name": "Greater Divine Intervention",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:improved-blessed-strikes:srd-5.2",
+      "name": "Improved Blessed Strikes",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2",
       "name": "Improved Brutal Strike",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
-      "name": "Persistent Rage",
       "entityType": "feature"
     },
     {
@@ -7519,32 +7609,8 @@
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2",
-      "name": "Epic Boon",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
-      "name": "Primal Champion",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2",
-      "name": "Frenzy",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
-      "name": "Mindless Rage",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
-      "name": "Retaliation",
+      "canonicalId": "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2",
+      "name": "Instinctive Pounce",
       "entityType": "feature"
     },
     {
@@ -7555,80 +7621,14 @@
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:bardic-inspiration:srd-5.2",
-      "name": "Bardic Inspiration",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:spellcasting:srd-5.2",
-      "name": "Spellcasting",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:expertise:srd-5.2",
-      "name": "Expertise",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:jack-of-all-trades:srd-5.2",
       "name": "Jack of All Trades",
       "entityType": "feature"
     },
     {
       "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2",
-      "name": "Ability Score Improvement",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:font-of-inspiration:srd-5.2",
-      "name": "Font of Inspiration",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:countercharm:srd-5.2",
-      "name": "Countercharm",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:magical-secrets:srd-5.2",
-      "name": "Magical Secrets",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:superior-inspiration:srd-5.2",
-      "name": "Superior Inspiration",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:epic-boon:srd-5.2",
-      "name": "Epic Boon",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:words-of-creation:srd-5.2",
-      "name": "Words of Creation",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:lore:bonus-proficiencies:srd-5.2",
-      "name": "Bonus Proficiencies",
-      "entityType": "feature"
-    },
-    {
-      "collection": "class-features.json",
-      "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
-      "name": "Cutting Words",
+      "canonicalId": "dnd2024:2024:feature:cleric:life:life-domain-spells:srd-5.2",
+      "name": "Life Domain Spells",
       "entityType": "feature"
     },
     {
@@ -7639,8 +7639,140 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:magical-secrets:srd-5.2",
+      "name": "Magical Secrets",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2",
+      "name": "Mindless Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2",
       "name": "Peerless Skill",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2",
+      "name": "Persistent Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:potent-spellcasting:srd-5.2",
+      "name": "Potent Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:life:preserve-life:srd-5.2",
+      "name": "Preserve Life",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2",
+      "name": "Primal Champion",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2",
+      "name": "Primal Knowledge",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:protector:srd-5.2",
+      "name": "Protector",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
+      "name": "Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2",
+      "name": "Reckless Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2",
+      "name": "Relentless Rage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
+      "name": "Retaliation",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:sear-undead:srd-5.2",
+      "name": "Sear Undead",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:spellcasting:srd-5.2",
+      "name": "Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:spellcasting:srd-5.2",
+      "name": "Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:superior-inspiration:srd-5.2",
+      "name": "Superior Inspiration",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:life:supreme-healing:srd-5.2",
+      "name": "Supreme Healing",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:thaumaturge:srd-5.2",
+      "name": "Thaumaturge",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:cleric:turn-undead:srd-5.2",
+      "name": "Turn Undead",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2",
+      "name": "Unarmored Defense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:barbarian:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:bard:words-of-creation:srd-5.2",
+      "name": "Words of Creation",
       "entityType": "feature"
     }
   ],
