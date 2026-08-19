@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "scripts/import-srd52-monster-features.mjs"
+      - "scripts/normalize-srd52-monster-feature-families.mjs"
       - "scripts/audit-srd52-monster-feature-coverage.mjs"
       - "packages/schema/src/monster-feature.ts"
       - "packages/schema/src/feature.ts"
@@ -12,6 +13,7 @@ on:
   pull_request:
     paths:
       - "scripts/import-srd52-monster-features.mjs"
+      - "scripts/normalize-srd52-monster-feature-families.mjs"
       - "scripts/audit-srd52-monster-feature-coverage.mjs"
       - "packages/content/data/srd-5.2/monster-features.json"
       - "packages/content/data/srd-5.2/monster-feature-aliases.json"
@@ -42,6 +44,8 @@ jobs:
         run: pnpm --filter @oraclerpg/schema build
       - name: Generate creature feature compendium
         run: node scripts/import-srd52-monster-features.mjs
+      - name: Normalize generalized creature feature families
+        run: node scripts/normalize-srd52-monster-feature-families.mjs
       - name: Audit complete SRD creature feature coverage
         run: node scripts/audit-srd52-monster-feature-coverage.mjs
       - name: Upload generated feature compendium and reports
@@ -53,6 +57,7 @@ jobs:
             packages/content/data/srd-5.2/monster-features.json
             packages/content/data/srd-5.2/monster-feature-aliases.json
             packages/content/data/srd-5.2/monster-features-import-report.json
+            packages/content/data/srd-5.2/monster-feature-family-normalization.json
             packages/content/data/srd-5.2/monster-features-coverage-audit.json
       - name: Commit generated creature feature compendium
         if: github.event_name == 'push'
@@ -66,6 +71,7 @@ jobs:
           git add packages/content/data/srd-5.2/monster-features.json
           git add packages/content/data/srd-5.2/monster-feature-aliases.json
           git add packages/content/data/srd-5.2/monster-features-import-report.json
+          git add packages/content/data/srd-5.2/monster-feature-family-normalization.json
           git add packages/content/data/srd-5.2/monster-features-coverage-audit.json
           git commit -m "Populate SRD 5.2 creature feature compendium"
           git push
