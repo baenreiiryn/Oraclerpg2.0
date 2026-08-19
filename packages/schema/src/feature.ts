@@ -1,6 +1,10 @@
 import type { ActivityData } from "./activity.js";
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
+import type {
+  CapacityRuleData, DamageRuleData, FeatureActionRuleData, MovementInteractionRuleData,
+  ResourcePreservationRuleData, RestRuleData, RollRuleData, SaveRuleData, TriggeredGrantRuleData
+} from "./feature-rules.js";
 import type { MonsterFeatureTemplateData } from "./monster-feature.js";
 import type { AbilityId, ChoiceRef, EntityRef, JsonValue, RecoveryPeriod, SourceText } from "./primitives.js";
 import type {
@@ -88,6 +92,15 @@ export interface FeatureData {
   states?: readonly StateVariableData[];
   patches?: readonly FeaturePatchData[];
   crossResourceRules?: readonly CrossResourceRuleData[];
+  rollRules?: readonly RollRuleData[];
+  resourcePreservationRules?: readonly ResourcePreservationRuleData[];
+  triggeredGrants?: readonly TriggeredGrantRuleData[];
+  restRules?: readonly RestRuleData[];
+  capacityRules?: readonly CapacityRuleData[];
+  movementInteractionRules?: readonly MovementInteractionRuleData[];
+  damageRules?: readonly DamageRuleData[];
+  saveRules?: readonly SaveRuleData[];
+  actionRules?: readonly FeatureActionRuleData[];
   randomProperties?: readonly RandomPropertyGrantData[];
   lifecycle?: readonly LinkedLifecycleData[];
   classMechanics?: ClassMechanicsData;
