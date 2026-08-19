@@ -2,7 +2,7 @@ import type { ActivityData } from "./activity.js";
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
 import type { MonsterFeatureTemplateData } from "./monster-feature.js";
-import type { AbilityId, ChoiceRef, EntityRef, JsonValue, SourceText } from "./primitives.js";
+import type { AbilityId, ChoiceRef, EntityRef, JsonValue, RecoveryPeriod, SourceText } from "./primitives.js";
 import type {
   ChoiceDependencyData, CrossResourceRuleData, EffectData, EntityBenefitGrantData, FeaturePatchData,
   LinkedLifecycleData, ManualAdjudicationData, ModifierData, PredicateData, RandomPropertyGrantData,
@@ -13,11 +13,38 @@ export type FeatureKind =
   | "feat" | "classFeature" | "subclassFeature" | "speciesFeature"
   | "backgroundFeature" | "monsterFeature" | "optionalFeature" | "darkGift" | "charm";
 
+export type FeatCategory = "origin" | "general" | "fightingStyle" | "epicBoon" | "other";
+
+export interface AbilityScoreOptionData {
+  abilities: readonly AbilityId[];
+  amount?: number;
+  count?: number;
+  maximum?: number;
+}
+
+export interface SpellGrantSelectionData {
+  mode: "known" | "prepared" | "innate";
+  characterLevel?: number;
+  spell?: EntityRef;
+  query?: string;
+  count?: number;
+  freeUses?: number | "proficiencyBonus";
+  recovery?: RecoveryPeriod;
+}
+
+export interface SpellGrantGroupData {
+  name?: string;
+  ability?: AbilityId | { choice: readonly AbilityId[] };
+  selections: readonly SpellGrantSelectionData[];
+}
+
 export interface PrerequisiteData {
   minimumLevel?: number;
   abilities?: Partial<Record<AbilityId, number>>;
   requiredEntities?: readonly EntityRef[];
   requiredTags?: readonly string[];
+  requiredFeatures?: readonly string[];
+  spellcasting?: boolean;
   campaign?: readonly string[];
   predicate?: PredicateData;
   special?: string;
@@ -45,9 +72,13 @@ export interface AdvancementStep {
 export interface FeatureData {
   featureKind: FeatureKind;
   category?: string;
+  featCategory?: FeatCategory;
   subtype?: string;
   repeatable?: boolean;
   prerequisites?: readonly PrerequisiteData[];
+  abilityScoreOptions?: readonly AbilityScoreOptionData[];
+  spellGrants?: readonly SpellGrantGroupData[];
+  proficiencyChoices?: readonly ChoiceRef[];
   activities?: readonly ActivityData[];
   grants?: readonly GrantData[];
   advancement?: readonly AdvancementStep[];
