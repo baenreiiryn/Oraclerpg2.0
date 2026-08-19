@@ -1,0 +1,26 @@
+name: Compare 5etools SRD 5.2 Species and Feats
+
+on:
+  pull_request:
+
+jobs:
+  compare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Generate and enrich Oracle species and feats
+        run: |
+          node scripts/sync-srd52-species-feats.mjs
+          node scripts/normalize-srd52-species-feats.mjs
+          node scripts/enrich-srd52-species-feats.mjs
+          node scripts/finalize-srd52-species-feats.mjs
+          node scripts/postprocess-srd52-species-feats.mjs
+      - name: Compare 5etools and Oracle
+        run: node scripts/compare-5etools-srd52-species-feats.mjs packages/content/data/srd-5.2
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-species-feats-5etools-comparison
+          path: packages/content/data/srd-5.2/species-feats-5etools-comparison.json
