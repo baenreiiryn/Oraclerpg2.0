@@ -1,0 +1,72 @@
+import fs from 'node:fs/promises';
+const ROOT='packages/content/data/srd-5.2';
+const URL='https://raw.githubusercontent.com/5etools-mirror-3/5etools-src/main/data/class/class-fighter.json';
+const LIC='https://creativecommons.org/licenses/by/4.0/';
+const CLASS_ID='dnd2024:2024:class:fighter:srd-5.2';
+const SUBCLASS_ID='dnd2024:2024:subclass:fighter:champion:srd-5.2';
+const slug=s=>String(s).toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const constant=value=>({type:'constant',value});
+const runtime=path=>({type:'runtime',path});
+const formula=formula=>({type:'formula',formula});
+const pred=description=>({type:'custom',description});
+const trigger=(event,description,extra={})=>({event,...(description?{description}:{}),...extra});
+const entityRef=(entityType,name,canonicalId)=>({entityType,name,canonicalId});
+const rules=entries=>({rules:Array.isArray(entries)?entries:[]});
+function base(entityType,name,id,sourceKey){return {id,canonicalId:id,entityType,name,system:{gameSystem:'dnd2024',rulesVersion:'2024'},source:{sourceId:'srd-5.2',book:'XPHB',license:'CC-BY-4.0',licenseUrl:LIC},provenance:{origin:'import',provider:'5etools',sourceKey,adapterVersion:'0.6.0',mapperVersion:'0.6.0'},schemaVersion:1};}
+function classFeatureId(name){return `dnd2024:2024:feature:fighter:${slug(name)}:srd-5.2`;}
+function subclassFeatureId(name){return `dnd2024:2024:feature:fighter:champion:${slug(name)}:srd-5.2`;}
+const featureRef=name=>entityRef('feature',name,classFeatureId(name));
+const source=await (await fetch(URL)).json();
+const cls=source.class.find(x=>x.name==='Fighter'&&x.source==='XPHB'&&x.srd52);
+const sub=source.subclass.find(x=>x.className==='Fighter'&&x.classSource==='XPHB'&&x.source==='XPHB'&&x.srd52&&x.shortName==='Champion');
+const cf=(source.classFeature??[]).filter(x=>x.className==='Fighter'&&x.classSource==='XPHB'&&x.srd52);
+const sf=(source.subclassFeature??[]).filter(x=>x.className==='Fighter'&&x.classSource==='XPHB'&&x.subclassSource==='XPHB'&&x.srd52&&x.subclassShortName==='Champion');
+if(!cls||!sub) throw new Error('SRD 5.2 Fighter/Champion not found');
+const excluded=new Set(['Fighter Subclass','Subclass Feature']);
+const classDefs=[];const seen=new Set();for(const f of cf){if(excluded.has(f.name))continue;const id=classFeatureId(f.name);if(seen.has(id))continue;seen.add(id);classDefs.push(f);}
+const subDefs=[];const subSeen=new Set();for(const f of sf){if(f.name==='Champion')continue;const id=subclassFeatureId(f.name);if(subSeen.has(id))continue;subSeen.add(id);subDefs.push(f);}
+const secondWindUses=l=>l>=10?4:l>=4?3:2;
+const actionSurgeUses=l=>l>=17?2:l>=2?1:0;
+const indomitableUses=l=>l>=17?3:l>=13?2:l>=9?1:0;
+const masteryCount=l=>l>=16?6:l>=10?5:l>=4?4:3;
+const attackCount=l=>l>=20?4:l>=11?3:l>=5?2:1;
+function featChoice(category,count=1){return {kind:'tagQuery',count,entityTypes:['feature'],query:{all:[{field:'data.featureKind',operator:'eq',value:'feat'},{field:'data.featCategory',operator:'eq',value:category}]}};}
+function classFeatureData(f){const d={featureKind:'classFeature',category:'fighter',text:rules(f.entries)};switch(f.name){
+case 'Fighting Style':d.grants=[{type:'entity',choice:featChoice('fightingStyle')}];d.classRules={selectionPolicies:[{collectionId:'fighter-fighting-style',repeatable:false,uniqueBy:'entity',replacement:{trigger:trigger('custom','Whenever you gain a Fighter level, you may replace the selected Fighting Style feat.'),count:constant(1)}}]};break;
+case 'Second Wind':d.grants=[{type:'resource',value:{id:'second-wind',max:runtime('class.fighter.secondWindUses'),recovery:[{period:'shortRest',amount:constant(1)},{period:'longRest',amount:'all'}]}}];d.activities=[{id:'second-wind-heal',name:'Second Wind',kind:'heal',activation:{type:'bonusAction'},target:{type:'self'},uses:{sharedResourceId:'second-wind'},healing:{formula:'1d10 + @classes.fighter.level'},description:'Regain 1d10 + Fighter level hit points.'}];break;
+case 'Weapon Mastery':d.classRules={entityCollections:[{id:'fighter-weapon-masteries',entityTypes:['item'],capacity:runtime('class.fighter.weaponMasteryCount'),filter:pred('Simple or Martial weapon with a mastery property.'),chooseOn:trigger('onApply','Choose mastered weapon kinds.'),replace:{trigger:trigger('onRest','After a Long Rest, one mastered weapon choice may be replaced.'),count:constant(1),filter:pred('Simple or Martial weapon with a mastery property.')},progression:[{level:1,capacity:constant(3)},{level:4,capacity:constant(4)},{level:10,capacity:constant(5)},{level:16,capacity:constant(6)}]}]};d.properties=['uses-selected-weapon-mastery-properties'];break;
+case 'Action Surge':d.grants=[{type:'resource',value:{id:'action-surge',max:runtime('class.fighter.actionSurgeUses'),recovery:[{period:'shortRest',amount:'all'},{period:'longRest',amount:'all'}]}}];d.classMechanics={generatedActions:[{trigger:trigger('onActivate','On your turn, expend Action Surge.'),action:'custom',count:constant(1),predicate:pred('Grant one additional action that cannot be used for the Magic action; only one Action Surge per turn.')} ]};d.properties=['extra-action:not-magic','once-per-turn'];break;
+case 'Tactical Mind':d.rerolls=[{target:'abilityCheck',trigger:trigger('onFailedCheck','After failing an ability check, expend Second Wind and add 1d10 to the check.'),modifier:formula('1d10')}];d.classRules={costModifications:[{trigger:trigger('custom','If Tactical Mind still fails after the 1d10 is added, retain the Second Wind use.'),costType:'classResource',mode:'retain',predicate:pred('The modified ability check still fails.')} ]};d.properties=['uses-resource:second-wind'];break;
+case 'Extra Attack':d.properties=['attack-action-count:2'];break;
+case 'Tactical Shift':d.classRules={movementPermissions:[{subject:'self',permissions:['ignoreOpportunityAttacks'],predicate:pred('Immediately after activating Second Wind as a Bonus Action; move up to half Speed.'),duration:{endTriggers:[trigger('custom','End after the granted half-Speed movement.')]}}]};d.generatedActions=[{trigger:trigger('custom','Immediately after Second Wind is activated as a Bonus Action.'),action:'move',count:constant(1),predicate:pred('Move up to half Speed without provoking Opportunity Attacks.')}];break;
+case 'Indomitable':d.grants=[{type:'resource',value:{id:'indomitable',max:runtime('class.fighter.indomitableUses'),recovery:[{period:'longRest',amount:'all'}]}}];d.rerolls=[{target:'savingThrow',trigger:trigger('onFailedSave','Expend Indomitable after a failed saving throw.'),mustUseNewRoll:true,modifier:runtime('class.fighter.level')}];break;
+case 'Tactical Master':d.classMechanics={runtimeChoices:[{id:'fighter-tactical-mastery-attack',options:['Push','Sap','Slow'],chooseOn:trigger('onAttack','When attacking with a weapon whose mastery property you can use.'),activeUntil:trigger('custom','Ends after this attack resolves.')} ]};d.properties=['replace-current-mastery-for-attack'];break;
+case 'Two Extra Attacks':d.properties=['attack-action-count:3'];break;
+case 'Studied Attacks':d.effects=[{id:'studied-attacks-advantage',trigger:trigger('onMiss','When you miss a creature with an attack roll.'),duration:{type:'untilTrigger',endTrigger:trigger('custom','Ends after your next attack against that creature or at the end of your next turn.')},modifiers:[{target:{domain:'attackRoll'},mode:'advantage',predicate:pred('Only the next attack roll against the same creature before the end of your next turn.')}]}];break;
+case 'Three Extra Attacks':d.properties=['attack-action-count:4'];break;
+case 'Ability Score Improvement':d.grants=[{type:'entity',choice:{kind:'tagQuery',count:1,entityTypes:['feature'],query:{all:[{field:'data.featureKind',operator:'eq',value:'feat'}]}}}];break;
+case 'Epic Boon':d.grants=[{type:'entity',choice:featChoice('epicBoon')}];break;
+}return d;}
+function subclassFeatureData(f){const d={featureKind:'subclassFeature',category:'fighter-champion',text:rules(f.entries)};switch(f.name){
+case 'Improved Critical':d.classMechanics={resolutionOverrides:[{domain:'critical',mode:'custom',value:constant(19),predicate:pred('Weapon attacks and Unarmed Strikes score a Critical Hit on a natural 19 or 20.')} ]};d.properties=['critical-threshold:19'];break;
+case 'Remarkable Athlete':d.modifiers=[{target:{domain:'initiative'},mode:'advantage'},{target:{domain:'skillCheck',skill:'Athletics'},mode:'advantage'}];d.classRules={movementPermissions:[{subject:'self',permissions:['ignoreOpportunityAttacks'],predicate:pred('Immediately after scoring a Critical Hit; move up to half Speed.'),duration:{endTriggers:[trigger('custom','End after the granted movement.')]}}]};break;
+case 'Additional Fighting Style':d.grants=[{type:'entity',choice:featChoice('fightingStyle')}];break;
+case 'Heroic Warrior':d.triggeredGrants=[{id:'heroic-warrior-inspiration',trigger:trigger('onTurnStart','During combat, if you start your turn without Heroic Inspiration.'),grant:'custom',value:constant('heroic-inspiration')}];break;
+case 'Superior Critical':d.classMechanics={resolutionOverrides:[{domain:'critical',mode:'custom',value:constant(18),predicate:pred('Weapon attacks and Unarmed Strikes score a Critical Hit on a natural 18-20.')} ]};d.properties=['critical-threshold:18'];break;
+case 'Survivor':d.modifiers=[{target:{domain:'deathSave'},mode:'advantage'}];d.classMechanics={resolutionOverrides:[{domain:'save',mode:'replaceTotal',value:constant(20),predicate:pred('On a Death Saving Throw natural roll of 18-20, gain the benefit of rolling a 20.')} ]};d.triggeredGrants=[{id:'champion-heroic-rally',trigger:trigger('onTurnStart','If Bloodied and at least 1 HP, regain hit points.'),grant:'hitPoints',value:formula('5 + @abilities.con.mod')}];break;
+}return d;}
+const classFeatures=classDefs.map(f=>({...base('feature',f.name,classFeatureId(f.name),`XPHB:classFeature:Fighter:${f.name}:${f.level}`),data:classFeatureData(f)}));
+const subFeatures=subDefs.map(f=>({...base('feature',f.name,subclassFeatureId(f.name),`XPHB:subclassFeature:Fighter:Champion:${f.name}:${f.level}`),data:subclassFeatureData(f)}));
+const byLevel=new Map();for(const f of cf){if(excluded.has(f.name))continue;const arr=byLevel.get(f.level)??[];const ref={type:'entity',entity:featureRef(f.name)};if(!arr.some(x=>x.entity?.canonicalId===ref.entity.canonicalId))arr.push(ref);byLevel.set(f.level,arr);}for(const l of [4,6,8,12,14,16]){const arr=byLevel.get(l)??[];if(!arr.some(x=>x.entity?.name==='Ability Score Improvement'))arr.push({type:'entity',entity:featureRef('Ability Score Improvement')});byLevel.set(l,arr);}
+const advancement=Array.from({length:20},(_,i)=>{const level=i+1;const step={level,grants:byLevel.get(level)??[],scaleValues:{secondWindUses:secondWindUses(level),actionSurgeUses:actionSurgeUses(level),indomitableUses:indomitableUses(level),weaponMasteryCount:masteryCount(level),attackActionCount:attackCount(level)}};if(level===3)step.choices=[{kind:'tagQuery',count:1,entityTypes:['subclass'],query:{all:[{field:'data.parentClass.canonicalId',operator:'eq',value:CLASS_ID}]}}];return step;});
+const item=(name,qty=1)=>({entity:entityRef('item',name,`dnd2024:2024:item:${slug(name)}:srd-5.2`),quantity:qty});
+const fighter={...base('class','Fighter',CLASS_ID,'XPHB:class:Fighter'),data:{hitDie:10,primaryAbilities:['strength','dexterity'],savingThrowProficiencies:['strength','constitution'],armorTraining:['light','medium','heavy','shield'],weaponProficiencies:['simple','martial'],skillChoices:{kind:'enum',count:2,options:['Acrobatics','Animal Handling','Athletics','History','Insight','Intimidation','Persuasion','Perception','Survival']},equipmentBundles:[{id:'A',label:"Chain Mail, Greatsword, Flail, 8 Javelins, Dungeoneer's Pack, 4 GP",grants:[item('Chain Mail'),item('Greatsword'),item('Flail'),item('Javelin',8),item("Dungeoneer's Pack"),{currency:{amount:4,currency:'gp'}}]},{id:'B',label:"Studded Leather Armor, Scimitar, Shortsword, Longbow, 20 Arrows, Quiver, Dungeoneer's Pack, 11 GP",grants:[item('Studded Leather Armor'),item('Scimitar'),item('Shortsword'),item('Longbow'),item('Arrows',20),item('Quiver'),item("Dungeoneer's Pack"),{currency:{amount:11,currency:'gp'}}]},{id:'C',label:'155 GP',grants:[{currency:{amount:155,currency:'gp'}}]}],multiclass:{requirements:{any:[{ability:'strength',minimum:13},{ability:'dexterity',minimum:13}]},grants:{armorTraining:['light','medium','shield'],weaponProficiencies:['martial']}},advancement,artwork:{image:'systems/dnd5e/icons/classes/fighter.webp'}}};
+const champion={...base('subclass','Champion',SUBCLASS_ID,'XPHB:subclass:Fighter:Champion'),data:{parentClass:entityRef('class','Fighter',CLASS_ID),subclassKey:'champion',featureLevels:[3,7,10,15,18],features:subFeatures.map(x=>entityRef('feature',x.name,x.canonicalId))}};
+const read=async f=>JSON.parse(await fs.readFile(`${ROOT}/${f}`,'utf8'));
+const write=async(f,d)=>fs.writeFile(`${ROOT}/${f}`,JSON.stringify(d,null,2)+'\n');
+const classes=await read('classes.json');classes.items=classes.items.filter(x=>x.canonicalId!==CLASS_ID);classes.items.push(fighter);classes.items.sort((a,b)=>a.name.localeCompare(b.name));classes.count=classes.items.length;
+const subclasses=await read('subclasses.json');subclasses.items=subclasses.items.filter(x=>x.canonicalId!==SUBCLASS_ID);subclasses.items.push(champion);subclasses.items.sort((a,b)=>a.name.localeCompare(b.name));subclasses.count=subclasses.items.length;
+const features=await read('class-features.json');const ids=new Set([...classFeatures,...subFeatures].map(x=>x.canonicalId));features.items=features.items.filter(x=>!ids.has(x.canonicalId));features.items.push(...classFeatures,...subFeatures);features.items.sort((a,b)=>a.canonicalId.localeCompare(b.canonicalId));features.count=features.items.length;
+await write('classes.json',classes);await write('subclasses.json',subclasses);await write('class-features.json',features);
+const report={status:'IMPORTED',class:'Fighter',subclass:'Champion',source:{classFeatureRecords:cf.length,subclassFeatureRecords:sf.length},oracle:{classFeatures:classFeatures.length,subclassFeatures:subFeatures.length},scales:{secondWind:{1:2,4:3,10:4},actionSurge:{2:1,17:2},indomitable:{9:1,13:2,17:3},weaponMastery:{1:3,4:4,10:5,16:6},attacks:{1:1,5:2,11:3,20:4}}};
+await write('fighter-import-report.json',report);console.log(JSON.stringify(report,null,2));
