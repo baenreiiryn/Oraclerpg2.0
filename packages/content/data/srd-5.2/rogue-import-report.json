@@ -1,0 +1,11 @@
+{
+  "status": "SUPPORTED",
+  "class": "Rogue",
+  "subclass": "Thief",
+  "sourceClassFeatures": 32,
+  "canonicalClassFeatures": 23,
+  "sourceSubclassFeatures": 6,
+  "canonicalSubclassFeatures": 5,
+  "progressionRows": 20,
+  "issues": []
+}

@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 8,
+  "count": 9,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -671,6 +671,102 @@
               "subclassFeature": "Frenzy|Barbarian|XPHB|Berserker|XPHB|3"
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:rogue:thief:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:rogue:thief:srd-5.2",
+      "entityType": "subclass",
+      "name": "Thief",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Rogue:Thief",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Rogue",
+          "canonicalId": "dnd2024:2024:class:rogue:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fast Hands",
+                  "canonicalId": "dnd2024:2024:feature:rogue:thief:fast-hands:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Second-Story Work",
+                  "canonicalId": "dnd2024:2024:feature:rogue:thief:second-story-work:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Supreme Sneak",
+                  "canonicalId": "dnd2024:2024:feature:rogue:thief:supreme-sneak:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 13,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Use Magic Device",
+                  "canonicalId": "dnd2024:2024:feature:rogue:thief:use-magic-device:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Thief's Reflexes",
+                  "canonicalId": "dnd2024:2024:feature:rogue:thief:thief-s-reflexes:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
         }
       }
     },

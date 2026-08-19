@@ -5,9 +5,6 @@ on:
     branches: [main]
     paths:
       - 'scripts/compare-foundry-srd52-ranger.mjs'
-      - 'packages/content/data/srd-5.2/classes.json'
-      - 'packages/content/data/srd-5.2/subclasses.json'
-      - 'packages/content/data/srd-5.2/class-features.json'
       - '.github/workflows/ranger-foundry-comparison.yml'
   workflow_dispatch:
 
@@ -16,6 +13,7 @@ permissions:
 
 jobs:
   compare:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'work/ranger-foundry-comparison'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

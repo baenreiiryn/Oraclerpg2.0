@@ -1,0 +1,33 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "counts": {
+    "classes": 9,
+    "subclasses": 9,
+    "classFeatures": 202,
+    "rogueFeatures": 23,
+    "thiefFeatures": 5
+  },
+  "sneakAttack": {
+    "1": 1,
+    "5": 3,
+    "11": 6,
+    "19": 10
+  },
+  "equipment": {
+    "bundleAHas8GP": true,
+    "bundleB100GP": true
+  },
+  "thief2024": {
+    "jumpUsesDexterity": true,
+    "useMagicDeviceAttunement4": true,
+    "useMagicDeviceScrolls": true,
+    "thiefsReflexesUnlimited": true
+  },
+  "thiefLevels": [
+    3,
+    9,
+    13,
+    17
+  ]
+}

@@ -1,0 +1,67 @@
+name: SRD 5.2 Rogue
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/import-srd52-rogue.mjs'
+      - 'scripts/finalize-srd52-rogue.mjs'
+      - 'scripts/audit-srd52-rogue.mjs'
+      - 'scripts/compare-5etools-srd52-rogue.mjs'
+      - 'scripts/compare-foundry-srd52-rogue.mjs'
+      - '.github/workflows/srd52-rogue.yml'
+  workflow_dispatch:
+permissions: { contents: write }
+jobs:
+  rogue:
+    if: github.event_name == 'workflow_dispatch' || (github.actor != 'github-actions[bot]' && github.head_ref == 'work/srd52-rogue')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { ref: '${{ github.head_ref || github.ref_name }}' }
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - name: Import Rogue from 5etools SRD 5.2
+        run: node scripts/import-srd52-rogue.mjs
+      - name: Finalize Rogue canonical equipment
+        run: node scripts/finalize-srd52-rogue.mjs
+      - name: Audit Rogue and Thief
+        run: node scripts/audit-srd52-rogue.mjs
+      - name: Compare 5etools to Oracle Rogue only
+        run: node scripts/compare-5etools-srd52-rogue.mjs
+      - name: Install YAML dependency
+        run: npm install yaml@2 --no-save --ignore-scripts
+      - name: Checkout Foundry reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Compare Foundry Rogue architecture to Oracle Rogue only
+        run: node scripts/compare-foundry-srd52-rogue.mjs ../foundry-dnd5e/packs/_source/classes24/rogue
+      - name: Resolve Rogue media
+        env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
+        run: |
+          node scripts/sync-srd52-media.mjs
+          node scripts/finalize-srd52-media.mjs
+      - name: Verify Rogue-only comparison outputs
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),r='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${r}/${f}`));
+          for(const f of ['rogue-coverage-audit.json','rogue-5etools-comparison.json','rogue-foundry-comparison.json']){const x=read(f);if(x.status!=='SUPPORTED'||x.issues.length)throw Error(`${f}: ${JSON.stringify(x)}`)}
+          const c=read('classes.json'),s=read('subclasses.json');if(!c.items.find(x=>x.name==='Rogue')||!s.items.find(x=>x.name==='Thief'&&x.data?.parentClass?.name==='Rogue'))throw Error('Rogue/Thief absent');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-rogue
+          path: |
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/class-features.json
+            packages/content/data/srd-5.2/rogue-import-report.json
+            packages/content/data/srd-5.2/rogue-coverage-audit.json
+            packages/content/data/srd-5.2/rogue-5etools-comparison.json
+            packages/content/data/srd-5.2/rogue-foundry-comparison.json
+            packages/content/data/srd-5.2/media-coverage-audit.json
+      - name: Persist Rogue compendium on PR branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-rogue'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/rogue-*.json packages/content/data/srd-5.2/media-coverage-audit.json
+          if ! git diff --cached --quiet; then git commit -m 'Persist SRD 5.2 Rogue compendium [skip ci]' && git push origin HEAD:${{ github.head_ref }}; fi

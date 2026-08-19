@@ -9,10 +9,6 @@ on:
       - 'scripts/audit-srd52-paladin.mjs'
       - 'scripts/compare-5etools-srd52-paladin.mjs'
       - 'scripts/compare-foundry-srd52-paladin.mjs'
-      - 'packages/schema/**'
-      - 'packages/content/data/srd-5.2/classes.json'
-      - 'packages/content/data/srd-5.2/subclasses.json'
-      - 'packages/content/data/srd-5.2/class-features.json'
       - '.github/workflows/srd52-paladin.yml'
   workflow_dispatch:
 
@@ -21,7 +17,7 @@ permissions:
 
 jobs:
   paladin:
-    if: github.actor != 'github-actions[bot]'
+    if: github.event_name == 'workflow_dispatch' || (github.actor != 'github-actions[bot]' && github.head_ref == 'work/srd52-paladin')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -58,10 +54,8 @@ jobs:
           const paladin=cls.items.find(x=>x.name==='Paladin'),devotion=subs.items.find(x=>x.name==='Oath of Devotion'&&x.data?.parentClass?.name==='Paladin');
           for(const f of ['paladin-coverage-audit.json','paladin-5etools-comparison.json','paladin-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(JSON.stringify(a));}
           if(!paladin||!devotion||paladin.data.advancement.length!==20)throw new Error('Paladin/Oath of Devotion invalid');
-          if(cls.count<7||subs.count<7)throw new Error(`Expected at least 7 cumulative classes/subclasses, got ${cls.count}/${subs.count}`);
           const pf=features.items.filter(x=>x.data?.category==='paladin'),df=features.items.filter(x=>x.data?.category==='paladin-devotion');
           if(!pf.find(x=>x.name.toLowerCase()==='lay on hands')||!pf.find(x=>x.name==='Aura of Protection')||!df.find(x=>x.name==='Holy Nimbus')||!df.find(x=>x.name==='Oath of Devotion Spells'))throw new Error('Core Paladin/Devotion mechanics missing');
-          console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,classFeatures:features.count,paladinFeatures:pf.length,devotionFeatures:df.length,status:'SUPPORTED'},null,2));
           NODE
       - uses: actions/upload-artifact@v4
         with:

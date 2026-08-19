@@ -1,0 +1,13 @@
+import fs from 'node:fs/promises';
+// Final canonical normalization for SRD 5.2 Rogue/Thief rules taken from the 5etools XPHB SRD 5.2 records.
+const classPath='packages/content/data/srd-5.2/classes.json',featurePath='packages/content/data/srd-5.2/class-features.json';
+const classes=JSON.parse(await fs.readFile(classPath,'utf8')),features=JSON.parse(await fs.readFile(featurePath,'utf8'));
+const rogue=classes.items.find(x=>x.name==='Rogue');if(!rogue)throw new Error('Rogue missing');
+const a=rogue.data?.equipmentBundles?.find(x=>x.id==='A');if(!a)throw new Error('Rogue equipment bundle A missing');
+if(!a.grants.some(x=>x.currency?.currency==='gp'&&x.currency?.amount===8))a.grants.push({currency:{amount:8,currency:'gp'}});
+a.label="Leather Armor, 2 Daggers, Shortsword, Shortbow, 20 Arrows, Quiver, Thieves' Tools, Burglar's Pack, and 8 GP";
+const thief=n=>features.items.find(x=>x.data?.category==='rogue-thief'&&x.name===n);
+const second=thief('Second-Story Work');if(!second)throw new Error('Second-Story Work missing');second.data.movementRules=[{id:'second-story-climb',action:'setSpeed',subject:'self',movementType:'climb',distance:{type:'runtime',path:'speed.walk'}}];second.data.properties=['jump-calculation-ability:dexterity'];
+const umd=thief('Use Magic Device');if(!umd)throw new Error('Use Magic Device missing');umd.data.properties=['magic-item-attunement-max:4','magic-item-charge-preservation:d6-on-6','spell-scroll:any','spell-scroll-ability:intelligence','spell-scroll-auto-cast:cantrip-or-level-1','spell-scroll-higher-level-check:intelligence-arcana-dc-10-plus-spell-level','spell-scroll-failed-check:scroll-disintegrates'];umd.data.rollRules=[{id:'use-magic-device-charges',target:'resourceExpenditure',predicate:{type:'custom',description:'A magic item property would expend one or more charges.'},die:'1d6',preserveOn:[6]},{id:'use-magic-device-scroll',target:'abilityCheck',predicate:{type:'custom',description:'Casting a spell of level 2 or higher from a Spell Scroll.'},ability:'intelligence',skill:'arcana',dc:{type:'formula',formula:'10 + @spell.level'},onFailure:'scroll-disintegrates'}];
+const reflex=thief("Thief's Reflexes");if(!reflex)throw new Error("Thief's Reflexes missing");reflex.data.properties=['round-1:second-turn-at-initiative-minus-10'];reflex.data.activities=[{id:'thiefs-reflexes',name:"Thief's Reflexes",kind:'utility',activation:{type:'special'},target:{type:'self'},description:'In the first round of every combat, take a second turn at your normal Initiative minus 10.'}];
+await fs.writeFile(classPath,JSON.stringify(classes,null,2)+'\n');await fs.writeFile(featurePath,JSON.stringify(features,null,2)+'\n');console.log('Finalized Rogue equipment and 2024 Thief mechanics');

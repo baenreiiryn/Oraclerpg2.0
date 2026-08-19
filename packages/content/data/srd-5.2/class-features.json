@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 174,
+  "count": 202,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -412,6 +412,60 @@
         "text": {
           "rules": [
             "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Ranger levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Ability Score Improvement:4",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Rogue levels 8, 10, 12, and 16."
           ]
         },
         "grants": [
@@ -2178,6 +2232,155 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:cunning-action:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:cunning-action:srd-5.2",
+      "entityType": "feature",
+      "name": "Cunning Action",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Cunning Action:2",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "Your quick thinking and agility allow you to move and act quickly. On your turn, you can take one of the following actions as a {@variantrule Bonus Action|XPHB}: {@action Dash|XPHB}, {@action Disengage|XPHB}, or {@action Hide|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "cunning-action-dash",
+            "name": "Dash",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Take the Dash action as a Bonus Action."
+          },
+          {
+            "id": "cunning-action-disengage",
+            "name": "Disengage",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Take the Disengage action as a Bonus Action."
+          },
+          {
+            "id": "cunning-action-hide",
+            "name": "Hide",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Take the Hide action as a Bonus Action."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:cunning-strike:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:cunning-strike:srd-5.2",
+      "entityType": "feature",
+      "name": "Cunning Strike",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Cunning Strike:5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You've developed cunning ways to use your Sneak Attack. When you deal Sneak Attack damage, you can add one of the following Cunning Strike effects. Each effect has a die cost, which is the number of Sneak Attack damage dice you must forgo to add the effect. You remove the die before rolling, and the effect occurs immediately after the attack's damage is dealt. For example, if you add the Poison effect, remove {@dice 1d6} from the Sneak Attack's damage before rolling.",
+            "If a Cunning Strike effect requires a saving throw, the DC equals 8 plus your Dexterity modifier and {@variantrule Proficiency|XPHB|Proficiency Bonus}.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Poison (Cost: 1d6)|Rogue|XPHB|5|XPHB"
+                },
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Trip (Cost: 1d6)|Rogue|XPHB|5|XPHB"
+                },
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Withdraw (Cost: 1d6)|Rogue|XPHB|5|XPHB"
+                }
+              ]
+            }
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "rogue-cunning-strike-options",
+              "entityTypes": [
+                "feature"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 1
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Rogue Cunning Strike option available at current Rogue level."
+              },
+              "chooseOn": {
+                "event": "onDamage",
+                "description": "When applying Sneak Attack damage."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "save-dc:8+dex+pb",
+          "cost:forgo-sneak-attack-dice",
+          "max-effects:1"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2",
       "entityType": "feature",
@@ -2335,6 +2538,55 @@
             "predicate": {
               "type": "lacksCondition",
               "condition": "incapacitated"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Daze (Cost: 2d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Daze (Cost: 2d6):14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "The target must succeed on a Constitution saving throw, or on its next turn, it can do only one of the following: move or take an action or a {@variantrule Bonus Action|XPHB}."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:2d6"
+        ],
+        "saveRules": [
+          {
+            "id": "daze",
+            "ability": "constitution",
+            "dc": {
+              "type": "formula",
+              "formula": "8 + @abilities.dex.mod + @prof"
+            },
+            "onFailure": {
+              "restriction": "next-turn-one-of-move-action-bonus-action"
             }
           }
         ]
@@ -2639,6 +2891,59 @@
               }
             }
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2",
+      "entityType": "feature",
+      "name": "Devious Strikes",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Devious Strikes:14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You've practiced new ways to use your Sneak Attack deviously. The following effects are now among your Cunning Strike options.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Daze (Cost: 2d6)|Rogue|XPHB|14|XPHB"
+                },
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Knock Out (Cost: 6d6)|Rogue|XPHB|14|XPHB"
+                },
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Obscure (Cost: 3d6)|Rogue|XPHB|14|XPHB"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "adds-cunning-strike-options:Daze,Knock Out,Obscure"
         ]
       }
     },
@@ -3214,6 +3519,51 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:elusive:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:elusive:srd-5.2",
+      "entityType": "feature",
+      "name": "Elusive",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Elusive:18",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You're so evasive that attackers rarely gain the upper hand against you. No attack roll can have {@variantrule Advantage|XPHB} against you unless you have the {@condition Incapacitated|XPHB} condition."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "incomingAttackRoll"
+            },
+            "mode": "preventAdvantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Rogue is not Incapacitated."
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:empowered-strikes:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:empowered-strikes:srd-5.2",
       "entityType": "feature",
@@ -3728,6 +4078,68 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Epic Boon:19",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of the Night Spirit|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of the Night Spirit"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "entityType": "feature",
@@ -3775,6 +4187,55 @@
             }
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:evasion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:evasion:srd-5.2",
+      "entityType": "feature",
+      "name": "Evasion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Evasion:7",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You can nimbly dodge out of the way of certain dangers. When you're subjected to an effect that allows you to make a Dexterity saving throw to take only half damage, you instead take no damage if you succeed on the saving throw and only half damage if you fail. You can't use this feature if you have the {@condition Incapacitated|XPHB} condition."
+          ]
+        },
+        "saveRules": [
+          {
+            "id": "evasion",
+            "ability": "dexterity",
+            "predicate": {
+              "type": "custom",
+              "description": "Effect normally deals half damage on a successful Dexterity save and Rogue is not Incapacitated."
+            },
+            "onSuccess": {
+              "damageMultiplier": 0
+            },
+            "onFailure": {
+              "damageMultiplier": 0.5
+            }
+          }
+        ]
       }
     },
     {
@@ -3889,6 +4350,64 @@
                     {
                       "field": "expertise",
                       "operator": "neq",
+                      "value": true
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:expertise:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:expertise:srd-5.2",
+      "entityType": "feature",
+      "name": "Expertise",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Expertise:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You gain {@variantrule Expertise|XPHB} in two of your skill proficiencies of your choice. {@skill Sleight of Hand|XPHB} and {@skill Stealth|XPHB} are recommended if you have proficiency in them.",
+            "At Rogue level 6, you gain {@variantrule Expertise|XPHB} in two more of your skill proficiencies of your choice."
+          ]
+        },
+        "grants": [
+          {
+            "type": "proficiency",
+            "value": {
+              "kind": "expertise",
+              "choice": {
+                "kind": "tagQuery",
+                "count": 2,
+                "entityTypes": [
+                  "skill"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "proficient",
+                      "operator": "eq",
                       "value": true
                     }
                   ]
@@ -4141,6 +4660,79 @@
               }
             ]
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:thief:fast-hands:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:fast-hands:srd-5.2",
+      "entityType": "feature",
+      "name": "Fast Hands",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Rogue:Thief:Fast Hands:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "rogue-thief",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can do one of the following.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Sleight of Hand",
+                  "entries": [
+                    "Make a Dexterity ({@skill Sleight of Hand|XPHB}) check to pick a lock or disarm a trap with {@item Thieves' Tools|XPHB} or to pick a pocket."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Use an Object",
+                  "entries": [
+                    "Take the {@action Utilize|XPHB} action, or take the {@action Magic|XPHB} action to use a magic item that requires that action."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "patches": [
+          {
+            "targetId": "dnd2024:2024:feature:rogue:cunning-action:srd-5.2",
+            "changes": [
+              {
+                "path": "activities",
+                "operation": "append",
+                "value": [
+                  "Sleight of Hand",
+                  "Thieves Tools",
+                  "Use Magic Item"
+                ]
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "cunning-action:add-sleight-of-hand",
+          "cunning-action:add-thieves-tools",
+          "cunning-action:add-magic-action-use-item"
         ]
       }
     },
@@ -5505,6 +6097,54 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:improved-cunning-strike:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:improved-cunning-strike:srd-5.2",
+      "entityType": "feature",
+      "name": "Improved Cunning Strike",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Improved Cunning Strike:11",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You can use up to two Cunning Strike effects when you deal Sneak Attack damage, paying the die cost for each effect."
+          ]
+        },
+        "patches": [
+          {
+            "targetId": "dnd2024:2024:feature:rogue:cunning-strike:srd-5.2",
+            "changes": [
+              {
+                "path": "properties.maxEffects",
+                "operation": "set",
+                "value": 2
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "cunning-strike:max-effects:2"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:druid:improved-elemental-fury:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:druid:improved-elemental-fury:srd-5.2",
       "entityType": "feature",
@@ -5906,6 +6546,58 @@
             "predicate": {
               "type": "custom",
               "description": "Only an ability check that does not already include your Proficiency Bonus."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:knock-out-cost-6d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:knock-out-cost-6d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Knock Out (Cost: 6d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Knock Out (Cost: 6d6):14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "The target must succeed on a Constitution saving throw, or it has the {@condition Unconscious|XPHB} condition for 1 minute or until it takes any damage. The {@condition Unconscious|XPHB} target repeats the save at the end of each of its turns, ending the effect on itself on a success."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:6d6"
+        ],
+        "saveRules": [
+          {
+            "id": "knock-out",
+            "ability": "constitution",
+            "dc": {
+              "type": "formula",
+              "formula": "8 + @abilities.dex.mod + @prof"
+            },
+            "onFailure": {
+              "condition": "unconscious",
+              "duration": "1 minute",
+              "endOnDamage": true,
+              "repeatAt": "endOfTurn"
             }
           }
         ]
@@ -7433,6 +8125,56 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:obscure-cost-3d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:obscure-cost-3d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Obscure (Cost: 3d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Obscure (Cost: 3d6):14",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "The target must succeed on a Dexterity saving throw, or it has the {@condition Blinded|XPHB} condition until the end of its next turn."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:3d6"
+        ],
+        "saveRules": [
+          {
+            "id": "obscure",
+            "ability": "dexterity",
+            "dc": {
+              "type": "formula",
+              "formula": "8 + @abilities.dex.mod + @prof"
+            },
+            "onFailure": {
+              "condition": "blinded",
+              "duration": "until-end-of-next-turn"
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "entityType": "feature",
@@ -7760,6 +8502,59 @@
           "rage-no-round-extension-required",
           "rage-ends-on-unconscious-or-heavy-armor",
           "initiative-refresh-once-per-long-rest"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:poison-cost-1d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:poison-cost-1d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Poison (Cost: 1d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Poison (Cost: 1d6):5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You add a toxin to your strike, forcing the target to make a Constitution saving throw. On a failed save, the target has the {@condition Poisoned|XPHB} condition for 1 minute. At the end of each of its turns, the {@condition Poisoned|XPHB} target repeats the save, ending the effect on itself on a success.",
+            "To use this effect, you must have a {@item Poisoner's Kit|XPHB} on your person."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:1d6",
+          "requires:poisoners-kit"
+        ],
+        "saveRules": [
+          {
+            "id": "poison-cunning-strike",
+            "ability": "constitution",
+            "dc": {
+              "type": "formula",
+              "formula": "8 + @abilities.dex.mod + @prof"
+            },
+            "onFailure": {
+              "condition": "poisoned",
+              "duration": "1 minute",
+              "repeatAt": "endOfTurn"
+            }
+          }
         ]
       }
     },
@@ -8903,6 +9698,50 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:reliable-talent:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:reliable-talent:srd-5.2",
+      "entityType": "feature",
+      "name": "Reliable Talent",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Reliable Talent:7",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "Whenever you make an ability check that uses one of your skill or tool proficiencies, you can treat a {@dice d20} roll of 9 or lower as a 10."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "reliable-talent",
+            "target": "abilityCheck",
+            "predicate": {
+              "type": "custom",
+              "description": "Ability check uses a skill or tool proficiency."
+            },
+            "minimumNaturalRoll": 10
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
       "entityType": "feature",
@@ -9406,6 +10245,73 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:thief:second-story-work:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:second-story-work:srd-5.2",
+      "entityType": "feature",
+      "name": "Second-Story Work",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Rogue:Thief:Second-Story Work:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "rogue-thief",
+        "text": {
+          "rules": [
+            "You've trained to get into especially hard-to-reach places, granting you these benefits.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Climber",
+                  "entries": [
+                    "You gain a {@variantrule Climb Speed|XPHB} equal to your {@variantrule Speed|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Jumper",
+                  "entries": [
+                    "You can determine your jump distance using your Dexterity rather than your Strength."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "movementRules": [
+          {
+            "id": "second-story-climb",
+            "action": "setSpeed",
+            "subject": "self",
+            "movementType": "climb",
+            "distance": {
+              "type": "runtime",
+              "path": "speed.walk"
+            }
+          }
+        ],
+        "properties": [
+          "jump-calculation-ability:dexterity"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:self-restoration:srd-5.2",
       "entityType": "feature",
@@ -9458,6 +10364,51 @@
         ],
         "properties": [
           "no-exhaustion-from-forgoing-food-or-drink"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:slippery-mind:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:slippery-mind:srd-5.2",
+      "entityType": "feature",
+      "name": "Slippery Mind",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Slippery Mind:15",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "Your cunning mind is exceptionally difficult to control. You gain proficiency in Wisdom and Charisma saving throws."
+          ]
+        },
+        "grants": [
+          {
+            "type": "proficiency",
+            "value": {
+              "kind": "savingThrow",
+              "fixed": [
+                "wisdom",
+                "charisma"
+              ]
+            }
+          }
         ]
       }
     },
@@ -9574,6 +10525,59 @@
         "properties": [
           "trigger:cast-divine-smite",
           "duration:until-start-of-next-turn"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Sneak Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Sneak Attack:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You know how to strike subtly and exploit a foe's distraction. Once per turn, you can deal an extra {@damage 1d6} damage to one creature you hit with an attack roll if you have {@variantrule Advantage|XPHB} on the roll and the attack uses a Finesse or a Ranged weapon. The extra damage's type is the same as the weapon's type.",
+            "You don't need {@variantrule Advantage|XPHB} on the attack roll if at least one of your allies is within 5 feet of the target, the ally doesn't have the {@condition Incapacitated|XPHB} condition, and you don't have {@variantrule Disadvantage|XPHB} on the attack roll.",
+            "The extra damage increases as you gain Rogue levels, as shown in the Sneak Attack column of the Rogue Features table."
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "rogue-sneak-attack",
+            "action": "extraDamage",
+            "trigger": {
+              "event": "onDamage",
+              "oncePerTurn": true
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Attack uses a Finesse or Ranged weapon and either has Advantage or an ally is within 5 feet of the target while you do not have Disadvantage."
+            },
+            "damage": {
+              "formula": "@classes.rogue.sneakAttackDice d6",
+              "type": "sameAsAttack"
+            }
+          }
         ]
       }
     },
@@ -10888,6 +11892,69 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:steady-aim:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:steady-aim:srd-5.2",
+      "entityType": "feature",
+      "name": "Steady Aim",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Steady Aim:3",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you give yourself {@variantrule Advantage|XPHB} on your next attack roll on the current turn. You can use this feature only if you haven't moved during this turn, and after you use it, your {@variantrule Speed|XPHB} is 0 until the end of the current turn."
+          ]
+        },
+        "activities": [
+          {
+            "id": "steady-aim",
+            "name": "Steady Aim",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Gain Advantage on your next attack roll this turn if you have not moved; your Speed becomes 0 until end of current turn."
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "attackRoll"
+            },
+            "mode": "advantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Next attack roll this turn after activating Steady Aim."
+            }
+          }
+        ],
+        "properties": [
+          "requires:not-moved-this-turn",
+          "speed:set-0-until-turn-end"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2",
       "entityType": "feature",
@@ -10918,6 +11985,64 @@
             "You can take the {@action Dash|XPHB} action as a {@variantrule Bonus Action|XPHB}. Alternatively, you can expend 1 Focus Point to take both the {@action Disengage|XPHB} and {@action Dash|XPHB} actions as a {@variantrule Bonus Action|XPHB}, and your jump distance is doubled for the turn."
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:stroke-of-luck:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:stroke-of-luck:srd-5.2",
+      "entityType": "feature",
+      "name": "Stroke of Luck",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Stroke of Luck:20",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You have a marvelous knack for succeeding when you need to. If you fail a {@variantrule D20 Test|XPHB}, you can turn the roll into a 20.",
+            "Once you use this feature, you can't use it again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "stroke-of-luck",
+            "target": "d20Test",
+            "trigger": "onFailure",
+            "replaceResult": 20,
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "recovery": [
+                {
+                  "period": "shortRest",
+                  "amount": "all"
+                },
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
@@ -11372,6 +12497,56 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:thief:supreme-sneak:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:supreme-sneak:srd-5.2",
+      "entityType": "feature",
+      "name": "Supreme Sneak",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Rogue:Thief:Supreme Sneak:9",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "rogue-thief",
+        "text": {
+          "rules": [
+            "You gain the following Cunning Strike option.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Stealth Attack (Cost: 1d6)",
+                  "entries": [
+                    "If you have the {@action Hide|XPHB} action's {@condition Invisible|XPHB} condition, this attack doesn't end that condition on you if you end the turn behind {@variantrule Cover|XPHB|Three-Quarters Cover} or {@variantrule Cover|XPHB|Total Cover}."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "cunning-strike-option:Stealth Attack",
+          "stealth-attack-cost:1d6",
+          "preserve-hide-invisible-if-end-turn-behind-three-quarters-or-total-cover"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
       "entityType": "feature",
@@ -11750,6 +12925,117 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:thief:thief-s-reflexes:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:thief-s-reflexes:srd-5.2",
+      "entityType": "feature",
+      "name": "Thief's Reflexes",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Rogue:Thief:Thief's Reflexes:17",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "rogue-thief",
+        "text": {
+          "rules": [
+            "You are adept at laying ambushes and quickly escaping danger. You can take two turns during the first round of any combat. You take your first turn at your normal {@variantrule Initiative|XPHB} and your second turn at your {@variantrule Initiative|XPHB} minus 10."
+          ]
+        },
+        "properties": [
+          "round-1:second-turn-at-initiative-minus-10"
+        ],
+        "activities": [
+          {
+            "id": "thiefs-reflexes",
+            "name": "Thief's Reflexes",
+            "kind": "utility",
+            "activation": {
+              "type": "special"
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "In the first round of every combat, take a second turn at your normal Initiative minus 10."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:thieves-cant:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thieves-cant:srd-5.2",
+      "entityType": "feature",
+      "name": "Thieves' Cant",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Thieves' Cant:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "You picked up various languages in the communities where you plied your roguish talents. You know Thieves' Cant and one other language of your choice, which you choose from the language tables in {@book chapter 2|XPHB|2|Choose Languages}."
+          ]
+        },
+        "grants": [
+          {
+            "type": "language",
+            "value": {
+              "fixed": [
+                "Thieves' Cant"
+              ],
+              "choice": {
+                "kind": "enum",
+                "count": 1,
+                "options": [
+                  "Common Sign Language",
+                  "Draconic",
+                  "Dwarvish",
+                  "Elvish",
+                  "Giant",
+                  "Gnomish",
+                  "Goblin",
+                  "Halfling",
+                  "Orc"
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "communicate-thieves-cant:10x-speed"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
       "entityType": "feature",
@@ -11874,6 +13160,56 @@
               "description": "Short Rest"
             },
             "description": "Decrease Exhaustion level by 1 after a Short Rest."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:trip-cost-1d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:trip-cost-1d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Trip (Cost: 1d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Trip (Cost: 1d6):5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "If the target is Large or smaller, it must succeed on a Dexterity saving throw or have the {@condition Prone|XPHB} condition."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:1d6",
+          "target-size:max-large"
+        ],
+        "saveRules": [
+          {
+            "id": "trip-cunning-strike",
+            "ability": "dexterity",
+            "dc": {
+              "type": "formula",
+              "formula": "8 + @abilities.dex.mod + @prof"
+            },
+            "onFailure": {
+              "condition": "prone"
+            }
           }
         ]
       }
@@ -12210,6 +13546,72 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:rogue:uncanny-dodge:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:uncanny-dodge:srd-5.2",
+      "entityType": "feature",
+      "name": "Uncanny Dodge",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Uncanny Dodge:5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "When an attacker that you can see hits you with an attack roll, you can take a {@variantrule Reaction|XPHB} to halve the attack's damage against you (round down)."
+          ]
+        },
+        "activities": [
+          {
+            "id": "uncanny-dodge",
+            "name": "Uncanny Dodge",
+            "kind": "utility",
+            "activation": {
+              "type": "reaction",
+              "trigger": {
+                "event": "onDamageTaken"
+              }
+            },
+            "target": {
+              "type": "self"
+            },
+            "description": "Halve the damage from an attack roll by an attacker you can see."
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "incomingDamage"
+            },
+            "mode": "multiplier",
+            "value": {
+              "type": "constant",
+              "value": 0.5
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Damage is from an attack roll by an attacker you can see and this reaction is used."
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:uncanny-metabolism:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:uncanny-metabolism:srd-5.2",
       "entityType": "feature",
@@ -12278,6 +13680,98 @@
                 }
               ]
             }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:thief:use-magic-device:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:thief:use-magic-device:srd-5.2",
+      "entityType": "feature",
+      "name": "Use Magic Device",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Rogue:Thief:Use Magic Device:13",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "rogue-thief",
+        "text": {
+          "rules": [
+            "You've learned how to maximize use of magic items, granting you the following benefits.",
+            {
+              "type": "entries",
+              "name": "Attunement",
+              "entries": [
+                "You can attune to up to four magic items at once."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Charges",
+              "entries": [
+                "Whenever you use a magic item property that expends charges, roll {@dice 1d6}. On a roll of 6, you use the property without expending the charges."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Scrolls",
+              "entries": [
+                "You can use any {@item Spell Scroll|XDMG}, using Intelligence as your spellcasting ability for the spell. If the spell is a cantrip or a level 1 spell, you can cast it reliably. If the scroll contains a higher-level spell, you must first succeed on an Intelligence ({@skill Arcana|XPHB}) check ({@dc 10} plus the spell's level). On a successful check, you cast the spell from the scroll. On a failed check, the scroll disintegrates."
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "magic-item-attunement-max:4",
+          "magic-item-charge-preservation:d6-on-6",
+          "spell-scroll:any",
+          "spell-scroll-ability:intelligence",
+          "spell-scroll-auto-cast:cantrip-or-level-1",
+          "spell-scroll-higher-level-check:intelligence-arcana-dc-10-plus-spell-level",
+          "spell-scroll-failed-check:scroll-disintegrates"
+        ],
+        "rollRules": [
+          {
+            "id": "use-magic-device-charges",
+            "target": "resourceExpenditure",
+            "predicate": {
+              "type": "custom",
+              "description": "A magic item property would expend one or more charges."
+            },
+            "die": "1d6",
+            "preserveOn": [
+              6
+            ]
+          },
+          {
+            "id": "use-magic-device-scroll",
+            "target": "abilityCheck",
+            "predicate": {
+              "type": "custom",
+              "description": "Casting a spell of level 2 or higher from a Spell Scroll."
+            },
+            "ability": "intelligence",
+            "skill": "arcana",
+            "dc": {
+              "type": "formula",
+              "formula": "10 + @spell.level"
+            },
+            "onFailure": "scroll-disintegrates"
           }
         ]
       }
@@ -12614,6 +14108,75 @@
               "filter": {
                 "type": "custom",
                 "description": "Proficient weapon with a mastery property."
+              },
+              "chooseOn": {
+                "event": "onLevelGain"
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Long Rest"
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 2
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "Eligible proficient weapons."
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:weapon-mastery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:weapon-mastery:srd-5.2",
+      "entityType": "feature",
+      "name": "Weapon Mastery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Weapon Mastery:1",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "Your training with weapons allows you to use the {@variantrule weapon mastery properties|XPHB|mastery properties} of two kinds of {@filter weapons|items|type=simple weapon;martial weapon} of your choice with which you have proficiency, such as {@item Dagger|XPHB|Daggers} and {@item Shortbow|XPHB|Shortbows}.",
+            "Whenever you finish a {@variantrule Long Rest|XPHB}, you can change the kinds of weapons you chose. For example, you could switch to using the {@variantrule weapon mastery properties|XPHB|mastery properties} of {@item Scimitar|XPHB|Scimitars} and {@item Shortsword|XPHB|Shortswords}."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "rogue-weapon-masteries",
+              "entityTypes": [
+                "item"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 2
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Simple or Martial weapon the Rogue is proficient with and that has a mastery property."
               },
               "chooseOn": {
                 "event": "onLevelGain"
@@ -13318,6 +14881,57 @@
             }
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:rogue:withdraw-cost-1d6:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:rogue:withdraw-cost-1d6:srd-5.2",
+      "entityType": "feature",
+      "name": "Withdraw (Cost: 1d6)",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Rogue:Withdraw (Cost: 1d6):5",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "rogue",
+        "text": {
+          "rules": [
+            "Immediately after the attack, you move up to half your {@variantrule Speed|XPHB} without provoking {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+          ]
+        },
+        "properties": [
+          "cunning-strike-cost:1d6"
+        ],
+        "movementRules": [
+          {
+            "id": "withdraw",
+            "action": "move",
+            "subject": "self",
+            "distance": {
+              "type": "formula",
+              "formula": "@speed / 2"
+            },
+            "provokesOpportunityAttacks": false,
+            "trigger": {
+              "event": "onDamage"
+            }
+          }
+        ]
       }
     },
     {
