@@ -47,14 +47,16 @@ for(const [l,v] of [[1,2],[5,3],[9,4],[13,5],[17,6]]) req(favored[String(l)]?.va
 const prep=byTitle.get('Max Prepared Spells')??{};
 for(const [level,row] of Object.entries(prep)) if(row?.value!==undefined) req(os(Number(level)).preparedSpells===row.value,`Prepared Spells mismatch at level ${level}`);
 const mastery=byTitle.get('Weapon Masteries Known')??{};
-for(const [level,row] of Object.entries(mastery)) if(row?.value!==undefined) req(os(Number(level)).weaponMasteries===row.value,`Weapon Masteries mismatch at level ${level}`);
+for(const [level,row] of Object.entries(mastery)) if(row?.value!==undefined) req(os(Number(level)).weaponMasteries===row.value||os(Number(level)).weaponMasteriesKnown===row.value,`Weapon Masteries mismatch at level ${level}`);
 
 const get=n=>features.items.find(x=>x.data?.category==='ranger'&&x.name===n);
 const hget=n=>features.items.find(x=>x.data?.category==='ranger-hunter'&&x.name===n);
+const deft=get('Deft Explorer');
 req(get('Favored Enemy')?.data?.spellGrants?.some(g=>g.selections?.some(s=>s.spell?.name==="Hunter's Mark")),'Oracle Favored Enemy does not grant Hunter’s Mark');
 req(get('Spellcasting')?.data?.classMechanics?.spellCollections?.length,'Oracle Ranger Spellcasting is not structurally represented');
 req(get('Weapon Mastery')?.data?.classRules?.entityCollections?.length,'Oracle Ranger Weapon Mastery is not structurally represented');
-req(get('Deft Explorer')?.data?.properties?.some(x=>String(x).includes('expertise')),'Oracle Deft Explorer expertise missing');
+req(deft?.data?.grants?.some(g=>g.type==='proficiency'&&g.value?.kind==='expertise'&&g.value?.choice?.count===1),'Oracle Deft Explorer expertise missing');
+req(deft?.data?.grants?.some(g=>g.type==='language'&&g.value?.choice?.count===2),'Oracle Deft Explorer language choice missing');
 req(get('Roving')?.data?.properties?.includes('swim-speed-equals-speed')&&get('Roving')?.data?.properties?.includes('climb-speed-equals-speed'),'Oracle Roving movement modes missing');
 req(get('Tireless')?.data?.activities?.length,'Oracle Tireless activity missing');
 req(get('Relentless Hunter')?.data?.modifiers?.some(x=>x.target?.domain==='concentration'),'Oracle Relentless Hunter concentration support missing');
@@ -66,9 +68,15 @@ req(hget("Hunter's Prey")?.data?.classRules?.entityCollections?.length,'Oracle H
 req(hget('Defensive Tactics')?.data?.classRules?.entityCollections?.length,'Oracle Defensive Tactics choice/replace structure missing');
 req(!!hget("Hunter's Lore")&&!!hget("Superior Hunter's Prey")&&!!hget("Superior Hunter's Defense"),'Oracle Hunter progression features missing');
 
+const markDamage=byTitle.get("Hunter's Mark Damage")??{};
+if(Object.keys(markDamage).length){
+ req(get('Favored Enemy')?.data?.spellGrants?.some(g=>g.selections?.some(s=>s.spell?.name==="Hunter's Mark")),'Foundry Hunter’s Mark Damage scale has no Oracle Hunter’s Mark source');
+ req(get('Foe Slayer')?.data?.properties?.includes('hunters-mark-damage-die:d10'),'Foundry Hunter’s Mark Damage capstone is not represented by Oracle Foe Slayer');
+}
+
 const foundrySubclassLevels=advancements(hunterYaml?.system?.advancement).filter(x=>x.type==='ItemGrant').map(x=>x.level).sort((a,b)=>a-b);
 req(JSON.stringify(foundrySubclassLevels)==='[3,7,11,15]','Foundry Hunter advancement levels differ');
-const oracleSubclassLevels=(hunter?.data?.advancement??[]).filter(x=>x.features?.length).map(x=>x.level).sort((a,b)=>a-b);
+const oracleSubclassLevels=(hunter?.data?.advancement??[]).filter(x=>x.grants?.length).map(x=>x.level).sort((a,b)=>a-b);
 req(JSON.stringify(oracleSubclassLevels)==='[3,7,11,15]','Oracle Hunter advancement levels differ');
 
 const report={
@@ -78,7 +86,8 @@ const report={
  oracle:{classFeatures:rangerNames.size,subclassFeatures:hunterNames.size,hunterLevels:oracleSubclassLevels},
  classifiedDifferences:[
   {type:'provider-implementation',detail:'Foundry stores Druidic Warrior as a separate auxiliary feature; Oracle models it as the alternative option inside Fighting Style.'},
-  {type:'provider-implementation',detail:'Foundry represents skill Expertise additionally through Trait advancements; Oracle keeps the canonical feature and structured choice data on the class feature/progression.'}
+  {type:'provider-implementation',detail:'Foundry represents Deft Explorer and Expertise choices additionally through Trait advancements; Oracle stores the same choices inside structured proficiency grants.'},
+  {type:'provider-implementation',detail:"Foundry exposes Hunter's Mark Damage as a ScaleValue; Oracle keeps the baseline on Hunter's Mark/Favored Enemy and applies the d10 capstone through Foe Slayer."}
  ]
 };
 await fs.writeFile(`${ROOT}/ranger-foundry-comparison.json`,JSON.stringify(report,null,2)+'\n');
