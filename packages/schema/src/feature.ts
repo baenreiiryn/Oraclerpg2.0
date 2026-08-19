@@ -75,6 +75,7 @@ export interface FeatureData {
   featCategory?: FeatCategory;
   subtype?: string;
   repeatable?: boolean;
+  prerequisiteMode?: "all" | "any";
   prerequisites?: readonly PrerequisiteData[];
   abilityScoreOptions?: readonly AbilityScoreOptionData[];
   spellGrants?: readonly SpellGrantGroupData[];
