@@ -1,0 +1,24 @@
+{
+  "status": "SUPPORTED",
+  "foundry": {
+    "classFeatureDocuments": 13,
+    "subclassFeatureDocuments": 6,
+    "scaleValues": [
+      "Action Surge",
+      "Indomitable",
+      "Second Wind",
+      "Weapon Masteries Known"
+    ]
+  },
+  "oracle": {
+    "classFeatureDefinitions": 14,
+    "subclassFeatureDefinitions": 6
+  },
+  "classifiedDifferences": [
+    {
+      "type": "representation",
+      "reason": "Foundry uses Trait/ItemChoice/ScaleValue advancement for weapon mastery and Fighting Style; Oracle uses compendium entity collections, feat queries, shared resources and rule objects."
+    }
+  ],
+  "issues": []
+}

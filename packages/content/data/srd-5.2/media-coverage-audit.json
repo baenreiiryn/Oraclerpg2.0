@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T07:49:28.348Z",
+  "generatedAt": "2026-08-19T08:30:08.762Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 4,
-      "withMedia": 4,
-      "assets": 4,
+      "entities": 5,
+      "withMedia": 5,
+      "assets": 5,
       "byRole": {
-        "artwork": 4
+        "artwork": 5
       }
     },
     "subclasses.json": {
-      "entities": 4,
+      "entities": 5,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 80,
+      "entities": 100,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1774,
-    "withMedia": 470,
-    "assets": 663
+    "entities": 1796,
+    "withMedia": 471,
+    "assets": 664
   },
-  "coverage": 0.2649379932356257,
+  "coverage": 0.26224944320712695,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7405,6 +7405,12 @@
     },
     {
       "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
+      "name": "Champion",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "subclasses.json",
       "canonicalId": "dnd2024:2024:subclass:druid:land:srd-5.2",
       "name": "Circle of the Land",
       "entityType": "subclass"
@@ -7905,6 +7911,126 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:wild-shape:srd-5.2",
       "name": "Wild Shape",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:action-surge:srd-5.2",
+      "name": "Action Surge",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:additional-fighting-style:srd-5.2",
+      "name": "Additional Fighting Style",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2",
+      "name": "Heroic Warrior",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:improved-critical:srd-5.2",
+      "name": "Improved Critical",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
+      "name": "Remarkable Athlete",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:superior-critical:srd-5.2",
+      "name": "Superior Critical",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
+      "name": "Survivor",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:extra-attack:srd-5.2",
+      "name": "Extra Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
+      "name": "Fighting Style",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:indomitable:srd-5.2",
+      "name": "Indomitable",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:second-wind:srd-5.2",
+      "name": "Second Wind",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:studied-attacks:srd-5.2",
+      "name": "Studied Attacks",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-master:srd-5.2",
+      "name": "Tactical Master",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-mind:srd-5.2",
+      "name": "Tactical Mind",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-shift:srd-5.2",
+      "name": "Tactical Shift",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
+      "name": "Three Extra Attacks",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:two-extra-attacks:srd-5.2",
+      "name": "Two Extra Attacks",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
       "entityType": "feature"
     }
   ],

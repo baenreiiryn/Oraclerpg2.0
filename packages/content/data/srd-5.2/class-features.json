@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 80,
+  "count": 100,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -6920,6 +6920,1293 @@
             }
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Ability Score Improvement:4",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Fighter levels 6, 8, 12, 14, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:action-surge:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:action-surge:srd-5.2",
+      "entityType": "feature",
+      "name": "Action Surge",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Action Surge:2",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action, except the {@action Magic|XPHB} action.",
+            "Once you use this feature, you can't do so again until you finish a {@variantrule Short Rest|XPHB|Short} or {@variantrule Long Rest|XPHB}. Starting at level 17, you can use it twice before a rest but only once on a turn."
+          ]
+        },
+        "grants": [
+          {
+            "type": "resource",
+            "value": {
+              "id": "action-surge",
+              "max": {
+                "type": "runtime",
+                "path": "class.fighter.actionSurgeUses"
+              },
+              "recovery": [
+                {
+                  "period": "shortRest",
+                  "amount": "all"
+                },
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "classMechanics": {
+          "generatedActions": [
+            {
+              "trigger": {
+                "event": "onActivate",
+                "description": "On your turn, expend Action Surge."
+              },
+              "action": "custom",
+              "count": {
+                "type": "constant",
+                "value": 1
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Grant one additional action that cannot be used for the Magic action; Action Surge can be used only once on a turn."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "extra-action:not-magic",
+          "once-per-turn"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:additional-fighting-style:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:additional-fighting-style:srd-5.2",
+      "entityType": "feature",
+      "name": "Additional Fighting Style",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Additional Fighting Style:7",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "You gain another {@filter Fighting Style feat|feats|category=FS} of your choice."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "fightingStyle"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2",
+      "entityType": "feature",
+      "name": "Heroic Warrior",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Heroic Warrior:10",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "The thrill of battle drives you toward victory. During combat, you can give yourself {@variantrule Heroic Inspiration|XPHB} whenever you start your turn without it."
+          ]
+        },
+        "triggeredGrants": [
+          {
+            "id": "heroic-warrior-inspiration",
+            "trigger": {
+              "event": "onTurnStart",
+              "description": "During combat, if you start your turn without Heroic Inspiration."
+            },
+            "grant": "heroicInspiration",
+            "predicate": {
+              "type": "custom",
+              "description": "Only during combat and only if the Fighter lacks Heroic Inspiration."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:improved-critical:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:improved-critical:srd-5.2",
+      "entityType": "feature",
+      "name": "Improved Critical",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Improved Critical:3",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "Your attack rolls with weapons and Unarmed Strikes can score a {@variantrule Critical Hit|XPHB} on a roll of 19 or 20 on the {@dice d20}."
+          ]
+        },
+        "classMechanics": {
+          "resolutionOverrides": [
+            {
+              "domain": "critical",
+              "mode": "custom",
+              "value": {
+                "type": "constant",
+                "value": 19
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Weapon attacks and Unarmed Strikes score a Critical Hit on a natural 19 or 20."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "critical-threshold:19"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2",
+      "entityType": "feature",
+      "name": "Remarkable Athlete",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Remarkable Athlete:3",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "Thanks to your athleticism, you have {@variantrule Advantage|XPHB} on {@variantrule Initiative|XPHB} rolls and Strength ({@skill Athletics|XPHB}) checks.",
+            "In addition, immediately after you score a {@variantrule Critical Hit|XPHB}, you can move up to half your {@variantrule Speed|XPHB} without provoking {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+          ]
+        },
+        "modifiers": [
+          {
+            "target": {
+              "domain": "initiative"
+            },
+            "mode": "advantage"
+          },
+          {
+            "target": {
+              "domain": "skillCheck",
+              "skill": "Athletics"
+            },
+            "mode": "advantage"
+          }
+        ],
+        "classRules": {
+          "movementPermissions": [
+            {
+              "subject": "self",
+              "permissions": [
+                "ignoreOpportunityAttacks"
+              ],
+              "predicate": {
+                "type": "custom",
+                "description": "Immediately after scoring a Critical Hit; move up to half Speed."
+              },
+              "duration": {
+                "endTriggers": [
+                  {
+                    "event": "custom",
+                    "description": "End after the granted movement."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "remarkable-athlete-critical-move",
+            "action": "move",
+            "subject": "self",
+            "distance": {
+              "type": "formula",
+              "formula": "floor(@attributes.movement.walk / 2)"
+            },
+            "trigger": {
+              "event": "onCritical",
+              "description": "Immediately after scoring a Critical Hit."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "This movement does not provoke Opportunity Attacks."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:superior-critical:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:superior-critical:srd-5.2",
+      "entityType": "feature",
+      "name": "Superior Critical",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Superior Critical:15",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "Your attack rolls with weapons and Unarmed Strikes can now score a {@variantrule Critical Hit|XPHB} on a roll of 18–20 on the {@dice d20}."
+          ]
+        },
+        "classMechanics": {
+          "resolutionOverrides": [
+            {
+              "domain": "critical",
+              "mode": "custom",
+              "value": {
+                "type": "constant",
+                "value": 18
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Weapon attacks and Unarmed Strikes score a Critical Hit on a natural 18-20."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "critical-threshold:18"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2",
+      "entityType": "feature",
+      "name": "Survivor",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Fighter:Champion:Survivor:18",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "fighter-champion",
+        "text": {
+          "rules": [
+            "You attain the pinnacle of resilience in battle, giving you these benefits.",
+            {
+              "type": "entries",
+              "name": "Defy Death",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on {@variantrule Death Saving Throw|XPHB|Death Saving Throws}. Moreover, when you roll 18–20 on a {@variantrule Death Saving Throw|XPHB}, you gain the benefit of rolling a 20 on it."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Heroic Rally",
+              "entries": [
+                "At the start of each of your turns, you regain {@variantrule Hit Points|XPHB} equal to 5 plus your Constitution modifier if you are {@status Bloodied|XPHB} and have at least 1 {@variantrule Hit Points|XPHB|Hit Point}."
+              ]
+            }
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "survivor-death-save-advantage",
+            "target": "savingThrow",
+            "operation": "advantage",
+            "trigger": {
+              "event": "onSave",
+              "description": "When making a Death Saving Throw."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Death Saving Throw only."
+            }
+          }
+        ],
+        "classMechanics": {
+          "resolutionOverrides": [
+            {
+              "domain": "save",
+              "mode": "replaceTotal",
+              "value": {
+                "type": "constant",
+                "value": 20
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "On a Death Saving Throw natural roll of 18-20, gain the benefit of rolling a 20."
+              }
+            }
+          ]
+        },
+        "triggeredGrants": [
+          {
+            "id": "champion-heroic-rally",
+            "trigger": {
+              "event": "onTurnStart",
+              "description": "If Bloodied and at least 1 Hit Point, regain Hit Points."
+            },
+            "grant": "hitPoints",
+            "value": {
+              "type": "formula",
+              "formula": "5 + @abilities.con.mod"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "The Champion is Bloodied and has at least 1 Hit Point."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Epic Boon:19",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Combat Prowess|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:extra-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:extra-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Extra Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Extra Attack:5",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You can attack twice instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "properties": [
+          "attack-action-count:2"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
+      "entityType": "feature",
+      "name": "Fighting Style",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Fighting Style:1",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You have honed your martial prowess and gain a {@filter Fighting Style feat|feats|category=FS} of your choice. {@feat Defense|XPHB} is recommended.",
+            "Whenever you gain a Fighter level, you can replace the feat you chose with a different {@filter Fighting Style feat|feats|category=FS}."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "fightingStyle"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "classRules": {
+          "selectionPolicies": [
+            {
+              "collectionId": "fighter-fighting-style",
+              "repeatable": false,
+              "uniqueBy": "entity",
+              "replacement": {
+                "trigger": {
+                  "event": "custom",
+                  "description": "Whenever you gain a Fighter level, you may replace the selected Fighting Style feat."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:indomitable:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:indomitable:srd-5.2",
+      "entityType": "feature",
+      "name": "Indomitable",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Indomitable:9",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "If you fail a saving throw, you can reroll it with a bonus equal to your Fighter level. You must use the new roll, and you can't use this feature again until you finish a {@variantrule Long Rest|XPHB}.",
+            "You can use this feature twice before a {@variantrule Long Rest|XPHB} starting at level 13 and three times before a {@variantrule Long Rest|XPHB} starting at level 17."
+          ]
+        },
+        "grants": [
+          {
+            "type": "resource",
+            "value": {
+              "id": "indomitable",
+              "max": {
+                "type": "runtime",
+                "path": "class.fighter.indomitableUses"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "rollRules": [
+          {
+            "id": "indomitable-reroll",
+            "target": "savingThrow",
+            "operation": "reroll",
+            "trigger": {
+              "event": "onFailedSave",
+              "description": "Expend one use of Indomitable after failing a saving throw."
+            },
+            "formula": "@classes.fighter.level",
+            "description": "Reroll the failed save, add Fighter level to the new roll, and use the new roll."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:second-wind:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:second-wind:srd-5.2",
+      "entityType": "feature",
+      "name": "Second Wind",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Second Wind:1",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You have a limited well of physical and mental stamina that you can draw on. As a {@variantrule Bonus Action|XPHB}, you can use it to regain {@variantrule Hit Points|XPHB} equal to {@dice 1d10} plus your Fighter level.",
+            "You can use this feature twice. You regain one expended use when you finish a {@variantrule Short Rest|XPHB}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}.",
+            "When you reach certain Fighter levels, you gain more uses of this feature, as shown in the Second Wind column of the Fighter Features table."
+          ]
+        },
+        "grants": [
+          {
+            "type": "resource",
+            "value": {
+              "id": "second-wind",
+              "max": {
+                "type": "runtime",
+                "path": "class.fighter.secondWindUses"
+              },
+              "recovery": [
+                {
+                  "period": "shortRest",
+                  "amount": {
+                    "type": "constant",
+                    "value": 1
+                  }
+                },
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "activities": [
+          {
+            "id": "second-wind-healing",
+            "name": "Second Wind",
+            "kind": "healing",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "healing": [
+              {
+                "formula": "1d10 + @classes.fighter.level",
+                "type": "healing"
+              }
+            ],
+            "uses": {
+              "max": {
+                "type": "constant",
+                "value": 1
+              },
+              "recovery": [],
+              "sharedResourceId": "second-wind"
+            },
+            "description": "Regain 1d10 + Fighter level Hit Points."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:studied-attacks:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:studied-attacks:srd-5.2",
+      "entityType": "feature",
+      "name": "Studied Attacks",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Studied Attacks:13",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You study your opponents and learn from each attack you make. If you make an attack roll against a creature and miss, you have {@variantrule Advantage|XPHB} on your next attack roll against that creature before the end of your next turn."
+          ]
+        },
+        "effects": [
+          {
+            "id": "studied-attacks-advantage",
+            "trigger": {
+              "event": "onMiss",
+              "description": "When you miss a creature with an attack roll."
+            },
+            "duration": {
+              "type": "untilTrigger",
+              "endTrigger": {
+                "event": "custom",
+                "description": "Ends after your next attack against that creature or at the end of your next turn."
+              }
+            },
+            "modifiers": [
+              {
+                "target": {
+                  "domain": "attackRoll"
+                },
+                "mode": "advantage",
+                "predicate": {
+                  "type": "custom",
+                  "description": "Only the next attack roll against the same creature before the end of your next turn."
+                }
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:tactical-master:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-master:srd-5.2",
+      "entityType": "feature",
+      "name": "Tactical Master",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Tactical Master:9",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "When you attack with a weapon whose mastery property you can use, you can replace that property with the {@itemMastery Push|XPHB}, {@itemMastery Sap|XPHB}, or {@itemMastery Slow|XPHB} property for that attack."
+          ]
+        },
+        "classMechanics": {
+          "runtimeChoices": [
+            {
+              "id": "fighter-tactical-mastery-attack",
+              "options": [
+                "Push",
+                "Sap",
+                "Slow"
+              ],
+              "chooseOn": {
+                "event": "onAttack",
+                "description": "When attacking with a weapon whose mastery property you can use."
+              },
+              "activeUntil": {
+                "event": "custom",
+                "description": "Ends after this attack resolves."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "replace-current-mastery-for-attack"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:tactical-mind:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-mind:srd-5.2",
+      "entityType": "feature",
+      "name": "Tactical Mind",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Tactical Mind:2",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You have a mind for tactics on and off the battlefield. When you fail an ability check, you can expend a use of your Second Wind to push yourself toward success. Rather than regaining {@variantrule Hit Points|XPHB}, you roll {@dice 1d10} and add the number rolled to the ability check, potentially turning it into a success. If the check still fails, this use of Second Wind isn't expended."
+          ]
+        },
+        "rollRules": [
+          {
+            "id": "tactical-mind",
+            "target": "abilityCheck",
+            "operation": "add",
+            "trigger": {
+              "event": "onFailedCheck",
+              "description": "After failing an ability check, expend one Second Wind use and add 1d10."
+            },
+            "formula": "1d10",
+            "description": "If the modified check still fails, the Second Wind use is not expended."
+          }
+        ],
+        "resourcePreservationRules": [
+          {
+            "id": "tactical-mind-refund",
+            "resource": "classResource",
+            "trigger": {
+              "event": "onFailedCheck",
+              "description": "After Tactical Mind resolves."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "The ability check still fails after adding the Tactical Mind d10."
+            },
+            "preserveOnSuccess": true,
+            "description": "Retain the Second Wind use if the check still fails."
+          }
+        ],
+        "properties": [
+          "uses-resource:second-wind"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:tactical-shift:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:tactical-shift:srd-5.2",
+      "entityType": "feature",
+      "name": "Tactical Shift",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Tactical Shift:5",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "Whenever you activate your Second Wind with a {@variantrule Bonus Action|XPHB}, you can move up to half your {@variantrule Speed|XPHB} without provoking {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+          ]
+        },
+        "classRules": {
+          "movementPermissions": [
+            {
+              "subject": "self",
+              "permissions": [
+                "ignoreOpportunityAttacks"
+              ],
+              "predicate": {
+                "type": "custom",
+                "description": "Immediately after activating Second Wind as a Bonus Action; move up to half Speed."
+              },
+              "duration": {
+                "endTriggers": [
+                  {
+                    "event": "custom",
+                    "description": "End after the granted half-Speed movement."
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "movementInteractionRules": [
+          {
+            "id": "tactical-shift-move",
+            "action": "move",
+            "subject": "self",
+            "distance": {
+              "type": "formula",
+              "formula": "floor(@attributes.movement.walk / 2)"
+            },
+            "trigger": {
+              "event": "custom",
+              "description": "Immediately after activating Second Wind as a Bonus Action."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "This movement does not provoke Opportunity Attacks."
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2",
+      "entityType": "feature",
+      "name": "Three Extra Attacks",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Three Extra Attacks:20",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You can attack four times instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "properties": [
+          "attack-action-count:4"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:two-extra-attacks:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:two-extra-attacks:srd-5.2",
+      "entityType": "feature",
+      "name": "Two Extra Attacks",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Two Extra Attacks:11",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "You can attack three times instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "properties": [
+          "attack-action-count:3"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2",
+      "entityType": "feature",
+      "name": "Weapon Mastery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Fighter:Weapon Mastery:1",
+        "adapterVersion": "0.6.0",
+        "mapperVersion": "0.6.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "fighter",
+        "text": {
+          "rules": [
+            "Your training with weapons allows you to use the {@variantrule weapon mastery properties|XPHB|mastery properties} of three kinds of {@filter Simple|items|type=simple weapon} or {@filter Martial|items|type=martial weapon} weapons of your choice. Whenever you finish a {@variantrule Long Rest|XPHB}, you can practice weapon drills and change one of those weapon choices.",
+            "When you reach certain Fighter levels, you gain the ability to use the {@variantrule weapon mastery properties|XPHB|mastery properties} of more kinds of weapons, as shown in the Weapon Mastery column of the Fighter Features table."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "fighter-weapon-masteries",
+              "entityTypes": [
+                "item"
+              ],
+              "capacity": {
+                "type": "runtime",
+                "path": "class.fighter.weaponMasteryCount"
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Simple or Martial weapon with a mastery property."
+              },
+              "chooseOn": {
+                "event": "onApply",
+                "description": "Choose mastered weapon kinds."
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "After a Long Rest, one mastered weapon choice may be replaced."
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "Simple or Martial weapon with a mastery property."
+                }
+              },
+              "progression": [
+                {
+                  "level": 1,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 3
+                  }
+                },
+                {
+                  "level": 4,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 4
+                  }
+                },
+                {
+                  "level": 10,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 5
+                  }
+                },
+                {
+                  "level": 16,
+                  "capacity": {
+                    "type": "constant",
+                    "value": 6
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "uses-selected-weapon-mastery-properties"
+        ]
       }
     }
   ]
