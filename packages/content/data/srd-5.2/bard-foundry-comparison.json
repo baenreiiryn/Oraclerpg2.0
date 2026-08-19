@@ -1,0 +1,23 @@
+{
+  "status": "SUPPORTED",
+  "foundry": {
+    "classFeatureDocuments": 10,
+    "subclassFeatureDocuments": 4,
+    "scaleValues": [
+      "Max Prepared Spells",
+      "Cantrips Known",
+      "Inspiration Die"
+    ]
+  },
+  "oracle": {
+    "classFeatureDefinitions": 11,
+    "subclassFeatureDefinitions": 4
+  },
+  "classifiedDifferences": [
+    {
+      "type": "representation",
+      "reason": "Foundry stores class progression as ItemGrant/Trait/ScaleValue advancements; Oracle uses canonical feature entities plus AdvancementStep and classMechanics."
+    }
+  ],
+  "issues": []
+}
