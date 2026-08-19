@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 2,
+  "count": 1,
   "items": [
     {
       "id": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
@@ -97,90 +97,6 @@
               "subclassFeature": "Frenzy|Barbarian|XPHB|Berserker|XPHB|3"
             }
           ]
-        }
-      }
-    },
-    {
-      "id": "dnd2024:2024:subclass:bard:lore:srd-5.2",
-      "canonicalId": "dnd2024:2024:subclass:bard:lore:srd-5.2",
-      "entityType": "subclass",
-      "name": "College of Lore",
-      "system": {
-        "gameSystem": "dnd2024",
-        "rulesVersion": "2024"
-      },
-      "source": {
-        "sourceId": "srd-5.2",
-        "book": "XPHB",
-        "license": "CC-BY-4.0",
-        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
-      },
-      "provenance": {
-        "origin": "import",
-        "provider": "5etools",
-        "sourceKey": "XPHB:subclass:Bard:Lore",
-        "adapterVersion": "0.4.0",
-        "mapperVersion": "0.4.0"
-      },
-      "schemaVersion": 1,
-      "data": {
-        "parentClass": {
-          "entityType": "class",
-          "name": "Bard",
-          "canonicalId": "dnd2024:2024:class:bard:srd-5.2"
-        },
-        "subclassLevel": 3,
-        "advancement": [
-          {
-            "level": 3,
-            "grants": [
-              {
-                "type": "entity",
-                "entity": {
-                  "entityType": "feature",
-                  "name": "Bonus Proficiencies",
-                  "canonicalId": "dnd2024:2024:feature:bard:lore:bonus-proficiencies:srd-5.2"
-                }
-              },
-              {
-                "type": "entity",
-                "entity": {
-                  "entityType": "feature",
-                  "name": "Cutting Words",
-                  "canonicalId": "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2"
-                }
-              }
-            ]
-          },
-          {
-            "level": 6,
-            "grants": [
-              {
-                "type": "entity",
-                "entity": {
-                  "entityType": "feature",
-                  "name": "Magical Discoveries",
-                  "canonicalId": "dnd2024:2024:feature:bard:lore:magical-discoveries:srd-5.2"
-                }
-              }
-            ]
-          },
-          {
-            "level": 14,
-            "grants": [
-              {
-                "type": "entity",
-                "entity": {
-                  "entityType": "feature",
-                  "name": "Peerless Skill",
-                  "canonicalId": "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2"
-                }
-              }
-            ]
-          }
-        ],
-        "text": {
-          "rules": []
         }
       }
     }
