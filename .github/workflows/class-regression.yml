@@ -27,42 +27,28 @@ jobs:
           const root='packages/content/data/srd-5.2';
           const read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
           const classes=read('classes.json'), subs=read('subclasses.json'), features=read('class-features.json');
-          const expected={
-            Barbarian:'Path of the Berserker',
-            Bard:'College of Lore',
-            Cleric:'Life Domain',
-            Druid:'Circle of the Land',
-            Fighter:'Champion'
-          };
+          const expected={Barbarian:'Path of the Berserker',Bard:'College of Lore',Cleric:'Life Domain',Druid:'Circle of the Land',Fighter:'Champion'};
           const issues=[];
           for(const [cls,sub] of Object.entries(expected)){
             const c=classes.items.find(x=>x.name===cls);
             const s=subs.items.find(x=>x.name===sub&&x.data?.parentClass?.name===cls);
-            if(!c)issues.push(`Missing class ${cls}`);
-            else if(c.data?.advancement?.length!==20)issues.push(`${cls}: progression is not 20 levels`);
+            if(!c)issues.push(`Missing class ${cls}`); else if(c.data?.advancement?.length!==20)issues.push(`${cls}: progression is not 20 levels`);
             if(!s)issues.push(`Missing subclass ${sub} for ${cls}`);
           }
           const ids=new Set();
           for(const e of [...classes.items,...subs.items,...features.items]){
-            const id=e.canonicalId||e.data?.canonicalId||e.id;
-            if(!id)continue;
-            if(ids.has(id))issues.push(`Duplicate canonical id ${id}`);
-            ids.add(id);
+            const id=e.canonicalId||e.data?.canonicalId||e.id;if(!id)continue;if(ids.has(id))issues.push(`Duplicate canonical id ${id}`);ids.add(id);
           }
           const get=(name,category)=>features.items.find(x=>x.name===name&&x.data?.category===category);
           const barbUD=get('Unarmored Defense','barbarian');
           const bf=barbUD?.data?.modifiers?.[0]?.value?.formula??'';
           if(!bf.includes('@abilities.dex.mod')||!bf.includes('@abilities.con.mod')||bf.includes('@abilities.wis.mod'))issues.push('Barbarian Unarmored Defense regression');
-          const druid=classes.items.find(x=>x.name==='Druid');
-          const wild=druid?.data?.classMechanics?.transformations?.find(x=>x.id==='wild-shape');
-          if(!wild)issues.push('Druid Wild Shape transformation missing');
+          if(!get('Wild Shape','druid'))issues.push('Druid Wild Shape feature missing');
           const fighter=classes.items.find(x=>x.name==='Fighter');
           if(!fighter?.data?.advancement?.some(x=>x.scaleValues?.secondWindUses===4))issues.push('Fighter Second Wind progression missing');
           for(const file of ['barbarian-5etools-comparison.json','bard-5etools-comparison.json','cleric-5etools-comparison.json','druid-5etools-comparison.json','fighter-5etools-comparison.json']){
-            if(!fs.existsSync(`${root}/${file}`))continue;
-            const r=read(file); if(r.status!=='SUPPORTED'||r.issues?.length)issues.push(`${file}: persisted comparison not supported`);
+            if(!fs.existsSync(`${root}/${file}`))continue;const r=read(file);if(r.status!=='SUPPORTED'||r.issues?.length)issues.push(`${file}: persisted comparison not supported`);
           }
           const report={status:issues.length?'UNSUPPORTED':'SUPPORTED',issues,classes:classes.count,subclasses:subs.count,classFeatures:features.count,validated:Object.keys(expected)};
-          console.log(JSON.stringify(report,null,2));
-          if(issues.length)process.exit(1);
+          console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);
           NODE
