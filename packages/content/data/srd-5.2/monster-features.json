@@ -1,0 +1,245 @@
+{
+  "format": "oraclerpg-compendium",
+  "version": 1,
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "count": 8,
+  "items": [
+    {
+      "id": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2",
+      "entityType": "feature",
+      "name": "Draconic Breath Weapon",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:breath-weapon", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature",
+        "category": "action",
+        "subtype": "breathWeapon",
+        "monsterTemplate": {
+          "family": "breathWeapon",
+          "parameters": [
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "areaShape", "name": "Area Shape", "kind": "areaShape", "required": true, "allowedValues": ["cone", "line"] },
+            { "id": "areaSize", "name": "Cone Size", "kind": "distance" },
+            { "id": "areaLength", "name": "Line Length", "kind": "distance" },
+            { "id": "areaWidth", "name": "Line Width", "kind": "distance" },
+            { "id": "saveAbility", "name": "Save Ability", "kind": "saveAbility", "required": true },
+            { "id": "saveDc", "name": "Save DC", "kind": "saveDc", "required": true },
+            { "id": "rechargeMin", "name": "Recharge Minimum", "kind": "number", "defaultValue": 5 },
+            { "id": "rechargeMax", "name": "Recharge Maximum", "kind": "number", "defaultValue": 6 }
+          ],
+          "bindings": [
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "areaShape", "path": "activities.0.target.area.shape" },
+            { "parameterId": "areaSize", "path": "activities.0.target.area.size" },
+            { "parameterId": "areaLength", "path": "activities.0.target.area.length" },
+            { "parameterId": "areaWidth", "path": "activities.0.target.area.width" },
+            { "parameterId": "saveAbility", "path": "activities.0.save.ability" },
+            { "parameterId": "saveDc", "path": "activities.0.save.dc.value" },
+            { "parameterId": "rechargeMin", "path": "activities.0.recharge.success.min" },
+            { "parameterId": "rechargeMax", "path": "activities.0.recharge.success.max" }
+          ]
+        },
+        "activities": [
+          {
+            "id": "breath-weapon",
+            "name": "Breath Weapon",
+            "kind": "save",
+            "activation": { "type": "action" },
+            "target": { "type": "special", "area": { "shape": "cone", "size": { "value": 15, "unit": "ft" } } },
+            "save": { "ability": "dex", "dc": { "type": "fixed", "value": 10 }, "onSuccess": "half" },
+            "damage": [{ "damageType": "fire", "formula": "1d6" }],
+            "recharge": { "timing": "turnStart", "roll": { "formula": "1d6" }, "success": { "min": 5, "max": 6 }, "restores": "all" }
+          }
+        ]
+      },
+      "relations": [],
+      "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "breath-weapon"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:bite:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:bite:srd-5.2",
+      "entityType": "feature",
+      "name": "Bite",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:bite", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature",
+        "category": "action",
+        "subtype": "naturalAttack",
+        "monsterTemplate": {
+          "family": "naturalAttack",
+          "parameters": [
+            { "id": "attackBonus", "name": "Attack Bonus", "kind": "attackBonus", "required": true },
+            { "id": "reach", "name": "Reach", "kind": "number", "defaultValue": 5 },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true }
+          ],
+          "bindings": [
+            { "parameterId": "attackBonus", "path": "activities.0.attack.bonus.formula" },
+            { "parameterId": "reach", "path": "activities.0.range.reach.value" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" }
+          ]
+        },
+        "activities": [{
+          "id": "bite", "name": "Bite", "kind": "attack", "activation": { "type": "action" },
+          "range": { "reach": { "value": 5, "unit": "ft" } }, "target": { "type": "creature", "count": 1 },
+          "attack": { "classification": "special", "mode": "melee", "bonus": { "formula": "+0" } },
+          "damage": [{ "damageType": "piercing", "formula": "1" }]
+        }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "natural-attack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:claw:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:claw:srd-5.2", "entityType": "feature", "name": "Claw",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:claw", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "action", "subtype": "naturalAttack",
+        "monsterTemplate": {
+          "family": "naturalAttack",
+          "parameters": [
+            { "id": "attackBonus", "name": "Attack Bonus", "kind": "attackBonus", "required": true },
+            { "id": "reach", "name": "Reach", "kind": "number", "defaultValue": 5 },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true }
+          ],
+          "bindings": [
+            { "parameterId": "attackBonus", "path": "activities.0.attack.bonus.formula" },
+            { "parameterId": "reach", "path": "activities.0.range.reach.value" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" }
+          ]
+        },
+        "activities": [{ "id": "claw", "name": "Claw", "kind": "attack", "activation": { "type": "action" }, "range": { "reach": { "value": 5, "unit": "ft" } }, "target": { "type": "creature", "count": 1 }, "attack": { "classification": "special", "mode": "melee", "bonus": { "formula": "+0" } }, "damage": [{ "damageType": "slashing", "formula": "1" }] }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "natural-attack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:gore:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:gore:srd-5.2", "entityType": "feature", "name": "Gore",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:gore", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "action", "subtype": "naturalAttack",
+        "monsterTemplate": {
+          "family": "naturalAttack",
+          "parameters": [
+            { "id": "attackBonus", "name": "Attack Bonus", "kind": "attackBonus", "required": true },
+            { "id": "reach", "name": "Reach", "kind": "number", "defaultValue": 5 },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true }
+          ],
+          "bindings": [
+            { "parameterId": "attackBonus", "path": "activities.0.attack.bonus.formula" },
+            { "parameterId": "reach", "path": "activities.0.range.reach.value" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" }
+          ]
+        },
+        "activities": [{ "id": "gore", "name": "Gore", "kind": "attack", "activation": { "type": "action" }, "range": { "reach": { "value": 5, "unit": "ft" } }, "target": { "type": "creature", "count": 1 }, "attack": { "classification": "special", "mode": "melee", "bonus": { "formula": "+0" } }, "damage": [{ "damageType": "piercing", "formula": "1" }] }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "natural-attack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:slam:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:slam:srd-5.2", "entityType": "feature", "name": "Slam",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:slam", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "action", "subtype": "naturalAttack",
+        "monsterTemplate": {
+          "family": "naturalAttack",
+          "parameters": [
+            { "id": "attackBonus", "name": "Attack Bonus", "kind": "attackBonus", "required": true },
+            { "id": "reach", "name": "Reach", "kind": "number", "defaultValue": 5 },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true }
+          ],
+          "bindings": [
+            { "parameterId": "attackBonus", "path": "activities.0.attack.bonus.formula" },
+            { "parameterId": "reach", "path": "activities.0.range.reach.value" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" }
+          ]
+        },
+        "activities": [{ "id": "slam", "name": "Slam", "kind": "attack", "activation": { "type": "action" }, "range": { "reach": { "value": 5, "unit": "ft" } }, "target": { "type": "creature", "count": 1 }, "attack": { "classification": "special", "mode": "melee", "bonus": { "formula": "+0" } }, "damage": [{ "damageType": "bludgeoning", "formula": "1" }] }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "natural-attack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:tail:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:tail:srd-5.2", "entityType": "feature", "name": "Tail",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:tail", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "action", "subtype": "naturalAttack",
+        "monsterTemplate": {
+          "family": "naturalAttack",
+          "parameters": [
+            { "id": "attackBonus", "name": "Attack Bonus", "kind": "attackBonus", "required": true },
+            { "id": "reach", "name": "Reach", "kind": "number", "defaultValue": 5 },
+            { "id": "damageFormula", "name": "Damage Formula", "kind": "damageFormula", "required": true },
+            { "id": "damageType", "name": "Damage Type", "kind": "damageType", "required": true }
+          ],
+          "bindings": [
+            { "parameterId": "attackBonus", "path": "activities.0.attack.bonus.formula" },
+            { "parameterId": "reach", "path": "activities.0.range.reach.value" },
+            { "parameterId": "damageFormula", "path": "activities.0.damage.0.formula" },
+            { "parameterId": "damageType", "path": "activities.0.damage.0.damageType" }
+          ]
+        },
+        "activities": [{ "id": "tail", "name": "Tail", "kind": "attack", "activation": { "type": "action" }, "range": { "reach": { "value": 5, "unit": "ft" } }, "target": { "type": "creature", "count": 1 }, "attack": { "classification": "special", "mode": "melee", "bonus": { "formula": "+0" } }, "damage": [{ "damageType": "bludgeoning", "formula": "1" }] }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "natural-attack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:multiattack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:multiattack:srd-5.2", "entityType": "feature", "name": "Multiattack",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:multiattack", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "action", "subtype": "multiattack",
+        "monsterTemplate": { "family": "multiattack" },
+        "activities": [{ "id": "multiattack", "name": "Multiattack", "kind": "multiattack", "activation": { "type": "action" }, "multiattack": { "sequence": [] } }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "multiattack"] }
+    },
+    {
+      "id": "dnd2024:2024:feature:pack-tactics:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:pack-tactics:srd-5.2", "entityType": "feature", "name": "Pack Tactics",
+      "system": { "gameSystem": "dnd2024", "rulesVersion": "2024" },
+      "source": { "sourceId": "srd-5.2", "book": "XMM", "license": "CC-BY-4.0", "licenseUrl": "https://creativecommons.org/licenses/by/4.0/" },
+      "provenance": { "origin": "curated", "provider": "5etools", "sourceKey": "XMM:shared:pack-tactics", "adapterVersion": "0.1.0", "mapperVersion": "0.1.0" },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "monsterFeature", "category": "trait", "subtype": "packTactics",
+        "monsterTemplate": { "family": "trait" },
+        "modifiers": [{
+          "id": "pack-tactics-advantage", "target": { "domain": "attackRoll" }, "mode": "advantage",
+          "predicate": { "type": "adjacentAlly", "distance": { "value": 5, "unit": "ft" }, "count": 1, "description": "At least one ally is within 5 feet of the attack target and that ally is not Incapacitated." }
+        }]
+      },
+      "relations": [], "metadata": { "tags": ["srd-5.2", "monster-feature", "template", "trait", "pack-tactics"] }
+    }
+  ]
+}
