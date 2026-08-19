@@ -1,0 +1,16 @@
+{
+  "generatedAt": "2026-08-19T01:37:15.073Z",
+  "draconicBreathCanonicalId": "dnd2024:2024:feature:draconic-breath-weapon:srd-5.2",
+  "removedDefinitions": [
+    {
+      "name": "Fire Breath {@recharge}",
+      "canonicalId": "dnd2024:2024:feature:fire-breath-recharge:srd-5.2"
+    },
+    {
+      "name": "Poison Breath {@recharge}",
+      "canonicalId": "dnd2024:2024:feature:poison-breath-recharge:srd-5.2"
+    }
+  ],
+  "remappedAliases": 7,
+  "resultingDefinitionCount": 406
+}
