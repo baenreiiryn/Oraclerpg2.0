@@ -1,0 +1,160 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "classFeatureRecords": 22,
+    "subclassFeatureRecords": 6
+  },
+  "oracle": {
+    "classes": 1,
+    "subclasses": 1,
+    "classFeatureDefinitions": 16,
+    "subclassFeatureDefinitions": 5,
+    "structuredDefinitions": 18
+  },
+  "progression": {
+    "levels": 20,
+    "rows": [
+      {
+        "level": 1,
+        "cantrips": 3,
+        "preparedSpells": 4,
+        "channelDivinityUses": 0,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 2,
+        "cantrips": 3,
+        "preparedSpells": 5,
+        "channelDivinityUses": 2,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 3,
+        "cantrips": 3,
+        "preparedSpells": 6,
+        "channelDivinityUses": 2,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 4,
+        "cantrips": 4,
+        "preparedSpells": 7,
+        "channelDivinityUses": 2,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 5,
+        "cantrips": 4,
+        "preparedSpells": 9,
+        "channelDivinityUses": 2,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 6,
+        "cantrips": 4,
+        "preparedSpells": 10,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "1d8"
+      },
+      {
+        "level": 7,
+        "cantrips": 4,
+        "preparedSpells": 11,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 8,
+        "cantrips": 4,
+        "preparedSpells": 12,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 9,
+        "cantrips": 4,
+        "preparedSpells": 14,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 10,
+        "cantrips": 5,
+        "preparedSpells": 15,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 11,
+        "cantrips": 5,
+        "preparedSpells": 16,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 12,
+        "cantrips": 5,
+        "preparedSpells": 16,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "2d8"
+      },
+      {
+        "level": 13,
+        "cantrips": 5,
+        "preparedSpells": 17,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "3d8"
+      },
+      {
+        "level": 14,
+        "cantrips": 5,
+        "preparedSpells": 17,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "3d8"
+      },
+      {
+        "level": 15,
+        "cantrips": 5,
+        "preparedSpells": 18,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "3d8"
+      },
+      {
+        "level": 16,
+        "cantrips": 5,
+        "preparedSpells": 18,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "3d8"
+      },
+      {
+        "level": 17,
+        "cantrips": 5,
+        "preparedSpells": 19,
+        "channelDivinityUses": 3,
+        "divineSparkDice": "3d8"
+      },
+      {
+        "level": 18,
+        "cantrips": 5,
+        "preparedSpells": 20,
+        "channelDivinityUses": 4,
+        "divineSparkDice": "4d8"
+      },
+      {
+        "level": 19,
+        "cantrips": 5,
+        "preparedSpells": 21,
+        "channelDivinityUses": 4,
+        "divineSparkDice": "4d8"
+      },
+      {
+        "level": 20,
+        "cantrips": 5,
+        "preparedSpells": 22,
+        "channelDivinityUses": 4,
+        "divineSparkDice": "4d8"
+      }
+    ]
+  },
+  "issues": []
+}

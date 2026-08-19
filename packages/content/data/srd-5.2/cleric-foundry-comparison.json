@@ -1,0 +1,24 @@
+{
+  "status": "SUPPORTED",
+  "foundry": {
+    "classFeatureDocuments": 13,
+    "subclassFeatureDocuments": 0,
+    "scaleValues": [
+      "Channel Divinity Uses",
+      "Max Prepared Spells",
+      "Cantrips Known",
+      "Divine Strike"
+    ]
+  },
+  "oracle": {
+    "classFeatureDefinitions": 16,
+    "subclassFeatureDefinitions": 5
+  },
+  "classifiedDifferences": [
+    {
+      "type": "representation",
+      "reason": "Foundry separates Divine Order and Blessed Strikes options into ItemChoice/feature documents; Oracle keeps the parent choice plus canonical option features and typed runtime choice semantics."
+    }
+  ],
+  "issues": []
+}
