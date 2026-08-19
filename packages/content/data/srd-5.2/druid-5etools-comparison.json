@@ -1,0 +1,12 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "classFeatureRecords": 23,
+    "subclassFeatureRecords": 6
+  },
+  "oracle": {
+    "classFeatures": 16,
+    "subclassFeatures": 5
+  },
+  "issues": []
+}

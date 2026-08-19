@@ -1,0 +1,43 @@
+{
+  "status": "SUPPORTED",
+  "source": {
+    "classFeatureRecords": 23,
+    "subclassFeatureRecords": 6
+  },
+  "oracle": {
+    "classes": 1,
+    "subclasses": 1,
+    "classFeatureDefinitions": 16,
+    "subclassFeatureDefinitions": 5
+  },
+  "wildShape": {
+    "levels": {
+      "2": {
+        "uses": 2,
+        "knownForms": 4,
+        "maxCr": 0.25,
+        "fly": false
+      },
+      "4": {
+        "uses": 2,
+        "knownForms": 6,
+        "maxCr": 0.5,
+        "fly": false
+      },
+      "8": {
+        "uses": 3,
+        "knownForms": 8,
+        "maxCr": 1,
+        "fly": true
+      },
+      "17": {
+        "uses": 4,
+        "knownForms": 8,
+        "maxCr": 1,
+        "fly": true
+      }
+    },
+    "transformationStructured": true
+  },
+  "issues": []
+}

@@ -1,0 +1,27 @@
+{
+  "status": "SUPPORTED",
+  "foundry": {
+    "classFeatureDocuments": 15,
+    "subclassFeatureDocuments": 5,
+    "scaleValues": [
+      "Cantrips Known",
+      "Max Prepared Spells",
+      "Wild Shape CR",
+      "Wild Shape Uses",
+      "Known Forms",
+      "Elemental Fury"
+    ]
+  },
+  "oracle": {
+    "classFeatureDefinitions": 16,
+    "subclassFeatureDefinitions": 5,
+    "wildShapeTransformation": true
+  },
+  "classifiedDifferences": [
+    {
+      "type": "representation",
+      "reason": "Foundry exposes Wild Shape CR, uses and known forms as ScaleValue advancements; Oracle additionally encodes the full Beast transformation contract against monster entities."
+    }
+  ],
+  "issues": []
+}

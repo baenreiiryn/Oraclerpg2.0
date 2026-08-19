@@ -3,8 +3,105 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 3,
+  "count": 4,
   "items": [
+    {
+      "id": "dnd2024:2024:subclass:druid:land:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:druid:land:srd-5.2",
+      "entityType": "subclass",
+      "name": "Circle of the Land",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Druid:Land",
+        "adapterVersion": "0.5.0",
+        "mapperVersion": "0.5.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Druid",
+          "canonicalId": "dnd2024:2024:class:druid:srd-5.2"
+        },
+        "shortName": "Land",
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Circle of the Land Spells",
+                  "canonicalId": "dnd2024:2024:feature:druid:land:circle-of-the-land-spells:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Land's Aid",
+                  "canonicalId": "dnd2024:2024:feature:druid:land:land-s-aid:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Natural Recovery",
+                  "canonicalId": "dnd2024:2024:feature:druid:land:natural-recovery:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Nature's Ward",
+                  "canonicalId": "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Nature's Sanctuary",
+                  "canonicalId": "dnd2024:2024:feature:druid:land:nature-s-sanctuary:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
     {
       "id": "dnd2024:2024:subclass:bard:lore:srd-5.2",
       "canonicalId": "dnd2024:2024:subclass:bard:lore:srd-5.2",
