@@ -1,0 +1,18 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "class": "Wizard",
+  "subclass": "Evoker",
+  "source": {
+    "classFeatureRecords": 16,
+    "canonicalClassNames": 9,
+    "subclassFeatureRecords": 6,
+    "canonicalSubclassNames": 5,
+    "preparedRows": 20,
+    "progressionRows": 20
+  },
+  "oracle": {
+    "classFeatures": 9,
+    "subclassFeatures": 5
+  }
+}

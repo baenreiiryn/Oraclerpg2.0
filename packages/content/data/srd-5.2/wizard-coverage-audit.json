@@ -1,0 +1,39 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 12,
+  "subclassCount": 12,
+  "classFeatureCount": 274,
+  "wizardFeatures": 9,
+  "evokerFeatures": 5,
+  "progression": {
+    "prepared": [
+      [
+        1,
+        4
+      ],
+      [
+        10,
+        15
+      ],
+      [
+        20,
+        25
+      ]
+    ],
+    "cantrips": [
+      [
+        1,
+        3
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        20,
+        5
+      ]
+    ]
+  }
+}
