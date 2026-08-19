@@ -1,0 +1,23 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 20,
+    "subclassFeatureDocs": 4,
+    "scaleValues": [
+      "Martial Arts Die",
+      "Unarmored Movement",
+      "Focus Points"
+    ]
+  },
+  "oracle": {
+    "classFeatures": 27,
+    "subclassFeatures": 4
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry grants Unarmed Strike as an auxiliary class item; Oracle models the Monk-specific attack changes inside Martial Arts."
+    }
+  ]
+}

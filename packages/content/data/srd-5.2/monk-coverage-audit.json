@@ -1,0 +1,69 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 6,
+  "subclassCount": 6,
+  "classFeatureCount": 131,
+  "monkFeatures": 27,
+  "openHandFeatures": 4,
+  "unarmoredDefense": {
+    "monk": "10 + @abilities.dex.mod + @abilities.wis.mod",
+    "barbarian": "10 + @abilities.dex.mod + @abilities.con.mod"
+  },
+  "progression": {
+    "martialArts": [
+      [
+        1,
+        "d6"
+      ],
+      [
+        5,
+        "d8"
+      ],
+      [
+        11,
+        "d10"
+      ],
+      [
+        17,
+        "d12"
+      ]
+    ],
+    "focusPoints": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
+        10
+      ],
+      [
+        20,
+        20
+      ]
+    ],
+    "unarmoredMovement": [
+      [
+        2,
+        10
+      ],
+      [
+        6,
+        15
+      ],
+      [
+        10,
+        20
+      ],
+      [
+        14,
+        25
+      ],
+      [
+        18,
+        30
+      ]
+    ]
+  }
+}

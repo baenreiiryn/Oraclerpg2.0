@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 5,
+  "count": 6,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -479,6 +479,94 @@
               "subclassFeature": "Frenzy|Barbarian|XPHB|Berserker|XPHB|3"
             }
           ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:monk:open-hand:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:monk:open-hand:srd-5.2",
+      "entityType": "subclass",
+      "name": "Warrior of the Open Hand",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Monk:OpenHand",
+        "adapterVersion": "0.7.0",
+        "mapperVersion": "0.7.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Monk",
+          "canonicalId": "dnd2024:2024:class:monk:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Open Hand Technique",
+                  "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Wholeness of Body",
+                  "canonicalId": "dnd2024:2024:feature:monk:open-hand:wholeness-of-body:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 11,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fleet Step",
+                  "canonicalId": "dnd2024:2024:feature:monk:open-hand:fleet-step:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Quivering Palm",
+                  "canonicalId": "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
         }
       }
     }

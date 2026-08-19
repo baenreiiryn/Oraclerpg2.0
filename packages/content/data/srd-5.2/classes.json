@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 5,
+  "count": 6,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -2768,6 +2768,609 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 325352
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:monk:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:monk:srd-5.2",
+      "entityType": "class",
+      "name": "Monk",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Monk",
+        "adapterVersion": "0.7.0",
+        "mapperVersion": "0.7.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 8,
+        "primaryAbilities": [
+          "dexterity",
+          "wisdom"
+        ],
+        "savingThrowProficiencies": [
+          "strength",
+          "dexterity"
+        ],
+        "armorTraining": [],
+        "weaponProficiencies": [
+          "simple",
+          "martial-light"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Acrobatics",
+            "Athletics",
+            "History",
+            "Insight",
+            "Religion",
+            "Stealth"
+          ]
+        },
+        "toolChoices": {
+          "kind": "enum",
+          "count": 1,
+          "options": [
+            "Artisan's Tools",
+            "Musical Instrument"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Spear, 5 Daggers, Artisan's Tools or Musical Instrument, Explorer's Pack, 11 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Spear",
+                  "canonicalId": "dnd2024:2024:item:spear:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 5
+              },
+              {
+                "choice": {
+                  "kind": "enum",
+                  "count": 1,
+                  "options": [
+                    "Artisan's Tools",
+                    "Musical Instrument"
+                  ]
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Explorer's Pack",
+                  "canonicalId": "dnd2024:2024:item:explorer-s-pack:srd-5.2"
+                },
+                "quantity": 1
+              },
+              {
+                "currency": {
+                  "amount": 11,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "50 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 50,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Bonus Unarmed Strike",
+                  "canonicalId": "dnd2024:2024:feature:monk:bonus-unarmed-strike:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dexterous Attacks",
+                  "canonicalId": "dnd2024:2024:feature:monk:dexterous-attacks:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Martial Arts",
+                  "canonicalId": "dnd2024:2024:feature:monk:martial-arts:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Martial Arts Die",
+                  "canonicalId": "dnd2024:2024:feature:monk:martial-arts-die:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Unarmored Defense",
+                  "canonicalId": "dnd2024:2024:feature:monk:unarmored-defense:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d6",
+              "focusPoints": 1,
+              "unarmoredMovement": 0
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Flurry of Blows",
+                  "canonicalId": "dnd2024:2024:feature:monk:flurry-of-blows:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Monk's Focus",
+                  "canonicalId": "dnd2024:2024:feature:monk:monk-s-focus:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Patient Defense",
+                  "canonicalId": "dnd2024:2024:feature:monk:patient-defense:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Step of the Wind",
+                  "canonicalId": "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Unarmored Movement",
+                  "canonicalId": "dnd2024:2024:feature:monk:unarmored-movement:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Uncanny Metabolism",
+                  "canonicalId": "dnd2024:2024:feature:monk:uncanny-metabolism:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d6",
+              "focusPoints": 2,
+              "unarmoredMovement": 10
+            }
+          },
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Deflect Attacks",
+                  "canonicalId": "dnd2024:2024:feature:monk:deflect-attacks:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d6",
+              "focusPoints": 3,
+              "unarmoredMovement": 10
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:monk:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:monk:ability-score-improvement:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Slow Fall",
+                  "canonicalId": "dnd2024:2024:feature:monk:slow-fall:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d6",
+              "focusPoints": 4,
+              "unarmoredMovement": 10
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Extra Attack",
+                  "canonicalId": "dnd2024:2024:feature:monk:extra-attack:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Stunning Strike",
+                  "canonicalId": "dnd2024:2024:feature:monk:stunning-strike:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 5,
+              "unarmoredMovement": 10
+            }
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Empowered Strikes",
+                  "canonicalId": "dnd2024:2024:feature:monk:empowered-strikes:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 6,
+              "unarmoredMovement": 15
+            }
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Evasion",
+                  "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 7,
+              "unarmoredMovement": 15
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:monk:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 8,
+              "unarmoredMovement": 15
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Acrobatic Movement",
+                  "canonicalId": "dnd2024:2024:feature:monk:acrobatic-movement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 9,
+              "unarmoredMovement": 15
+            }
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Heightened Focus",
+                  "canonicalId": "dnd2024:2024:feature:monk:heightened-focus:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Self-Restoration",
+                  "canonicalId": "dnd2024:2024:feature:monk:self-restoration:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d8",
+              "focusPoints": 10,
+              "unarmoredMovement": 20
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 11,
+              "unarmoredMovement": 20
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:monk:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 12,
+              "unarmoredMovement": 20
+            }
+          },
+          {
+            "level": 13,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Deflect Energy",
+                  "canonicalId": "dnd2024:2024:feature:monk:deflect-energy:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 13,
+              "unarmoredMovement": 20
+            }
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Disciplined Survivor",
+                  "canonicalId": "dnd2024:2024:feature:monk:disciplined-survivor:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 14,
+              "unarmoredMovement": 25
+            }
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Perfect Focus",
+                  "canonicalId": "dnd2024:2024:feature:monk:perfect-focus:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 15,
+              "unarmoredMovement": 25
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:monk:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d10",
+              "focusPoints": 16,
+              "unarmoredMovement": 25
+            }
+          },
+          {
+            "level": 17,
+            "grants": [],
+            "scaleValues": {
+              "martialArtsDie": "d12",
+              "focusPoints": 17,
+              "unarmoredMovement": 25
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Superior Defense",
+                  "canonicalId": "dnd2024:2024:feature:monk:superior-defense:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d12",
+              "focusPoints": 18,
+              "unarmoredMovement": 30
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:monk:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d12",
+              "focusPoints": 19,
+              "unarmoredMovement": 30
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Body and Mind",
+                  "canonicalId": "dnd2024:2024:feature:monk:body-and-mind:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "martialArtsDie": "d12",
+              "focusPoints": 20,
+              "unarmoredMovement": 30
+            }
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      },
+      "artwork": {
+        "image": "systems/dnd5e/icons/classes/monk.webp"
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbmonkwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Monk.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Monk.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 212680
             }
           }
         ]
