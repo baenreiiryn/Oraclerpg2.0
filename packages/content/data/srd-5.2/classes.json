@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 9,
+  "count": 12,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -1103,11 +1103,7 @@
                 }
               },
               {
-                "entity": {
-                  "entityType": "item",
-                  "name": "Holy Symbol",
-                  "canonicalId": "dnd2024:2024:item:holy-symbol:srd-5.2"
-                }
+                "equipmentCategory": "holySymbol"
               },
               {
                 "entity": {
@@ -5423,6 +5419,1859 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:sorcerer:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:sorcerer:srd-5.2",
+      "entityType": "class",
+      "name": "Sorcerer",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Sorcerer",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 6,
+        "primaryAbilities": [
+          "charisma"
+        ],
+        "savingThrowProficiencies": [
+          "constitution",
+          "charisma"
+        ],
+        "armorTraining": [],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Arcana",
+            "Deception",
+            "Insight",
+            "Intimidation",
+            "Persuasion",
+            "Religion"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Spear, 2 Daggers, Arcane Focus (Crystal), Dungeoneer's Pack, 28 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Spear",
+                  "canonicalId": "dnd2024:2024:item:spear:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 2
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Crystal",
+                  "canonicalId": "dnd2024:2024:item:crystal:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dungeoneer's Pack",
+                  "canonicalId": "dnd2024:2024:item:dungeoneer-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 28,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "50 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 50,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "full",
+          "ability": "charisma",
+          "preparation": "prepared",
+          "progression": [
+            {
+              "1": 2
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2,
+              "6": 1,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 1,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 2,
+              "7": 1,
+              "8": 1,
+              "9": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 3,
+              "6": 2,
+              "7": 2,
+              "8": 1,
+              "9": 1
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Innate Sorcery",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 2,
+              "sorceryPoints": 0,
+              "metamagicKnown": 0,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Font of Magic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 4,
+              "sorceryPoints": 2,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 3
+              }
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 6,
+              "sorceryPoints": 3,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:sorcerer:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 7,
+              "sorceryPoints": 4,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sorcerous Restoration",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 9,
+              "sorceryPoints": 5,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 10,
+              "sorceryPoints": 6,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sorcery Incarnate",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 11,
+              "sorceryPoints": 7,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 12,
+              "sorceryPoints": 8,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 9,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 14,
+              "sorceryPoints": 9,
+              "metamagicKnown": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 15,
+              "sorceryPoints": 10,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 16,
+              "sorceryPoints": 11,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 16,
+              "sorceryPoints": 12,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 17,
+              "sorceryPoints": 13,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 17,
+              "sorceryPoints": 14,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 18,
+              "sorceryPoints": 15,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 18,
+              "sorceryPoints": 16,
+              "metamagicKnown": 4,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Metamagic",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 19,
+              "sorceryPoints": 17,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 20,
+              "sorceryPoints": 18,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 21,
+              "sorceryPoints": 19,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Arcane Apotheosis",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 6,
+              "preparedSpells": 22,
+              "sorceryPoints": 20,
+              "metamagicKnown": 6,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 2,
+                "8": 1,
+                "9": 1
+              }
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:warlock:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:warlock:srd-5.2",
+      "entityType": "class",
+      "name": "Warlock",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Warlock",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 8,
+        "primaryAbilities": [
+          "charisma"
+        ],
+        "savingThrowProficiencies": [
+          "wisdom",
+          "charisma"
+        ],
+        "armorTraining": [
+          "light"
+        ],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Arcana",
+            "Deception",
+            "History",
+            "Intimidation",
+            "Investigation",
+            "Nature",
+            "Religion"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Leather Armor, Sickle, 2 Daggers, Arcane Focus (Orb), Book, Scholar's Pack, 15 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Leather Armor",
+                  "canonicalId": "dnd2024:2024:item:leather-armor:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Sickle",
+                  "canonicalId": "dnd2024:2024:item:sickle:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 2
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Orb",
+                  "canonicalId": "dnd2024:2024:item:orb:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Book",
+                  "canonicalId": "dnd2024:2024:item:book:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Scholar's Pack",
+                  "canonicalId": "dnd2024:2024:item:scholar-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 15,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "100 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 100,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "pact",
+          "ability": "charisma",
+          "preparation": "prepared"
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Eldritch Invocations",
+                  "canonicalId": "dnd2024:2024:feature:warlock:eldritch-invocations:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Pact Magic",
+                  "canonicalId": "dnd2024:2024:feature:warlock:pact-magic:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 1,
+              "cantripsKnown": 2,
+              "preparedSpells": 2,
+              "pactSlots": 1,
+              "pactSlotLevel": 1,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Magical Cunning",
+                  "canonicalId": "dnd2024:2024:feature:warlock:magical-cunning:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 3,
+              "cantripsKnown": 2,
+              "preparedSpells": 3,
+              "pactSlots": 2,
+              "pactSlotLevel": 1,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 3,
+              "cantripsKnown": 2,
+              "preparedSpells": 4,
+              "pactSlots": 2,
+              "pactSlotLevel": 2,
+              "mysticArcanum": null
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:warlock:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 3,
+              "cantripsKnown": 3,
+              "preparedSpells": 5,
+              "pactSlots": 2,
+              "pactSlotLevel": 2,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 5,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 5,
+              "cantripsKnown": 3,
+              "preparedSpells": 6,
+              "pactSlots": 2,
+              "pactSlotLevel": 3,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 5,
+              "cantripsKnown": 3,
+              "preparedSpells": 7,
+              "pactSlots": 2,
+              "pactSlotLevel": 3,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 7,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 6,
+              "cantripsKnown": 3,
+              "preparedSpells": 8,
+              "pactSlots": 2,
+              "pactSlotLevel": 4,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 6,
+              "cantripsKnown": 3,
+              "preparedSpells": 9,
+              "pactSlots": 2,
+              "pactSlotLevel": 4,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Contact Patron",
+                  "canonicalId": "dnd2024:2024:feature:warlock:contact-patron:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 7,
+              "cantripsKnown": 3,
+              "preparedSpells": 10,
+              "pactSlots": 2,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 10,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 7,
+              "cantripsKnown": 4,
+              "preparedSpells": 10,
+              "pactSlots": 2,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 11,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Mystic Arcanum",
+                  "canonicalId": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 7,
+              "cantripsKnown": 4,
+              "preparedSpells": 11,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": {
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 8,
+              "cantripsKnown": 4,
+              "preparedSpells": 11,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 13,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Mystic Arcanum",
+                  "canonicalId": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 8,
+              "cantripsKnown": 4,
+              "preparedSpells": 12,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": {
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 8,
+              "cantripsKnown": 4,
+              "preparedSpells": 12,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Mystic Arcanum",
+                  "canonicalId": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 9,
+              "cantripsKnown": 4,
+              "preparedSpells": 13,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": {
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 9,
+              "cantripsKnown": 4,
+              "preparedSpells": 13,
+              "pactSlots": 3,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 17,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Mystic Arcanum",
+                  "canonicalId": "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 9,
+              "cantripsKnown": 4,
+              "preparedSpells": 14,
+              "pactSlots": 4,
+              "pactSlotLevel": 5,
+              "mysticArcanum": {
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [],
+            "scaleValues": {
+              "invocationsKnown": 10,
+              "cantripsKnown": 4,
+              "preparedSpells": 14,
+              "pactSlots": 4,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:warlock:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 10,
+              "cantripsKnown": 4,
+              "preparedSpells": 15,
+              "pactSlots": 4,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Eldritch Master",
+                  "canonicalId": "dnd2024:2024:feature:warlock:eldritch-master:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "invocationsKnown": 10,
+              "cantripsKnown": 4,
+              "preparedSpells": 15,
+              "pactSlots": 4,
+              "pactSlotLevel": 5,
+              "mysticArcanum": null
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:wizard:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:wizard:srd-5.2",
+      "entityType": "class",
+      "name": "Wizard",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Wizard",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 6,
+        "primaryAbilities": [
+          "intelligence"
+        ],
+        "savingThrowProficiencies": [
+          "intelligence",
+          "wisdom"
+        ],
+        "armorTraining": [],
+        "weaponProficiencies": [
+          "simple"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Arcana",
+            "History",
+            "Insight",
+            "Investigation",
+            "Medicine",
+            "Nature",
+            "Religion"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "2 Daggers, Arcane Focus (Quarterstaff), Robe, Spellbook, Scholar's Pack, 5 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Dagger",
+                  "canonicalId": "dnd2024:2024:item:dagger:srd-5.2"
+                },
+                "quantity": 2
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Quarterstaff",
+                  "canonicalId": "dnd2024:2024:item:quarterstaff:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Robe",
+                  "canonicalId": "dnd2024:2024:item:robe:srd-5.2"
+                }
+              },
+              {
+                "equipmentCategory": "spellbook"
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Scholar's Pack",
+                  "canonicalId": "dnd2024:2024:item:scholar-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 5,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "55 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 55,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "full",
+          "ability": "intelligence",
+          "preparation": "prepared",
+          "sourceCollectionId": "wizard-spellbook"
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Arcane Recovery",
+                  "canonicalId": "dnd2024:2024:feature:wizard:arcane-recovery:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ritual Adept",
+                  "canonicalId": "dnd2024:2024:feature:wizard:ritual-adept:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:wizard:spellcasting:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 3,
+              "preparedSpells": 4,
+              "spellbookAdditions": 6,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Scholar",
+                  "canonicalId": "dnd2024:2024:feature:wizard:scholar:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 3,
+              "preparedSpells": 5,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 3
+              }
+            }
+          },
+          {
+            "level": 3,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 3,
+              "preparedSpells": 6,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:wizard:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:wizard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 7,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Memorize Spell",
+                  "canonicalId": "dnd2024:2024:feature:wizard:memorize-spell:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 9,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 6,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 10,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 7,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 11,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:wizard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 12,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 9,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 4,
+              "preparedSpells": 14,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 10,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 15,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          },
+          {
+            "level": 11,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 16,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:wizard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 16,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1
+              }
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 17,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 18,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1
+              }
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 19,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:wizard:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 21,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1
+              }
+            }
+          },
+          {
+            "level": 17,
+            "grants": [],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 22,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spell Mastery",
+                  "canonicalId": "dnd2024:2024:feature:wizard:spell-mastery:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 23,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 1,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:wizard:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 24,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 1,
+                "8": 1,
+                "9": 1
+              }
+            }
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Signature Spells",
+                  "canonicalId": "dnd2024:2024:feature:wizard:signature-spells:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "cantripsKnown": 5,
+              "preparedSpells": 25,
+              "spellbookAdditions": 2,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 3,
+                "6": 2,
+                "7": 2,
+                "8": 1,
+                "9": 1
+              }
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
       }
     }
   ]

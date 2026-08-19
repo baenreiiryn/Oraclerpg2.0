@@ -1,10 +1,11 @@
 import type { EquipmentBundleData } from "./mechanics.js";
 
-/** Category grants mirror source rules that grant a type of equipment rather than one canonical item, such as a Holy Symbol. */
+/** Category grants mirror source rules that grant a type of equipment rather than one canonical item. */
 export type EquipmentCategoryId =
   | "holySymbol"
   | "arcaneFocus"
   | "druidicFocus"
+  | "spellbook"
   | "musicalInstrument"
   | "artisanTools"
   | "gamingSet"

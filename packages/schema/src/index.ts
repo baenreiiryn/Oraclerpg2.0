@@ -6,6 +6,7 @@ export * from "./mechanics.js";
 export * from "./feature-rules.js";
 export * from "./class-mechanics.js";
 export * from "./class-rules.js";
+export * from "./wizard-mechanics.js";
 export * from "./activity.js";
 export * from "./monster-feature.js";
 export * from "./monster.js";

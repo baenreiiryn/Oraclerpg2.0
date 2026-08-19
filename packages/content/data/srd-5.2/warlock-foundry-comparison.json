@@ -1,0 +1,39 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 7,
+    "invocationDocs": 29,
+    "subclassFeatureDocs": 5,
+    "scaleValues": [
+      "Eldritch Invocations Known",
+      "Cantrips Known",
+      "Max Pact Magic Spells"
+    ],
+    "fiendFeatureGrantLevels": [
+      3,
+      6,
+      10,
+      14
+    ]
+  },
+  "oracle": {
+    "classFeatures": 8,
+    "eldritchInvocations": 21,
+    "subclassFeatures": 5
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry stores invocation acquisition as an ItemChoice pool of feat-like documents; Oracle stores SRD invocations as canonical feature entities in a replaceable EntityCollection."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry expresses class/subclass grants through Advancement documents; Oracle references canonical features from level advancement rows."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry keeps Pact Magic progression partly in class advancement/configuration; Oracle keeps the pact slot pool and its short/long-rest recovery explicitly on Pact Magic."
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "class": "Ranger",
+  "subclass": "Hunter",
+  "source": {
+    "classFeatureRecords": 23,
+    "canonicalClassNames": 16,
+    "subclassFeatureRecords": 6,
+    "canonicalSubclassNames": 5,
+    "preparedRows": 20,
+    "slotRows": 20
+  },
+  "oracle": {
+    "classFeatures": 16,
+    "subclassFeatures": 5
+  }
+}

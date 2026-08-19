@@ -4,39 +4,35 @@
   "classCount": 12,
   "subclassCount": 12,
   "classFeatureCount": 274,
-  "rangerFeatures": 16,
-  "hunterFeatures": 5,
+  "wizardFeatures": 9,
+  "evokerFeatures": 5,
   "progression": {
-    "favoredEnemy": [
-      [
-        1,
-        2
-      ],
-      [
-        5,
-        3
-      ],
-      [
-        9,
-        4
-      ],
-      [
-        13,
-        5
-      ],
-      [
-        17,
-        6
-      ]
-    ],
     "prepared": [
       [
         1,
-        2
+        4
+      ],
+      [
+        10,
+        15
       ],
       [
         20,
-        15
+        25
+      ]
+    ],
+    "cantrips": [
+      [
+        1,
+        3
+      ],
+      [
+        10,
+        5
+      ],
+      [
+        20,
+        5
       ]
     ]
   }

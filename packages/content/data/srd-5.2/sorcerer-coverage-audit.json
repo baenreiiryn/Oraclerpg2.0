@@ -4,25 +4,32 @@
   "classCount": 12,
   "subclassCount": 12,
   "classFeatureCount": 274,
-  "rangerFeatures": 16,
-  "hunterFeatures": 5,
+  "sorcererFeatures": 9,
+  "metamagicOptions": 10,
+  "draconicFeatures": 5,
   "progression": {
-    "favoredEnemy": [
+    "sorceryPoints": [
       [
-        1,
+        2,
         2
       ],
       [
-        5,
-        3
+        10,
+        10
       ],
       [
-        9,
+        20,
+        20
+      ]
+    ],
+    "metamagic": [
+      [
+        2,
+        2
+      ],
+      [
+        10,
         4
-      ],
-      [
-        13,
-        5
       ],
       [
         17,
@@ -36,7 +43,7 @@
       ],
       [
         20,
-        15
+        22
       ]
     ]
   }

@@ -1,0 +1,11 @@
+{
+  "status": "SUPPORTED",
+  "class": "Wizard",
+  "subclass": "Evoker",
+  "sourceClassFeatures": 16,
+  "canonicalClassFeatures": 9,
+  "sourceSubclassFeatures": 6,
+  "canonicalSubclassFeatures": 5,
+  "progressionRows": 20,
+  "issues": []
+}

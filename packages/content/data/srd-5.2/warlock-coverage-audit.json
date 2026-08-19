@@ -1,0 +1,78 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 11,
+  "subclassCount": 11,
+  "classFeatureCount": 260,
+  "warlockFeatures": 8,
+  "eldritchInvocations": 21,
+  "fiendFeatures": 5,
+  "progression": {
+    "pactSlots": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        2
+      ],
+      [
+        11,
+        3
+      ],
+      [
+        17,
+        4
+      ],
+      [
+        20,
+        4
+      ]
+    ],
+    "slotLevel": [
+      [
+        1,
+        1
+      ],
+      [
+        3,
+        2
+      ],
+      [
+        5,
+        3
+      ],
+      [
+        9,
+        5
+      ],
+      [
+        20,
+        5
+      ]
+    ],
+    "invocations": [
+      [
+        1,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        5,
+        5
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        18,
+        10
+      ]
+    ]
+  }
+}

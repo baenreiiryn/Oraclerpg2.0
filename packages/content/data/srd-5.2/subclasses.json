@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 9,
+  "count": 12,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -292,6 +292,371 @@
         ],
         "text": {
           "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:sorcerer:draconic-sorcery:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:sorcerer:draconic-sorcery:srd-5.2",
+      "entityType": "subclass",
+      "name": "Draconic Sorcery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Sorcerer:Draconic",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Sorcerer",
+          "canonicalId": "dnd2024:2024:class:sorcerer:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Draconic Spells",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Draconic Resilience",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Elemental Affinity",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dragon Wings",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dragon Companion",
+                  "canonicalId": "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:wizard:evoker:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:wizard:evoker:srd-5.2",
+      "entityType": "subclass",
+      "name": "Evoker",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Wizard:Evoker",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Wizard",
+          "canonicalId": "dnd2024:2024:class:wizard:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Evocation Savant",
+                  "canonicalId": "dnd2024:2024:feature:wizard:evoker:evocation-savant:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Potent Cantrip",
+                  "canonicalId": "dnd2024:2024:feature:wizard:evoker:potent-cantrip:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sculpt Spells",
+                  "canonicalId": "dnd2024:2024:feature:wizard:evoker:sculpt-spells:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Empowered Evocation",
+                  "canonicalId": "dnd2024:2024:feature:wizard:evoker:empowered-evocation:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Overchannel",
+                  "canonicalId": "dnd2024:2024:feature:wizard:evoker:overchannel:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        },
+        "sourcePayload": {
+          "additionalSpells": [
+            {
+              "known": {
+                "3": [
+                  {
+                    "choose": "level=0;1;2|class=Wizard|school=V"
+                  },
+                  {
+                    "choose": "level=0;1;2|class=Wizard|school=V"
+                  }
+                ],
+                "5": [
+                  {
+                    "choose": "level=0;1;2;3|class=Wizard|school=V"
+                  }
+                ],
+                "7": [
+                  {
+                    "choose": "level=0;1;2;3;4|class=Wizard|school=V"
+                  }
+                ],
+                "9": [
+                  {
+                    "choose": "level=0;1;2;3;4;5|class=Wizard|school=V"
+                  }
+                ],
+                "11": [
+                  {
+                    "choose": "level=0;1;2;3;4;5;6|class=Wizard|school=V"
+                  }
+                ],
+                "13": [
+                  {
+                    "choose": "level=0;1;2;3;4;5;6;7|class=Wizard|school=V"
+                  }
+                ],
+                "15": [
+                  {
+                    "choose": "level=0;1;2;3;4;5;6;7;8|class=Wizard|school=V"
+                  }
+                ],
+                "17": [
+                  {
+                    "choose": "level=0;1;2;3;4;5;6;7;8;9|class=Wizard|school=V"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:warlock:fiend:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:warlock:fiend:srd-5.2",
+      "entityType": "subclass",
+      "name": "Fiend Patron",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Warlock:Fiend",
+        "adapterVersion": "1.0.0",
+        "mapperVersion": "1.0.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Warlock",
+          "canonicalId": "dnd2024:2024:class:warlock:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dark One's Blessing",
+                  "canonicalId": "dnd2024:2024:feature:warlock:fiend:dark-one-s-blessing:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fiend Spells",
+                  "canonicalId": "dnd2024:2024:feature:warlock:fiend:fiend-spells:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Dark One's Own Luck",
+                  "canonicalId": "dnd2024:2024:feature:warlock:fiend:dark-one-s-own-luck:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fiendish Resilience",
+                  "canonicalId": "dnd2024:2024:feature:warlock:fiend:fiendish-resilience:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Hurl Through Hell",
+                  "canonicalId": "dnd2024:2024:feature:warlock:fiend:hurl-through-hell:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        },
+        "sourcePayload": {
+          "additionalSpells": [
+            {
+              "prepared": {
+                "3": [
+                  "burning hands|xphb",
+                  "command|xphb",
+                  "scorching ray|xphb",
+                  "suggestion|xphb"
+                ],
+                "5": [
+                  "fireball|xphb",
+                  "stinking cloud|xphb"
+                ],
+                "7": [
+                  "fire shield|xphb",
+                  "wall of fire|xphb"
+                ],
+                "9": [
+                  "geas|xphb",
+                  "insect plague|xphb"
+                ]
+              }
+            }
+          ]
         }
       }
     },

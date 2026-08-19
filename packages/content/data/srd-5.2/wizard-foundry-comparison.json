@@ -1,0 +1,39 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "sourceFiles": 332,
+    "matchedFeatureNames": [
+      "Spellcasting",
+      "Arcane Recovery",
+      "Scholar",
+      "Memorize Spell",
+      "Spell Mastery",
+      "Signature Spells",
+      "Evocation Savant",
+      "Potent Cantrip",
+      "Sculpt Spells",
+      "Empowered Evocation",
+      "Overchannel"
+    ],
+    "matchedCount": 11
+  },
+  "oracle": {
+    "classFeatures": 9,
+    "subclassFeatures": 5
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry represents spellbook preparation, spell slots, and class grants through system Item/Advancement documents; Oracle keeps spellbook, prepared collections, slot pools, and level grants as explicit canonical mechanics."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry subclass features are provider documents; Oracle stores Evoker features as canonical subclassFeature entities linked by stable IDs."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Oracle preserves 5etools SRD 5.2 as import authority; Foundry is used only as an architecture cross-check."
+    }
+  ]
+}

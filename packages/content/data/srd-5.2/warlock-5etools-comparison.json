@@ -1,0 +1,20 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "class": "Warlock",
+  "subclass": "Fiend Patron",
+  "source": {
+    "classFeatureRecords": 19,
+    "canonicalClassNames": 8,
+    "eldritchInvocations": 21,
+    "subclassFeatureRecords": 6,
+    "canonicalSubclassNames": 5,
+    "preparedRows": 20,
+    "progressionRows": 20
+  },
+  "oracle": {
+    "classFeatures": 8,
+    "eldritchInvocations": 21,
+    "subclassFeatures": 5
+  }
+}
