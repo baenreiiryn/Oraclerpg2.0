@@ -4,6 +4,7 @@ on:
     branches: [main]
     paths:
       - 'scripts/import-srd52-rogue.mjs'
+      - 'scripts/finalize-srd52-rogue.mjs'
       - 'scripts/audit-srd52-rogue.mjs'
       - 'scripts/compare-5etools-srd52-rogue.mjs'
       - 'scripts/compare-foundry-srd52-rogue.mjs'
@@ -24,6 +25,8 @@ jobs:
         with: { node-version: 22 }
       - name: Import Rogue from 5etools SRD 5.2
         run: node scripts/import-srd52-rogue.mjs
+      - name: Finalize Rogue canonical equipment
+        run: node scripts/finalize-srd52-rogue.mjs
       - name: Audit Rogue and Thief
         run: node scripts/audit-srd52-rogue.mjs
       - name: Compare 5etools to Oracle
