@@ -23,7 +23,9 @@ jobs:
       - name: Checkout Foundry D&D reference
         run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
       - name: Import Druid from 5etools SRD 5.2
-        run: node scripts/import-srd52-druid.mjs
+        run: |
+          node scripts/import-srd52-druid.mjs
+          node scripts/patch-srd52-druid.mjs
       - name: Audit Druid and Wild Shape
         run: node scripts/audit-srd52-druid.mjs
       - name: Compare 5etools to Oracle
@@ -43,7 +45,7 @@ jobs:
           const cls=read('classes.json'),subs=read('subclasses.json'),features=read('class-features.json');
           const druid=cls.items.find(x=>x.name==='Druid'),land=subs.items.find(x=>x.name==='Circle of the Land'),wild=features.items.find(x=>x.name==='Wild Shape'&&x.data?.category==='druid');
           for(const f of ['druid-coverage-audit.json','druid-5etools-comparison.json','druid-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(JSON.stringify(a));}
-          if(!druid||!land||druid.data.advancement.length!==20||!wild?.data?.classMechanics?.transformations?.length)throw new Error('Druid/Land/Wild Shape invalid');
+          if(!druid||!land||druid.data.advancement.length!==20||!wild?.data?.classMechanics?.transformations?.length||!wild?.data?.classRules?.entityCollections?.length)throw new Error('Druid/Land/Wild Shape invalid');
           if(cls.count!==4||subs.count!==4)throw new Error(`Expected cumulative 4 classes/subclasses, got ${cls.count}/${subs.count}`);
           console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,classFeatures:features.count,druid:true,land:true,wildShape:true,status:'SUPPORTED'},null,2));
           NODE
