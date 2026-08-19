@@ -1,0 +1,11 @@
+{
+  "status": "SUPPORTED",
+  "class": "Monk",
+  "subclass": "Warrior of the Open Hand",
+  "sourceClassFeatures": 34,
+  "canonicalClassFeatures": 27,
+  "sourceSubclassFeatures": 5,
+  "canonicalSubclassFeatures": 4,
+  "progressionRows": 20,
+  "issues": []
+}

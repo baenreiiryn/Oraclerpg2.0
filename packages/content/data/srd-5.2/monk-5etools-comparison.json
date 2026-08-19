@@ -1,0 +1,14 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "source": {
+    "classFeatures": 34,
+    "subclassFeatures": 5
+  },
+  "oracle": {
+    "classFeatures": 27,
+    "subclassFeatures": 4
+  },
+  "class": "Monk",
+  "subclass": "Warrior of the Open Hand"
+}
