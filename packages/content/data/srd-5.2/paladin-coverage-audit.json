@@ -1,0 +1,50 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "classCount": 7,
+  "subclassCount": 7,
+  "classFeatureCount": 153,
+  "paladinFeatures": 17,
+  "devotionFeatures": 5,
+  "fightingStyleOptions": 4,
+  "progression": {
+    "layOnHands": [
+      [
+        1,
+        5
+      ],
+      [
+        5,
+        25
+      ],
+      [
+        10,
+        50
+      ],
+      [
+        20,
+        100
+      ]
+    ],
+    "channelDivinity": [
+      [
+        3,
+        2
+      ],
+      [
+        11,
+        3
+      ]
+    ],
+    "aura": [
+      [
+        6,
+        10
+      ],
+      [
+        18,
+        30
+      ]
+    ]
+  }
+}

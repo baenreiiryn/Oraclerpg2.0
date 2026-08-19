@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "subclass",
-  "count": 6,
+  "count": 7,
   "items": [
     {
       "id": "dnd2024:2024:subclass:fighter:champion:srd-5.2",
@@ -377,6 +377,102 @@
                   "entityType": "feature",
                   "name": "Supreme Healing",
                   "canonicalId": "dnd2024:2024:feature:cleric:life:supreme-healing:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": []
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:subclass:paladin:devotion:srd-5.2",
+      "canonicalId": "dnd2024:2024:subclass:paladin:devotion:srd-5.2",
+      "entityType": "subclass",
+      "name": "Oath of Devotion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclass:Paladin:Devotion",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "parentClass": {
+          "entityType": "class",
+          "name": "Paladin",
+          "canonicalId": "dnd2024:2024:class:paladin:srd-5.2"
+        },
+        "advancement": [
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Sacred Weapon",
+                  "canonicalId": "dnd2024:2024:feature:paladin:devotion:sacred-weapon:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Oath of Devotion Spells",
+                  "canonicalId": "dnd2024:2024:feature:paladin:devotion:oath-of-devotion-spells:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 7,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Aura of Devotion",
+                  "canonicalId": "dnd2024:2024:feature:paladin:devotion:aura-of-devotion:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 15,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Smite of Protection",
+                  "canonicalId": "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2"
+                }
+              }
+            ]
+          },
+          {
+            "level": 20,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Holy Nimbus",
+                  "canonicalId": "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2"
                 }
               }
             ]

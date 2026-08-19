@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-19T10:19:40.306Z",
+  "generatedAt": "2026-08-19T11:15:28.431Z",
   "provider": "5etools-img",
   "repository": "LoganMagelight/5etools-img",
   "branch": "main",
@@ -56,32 +56,32 @@
       "byRole": {}
     },
     "classes.json": {
-      "entities": 6,
-      "withMedia": 6,
-      "assets": 6,
+      "entities": 7,
+      "withMedia": 7,
+      "assets": 7,
       "byRole": {
-        "artwork": 6
+        "artwork": 7
       }
     },
     "subclasses.json": {
-      "entities": 6,
+      "entities": 7,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     },
     "class-features.json": {
-      "entities": 131,
+      "entities": 153,
       "withMedia": 0,
       "assets": 0,
       "byRole": {}
     }
   },
   "totals": {
-    "entities": 1829,
-    "withMedia": 472,
-    "assets": 665
+    "entities": 1853,
+    "withMedia": 473,
+    "assets": 666
   },
-  "coverage": 0.25806451612903225,
+  "coverage": 0.25526173772261196,
   "unmatched": [
     {
       "collection": "items.json",
@@ -7429,6 +7429,12 @@
     },
     {
       "collection": "subclasses.json",
+      "canonicalId": "dnd2024:2024:subclass:paladin:devotion:srd-5.2",
+      "name": "Oath of Devotion",
+      "entityType": "subclass"
+    },
+    {
+      "collection": "subclasses.json",
       "canonicalId": "dnd2024:2024:subclass:barbarian:berserker:srd-5.2",
       "name": "Path of the Berserker",
       "entityType": "subclass"
@@ -7477,6 +7483,18 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2",
+      "name": "Ability Score Improvement",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
+      "name": "Abjure Foes",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:acrobatic-movement:srd-5.2",
       "name": "Acrobatic Movement",
       "entityType": "feature"
@@ -7497,6 +7515,30 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:archdruid:srd-5.2",
       "name": "Archdruid",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-expansion:srd-5.2",
+      "name": "Aura Expansion",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-of-courage:srd-5.2",
+      "name": "Aura of Courage",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:aura-of-devotion:srd-5.2",
+      "name": "Aura of Devotion",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2",
+      "name": "Aura of Protection",
       "entityType": "feature"
     },
     {
@@ -7550,6 +7592,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2",
+      "name": "Channel Divinity",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:channel-divinity:srd-5.2",
       "name": "Channel Divinity",
       "entityType": "feature"
     },
@@ -7621,6 +7669,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:divine-sense:srd-5.2",
+      "name": "Divine Sense",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
       "name": "Divine Spark",
       "entityType": "feature"
@@ -7687,6 +7741,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:epic-boon:srd-5.2",
+      "name": "Epic Boon",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "name": "Evasion",
       "entityType": "feature"
@@ -7717,6 +7777,18 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:extra-attack:srd-5.2",
+      "name": "Extra Attack",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
+      "name": "Faithful Steed",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
       "name": "Fast Movement",
       "entityType": "feature"
@@ -7730,6 +7802,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:fighting-style:srd-5.2",
+      "name": "Fighting Style",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:fighting-style:srd-5.2",
       "name": "Fighting Style",
       "entityType": "feature"
     },
@@ -7773,6 +7851,12 @@
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2",
       "name": "Heroic Warrior",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2",
+      "name": "Holy Nimbus",
       "entityType": "feature"
     },
     {
@@ -7843,6 +7927,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:lay-on-hands:srd-5.2",
+      "name": "Lay on Hands",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:cleric:life:life-domain-spells:srd-5.2",
       "name": "Life Domain Spells",
       "entityType": "feature"
@@ -7909,8 +7999,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:oath-of-devotion-spells:srd-5.2",
+      "name": "Oath of Devotion Spells",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "name": "Open Hand Technique",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:paladin-s-smite:srd-5.2",
+      "name": "Paladin's Smite",
       "entityType": "feature"
     },
     {
@@ -7993,6 +8095,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:radiant-strikes:srd-5.2",
+      "name": "Radiant Strikes",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
       "name": "Rage",
       "entityType": "feature"
@@ -8017,8 +8125,20 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2",
+      "name": "Restoring Touch",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
       "name": "Retaliation",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:sacred-weapon:srd-5.2",
+      "name": "Sacred Weapon",
       "entityType": "feature"
     },
     {
@@ -8047,6 +8167,12 @@
     },
     {
       "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2",
+      "name": "Smite of Protection",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:bard:spellcasting:srd-5.2",
       "name": "Spellcasting",
       "entityType": "feature"
@@ -8060,6 +8186,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:druid:spellcasting:srd-5.2",
+      "name": "Spellcasting",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:spellcasting:srd-5.2",
       "name": "Spellcasting",
       "entityType": "feature"
     },
@@ -8192,6 +8324,12 @@
     {
       "collection": "class-features.json",
       "canonicalId": "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2",
+      "name": "Weapon Mastery",
+      "entityType": "feature"
+    },
+    {
+      "collection": "class-features.json",
+      "canonicalId": "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2",
       "name": "Weapon Mastery",
       "entityType": "feature"
     },

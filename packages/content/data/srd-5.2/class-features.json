@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "feature",
-  "count": 131,
+  "count": 153,
   "items": [
     {
       "id": "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2",
@@ -330,6 +330,167 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2",
+      "entityType": "feature",
+      "name": "Ability Score Improvement",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Ability Score Improvement:4",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You gain the {@feat Ability Score Improvement|XPHB} feat or another {@5etools feat|feats.html} of your choice for which you qualify. You gain this feature again at Paladin levels 8, 12, and 16."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2",
+      "entityType": "feature",
+      "name": "Abjure Foes",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Abjure Foes:9",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "As a {@action Magic|XPHB} action, you can expend one use of this class's Channel Divinity to overwhelm foes with awe. As you present your {@item Holy Symbol|XPHB} or weapon, you can target a number of creatures equal to your Charisma modifier (minimum of one creature) that you can see within 60 feet of yourself. Each target must succeed on a Wisdom saving throw or have the {@condition Frightened|XPHB} condition for 1 minute or until it takes any damage. While {@condition Frightened|XPHB} in this way, a target can do only one of the following on its turns: move, take an action, or take a {@variantrule Bonus Action|XPHB}."
+          ]
+        },
+        "activities": [
+          {
+            "id": "abjure-foes",
+            "name": "Abjure Foes",
+            "kind": "save",
+            "activation": {
+              "type": "action"
+            },
+            "range": {
+              "normal": {
+                "value": 60,
+                "unit": "ft"
+              }
+            },
+            "target": {
+              "type": "creature",
+              "count": {
+                "type": "runtime",
+                "path": "abilities.cha.mod|min1"
+              },
+              "disposition": "enemy"
+            },
+            "save": {
+              "ability": "wisdom",
+              "dc": {
+                "type": "spellcasting"
+              }
+            },
+            "conditions": [
+              {
+                "condition": "frightened",
+                "duration": {
+                  "type": "timed",
+                  "value": 1,
+                  "unit": "minute"
+                }
+              }
+            ],
+            "costs": [
+              {
+                "resource": "classResource",
+                "resourceId": "paladin-channel-divinity",
+                "amount": 1
+              }
+            ],
+            "description": "On a failed save, target is Frightened for 1 minute or until it takes damage. While frightened this way, on each turn it can only move, take an action, or take a Bonus Action."
+          }
+        ],
+        "classRules": {
+          "behaviorConstraints": [
+            {
+              "subject": "affectedCreature",
+              "directives": [
+                {
+                  "type": "actionEconomyLimit",
+                  "allowed": [
+                    "action",
+                    "bonusAction",
+                    "movement"
+                  ],
+                  "maximumSelections": 1
+                }
+              ],
+              "duration": {
+                "endTriggers": [
+                  {
+                    "event": "onDamageTaken",
+                    "description": "Effect ends when the affected creature takes damage."
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:acrobatic-movement:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:acrobatic-movement:srd-5.2",
       "entityType": "feature",
@@ -641,6 +802,243 @@
             }
           }
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:aura-expansion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-expansion:srd-5.2",
+      "entityType": "feature",
+      "name": "Aura Expansion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Aura Expansion:18",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "Your Aura of Protection is now a 30-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation}."
+          ]
+        },
+        "patches": [
+          {
+            "targetId": "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2",
+            "changes": [
+              {
+                "path": "class.paladin.auraRange",
+                "operation": "set",
+                "value": 30
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:aura-of-courage:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-of-courage:srd-5.2",
+      "entityType": "feature",
+      "name": "Aura of Courage",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Aura of Courage:10",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You and your allies have {@variantrule Immunity|XPHB} to the {@condition Frightened|XPHB} condition while in your Aura of Protection. If a {@condition Frightened|XPHB} ally enters the aura, that condition has no effect on that ally while there."
+          ]
+        },
+        "classRules": {
+          "projectedEffects": [
+            {
+              "effects": [
+                {
+                  "id": "aura-of-courage-immunity",
+                  "conditionImmunities": [
+                    "frightened"
+                  ]
+                }
+              ],
+              "recipients": {
+                "type": "alliesInRange",
+                "range": {
+                  "type": "runtime",
+                  "path": "class.paladin.auraRange"
+                }
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Uses Aura of Protection range and inactive state."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:devotion:aura-of-devotion:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:aura-of-devotion:srd-5.2",
+      "entityType": "feature",
+      "name": "Aura of Devotion",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Paladin:Devotion:Aura of Devotion:7",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "paladin-devotion",
+        "text": {
+          "rules": [
+            "You and your allies have {@variantrule Immunity|XPHB} to the {@condition Charmed|XPHB} condition while in your Aura of Protection. If a {@condition Charmed|XPHB} ally enters the aura, that condition has no effect on that ally while there."
+          ]
+        },
+        "classRules": {
+          "projectedEffects": [
+            {
+              "effects": [
+                {
+                  "id": "aura-of-devotion-immunity",
+                  "conditionImmunities": [
+                    "charmed"
+                  ]
+                }
+              ],
+              "recipients": {
+                "type": "alliesInRange",
+                "range": {
+                  "type": "runtime",
+                  "path": "class.paladin.auraRange"
+                }
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Uses Aura of Protection range and inactive state."
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2",
+      "entityType": "feature",
+      "name": "Aura of Protection",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Aura of Protection:6",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You radiate a protective, unseeable aura in a 10-foot {@variantrule Emanation [Area of Effect]|XPHB|Emanation} that originates from you. The aura is inactive while you have the {@condition Incapacitated|XPHB} condition.",
+            "You and your allies in the aura gain a bonus to saving throws equal to your Charisma modifier (minimum bonus of +1).",
+            "If another Paladin is present, a creature can benefit from only one Aura of Protection at a time; the creature chooses which aura while in them."
+          ]
+        },
+        "classRules": {
+          "projectedEffects": [
+            {
+              "effects": [
+                {
+                  "id": "aura-of-protection-save-bonus",
+                  "modifiers": [
+                    {
+                      "target": {
+                        "domain": "savingThrow"
+                      },
+                      "mode": "bonus",
+                      "value": {
+                        "type": "formula",
+                        "formula": "max(1, @source.abilities.cha.mod)"
+                      }
+                    }
+                  ]
+                }
+              ],
+              "recipients": {
+                "type": "alliesInRange",
+                "range": {
+                  "type": "runtime",
+                  "path": "class.paladin.auraRange"
+                }
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Aura is inactive while the Paladin is Incapacitated. A creature benefits from only one Aura of Protection at a time."
+              }
+            }
+          ],
+          "effectStackingPolicies": [
+            {
+              "key": "paladin-aura-of-protection",
+              "policy": "chooseOne",
+              "chooser": "recipient"
+            }
+          ]
+        }
       }
     },
     {
@@ -1327,6 +1725,98 @@
         ],
         "properties": [
           "shared-resource:channel-divinity"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:channel-divinity:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:channel-divinity:srd-5.2",
+      "entityType": "feature",
+      "name": "Channel Divinity",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Channel Divinity:3",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You can channel divine energy directly from the Outer Planes, using it to fuel magical effects. You start with one such effect: Divine Sense, which is described below. Other Paladin features give additional Channel Divinity effect options. Each time you use this class's Channel Divinity, you choose which effect from this class to create.",
+            "You can use this class's Channel Divinity twice. You regain one of its expended uses when you finish a {@variantrule Short Rest|XPHB}, and you regain all expended uses when you finish a {@variantrule Long Rest|XPHB}. You gain an additional use when you reach Paladin level 11.",
+            "If a Channel Divinity effect requires a saving throw, the DC equals the spell save DC from this class's Spellcasting feature.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "refClassFeature",
+                  "classFeature": "Divine Sense|Paladin|XPHB|3|XPHB"
+                }
+              ]
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "resource",
+            "value": {
+              "id": "paladin-channel-divinity",
+              "max": {
+                "type": "runtime",
+                "path": "class.paladin.channelDivinityUses"
+              },
+              "recovery": [
+                {
+                  "period": "shortRest",
+                  "amount": 1
+                },
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "activities": [
+          {
+            "id": "divine-sense",
+            "name": "Divine Sense",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "duration": {
+              "type": "timed",
+              "value": 10,
+              "unit": "minute"
+            },
+            "costs": [
+              {
+                "resource": "classResource",
+                "resourceId": "paladin-channel-divinity",
+                "amount": 1
+              }
+            ],
+            "description": "For 10 minutes, know the location and creature type of Celestials, Fiends, and Undead within 60 feet, and detect consecrated or desecrated places or objects. Ends if Incapacitated."
+          }
         ]
       }
     },
@@ -2217,6 +2707,39 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:divine-sense:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:divine-sense:srd-5.2",
+      "entityType": "feature",
+      "name": "Divine Sense",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Divine Sense:3",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can open your awareness to detect Celestials, Fiends, and Undead. For the next 10 minutes or until you have the {@condition Incapacitated|XPHB} condition, you know the location of any creature of those types within 60 feet of yourself, and you know its creature type. Within the same radius, you also detect the presence of any place or object that has been consecrated or desecrated, as with the {@spell Hallow|XPHB} spell."
+          ]
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:cleric:divine-spark:srd-5.2",
       "entityType": "feature",
@@ -2850,6 +3373,68 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:epic-boon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:epic-boon:srd-5.2",
+      "entityType": "feature",
+      "name": "Epic Boon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Epic Boon:19",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You gain an {@filter Epic Boon feat|feats|category=EB} or another {@5etools feat|feats.html} of your choice for which you qualify. {@feat Boon of Truesight|XPHB} is recommended."
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "epicBoon"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "properties": [
+          "recommended:Boon of Truesight"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:evasion:srd-5.2",
       "entityType": "feature",
@@ -3081,6 +3666,94 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:extra-attack:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:extra-attack:srd-5.2",
+      "entityType": "feature",
+      "name": "Extra Attack",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Extra Attack:5",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You can attack twice instead of once whenever you take the {@action Attack|XPHB} action on your turn."
+          ]
+        },
+        "properties": [
+          "attack-action-count:2"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2",
+      "entityType": "feature",
+      "name": "Faithful Steed",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Faithful Steed:5",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You can call on the aid of an otherworldly steed. You always have the {@spell Find Steed|XPHB} spell prepared.",
+            "You can also cast the spell once without expending a spell slot, and you regain the ability to do so when you finish a {@variantrule Long Rest|XPHB}."
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Faithful Steed",
+            "ability": "charisma",
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Find Steed",
+                  "canonicalId": "dnd2024:2024:spell:find-steed:srd-5.2"
+                },
+                "freeUses": 1,
+                "recovery": "longRest"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2",
       "entityType": "feature",
@@ -3252,6 +3925,97 @@
             }
           ]
         }
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:fighting-style:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:fighting-style:srd-5.2",
+      "entityType": "feature",
+      "name": "Fighting Style",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Fighting Style:2",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You gain a {@filter Fighting Style feat|feats|category=FS} of your choice. Instead of choosing one of those feats, you can choose the option below.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "refFeat",
+                  "feat": "Blessed Warrior|XPHB"
+                }
+              ]
+            }
+          ]
+        },
+        "grants": [
+          {
+            "type": "entity",
+            "choice": {
+              "kind": "tagQuery",
+              "count": 1,
+              "entityTypes": [
+                "feature"
+              ],
+              "query": {
+                "all": [
+                  {
+                    "field": "data.featureKind",
+                    "operator": "eq",
+                    "value": "feat"
+                  },
+                  {
+                    "field": "data.featCategory",
+                    "operator": "eq",
+                    "value": "fightingStyle"
+                  }
+                ]
+              }
+            }
+          }
+        ],
+        "spellGrantChoices": [
+          {
+            "id": "paladin-blessed-warrior",
+            "count": 1,
+            "options": [
+              {
+                "name": "Blessed Warrior",
+                "ability": "charisma",
+                "selections": [
+                  {
+                    "mode": "known",
+                    "query": "Choose two Cleric cantrips; they count as Paladin spells.",
+                    "count": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "alternative-option:Blessed Warrior",
+          "replace-one-blessed-warrior-cantrip-on-paladin-level"
+        ]
       }
     },
     {
@@ -3604,6 +4368,131 @@
               "description": "Only during combat and only if the Fighter lacks Heroic Inspiration."
             }
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2",
+      "entityType": "feature",
+      "name": "Holy Nimbus",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Paladin:Devotion:Holy Nimbus:20",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "paladin-devotion",
+        "text": {
+          "rules": [
+            "As a {@variantrule Bonus Action|XPHB}, you can imbue your Aura of Protection with holy power, granting the benefits below for 10 minutes or until you end them (no action required). Once you use this feature, you can't use it again until you finish a {@variantrule Long Rest|XPHB}. You can also restore your use of it by expending a level 5 spell slot (no action required).",
+            {
+              "type": "entries",
+              "name": "Holy Ward",
+              "entries": [
+                "You have {@variantrule Advantage|XPHB} on any saving throw you are forced to make by a Fiend or an Undead."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Radiant Damage",
+              "entries": [
+                "Whenever an enemy starts its turn in the aura, that creature takes Radiant damage equal to your Charisma modifier plus your {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+              ]
+            },
+            {
+              "type": "entries",
+              "name": "Sunlight",
+              "entries": [
+                "The aura is filled with {@variantrule Bright Light|XPHB} that is sunlight."
+              ]
+            }
+          ]
+        },
+        "activities": [
+          {
+            "id": "holy-nimbus",
+            "name": "Holy Nimbus",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "target": {
+              "type": "self"
+            },
+            "duration": {
+              "type": "timed",
+              "value": 10,
+              "unit": "minute"
+            },
+            "uses": {
+              "max": 1,
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            },
+            "description": "Imbue Aura of Protection for 10 minutes. Can also restore the use by expending a level 5 spell slot."
+          }
+        ],
+        "saveRules": [
+          {
+            "id": "holy-ward",
+            "abilities": [
+              "strength",
+              "dexterity",
+              "constitution",
+              "intelligence",
+              "wisdom",
+              "charisma"
+            ],
+            "mode": "advantage",
+            "predicate": {
+              "type": "custom",
+              "description": "Saving throw forced by a Fiend or Undead while Holy Nimbus is active."
+            }
+          }
+        ],
+        "damageRules": [
+          {
+            "id": "holy-nimbus-radiant",
+            "action": "extraDamage",
+            "damageTypes": [
+              "radiant"
+            ],
+            "value": {
+              "type": "formula",
+              "formula": "@abilities.cha.mod + @proficiency"
+            },
+            "trigger": {
+              "event": "onTurnStart",
+              "description": "Enemy starts its turn in Aura of Protection while Holy Nimbus is active."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Enemy is inside the aura."
+            }
+          }
+        ],
+        "properties": [
+          "aura-bright-light:sunlight",
+          "restore-use-cost:level-5-spell-slot"
         ]
       }
     },
@@ -4390,6 +5279,138 @@
               "landsAid.damage": "4d6",
               "landsAid.healing": "4d6"
             }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:lay-on-hands:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:lay-on-hands:srd-5.2",
+      "entityType": "feature",
+      "name": "Lay on Hands",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Lay on Hands:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "Your blessed touch can heal wounds. You have a pool of healing power that replenishes when you finish a {@variantrule Long Rest|XPHB}. With that pool, you can restore a total number of {@variantrule Hit Points|XPHB} equal to five times your Paladin level.",
+            "As a {@variantrule Bonus Action|XPHB}, you can touch a creature (which could be yourself) and draw power from the pool of healing to restore a number of {@variantrule Hit Points|XPHB} to that creature, up to the maximum amount remaining in the pool.",
+            "You can also expend 5 {@variantrule Hit Points|XPHB} from the pool of healing power to remove the {@condition Poisoned|XPHB} condition from the creature; those points don't also restore {@variantrule Hit Points|XPHB} to the creature."
+          ]
+        },
+        "grants": [
+          {
+            "type": "resource",
+            "value": {
+              "id": "paladin-lay-on-hands",
+              "max": {
+                "type": "formula",
+                "formula": "5 * @classes.paladin.level"
+              },
+              "recovery": [
+                {
+                  "period": "longRest",
+                  "amount": "all"
+                }
+              ]
+            }
+          }
+        ],
+        "activities": [
+          {
+            "id": "lay-on-hands-heal",
+            "name": "Lay on Hands — Heal",
+            "kind": "healing",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "range": {
+              "reach": {
+                "value": 5,
+                "unit": "ft"
+              }
+            },
+            "target": {
+              "type": "creature",
+              "count": 1
+            },
+            "healing": [
+              {
+                "value": {
+                  "type": "runtime",
+                  "path": "activity.input.poolSpend"
+                },
+                "type": "healing"
+              }
+            ],
+            "costs": [
+              {
+                "resource": "classResource",
+                "resourceId": "paladin-lay-on-hands",
+                "amount": {
+                  "type": "runtime",
+                  "path": "activity.input.poolSpend"
+                }
+              }
+            ],
+            "description": "Spend any number of points from Lay on Hands, up to the amount remaining, restoring that many Hit Points."
+          },
+          {
+            "id": "lay-on-hands-poison",
+            "name": "Lay on Hands — Cure Poisoned",
+            "kind": "utility",
+            "activation": {
+              "type": "bonusAction"
+            },
+            "range": {
+              "reach": {
+                "value": 5,
+                "unit": "ft"
+              }
+            },
+            "target": {
+              "type": "creature",
+              "count": 1
+            },
+            "costs": [
+              {
+                "resource": "classResource",
+                "resourceId": "paladin-lay-on-hands",
+                "amount": 5
+              }
+            ],
+            "effects": [
+              {
+                "id": "remove-poisoned",
+                "conditions": [
+                  {
+                    "action": "remove",
+                    "conditions": [
+                      "poisoned"
+                    ]
+                  }
+                ]
+              }
+            ],
+            "description": "Spend 5 points from Lay on Hands to remove Poisoned; those points do not also restore Hit Points."
           }
         ]
       }
@@ -5432,6 +6453,171 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:devotion:oath-of-devotion-spells:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:oath-of-devotion-spells:srd-5.2",
+      "entityType": "feature",
+      "name": "Oath of Devotion Spells",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Paladin:Devotion:Oath of Devotion Spells:3",
+        "adapterVersion": "0.9.1",
+        "mapperVersion": "0.9.1"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "paladin-devotion",
+        "spellGrants": [
+          {
+            "name": "Oath of Devotion Spells",
+            "ability": "charisma",
+            "selections": [
+              {
+                "mode": "prepared",
+                "characterLevel": 3,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Protection from Evil and Good",
+                  "canonicalId": "dnd2024:2024:spell:protection-from-evil-and-good:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 3,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Shield of Faith",
+                  "canonicalId": "dnd2024:2024:spell:shield-of-faith:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 5,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Aid",
+                  "canonicalId": "dnd2024:2024:spell:aid:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 5,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Zone of Truth",
+                  "canonicalId": "dnd2024:2024:spell:zone-of-truth:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 9,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Beacon of Hope",
+                  "canonicalId": "dnd2024:2024:spell:beacon-of-hope:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 9,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Dispel Magic",
+                  "canonicalId": "dnd2024:2024:spell:dispel-magic:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 13,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Freedom of Movement",
+                  "canonicalId": "dnd2024:2024:spell:freedom-of-movement:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 13,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Guardian of Faith",
+                  "canonicalId": "dnd2024:2024:spell:guardian-of-faith:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 17,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Commune",
+                  "canonicalId": "dnd2024:2024:spell:commune:srd-5.2"
+                }
+              },
+              {
+                "mode": "prepared",
+                "characterLevel": 17,
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Flame Strike",
+                  "canonicalId": "dnd2024:2024:spell:flame-strike:srd-5.2"
+                }
+              }
+            ]
+          }
+        ],
+        "text": {
+          "rules": [
+            "The magic of your oath ensures you always have certain spells ready; when you reach a Paladin level specified in the Oath of Devotion Spells table, you thereafter always have the listed spells prepared.",
+            {
+              "type": "table",
+              "caption": "Oath of Devotion Spells",
+              "colLabels": [
+                "Paladin Level",
+                "Spells"
+              ],
+              "colStyles": [
+                "col-2 text-center",
+                "col-10"
+              ],
+              "rows": [
+                [
+                  "3rd",
+                  "{@spell Protection from Evil and Good|XPHB}, {@spell Shield of Faith|XPHB}"
+                ],
+                [
+                  "5th",
+                  "{@spell Aid|XPHB}, {@spell Zone of Truth|XPHB}"
+                ],
+                [
+                  "9th",
+                  "{@spell Beacon of Hope|XPHB}, {@spell Dispel Magic|XPHB}"
+                ],
+                [
+                  "13th",
+                  "{@spell Freedom of Movement|XPHB}, {@spell Guardian of Faith|XPHB}"
+                ],
+                [
+                  "17th",
+                  "{@spell Commune|XPHB}, {@spell Flame Strike|XPHB}"
+                ]
+              ]
+            }
+          ]
+        }
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2",
       "entityType": "feature",
@@ -5502,6 +6688,57 @@
               "event": "onHit",
               "description": "After a Flurry of Blows hit and Push is chosen."
             }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:paladin-s-smite:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:paladin-s-smite:srd-5.2",
+      "entityType": "feature",
+      "name": "Paladin's Smite",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Paladin's Smite:2",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You always have the {@spell Divine Smite|XPHB} spell prepared. In addition, you can cast it without expending a spell slot, but you must finish a {@variantrule Long Rest|XPHB} before you can cast it in this way again."
+          ]
+        },
+        "spellGrants": [
+          {
+            "name": "Paladin's Smite",
+            "ability": "charisma",
+            "selections": [
+              {
+                "mode": "prepared",
+                "spell": {
+                  "entityType": "spell",
+                  "name": "Divine Smite",
+                  "canonicalId": "dnd2024:2024:spell:divine-smite:srd-5.2"
+                },
+                "freeUses": 1,
+                "recovery": "longRest"
+              }
+            ]
           }
         ]
       }
@@ -6295,6 +7532,57 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:radiant-strikes:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:radiant-strikes:srd-5.2",
+      "entityType": "feature",
+      "name": "Radiant Strikes",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Radiant Strikes:11",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "Your strikes now carry supernatural power. When you hit a target with an attack roll using a Melee weapon or an {@variantrule Unarmed Strike|XPHB}, the target takes an extra {@damage 1d8} Radiant damage."
+          ]
+        },
+        "damageRules": [
+          {
+            "id": "radiant-strikes",
+            "action": "extraDamage",
+            "damageTypes": [
+              "radiant"
+            ],
+            "formula": "1d8",
+            "trigger": {
+              "event": "onHit",
+              "description": "When a melee weapon attack or Unarmed Strike hits."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Melee weapon attack or Unarmed Strike."
+            }
+          }
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:rage:srd-5.2",
       "entityType": "feature",
@@ -6800,6 +8088,65 @@
       }
     },
     {
+      "id": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2",
+      "entityType": "feature",
+      "name": "Restoring Touch",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Restoring Touch:14",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "When you use Lay On Hands on a creature, you can also remove one or more of the following conditions from the creature: {@condition Blinded|XPHB}, {@condition Charmed|XPHB}, {@condition Deafened|XPHB}, {@condition Frightened|XPHB}, {@condition Paralyzed|XPHB}, or {@condition Stunned|XPHB}. You must expend 5 {@variantrule Hit Points|XPHB} from the healing pool of Lay On Hands for each of these conditions you remove; those points don't also restore {@variantrule Hit Points|XPHB} to the creature."
+          ]
+        },
+        "effects": [
+          {
+            "id": "restoring-touch",
+            "trigger": {
+              "event": "custom",
+              "description": "When Lay on Hands is used on a creature."
+            },
+            "conditions": [
+              {
+                "action": "remove",
+                "conditions": [
+                  "blinded",
+                  "charmed",
+                  "deafened",
+                  "frightened",
+                  "paralyzed",
+                  "stunned"
+                ]
+              }
+            ]
+          }
+        ],
+        "properties": [
+          "cost:5-lay-on-hands-points-per-condition",
+          "removed-condition-cost-does-not-heal"
+        ]
+      }
+    },
+    {
       "id": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
       "canonicalId": "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2",
       "entityType": "feature",
@@ -6857,6 +8204,105 @@
               "mode": "melee"
             },
             "description": "Make one melee attack using a weapon or an Unarmed Strike against the triggering creature."
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:devotion:sacred-weapon:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:sacred-weapon:srd-5.2",
+      "entityType": "feature",
+      "name": "Sacred Weapon",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Paladin:Devotion:Sacred Weapon:3",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "paladin-devotion",
+        "text": {
+          "rules": [
+            "When you take the {@action Attack|XPHB} action, you can expend one use of your Channel Divinity to imbue one Melee weapon that you are holding with positive energy. For 10 minutes or until you use this feature again, you add your Charisma modifier to attack rolls you make with that weapon (minimum bonus of +1), and each time you hit with it, you cause it to deal its normal damage type or Radiant damage.",
+            "The weapon also emits {@variantrule Bright Light|XPHB} in a 20-foot radius and {@variantrule Dim Light|XPHB} 20 feet beyond that.",
+            "You can end this effect early (no action required). This effect also ends if you aren't carrying the weapon."
+          ]
+        },
+        "activities": [
+          {
+            "id": "sacred-weapon",
+            "name": "Sacred Weapon",
+            "kind": "enchant",
+            "activation": {
+              "type": "free",
+              "trigger": {
+                "event": "custom",
+                "description": "When taking the Attack action."
+              }
+            },
+            "target": {
+              "type": "object",
+              "count": 1
+            },
+            "duration": {
+              "type": "timed",
+              "value": 10,
+              "unit": "minute"
+            },
+            "costs": [
+              {
+                "resource": "classResource",
+                "resourceId": "paladin-channel-divinity",
+                "amount": 1
+              }
+            ],
+            "description": "Imbue one held melee weapon. Add Charisma modifier (minimum +1) to its attack rolls, choose normal or Radiant damage on each hit, and emit bright/dim light 20/20 feet. Ends if not carrying the weapon or used again."
+          }
+        ],
+        "modifiers": [
+          {
+            "target": {
+              "domain": "attackRoll"
+            },
+            "mode": "bonus",
+            "value": {
+              "type": "formula",
+              "formula": "max(1, @abilities.cha.mod)"
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Attack roll made with the Sacred Weapon while the effect is active."
+            }
+          }
+        ],
+        "damageRules": [
+          {
+            "id": "sacred-weapon-radiant",
+            "action": "replaceDamageType",
+            "damageTypes": [
+              "radiant"
+            ],
+            "trigger": {
+              "event": "onDamage",
+              "description": "When Sacred Weapon deals damage."
+            },
+            "predicate": {
+              "type": "custom",
+              "description": "Choose normal damage type or Radiant for each hit."
+            }
           }
         ]
       }
@@ -7104,6 +8550,71 @@
               "description": "Falling damage only."
             }
           }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2",
+      "entityType": "feature",
+      "name": "Smite of Protection",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:subclassFeature:Paladin:Devotion:Smite of Protection:15",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "subclassFeature",
+        "category": "paladin-devotion",
+        "text": {
+          "rules": [
+            "Your magical smite now radiates protective energy. Whenever you cast {@spell Divine Smite|XPHB}, you and your allies have {@variantrule Cover|XPHB|Half Cover} while in your Aura of Protection. The aura has this benefit until the start of your next turn."
+          ]
+        },
+        "classRules": {
+          "projectedEffects": [
+            {
+              "effects": [
+                {
+                  "id": "smite-of-protection-half-cover",
+                  "benefits": [
+                    {
+                      "type": "cover",
+                      "value": "half"
+                    }
+                  ]
+                }
+              ],
+              "recipients": {
+                "type": "alliesInRange",
+                "range": {
+                  "type": "runtime",
+                  "path": "class.paladin.auraRange"
+                }
+              },
+              "predicate": {
+                "type": "custom",
+                "description": "Active after casting Divine Smite until the start of your next turn."
+              }
+            }
+          ]
+        },
+        "properties": [
+          "trigger:cast-divine-smite",
+          "duration:until-start-of-next-turn"
         ]
       }
     },
@@ -7958,6 +9469,234 @@
         "properties": [
           "spellcasting-ability:wisdom",
           "spellcasting-focus:druidic-focus",
+          "prepared-spells"
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:spellcasting:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:spellcasting:srd-5.2",
+      "entityType": "feature",
+      "name": "Spellcasting",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Spellcasting:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "You have learned to cast spells through prayer and meditation. See {@book chapter 7|XPHB|7} for the rules on spellcasting. The information below details how you use those rules with Paladin spells, which appear in the {@filter Paladin spell list|spells|class=Paladin} later in the class's description.",
+            {
+              "type": "entries",
+              "entries": [
+                {
+                  "type": "entries",
+                  "name": "Spell Slots",
+                  "entries": [
+                    "The Paladin Features table shows how many spell slots you have to cast your level 1+ spells. You regain all expended slots when you finish a {@variantrule Long Rest|XPHB}."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Prepared Spells of Level 1+",
+                  "entries": [
+                    "You prepare the list of level 1+ spells that are available for you to cast with this feature. To start, choose two {@filter level 1 Paladin spells|spells|class=Paladin|level=1}. {@spell Heroism|XPHB} and {@spell Searing Smite|XPHB} are recommended.",
+                    "The number of spells on your list increases as you gain Paladin levels, as shown in the Prepared Spells column of the Paladin Features table. Whenever that number increases, choose additional Paladin spells until the number of spells on your list matches the number in the Paladin Features table. The chosen spells must be of a level for which you have spell slots. For example, if you're a level 5 Paladin, your list of prepared spells can include six Paladin spells of level 1 or 2 in any combination.",
+                    "If another Paladin feature gives you spells that you always have prepared, those spells don't count against the number of spells you can prepare with this feature, but those spells otherwise count as Paladin spells for you."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Changing Your Prepared Spells",
+                  "entries": [
+                    "Whenever you finish a {@variantrule Long Rest|XPHB}, you can replace one spell on your list with another Paladin spell for which you have spell slots."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Ability",
+                  "entries": [
+                    "Charisma is your spellcasting ability for your Paladin spells."
+                  ]
+                },
+                {
+                  "type": "entries",
+                  "name": "Spellcasting Focus",
+                  "entries": [
+                    "You can use a {@item Holy Symbol|XPHB} as a {@variantrule Spellcasting Focus|XPHB} for your Paladin spells."
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        "classMechanics": {
+          "spellCollections": [
+            {
+              "id": "paladin-prepared-spells",
+              "kind": "prepared",
+              "sourceList": "Paladin",
+              "capacity": {
+                "type": "runtime",
+                "path": "class.paladin.preparedSpells"
+              },
+              "filter": {
+                "lists": [
+                  "Paladin"
+                ]
+              },
+              "replace": {
+                "timing": "longRest",
+                "count": {
+                  "type": "constant",
+                  "value": 1
+                },
+                "fromCollectionId": "paladin-prepared-spells",
+                "filter": {
+                  "lists": [
+                    "Paladin"
+                  ]
+                }
+              }
+            }
+          ],
+          "spellSlotPools": [
+            {
+              "id": "paladin-spell-slots",
+              "kind": "standard",
+              "progression": {
+                "1": {
+                  "1": 2
+                },
+                "2": {
+                  "1": 2
+                },
+                "3": {
+                  "1": 3
+                },
+                "4": {
+                  "1": 3
+                },
+                "5": {
+                  "1": 4,
+                  "2": 2
+                },
+                "6": {
+                  "1": 4,
+                  "2": 2
+                },
+                "7": {
+                  "1": 4,
+                  "2": 3
+                },
+                "8": {
+                  "1": 4,
+                  "2": 3
+                },
+                "9": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "10": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 2
+                },
+                "11": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "12": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3
+                },
+                "13": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "14": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 1
+                },
+                "15": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "16": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 2
+                },
+                "17": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "18": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 1
+                },
+                "19": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                },
+                "20": {
+                  "1": 4,
+                  "2": 3,
+                  "3": 3,
+                  "4": 3,
+                  "5": 2
+                }
+              },
+              "recovery": [
+                {
+                  "trigger": {
+                    "event": "onRest",
+                    "description": "Long Rest"
+                  },
+                  "restore": "all"
+                }
+              ]
+            }
+          ]
+        },
+        "properties": [
+          "spellcasting-ability:charisma",
+          "spellcasting-focus:holy-symbol",
           "prepared-spells"
         ]
       }
@@ -9381,6 +11120,76 @@
         "properties": [
           "uses-selected-weapon-mastery-properties"
         ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2",
+      "canonicalId": "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2",
+      "entityType": "feature",
+      "name": "Weapon Mastery",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:classFeature:Paladin:Weapon Mastery:1",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "featureKind": "classFeature",
+        "category": "paladin",
+        "text": {
+          "rules": [
+            "Your training with weapons allows you to use the {@variantrule weapon mastery properties|XPHB|mastery properties} of two kinds of {@filter weapons|items|type=simple weapon;martial weapon} of your choice with which you have proficiency, such as {@item Longsword|XPHB|Longswords} and {@item Javelin|XPHB|Javelins}.",
+            "Whenever you finish a {@variantrule Long Rest|XPHB}, you can change the kinds of weapons you chose. For example, you could switch to using the {@variantrule weapon mastery properties|XPHB|mastery properties} of {@item Halberd|XPHB|Halberds} and {@item Flail|XPHB|Flails}."
+          ]
+        },
+        "classRules": {
+          "entityCollections": [
+            {
+              "id": "paladin-weapon-masteries",
+              "entityTypes": [
+                "item"
+              ],
+              "capacity": {
+                "type": "constant",
+                "value": 2
+              },
+              "filter": {
+                "type": "custom",
+                "description": "Weapon with which the Paladin has proficiency and that has a mastery property."
+              },
+              "chooseOn": {
+                "event": "onLevelGain",
+                "description": "Choose two weapon kinds."
+              },
+              "replace": {
+                "trigger": {
+                  "event": "onRest",
+                  "description": "Long Rest"
+                },
+                "count": {
+                  "type": "constant",
+                  "value": 2
+                },
+                "filter": {
+                  "type": "custom",
+                  "description": "Eligible proficient weapons with mastery properties."
+                }
+              }
+            }
+          ]
+        }
       }
     },
     {

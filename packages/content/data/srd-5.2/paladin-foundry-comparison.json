@@ -1,0 +1,23 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 16,
+    "subclassFeatureDocs": 5,
+    "scaleValues": [
+      "Aura Distance",
+      "Max Prepared Spells",
+      "Channel Divinity Uses"
+    ]
+  },
+  "oracle": {
+    "classFeatures": 17,
+    "subclassFeatures": 5
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry stores Blessed Warrior as a separate auxiliary feature; Oracle models it as the alternative option inside Fighting Style."
+    }
+  ]
+}

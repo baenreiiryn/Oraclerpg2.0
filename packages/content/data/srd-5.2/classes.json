@@ -3,7 +3,7 @@
   "version": 1,
   "contentSource": "srd-5.2",
   "entityType": "class",
-  "count": 6,
+  "count": 7,
   "items": [
     {
       "id": "dnd2024:2024:class:barbarian:srd-5.2",
@@ -3371,6 +3371,773 @@
               "repository": "LoganMagelight/5etools-img",
               "branch": "main",
               "bytes": 212680
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "dnd2024:2024:class:paladin:srd-5.2",
+      "canonicalId": "dnd2024:2024:class:paladin:srd-5.2",
+      "entityType": "class",
+      "name": "Paladin",
+      "system": {
+        "gameSystem": "dnd2024",
+        "rulesVersion": "2024"
+      },
+      "source": {
+        "sourceId": "srd-5.2",
+        "book": "XPHB",
+        "license": "CC-BY-4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/"
+      },
+      "provenance": {
+        "origin": "import",
+        "provider": "5etools",
+        "sourceKey": "XPHB:class:Paladin",
+        "adapterVersion": "0.9.0",
+        "mapperVersion": "0.9.0"
+      },
+      "schemaVersion": 1,
+      "data": {
+        "hitDie": 10,
+        "primaryAbilities": [
+          "strength",
+          "charisma"
+        ],
+        "savingThrowProficiencies": [
+          "wisdom",
+          "charisma"
+        ],
+        "armorTraining": [
+          "light",
+          "medium",
+          "heavy",
+          "shield"
+        ],
+        "weaponProficiencies": [
+          "simple",
+          "martial"
+        ],
+        "skillChoices": {
+          "kind": "enum",
+          "count": 2,
+          "options": [
+            "Athletics",
+            "Insight",
+            "Intimidation",
+            "Medicine",
+            "Persuasion",
+            "Religion"
+          ]
+        },
+        "equipmentBundles": [
+          {
+            "id": "A",
+            "label": "Chain Mail, Shield, Longsword, 6 Javelins, Holy Symbol, Priest's Pack, 9 GP",
+            "grants": [
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Chain Mail",
+                  "canonicalId": "dnd2024:2024:item:chain-mail:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Shield",
+                  "canonicalId": "dnd2024:2024:item:shield:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Longsword",
+                  "canonicalId": "dnd2024:2024:item:longsword:srd-5.2"
+                }
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Javelin",
+                  "canonicalId": "dnd2024:2024:item:javelin:srd-5.2"
+                },
+                "quantity": 6
+              },
+              {
+                "equipmentCategory": "holySymbol"
+              },
+              {
+                "entity": {
+                  "entityType": "item",
+                  "name": "Priest's Pack",
+                  "canonicalId": "dnd2024:2024:item:priest-s-pack:srd-5.2"
+                }
+              },
+              {
+                "currency": {
+                  "amount": 9,
+                  "currency": "gp"
+                }
+              }
+            ]
+          },
+          {
+            "id": "B",
+            "label": "150 GP",
+            "grants": [
+              {
+                "currency": {
+                  "amount": 150,
+                  "currency": "gp"
+                }
+              }
+            ]
+          }
+        ],
+        "spellcasting": {
+          "type": "half",
+          "ability": "charisma",
+          "preparation": "prepared",
+          "progression": [
+            {
+              "1": 2
+            },
+            {
+              "1": 2
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 3
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 2
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 1
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            },
+            {
+              "1": 4,
+              "2": 3,
+              "3": 3,
+              "4": 3,
+              "5": 2
+            }
+          ]
+        },
+        "advancement": [
+          {
+            "level": 1,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Lay on Hands",
+                  "canonicalId": "dnd2024:2024:feature:paladin:lay-on-hands:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Spellcasting",
+                  "canonicalId": "dnd2024:2024:feature:paladin:spellcasting:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Weapon Mastery",
+                  "canonicalId": "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 2,
+              "channelDivinityUses": 0,
+              "auraRange": 0,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 5,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 2,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Fighting Style",
+                  "canonicalId": "dnd2024:2024:feature:paladin:fighting-style:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Paladin's Smite",
+                  "canonicalId": "dnd2024:2024:feature:paladin:paladin-s-smite:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 3,
+              "channelDivinityUses": 0,
+              "auraRange": 0,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 10,
+              "spellSlots": {
+                "1": 2
+              }
+            }
+          },
+          {
+            "level": 3,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Channel Divinity",
+                  "canonicalId": "dnd2024:2024:feature:paladin:channel-divinity:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Divine Sense",
+                  "canonicalId": "dnd2024:2024:feature:paladin:divine-sense:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 4,
+              "channelDivinityUses": 2,
+              "auraRange": 0,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 15,
+              "spellSlots": {
+                "1": 3
+              }
+            },
+            "choices": [
+              {
+                "kind": "tagQuery",
+                "count": 1,
+                "entityTypes": [
+                  "subclass"
+                ],
+                "query": {
+                  "all": [
+                    {
+                      "field": "data.parentClass.canonicalId",
+                      "operator": "eq",
+                      "value": "dnd2024:2024:class:paladin:srd-5.2"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            "level": 4,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 5,
+              "channelDivinityUses": 2,
+              "auraRange": 0,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 20,
+              "spellSlots": {
+                "1": 3
+              }
+            }
+          },
+          {
+            "level": 5,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Extra Attack",
+                  "canonicalId": "dnd2024:2024:feature:paladin:extra-attack:srd-5.2"
+                }
+              },
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Faithful Steed",
+                  "canonicalId": "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 6,
+              "channelDivinityUses": 2,
+              "auraRange": 0,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 25,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            }
+          },
+          {
+            "level": 6,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Aura of Protection",
+                  "canonicalId": "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 6,
+              "channelDivinityUses": 2,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 30,
+              "spellSlots": {
+                "1": 4,
+                "2": 2
+              }
+            }
+          },
+          {
+            "level": 7,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 7,
+              "channelDivinityUses": 2,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 35,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 8,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 7,
+              "channelDivinityUses": 2,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 40,
+              "spellSlots": {
+                "1": 4,
+                "2": 3
+              }
+            }
+          },
+          {
+            "level": 9,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Abjure Foes",
+                  "canonicalId": "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 9,
+              "channelDivinityUses": 2,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 45,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 10,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Aura of Courage",
+                  "canonicalId": "dnd2024:2024:feature:paladin:aura-of-courage:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 9,
+              "channelDivinityUses": 2,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 50,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 2
+              }
+            }
+          },
+          {
+            "level": 11,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Radiant Strikes",
+                  "canonicalId": "dnd2024:2024:feature:paladin:radiant-strikes:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 10,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 55,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 12,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 10,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 60,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3
+              }
+            }
+          },
+          {
+            "level": 13,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 11,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 65,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 14,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Restoring Touch",
+                  "canonicalId": "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 11,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 70,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 1
+              }
+            }
+          },
+          {
+            "level": 15,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 12,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 75,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 16,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Ability Score Improvement",
+                  "canonicalId": "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 12,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 80,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 2
+              }
+            }
+          },
+          {
+            "level": 17,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 14,
+              "channelDivinityUses": 3,
+              "auraRange": 10,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 85,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 18,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Aura Expansion",
+                  "canonicalId": "dnd2024:2024:feature:paladin:aura-expansion:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 14,
+              "channelDivinityUses": 3,
+              "auraRange": 30,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 90,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 1
+              }
+            }
+          },
+          {
+            "level": 19,
+            "grants": [
+              {
+                "type": "entity",
+                "entity": {
+                  "entityType": "feature",
+                  "name": "Epic Boon",
+                  "canonicalId": "dnd2024:2024:feature:paladin:epic-boon:srd-5.2"
+                }
+              }
+            ],
+            "scaleValues": {
+              "preparedSpells": 15,
+              "channelDivinityUses": 3,
+              "auraRange": 30,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 95,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          },
+          {
+            "level": 20,
+            "grants": [],
+            "scaleValues": {
+              "preparedSpells": 15,
+              "channelDivinityUses": 3,
+              "auraRange": 30,
+              "weaponMasteriesKnown": 2,
+              "layOnHandsPool": 100,
+              "spellSlots": {
+                "1": 4,
+                "2": 3,
+                "3": 3,
+                "4": 3,
+                "5": 2
+              }
+            }
+          }
+        ],
+        "subclassLevel": 3,
+        "text": {
+          "rules": []
+        }
+      },
+      "media": {
+        "primaryRole": "artwork",
+        "assets": [
+          {
+            "id": "artwork:classesphbpaladinwebp",
+            "role": "artwork",
+            "provider": "5etools-img",
+            "sourcePath": "classes/PHB/Paladin.webp",
+            "sourceUrl": "https://raw.githubusercontent.com/LoganMagelight/5etools-img/main/classes/PHB/Paladin.webp",
+            "mimeType": "image/webp",
+            "storagePolicy": "mirrorOnDemand",
+            "metadata": {
+              "repository": "LoganMagelight/5etools-img",
+              "branch": "main",
+              "bytes": 223426
             }
           }
         ]

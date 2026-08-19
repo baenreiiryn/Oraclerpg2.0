@@ -1,5 +1,6 @@
 import type { ClassMechanicsData } from "./class-mechanics.js";
 import type { ClassRuleData } from "./class-rules.js";
+import type { ClassEquipmentBundleData } from "./class-equipment.js";
 import type { AbilityId, ChoiceRef, DamageTypeId, EntityRef, JsonValue, SizeId, SourceText } from "./primitives.js";
 import type { AdvancementStep, GrantData, SpellGrantGroupData } from "./feature.js";
 import type { ChoiceDependencyData, EquipmentBundleData, FeaturePatchData, PredicateData } from "./mechanics.js";
@@ -27,7 +28,7 @@ export interface ClassData {
   toolProficiencies?: readonly string[];
   skillChoices?: ChoiceRef;
   startingEquipment?: readonly GrantData[];
-  equipmentBundles?: readonly EquipmentBundleData[];
+  equipmentBundles?: readonly ClassEquipmentBundleData[];
   spellcasting?: SpellcastingProgression;
   mechanics?: ClassMechanicsData;
   classRules?: ClassRuleData;
