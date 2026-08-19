@@ -14,7 +14,7 @@ async function yamlDocs(dir){const out=[];for(const ent of await fs.readdir(dir,
 const foundryClassFeatures=await yamlDocs(path.join(foundryRoot,'class-features'));
 const foundrySubFeatures=await yamlDocs(path.join(foundryRoot,'subclass-features'));
 const issues=[];const classified=[];
-const fail=(m)=>issues.push(m);
+const fail=m=>issues.push(m);
 if(classDoc.name!=='Barbarian'||classDoc.type!=='class') fail('Foundry Barbarian class document not found');
 if(subclassDoc.name!=='Path of the Berserker'||subclassDoc.type!=='subclass') fail('Foundry Berserker subclass document not found');
 if(!oracle) fail('Oracle Barbarian missing');
@@ -30,7 +30,15 @@ const oracleClass=features.items.filter(x=>x.data.featureKind==='classFeature');
 const oracleSubclass=features.items.filter(x=>x.data.featureKind==='subclassFeature');
 for(const f of foundryClassFeatures){
   if(!f?.name) continue;
-  if(f.name==='Ability Score Improvement') {classified.push({name:f.name,type:'representation',reason:'Foundry models ASI primarily as class advancement; Oracle exposes a reusable class feature linked to the feat choice.'});continue;}
+  if(f.name==='Unarmed Strike'){
+    classified.push({name:f.name,type:'provider-embedding',reason:'Foundry embeds the shared Unarmed Strike item in the Barbarian class folder. Oracle already stores Unarmed Strike in the item/rules layer, so it is not duplicated as a class feature.'});
+    continue;
+  }
+  if(f.name==='Improved Brutal Strike (2)'){
+    if(!oracleClass.some(x=>x.name==='Improved Brutal Strike'&&x.canonicalId.includes(':17:'))) fail('Oracle level-17 Improved Brutal Strike missing');
+    else classified.push({name:f.name,type:'naming',reason:'Foundry suffixes the level-17 improvement with “(2)”; Oracle preserves the SRD/5etools name and distinguishes it by canonical level ID.'});
+    continue;
+  }
   const matches=oracleClass.filter(x=>x.name===f.name);
   if(!matches.length) fail(`Foundry class feature missing in Oracle: ${f.name}`);
 }
@@ -39,7 +47,7 @@ const required=['Rage','Unarmored Defense','Weapon Mastery','Danger Sense','Reck
 for(const n of required) if(!oracleClass.some(x=>x.name===n)) fail(`Required Foundry/Oracle feature missing: ${n}`);
 for(const n of ['Frenzy','Mindless Rage','Retaliation','Intimidating Presence']) if(!oracleSubclass.some(x=>x.name===n)) fail(`Required Berserker feature missing: ${n}`);
 const foundryScaleTypes=(classDoc.system?.advancement??[]).filter(x=>x.type==='ScaleValue').map(x=>x.title).filter(Boolean);
-for(const title of ['Rage Damage','Weapon Masteries Known','Brutal Strike']) if(!foundryScaleTypes.includes(title)) fail(`Foundry scale not observed: ${title}`);
-classified.push({type:'representation',reason:'Foundry models ASI/Epic Boon and some class choices as Advancement documents; Oracle keeps reusable feature entities plus AdvancementStep references.'});
+for(const title of ['Rage Damage','Weapon Masteries Known','Brutal Strike','Rages']) if(!foundryScaleTypes.includes(title)) fail(`Foundry scale not observed: ${title}`);
+classified.push({type:'representation',reason:'Foundry stores some choices and improvements as Advancement documents; Oracle keeps reusable feature entities plus explicit AdvancementStep/scaleValues.'});
 const report={status:issues.length?'PARTIAL':'SUPPORTED',foundry:{class:classDoc.name,subclass:subclassDoc.name,classFeatureDocuments:foundryClassFeatures.length,subclassFeatureDocuments:foundrySubFeatures.length,scaleValues:foundryScaleTypes},oracle:{classFeatureDefinitions:oracleClass.length,subclassFeatureDefinitions:oracleSubclass.length},classifiedDifferences:classified,issues};
 await fs.writeFile(`${root}/barbarian-foundry-comparison.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);
