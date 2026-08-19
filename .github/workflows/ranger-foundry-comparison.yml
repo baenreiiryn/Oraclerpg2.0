@@ -13,6 +13,7 @@ permissions:
 
 jobs:
   compare:
+    if: github.event_name == 'workflow_dispatch' || github.head_ref == 'work/ranger-foundry-comparison'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
