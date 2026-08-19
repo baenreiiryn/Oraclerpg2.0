@@ -77,6 +77,7 @@ export interface SpeciesData {
   resistances?: readonly DamageTypeId[];
   resistanceChoice?: SpeciesResistanceChoiceData;
   features?: readonly EntityRef[];
+  featureParameters?: readonly SpeciesFeatureParameterData[];
   spellGrants?: readonly SpellGrantGroupData[];
   variants?: readonly SpeciesVariantData[];
   grants?: readonly GrantData[];
