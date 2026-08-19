@@ -1,0 +1,69 @@
+name: SRD 5.2 Wizard
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'scripts/import-srd52-wizard.mjs'
+      - 'scripts/audit-srd52-wizard.mjs'
+      - 'scripts/compare-5etools-srd52-wizard.mjs'
+      - 'scripts/compare-foundry-srd52-wizard.mjs'
+      - '.github/workflows/srd52-wizard.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  wizard:
+    if: github.event_name == 'workflow_dispatch' || (github.event_name == 'pull_request' && github.head_ref == 'work/srd52-wizard')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref || github.ref_name }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Checkout Foundry D&D 2024 architecture reference
+        run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
+      - name: Import Wizard from 5etools SRD 5.2
+        run: node scripts/import-srd52-wizard.mjs
+      - name: Audit Wizard and Evoker structure
+        run: node scripts/audit-srd52-wizard.mjs
+      - name: Compare imported Wizard with 5etools source
+        run: node scripts/compare-5etools-srd52-wizard.mjs
+      - name: Compare Oracle architecture with Foundry Wizard
+        run: node scripts/compare-foundry-srd52-wizard.mjs ../foundry-dnd5e/packs/_source/classes24
+      - name: Verify cumulative class set
+        run: |
+          node - <<'NODE'
+          const fs=require('fs'),root='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
+          for(const f of ['wizard-coverage-audit.json','wizard-5etools-comparison.json','wizard-foundry-comparison.json']){const a=read(f);if(a.status!=='SUPPORTED'||a.issues?.length)throw new Error(`${f}: ${JSON.stringify(a)}`)}
+          const cls=read('classes.json'),subs=read('subclasses.json');
+          for(const n of ['Rogue','Sorcerer','Warlock','Wizard'])if(!cls.items.some(x=>x.name===n))throw new Error(`Cumulative class missing: ${n}`);
+          if(!subs.items.some(x=>x.name==='Fiend Patron'&&x.data?.parentClass?.name==='Warlock'))throw new Error('Fiend Patron missing');
+          if(!subs.items.some(x=>x.name==='Evoker'&&x.data?.parentClass?.name==='Wizard'))throw new Error('Evoker missing');
+          console.log(JSON.stringify({classes:cls.count,subclasses:subs.count,status:'SUPPORTED'},null,2));
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: srd52-wizard
+          path: |
+            packages/content/data/srd-5.2/classes.json
+            packages/content/data/srd-5.2/subclasses.json
+            packages/content/data/srd-5.2/class-features.json
+            packages/content/data/srd-5.2/wizard-import-report.json
+            packages/content/data/srd-5.2/wizard-coverage-audit.json
+            packages/content/data/srd-5.2/wizard-5etools-comparison.json
+            packages/content/data/srd-5.2/wizard-foundry-comparison.json
+      - name: Persist cumulative Wizard compendium on Wizard branch
+        if: github.event_name == 'pull_request' && github.head_ref == 'work/srd52-wizard'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add packages/content/data/srd-5.2/classes.json packages/content/data/srd-5.2/subclasses.json packages/content/data/srd-5.2/class-features.json packages/content/data/srd-5.2/wizard-*.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Persist cumulative SRD 5.2 Wizard compendium [skip ci]'
+            git push origin HEAD:${{ github.head_ref }}
+          fi
