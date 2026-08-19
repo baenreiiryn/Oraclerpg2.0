@@ -1,0 +1,28 @@
+name: Probe SRD 5.2 Monster Features
+
+on:
+  pull_request:
+    paths:
+      - "scripts/probe-srd52-monster-features.mjs"
+      - "packages/schema/src/monster-feature.ts"
+      - "packages/schema/src/monster.ts"
+      - "packages/schema/src/feature.ts"
+      - ".github/workflows/probe-srd52-monster-features.yml"
+  workflow_dispatch:
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Probe SRD 5.2 monster features
+        run: node scripts/probe-srd52-monster-features.mjs
+      - name: Upload monster feature probe
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: srd52-monster-feature-probe
+          path: packages/content/data/srd-5.2/monster-feature-probe
