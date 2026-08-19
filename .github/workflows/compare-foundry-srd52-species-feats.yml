@@ -11,10 +11,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - name: Generate Oracle species and feats
+      - name: Generate and enrich Oracle species and feats
         run: |
           node scripts/sync-srd52-species-feats.mjs
           node scripts/normalize-srd52-species-feats.mjs
+          node scripts/enrich-srd52-species-feats.mjs
+          node scripts/finalize-srd52-species-feats.mjs
+          node scripts/postprocess-srd52-species-feats.mjs
       - name: Clone Foundry D&D 6.0.x
         run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git /tmp/dnd5e
       - name: Install YAML parser
