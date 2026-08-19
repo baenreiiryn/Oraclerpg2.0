@@ -1,0 +1,43 @@
+{
+  "status": "SUPPORTED",
+  "issues": [],
+  "foundry": {
+    "classFeatureDocs": 16,
+    "subclassFeatureDocs": 5,
+    "scaleValues": [
+      "Favored Enemy",
+      "Hunter's Mark Damage",
+      "Max Prepared Spells"
+    ],
+    "hunterLevels": [
+      3,
+      7,
+      11,
+      15
+    ]
+  },
+  "oracle": {
+    "classFeatures": 16,
+    "subclassFeatures": 5,
+    "hunterLevels": [
+      3,
+      7,
+      11,
+      15
+    ]
+  },
+  "classifiedDifferences": [
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry stores Druidic Warrior as a separate auxiliary feature; Oracle models it as the alternative option inside Fighting Style."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry represents Deft Explorer and Expertise choices additionally through Trait advancements; Oracle stores the same choices inside structured proficiency grants."
+    },
+    {
+      "type": "provider-implementation",
+      "detail": "Foundry exposes Hunter's Mark Damage as a ScaleValue; Oracle keeps the baseline on Hunter's Mark/Favored Enemy and applies the d10 capstone through Foe Slayer."
+    }
+  ]
+}
