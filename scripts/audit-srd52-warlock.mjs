@@ -1,0 +1,18 @@
+import fs from 'node:fs/promises';
+const ROOT='packages/content/data/srd-5.2';
+const read=async f=>JSON.parse(await fs.readFile(`${ROOT}/${f}`,'utf8'));
+const [classes,subs,features]=await Promise.all(['classes.json','subclasses.json','class-features.json'].map(read));
+const issues=[],req=(ok,m)=>{if(!ok)issues.push(m)};
+const c=classes.items.find(x=>x.name==='Warlock'),s=subs.items.find(x=>x.name==='Fiend Patron'&&x.data?.parentClass?.name==='Warlock');
+const cf=features.items.filter(x=>x.data?.category==='warlock'),inv=features.items.filter(x=>x.data?.category==='warlock-invocation'),sf=features.items.filter(x=>x.data?.category==='warlock-fiend');
+req(!!c&&!!s,'Warlock/Fiend Patron missing');req(c?.data?.advancement?.length===20,'Warlock progression is not 20 levels');req(inv.length>0,'No canonical Eldritch Invocations');
+const pact=cf.find(x=>x.name==='Pact Magic');req(pact?.data?.classMechanics?.spellSlotPools?.some(x=>x.id==='warlock-pact-slots'&&x.kind==='pact'),'Pact Magic pact-slot pool missing');
+const ei=cf.find(x=>x.name==='Eldritch Invocations');req(ei?.data?.classRules?.entityCollections?.some(x=>x.id==='warlock-eldritch-invocations'),'Eldritch Invocation collection missing');
+const cunning=cf.find(x=>x.name==='Magical Cunning');req(cunning?.data?.classRules?.resourceMutations?.some(x=>x.resourceId==='warlock-pact-slots'),'Magical Cunning recovery missing');
+const arcanum=cf.find(x=>x.name==='Mystic Arcanum');for(const [l,sl] of [[11,6],[13,7],[15,8],[17,9]])req(arcanum?.data?.classRules?.mysticArcanum?.[l]?.spellLevel===sl,`Mystic Arcanum L${l}/${sl} missing`);
+const master=cf.find(x=>x.name==='Eldritch Master');req(master?.data?.properties?.includes('magical-cunning:restore-all-pact-slots'),'Eldritch Master upgrade missing');
+req(c?.data?.equipmentBundles?.find(x=>x.id==='A')?.grants?.some(x=>x.currency?.amount===15),'Warlock package A 15 GP missing');req(c?.data?.equipmentBundles?.find(x=>x.id==='B')?.grants?.some(x=>x.currency?.amount===100),'Warlock package B 100 GP missing');
+req(JSON.stringify(s?.data?.advancement?.map(x=>x.level))===JSON.stringify([3,6,10,14]),'Fiend Patron progression differs from 3/6/10/14');
+req(sf.some(x=>x.name==='Fiend Spells'),'Fiend Spells missing');
+const report={status:issues.length?'UNSUPPORTED':'SUPPORTED',issues,classCount:classes.count,subclassCount:subs.count,classFeatureCount:features.count,warlockFeatures:cf.length,eldritchInvocations:inv.length,fiendFeatures:sf.length,progression:{pactSlots:[1,2,11,17,20].map(l=>[l,c?.data?.advancement?.[l-1]?.scaleValues?.pactSlots]),slotLevel:[1,3,5,9,20].map(l=>[l,c?.data?.advancement?.[l-1]?.scaleValues?.pactSlotLevel]),invocations:[1,2,5,9,18].map(l=>[l,c?.data?.advancement?.[l-1]?.scaleValues?.invocationsKnown])}};
+await fs.writeFile(`${ROOT}/warlock-coverage-audit.json`,JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);
