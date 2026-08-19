@@ -17,6 +17,7 @@ const COLLECTION_FILES = [
   'feats.json',
   'classes.json',
   'subclasses.json',
+  'class-features.json',
 ].filter(Boolean);
 
 const CATEGORY_BY_ENTITY = {
