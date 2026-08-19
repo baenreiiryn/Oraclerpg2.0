@@ -101,6 +101,14 @@ export interface UsesSpec {
   usageLimit?: UsageLimitData;
 }
 
+/** D&D-style recharge roll, such as Recharge 5–6 at the start of the creature's turn. */
+export interface RechargeSpec {
+  timing: "turnStart" | "turnEnd" | "roundStart" | "manual";
+  roll: FormulaValue;
+  success: { min: number; max?: number };
+  restores?: number | "all";
+}
+
 export interface ResourceCost {
   resource: "spellSlot" | "hitDie" | "itemCharge" | "classResource" | "custom";
   amount: number | FormulaValue | RuntimeValueRef;
@@ -165,6 +173,7 @@ export interface ActivityData {
   conditions?: readonly ConditionEffect[];
   duration?: DurationSpec;
   uses?: UsesSpec;
+  recharge?: RechargeSpec;
   costs?: readonly ResourceCost[];
   outcomeCost?: OutcomeDependentCostData;
   scaling?: readonly ScalingRule[];
