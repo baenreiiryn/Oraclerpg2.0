@@ -8,15 +8,12 @@ on:
       - 'scripts/audit-srd52-rogue.mjs'
       - 'scripts/compare-5etools-srd52-rogue.mjs'
       - 'scripts/compare-foundry-srd52-rogue.mjs'
-      - 'packages/content/data/srd-5.2/classes.json'
-      - 'packages/content/data/srd-5.2/subclasses.json'
-      - 'packages/content/data/srd-5.2/class-features.json'
       - '.github/workflows/srd52-rogue.yml'
   workflow_dispatch:
 permissions: { contents: write }
 jobs:
   rogue:
-    if: github.actor != 'github-actions[bot]'
+    if: github.event_name == 'workflow_dispatch' || (github.actor != 'github-actions[bot]' && github.head_ref == 'work/srd52-rogue')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -29,20 +26,20 @@ jobs:
         run: node scripts/finalize-srd52-rogue.mjs
       - name: Audit Rogue and Thief
         run: node scripts/audit-srd52-rogue.mjs
-      - name: Compare 5etools to Oracle
+      - name: Compare 5etools to Oracle Rogue only
         run: node scripts/compare-5etools-srd52-rogue.mjs
       - name: Install YAML dependency
         run: npm install yaml@2 --no-save --ignore-scripts
       - name: Checkout Foundry reference
         run: git clone --depth 1 --branch 6.0.x https://github.com/foundryvtt/dnd5e.git ../foundry-dnd5e
-      - name: Compare Foundry architecture to Oracle
+      - name: Compare Foundry Rogue architecture to Oracle Rogue only
         run: node scripts/compare-foundry-srd52-rogue.mjs ../foundry-dnd5e/packs/_source/classes24/rogue
-      - name: Resolve class media
+      - name: Resolve Rogue media
         env: { GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}' }
         run: |
           node scripts/sync-srd52-media.mjs
           node scripts/finalize-srd52-media.mjs
-      - name: Verify Rogue outputs
+      - name: Verify Rogue-only comparison outputs
         run: |
           node - <<'NODE'
           const fs=require('fs'),r='packages/content/data/srd-5.2',read=f=>JSON.parse(fs.readFileSync(`${r}/${f}`));
