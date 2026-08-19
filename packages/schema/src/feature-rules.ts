@@ -5,7 +5,7 @@ import type { AbilityId, ConditionId, DamageTypeId, DistanceValue } from "./prim
 export interface RollRuleData {
   id: string;
   target: "d20Test" | "attackRoll" | "damageRoll" | "savingThrow" | "abilityCheck" | "initiative";
-  operation: "reroll" | "rollTwiceChoose" | "replaceResult" | "add" | "subtract" | "minimumDieResult" | "automaticSuccess";
+  operation: "reroll" | "rollTwiceChoose" | "replaceResult" | "add" | "subtract" | "minimumDieResult" | "automaticSuccess" | "advantage" | "disadvantage";
   trigger?: TriggerData;
   predicate?: PredicateData;
   dieFaces?: readonly number[];
@@ -65,6 +65,7 @@ export interface MovementInteractionRuleData {
   distance?: DistanceValue | RuntimeValueRef;
   predicate?: PredicateData;
   trigger?: TriggerData;
+  afterActions?: readonly ("attack" | "magic")[];
   usage?: UsageLimitData;
 }
 
@@ -92,4 +93,5 @@ export interface FeatureActionRuleData {
   id: string;
   activity: ActivityData;
   replacesAttack?: boolean;
+  recoveryTriggers?: readonly TriggerData[];
 }
