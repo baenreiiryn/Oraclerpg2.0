@@ -56,7 +56,7 @@ export function isPresentationPath(path) {
     return segments.includes("text") || segments.includes("entries") || segments.includes("description") || segments.includes("summary");
   }
 
-  return new Set(["name", "summary", "description", "label", "title"]).has(leaf);
+  return new Set(["name", "summary", "description", "label", "title", "caption"]).has(leaf);
 }
 
 function setPath(root, path, value) {
