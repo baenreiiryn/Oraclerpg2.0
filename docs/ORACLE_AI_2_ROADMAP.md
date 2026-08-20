@@ -21,143 +21,65 @@ The AI must never receive a direct state-mutation capability. Mechanical truth b
 
 Implemented provider-agnostic contracts for turn intent, authoritative state snapshots, context packages, AI proposals, validation, execution, persistence, and orchestration.
 
-Validated guarantees:
-
-- AI package has no provider dependency.
-- Runtime owns state loading and mutation.
-- Every AI action proposal passes validation before execution.
-- Rejected proposals cannot reach the executor.
-- Context state revision must match the authoritative state revision.
-- Turn persistence records both proposed and resolved actions.
-
 ## AI-2 — Context Engine 2.0
 
 **Status: COMPLETE**
 
-Implemented a provider- and prompt-independent Context Engine with a typed `OracleContextPackage` v2.
-
-Context sections:
-
-- campaign;
-- scene;
-- actors;
-- entities;
-- relationships;
-- perspective-aware knowledge;
-- mechanical context.
-
-Validated guarantees:
-
-- context is aligned with authoritative campaign, actor, and state revision;
-- non-present actors are excluded by default;
-- unrelated entities are excluded by default;
-- `PUBLIC` and `DISCOVERED` knowledge may enter player context;
-- `ACTOR_ONLY` knowledge is restricted to listed actors;
-- `GM_ONLY` and `HIDDEN` knowledge never enter a normal player turn;
-- hidden/GM-only relationships are excluded from player context;
-- legacy v1 context remains accepted during migration, while new engine output is v2.
+Implemented a provider- and prompt-independent Context Engine with typed campaign, scene, actor, entity, relationship, knowledge, and mechanical sections, including perspective-aware isolation.
 
 ## AI-3 — Structured AI Actions
 
 **Status: COMPLETE**
 
-Replaced generic action payloads with versioned discriminated action contracts and a per-turn capability manifest.
-
-Structured operations currently defined:
-
-- `rules.request-evaluation`;
-- `dice.request-roll`;
-- `state.request-query`;
-- `world.suggest-change`.
-
-Validated guarantees:
-
-- executable AI proposals carry `schemaVersion: 1`;
-- each operation has a typed payload instead of `Record<string, unknown>`;
-- narrative tasks are separated from executable structured actions;
-- the Runtime builds a capability manifest for every turn;
-- capabilities may restrict operation, actor, target, and exposed references;
-- proposals outside the manifest never reach action validation or execution;
-- the capability manifest is persisted with the turn for auditability;
-- mechanical validation remains a separate gate after capability validation.
+Implemented versioned discriminated action contracts and per-turn capability manifests. Mechanical validation remains a separate gate after capability validation.
 
 ## AI-4 — Rules / Compendium Bridge
 
 **Status: COMPLETE**
 
-Implemented a deterministic bridge from AI-3 structured rule requests into OracleRPG Core, Schema, and canonical compendium records.
-
-Implemented components:
-
-- `OracleEntityCompendiumIndex` for canonical-ID lookup over Oracle entities;
-- `RulesCompendiumBridge` for deterministic rule evaluation;
-- runtime-authoritative `ActorRulesState` projection contract;
-- rules-aware validator/executor adapters for the Turn Orchestrator;
-- safe compendium state queries that expose metadata/activity summaries rather than arbitrary raw entity data.
-
-Validated guarantees:
-
-- feature, spell, and item references are resolved by canonical ID;
-- the referenced entity must be usable/castable/available according to authoritative runtime state;
-- activity IDs must exist on the referenced canonical record;
-- targets must be present in the authoritative target set;
-- numeric Activity resource costs are checked against authoritative resource pools;
-- exhausted resources return `ILLEGAL` rather than relying on model judgment;
-- unresolved runtime/formula costs and manual-adjudication mechanics return `MANUAL` rather than guessing;
-- short/long rest requests can be gated by authoritative runtime state;
-- generic runtime actions must be present in `availableActionRefs`;
-- real SRD 5.2 class-feature, spell, and item JSON records are indexed successfully in integration tests;
-- AI still has no direct state mutation capability.
+Implemented deterministic canonical-ID and Activity resolution against OracleRPG Core/Schema and real SRD 5.2 compendium records. Unsupported/manual mechanics return `MANUAL` instead of being guessed by AI.
 
 ## AI-5 — Scene + Entity + Knowledge State
 
 **Status: COMPLETE**
 
-Implemented explicit runtime-owned, revisioned campaign world state for scenes, actors, entities, relationships, objective facts, and knowledge grants.
-
-Implemented components:
-
-- `CampaignWorldState` with an authoritative world revision;
-- `WorldStateStorePort` persistence boundary;
-- `WorldStateService` with optimistic revision checks and integrity validation;
-- explicit objective `WorldFactState` separated from `KnowledgeGrantState`;
-- relationship state with visibility rules;
-- `WorldStateContextSource` adapter feeding persistent world state into Context Engine 2.0;
-- context projection now includes visible relationships while preserving player perspective.
-
-Validated guarantees:
-
-- objective secrets may exist in world truth without appearing in player context;
-- actor-specific knowledge grants do not leak to other actors;
-- knowledge becomes visible only after an authoritative Runtime mutation;
-- stale world revisions cannot overwrite newer state;
-- invalid fact/entity/actor references are rejected before persistence;
-- GM-only/hidden relationships remain outside player context;
-- the AI still has no direct access to `WorldStateService` or `WorldStateStorePort` mutation methods.
+Implemented Runtime-owned revisioned world state for scenes, actors, entities, relationships, objective facts, and perspective-specific knowledge grants.
 
 ### Release checkpoint A
 
-**Status: PASSED**
+**Status: PASSED + DEPLOYED**
 
-Validated on the cumulative AI-1…AI-5 branch before merge:
-
-- full workspace TypeScript typecheck;
-- full workspace tests;
-- AI authority/dependency audit;
-- Context Engine knowledge and relationship isolation tests;
-- structured capability-gate tests;
-- Rules/Compendium integration tests against real SRD 5.2 feature/spell/item data;
-- world-state revision and integrity tests;
-- Class Regression across all 12 SRD 5.2 classes/subclasses;
-- persisted `compendium-final-audit.json` remains `SUPPORTED` with zero issues.
-
-This checkpoint is eligible for merge to `main` and the first AI architecture Vercel deployment.
+AI-1…AI-5 passed full typecheck, workspace tests, authority/dependency audit, compendium integration, world-state isolation/revision tests, and 12-class regression before merge to `main`. Production Vercel deployment succeeded on merge commit `ad1482e9b7ad52a1e4153267753d6d0af0ac26f7`.
 
 ## AI-6 — Memory 2.0 + Session State
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Add episodic memory, semantic world facts, character knowledge, relationship changes, open threads, promises, discoveries, and compact session summaries.
+Implemented Runtime-owned derived memory and session state without granting memory any authority over mechanical or world truth.
+
+Implemented components:
+
+- `CampaignMemoryState` with an independent optimistic memory revision;
+- `OracleMemoryRecord` kinds for episodic, semantic, relationship, discovery, promise, thread, and summary memory;
+- `MemoryCandidate` ingestion contract for future extraction pipelines;
+- `OracleMemoryService` with append, semantic upsert/consolidation, resolve, supersede, and prune operations;
+- semantic consolidation by stable `semanticKey` while episodic memory remains append-oriented;
+- `PUBLIC`, `ACTOR_ONLY`, and `GM_ONLY` memory visibility with actor-specific projection;
+- source references linking derived memory back to turns, scenes, world facts, relationships, and entities;
+- `OracleSessionState` with its own optimistic revision;
+- `OracleSessionStateService` tracking turns, open threads, compact summary blocks, and session closure.
+
+Validated guarantees:
+
+- Memory uses a revision separate from `CampaignWorldState` and cannot overwrite authoritative world truth;
+- writing or consolidating memory has no mutation path into World State;
+- actor-only memories do not leak to other actors;
+- GM-only memories never appear in normal player projection;
+- repeated semantic observations consolidate by `semanticKey` rather than creating conflicting duplicates;
+- episodic memories remain independently addressable;
+- stale memory/session revisions cannot overwrite newer state;
+- closed sessions reject new turn recording;
+- AI-1…AI-5 tests and class/compendium regression remain green.
 
 ## AI-7 — Retrieval / Hybrid RAG + Context Budget
 
