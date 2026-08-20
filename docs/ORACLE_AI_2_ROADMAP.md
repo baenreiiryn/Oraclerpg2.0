@@ -79,13 +79,14 @@ Implemented components:
 Validated guarantees:
 
 - `GM_ONLY` and `HIDDEN` candidates are removed before ranking and budgeting;
-- `ACTOR_ONLY` candidates are retrievable only for granted actors;
-- world facts with actor-specific knowledge grants retain that isolation during retrieval;
+- `ACTOR_ONLY` memories and world facts are retrievable only for the granted actor;
 - the final selected context never exceeds the configured token budget;
+- invalid negative/non-integer budgets are rejected;
 - high-ranked oversized candidates are skipped rather than forcing budget overflow;
 - semantic scores may be supplied by future embedding adapters but no embedding/model provider is required by the retrieval engine;
 - entity/reference relevance combines with lexical/semantic relevance rather than replacing it;
 - source allowlists can constrain retrieval to a specific context class;
+- duplicate retrieval IDs from multiple indexes are included only once;
 - AI-1…AI-6 architecture remains provider-agnostic and Runtime-authoritative.
 
 ## AI-8 — Oracle AI Gateway
