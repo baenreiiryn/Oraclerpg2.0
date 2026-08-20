@@ -11,6 +11,8 @@ export type CreatorFieldKind =
   | "referenceList"
   | "object"
   | "collection"
+  | "subform"
+  | "subformCollection"
   | "richEntries"
   | "json";
 
@@ -33,6 +35,7 @@ export interface CreatorFieldDefinition {
   step?: number;
   referenceTypes?: readonly CanonicalContentType[];
   itemSchema?: readonly CreatorFieldDefinition[];
+  subformId?: CreatorSubformId;
   condition?: CreatorFieldCondition;
   advanced?: boolean;
 }
@@ -50,6 +53,50 @@ export interface CreatorFormDefinition {
   label: string;
   description: string;
   sections: readonly CreatorSectionDefinition[];
+}
+
+export type CreatorSubformId =
+  | "entityRef"
+  | "choice"
+  | "activity"
+  | "activityActivation"
+  | "activityRange"
+  | "activityTarget"
+  | "attack"
+  | "save"
+  | "check"
+  | "damagePart"
+  | "healingPart"
+  | "duration"
+  | "uses"
+  | "resourceCost"
+  | "scaling"
+  | "grant"
+  | "advancement"
+  | "predicate"
+  | "trigger"
+  | "effect"
+  | "modifier"
+  | "stateVariable"
+  | "spellCastingTime"
+  | "spellRange"
+  | "spellDuration"
+  | "spellComponents"
+  | "weight"
+  | "price"
+  | "itemStack"
+  | "containerCompartment"
+  | "monsterArmorClass"
+  | "monsterMovement"
+  | "monsterSense"
+  | "monsterProficiency"
+  | "vehicleStation";
+
+export interface CreatorSubformDefinition {
+  id: CreatorSubformId;
+  label: string;
+  description?: string;
+  fields: readonly CreatorFieldDefinition[];
 }
 
 export interface HomebrewCreatorDraft {
