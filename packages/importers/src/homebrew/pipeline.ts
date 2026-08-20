@@ -1,7 +1,8 @@
 import type { ImportDiagnostic } from "../index.js";
 import type {
-  HomebrewCandidate,
+  CanonicalHomebrewCandidate,
   HomebrewCandidateValidatorPort,
+  HomebrewCanonicalizerPort,
   HomebrewIdPort,
   HomebrewImportBatch,
   HomebrewImportInput,
@@ -11,6 +12,7 @@ import type {
 export class HomebrewImportPipeline {
   constructor(
     private readonly adapters: readonly HomebrewSourceAdapter[],
+    private readonly canonicalizer: HomebrewCanonicalizerPort,
     private readonly validator: HomebrewCandidateValidatorPort,
     private readonly ids: HomebrewIdPort,
   ) {}
@@ -28,13 +30,15 @@ export class HomebrewImportPipeline {
     }
 
     const parsed = await adapter.parse(input);
-    const candidates: HomebrewCandidate[] = [];
+    const candidates: CanonicalHomebrewCandidate[] = [];
     const diagnostics: ImportDiagnostic[] = [];
 
     for (const candidate of parsed) {
-      const validation = await this.validator.validate(candidate);
-      candidates.push({ ...candidate, diagnostics: [...candidate.diagnostics, ...validation] });
-      diagnostics.push(...candidate.diagnostics, ...validation);
+      const canonical = await this.canonicalizer.canonicalize(candidate, input);
+      const validation = await this.validator.validate(canonical);
+      const merged = { ...canonical, diagnostics: [...canonical.diagnostics, ...validation] };
+      candidates.push(merged);
+      diagnostics.push(...merged.diagnostics);
     }
 
     const hasError = diagnostics.some((item) => item.severity === "error");
@@ -48,6 +52,13 @@ export class HomebrewImportPipeline {
       candidates,
       diagnostics,
     };
+  }
+}
+
+/** Useful for source formats already carrying Oracle canonical data (not Foundry/Markdown by default). */
+export class IdentityHomebrewCanonicalizer implements HomebrewCanonicalizerPort {
+  async canonicalize(candidate: Parameters<HomebrewCanonicalizerPort["canonicalize"]>[0], input: HomebrewImportInput): Promise<CanonicalHomebrewCandidate> {
+    return { ...candidate, canonicalized: true, ...(input.systemId ? { systemId: input.systemId } : {}) };
   }
 }
 
