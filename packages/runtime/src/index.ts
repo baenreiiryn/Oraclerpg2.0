@@ -8,3 +8,6 @@ export * from "./state/context-source.js";
 export * from "./memory/types.js";
 export * from "./memory/memory-service.js";
 export * from "./memory/session-service.js";
+export * from "./retrieval/types.js";
+export * from "./retrieval/hybrid-retrieval.js";
+export * from "./retrieval/sources.js";
