@@ -7,7 +7,7 @@ import {
   type CapabilityBuilderPort,
   type ContextBuilderPort,
   type MechanicalStateSnapshot,
-  type OracleAiGatewayPort,
+  type OracleAiOperationRouterPort,
   type OracleContextPackage,
   type ResolvedAction,
   type StateLoaderPort,
@@ -62,7 +62,7 @@ export interface OracleGmRuntimeDependencies {
   contextBuilder: ContextBuilderPort;
   capabilityBuilder: CapabilityBuilderPort;
   retrieval: GmRetrievalPort;
-  gateway: OracleAiGatewayPort;
+  operationRouter: OracleAiOperationRouterPort;
   proposalDecoder: AiProposalDecoderPort;
   actionValidator: ActionValidatorPort;
   actionExecutor: ActionExecutorPort;
@@ -90,10 +90,6 @@ export interface CompletedGmTurn {
   extractedMemoryCount: number;
 }
 
-/**
- * AI-9 application pipeline. It composes the already-authoritative AI-1...AI-8
- * primitives but does not grant the model a new mutation path.
- */
 export class OracleGmRuntime {
   private readonly retrievalMaxTokens: number;
   private readonly proposalMaxOutputTokens: number;
@@ -125,42 +121,23 @@ export class OracleGmRuntime {
 
     const capabilityManifest = await this.deps.capabilityBuilder.buildCapabilities({ intent, state, context });
 
-    const proposalResponse = await this.deps.gateway.generate({
+    const proposalResponse = await this.deps.operationRouter.run({
       requestId: `${intent.clientRequestId}:proposal`,
-      alias: "oracle-reasoning",
       operation: "gm.interpret-turn",
-      input: JSON.stringify({
-        message: intent.message,
-        context,
-        retrievedContext: retrieval.items,
-        capabilityManifest,
-      }),
-      outputMode: "JSON",
-      requiredCapabilities: ["STRUCTURED", "REASONING"],
+      input: JSON.stringify({ message: intent.message, context, retrievedContext: retrieval.items, capabilityManifest }),
       maxOutputTokens: this.proposalMaxOutputTokens,
       campaignId: intent.campaignId,
       actorId: intent.actorId,
       tags: ["runtime:gm-turn", "stage:proposal"],
     });
 
-    const proposal = this.deps.proposalDecoder.decode(
-      proposalResponse.structuredOutput ?? proposalResponse.output,
-    );
+    const proposal = this.deps.proposalDecoder.decode(proposalResponse.structuredOutput ?? proposalResponse.output);
     const resolvedActions = await this.resolveActions(proposal.actions, capabilityManifest, state);
 
-    const narrationResponse = await this.deps.gateway.generate({
+    const narrationResponse = await this.deps.operationRouter.run({
       requestId: `${intent.clientRequestId}:narration`,
-      alias: "oracle-story",
       operation: "gm.narrate",
-      input: JSON.stringify({
-        playerMessage: intent.message,
-        narrativeDraft: proposal.narrativeDraft,
-        context,
-        retrievedContext: retrieval.items,
-        resolvedActions,
-      }),
-      outputMode: "TEXT",
-      requiredCapabilities: ["TEXT"],
+      input: JSON.stringify({ playerMessage: intent.message, narrativeDraft: proposal.narrativeDraft, context, retrievedContext: retrieval.items, resolvedActions }),
       maxOutputTokens: this.narrationMaxOutputTokens,
       campaignId: intent.campaignId,
       actorId: intent.actorId,
@@ -169,78 +146,29 @@ export class OracleGmRuntime {
 
     const finalNarrative = narrationResponse.output;
     const turnId = this.deps.ids.nextTurnId();
-
-    const record: TurnRecord = {
-      turnId,
-      intent,
-      stateRevision: state.revision,
-      narrative: finalNarrative,
-      capabilityManifest,
-      proposedActions: proposal.actions,
-      resolvedActions,
-    };
+    const record: TurnRecord = { turnId, intent, stateRevision: state.revision, narrative: finalNarrative, capabilityManifest, proposedActions: proposal.actions, resolvedActions };
     await this.deps.persistence.persistTurn(record);
 
-    const memories = await this.deps.memoryExtractor.extract({
-      turnId,
-      intent,
-      context,
-      retrieval,
-      finalNarrative,
-      proposedActions: proposal.actions,
-      resolvedActions,
-    });
-    await this.deps.memoryWriter.ingest({
-      campaignId: intent.campaignId,
-      ...(intent.sessionId ? { sessionId: intent.sessionId } : {}),
-      worldRevision: state.revision,
-      candidates: memories,
-    });
+    const memories = await this.deps.memoryExtractor.extract({ turnId, intent, context, retrieval, finalNarrative, proposedActions: proposal.actions, resolvedActions });
+    await this.deps.memoryWriter.ingest({ campaignId: intent.campaignId, ...(intent.sessionId ? { sessionId: intent.sessionId } : {}), worldRevision: state.revision, candidates: memories });
 
     if (intent.sessionId) {
-      await this.deps.sessionWriter.recordTurn({
-        campaignId: intent.campaignId,
-        sessionId: intent.sessionId,
-        turnId,
-      });
+      await this.deps.sessionWriter.recordTurn({ campaignId: intent.campaignId, sessionId: intent.sessionId, turnId });
     }
 
-    return {
-      turnId,
-      narrative: finalNarrative,
-      stateRevision: state.revision,
-      retrieval,
-      capabilityManifest,
-      proposedActions: proposal.actions,
-      resolvedActions,
-      extractedMemoryCount: memories.length,
-    };
+    return { turnId, narrative: finalNarrative, stateRevision: state.revision, retrieval, capabilityManifest, proposedActions: proposal.actions, resolvedActions, extractedMemoryCount: memories.length };
   }
 
-  private async resolveActions(
-    actions: readonly StructuredAiActionProposal[],
-    manifest: AiCapabilityManifest,
-    state: MechanicalStateSnapshot,
-  ): Promise<ResolvedAction[]> {
+  private async resolveActions(actions: readonly StructuredAiActionProposal[], manifest: AiCapabilityManifest, state: MechanicalStateSnapshot): Promise<ResolvedAction[]> {
     const resolved: ResolvedAction[] = [];
     for (const action of actions) {
       if (!capabilityAllowsProposal(manifest, action)) {
-        resolved.push({
-          proposalId: action.proposalId,
-          operation: action.operation,
-          status: "rejected",
-          reason: "capability_not_exposed",
-        });
+        resolved.push({ proposalId: action.proposalId, operation: action.operation, status: "rejected", reason: "capability_not_exposed" });
         continue;
       }
       const decision = await this.deps.actionValidator.validate({ proposal: action, state });
       if (!decision.accepted) {
-        resolved.push({
-          proposalId: action.proposalId,
-          operation: action.operation,
-          status: "rejected",
-          ...(decision.reason ? { reason: decision.reason } : {}),
-        });
+        resolved.push({ proposalId: action.proposalId, operation: action.operation, status: "rejected", ...(decision.reason ? { reason: decision.reason } : {}) });
         continue;
       }
       resolved.push(await this.deps.actionExecutor.execute({ proposal: action, state }));
@@ -256,18 +184,10 @@ export class OracleGmRuntime {
   }
 
   private assertState(intent: TurnIntent, state: MechanicalStateSnapshot): void {
-    if (state.campaignId !== intent.campaignId || state.actorId !== intent.actorId) {
-      throw new Error("Loaded state does not match the authoritative turn intent");
-    }
+    if (state.campaignId !== intent.campaignId || state.actorId !== intent.actorId) throw new Error("Loaded state does not match the authoritative turn intent");
   }
 
   private assertContext(state: MechanicalStateSnapshot, context: OracleContextPackage): void {
-    if (
-      context.campaignId !== state.campaignId ||
-      context.actorId !== state.actorId ||
-      context.stateRevision !== state.revision
-    ) {
-      throw new Error("Context package is not aligned with authoritative state");
-    }
+    if (context.campaignId !== state.campaignId || context.actorId !== state.actorId || context.stateRevision !== state.revision) throw new Error("Context package is not aligned with authoritative state");
   }
 }
