@@ -9,6 +9,10 @@
   "scripts": {
     "typecheck": "tsc --noEmit -p tsconfig.json",
     "build": "tsc -p tsconfig.json",
-    "test": "node --test"
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.3",
+    "tsx": "^4.20.5"
   }
 }
