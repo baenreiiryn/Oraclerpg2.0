@@ -1,0 +1,42 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "fighter",
+  "entries": {
+    "dnd2024:2024:feature:fighter:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:fighter:action-surge:srd-5.2": { "name": "Surto de Ação" },
+    "dnd2024:2024:feature:fighter:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:fighter:extra-attack:srd-5.2": { "name": "Ataque Extra" },
+    "dnd2024:2024:feature:fighter:fighting-style:srd-5.2": { "name": "Estilo de Luta" },
+    "dnd2024:2024:feature:fighter:indomitable:srd-5.2": { "name": "Indomável" },
+    "dnd2024:2024:feature:fighter:second-wind:srd-5.2": {
+      "name": "Segundo Fôlego",
+      "data.text.rules.0": "Você possui uma reserva limitada de vigor físico e mental da qual pode se valer. Como uma {@variantrule Bonus Action|XPHB}, você pode usá-la para recuperar {@variantrule Hit Points|XPHB} iguais a {@dice 1d10} mais seu nível de Guerreiro.",
+      "data.text.rules.1": "Você pode usar esta feature duas vezes. Você recupera um uso gasto ao terminar um {@variantrule Short Rest|XPHB} e recupera todos os usos gastos ao terminar um {@variantrule Long Rest|XPHB}.",
+      "data.text.rules.2": "Ao alcançar determinados níveis de Guerreiro, você recebe mais usos desta feature, conforme mostrado na coluna Segundo Fôlego da tabela de Features do Guerreiro."
+    },
+    "dnd2024:2024:feature:fighter:studied-attacks:srd-5.2": { "name": "Ataques Estudados" },
+    "dnd2024:2024:feature:fighter:tactical-master:srd-5.2": { "name": "Mestre Tático" },
+    "dnd2024:2024:feature:fighter:tactical-mind:srd-5.2": {
+      "name": "Mente Tática",
+      "data.text.rules.0": "Você tem uma mente voltada para táticas dentro e fora do campo de batalha. Quando falhar em um teste de atributo, pode gastar um uso de Segundo Fôlego para se esforçar rumo ao sucesso. Em vez de recuperar {@variantrule Hit Points|XPHB}, role {@dice 1d10} e some o resultado ao teste de atributo, potencialmente transformando a falha em sucesso. Se o teste ainda falhar, esse uso de Segundo Fôlego não é gasto."
+    },
+    "dnd2024:2024:feature:fighter:tactical-shift:srd-5.2": {
+      "name": "Deslocamento Tático",
+      "data.text.rules.0": "Sempre que ativar seu Segundo Fôlego com uma {@variantrule Bonus Action|XPHB}, você pode se mover até metade de seu {@variantrule Speed|XPHB} sem provocar {@action Opportunity Attack|XPHB|Opportunity Attacks}."
+    },
+    "dnd2024:2024:feature:fighter:two-extra-attacks:srd-5.2": { "name": "Dois Ataques Extras" },
+    "dnd2024:2024:feature:fighter:three-extra-attacks:srd-5.2": { "name": "Três Ataques Extras" },
+    "dnd2024:2024:feature:fighter:weapon-mastery:srd-5.2": { "name": "Maestria com Armas" },
+    "dnd2024:2024:feature:fighter:champion:additional-fighting-style:srd-5.2": { "name": "Estilo de Luta Adicional" },
+    "dnd2024:2024:feature:fighter:champion:heroic-warrior:srd-5.2": { "name": "Guerreiro Heroico" },
+    "dnd2024:2024:feature:fighter:champion:improved-critical:srd-5.2": { "name": "Crítico Aprimorado" },
+    "dnd2024:2024:feature:fighter:champion:remarkable-athlete:srd-5.2": { "name": "Atleta Excepcional" },
+    "dnd2024:2024:feature:fighter:champion:superior-critical:srd-5.2": { "name": "Crítico Superior" },
+    "dnd2024:2024:feature:fighter:champion:survivor:srd-5.2": { "name": "Sobrevivente" }
+  }
+}
