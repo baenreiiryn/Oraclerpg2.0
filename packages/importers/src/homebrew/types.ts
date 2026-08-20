@@ -39,13 +39,18 @@ export interface HomebrewCandidate {
   diagnostics: readonly ImportDiagnostic[];
 }
 
+export interface CanonicalHomebrewCandidate extends HomebrewCandidate {
+  canonicalized: true;
+  systemId?: string;
+}
+
 export type HomebrewReviewStatus = "READY" | "NEEDS_REVIEW" | "REJECTED";
 
 export interface HomebrewImportBatch {
   batchId: string;
   source: HomebrewSourceDescriptor;
   status: HomebrewReviewStatus;
-  candidates: readonly HomebrewCandidate[];
+  candidates: readonly CanonicalHomebrewCandidate[];
   diagnostics: readonly ImportDiagnostic[];
 }
 
@@ -56,11 +61,11 @@ export interface HomebrewSourceAdapter {
 }
 
 export interface HomebrewCandidateValidatorPort {
-  validate(candidate: HomebrewCandidate): Promise<readonly ImportDiagnostic[]>;
+  validate(candidate: CanonicalHomebrewCandidate): Promise<readonly ImportDiagnostic[]>;
 }
 
-export interface HomebrewCandidateCanonicalizerPort {
-  canonicalize(candidate: HomebrewCandidate): Promise<HomebrewCandidate>;
+export interface HomebrewCanonicalizerPort {
+  canonicalize(candidate: HomebrewCandidate, input: HomebrewImportInput): Promise<CanonicalHomebrewCandidate>;
 }
 
 export interface HomebrewIdPort {
