@@ -29,6 +29,7 @@ export interface HomebrewProvenance {
   aiAssisted?: boolean;
 }
 
+/** Source adapters may place source-shaped data here. It is never persistence-ready by itself. */
 export interface HomebrewCandidate {
   candidateId: string;
   type: CanonicalContentType;
@@ -38,13 +39,19 @@ export interface HomebrewCandidate {
   diagnostics: readonly ImportDiagnostic[];
 }
 
+/** Canonicalizer output. Only this form may become READY after validation. */
+export interface CanonicalHomebrewCandidate extends HomebrewCandidate {
+  canonicalized: true;
+  systemId?: string;
+}
+
 export type HomebrewReviewStatus = "READY" | "NEEDS_REVIEW" | "REJECTED";
 
 export interface HomebrewImportBatch {
   batchId: string;
   source: HomebrewSourceDescriptor;
   status: HomebrewReviewStatus;
-  candidates: readonly HomebrewCandidate[];
+  candidates: readonly CanonicalHomebrewCandidate[];
   diagnostics: readonly ImportDiagnostic[];
 }
 
@@ -54,8 +61,12 @@ export interface HomebrewSourceAdapter {
   parse(input: HomebrewImportInput): Promise<readonly HomebrewCandidate[]>;
 }
 
+export interface HomebrewCanonicalizerPort {
+  canonicalize(candidate: HomebrewCandidate, input: HomebrewImportInput): Promise<CanonicalHomebrewCandidate>;
+}
+
 export interface HomebrewCandidateValidatorPort {
-  validate(candidate: HomebrewCandidate): Promise<readonly ImportDiagnostic[]>;
+  validate(candidate: CanonicalHomebrewCandidate): Promise<readonly ImportDiagnostic[]>;
 }
 
 export interface HomebrewIdPort {
@@ -64,8 +75,5 @@ export interface HomebrewIdPort {
 }
 
 export interface HomebrewTextAnalyzerPort {
-  analyze(input: {
-    text: string;
-    systemId?: string;
-  }): Promise<unknown>;
+  analyze(input: { text: string; systemId?: string }): Promise<unknown>;
 }
