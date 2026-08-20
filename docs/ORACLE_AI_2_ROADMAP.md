@@ -19,19 +19,19 @@ The AI must never receive a direct state-mutation capability. Mechanical truth b
 
 **Status: COMPLETE**
 
-Implemented provider-agnostic contracts for turn intent, authoritative state snapshots, context packages, AI proposals, validation, execution, persistence, and orchestration.
+Implemented provider-agnostic contracts and Runtime-owned turn orchestration. AI proposes; Runtime validates and executes.
 
 ## AI-2 — Context Engine 2.0
 
 **Status: COMPLETE**
 
-Implemented a provider- and prompt-independent Context Engine with typed campaign, scene, actor, entity, relationship, knowledge, and mechanical sections, including perspective-aware isolation.
+Implemented typed perspective-aware context projection for campaign, scene, actors, entities, relationships, knowledge, and mechanics.
 
 ## AI-3 — Structured AI Actions
 
 **Status: COMPLETE**
 
-Implemented versioned discriminated action contracts and per-turn capability manifests. Mechanical validation remains a separate gate after capability validation.
+Implemented versioned structured action contracts and per-turn capability manifests before mechanical validation.
 
 ## AI-4 — Rules / Compendium Bridge
 
@@ -57,35 +57,36 @@ AI-1…AI-5 passed full typecheck, workspace tests, authority/dependency audit, 
 
 Implemented Runtime-owned derived memory and session state without granting memory any authority over mechanical or world truth.
 
-Implemented components:
-
-- `CampaignMemoryState` with an independent optimistic memory revision;
-- `OracleMemoryRecord` kinds for episodic, semantic, relationship, discovery, promise, thread, and summary memory;
-- `MemoryCandidate` ingestion contract for future extraction pipelines;
-- `OracleMemoryService` with append, semantic upsert/consolidation, resolve, supersede, and prune operations;
-- semantic consolidation by stable `semanticKey` while episodic memory remains append-oriented;
-- `PUBLIC`, `ACTOR_ONLY`, and `GM_ONLY` memory visibility with actor-specific projection;
-- source references linking derived memory back to turns, scenes, world facts, relationships, and entities;
-- `OracleSessionState` with its own optimistic revision;
-- `OracleSessionStateService` tracking turns, open threads, compact summary blocks, and session closure.
-
-Validated guarantees:
-
-- Memory uses a revision separate from `CampaignWorldState` and cannot overwrite authoritative world truth;
-- writing or consolidating memory has no mutation path into World State;
-- actor-only memories do not leak to other actors;
-- GM-only memories never appear in normal player projection;
-- repeated semantic observations consolidate by `semanticKey` rather than creating conflicting duplicates;
-- episodic memories remain independently addressable;
-- stale memory/session revisions cannot overwrite newer state;
-- closed sessions reject new turn recording;
-- AI-1…AI-5 tests and class/compendium regression remain green.
+Validated guarantees include independent memory/session revisions, episodic append, semantic consolidation by stable key, actor/GM visibility isolation, provenance, open-thread tracking, compact summaries, and closed-session protection.
 
 ## AI-7 — Retrieval / Hybrid RAG + Context Budget
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Retrieve documents, compendium records, memories, entities, and world facts using lexical, semantic, entity, recency, importance, and visibility signals within an explicit token budget.
+Implemented provider-agnostic hybrid retrieval and hard context budgeting in the Runtime.
+
+Implemented components:
+
+- `HybridRetrievalEngine` combining lexical, optional semantic, entity, reference, importance, recency, and confidence signals;
+- `RetrievalQuery`, `RetrievalCandidate`, ranked result, score-breakdown, and source-port contracts;
+- hard `maxTokens` and optional `maxItems` selection budget with deterministic token estimation fallback;
+- source filtering across `MEMORY`, `WORLD_FACT`, `ENTITY`, `COMPENDIUM`, `DOCUMENT`, and `SESSION_SUMMARY`;
+- `MemoryRetrievalSource` over AI-6 Memory State;
+- `WorldStateRetrievalSource` over AI-5 entities, facts, and knowledge grants;
+- `ExternalRetrievalSource` boundary for future document/compendium indexes, lexical search, embeddings, or vector stores without provider dependencies in Runtime;
+- stable deduplication by retrieval ID and deterministic ranking ties.
+
+Validated guarantees:
+
+- `GM_ONLY` and `HIDDEN` candidates are removed before ranking and budgeting;
+- `ACTOR_ONLY` candidates are retrievable only for granted actors;
+- world facts with actor-specific knowledge grants retain that isolation during retrieval;
+- the final selected context never exceeds the configured token budget;
+- high-ranked oversized candidates are skipped rather than forcing budget overflow;
+- semantic scores may be supplied by future embedding adapters but no embedding/model provider is required by the retrieval engine;
+- entity/reference relevance combines with lexical/semantic relevance rather than replacing it;
+- source allowlists can constrain retrieval to a specific context class;
+- AI-1…AI-6 architecture remains provider-agnostic and Runtime-authoritative.
 
 ## AI-8 — Oracle AI Gateway
 
@@ -111,7 +112,7 @@ After AI-6…AI-10:
 
 - run full end-to-end runtime tests;
 - regression-test compendium and game-engine boundaries;
-- verify memory/knowledge isolation and action authority;
+- verify memory/knowledge/retrieval isolation and action authority;
 - merge to `main` only if green;
 - deploy to Vercel.
 
@@ -135,7 +136,7 @@ packages/
     retrieval/
 ```
 
-The physical folders may evolve, but dependency direction must remain:
+Dependency direction remains:
 
 ```text
 Applications → Runtime → AI contracts / Core / Content / Schema
@@ -145,4 +146,4 @@ Applications → Runtime → AI contracts / Core / Content / Schema
                      Providers
 ```
 
-Providers must never become dependencies of Core, Content, or Schema.
+Providers must never become dependencies of Core, Content, Schema, Memory, or Retrieval.
