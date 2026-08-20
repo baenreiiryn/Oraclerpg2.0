@@ -2,24 +2,44 @@ import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { isPresentationPath } from "../localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/items.json"), "utf8"));
 
-test("inventory SRD 5.2 mundane equipment presentation data", () => {
-  const items = canonical.items.filter((item) => item.data?.itemKind === "equipment" && item.data?.magical === false);
-  console.log(`MUNDANE_EQUIPMENT_COUNT=${items.length}`);
-  for (let start = 0; start < items.length; start += 15) {
-    console.log(`MUNDANE_EQUIPMENT_CHUNK_${start / 15}_BEGIN`);
-    for (const item of items.slice(start, start + 15)) {
+function presentationStrings(root, prefix = "", out = {}) {
+  if (typeof root === "string") {
+    if (isPresentationPath(prefix)) out[prefix] = root;
+    return out;
+  }
+  if (root == null || typeof root !== "object") return out;
+  if (Array.isArray(root)) {
+    root.forEach((value, index) => presentationStrings(value, prefix ? `${prefix}.${index}` : String(index), out));
+    return out;
+  }
+  for (const [key, value] of Object.entries(root)) {
+    const next = prefix ? `${prefix}.${key}` : key;
+    presentationStrings(value, next, out);
+  }
+  return out;
+}
+
+test("inventory SRD 5.2 wondrous item presentation strings", () => {
+  const items = canonical.items.filter((item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "wondrous");
+  console.log(`WONDROUS_COUNT=${items.length}`);
+  const rarityCounts = {};
+  for (const item of items) rarityCounts[item.data?.rarity ?? "none"] = (rarityCounts[item.data?.rarity ?? "none"] ?? 0) + 1;
+  console.log(`WONDROUS_RARITY_COUNTS=${JSON.stringify(rarityCounts)}`);
+  for (let start = 0; start < items.length; start += 5) {
+    console.log(`WONDROUS_CHUNK_${start / 5}_BEGIN`);
+    for (const item of items.slice(start, start + 5)) {
       console.log(JSON.stringify({
         canonicalId: item.canonicalId,
-        name: item.name,
-        equipmentType: item.data?.equipmentType,
-        text: item.data?.text,
-        activities: (item.data?.activities ?? []).map((activity) => ({ name: activity?.name, description: activity?.description }))
+        rarity: item.data?.rarity,
+        attunement: item.data?.attunement,
+        strings: presentationStrings(item)
       }));
     }
-    console.log(`MUNDANE_EQUIPMENT_CHUNK_${start / 15}_END`);
+    console.log(`WONDROUS_CHUNK_${start / 5}_END`);
   }
 });
