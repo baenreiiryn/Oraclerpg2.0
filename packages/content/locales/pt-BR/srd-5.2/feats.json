@@ -1,0 +1,49 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "entries": {
+    "dnd2024:2024:feature:feat-ability-score-improvement:srd-5.2": {
+      "name": "Aprimoramento de Atributo",
+      "data.text.rules.0": "Aumente um atributo à sua escolha em 2, ou aumente dois atributos à sua escolha em 1. Este talento não pode aumentar um atributo acima de 20.",
+      "data.text.rules.1.name": "Repetível",
+      "data.text.rules.1.entries.0": "Você pode escolher este talento mais de uma vez."
+    },
+    "dnd2024:2024:feature:feat-alert:srd-5.2": {
+      "name": "Alerta",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Proficiência em Iniciativa",
+      "data.text.rules.1.entries.0": "Quando você fizer uma rolagem de {@variantrule Initiative|XPHB}, poderá adicionar seu {@variantrule Proficiency|XPHB|Proficiency Bonus} à rolagem.",
+      "data.text.rules.2.name": "Troca de Iniciativa",
+      "data.text.rules.2.entries.0": "Imediatamente após rolar {@variantrule Initiative|XPHB}, você pode trocar sua {@variantrule Initiative|XPHB} pela {@variantrule Initiative|XPHB} de um aliado voluntário no mesmo combate. Você não pode fazer essa troca se você ou o aliado estiver com a condição {@condition Incapacitated|XPHB}.",
+      "data.actionRules.0.activity.name": "Troca de Iniciativa",
+      "data.actionRules.0.activity.description": "Troque sua Iniciativa com a de um aliado voluntário no mesmo combate que não esteja Incapacitado."
+    },
+    "dnd2024:2024:feature:feat-archery:srd-5.2": {
+      "name": "Arquearia",
+      "data.text.rules.0": "Você recebe +2 de bônus nas jogadas de ataque realizadas com armas à distância."
+    },
+    "dnd2024:2024:feature:feat-boon-of-combat-prowess:srd-5.2": {
+      "name": "Dádiva da Proeza em Combate",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Mira Inigualável",
+      "data.text.rules.1.entries.0": "Quando você errar uma jogada de ataque, pode acertar em vez disso. Depois de usar este benefício, você não poderá usá-lo novamente até o início do seu próximo turno."
+    },
+    "dnd2024:2024:feature:feat-boon-of-dimensional-travel:srd-5.2": {
+      "name": "Dádiva da Viagem Dimensional",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Passos Cintilantes",
+      "data.text.rules.1.entries.0": "Imediatamente após realizar a ação {@action Attack|XPHB} ou a ação {@action Magic|XPHB}, você pode se teleportar até 30 pés para um espaço desocupado que possa ver."
+    },
+    "dnd2024:2024:feature:feat-boon-of-fate:srd-5.2": {
+      "name": "Dádiva do Destino",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Alterar o Destino",
+      "data.text.rules.1.entries.0": "Quando você ou outra criatura a até 60 pés de você obtiver sucesso ou falha em um {@variantrule D20 Test|XPHB}, você pode rolar {@dice 2d4} e aplicar o total obtido como bônus ou penalidade à rolagem de {@dice d20}. Depois de usar este benefício, você não poderá usá-lo novamente até rolar {@variantrule Initiative|XPHB} ou terminar um {@variantrule Short Rest|XPHB|Short} ou {@variantrule Long Rest|XPHB}.",
+      "data.actionRules.0.activity.name": "Alterar o Destino"
+    }
+  }
+}
