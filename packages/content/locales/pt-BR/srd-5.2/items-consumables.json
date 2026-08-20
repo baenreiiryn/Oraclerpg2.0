@@ -1,0 +1,366 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "consumables",
+  "entries": {
+    "dnd2024:2024:item:arrow:srd-5.2": {
+      "name": "Flecha",
+      "data.text.rules.0": "Flechas são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Flechas normalmente são armazenadas em uma {@item Quiver|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:assassin-s-blood:srd-5.2": {
+      "name": "Sangue de Assassino",
+      "data.text.rules.0": "Uma criatura submetida a Sangue de Assassino realiza uma salvaguarda de Constituição {@dc 10}. Em caso de falha, a criatura sofre 6 ({@damage 1d12}) de dano de Veneno e recebe a condição {@condition Poisoned|XPHB} por 24 horas. Em caso de sucesso, sofre apenas metade desse dano."
+    },
+    "dnd2024:2024:item:basic-poison:srd-5.2": {
+      "name": "Veneno Básico",
+      "data.text.rules.0": "Como uma {@variantrule Bonus Action|XPHB|Ação Bônus}, você pode usar um frasco de Veneno Básico para revestir uma arma ou até três unidades de munição. Uma criatura que sofrer dano Perfurante ou Cortante da arma ou munição envenenada sofre {@damage 1d4} de dano de Veneno adicional. Depois de aplicado, o veneno mantém sua potência por 1 minuto ou até causar seu dano, o que ocorrer primeiro."
+    },
+    "dnd2024:2024:item:bolt:srd-5.2": {
+      "name": "Virote",
+      "data.text.rules.0": "Virotes de besta são usados com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Virotes normalmente são armazenados em um {@item Crossbow Bolt Case|XPHB} (comprado separadamente)."
+    },
+    "dnd2024:2024:item:burnt-othur-fumes:srd-5.2": {
+      "name": "Vapores de Othur Queimado",
+      "data.text.rules.0": "Uma criatura submetida aos Vapores de Othur Queimado deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 13} ou sofrer 10 ({@damage 3d6}) de dano de Veneno e repetir a salvaguarda no início de cada um de seus turnos. A cada falha subsequente, a criatura sofre 3 ({@damage 1d6}) de dano de Veneno. Após três sucessos, o veneno termina."
+    },
+    "dnd2024:2024:item:elixir-of-health:srd-5.2": {
+      "name": "Elixir de Saúde",
+      "data.text.rules.0": "Quando você bebe esta poção, é curado de todos os contágios mágicos. Além disso, as seguintes condições terminam em você: {@condition Blinded|XPHB}, {@condition Deafened|XPHB}, {@condition Paralyzed|XPHB} e {@condition Poisoned|XPHB}.",
+      "data.text.rules.1": "O líquido vermelho e transparente contém pequenas bolhas de luz."
+    },
+    "dnd2024:2024:item:essence-of-ether:srd-5.2": {
+      "name": "Essência de Éter",
+      "data.text.rules.0": "Uma criatura submetida à Essência de Éter deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Poisoned|XPHB} por 8 horas. A criatura também recebe a condição {@condition Unconscious|XPHB} enquanto estiver {@condition Poisoned|XPHB} dessa forma. Ela desperta se sofrer dano ou se outra criatura usar uma ação para sacudi-la e acordá-la."
+    },
+    "dnd2024:2024:item:lolth-s-sting:srd-5.2": {
+      "name": "Ferrão de Lolth",
+      "data.text.rules.0": "Uma criatura submetida ao Ferrão de Lolth deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 13} ou receber a condição {@condition Poisoned|XPHB} por 1 hora. Se falhar na salvaguarda por 5 ou mais, a criatura também recebe a condição {@condition Unconscious|XPHB} enquanto estiver {@condition Poisoned|XPHB} dessa forma. Ela desperta se sofrer dano ou se outra criatura usar uma ação para sacudi-la e acordá-la."
+    },
+    "dnd2024:2024:item:malice:srd-5.2": {
+      "name": "Malícia",
+      "data.text.rules.0": "Uma criatura submetida à Malícia deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Poisoned|XPHB} por 1 hora. A criatura também recebe a condição {@condition Blinded|XPHB} enquanto estiver {@condition Poisoned|XPHB} dessa forma."
+    },
+    "dnd2024:2024:item:midnight-tears:srd-5.2": {
+      "name": "Lágrimas da Meia-Noite",
+      "data.text.rules.0": "Uma criatura que ingere Lágrimas da Meia-Noite não sofre efeito até a meia-noite. Qualquer efeito que encerre a condição {@condition Poisoned|XPHB} neutraliza este veneno. Se o veneno não tiver sido neutralizado antes da meia-noite, a criatura realiza uma salvaguarda de Constituição {@dc 17}, sofrendo 31 ({@damage 9d6}) de dano de Veneno em caso de falha ou metade desse dano em caso de sucesso."
+    },
+    "dnd2024:2024:item:needle:srd-5.2": {
+      "name": "Agulha",
+      "data.text.rules.0": "Agulhas de zarabatana são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Agulhas normalmente são armazenadas em uma {@item Pouch|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:oil-of-etherealness:srd-5.2": {
+      "name": "Óleo de Eterealidade",
+      "data.text.rules.0": "Um frasco deste óleo pode cobrir uma criatura Média ou menor, junto com o equipamento que ela veste e carrega (é necessário um frasco adicional para cada categoria de tamanho acima de Médio). Aplicar o óleo leva 10 minutos. A criatura afetada então recebe o efeito da magia {@spell Etherealness|XPHB} por 1 hora.",
+      "data.text.rules.1": "Gotículas deste óleo cinza e turvo se formam no lado de fora de seu recipiente e evaporam rapidamente.",
+      "data.activities.0.name": "Conjurar Eterealidade"
+    },
+    "dnd2024:2024:item:oil-of-sharpness:srd-5.2": {
+      "name": "Óleo de Afiamento",
+      "data.text.rules.0": "Um frasco deste óleo pode revestir uma arma Corpo a Corpo ou vinte unidades de munição, mas apenas munições e armas Corpo a Corpo não mágicas que causem dano Cortante ou Perfurante são afetadas. Aplicar o óleo leva 1 minuto, após o qual ele penetra magicamente no que revestiu, transformando a arma revestida em uma Arma +3 ou a munição revestida em Munição +3.",
+      "data.text.rules.1": "Este óleo transparente e gelatinoso cintila com minúsculos fragmentos de prata extremamente finos."
+    },
+    "dnd2024:2024:item:oil-of-slipperiness:srd-5.2": {
+      "name": "Óleo de Escorregamento",
+      "data.text.rules.0": "Um frasco deste óleo pode cobrir uma criatura Média ou menor, junto com o equipamento que ela veste e carrega (é necessário um frasco adicional para cada categoria de tamanho acima de Médio). Aplicar o óleo leva 10 minutos. A criatura afetada então recebe o efeito da magia {@spell Freedom of Movement|XPHB} por 8 horas.",
+      "data.text.rules.1": "Como alternativa, o óleo pode ser derramado no chão como uma ação de {@action Magic|XPHB}, cobrindo um quadrado de 10 pés e duplicando o efeito da magia {@spell Grease|XPHB} nessa área por 8 horas.",
+      "data.text.rules.2": "Este unguento negro e pegajoso é espesso e pesado, mas flui rapidamente quando derramado.",
+      "data.activities.0.name": "Conjurar Liberdade de Movimento"
+    },
+    "dnd2024:2024:item:oil-of-taggit:srd-5.2": {
+      "name": "Óleo de Taggit",
+      "data.text.rules.0": "Uma criatura submetida ao Óleo de Taggit deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 13} ou receber a condição {@condition Poisoned|XPHB} por 24 horas. A criatura também recebe a condição {@condition Unconscious|XPHB} enquanto estiver {@condition Poisoned|XPHB} dessa forma. Ela desperta se sofrer dano."
+    },
+    "dnd2024:2024:item:pale-tincture:srd-5.2": {
+      "name": "Tintura Pálida",
+      "data.text.rules.0": "Uma criatura submetida à Tintura Pálida deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 16} ou sofrer 3 ({@damage 1d6}) de dano de Veneno e receber a condição {@condition Poisoned|XPHB}. A criatura {@condition Poisoned|XPHB} repete a salvaguarda a cada 24 horas, sofrendo 3 ({@damage 1d6}) de dano de Veneno em caso de falha. O dano causado pelo veneno não pode ser curado por nenhum meio enquanto a criatura permanecer {@condition Poisoned|XPHB}. Após sete sucessos contra o veneno, a criatura deixa de estar {@condition Poisoned|XPHB}."
+    },
+    "dnd2024:2024:item:philter-of-love:srd-5.2": {
+      "name": "Filtro do Amor",
+      "data.text.rules.0": "Na próxima vez que você vir uma criatura dentro de 10 minutos após beber este filtro, você é enfeitiçado por essa criatura e recebe a condição {@condition Charmed|XPHB} por 1 hora.",
+      "data.text.rules.1": "Este líquido efervescente de tom rosado contém uma bolha em forma de coração que é fácil de não perceber."
+    },
+    "dnd2024:2024:item:potion-of-acid-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Ácido",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-animal-friendship:srd-5.2": {
+      "name": "Poção de Amizade Animal",
+      "data.text.rules.0": "Quando você bebe esta poção, pode conjurar a versão de nível 3 da magia {@spell Animal Friendship|XPHB} (salvaguarda {@dc 13}).",
+      "data.text.rules.1": "Agitar o líquido turvo desta poção revela pequenos fragmentos: uma escama de peixe, uma pena de beija-flor, uma garra de gato ou um pelo de esquilo.",
+      "data.activities.0.name": "Conjurar Amizade Animal"
+    },
+    "dnd2024:2024:item:potion-of-clairvoyance:srd-5.2": {
+      "name": "Poção de Clarividência",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito da magia {@spell Clairvoyance|XPHB} (sem exigir {@status Concentration|XPHB}).",
+      "data.text.rules.1": "Um globo ocular flutua no líquido amarelado desta poção, mas desaparece quando a poção é aberta.",
+      "data.activities.0.name": "Conjurar Clarividência"
+    },
+    "dnd2024:2024:item:potion-of-climbing:srd-5.2": {
+      "name": "Poção de Escalada",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe um {@variantrule Climb Speed|XPHB|Deslocamento de Escalada} igual ao seu {@variantrule Speed|XPHB|Deslocamento} por 1 hora. Durante esse período, você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Força ({@skill Athletics|XPHB}) para escalar.",
+      "data.text.rules.1": "Esta poção é separada em camadas marrons, prateadas e cinzentas que lembram faixas de pedra. Sacudir o frasco não mistura as cores."
+    },
+    "dnd2024:2024:item:potion-of-cloud-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante das Nuvens",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 27 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante das nuvens."
+    },
+    "dnd2024:2024:item:potion-of-cold-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Frio",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-diminution:srd-5.2": {
+      "name": "Poção de Redução",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito \"reduzir\" da magia {@spell Enlarge/Reduce|XPHB} por {@dice 1d4} horas (sem exigir {@status Concentration|XPHB}).",
+      "data.text.rules.1": "A cor vermelha do líquido da poção se contrai continuamente até formar uma pequena gota e então se expande para colorir o líquido transparente ao redor. Sacudir o frasco não interrompe o processo.",
+      "data.activities.0.name": "Conjurar Aumentar/Reduzir"
+    },
+    "dnd2024:2024:item:potion-of-fire-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante do Fogo",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 25 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante do fogo."
+    },
+    "dnd2024:2024:item:potion-of-fire-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Fogo",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-flying:srd-5.2": {
+      "name": "Poção de Voo",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe um {@variantrule Fly Speed|XPHB|Deslocamento de Voo} igual ao seu {@variantrule Speed|XPHB|Deslocamento} por 1 hora e pode pairar. Se estiver no ar quando o efeito da poção terminar, você cai, a menos que possua outro meio de permanecer no ar.",
+      "data.text.rules.1": "O líquido transparente desta poção flutua na parte superior do recipiente e contém impurezas brancas e nebulosas à deriva."
+    },
+    "dnd2024:2024:item:potion-of-force-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Força",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-frost-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante do Gelo",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 23 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante do gelo."
+    },
+    "dnd2024:2024:item:potion-of-gaseous-form:srd-5.2": {
+      "name": "Poção de Forma Gasosa",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito da magia {@spell Gaseous Form|XPHB} por 1 hora (sem exigir {@status Concentration|XPHB}) ou até encerrar o efeito como uma {@variantrule Bonus Action|XPHB|Ação Bônus}.",
+      "data.text.rules.1": "O recipiente desta poção parece conter uma névoa que se move e escorre como água.",
+      "data.activities.0.name": "Conjurar Forma Gasosa"
+    },
+    "dnd2024:2024:item:potion-of-greater-healing:srd-5.2": {
+      "name": "Poção de Cura Maior",
+      "data.text.rules.0": "Você recupera {@dice 4d4 + 4} {@variantrule Hit Points|XPHB|Pontos de Vida} quando bebe esta poção. O líquido vermelho da poção cintila quando agitado."
+    },
+    "dnd2024:2024:item:potion-of-growth:srd-5.2": {
+      "name": "Poção de Crescimento",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito \"aumentar\" da magia {@spell Enlarge/Reduce|XPHB} por 10 minutos (sem exigir {@status Concentration|XPHB}).",
+      "data.text.rules.1": "A cor vermelha do líquido da poção se expande continuamente de uma pequena gota até colorir o líquido transparente ao redor e então se contrai. Sacudir o frasco não interrompe o processo.",
+      "data.activities.0.name": "Conjurar Aumentar/Reduzir"
+    },
+    "dnd2024:2024:item:potion-of-healing:srd-5.2": {
+      "name": "Poção de Cura",
+      "data.text.rules.0": "Esta poção é um item mágico. Como uma {@variantrule Bonus Action|XPHB|Ação Bônus}, você pode bebê-la ou administrá-la a outra criatura a até 5 pés de você. A criatura que bebe o líquido vermelho mágico deste frasco recupera {@dice 2d4 + 2} {@variantrule Hit Points|XPHB|Pontos de Vida}. O líquido vermelho da poção cintila quando agitado."
+    },
+    "dnd2024:2024:item:potion-of-heroism:srd-5.2": {
+      "name": "Poção de Heroísmo",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe 10 {@variantrule Temporary Hit Points|XPHB|Pontos de Vida Temporários} que duram 1 hora. Pela mesma duração, você fica sob o efeito da magia {@spell Bless|XPHB} (sem exigir {@status Concentration|XPHB}).",
+      "data.text.rules.1": "O líquido azul desta poção borbulha e solta vapor como se estivesse fervendo.",
+      "data.activities.0.name": "Conjurar Bênção"
+    },
+    "dnd2024:2024:item:potion-of-hill-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante da Colina",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 21 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante da colina."
+    },
+    "dnd2024:2024:item:potion-of-invisibility:srd-5.2": {
+      "name": "Poção de Invisibilidade",
+      "data.text.rules.0": "O recipiente desta poção parece vazio, mas dá a sensação de conter líquido. Quando você bebe a poção, recebe a condição {@condition Invisible|XPHB} por 1 hora. O efeito termina antes se você fizer uma jogada de ataque, causar dano ou conjurar uma magia."
+    },
+    "dnd2024:2024:item:potion-of-invulnerability:srd-5.2": {
+      "name": "Poção de Invulnerabilidade",
+      "data.text.rules.0": "Por 1 minuto após beber esta poção, você possui {@variantrule Resistance|XPHB|Resistência} a todo dano.",
+      "data.text.rules.1": "O líquido xaroposo desta poção parece ferro liquefeito."
+    },
+    "dnd2024:2024:item:potion-of-lightning-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Elétrico",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-longevity:srd-5.2": {
+      "name": "Poção de Longevidade",
+      "data.text.rules.0": "Quando você bebe esta poção, sua idade física é reduzida em {@dice 1d6 + 6} anos, até o mínimo de 13 anos. Cada vez que beber posteriormente uma Poção de Longevidade, existe uma chance cumulativa de 10 por cento de você envelhecer {@dice 1d6 + 6} anos em vez disso.",
+      "data.text.rules.1": "Suspenso neste líquido âmbar há um pequeno coração que, contra toda lógica, ainda bate. Esses ingredientes desaparecem quando a poção é aberta."
+    },
+    "dnd2024:2024:item:potion-of-mind-reading:srd-5.2": {
+      "name": "Poção de Leitura Mental",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito da magia {@spell Detect Thoughts|XPHB} (salvaguarda {@dc 13}) por 10 minutos (sem exigir {@status Concentration|XPHB}).",
+      "data.text.rules.1": "O denso líquido roxo desta poção contém uma nuvem rosada e ovalada flutuando em seu interior.",
+      "data.activities.0.name": "Conjurar Detectar Pensamentos"
+    },
+    "dnd2024:2024:item:potion-of-necrotic-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Necrótico",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-poison:srd-5.2": {
+      "name": "Poção de Veneno",
+      "data.text.rules.0": "Esta mistura tem aparência, cheiro e sabor de uma {@item Potion of Healing|XDMG} ou de outra poção benéfica. Entretanto, na verdade é veneno mascarado por magia de Ilusão. {@spell Identify|XPHB} revela sua verdadeira natureza.",
+      "data.text.rules.1": "Se você beber esta poção, sofre {@damage 4d6} de dano de Veneno e deve ser bem-sucedido em uma salvaguarda de Constituição {@dc 13} ou receber a condição {@condition Poisoned|XPHB} por 1 hora."
+    },
+    "dnd2024:2024:item:potion-of-poison-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Veneno",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-psychic-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Psíquico",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-radiant-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Radiante",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-speed:srd-5.2": {
+      "name": "Poção de Velocidade",
+      "data.text.rules.0": "Quando você bebe esta poção, recebe o efeito da magia {@spell Haste|XPHB} por 1 minuto (sem exigir {@status Concentration|XPHB}) e não sofre a onda de letargia que normalmente ocorre quando o efeito termina.",
+      "data.text.rules.1": "O fluido amarelo desta poção possui faixas negras e gira por conta própria.",
+      "data.activities.0.name": "Conjurar Velocidade"
+    },
+    "dnd2024:2024:item:potion-of-stone-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante de Pedra",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 23 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante de pedra."
+    },
+    "dnd2024:2024:item:potion-of-storm-giant-strength:srd-5.2": {
+      "name": "Poção de Força do Gigante da Tempestade",
+      "data.text.rules.0": "Quando você bebe esta poção, seu valor de Força muda para 29 por 1 hora. A poção não produz efeito sobre você se sua Força já for igual ou superior a esse valor.",
+      "data.text.rules.1": "O líquido transparente desta poção contém um pequeno fragmento de unha de um gigante da tempestade."
+    },
+    "dnd2024:2024:item:potion-of-superior-healing:srd-5.2": {
+      "name": "Poção de Cura Superior",
+      "data.text.rules.0": "Você recupera {@dice 8d4 + 8} {@variantrule Hit Points|XPHB|Pontos de Vida} quando bebe esta poção. O líquido vermelho da poção cintila quando agitado."
+    },
+    "dnd2024:2024:item:potion-of-supreme-healing:srd-5.2": {
+      "name": "Poção de Cura Suprema",
+      "data.text.rules.0": "Você recupera {@dice 10d4 + 20} {@variantrule Hit Points|XPHB|Pontos de Vida} quando bebe esta poção. O líquido vermelho da poção cintila quando agitado."
+    },
+    "dnd2024:2024:item:potion-of-thunder-resistance:srd-5.2": {
+      "name": "Poção de Resistência a Trovejante",
+      "data.text.rules.0": "{#itemEntry Potion of Resistance|XDMG}"
+    },
+    "dnd2024:2024:item:potion-of-vitality:srd-5.2": {
+      "name": "Poção de Vitalidade",
+      "data.text.rules.0": "Quando você bebe esta poção, ela remove todos os níveis de {@condition Exhaustion|XPHB} que você possui e encerra a condição {@condition Poisoned|XPHB} em você. Pelas próximas 24 horas, você recupera o número máximo de {@variantrule Hit Points|XPHB|Pontos de Vida} de qualquer {@variantrule Hit Point Dice|XPHB|Dado de Vida} que gastar.",
+      "data.text.rules.1": "O líquido carmesim desta poção pulsa regularmente com uma luz fraca, lembrando os batimentos de um coração."
+    },
+    "dnd2024:2024:item:potion-of-water-breathing:srd-5.2": {
+      "name": "Poção de Respiração Aquática",
+      "data.text.rules.0": "Você pode respirar debaixo d'água por 24 horas após beber esta poção.",
+      "data.text.rules.1": "O fluido verde e turvo desta poção tem cheiro de mar e contém uma bolha semelhante a uma água-viva flutuando em seu interior."
+    },
+    "dnd2024:2024:item:purple-worm-poison:srd-5.2": {
+      "name": "Veneno de Verme Púrpura",
+      "data.text.rules.0": "Uma criatura submetida a Veneno de Verme Púrpura realiza uma salvaguarda de Constituição {@dc 21}, sofrendo 35 ({@damage 10d6}) de dano de Veneno em caso de falha ou metade desse dano em caso de sucesso."
+    },
+    "dnd2024:2024:item:serpent-venom:srd-5.2": {
+      "name": "Veneno de Serpente",
+      "data.text.rules.0": "Uma criatura submetida a Veneno de Serpente deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 11}, sofrendo 10 ({@damage 3d6}) de dano de Veneno em caso de falha ou metade desse dano em caso de sucesso."
+    },
+    "dnd2024:2024:item:sling-bullet:srd-5.2": {
+      "name": "Bala de Funda",
+      "data.text.rules.0": "Balas de funda são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Balas de Funda normalmente são armazenadas em uma {@item Pouch|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:spell-scroll-cantrip:srd-5.2": {
+      "name": "Pergaminho de Magia (Truque)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 10} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 13 e o bônus de ataque é {@hit 5}."
+    },
+    "dnd2024:2024:item:spell-scroll-level-1:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 1)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 11} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 13 e o bônus de ataque é {@hit 5}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 1 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 11}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-2:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 2)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 12} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 13 e o bônus de ataque é {@hit 5}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 2 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 12}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-3:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 3)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 13} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 15 e o bônus de ataque é {@hit 7}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 3 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 13}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-4:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 4)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 14} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 15 e o bônus de ataque é {@hit 7}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 4 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 14}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-5:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 5)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 15} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 17 e o bônus de ataque é {@hit 9}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 5 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 15}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-6:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 6)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 16} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 17 e o bônus de ataque é {@hit 9}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 6 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 16}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-7:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 7)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 17} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 18 e o bônus de ataque é {@hit 10}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 7 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 17}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-8:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 8)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 18} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 18 e o bônus de ataque é {@hit 10}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 8 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 18}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:spell-scroll-level-9:srd-5.2": {
+      "name": "Pergaminho de Magia (Nível 9)",
+      "data.text.rules.0": "Um Pergaminho de Magia contém as palavras de uma única magia, escritas em uma cifra mística. Se a magia estiver em sua lista de magias, você pode ler o pergaminho e conjurá-la sem componentes Materiais. Caso contrário, o pergaminho é ininteligível. Conjurar a magia lendo o pergaminho exige o tempo de conjuração normal da magia. Depois que a magia é conjurada, o pergaminho se desfaz em pó. Se a conjuração for interrompida, o pergaminho não é perdido.",
+      "data.text.rules.1": "Se a magia estiver em sua lista de magias, mas tiver nível superior ao que você normalmente pode conjurar, faça um teste de habilidade {@dc 19} usando sua habilidade de conjuração para determinar se consegue conjurá-la. Em caso de falha, a magia desaparece do pergaminho sem produzir outro efeito.",
+      "data.text.rules.2": "Se a magia exigir uma salvaguarda ou jogada de ataque, a CD de resistência da magia é 19 e o bônus de ataque é {@hit 11}.",
+      "data.text.rules.3.name": "Copiando um Pergaminho para um Grimório",
+      "data.text.rules.3.entries.0": "Uma magia de Mago em um Pergaminho de Magia pode ser copiada para um grimório. Quando uma magia de nível 9 é copiada dessa forma, quem a copia deve ser bem-sucedido em um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 19}. Em caso de sucesso, a magia é copiada. Independentemente de o teste ser bem-sucedido ou falhar, o Pergaminho de Magia é destruído."
+    },
+    "dnd2024:2024:item:torpor:srd-5.2": {
+      "name": "Torpor",
+      "data.text.rules.0": "Uma criatura submetida ao veneno Torpor deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Poisoned|XPHB} por {@dice 4d6} horas. O {@variantrule Speed|XPHB|Deslocamento} da criatura é reduzido à metade enquanto ela estiver {@condition Poisoned|XPHB} dessa forma."
+    },
+    "dnd2024:2024:item:truth-serum:srd-5.2": {
+      "name": "Soro da Verdade",
+      "data.text.rules.0": "Uma criatura submetida ao Soro da Verdade deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 11} ou receber a condição {@condition Poisoned|XPHB} por 1 hora. A criatura {@condition Poisoned|XPHB} não pode comunicar conscientemente uma mentira."
+    },
+    "dnd2024:2024:item:wyvern-poison:srd-5.2": {
+      "name": "Veneno de Wyvern",
+      "data.text.rules.0": "Uma criatura submetida a Veneno de Wyvern realiza uma salvaguarda de Constituição {@dc 14}, sofrendo 24 ({@damage 7d6}) de dano de Veneno em caso de falha ou metade desse dano em caso de sucesso."
+    }
+  }
+}
