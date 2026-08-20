@@ -50,4 +50,18 @@ test("inventory SRD 5.2 item kinds and magic implements", () => {
       strings: presentationStrings(item),
     }));
   }
+
+  const foci = canonical.items.filter(
+    (item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "SCF"
+  );
+  console.log(`SPELLCASTING_FOCI_COUNT=${foci.length}`);
+  for (const item of foci) {
+    console.log("SPELLCASTING_FOCUS=" + JSON.stringify({
+      canonicalId: item.canonicalId,
+      name: item.name,
+      rarity: item.data?.rarity,
+      attunement: item.data?.attunement,
+      strings: presentationStrings(item),
+    }));
+  }
 });
