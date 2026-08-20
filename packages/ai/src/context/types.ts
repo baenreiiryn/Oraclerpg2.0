@@ -59,6 +59,17 @@ export interface EntityContextEntry {
   relatedEntityIds?: readonly OracleId[];
 }
 
+export interface RelationshipContextEntry {
+  relationshipId: OracleId;
+  fromEntityId: OracleId;
+  toEntityId: OracleId;
+  type: string;
+  stance?: "ALLY" | "FRIENDLY" | "NEUTRAL" | "WARY" | "HOSTILE" | "RIVAL" | "OTHER";
+  summary?: string;
+  visibility?: ContextVisibility;
+  actorIds?: readonly OracleId[];
+}
+
 export interface KnowledgeFact {
   factId: OracleId;
   statement: string;
@@ -86,6 +97,7 @@ export interface OracleContextSections {
   scene: SceneContextSection;
   actors: readonly ActorContextEntry[];
   entities: readonly EntityContextEntry[];
+  relationships: readonly RelationshipContextEntry[];
   knowledge: KnowledgeContextSection;
   mechanics: MechanicalContextSection;
 }
@@ -95,6 +107,7 @@ export interface OracleContextSource {
   scene: SceneContextSection;
   actors: readonly ActorContextEntry[];
   entities: readonly EntityContextEntry[];
+  relationships: readonly RelationshipContextEntry[];
   knowledge: readonly KnowledgeFact[];
   mechanics: MechanicalContextSection;
 }
