@@ -12,7 +12,9 @@
     "test": "tsx --test tests/*.test.ts"
   },
   "dependencies": {
-    "@oraclerpg/ai": "workspace:*"
+    "@oraclerpg/ai": "workspace:*",
+    "@oraclerpg/core": "workspace:*",
+    "@oraclerpg/schema": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "22.18.3",
