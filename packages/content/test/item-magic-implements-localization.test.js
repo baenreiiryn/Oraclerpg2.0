@@ -114,6 +114,15 @@ test("ring, rod and wand localization keeps inline markup balanced", () => {
   for (const group of Object.values(groups)) assertMarkupBalanced(group.catalog);
 });
 
+test("magic implement localization never overrides invocation entity identifiers", () => {
+  for (const catalog of [rings, rods, wands, magicFoci]) {
+    for (const [canonicalId, overlay] of Object.entries(catalog.entries)) {
+      const forbidden = Object.keys(overlay).filter((pathKey) => pathKey.endsWith(".invocation.entity.name"));
+      assert.deepEqual(forbidden, [], `${canonicalId}: invocation entity names must remain canonical`);
+    }
+  }
+});
+
 test("all 10 spellcasting foci are covered by the PT-BR equipment localization", () => {
   assert.equal(foci.length, 10);
   assert.equal(magicFoci.scope, "spellcasting-foci-magic");
