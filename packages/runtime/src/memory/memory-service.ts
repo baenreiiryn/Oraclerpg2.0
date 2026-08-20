@@ -22,25 +22,34 @@ export class OracleMemoryService {
       const base = {
         memoryId: candidate.candidateId,
         campaignId: input.campaignId,
-        sessionId: input.sessionId,
         summary: candidate.summary,
-        detail: candidate.detail,
-        semanticKey: candidate.semanticKey,
         visibility: candidate.visibility,
-        actorIds: candidate.actorIds,
-        entityIds: candidate.entityIds,
         importance: candidate.importance,
-        confidence: candidate.confidence,
         status: "ACTIVE" as const,
         source: candidate.source,
-        createdAtWorldRevision: input.worldRevision,
+        ...(input.sessionId !== undefined ? { sessionId: input.sessionId } : {}),
+        ...(candidate.detail !== undefined ? { detail: candidate.detail } : {}),
+        ...(candidate.actorIds !== undefined ? { actorIds: candidate.actorIds } : {}),
+        ...(candidate.entityIds !== undefined ? { entityIds: candidate.entityIds } : {}),
+        ...(candidate.confidence !== undefined ? { confidence: candidate.confidence } : {}),
+        ...(input.worldRevision !== undefined ? { createdAtWorldRevision: input.worldRevision } : {}),
       };
 
       if (candidate.kind === "SEMANTIC" && candidate.semanticKey) {
-        return { type: "UPSERT_SEMANTIC", record: base };
+        return {
+          type: "UPSERT_SEMANTIC",
+          record: { ...base, semanticKey: candidate.semanticKey },
+        };
       }
 
-      return { type: "APPEND", record: { ...base, kind: candidate.kind } };
+      return {
+        type: "APPEND",
+        record: {
+          ...base,
+          kind: candidate.kind,
+          ...(candidate.semanticKey !== undefined ? { semanticKey: candidate.semanticKey } : {}),
+        },
+      };
     });
 
     return this.apply({
@@ -121,12 +130,15 @@ export class OracleMemoryService {
         case "SUPERSEDE": {
           const index = this.requireMemory(records, mutation.memoryId);
           if (mutation.replacementMemoryId) this.requireMemory(records, mutation.replacementMemoryId);
+          const currentRecord = records[index]!;
           records[index] = {
-            ...records[index]!,
+            ...currentRecord,
             status: "SUPERSEDED",
-            detail: mutation.replacementMemoryId
-              ? `${records[index]!.detail ?? ""}${records[index]!.detail ? "\n" : ""}Superseded by ${mutation.replacementMemoryId}`
-              : records[index]!.detail,
+            ...(mutation.replacementMemoryId
+              ? {
+                  detail: `${currentRecord.detail ?? ""}${currentRecord.detail ? "\n" : ""}Superseded by ${mutation.replacementMemoryId}`,
+                }
+              : {}),
             updatedAtMemoryRevision: nextRevision,
           };
           break;
