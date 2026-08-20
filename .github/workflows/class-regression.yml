@@ -7,7 +7,10 @@ on:
       - 'packages/content/data/srd-5.2/classes.json'
       - 'packages/content/data/srd-5.2/subclasses.json'
       - 'packages/content/data/srd-5.2/class-features.json'
+      - 'packages/ai/**'
+      - 'packages/runtime/**'
       - 'scripts/*srd52-*.mjs'
+      - 'scripts/audit-ai-release-gate.mjs'
       - '.github/workflows/class-regression.yml'
       - '.github/workflows/srd52-*.yml'
   workflow_dispatch:
@@ -27,7 +30,7 @@ jobs:
           const root='packages/content/data/srd-5.2';
           const read=f=>JSON.parse(fs.readFileSync(`${root}/${f}`,'utf8'));
           const classes=read('classes.json'), subs=read('subclasses.json'), features=read('class-features.json');
-          const expected={Barbarian:'Path of the Berserker',Bard:'College of Lore',Cleric:'Life Domain',Druid:'Circle of the Land',Fighter:'Champion',Monk:'Warrior of the Open Hand'};
+          const expected={Barbarian:'Path of the Berserker',Bard:'College of Lore',Cleric:'Life Domain',Druid:'Circle of the Land',Fighter:'Champion',Monk:'Warrior of the Open Hand',Paladin:'Oath of Devotion',Ranger:'Hunter',Rogue:'Thief',Sorcerer:'Draconic Sorcery',Warlock:'Fiend Patron',Wizard:'Evoker'};
           const issues=[];
           for(const [cls,sub] of Object.entries(expected)){
             const c=classes.items.find(x=>x.name===cls);
@@ -52,9 +55,14 @@ jobs:
           if(!fighter?.data?.advancement?.some(x=>x.scaleValues?.secondWindUses===4))issues.push('Fighter Second Wind progression missing');
           const monk=classes.items.find(x=>x.name==='Monk');
           if(monk?.data?.advancement?.find(x=>x.level===17)?.scaleValues?.martialArtsDie!=='d12')issues.push('Monk Martial Arts progression missing');
-          for(const file of ['barbarian-5etools-comparison.json','bard-5etools-comparison.json','cleric-5etools-comparison.json','druid-5etools-comparison.json','fighter-5etools-comparison.json','monk-5etools-comparison.json']){
-            if(!fs.existsSync(`${root}/${file}`))continue;const r=read(file);if(r.status!=='SUPPORTED'||r.issues?.length)issues.push(`${file}: persisted comparison not supported`);
+          for(const cls of Object.keys(expected)){
+            const slug=cls.toLowerCase();
+            const file=`${slug}-5etools-comparison.json`;
+            if(!fs.existsSync(`${root}/${file}`)){issues.push(`${file}: missing persisted comparison`);continue;}
+            const r=read(file);if(r.status!=='SUPPORTED'||r.issues?.length)issues.push(`${file}: persisted comparison not supported`);
           }
+          const final=read('compendium-final-audit.json');
+          if(final.status!=='SUPPORTED'||final.issues?.length)issues.push('compendium-final-audit.json is not SUPPORTED');
           const report={status:issues.length?'UNSUPPORTED':'SUPPORTED',issues,classes:classes.count,subclasses:subs.count,classFeatures:features.count,validated:Object.keys(expected)};
           console.log(JSON.stringify(report,null,2));if(issues.length)process.exit(1);
           NODE
