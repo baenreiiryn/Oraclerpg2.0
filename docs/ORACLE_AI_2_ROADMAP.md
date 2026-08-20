@@ -57,83 +57,50 @@ AI-1…AI-5 passed full typecheck, workspace tests, authority/dependency audit, 
 
 Implemented Runtime-owned derived memory and session state without granting memory any authority over mechanical or world truth.
 
-Validated guarantees include independent memory/session revisions, episodic append, semantic consolidation by stable key, actor/GM visibility isolation, provenance, open-thread tracking, compact summaries, and closed-session protection.
-
 ## AI-7 — Retrieval / Hybrid RAG + Context Budget
 
 **Status: COMPLETE**
 
-Implemented provider-agnostic hybrid retrieval and hard context budgeting in the Runtime.
-
-Implemented components include lexical/semantic/entity/reference/importance/recency/confidence ranking, hard token/item budgets, Memory and World State retrieval adapters, external index ports, visibility filtering before ranking, and deterministic deduplication.
+Implemented provider-agnostic hybrid retrieval and hard context budgeting across memory, world facts, entities and external indexes, with visibility filtering before ranking.
 
 ## AI-8 — Oracle AI Gateway
 
 **Status: COMPLETE**
 
-Implemented a provider-neutral gateway boundary with stable Oracle aliases, server-side routing, capability filtering, retry/fallback, platform/BYOK auth policy, secret isolation, quota checks, and usage/cost accounting. Provider/model identity stays out of product-facing responses.
+Implemented stable Oracle aliases, provider routing, capability filtering, retry/fallback, platform/BYOK auth policy, server-side secret resolution, quotas and usage/cost accounting without exposing provider/model identity to product contracts.
 
 ## AI-9 — Complete GM Runtime
 
 **Status: COMPLETE**
 
-Implemented `OracleGmRuntime` as the end-to-end application pipeline over the already-validated AI-1…AI-8 primitives.
+Implemented `OracleGmRuntime` as the end-to-end authoritative turn pipeline: intent → state → context → retrieval → capability manifest → structured AI proposal → validation/execution → final narration → persistence → memory extraction/write → session registration.
 
-Turn pipeline:
-
-```text
-intent
-→ authoritative state
-→ perspective-safe context
-→ hybrid retrieval + context budget
-→ per-turn capability manifest
-→ Oracle AI Gateway structured proposal
-→ capability gate
-→ mechanical validator
-→ authoritative executor
-→ Oracle AI Gateway final narration
-→ turn persistence
-→ memory extraction/write
-→ Session State turn registration
-```
-
-Implemented components:
-
-- `OracleGmRuntime` composition layer without replacing the smaller AI-1 `TurnOrchestrator` primitive;
-- structured proposal generation through `oracle-reasoning` / `gm.interpret-turn`;
-- final narration through `oracle-story` / `gm.narrate` after authoritative action resolution;
-- `AiProposalDecoderPort` boundary for structured-output validation/parsing;
-- `GmRetrievalPort` for AI-7 retrieval injection;
-- `GmMemoryExtractionPort` and `GmMemoryWriterPort` for AI-6 derived-memory persistence;
-- `GmSessionWriterPort` for session turn registration;
-- final `TurnRecord` persistence with resolved actions and final narration.
-
-Validated guarantees:
-
-- state and context identity/revision are checked before any Gateway generation;
-- an action outside the capability manifest never reaches the mechanical validator or executor;
-- validator rejection prevents executor invocation;
-- final narration happens only after action resolution;
-- the persisted turn contains the final narrative and resolved actions;
-- memory extraction happens after the turn has been finalized and persisted;
-- Session State is updated only when a session is present;
-- AI-1…AI-8 tests and class/compendium regression remain green.
+Validated guarantees include capability-before-validator-before-executor ordering, context alignment before AI invocation, final narration after mechanical resolution, memory after persistence, and no direct model mutation path.
 
 ## AI-10 — Model Router & Specialized AI Operations
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Route narration, NPC dialogue, summarization, extraction, vision, reranking, and lightweight tasks to appropriate model aliases. Keep provider/model identity outside product-facing contracts.
+Implemented a semantic operation router above the Oracle AI Gateway. Runtime code requests operations, not aliases or model/provider identities.
+
+Specialized operations include GM interpretation, narration, NPC dialogue, memory extraction/consolidation, session summarization, retrieval reranking, document/entity extraction, vision inspection, embeddings, and lightweight text tasks.
+
+Default routing policy maps these operations only to stable Oracle aliases (`oracle-reasoning`, `oracle-story`, `oracle-background`, `oracle-fast`, `oracle-vision`, `oracle-embedding`). Callers may tune budget/temperature but cannot select provider/model through the operation contract.
+
+Validated guarantees include fail-closed missing policies, specialized capability requirements, provider/model absence from operation responses, and GM Runtime integration through semantic operations instead of direct alias selection.
 
 ### Release checkpoint B
 
-After AI-6…AI-10:
+**Status: READY FOR FINAL GATE**
 
-- run full end-to-end runtime tests;
-- regression-test compendium and game-engine boundaries;
-- verify memory/knowledge/retrieval isolation and action authority;
-- merge to `main` only if green;
-- deploy to Vercel.
+Before merge/deploy:
+
+- run full typecheck and all AI/runtime tests across AI-1…AI-10;
+- run static authority/dependency audit across all ten phases;
+- regression-test compendium/game-engine boundaries;
+- verify memory/knowledge/retrieval isolation, token budget, Gateway secret isolation, action authority, and end-to-end GM turn ordering;
+- merge to `main` only if all checks are green;
+- deploy to Vercel and verify the production deployment corresponds exactly to the merge commit.
 
 ## Package direction
 
@@ -147,13 +114,14 @@ packages/
     context/
     actions/
     gateway/
+    router/
   runtime/
     turn-orchestrator/
-    gm-runtime/
     rules-resolver/
     state/
     memory/
     retrieval/
+    gm-runtime/
 ```
 
 Dependency direction remains:
@@ -161,9 +129,11 @@ Dependency direction remains:
 ```text
 Applications → Runtime → AI contracts / Core / Content / Schema
                          ↓
+                AI Operation Router
+                         ↓
                     AI Gateway
                          ↓
                      Providers
 ```
 
-Providers must never become dependencies of Core, Content, Schema, Memory, or Retrieval.
+Providers must never become dependencies of Core, Content, Schema, Memory, Retrieval, or product-facing Runtime contracts.
