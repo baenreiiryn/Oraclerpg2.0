@@ -113,11 +113,12 @@ test("ring, rod and wand localization keeps inline markup balanced", () => {
   for (const group of Object.values(groups)) assertMarkupBalanced(group.catalog);
 });
 
-test("all 10 spellcasting foci are already covered by the PT-BR mundane equipment catalog", () => {
+test("all 10 spellcasting foci are covered by the PT-BR equipment localization", () => {
   assert.equal(foci.length, 10);
+  const missing = foci.filter((item) => !mundane.entries[item.canonicalId]).map((item) => item.canonicalId);
+  assert.deepEqual(missing, [], `missing PT-BR spellcasting foci: ${missing.join(", ")}`);
   for (const item of foci) {
     const overlay = mundane.entries[item.canonicalId];
-    assert.ok(overlay, `${item.canonicalId}: missing PT-BR spellcasting focus`);
     assert.equal(typeof overlay.name, "string");
     assert.notEqual(overlay.name.trim(), "");
     for (const [pathKey, value] of Object.entries(overlay)) {
