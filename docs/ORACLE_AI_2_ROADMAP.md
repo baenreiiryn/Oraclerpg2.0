@@ -81,9 +81,31 @@ Validated guarantees:
 
 ## AI-4 — Rules / Compendium Bridge
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Connect structured action requests to the OracleRPG schema/core/compendium. Resolve legal actions, features, spells, resources, targets, conditions, item use, rests, and other mechanical rules without asking the LLM to decide game truth.
+Implemented a deterministic bridge from AI-3 structured rule requests into OracleRPG Core, Schema, and canonical compendium records.
+
+Implemented components:
+
+- `OracleEntityCompendiumIndex` for canonical-ID lookup over Oracle entities;
+- `RulesCompendiumBridge` for deterministic rule evaluation;
+- runtime-authoritative `ActorRulesState` projection contract;
+- rules-aware validator/executor adapters for the Turn Orchestrator;
+- safe compendium state queries that expose metadata/activity summaries rather than arbitrary raw entity data.
+
+Validated guarantees:
+
+- feature, spell, and item references are resolved by canonical ID;
+- the referenced entity must be usable/castable/available according to authoritative runtime state;
+- activity IDs must exist on the referenced canonical record;
+- targets must be present in the authoritative target set;
+- numeric Activity resource costs are checked against authoritative resource pools;
+- exhausted resources return `ILLEGAL` rather than relying on model judgment;
+- unresolved runtime/formula costs and manual-adjudication mechanics return `MANUAL` rather than guessing;
+- short/long rest requests can be gated by authoritative runtime state;
+- generic runtime actions must be present in `availableActionRefs`;
+- real SRD 5.2 class-feature, spell, and item JSON records are indexed successfully in integration tests;
+- AI still has no direct state mutation capability.
 
 ## AI-5 — Scene + Entity + Knowledge State
 
