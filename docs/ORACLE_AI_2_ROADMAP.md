@@ -57,9 +57,27 @@ Validated guarantees:
 
 ## AI-3 — Structured AI Actions
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Replace generic action payloads with versioned, typed action contracts and capability manifests. The model can only propose actions explicitly exposed for the current turn.
+Replaced generic action payloads with versioned discriminated action contracts and a per-turn capability manifest.
+
+Structured operations currently defined:
+
+- `rules.request-evaluation`;
+- `dice.request-roll`;
+- `state.request-query`;
+- `world.suggest-change`.
+
+Validated guarantees:
+
+- executable AI proposals carry `schemaVersion: 1`;
+- each operation has a typed payload instead of `Record<string, unknown>`;
+- narrative tasks are separated from executable structured actions;
+- the Runtime builds a capability manifest for every turn;
+- capabilities may restrict operation, actor, target, and exposed references;
+- proposals outside the manifest never reach action validation or execution;
+- the capability manifest is persisted with the turn for auditability;
+- mechanical validation remains a separate gate after capability validation.
 
 ## AI-4 — Rules / Compendium Bridge
 
