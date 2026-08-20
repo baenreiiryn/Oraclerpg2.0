@@ -21,3 +21,6 @@ export * from "./homebrew/sources/oracle-json.js";
 export * from "./homebrew/sources/foundry.js";
 export * from "./homebrew/sources/fiveetools-markdown.js";
 export * from "./homebrew/sources/text-analysis.js";
+export * from "./homebrew/creator/types.js";
+export * from "./homebrew/creator/registry.js";
+export * from "./homebrew/creator/service.js";
