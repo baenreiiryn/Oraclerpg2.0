@@ -25,8 +25,14 @@
     "dnd2024:2024:feature:rogue:poison-cost-1d6:srd-5.2": { "name": "Envenenar (Custo: 1d6)" },
     "dnd2024:2024:feature:rogue:reliable-talent:srd-5.2": { "name": "Talento Confiável" },
     "dnd2024:2024:feature:rogue:slippery-mind:srd-5.2": { "name": "Mente Escorregadia" },
-    "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2": { "name": "Ataque Furtivo" },
+    "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2": {
+      "name": "Ataque Furtivo",
+      "data.text.rules.0": "Você sabe atacar de forma sutil e explorar a distração de um inimigo. Uma vez por turno, pode causar {@damage 1d6} de dano adicional a uma criatura que atingir com uma jogada de ataque se tiver {@variantrule Advantage|XPHB} na jogada e o ataque usar uma arma com Acuidade ou uma arma à Distância. O tipo do dano adicional é o mesmo da arma.",
+      "data.text.rules.1": "Você não precisa ter {@variantrule Advantage|XPHB} na jogada de ataque se pelo menos um de seus aliados estiver a até 5 pés do alvo, esse aliado não estiver sob a condição {@condition Incapacitated|XPHB} e você não tiver {@variantrule Disadvantage|XPHB} na jogada de ataque.",
+      "data.text.rules.2": "O dano adicional aumenta conforme você ganha níveis de Ladino, como mostrado na coluna Ataque Furtivo da tabela de Features do Ladino."
+    },
     "dnd2024:2024:feature:rogue:steady-aim:srd-5.2": { "name": "Mira Estável" },
+    "dnd2024:2024:feature:rogue:stroke-of-luck:srd-5.2": { "name": "Golpe de Sorte" },
     "dnd2024:2024:feature:rogue:thieves-cant:srd-5.2": { "name": "Gíria dos Ladrões" },
     "dnd2024:2024:feature:rogue:trip-cost-1d6:srd-5.2": { "name": "Derrubar (Custo: 1d6)" },
     "dnd2024:2024:feature:rogue:uncanny-dodge:srd-5.2": { "name": "Esquiva Sobrenatural" },
