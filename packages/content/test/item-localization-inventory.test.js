@@ -6,6 +6,11 @@ import { isPresentationPath } from "../localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/items.json"), "utf8"));
+const rings = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-rings.json"), "utf8"));
+const rods = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-rods.json"), "utf8"));
+const wands = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wands.json"), "utf8"));
+const mundane = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-equipment-mundane.json"), "utf8"));
+const magicFoci = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-spellcasting-foci-magic.json"), "utf8"));
 
 function presentationStrings(root, prefix = "", out = {}) {
   if (typeof root === "string") {
@@ -24,7 +29,13 @@ function presentationStrings(root, prefix = "", out = {}) {
   return out;
 }
 
-test("inventory SRD 5.2 item kinds and magic implements", () => {
+function isProtectedOrStructural(pathKey, value) {
+  if (pathKey.endsWith(".invocation.entity.name")) return true;
+  if (/^\{#itemEntry [^}]+\}$/.test(value)) return true;
+  return false;
+}
+
+test("inventory remaining untranslated presentation strings in rings rods wands and foci", () => {
   const groups = new Map();
   for (const item of canonical.items) {
     const key = `${item.data?.itemKind ?? "<none>"}|${item.data?.equipmentType ?? "<none>"}`;
@@ -32,36 +43,22 @@ test("inventory SRD 5.2 item kinds and magic implements", () => {
   }
   console.log("ITEM_TYPE_COUNTS=" + JSON.stringify(Object.fromEntries([...groups].sort())));
 
-  const targets = canonical.items.filter((item) => {
-    const kind = String(item.data?.itemKind ?? "").toLowerCase();
-    const type = String(item.data?.equipmentType ?? "").toLowerCase();
-    const name = String(item.name ?? "").toLowerCase();
-    return [kind, type].some((value) => /ring|rod|staff|wand|focus/.test(value)) || /\b(ring|rod|staff|wand|focus)\b/.test(name);
-  });
-  console.log(`MAGIC_IMPLEMENT_CANDIDATE_COUNT=${targets.length}`);
-  for (const item of targets) {
-    console.log(JSON.stringify({
-      canonicalId: item.canonicalId,
-      name: item.name,
-      itemKind: item.data?.itemKind,
-      equipmentType: item.data?.equipmentType,
-      rarity: item.data?.rarity,
-      attunement: item.data?.attunement,
-      strings: presentationStrings(item),
-    }));
-  }
-
-  const foci = canonical.items.filter(
-    (item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "SCF"
+  const targets = canonical.items.filter((item) =>
+    item.data?.itemKind === "equipment" && ["RG", "RD", "WD", "SCF"].includes(item.data?.equipmentType)
   );
-  console.log(`SPELLCASTING_FOCI_COUNT=${foci.length}`);
-  for (const item of foci) {
-    console.log("SPELLCASTING_FOCUS=" + JSON.stringify({
-      canonicalId: item.canonicalId,
-      name: item.name,
-      rarity: item.data?.rarity,
-      attunement: item.data?.attunement,
-      strings: presentationStrings(item),
-    }));
+  let missingCount = 0;
+  for (const item of targets) {
+    const catalog = item.data?.equipmentType === "RG" ? rings
+      : item.data?.equipmentType === "RD" ? rods
+      : item.data?.equipmentType === "WD" ? wands
+      : magicFoci.entries[item.canonicalId] ? magicFoci
+      : mundane;
+    const overlay = catalog.entries[item.canonicalId] ?? {};
+    for (const [pathKey, value] of Object.entries(presentationStrings(item))) {
+      if (Object.hasOwn(overlay, pathKey) || isProtectedOrStructural(pathKey, value)) continue;
+      missingCount += 1;
+      console.log("UNLOCALIZED_TARGET_PATH=" + JSON.stringify({ canonicalId: item.canonicalId, pathKey, value }));
+    }
   }
+  console.log(`UNLOCALIZED_TARGET_COUNT=${missingCount}`);
 });
