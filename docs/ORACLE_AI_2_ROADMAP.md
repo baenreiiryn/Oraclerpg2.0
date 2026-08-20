@@ -42,6 +42,7 @@ Context sections:
 - scene;
 - actors;
 - entities;
+- relationships;
 - perspective-aware knowledge;
 - mechanical context.
 
@@ -53,6 +54,7 @@ Validated guarantees:
 - `PUBLIC` and `DISCOVERED` knowledge may enter player context;
 - `ACTOR_ONLY` knowledge is restricted to listed actors;
 - `GM_ONLY` and `HIDDEN` knowledge never enter a normal player turn;
+- hidden/GM-only relationships are excluded from player context;
 - legacy v1 context remains accepted during migration, while new engine output is v2.
 
 ## AI-3 — Structured AI Actions
@@ -109,9 +111,29 @@ Validated guarantees:
 
 ## AI-5 — Scene + Entity + Knowledge State
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Introduce explicit persistent scene state, entities, relationships, and perspective-aware knowledge. Separate world truth from what each PC/NPC knows.
+Implemented explicit runtime-owned, revisioned campaign world state for scenes, actors, entities, relationships, objective facts, and knowledge grants.
+
+Implemented components:
+
+- `CampaignWorldState` with an authoritative world revision;
+- `WorldStateStorePort` persistence boundary;
+- `WorldStateService` with optimistic revision checks and integrity validation;
+- explicit objective `WorldFactState` separated from `KnowledgeGrantState`;
+- relationship state with visibility rules;
+- `WorldStateContextSource` adapter feeding persistent world state into Context Engine 2.0;
+- context projection now includes visible relationships while preserving player perspective.
+
+Validated guarantees:
+
+- objective secrets may exist in world truth without appearing in player context;
+- actor-specific knowledge grants do not leak to other actors;
+- knowledge becomes visible only after an authoritative Runtime mutation;
+- stale world revisions cannot overwrite newer state;
+- invalid fact/entity/actor references are rejected before persistence;
+- GM-only/hidden relationships remain outside player context;
+- the AI still has no direct access to `WorldStateService` or `WorldStateStorePort` mutation methods.
 
 ### Release checkpoint A
 
