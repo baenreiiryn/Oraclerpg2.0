@@ -48,6 +48,42 @@ test("localization overlays do not mutate canonical entities", () => {
   assert.equal(localized.data.actionRules[0].activity.rolls[0].formula, "2d4");
 });
 
+test("string overlays can never replace structured presentation nodes", () => {
+  const entity = {
+    id: "spell:test",
+    canonicalId: "spell:test",
+    name: "Test Spell",
+    data: {
+      text: {
+        rules: [
+          "A text rule.",
+          { type: "entries", name: "Structured Rule", entries: ["Nested text."] }
+        ]
+      }
+    }
+  };
+  const original = structuredClone(entity);
+  const catalog = {
+    entries: {
+      [entity.canonicalId]: {
+        "data.text.rules.0": "Uma regra de texto.",
+        "data.text.rules.1": "ISTO NÃO PODE SUBSTITUIR O OBJETO",
+        "data.text.rules.1.name": "Regra Estruturada",
+        "data.text.rules.1.entries.0": "Texto aninhado."
+      }
+    }
+  };
+
+  const localized = localizeEntity(entity, catalog);
+
+  assert.deepEqual(entity, original);
+  assert.equal(localized.data.text.rules[0], "Uma regra de texto.");
+  assert.equal(typeof localized.data.text.rules[1], "object");
+  assert.equal(localized.data.text.rules[1].type, "entries");
+  assert.equal(localized.data.text.rules[1].name, "Regra Estruturada");
+  assert.equal(localized.data.text.rules[1].entries[0], "Texto aninhado.");
+});
+
 test("only presentation paths are accepted", () => {
   assert.equal(isPresentationPath("name"), true);
   assert.equal(isPresentationPath("data.text.rules.0"), true);
