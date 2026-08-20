@@ -19,179 +19,88 @@ The AI must never receive a direct state-mutation capability. Mechanical truth b
 
 **Status: COMPLETE**
 
-Implemented provider-agnostic contracts for turn intent, authoritative state snapshots, context packages, AI proposals, validation, execution, persistence, and orchestration.
-
-Validated guarantees:
-
-- AI package has no provider dependency.
-- Runtime owns state loading and mutation.
-- Every AI action proposal passes validation before execution.
-- Rejected proposals cannot reach the executor.
-- Context state revision must match the authoritative state revision.
-- Turn persistence records both proposed and resolved actions.
+Implemented provider-agnostic contracts and Runtime-owned turn orchestration. AI proposes; Runtime validates and executes.
 
 ## AI-2 — Context Engine 2.0
 
 **Status: COMPLETE**
 
-Implemented a provider- and prompt-independent Context Engine with a typed `OracleContextPackage` v2.
-
-Context sections:
-
-- campaign;
-- scene;
-- actors;
-- entities;
-- relationships;
-- perspective-aware knowledge;
-- mechanical context.
-
-Validated guarantees:
-
-- context is aligned with authoritative campaign, actor, and state revision;
-- non-present actors are excluded by default;
-- unrelated entities are excluded by default;
-- `PUBLIC` and `DISCOVERED` knowledge may enter player context;
-- `ACTOR_ONLY` knowledge is restricted to listed actors;
-- `GM_ONLY` and `HIDDEN` knowledge never enter a normal player turn;
-- hidden/GM-only relationships are excluded from player context;
-- legacy v1 context remains accepted during migration, while new engine output is v2.
+Implemented typed perspective-aware context projection for campaign, scene, actors, entities, relationships, knowledge, and mechanics.
 
 ## AI-3 — Structured AI Actions
 
 **Status: COMPLETE**
 
-Replaced generic action payloads with versioned discriminated action contracts and a per-turn capability manifest.
-
-Structured operations currently defined:
-
-- `rules.request-evaluation`;
-- `dice.request-roll`;
-- `state.request-query`;
-- `world.suggest-change`.
-
-Validated guarantees:
-
-- executable AI proposals carry `schemaVersion: 1`;
-- each operation has a typed payload instead of `Record<string, unknown>`;
-- narrative tasks are separated from executable structured actions;
-- the Runtime builds a capability manifest for every turn;
-- capabilities may restrict operation, actor, target, and exposed references;
-- proposals outside the manifest never reach action validation or execution;
-- the capability manifest is persisted with the turn for auditability;
-- mechanical validation remains a separate gate after capability validation.
+Implemented versioned structured action contracts and per-turn capability manifests before mechanical validation.
 
 ## AI-4 — Rules / Compendium Bridge
 
 **Status: COMPLETE**
 
-Implemented a deterministic bridge from AI-3 structured rule requests into OracleRPG Core, Schema, and canonical compendium records.
-
-Implemented components:
-
-- `OracleEntityCompendiumIndex` for canonical-ID lookup over Oracle entities;
-- `RulesCompendiumBridge` for deterministic rule evaluation;
-- runtime-authoritative `ActorRulesState` projection contract;
-- rules-aware validator/executor adapters for the Turn Orchestrator;
-- safe compendium state queries that expose metadata/activity summaries rather than arbitrary raw entity data.
-
-Validated guarantees:
-
-- feature, spell, and item references are resolved by canonical ID;
-- the referenced entity must be usable/castable/available according to authoritative runtime state;
-- activity IDs must exist on the referenced canonical record;
-- targets must be present in the authoritative target set;
-- numeric Activity resource costs are checked against authoritative resource pools;
-- exhausted resources return `ILLEGAL` rather than relying on model judgment;
-- unresolved runtime/formula costs and manual-adjudication mechanics return `MANUAL` rather than guessing;
-- short/long rest requests can be gated by authoritative runtime state;
-- generic runtime actions must be present in `availableActionRefs`;
-- real SRD 5.2 class-feature, spell, and item JSON records are indexed successfully in integration tests;
-- AI still has no direct state mutation capability.
+Implemented deterministic canonical-ID and Activity resolution against OracleRPG Core/Schema and real SRD 5.2 compendium records. Unsupported/manual mechanics return `MANUAL` instead of being guessed by AI.
 
 ## AI-5 — Scene + Entity + Knowledge State
 
 **Status: COMPLETE**
 
-Implemented explicit runtime-owned, revisioned campaign world state for scenes, actors, entities, relationships, objective facts, and knowledge grants.
-
-Implemented components:
-
-- `CampaignWorldState` with an authoritative world revision;
-- `WorldStateStorePort` persistence boundary;
-- `WorldStateService` with optimistic revision checks and integrity validation;
-- explicit objective `WorldFactState` separated from `KnowledgeGrantState`;
-- relationship state with visibility rules;
-- `WorldStateContextSource` adapter feeding persistent world state into Context Engine 2.0;
-- context projection now includes visible relationships while preserving player perspective.
-
-Validated guarantees:
-
-- objective secrets may exist in world truth without appearing in player context;
-- actor-specific knowledge grants do not leak to other actors;
-- knowledge becomes visible only after an authoritative Runtime mutation;
-- stale world revisions cannot overwrite newer state;
-- invalid fact/entity/actor references are rejected before persistence;
-- GM-only/hidden relationships remain outside player context;
-- the AI still has no direct access to `WorldStateService` or `WorldStateStorePort` mutation methods.
+Implemented Runtime-owned revisioned world state for scenes, actors, entities, relationships, objective facts, and perspective-specific knowledge grants.
 
 ### Release checkpoint A
 
-**Status: PASSED**
+**Status: PASSED + DEPLOYED**
 
-Validated on the cumulative AI-1…AI-5 branch before merge:
-
-- full workspace TypeScript typecheck;
-- full workspace tests;
-- AI authority/dependency audit;
-- Context Engine knowledge and relationship isolation tests;
-- structured capability-gate tests;
-- Rules/Compendium integration tests against real SRD 5.2 feature/spell/item data;
-- world-state revision and integrity tests;
-- Class Regression across all 12 SRD 5.2 classes/subclasses;
-- persisted `compendium-final-audit.json` remains `SUPPORTED` with zero issues.
-
-This checkpoint is eligible for merge to `main` and the first AI architecture Vercel deployment.
+AI-1…AI-5 passed full typecheck, workspace tests, authority/dependency audit, compendium integration, world-state isolation/revision tests, and 12-class regression before merge to `main`. Production Vercel deployment succeeded on merge commit `ad1482e9b7ad52a1e4153267753d6d0af0ac26f7`.
 
 ## AI-6 — Memory 2.0 + Session State
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Add episodic memory, semantic world facts, character knowledge, relationship changes, open threads, promises, discoveries, and compact session summaries.
+Implemented Runtime-owned derived memory and session state without granting memory any authority over mechanical or world truth.
 
 ## AI-7 — Retrieval / Hybrid RAG + Context Budget
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Retrieve documents, compendium records, memories, entities, and world facts using lexical, semantic, entity, recency, importance, and visibility signals within an explicit token budget.
+Implemented provider-agnostic hybrid retrieval and hard context budgeting across memory, world facts, entities and external indexes, with visibility filtering before ranking.
 
 ## AI-8 — Oracle AI Gateway
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Introduce stable Oracle model aliases, provider routing, authentication, retries/fallbacks, BYOK as an advanced option, usage tracking, quotas, and secret isolation.
+Implemented stable Oracle aliases, provider routing, capability filtering, retry/fallback, platform/BYOK auth policy, server-side secret resolution, quotas and usage/cost accounting without exposing provider/model identity to product contracts.
 
 ## AI-9 — Complete GM Runtime
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Run a complete server-authoritative RPG turn end-to-end: intent → state → context → AI proposal → rules resolution → state mutation → narration → memory extraction → persistence.
+Implemented `OracleGmRuntime` as the end-to-end authoritative turn pipeline: intent → state → context → retrieval → capability manifest → structured AI proposal → validation/execution → final narration → persistence → memory extraction/write → session registration.
+
+Validated guarantees include capability-before-validator-before-executor ordering, context alignment before AI invocation, final narration after mechanical resolution, memory after persistence, and no direct model mutation path.
 
 ## AI-10 — Model Router & Specialized AI Operations
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Route narration, NPC dialogue, summarization, extraction, vision, reranking, and lightweight tasks to appropriate model aliases. Keep provider/model identity outside product-facing contracts.
+Implemented a semantic operation router above the Oracle AI Gateway. Runtime code requests operations, not aliases or model/provider identities.
+
+Specialized operations include GM interpretation, narration, NPC dialogue, memory extraction/consolidation, session summarization, retrieval reranking, document/entity extraction, vision inspection, embeddings, and lightweight text tasks.
+
+Default routing policy maps these operations only to stable Oracle aliases (`oracle-reasoning`, `oracle-story`, `oracle-background`, `oracle-fast`, `oracle-vision`, `oracle-embedding`). Callers may tune budget/temperature but cannot select provider/model through the operation contract.
+
+Validated guarantees include fail-closed missing policies, specialized capability requirements, provider/model absence from operation responses, and GM Runtime integration through semantic operations instead of direct alias selection.
 
 ### Release checkpoint B
 
-After AI-6…AI-10:
+**Status: READY FOR FINAL GATE**
 
-- run full end-to-end runtime tests;
-- regression-test compendium and game-engine boundaries;
-- verify memory/knowledge isolation and action authority;
-- merge to `main` only if green;
-- deploy to Vercel.
+Before merge/deploy:
+
+- run full typecheck and all AI/runtime tests across AI-1…AI-10;
+- run static authority/dependency audit across all ten phases;
+- regression-test compendium/game-engine boundaries;
+- verify memory/knowledge/retrieval isolation, token budget, Gateway secret isolation, action authority, and end-to-end GM turn ordering;
+- merge to `main` only if all checks are green;
+- deploy to Vercel and verify the production deployment corresponds exactly to the merge commit.
 
 ## Package direction
 
@@ -205,22 +114,26 @@ packages/
     context/
     actions/
     gateway/
+    router/
   runtime/
     turn-orchestrator/
     rules-resolver/
     state/
     memory/
     retrieval/
+    gm-runtime/
 ```
 
-The physical folders may evolve, but dependency direction must remain:
+Dependency direction remains:
 
 ```text
 Applications → Runtime → AI contracts / Core / Content / Schema
+                         ↓
+                AI Operation Router
                          ↓
                     AI Gateway
                          ↓
                      Providers
 ```
 
-Providers must never become dependencies of Core, Content, or Schema.
+Providers must never become dependencies of Core, Content, Schema, Memory, Retrieval, or product-facing Runtime contracts.
