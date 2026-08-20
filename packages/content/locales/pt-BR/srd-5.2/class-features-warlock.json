@@ -1,0 +1,51 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "warlock",
+  "entries": {
+    "dnd2024:2024:feature:warlock:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:warlock:contact-patron:srd-5.2": { "name": "Contatar Patrono" },
+    "dnd2024:2024:feature:warlock:eldritch-invocations:srd-5.2": { "name": "Invocações Místicas" },
+    "dnd2024:2024:feature:warlock:eldritch-master:srd-5.2": { "name": "Mestre Místico" },
+    "dnd2024:2024:feature:warlock:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:warlock:magical-cunning:srd-5.2": { "name": "Astúcia Mágica" },
+    "dnd2024:2024:feature:warlock:mystic-arcanum:srd-5.2": { "name": "Arcano Místico" },
+    "dnd2024:2024:feature:warlock:pact-magic:srd-5.2": { "name": "Magia de Pacto" },
+
+    "dnd2024:2024:feature:warlock:invocation:agonizing-blast:srd-5.2": { "name": "Rajada Agonizante" },
+    "dnd2024:2024:feature:warlock:invocation:armor-of-shadows:srd-5.2": { "name": "Armadura das Sombras" },
+    "dnd2024:2024:feature:warlock:invocation:ascendant-step:srd-5.2": { "name": "Passo Ascendente" },
+    "dnd2024:2024:feature:warlock:invocation:devil-s-sight:srd-5.2": { "name": "Visão do Diabo" },
+    "dnd2024:2024:feature:warlock:invocation:eldritch-spear:srd-5.2": { "name": "Lança Mística" },
+    "dnd2024:2024:feature:warlock:invocation:fiendish-vigor:srd-5.2": { "name": "Vigor Ínfero" },
+    "dnd2024:2024:feature:warlock:invocation:gaze-of-two-minds:srd-5.2": { "name": "Olhar de Duas Mentes" },
+    "dnd2024:2024:feature:warlock:invocation:lifedrinker:srd-5.2": { "name": "Bebedor de Vida" },
+    "dnd2024:2024:feature:warlock:invocation:mask-of-many-faces:srd-5.2": { "name": "Máscara de Muitas Faces" },
+    "dnd2024:2024:feature:warlock:invocation:master-of-myriad-forms:srd-5.2": { "name": "Mestre das Inúmeras Formas" },
+    "dnd2024:2024:feature:warlock:invocation:misty-visions:srd-5.2": { "name": "Visões Nebulosas" },
+    "dnd2024:2024:feature:warlock:invocation:one-with-shadows:srd-5.2": { "name": "Uno com as Sombras" },
+    "dnd2024:2024:feature:warlock:invocation:otherworldly-leap:srd-5.2": { "name": "Salto Sobrenatural" },
+    "dnd2024:2024:feature:warlock:invocation:pact-of-the-blade:srd-5.2": { "name": "Pacto da Lâmina" },
+    "dnd2024:2024:feature:warlock:invocation:pact-of-the-chain:srd-5.2": { "name": "Pacto da Corrente" },
+    "dnd2024:2024:feature:warlock:invocation:pact-of-the-tome:srd-5.2": { "name": "Pacto do Tomo" },
+    "dnd2024:2024:feature:warlock:invocation:repelling-blast:srd-5.2": { "name": "Rajada Repulsora" },
+    "dnd2024:2024:feature:warlock:invocation:thirsting-blade:srd-5.2": { "name": "Lâmina Sedenta" },
+    "dnd2024:2024:feature:warlock:invocation:visions-of-distant-realms:srd-5.2": { "name": "Visões de Reinos Distantes" },
+    "dnd2024:2024:feature:warlock:invocation:whispers-of-the-grave:srd-5.2": { "name": "Sussurros da Sepultura" },
+    "dnd2024:2024:feature:warlock:invocation:witch-sight:srd-5.2": { "name": "Visão de Bruxa" },
+
+    "dnd2024:2024:feature:warlock:fiend:dark-one-s-blessing:srd-5.2": { "name": "Bênção do Senhor das Trevas" },
+    "dnd2024:2024:feature:warlock:fiend:dark-one-s-own-luck:srd-5.2": {
+      "name": "Sorte do Senhor das Trevas",
+      "data.text.rules.0": "Você pode recorrer ao seu patrono ínfero para alterar o destino a seu favor. Quando fizer um teste de atributo ou uma salvaguarda, pode usar esta feature para adicionar {@dice 1d10} à sua rolagem. Você pode fazer isso depois de ver a rolagem, mas antes que qualquer efeito dela ocorra.",
+      "data.text.rules.1": "Você pode usar esta feature um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez), mas não mais que uma vez por rolagem. Você recupera todos os usos gastos ao terminar um {@variantrule Long Rest|XPHB}."
+    },
+    "dnd2024:2024:feature:warlock:fiend:fiend-spells:srd-5.2": { "name": "Magias do Ínfero" },
+    "dnd2024:2024:feature:warlock:fiend:fiendish-resilience:srd-5.2": { "name": "Resiliência Ínfera" },
+    "dnd2024:2024:feature:warlock:fiend:hurl-through-hell:srd-5.2": { "name": "Arremessar pelo Inferno" }
+  }
+}
