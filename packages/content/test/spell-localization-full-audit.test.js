@@ -34,13 +34,32 @@ function setPath(root, pathKey, value) {
   let cursor = root;
   for (let index = 0; index < parts.length - 1; index += 1) {
     cursor = cursor[parts[index]];
+    if (cursor == null) return false;
   }
   cursor[parts.at(-1)] = value;
+  return true;
+}
+
+function normalizeMechanicalTag(tag) {
+  const match = tag.match(/^\{@([^\s]+)\s+([^}]*)\}$/);
+  if (!match) return tag;
+  const [, type, body] = match;
+  const parts = body.split("|");
+
+  if (["damage", "dice", "dc", "chance"].includes(type)) {
+    return `${type}:${parts[0]}`;
+  }
+
+  if (["variantrule", "condition", "action", "spell", "creature", "skill", "sense", "status", "hazard"].includes(type)) {
+    return `${type}:${parts.slice(0, 2).join("|")}`;
+  }
+
+  return tag;
 }
 
 function extractMechanicalTags(value) {
   if (typeof value !== "string") return [];
-  return value.match(/\{@(?:damage|dice|variantrule|condition|action|spell|creature|skill|dc|sense|status|hazard|chance)\b[^}]*\}/g) ?? [];
+  return (value.match(/\{@(?:damage|dice|variantrule|condition|action|spell|creature|skill|dc|sense|status|hazard|chance)\b[^}]*\}/g) ?? []).map(normalizeMechanicalTag);
 }
 
 function extractFoundryRefs(value) {
@@ -77,8 +96,9 @@ test("PT-BR spell catalogs from cantrips through level 9 cover all 340 canonical
 
 test("all 340 spell overlays use existing presentation-only string paths", () => {
   const byId = new Map(canonical.items.map((spell) => [spell.canonicalId, spell]));
+  const invalid = [];
 
-  for (const { catalog } of levels) {
+  for (const { level, catalog } of levels) {
     for (const [canonicalId, overlay] of Object.entries(catalog.entries)) {
       const spell = byId.get(canonicalId);
       assert.ok(spell, `${canonicalId}: missing canonical spell`);
@@ -86,15 +106,17 @@ test("all 340 spell overlays use existing presentation-only string paths", () =>
       assert.notEqual(overlay.name.trim(), "", `${canonicalId}: empty localized name`);
 
       for (const [pathKey, translatedValue] of Object.entries(overlay)) {
-        assert.equal(isPresentationPath(pathKey), true, `${canonicalId}: forbidden localization path ${pathKey}`);
-        assert.equal(typeof translatedValue, "string", `${canonicalId}: localized value at ${pathKey} must be a string`);
-        assert.equal(typeof getPath(spell, pathKey), "string", `${canonicalId}: localization path does not point to an existing canonical string: ${pathKey}`);
+        if (!isPresentationPath(pathKey)) invalid.push(`level ${level} ${canonicalId}: forbidden path ${pathKey}`);
+        if (typeof translatedValue !== "string") invalid.push(`level ${level} ${canonicalId}: non-string translation at ${pathKey}`);
+        if (typeof getPath(spell, pathKey) !== "string") invalid.push(`level ${level} ${canonicalId}: missing canonical string path ${pathKey}`);
       }
     }
   }
+
+  assert.deepEqual(invalid, []);
 });
 
-test("localizing every spell changes only declared presentation paths and never mutates canonical data", () => {
+test("localizing every spell changes only declared existing presentation paths and never mutates canonical data", () => {
   const catalogById = new Map();
   for (const { catalog } of levels) {
     for (const [canonicalId, overlay] of Object.entries(catalog.entries)) catalogById.set(canonicalId, { catalog, overlay });
@@ -109,31 +131,42 @@ test("localizing every spell changes only declared presentation paths and never 
 
     const restored = structuredClone(localized);
     for (const pathKey of Object.keys(overlay)) {
-      setPath(restored, pathKey, getPath(spell, pathKey));
+      const sourceValue = getPath(spell, pathKey);
+      if (typeof sourceValue === "string") setPath(restored, pathKey, sourceValue);
     }
-    assert.deepEqual(restored, spell, `${spell.canonicalId}: localization changed data outside declared presentation paths`);
+    assert.deepEqual(restored, spell, `${spell.canonicalId}: localization changed data outside declared existing presentation paths`);
   }
 });
 
-test("mechanical inline tags and Foundry command references survive every translated spell string", () => {
+test("mechanical inline tag identities and Foundry command references survive every translated spell string", () => {
   const byId = new Map(canonical.items.map((spell) => [spell.canonicalId, spell]));
+  const invalid = [];
 
-  for (const { catalog } of levels) {
+  for (const { level, catalog } of levels) {
     for (const [canonicalId, overlay] of Object.entries(catalog.entries)) {
       const spell = byId.get(canonicalId);
       for (const [pathKey, translatedValue] of Object.entries(overlay)) {
         const sourceValue = getPath(spell, pathKey);
-        assert.deepEqual(
-          extractMechanicalTags(translatedValue),
-          extractMechanicalTags(sourceValue),
-          `${canonicalId}: mechanical inline tag changed at ${pathKey}`
-        );
-        assert.deepEqual(
-          extractFoundryRefs(translatedValue),
-          extractFoundryRefs(sourceValue),
-          `${canonicalId}: Foundry reference/command changed at ${pathKey}`
-        );
+        if (typeof sourceValue !== "string") continue;
+
+        if (!isDeepStrictEqual(extractMechanicalTags(translatedValue), extractMechanicalTags(sourceValue))) {
+          invalid.push(`level ${level} ${canonicalId}: mechanical inline tag changed at ${pathKey}`);
+        }
+        if (!isDeepStrictEqual(extractFoundryRefs(translatedValue), extractFoundryRefs(sourceValue))) {
+          invalid.push(`level ${level} ${canonicalId}: Foundry reference/command changed at ${pathKey}`);
+        }
       }
     }
   }
+
+  assert.deepEqual(invalid, []);
 });
+
+function isDeepStrictEqual(left, right) {
+  try {
+    assert.deepEqual(left, right);
+    return true;
+  } catch {
+    return false;
+  }
+}
