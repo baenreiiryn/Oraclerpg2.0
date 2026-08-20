@@ -1,0 +1,59 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "monk",
+  "entries": {
+    "dnd2024:2024:feature:monk:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:monk:acrobatic-movement:srd-5.2": { "name": "Movimento Acrobático" },
+    "dnd2024:2024:feature:monk:body-and-mind:srd-5.2": { "name": "Corpo e Mente" },
+    "dnd2024:2024:feature:monk:bonus-unarmed-strike:srd-5.2": { "name": "Ataque Desarmado Bônus" },
+    "dnd2024:2024:feature:monk:deflect-attacks:srd-5.2": { "name": "Desviar Ataques" },
+    "dnd2024:2024:feature:monk:deflect-energy:srd-5.2": { "name": "Desviar Energia" },
+    "dnd2024:2024:feature:monk:dexterous-attacks:srd-5.2": { "name": "Ataques Ágeis" },
+    "dnd2024:2024:feature:monk:disciplined-survivor:srd-5.2": { "name": "Sobrevivente Disciplinado" },
+    "dnd2024:2024:feature:monk:empowered-strikes:srd-5.2": { "name": "Golpes Potencializados" },
+    "dnd2024:2024:feature:monk:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:monk:evasion:srd-5.2": { "name": "Evasão" },
+    "dnd2024:2024:feature:monk:extra-attack:srd-5.2": { "name": "Ataque Extra" },
+    "dnd2024:2024:feature:monk:flurry-of-blows:srd-5.2": { "name": "Rajada de Golpes" },
+    "dnd2024:2024:feature:monk:heightened-focus:srd-5.2": { "name": "Foco Elevado" },
+    "dnd2024:2024:feature:monk:martial-arts:srd-5.2": { "name": "Artes Marciais" },
+    "dnd2024:2024:feature:monk:martial-arts-die:srd-5.2": { "name": "Dado de Artes Marciais" },
+    "dnd2024:2024:feature:monk:monk-s-focus:srd-5.2": {
+      "name": "Foco do Monge",
+      "data.text.rules.0": "Seu foco e treinamento marcial permitem que você canalize uma reserva de energia extraordinária dentro de si. Essa energia é representada por Pontos de Foco. Seu nível de Monge determina quantos pontos você possui, conforme mostrado na coluna Pontos de Foco da tabela de Features do Monge.",
+      "data.text.rules.1": "Você pode gastar esses pontos para aprimorar ou alimentar certas features de Monge. Você começa conhecendo três delas: Rajada de Golpes, Defesa Paciente e Passo do Vento, cada uma descrita abaixo.",
+      "data.text.rules.2": "Quando você gasta um Ponto de Foco, ele fica indisponível até que termine um {@variantrule Short Rest|XPHB|Short} ou {@variantrule Long Rest|XPHB}; ao final do descanso, você recupera todos os pontos gastos.",
+      "data.text.rules.3": "Algumas features que usam Pontos de Foco exigem que o alvo realize uma salvaguarda. A CD é igual a 8 + seu modificador de Sabedoria + seu {@variantrule Proficiency|XPHB|Proficiency Bonus}."
+    },
+    "dnd2024:2024:feature:monk:patient-defense:srd-5.2": { "name": "Defesa Paciente" },
+    "dnd2024:2024:feature:monk:perfect-focus:srd-5.2": { "name": "Foco Perfeito" },
+    "dnd2024:2024:feature:monk:self-restoration:srd-5.2": { "name": "Autorrestauração" },
+    "dnd2024:2024:feature:monk:slow-fall:srd-5.2": { "name": "Queda Lenta" },
+    "dnd2024:2024:feature:monk:step-of-the-wind:srd-5.2": { "name": "Passo do Vento" },
+    "dnd2024:2024:feature:monk:stunning-strike:srd-5.2": { "name": "Golpe Atordoante" },
+    "dnd2024:2024:feature:monk:superior-defense:srd-5.2": {
+      "name": "Defesa Superior",
+      "data.text.rules.0": "No início do seu turno, você pode gastar 3 Pontos de Foco para se fortalecer contra dano por 1 minuto ou até ficar sob a condição {@condition Incapacitated|XPHB}. Durante esse período, você possui {@variantrule Resistance|XPHB} a todo dano exceto dano de Força."
+    },
+    "dnd2024:2024:feature:monk:unarmored-defense:srd-5.2": { "name": "Defesa sem Armadura" },
+    "dnd2024:2024:feature:monk:unarmored-movement:srd-5.2": { "name": "Movimento sem Armadura" },
+    "dnd2024:2024:feature:monk:uncanny-metabolism:srd-5.2": {
+      "name": "Metabolismo Sobrenatural",
+      "data.text.rules.0": "Quando você rola {@variantrule Initiative|XPHB}, pode recuperar todos os Pontos de Foco gastos. Quando fizer isso, role seu dado de Artes Marciais e recupere uma quantidade de {@variantrule Hit Points|XPHB} igual ao seu nível de Monge mais o resultado rolado.",
+      "data.text.rules.1": "Depois de usar esta feature, você não pode usá-la novamente até terminar um {@variantrule Long Rest|XPHB}."
+    },
+    "dnd2024:2024:feature:monk:open-hand:fleet-step:srd-5.2": { "name": "Passo Veloz" },
+    "dnd2024:2024:feature:monk:open-hand:open-hand-technique:srd-5.2": { "name": "Técnica da Mão Aberta" },
+    "dnd2024:2024:feature:monk:open-hand:quivering-palm:srd-5.2": {
+      "name": "Palma Vibrante",
+      "data.text.rules.0": "Você adquire a capacidade de instaurar vibrações letais no corpo de uma criatura. Quando atinge uma criatura com um {@variantrule Unarmed Strike|XPHB}, pode gastar 4 Pontos de Foco para iniciar essas vibrações imperceptíveis, que duram um número de dias igual ao seu nível de Monge. As vibrações são inofensivas até que você use uma ação para encerrá-las. Alternativamente, quando realizar a {@action Attack|XPHB} action em seu turno, pode abrir mão de um dos ataques para encerrá-las. Para isso, você e o alvo precisam estar no mesmo plano de existência. Quando você encerra as vibrações, o alvo deve realizar uma salvaguarda de Constituição, sofrendo {@damage 10d12} de dano de Força em caso de falha ou metade desse dano em caso de sucesso.",
+      "data.text.rules.1": "Você pode manter apenas uma criatura sob o efeito desta feature por vez. Você pode encerrar as vibrações de forma inofensiva, sem exigir ação."
+    },
+    "dnd2024:2024:feature:monk:open-hand:wholeness-of-body:srd-5.2": { "name": "Integridade Corporal" }
+  }
+}
