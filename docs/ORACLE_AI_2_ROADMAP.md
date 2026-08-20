@@ -137,13 +137,21 @@ Validated guarantees:
 
 ### Release checkpoint A
 
-After AI-1…AI-5:
+**Status: PASSED**
 
-- run cumulative AI/runtime tests;
-- run existing schema/content regression tests;
-- validate no direct AI state mutation path exists;
-- merge to `main` only if green;
-- deploy to Vercel.
+Validated on the cumulative AI-1…AI-5 branch before merge:
+
+- full workspace TypeScript typecheck;
+- full workspace tests;
+- AI authority/dependency audit;
+- Context Engine knowledge and relationship isolation tests;
+- structured capability-gate tests;
+- Rules/Compendium integration tests against real SRD 5.2 feature/spell/item data;
+- world-state revision and integrity tests;
+- Class Regression across all 12 SRD 5.2 classes/subclasses;
+- persisted `compendium-final-audit.json` remains `SUPPORTED` with zero issues.
+
+This checkpoint is eligible for merge to `main` and the first AI architecture Vercel deployment.
 
 ## AI-6 — Memory 2.0 + Session State
 
