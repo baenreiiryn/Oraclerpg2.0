@@ -1,0 +1,193 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "spell",
+  "scope": "level-8",
+  "entries": {
+    "dnd2024:2024:spell:animal-shapes:srd-5.2": {
+      "name": "Formas Animais",
+      "data.text.rules.0": "Escolha qualquer número de criaturas voluntárias que você possa ver dentro do alcance. Cada alvo se transforma em uma Besta Grande ou menor, à sua escolha, que tenha {@variantrule Challenge Rating|XPHB} 4 ou inferior. Você pode escolher uma forma diferente para cada alvo. Em seus turnos posteriores, você pode realizar uma ação {@action Magic|XPHB} para transformar os alvos novamente.",
+      "data.text.rules.1": "As estatísticas de jogo de um alvo são substituídas pelas estatísticas da Besta escolhida, mas o alvo mantém seu tipo de criatura; {@variantrule Hit Points|XPHB}; {@variantrule Hit Point Dice|XPHB}; alinhamento; capacidade de se comunicar; e seus valores de Inteligência, Sabedoria e Carisma. As ações do alvo ficam limitadas pela anatomia da forma de Besta, e ele não pode conjurar magias. O equipamento do alvo se funde à nova forma, e ele não pode usar nenhum desses equipamentos enquanto estiver nessa forma.",
+      "data.text.rules.2": "O alvo recebe uma quantidade de {@variantrule Temporary Hit Points|XPHB} igual aos {@variantrule Hit Points|XPHB} da primeira forma na qual se transformar. Esses {@variantrule Temporary Hit Points|XPHB} desaparecem se ainda restarem quando a magia terminar. A transformação dura pela duração da magia ou até que o alvo a encerre usando uma {@variantrule Bonus Action|XPHB}.",
+      "data.activities.0.name": "Transformação Inicial",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ser voluntário.",
+      "data.activities.1.name": "Transformações Posteriores"
+    },
+    "dnd2024:2024:spell:antimagic-field:srd-5.2": {
+      "name": "Campo Antimagia",
+      "data.text.rules.0": "Uma aura de antimagia envolve você em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanation} de 3 metros. Ninguém pode conjurar magias, realizar ações {@action Magic|XPHB} ou criar outros efeitos mágicos dentro da aura, e essas coisas não podem ter como alvo nem afetar de outra forma qualquer coisa dentro dela. As propriedades mágicas de itens mágicos não funcionam dentro da aura nem sobre qualquer coisa que esteja dentro dela.",
+      "data.text.rules.1": "Áreas de efeito criadas por magias ou outras formas de magia não podem se estender para dentro da aura, e ninguém pode se teleportar para dentro ou para fora dela nem realizar viagens planares ali. Portais se fecham temporariamente enquanto estiverem dentro da aura.",
+      "data.text.rules.2": "Magias em andamento, exceto aquelas conjuradas por um Artefato ou uma divindade, são suprimidas na área. Enquanto um efeito estiver suprimido, ele não funciona, mas o tempo que passa suprimido ainda conta para sua duração.",
+      "data.text.rules.3": "{@spell Dispel Magic|XPHB} não tem efeito sobre a aura, e as auras criadas por diferentes magias {@spell Antimagic Field|XPHB} não anulam umas às outras.",
+      "data.activities.0.name": "Conjurar Campo Antimagia"
+    },
+    "dnd2024:2024:spell:antipathy-sympathy:srd-5.2": {
+      "name": "Antipatia/Simpatia",
+      "data.text.rules.0": "Ao conjurar a magia, escolha se ela cria antipatia ou simpatia e tenha como alvo uma criatura ou objeto Enorme ou menor. Em seguida, especifique um tipo de criatura, como dragões vermelhos, goblins ou vampiros. Uma criatura do tipo escolhido realiza uma salvaguarda de Sabedoria quando chega a até 36 metros do alvo. Sua escolha entre antipatia ou simpatia determina o que acontece com uma criatura quando ela falha nessa salvaguarda:",
+      "data.text.rules.1.items.0.name": "Antipatia",
+      "data.text.rules.1.items.0.entries.0": "A criatura fica com a condição {@condition Frightened|XPHB}. A criatura {@condition Frightened|XPHB} deve usar seu movimento em seus turnos para se afastar do alvo o máximo possível, seguindo a rota mais segura.",
+      "data.text.rules.1.items.1.name": "Simpatia",
+      "data.text.rules.1.items.1.entries.0": "A criatura fica com a condição {@condition Charmed|XPHB}. A criatura {@condition Charmed|XPHB} deve usar seu movimento em seus turnos para se aproximar do alvo o máximo possível, seguindo a rota mais segura. Se a criatura estiver a até 1,5 metro do alvo, ela não pode se afastar voluntariamente. Se o alvo causar dano à criatura {@condition Charmed|XPHB}, ela pode realizar uma salvaguarda de Sabedoria para encerrar o efeito, conforme descrito abaixo.",
+      "data.text.rules.2.name": "Encerrando o Efeito",
+      "data.text.rules.2.entries.0": "Se a criatura {@condition Frightened|XPHB} ou {@condition Charmed|XPHB} terminar seu turno a mais de 36 metros do alvo, ela realiza uma salvaguarda de Sabedoria. Em caso de sucesso, a criatura deixa de ser afetada pelo alvo. Uma criatura que tenha sucesso nessa salvaguarda fica imune a esse efeito por 1 minuto, após o qual pode ser afetada novamente.",
+      "data.activities.0.name": "Conjurar",
+      "data.activities.0.effects.0.name": "Antipatia",
+      "data.activities.0.effects.1.name": "Simpatia",
+      "data.activities.1.name": "Salvaguarda de Antipatia",
+      "data.activities.1.effects.0.name": "Amedrontado",
+      "data.activities.2.name": "Salvaguarda de Simpatia",
+      "data.activities.2.effects.0.name": "Enfeitiçado"
+    },
+    "dnd2024:2024:spell:befuddlement:srd-5.2": {
+      "name": "Confusão Mental",
+      "data.text.rules.0": "Você ataca a mente de uma criatura que possa ver dentro do alcance. O alvo realiza uma salvaguarda de Inteligência.",
+      "data.text.rules.1": "Em caso de falha, o alvo sofre {@damage 10d12} de dano Psíquico e não pode conjurar magias nem realizar a ação {@action Magic|XPHB}. Ao final de cada período de 30 dias, o alvo repete a salvaguarda, encerrando o efeito em caso de sucesso. O efeito também pode ser encerrado pelas magias {@spell Greater Restoration|XPHB}, {@spell Heal|XPHB} ou {@spell Wish|XPHB}.",
+      "data.text.rules.2": "Em caso de sucesso, o alvo sofre apenas metade do dano.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Confuso Mentalmente"
+    },
+    "dnd2024:2024:spell:clone:srd-5.2": {
+      "name": "Clone",
+      "data.text.rules.0": "Você toca uma criatura ou pelo menos 2,5 centímetros cúbicos de sua carne. Uma duplicata inerte dessa criatura se forma dentro do recipiente usado na conjuração da magia e termina de crescer após 120 dias; você escolhe se o clone final terá a mesma idade da criatura ou será mais jovem. O clone permanece inerte e perdura indefinidamente enquanto seu recipiente permanecer intacto e sem ser perturbado.",
+      "data.text.rules.1": "Se a criatura original morrer depois que o clone terminar de se formar, a alma da criatura é transferida para o clone se estiver livre e disposta a retornar. O clone é fisicamente idêntico ao original e possui a mesma personalidade, memórias e habilidades, mas nenhum dos equipamentos do original. Os restos originais da criatura, se houver, tornam-se inertes e não podem ser revividos, pois a alma da criatura está em outro lugar.",
+      "data.activities.0.name": "Conjurar Clone"
+    },
+    "dnd2024:2024:spell:control-weather:srd-5.2": {
+      "name": "Controlar o Clima",
+      "data.text.rules.0": "Você assume o controle do clima em um raio de 8 quilômetros ao seu redor pela duração. Você deve estar ao ar livre para conjurar esta magia, e ela termina antecipadamente se você entrar em um ambiente fechado.",
+      "data.text.rules.1": "Ao conjurar a magia, você altera as condições climáticas atuais, determinadas pelo Mestre. Você pode alterar precipitação, temperatura e vento. Leva {@dice 1d4 × 10} minutos para que as novas condições entrem em vigor. Depois disso, você pode alterar as condições novamente. Quando a magia termina, o clima retorna gradualmente ao normal.",
+      "data.text.rules.2": "Ao alterar as condições climáticas, encontre a condição atual nas tabelas a seguir e altere seu estágio em um nível, para cima ou para baixo. Ao alterar o vento, você também pode mudar sua direção.",
+      "data.text.rules.3.caption": "Precipitação",
+      "data.text.rules.3.columns.0": "Estágio",
+      "data.text.rules.3.columns.1": "Condição",
+      "data.text.rules.3.rows.0.1": "Céu limpo",
+      "data.text.rules.3.rows.1.1": "Nuvens leves",
+      "data.text.rules.3.rows.2.1": "Nublado ou neblina ao nível do solo",
+      "data.text.rules.3.rows.3.1": "Chuva, granizo ou neve",
+      "data.text.rules.3.rows.4.1": "Chuva torrencial, granizo intenso ou nevasca",
+      "data.text.rules.4.caption": "Temperatura",
+      "data.text.rules.4.columns.0": "Estágio",
+      "data.text.rules.4.columns.1": "Condição",
+      "data.text.rules.4.rows.0.1": "Onda de calor",
+      "data.text.rules.4.rows.1.1": "Quente",
+      "data.text.rules.4.rows.2.1": "Ameno",
+      "data.text.rules.4.rows.3.1": "Fresco",
+      "data.text.rules.4.rows.4.1": "Frio",
+      "data.text.rules.4.rows.5.1": "Congelante",
+      "data.text.rules.5.caption": "Vento",
+      "data.text.rules.5.columns.0": "Estágio",
+      "data.text.rules.5.columns.1": "Condição",
+      "data.text.rules.5.rows.0.1": "Calmo",
+      "data.text.rules.5.rows.1.1": "Vento moderado",
+      "data.text.rules.5.rows.2.1": "Vento forte",
+      "data.text.rules.5.rows.3.1": "Vendaval",
+      "data.text.rules.5.rows.4.1": "Tempestade",
+      "data.activities.0.name": "Conjurar e Controlar",
+      "data.activities.0.rolls.0.name": "Atraso da Mudança Climática",
+      "data.activities.1.name": "Alterar Condições",
+      "data.activities.1.rolls.0.name": "Atraso da Mudança Climática"
+    },
+    "dnd2024:2024:spell:demiplane:srd-5.2": {
+      "name": "Semiplano",
+      "data.text.rules.0": "Você cria uma porta sombria Média sobre uma superfície sólida e plana que possa ver dentro do alcance. Essa porta pode ser aberta e fechada e conduz a um semiplano que consiste em uma sala vazia com 9 metros em cada dimensão, feita de madeira ou pedra, à sua escolha.",
+      "data.text.rules.1": "Quando a magia termina, a porta desaparece, e quaisquer objetos dentro do semiplano permanecem lá. Quaisquer criaturas dentro dele também permanecem, a menos que escolham ser arremessadas através da porta enquanto ela desaparece, caindo com a condição {@condition Prone|XPHB} nos espaços desocupados mais próximos do antigo espaço da porta.",
+      "data.text.rules.2": "Cada vez que conjura esta magia, você pode criar um novo semiplano ou conectar a porta sombria a um semiplano criado por uma conjuração anterior desta magia. Além disso, se você conhecer a natureza e o conteúdo de um semiplano criado por outra criatura através desta magia, pode conectar a porta sombria a esse semiplano em vez disso.",
+      "data.activities.0.name": "Conjurar Semiplano"
+    },
+    "dnd2024:2024:spell:dominate-monster:srd-5.2": {
+      "name": "Dominar Monstro",
+      "data.text.rules.0": "Uma criatura que você possa ver dentro do alcance deve ser bem-sucedida em uma salvaguarda de Sabedoria ou fica com a condição {@condition Charmed|XPHB} pela duração. O alvo tem {@variantrule Advantage|XPHB} na salvaguarda se você ou seus aliados estiverem lutando contra ele. Sempre que o alvo sofrer dano, ele repete a salvaguarda, encerrando a magia sobre si mesmo em caso de sucesso.",
+      "data.text.rules.1": "Você mantém um vínculo telepático com o alvo {@condition Charmed|XPHB} enquanto ambos estiverem no mesmo plano de existência. Em seu turno, você pode usar esse vínculo para dar ordens ao alvo, sem exigir uma ação, como \"{@action Attack|XPHB} aquela criatura\", \"Vá para lá\" ou \"Pegue aquele objeto\". O alvo faz o possível para obedecer em seu turno. Se completar uma ordem e não receber novas instruções, ele age e se move como quiser, priorizando sua própria proteção.",
+      "data.text.rules.2": "Você pode ordenar que o alvo realize uma {@variantrule Reaction|XPHB}, mas deve gastar sua própria {@variantrule Reaction|XPHB} para fazer isso.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Dominado",
+      "data.activities.0.effects.0.description": "Sempre que o alvo sofrer dano, ele repete a [[/save ability=wis]] salvaguarda, encerrando a magia sobre si mesmo em caso de sucesso."
+    },
+    "dnd2024:2024:spell:earthquake:srd-5.2": {
+      "name": "Terremoto",
+      "data.text.rules.0": "Escolha um ponto no solo que você possa ver dentro do alcance. Pela duração, um tremor intenso rasga o solo em um círculo de 30 metros de raio centrado nesse ponto. O terreno nessa área é {@variantrule Difficult Terrain|XPHB}.",
+      "data.text.rules.1": "Quando você conjura esta magia e ao final de cada um de seus turnos pela duração, cada criatura sobre o solo na área realiza uma salvaguarda de Destreza. Em caso de falha, a criatura fica com a condição {@condition Prone|XPHB}, e sua {@status Concentration|XPHB} é interrompida.",
+      "data.text.rules.2": "Você também pode causar os efeitos abaixo.",
+      "data.text.rules.3.name": "Fissuras",
+      "data.text.rules.3.entries.0": "Um total de {@dice 1d6} fissuras se abre na área da magia ao final do turno em que você a conjura. Você escolhe a localização das fissuras, que não podem ficar sob estruturas. Cada fissura tem {@dice 1d10 × 10} pés de profundidade e 3 metros de largura e se estende de uma borda da área da magia até outra. Uma criatura no mesmo espaço de uma fissura deve ser bem-sucedida em uma salvaguarda de Destreza ou cai dentro dela. Uma criatura que tenha sucesso na salvaguarda se move junto à borda da fissura enquanto ela se abre.",
+      "data.text.rules.4.name": "Estruturas",
+      "data.text.rules.4.entries.0": "O tremor causa 50 de dano de Concussão a qualquer estrutura em contato com o solo na área quando você conjura a magia e ao final de cada um de seus turnos até a magia terminar. Se uma estrutura cair a 0 {@variantrule Hit Points|XPHB}, ela desaba.",
+      "data.text.rules.4.entries.1": "Uma criatura a uma distância de uma estrutura que está desabando igual à metade da altura da estrutura realiza uma salvaguarda de Destreza. Em caso de falha, a criatura sofre {@damage 12d6} de dano de Concussão, fica com a condição {@condition Prone|XPHB} e é soterrada pelos escombros, exigindo um teste de Força ({@skill Athletics|XPHB}) {@dc 20} como uma ação para escapar. Em caso de sucesso, a criatura sofre apenas metade do dano.",
+      "data.activities.0.name": "Conjurar",
+      "data.activities.1.name": "Fissuras no Final do Turno",
+      "data.activities.1.description": "Resolva as fissuras que se abrem ao final do turno em que a magia é conjurada.",
+      "data.activities.2.name": "Salvaguarda contra Estrutura Desabando",
+      "data.activities.2.effects.0.name": "Soterrado em Escombros",
+      "data.activities.2.effects.0.description": "Em caso de falha, a criatura sofre 12d6 de dano de Concussão, fica com a condição &Reference[Prone apply=false] e é soterrada pelos escombros, exigindo um [[/check ability=str skill=ath dc=20]] como uma ação para escapar."
+    },
+    "dnd2024:2024:spell:glibness:srd-5.2": {
+      "name": "Loquacidade",
+      "data.text.rules.0": "Até a magia terminar, quando você realizar um teste de Carisma, pode substituir o número obtido no dado por 15. Além disso, não importa o que diga, qualquer magia que determine se você está falando a verdade indicará que suas palavras são verdadeiras.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Loquaz"
+    },
+    "dnd2024:2024:spell:holy-aura:srd-5.2": {
+      "name": "Aura Sagrada",
+      "data.text.rules.0": "Pela duração, você emite uma aura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanation} de 9 metros. Enquanto estiverem na aura, criaturas à sua escolha têm {@variantrule Advantage|XPHB} em todas as salvaguardas, e outras criaturas têm {@variantrule Disadvantage|XPHB} nas jogadas de ataque contra elas. Além disso, quando um Corruptor ou Morto-Vivo acerta uma criatura afetada com uma jogada de ataque corpo a corpo, o atacante deve ser bem-sucedido em uma salvaguarda de Constituição ou fica com a condição {@condition Blinded|XPHB} até o final do próximo turno dele.",
+      "data.activities.0.name": "Criar Aura",
+      "data.activities.0.effects.0.name": "Proteção Sagrada",
+      "data.activities.1.name": "Salvaguarda de Corruptor/Morto-Vivo",
+      "data.activities.1.effects.0.name": "Cego",
+      "data.activities.1.effects.0.description": "O atacante fica com a condição &Reference[Blinded apply=false] até o final do próximo turno dele."
+    },
+    "dnd2024:2024:spell:incendiary-cloud:srd-5.2": {
+      "name": "Nuvem Incendiária",
+      "data.text.rules.0": "Uma nuvem giratória de brasas e fumaça preenche uma {@variantrule Sphere [Area of Effect]|XPHB|Sphere} de 6 metros de raio centrada em um ponto dentro do alcance. A área da nuvem é {@variantrule Heavily Obscured|XPHB}. Ela permanece pela duração ou até que um vento forte, como o criado por {@spell Gust of Wind|XPHB}, a disperse.",
+      "data.text.rules.1": "Quando a nuvem aparece, cada criatura dentro dela realiza uma salvaguarda de Destreza, sofrendo {@damage 10d8} de dano de Fogo em caso de falha ou metade desse dano em caso de sucesso. Uma criatura também deve realizar essa salvaguarda quando a {@variantrule Sphere [Area of Effect]|XPHB|Sphere} se move para o espaço dela e quando ela entra na {@variantrule Sphere [Area of Effect]|XPHB|Sphere} ou termina seu turno ali. Uma criatura realiza essa salvaguarda apenas uma vez por turno.",
+      "data.text.rules.2": "A nuvem se move 3 metros para longe de você, em uma direção à sua escolha, no início de cada um de seus turnos.",
+      "data.activities.0.name": "Conjurar e Realizar Salvaguarda"
+    },
+    "dnd2024:2024:spell:maze:srd-5.2": {
+      "name": "Labirinto",
+      "data.text.rules.0": "Você bane uma criatura que possa ver dentro do alcance para um semiplano labiríntico. O alvo permanece lá pela duração ou até escapar do labirinto.",
+      "data.text.rules.1": "O alvo pode realizar uma ação {@action Study|XPHB} para tentar escapar. Ao fazer isso, ele realiza um teste de Inteligência ({@skill Investigation|XPHB}) {@dc 20}. Em caso de sucesso, ele escapa e a magia termina.",
+      "data.text.rules.2": "Quando a magia termina, o alvo reaparece no espaço que deixou ou, se esse espaço estiver ocupado, no espaço desocupado mais próximo.",
+      "data.activities.0.name": "Banir para o Labirinto",
+      "data.activities.0.effects.0.name": "Banido",
+      "data.activities.0.effects.0.description": "O alvo pode realizar uma ação Estudar para tentar escapar. Ao fazer isso, realiza um [[/check ability=int skill=inv dc=20]]. Em caso de sucesso, ele escapa e a magia termina."
+    },
+    "dnd2024:2024:spell:mind-blank:srd-5.2": {
+      "name": "Mente Vazia",
+      "data.text.rules.0": "Até a magia terminar, uma criatura voluntária que você toca tem {@variantrule Immunity|XPHB} a dano Psíquico e à condição {@condition Charmed|XPHB}. O alvo também não é afetado por qualquer coisa que detecte suas emoções ou alinhamento, leia seus pensamentos ou detecte magicamente sua localização, e nenhuma magia — nem mesmo {@spell Wish|XPHB} — pode obter informações sobre o alvo, observá-lo remotamente ou controlar sua mente.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Mente Protegida",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ser voluntário."
+    },
+    "dnd2024:2024:spell:power-word-stun:srd-5.2": {
+      "name": "Palavra de Poder: Atordoar",
+      "data.text.rules.0": "Você subjuga a mente de uma criatura que possa ver dentro do alcance. Se o alvo tiver 150 {@variantrule Hit Points|XPHB} ou menos, ele fica com a condição {@condition Stunned|XPHB}. Caso contrário, sua {@variantrule Speed|XPHB} se torna 0 até o início de seu próximo turno.",
+      "data.text.rules.1": "O alvo {@condition Stunned|XPHB} realiza uma salvaguarda de Constituição ao final de cada um de seus turnos, encerrando a condição sobre si mesmo em caso de sucesso.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Atordoado",
+      "data.activities.0.effects.0.description": "O alvo &Reference[Stunned apply=false] realiza uma [[/save ability=con]] salvaguarda ao final de cada um de seus turnos, encerrando a condição sobre si mesmo em caso de sucesso.",
+      "data.activities.0.effects.1.name": "Sem Movimento",
+      "data.activities.0.effects.1.description": "O Deslocamento do alvo é 0 até o início de seu próximo turno."
+    },
+    "dnd2024:2024:spell:sunburst:srd-5.2": {
+      "name": "Explosão Solar",
+      "data.text.rules.0": "Uma luz solar brilhante explode em uma {@variantrule Sphere [Area of Effect]|XPHB|Sphere} de 18 metros de raio centrada em um ponto à sua escolha dentro do alcance. Cada criatura na {@variantrule Sphere [Area of Effect]|XPHB|Sphere} realiza uma salvaguarda de Constituição. Em caso de falha, uma criatura sofre {@damage 12d6} de dano Radiante e fica com a condição {@condition Blinded|XPHB} por 1 minuto. Em caso de sucesso, sofre apenas metade do dano.",
+      "data.text.rules.1": "Uma criatura {@condition Blinded|XPHB} por esta magia realiza outra salvaguarda de Constituição ao final de cada um de seus turnos, encerrando o efeito sobre si mesma em caso de sucesso.",
+      "data.text.rules.2": "Esta magia dissipa {@variantrule Darkness|XPHB} em sua área que tenha sido criada por qualquer magia.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Cego",
+      "data.activities.0.effects.0.description": "Uma criatura &Reference[Blinded apply=false] por esta magia realiza outra [[/save ability=con format=long]] ao final de cada um de seus turnos, encerrando o efeito sobre si mesma em caso de sucesso."
+    },
+    "dnd2024:2024:spell:tsunami:srd-5.2": {
+      "name": "Tsunami",
+      "data.text.rules.0": "Uma muralha de água surge em um ponto à sua escolha dentro do alcance. Você pode criar a muralha com até 90 metros de comprimento, 90 metros de altura e 15 metros de espessura. A muralha permanece pela duração.",
+      "data.text.rules.1": "Quando a muralha aparece, cada criatura na área dela realiza uma salvaguarda de Força, sofrendo {@damage 6d10} de dano de Concussão em caso de falha ou metade desse dano em caso de sucesso.",
+      "data.text.rules.2": "No início de cada um de seus turnos após a muralha aparecer, a muralha, junto com quaisquer criaturas dentro dela, se move 15 metros para longe de você. Qualquer criatura Enorme ou menor dentro da muralha ou cujo espaço seja invadido pela muralha quando ela se move deve ser bem-sucedida em uma salvaguarda de Força ou sofre {@damage 5d10} de dano de Concussão. Uma criatura pode sofrer esse dano apenas uma vez por rodada. Ao final do turno, a altura da muralha é reduzida em 15 metros, e o dano que ela causa nas rodadas posteriores é reduzido em {@dice 1d10}. Quando a muralha atinge 0 metro de altura, a magia termina.",
+      "data.text.rules.3": "Uma criatura presa na muralha pode se mover nadando. Porém, devido à força da onda, a criatura deve ser bem-sucedida em um teste de Força ({@skill Athletics|XPHB}) contra sua CD para evitar magia para conseguir se mover. Se falhar no teste, não pode se mover. Uma criatura que saia da muralha cai no chão.",
+      "data.activities.0.name": "Criar Tsunami",
+      "data.activities.1.name": "Efeitos no Início do Turno"
+    }
+  }
+}
