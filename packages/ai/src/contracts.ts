@@ -1,3 +1,5 @@
+import type { OracleContextSections } from "./context/types.js";
+
 export type OracleId = string;
 
 export interface TurnIntent {
@@ -15,13 +17,25 @@ export interface MechanicalStateSnapshot {
   data: Readonly<Record<string, unknown>>;
 }
 
-export interface OracleContextPackage {
+/** Legacy compatibility contract from AI-1. New Context Engine implementations emit v2. */
+export interface OracleContextPackageV1 {
   version: 1;
   campaignId: OracleId;
   actorId: OracleId;
   stateRevision: number;
   sections: Readonly<Record<string, unknown>>;
 }
+
+/** Typed Context Engine 2.0 contract. */
+export interface OracleContextPackageV2 {
+  version: 2;
+  campaignId: OracleId;
+  actorId: OracleId;
+  stateRevision: number;
+  sections: OracleContextSections;
+}
+
+export type OracleContextPackage = OracleContextPackageV1 | OracleContextPackageV2;
 
 export type AiOperation =
   | "gm.interpret-turn"
