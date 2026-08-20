@@ -1,0 +1,88 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "barbarian",
+  "entries": {
+    "dnd2024:2024:feature:barbarian:ability-score-improvement:srd-5.2": {
+      "name": "Aprimoramento de Atributo",
+      "data.text.rules.0": "Você recebe o talento {@feat Ability Score Improvement|XPHB} ou outro {@5etools feat|feats.html} à sua escolha para o qual cumpra os pré-requisitos. Você recebe esta feature novamente nos níveis 8, 12 e 16 de Bárbaro."
+    },
+    "dnd2024:2024:feature:barbarian:brutal-strike:srd-5.2": {
+      "name": "Golpe Brutal"
+    },
+    "dnd2024:2024:feature:barbarian:danger-sense:srd-5.2": {
+      "name": "Sentido de Perigo"
+    },
+    "dnd2024:2024:feature:barbarian:epic-boon:srd-5.2": {
+      "name": "Dádiva Épica"
+    },
+    "dnd2024:2024:feature:barbarian:extra-attack:srd-5.2": {
+      "name": "Ataque Extra"
+    },
+    "dnd2024:2024:feature:barbarian:fast-movement:srd-5.2": {
+      "name": "Movimento Rápido"
+    },
+    "dnd2024:2024:feature:barbarian:feral-instinct:srd-5.2": {
+      "name": "Instinto Feral"
+    },
+    "dnd2024:2024:feature:barbarian:berserker:frenzy:srd-5.2": {
+      "name": "Frenesi",
+      "data.text.rules.0": "Se você usar Ataque Imprudente enquanto sua Fúria estiver ativa, causa dano adicional ao primeiro alvo que atingir no seu turno com um ataque baseado em Força. Para determinar o dano adicional, role uma quantidade de d6 igual ao seu bônus de Dano de Fúria e some os resultados. O dano é do mesmo tipo da arma ou do {@variantrule Unarmed Strike|XPHB} usado no ataque."
+    },
+    "dnd2024:2024:feature:barbarian:improved-brutal-strike:13:srd-5.2": {
+      "name": "Golpe Brutal Aprimorado",
+      "data.text.rules.0": "Você aperfeiçoou novas maneiras de atacar com ferocidade. Os efeitos a seguir passam a fazer parte das opções do seu Golpe Brutal."
+    },
+    "dnd2024:2024:feature:barbarian:improved-brutal-strike:17:srd-5.2": {
+      "name": "Golpe Brutal Aprimorado",
+      "data.text.rules.0": "O dano adicional do seu Golpe Brutal aumenta para {@damage 2d10}. Além disso, você pode usar dois efeitos diferentes de Golpe Brutal sempre que usar sua feature Golpe Brutal."
+    },
+    "dnd2024:2024:feature:barbarian:indomitable-might:srd-5.2": {
+      "name": "Poder Indomável"
+    },
+    "dnd2024:2024:feature:barbarian:instinctive-pounce:srd-5.2": {
+      "name": "Investida Instintiva",
+      "data.text.rules.0": "Como parte da {@variantrule Bonus Action|XPHB} usada para entrar em Fúria, você pode se mover até metade de sua {@variantrule Speed|XPHB}."
+    },
+    "dnd2024:2024:feature:barbarian:berserker:intimidating-presence:srd-5.2": {
+      "name": "Presença Intimidadora",
+      "data.text.rules.0": "Como uma {@variantrule Bonus Action|XPHB}, você pode aterrorizar os outros com sua presença ameaçadora e seu poder primal. Cada criatura à sua escolha em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanation} de 30 pés originada em você deve realizar uma salvaguarda de Sabedoria ({@dc 8} mais seu modificador de Força e seu {@variantrule Proficiency|XPHB|Proficiency Bonus}). Em caso de falha, a criatura fica sob a condição {@condition Frightened|XPHB} por 1 minuto. Ao final de cada turno da criatura amedrontada, ela repete a salvaguarda, encerrando o efeito sobre si em caso de sucesso.",
+      "data.text.rules.1": "Depois de usar esta feature, você não poderá usá-la novamente até terminar um {@variantrule Long Rest|XPHB}, a menos que gaste um uso de sua Fúria (nenhuma ação necessária) para recuperar o uso dela."
+    },
+    "dnd2024:2024:feature:barbarian:berserker:mindless-rage:srd-5.2": {
+      "name": "Fúria Irracional",
+      "data.text.rules.0": "Você tem {@variantrule Immunity|XPHB} às condições {@condition Charmed|XPHB} e {@condition Frightened|XPHB} enquanto sua Fúria estiver ativa. Se estiver Enfeitiçado ou Amedrontado quando entrar em Fúria, a condição termina em você."
+    },
+    "dnd2024:2024:feature:barbarian:persistent-rage:srd-5.2": {
+      "name": "Fúria Persistente"
+    },
+    "dnd2024:2024:feature:barbarian:primal-champion:srd-5.2": {
+      "name": "Campeão Primal"
+    },
+    "dnd2024:2024:feature:barbarian:primal-knowledge:srd-5.2": {
+      "name": "Conhecimento Primal"
+    },
+    "dnd2024:2024:feature:barbarian:rage:srd-5.2": {
+      "name": "Fúria"
+    },
+    "dnd2024:2024:feature:barbarian:reckless-attack:srd-5.2": {
+      "name": "Ataque Imprudente"
+    },
+    "dnd2024:2024:feature:barbarian:relentless-rage:srd-5.2": {
+      "name": "Fúria Implacável"
+    },
+    "dnd2024:2024:feature:barbarian:berserker:retaliation:srd-5.2": {
+      "name": "Retaliação"
+    },
+    "dnd2024:2024:feature:barbarian:unarmored-defense:srd-5.2": {
+      "name": "Defesa sem Armadura"
+    },
+    "dnd2024:2024:feature:barbarian:weapon-mastery:srd-5.2": {
+      "name": "Maestria em Armas"
+    }
+  }
+}
