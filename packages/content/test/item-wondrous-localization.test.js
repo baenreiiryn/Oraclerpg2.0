@@ -10,11 +10,12 @@ const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/it
 const common = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-common.json"), "utf8"));
 const uncommon = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-uncommon.json"), "utf8"));
 const rare = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-rare.json"), "utf8"));
+const veryRare = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-very-rare.json"), "utf8"));
 const wondrous = canonical.items.filter((item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "wondrous");
-const includedRarities = new Set(["common", "uncommon", "rare"]);
+const includedRarities = new Set(["common", "uncommon", "rare", "veryRare"]);
 const currentItems = wondrous.filter((item) => includedRarities.has(item.data?.rarity));
-const catalogs = { common, uncommon, rare };
-const entries = Object.assign({}, common.entries, uncommon.entries, rare.entries);
+const catalogs = { common, uncommon, rare, veryRare };
+const entries = Object.assign({}, common.entries, uncommon.entries, rare.entries, veryRare.entries);
 
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[part], root);
@@ -30,16 +31,18 @@ function setPath(root, pathKey, value) {
   cursor[parts.at(-1)] = value;
 }
 
-test("PT-BR wondrous catalogs exactly cover common through rare canonical wondrous items", () => {
+test("PT-BR wondrous catalogs exactly cover common through very rare canonical wondrous items", () => {
   assert.equal(wondrous.length, 148);
   assert.equal(wondrous.filter((item) => item.data?.rarity === "common").length, 1);
   assert.equal(wondrous.filter((item) => item.data?.rarity === "uncommon").length, 52);
   assert.equal(wondrous.filter((item) => item.data?.rarity === "rare").length, 41);
-  assert.equal(currentItems.length, 94);
-  assert.equal(Object.keys(entries).length, 94);
+  assert.equal(wondrous.filter((item) => item.data?.rarity === "veryRare").length, 35);
+  assert.equal(currentItems.length, 129);
+  assert.equal(Object.keys(entries).length, 129);
   assert.equal(common.scope, "wondrous-common");
   assert.equal(uncommon.scope, "wondrous-uncommon");
   assert.equal(rare.scope, "wondrous-rare");
+  assert.equal(veryRare.scope, "wondrous-very-rare");
 
   const expected = new Set(currentItems.map((item) => item.canonicalId));
   assert.deepEqual(Object.keys(entries).filter((id) => !expected.has(id)), []);
