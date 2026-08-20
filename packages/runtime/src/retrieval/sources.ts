@@ -7,7 +7,7 @@ export class MemoryRetrievalSource implements RetrievalSourcePort {
 
   async retrieve(query: RetrievalQuery): Promise<readonly RetrievalCandidate[]> {
     const memory = await this.store.loadCampaignMemory(query.campaignId);
-    return projectMemory(memory, query.actorId);
+    return projectMemory(memory);
   }
 }
 
@@ -16,7 +16,7 @@ export class WorldStateRetrievalSource implements RetrievalSourcePort {
 
   async retrieve(query: RetrievalQuery): Promise<readonly RetrievalCandidate[]> {
     const world = await this.store.loadCampaignWorld(query.campaignId);
-    return projectWorld(world, query.actorId);
+    return projectWorld(world);
   }
 }
 
@@ -44,7 +44,7 @@ export class ExternalRetrievalSource implements RetrievalSourcePort {
   }
 }
 
-function projectMemory(memory: CampaignMemoryState, actorId: string): RetrievalCandidate[] {
+function projectMemory(memory: CampaignMemoryState): RetrievalCandidate[] {
   return memory.records
     .filter((record) => record.status !== "SUPERSEDED")
     .map((record): RetrievalCandidate => ({
@@ -58,11 +58,11 @@ function projectMemory(memory: CampaignMemoryState, actorId: string): RetrievalC
       importance: record.importance,
       recency: recencyFromRevision(record.updatedAtMemoryRevision, memory.revision),
       ...(record.confidence !== undefined ? { confidence: record.confidence } : {}),
-      metadata: { kind: record.kind, actorPerspective: actorId },
+      metadata: { kind: record.kind },
     }));
 }
 
-function projectWorld(world: CampaignWorldState, actorId: string): RetrievalCandidate[] {
+function projectWorld(world: CampaignWorldState): RetrievalCandidate[] {
   const candidates: RetrievalCandidate[] = [];
   for (const entity of world.entities) {
     candidates.push({
@@ -101,7 +101,6 @@ function projectWorld(world: CampaignWorldState, actorId: string): RetrievalCand
       importance: 0.8,
       recency: 1,
       ...(fact.confidence !== undefined ? { confidence: fact.confidence } : {}),
-      metadata: { actorPerspective: actorId },
     });
   }
   return candidates;
