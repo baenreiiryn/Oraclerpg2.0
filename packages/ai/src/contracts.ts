@@ -1,3 +1,4 @@
+import type { AiCapabilityManifest, StructuredAiActionProposal, StructuredAiOperation } from "./actions/types.js";
 import type { OracleContextSections } from "./context/types.js";
 
 export type OracleId = string;
@@ -37,37 +38,26 @@ export interface OracleContextPackageV2 {
 
 export type OracleContextPackage = OracleContextPackageV1 | OracleContextPackageV2;
 
-export type AiOperation =
-  | "gm.interpret-turn"
-  | "gm.narrate"
-  | "gm.npc-dialogue"
-  | "rules.request-evaluation"
-  | "dice.request-roll"
-  | "state.request-query"
-  | "world.suggest-change";
+/** Narrative operations are model tasks, not executable state actions. */
+export type AiNarrativeOperation = "gm.interpret-turn" | "gm.narrate" | "gm.npc-dialogue";
+export type AiOperation = AiNarrativeOperation | StructuredAiOperation;
 
-export interface AiActionProposal {
-  proposalId: string;
-  operation: AiOperation;
-  actorId: OracleId;
-  targetIds?: readonly OracleId[];
-  payload: Readonly<Record<string, unknown>>;
-  rationale?: string;
-}
+/** @deprecated AI-3 uses StructuredAiActionProposal. */
+export type AiActionProposal = StructuredAiActionProposal;
 
 /**
- * The AI may propose actions, but proposals are never authoritative state changes.
+ * The AI may propose structured actions, but proposals are never authoritative state changes.
  * Mechanical mutations are deliberately absent from this contract.
  */
 export interface AiTurnProposal {
   narrativeDraft: string;
-  actions: readonly AiActionProposal[];
+  actions: readonly StructuredAiActionProposal[];
 }
 
 export interface AiTurnRequest {
   intent: TurnIntent;
   context: OracleContextPackage;
-  allowedOperations: readonly AiOperation[];
+  capabilityManifest: AiCapabilityManifest;
 }
 
 export interface AiDirectorPort {
@@ -79,6 +69,14 @@ export interface ContextBuilderPort {
     intent: TurnIntent;
     state: MechanicalStateSnapshot;
   }): Promise<OracleContextPackage>;
+}
+
+export interface CapabilityBuilderPort {
+  buildCapabilities(input: {
+    intent: TurnIntent;
+    state: MechanicalStateSnapshot;
+    context: OracleContextPackage;
+  }): Promise<AiCapabilityManifest>;
 }
 
 export interface StateLoaderPort {
@@ -93,14 +91,14 @@ export interface ActionValidationDecision {
 
 export interface ActionValidatorPort {
   validate(input: {
-    proposal: AiActionProposal;
+    proposal: StructuredAiActionProposal;
     state: MechanicalStateSnapshot;
   }): Promise<ActionValidationDecision>;
 }
 
 export interface ResolvedAction {
   proposalId: string;
-  operation: AiOperation;
+  operation: StructuredAiOperation;
   status: "applied" | "rejected";
   reason?: string;
   result?: Readonly<Record<string, unknown>>;
@@ -108,7 +106,7 @@ export interface ResolvedAction {
 
 export interface ActionExecutorPort {
   execute(input: {
-    proposal: AiActionProposal;
+    proposal: StructuredAiActionProposal;
     state: MechanicalStateSnapshot;
   }): Promise<ResolvedAction>;
 }
@@ -118,7 +116,8 @@ export interface TurnRecord {
   intent: TurnIntent;
   stateRevision: number;
   narrative: string;
-  proposedActions: readonly AiActionProposal[];
+  capabilityManifest: AiCapabilityManifest;
+  proposedActions: readonly StructuredAiActionProposal[];
   resolvedActions: readonly ResolvedAction[];
 }
 
@@ -129,13 +128,3 @@ export interface TurnPersistencePort {
 export interface TurnIdPort {
   nextTurnId(): string;
 }
-
-export const DEFAULT_AI_OPERATIONS: readonly AiOperation[] = [
-  "gm.interpret-turn",
-  "gm.narrate",
-  "gm.npc-dialogue",
-  "rules.request-evaluation",
-  "dice.request-roll",
-  "state.request-query",
-  "world.suggest-change",
-];
