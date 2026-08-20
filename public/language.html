@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>Idioma · OracleRPG</title>
+  <style>
+    @font-face{font-family:"Black Chancery";src:url("https://db.onlinewebfonts.com/t/753833d2833e9f73b56cffae357cf95f.woff2") format("woff2");font-display:swap}
+    :root{color-scheme:dark;--bg:#0b090c;--surface:rgba(24,20,27,.92);--border:rgba(223,190,130,.18);--text:#f4eee4;--muted:#a69da8;--gold:#e7c580}
+    *{box-sizing:border-box}body{margin:0;min-height:100dvh;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -8%,rgba(145,112,177,.16),transparent 31rem),linear-gradient(180deg,#100d12,#0a080b)}
+    .shell{width:min(100%,520px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px 34px}.top{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;min-height:60px}.back{width:42px;height:42px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);display:grid;place-items:center;text-decoration:none;font-size:22px}.brand{text-align:center;font-family:"Black Chancery",Georgia,serif;font-size:29px}.brand span{color:var(--gold)}
+    h1{font:400 40px/1 "Black Chancery",Georgia,serif;margin:25px 0 7px}.caption{margin:0;color:var(--muted);font-size:12px;line-height:1.55}.panel{margin-top:25px;overflow:hidden;border:1px solid var(--border);border-radius:19px;background:var(--surface)}
+    .choice{width:100%;min-height:76px;padding:14px 16px;border:0;border-bottom:1px solid rgba(223,190,130,.09);display:grid;grid-template-columns:42px 1fr auto;gap:13px;align-items:center;color:inherit;background:transparent;text-align:left}.choice:last-child{border-bottom:0}.flag{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;border:1px solid rgba(231,197,128,.12);background:rgba(231,197,128,.07);font-size:21px}.name{font:400 24px/1 "Black Chancery",Georgia,serif}.sub{display:block;margin-top:4px;color:var(--muted);font-size:11px}.state{color:var(--gold);font-size:11px}.note{margin:18px 8px 0;color:var(--muted);font-size:10px;line-height:1.5;text-align:center}
+  </style>
+</head>
+<body><main class="shell">
+  <header class="top"><a class="back" href="./settings.html" aria-label="Voltar">‹</a><div class="brand">Oracle<span>RPG</span></div><div></div></header>
+  <h1>Idioma / Language</h1><p class="caption">Escolha o idioma usado pela interface e pela apresentação do compêndio. Os dados canônicos permanecem inalterados.</p>
+  <div class="panel">
+    <button class="choice" id="pt"><span class="flag">🇧🇷</span><span><span class="name">Português</span><span class="sub">Interface e compêndio em português.</span></span><span class="state">Atual</span></button>
+    <button class="choice" id="en"><span class="flag">🇺🇸</span><span><span class="name">English</span><span class="sub">Interface and compendium in canonical English.</span></span><span>›</span></button>
+  </div>
+  <p class="note">A preferência fica salva neste dispositivo. O inglês usa diretamente o conteúdo canônico do SRD; o português aplica apenas a camada visual de tradução.</p>
+</main>
+<script>
+  const locale=localStorage.getItem('oraclerpg.locale')||'pt-BR';
+  document.querySelector('#pt .state').textContent=locale==='pt-BR'?'Atual':'';
+  document.getElementById('pt').onclick=()=>{localStorage.setItem('oraclerpg.locale','pt-BR');location.href='./settings.html'};
+  document.getElementById('en').onclick=()=>{localStorage.setItem('oraclerpg.locale','en');location.href='./en/settings.html'};
+</script></body></html>
