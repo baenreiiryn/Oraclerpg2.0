@@ -26,9 +26,7 @@ export class OracleModelRouter {
 
   constructor(private readonly deps: OracleModelRouterDependencies) {
     for (const policy of deps.policies ?? DEFAULT_OPERATION_POLICIES) {
-      if (this.policies.has(policy.operation)) {
-        throw new Error(`Duplicate operation policy: ${policy.operation}`);
-      }
+      if (this.policies.has(policy.operation)) throw new Error(`Duplicate operation policy: ${policy.operation}`);
       this.policies.set(policy.operation, policy);
     }
   }
@@ -36,6 +34,8 @@ export class OracleModelRouter {
   async run(request: OracleOperationRequest): Promise<OracleOperationResponse> {
     const policy = this.policies.get(request.operation);
     if (!policy) throw new Error(`No model policy configured for operation ${request.operation}`);
+    const maxOutputTokens = request.maxOutputTokens ?? policy.maxOutputTokens;
+    const temperature = request.temperature ?? policy.temperature;
 
     const response = await this.deps.gateway.generate({
       requestId: request.requestId,
@@ -44,8 +44,8 @@ export class OracleModelRouter {
       input: request.input,
       outputMode: policy.outputMode,
       requiredCapabilities: policy.requiredCapabilities,
-      maxOutputTokens: request.maxOutputTokens ?? policy.maxOutputTokens,
-      temperature: request.temperature ?? policy.temperature,
+      ...(maxOutputTokens !== undefined ? { maxOutputTokens } : {}),
+      ...(temperature !== undefined ? { temperature } : {}),
       ...(request.system ? { system: request.system } : {}),
       ...(request.campaignId ? { campaignId: request.campaignId } : {}),
       ...(request.actorId ? { actorId: request.actorId } : {}),
