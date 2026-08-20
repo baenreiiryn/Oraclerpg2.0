@@ -22,28 +22,22 @@
     "dnd2024:2024:spell:arcane-hand:srd-5.2": {
       "name": "Mão Arcana",
       "data.text.rules.0": "Você cria uma mão mágica Grande de força cintilante em um espaço desocupado que possa ver dentro do alcance. A mão dura pela duração, move-se sob seu comando e imita os movimentos de sua própria mão.",
-      "data.text.rules.1": "A mão é um objeto com CA 20 e Pontos de Vida iguais ao seu máximo de Pontos de Vida. Ela tem Destreza 10 e Força 26 e não ocupa seu espaço. Quando você conjura a magia e como uma {@variantrule Bonus Action|XPHB} em turnos posteriores, pode mover a mão até 60 pés e fazê-la realizar um de seus efeitos.",
+      "data.text.rules.1": "A mão é um objeto com CA 20 e Pontos de Vida iguais ao seu máximo de Pontos de Vida. Ela tem Destreza 10 e Força 26. Quando você conjura a magia e como uma {@variantrule Bonus Action|XPHB} em turnos posteriores, pode mover a mão até 60 pés e fazê-la realizar um de seus efeitos.",
       "data.activities.0.name": "Invocar Mão",
       "data.activities.1.name": "Mover Mão"
     },
     "dnd2024:2024:spell:awaken:srd-5.2": {
       "name": "Despertar",
-      "data.text.rules.0": "Você passa o tempo de conjuração traçando caminhos mágicos dentro de uma Besta ou Planta Enorme ou menor que esteja dentro do alcance durante toda a conjuração. O alvo deve ter Inteligência 3 ou menor. Ele recebe Inteligência 10 e a capacidade de falar um idioma que você conheça. Se o alvo for uma Planta, também recebe a capacidade de mover seus membros, raízes, vinhas e semelhantes, além de sentidos similares aos de um humano.",
+      "data.text.rules.0": "Você passa o tempo de conjuração traçando caminhos mágicos dentro de uma Besta ou Planta Enorme ou menor que permaneça dentro do alcance durante toda a conjuração. O alvo deve ter Inteligência 3 ou menor. Ele recebe Inteligência 10 e a capacidade de falar um idioma que você conheça. Se o alvo for uma Planta, também recebe a capacidade de mover seus membros, raízes, vinhas e semelhantes, além de sentidos similares aos de um humano.",
       "data.text.rules.1": "O alvo fica {@condition Charmed|XPHB} por você durante 30 dias ou até você ou seus companheiros causarem dano a ele. Quando a condição termina, a criatura desperta escolhe sua atitude em relação a você com base na forma como foi tratada enquanto estava enfeitiçada.",
       "data.activities.0.name": "Despertar",
       "data.activities.0.effects.0.name": "Desperto"
     },
-    "dnd2024:2024:spell:circle-of-power:srd-5.2": {
-      "name": "Círculo de Poder",
-      "data.text.rules.0": "Uma aura de energia divina irradia de você em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés pela duração. Enquanto estiver na aura, você e seus aliados têm {@variantrule Advantage|XPHB} em salvaguardas contra magias e outros efeitos mágicos. Além disso, quando uma criatura afetada obtém sucesso em uma salvaguarda contra uma magia ou efeito mágico que normalmente causaria metade do dano em um sucesso, ela não sofre dano.",
-      "data.activities.0.name": "Criar Círculo de Poder",
-      "data.activities.0.effects.0.name": "Proteção Mágica"
-    },
     "dnd2024:2024:spell:cloudkill:srd-5.2": {
       "name": "Névoa Mortal",
       "data.text.rules.0": "Você cria uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 20 pés de raio de névoa venenosa amarelo-esverdeada centrada em um ponto dentro do alcance. A esfera é {@variantrule Heavily Obscured|XPHB} e dura pela duração ou até um vento forte dispersá-la.",
-      "data.text.rules.1": "Quando a esfera aparece, cada criatura nela faz uma salvaguarda de Constituição, sofrendo {@damage 5d8} de dano de Veneno em uma falha ou metade desse dano em um sucesso. Uma criatura também faz essa salvaguarda quando a esfera entra em seu espaço pela primeira vez em um turno ou quando ela entra na esfera ou termina o turno ali. Uma criatura faz essa salvaguarda apenas uma vez por turno.",
-      "data.text.rules.2": "A esfera se afasta 10 pés de você no início de cada um de seus turnos, deslizando junto ao solo. Os vapores são mais pesados que o ar e descem para os níveis mais baixos, até mesmo por aberturas.",
+      "data.text.rules.1": "Quando a esfera aparece, cada criatura nela faz uma salvaguarda de Constituição, sofrendo {@damage 5d8} de dano de Veneno em uma falha ou metade desse dano em um sucesso. Uma criatura também faz essa salvaguarda quando a esfera entra em seu espaço pela primeira vez em um turno, quando ela entra na esfera ou quando termina o turno ali. Uma criatura faz essa salvaguarda apenas uma vez por turno.",
+      "data.text.rules.2": "A esfera se afasta 10 pés de você no início de cada um de seus turnos, deslizando junto ao solo. Os vapores são mais pesados que o ar e descem para os níveis mais baixos, inclusive através de aberturas.",
       "data.activities.0.name": "Salvaguarda"
     },
     "dnd2024:2024:spell:commune:srd-5.2": {
@@ -72,7 +66,7 @@
     },
     "dnd2024:2024:spell:contact-other-plane:srd-5.2": {
       "name": "Contatar Outro Plano",
-      "data.text.rules.0": "Você contata mentalmente um semideus, o espírito de um sábio falecido ou alguma outra entidade misteriosa de outro plano. Fazer contato pode sobrecarregar sua mente. Ao conjurar a magia, faça uma salvaguarda de Inteligência CD 15. Em uma falha, você sofre {@damage 6d6} de dano Psíquico e fica {@condition Incapacitated|XPHB} até terminar um {@variantrule Long Rest|XPHB}. Em um sucesso, você pode fazer até cinco perguntas à entidade.",
+      "data.text.rules.0": "Você contata mentalmente um semideus, o espírito de um sábio falecido ou outra entidade misteriosa de outro plano. Fazer contato pode sobrecarregar sua mente. Ao conjurar a magia, faça uma salvaguarda de Inteligência CD 15. Em uma falha, você sofre {@damage 6d6} de dano Psíquico e fica {@condition Incapacitated|XPHB} até terminar um {@variantrule Long Rest|XPHB}. Em um sucesso, você pode fazer até cinco perguntas à entidade.",
       "data.text.rules.1": "O Mestre responde cada pergunta com uma palavra, como 'sim', 'não', 'talvez', 'nunca', 'irrelevante' ou 'incerto'. Se uma resposta de uma palavra puder ser enganosa, o Mestre pode oferecer uma frase curta em vez disso.",
       "data.activities.0.name": "Salvaguarda",
       "data.activities.0.effects.0.name": "Incapacitado"
@@ -169,7 +163,7 @@
     },
     "dnd2024:2024:spell:modify-memory:srd-5.2": {
       "name": "Modificar Memória",
-      "data.text.rules.0": "Você tenta remodelar as memórias de uma criatura que possa ver dentro do alcance. Ela faz uma salvaguarda de Sabedoria e tem {@variantrule Advantage|XPHB} se você estiver lutando contra ela. Em uma falha, o alvo fica {@condition Charmed|XPHB} e {@condition Incapacitated|XPHB} pela duração; enquanto isso, ele permanece consciente do ambiente, mas não pode agir.",
+      "data.text.rules.0": "Você tenta remodelar as memórias de uma criatura que possa ver dentro do alcance. Ela faz uma salvaguarda de Sabedoria e tem {@variantrule Advantage|XPHB} se você estiver lutando contra ela. Em uma falha, o alvo fica {@condition Charmed|XPHB} e {@condition Incapacitated|XPHB} pela duração; enquanto isso, permanece consciente do ambiente, mas não pode agir.",
       "data.text.rules.1": "Enquanto a magia durar, você pode afetar a memória do alvo de um evento ocorrido nas últimas 24 horas e que tenha durado no máximo 10 minutos. Você pode apagar permanentemente a lembrança, permitir que o alvo a recorde com perfeita clareza, alterar seus detalhes ou criar a memória de outro evento. A memória modificada se estabelece quando a magia termina.",
       "data.text.rules.2": "Em espaços de magia superiores, você pode modificar memórias mais antigas, conforme indicado pela magia. Uma magia que remova maldições ou restaure poderosamente a mente pode reverter a alteração.",
       "data.activities.0.name": "Salvaguarda",
@@ -196,6 +190,13 @@
       "data.activities.0.name": "Conjurar Reviver os Mortos",
       "data.activities.0.target.restrictions.0.description": "O alvo deve ter morrido há no máximo 10 dias."
     },
+    "dnd2024:2024:spell:reincarnate:srd-5.2": {
+      "name": "Reencarnação",
+      "data.text.rules.0": "Você toca um Humanoide morto ou uma parte de um. Se a criatura estiver morta há no máximo 10 dias, a magia cria para ela um novo corpo adulto e chama sua alma para habitá-lo. A magia falha se a alma não estiver livre ou disposta a retornar. Quando a criatura retorna à vida, seu corpo original é destruído.",
+      "data.text.rules.1": "A magia forma um novo corpo, o que pode alterar a espécie da criatura. Determine a nova forma conforme a tabela da magia. A criatura se lembra de sua vida anterior e mantém as capacidades que não dependem de sua espécie anterior, substituindo os traços de espécie pelos da nova forma.",
+      "data.activities.0.name": "Conjurar Reencarnação",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ter morrido há no máximo 10 dias."
+    },
     "dnd2024:2024:spell:scrying:srd-5.2": {
       "name": "Vidência",
       "data.text.rules.0": "Você pode ver e ouvir uma criatura específica que esteja no mesmo plano. O alvo faz uma salvaguarda de Sabedoria, modificada pelo quanto você conhece o alvo e pelas conexões físicas que possui com ele. Em uma salvaguarda bem-sucedida, o alvo não é afetado e você não pode usar esta magia contra ele novamente por 24 horas.",
@@ -211,11 +212,11 @@
       "data.activities.1.name": "Estudar",
       "data.activities.0.effects.0.name": "Aparência Ilusória"
     },
-    "dnd2024:2024:spell:sending:srd-5.2": {
-      "name": "Mensagem",
-      "data.text.rules.0": "Você envia uma mensagem de até 25 palavras a uma criatura com a qual esteja familiarizado. O alvo ouve a mensagem em sua mente, reconhece você como remetente se o conhecer e pode responder imediatamente da mesma forma. A magia permite que o alvo compreenda o significado da mensagem mesmo que não compartilhe um idioma com você.",
-      "data.text.rules.1": "Você pode enviar a mensagem através de qualquer distância e até para outros planos, mas se o alvo estiver em outro plano há 5 por cento de chance de a mensagem não chegar.",
-      "data.activities.0.name": "Conjurar Mensagem"
+    "dnd2024:2024:spell:summon-dragon:srd-5.2": {
+      "name": "Invocar Dragão",
+      "data.text.rules.0": "Você invoca um espírito dracônico. Ele se manifesta em um espaço desocupado que você possa ver dentro do alcance e usa o bloco de estatísticas de Espírito Dracônico. Ao conjurar a magia, escolha a natureza dracônica do espírito; essa escolha determina certas características, resistências e o tipo de dano de seu sopro. A criatura desaparece quando cai a 0 Pontos de Vida ou quando a magia termina.",
+      "data.text.rules.1": "A criatura é aliada a você e seus aliados. Em combate, ela compartilha sua contagem de {@variantrule Initiative|XPHB}, mas realiza seu turno imediatamente após o seu. Ela obedece aos seus comandos verbais sem exigir uma ação sua. Se você não emitir comando, ela realiza a ação {@action Dodge|XPHB} e usa seu movimento para evitar perigo.",
+      "data.activities.0.name": "Invocar Dragão"
     },
     "dnd2024:2024:spell:telekinesis:srd-5.2": {
       "name": "Telecinese",
