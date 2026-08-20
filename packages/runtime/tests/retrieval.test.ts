@@ -115,3 +115,13 @@ test("allowedSources can constrain retrieval to a requested context class", asyn
   assert.ok(result.items.length > 0);
   assert.ok(result.items.every((item) => item.source === "WORLD_FACT"));
 });
+
+test("duplicate retrieval IDs are included only once", async () => {
+  const duplicate: RetrievalSourcePort = {
+    async retrieve() {
+      return [{ retrievalId: "memory:public-event", source: "DOCUMENT", text: "duplicate", visibility: "PUBLIC", semanticScore: 1 }];
+    },
+  };
+  const result = await engine([duplicate]).retrieve({ campaignId: "campaign-1", actorId: "pc-1", text: "crimson sigil", maxTokens: 500 });
+  assert.equal(result.items.filter((item) => item.retrievalId === "memory:public-event").length, 1);
+});
