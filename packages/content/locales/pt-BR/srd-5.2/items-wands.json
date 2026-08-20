@@ -1,0 +1,167 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wands",
+  "entries": {
+    "dnd2024:2024:item:1-wand-of-the-war-mage:srd-5.2": {
+      "name": "+1 Varinha do Mago de Guerra",
+      "data.text.rules.0": "Enquanto segura esta varinha, você recebe +1 de bônus nas jogadas de ataque mágico. Além disso, ignora {@variantrule Cover|XPHB|Meia Cobertura} ao realizar uma jogada de ataque mágico."
+    },
+    "dnd2024:2024:item:2-wand-of-the-war-mage:srd-5.2": {
+      "name": "+2 Varinha do Mago de Guerra",
+      "data.text.rules.0": "Enquanto segura esta varinha, você recebe +2 de bônus nas jogadas de ataque mágico. Além disso, ignora {@variantrule Cover|XPHB|Meia Cobertura} ao realizar uma jogada de ataque mágico."
+    },
+    "dnd2024:2024:item:3-wand-of-the-war-mage:srd-5.2": {
+      "name": "+3 Varinha do Mago de Guerra",
+      "data.text.rules.0": "Enquanto segura esta varinha, você recebe +3 de bônus nas jogadas de ataque mágico. Além disso, ignora {@variantrule Cover|XPHB|Meia Cobertura} ao realizar uma jogada de ataque mágico."
+    },
+    "dnd2024:2024:item:wand-of-binding:srd-5.2": {
+      "name": "Varinha de Imobilização",
+      "data.activities.0.name": "Conjurar Imobilizar Pessoa",
+      "data.activities.1.name": "Conjurar Imobilizar Monstro",
+      "data.text.rules.0": "Esta varinha possui 7 cargas.",
+      "data.text.rules.1.name": "Magias",
+      "data.text.rules.1.entries.0": "Enquanto segura a varinha, você pode conjurar por meio dela uma das magias (salvaguarda {@dc 17}) da tabela a seguir. A tabela indica quantas cargas devem ser gastas para conjurar a magia.",
+      "data.text.rules.1.entries.1.columns.0": "Magia",
+      "data.text.rules.1.entries.1.columns.1": "Custo em Cargas",
+      "data.text.rules.1.entries.1.rows.0.0": "{@spell Hold Monster|XPHB}",
+      "data.text.rules.1.entries.1.rows.0.1": "5",
+      "data.text.rules.1.entries.1.rows.1.0": "{@spell Hold Person|XPHB}",
+      "data.text.rules.1.entries.1.rows.1.1": "2",
+      "data.text.rules.2.name": "Recuperando Cargas",
+      "data.text.rules.2.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-enemy-detection:srd-5.2": {
+      "name": "Varinha de Detecção de Inimigos",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga. Por 1 minuto, você sabe a direção da criatura {@variantrule Hostile [Attitude]|XPHB|Hostil} mais próxima de você a até 60 pés, mas não a distância até ela. A varinha pode perceber a presença de criaturas {@variantrule Hostile [Attitude]|XPHB|Hostis} que estejam {@condition Invisible|XPHB}, etéreas, disfarçadas ou escondidas, assim como aquelas à vista. O efeito termina se você deixar de segurar a varinha.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-fear:srd-5.2": {
+      "name": "Varinha do Medo",
+      "data.activities.0.name": "Conjurar Comando",
+      "data.activities.1.name": "Conjurar Medo",
+      "data.text.rules.0": "Esta varinha possui 7 cargas.",
+      "data.text.rules.1.name": "Magias",
+      "data.text.rules.1.entries.0": "Enquanto segura a varinha, você pode conjurar por meio dela uma das magias (salvaguarda {@dc 15}) da tabela a seguir. A tabela indica quantas cargas devem ser gastas para conjurar a magia.",
+      "data.text.rules.1.entries.1.columns.0": "Magia",
+      "data.text.rules.1.entries.1.columns.1": "Custo em Cargas",
+      "data.text.rules.1.entries.1.rows.0.0": "{@spell Command|XPHB} (apenas \"fuja\" ou \"ajoelhe-se\")",
+      "data.text.rules.1.entries.1.rows.0.1": "1",
+      "data.text.rules.1.entries.1.rows.1.0": "{@spell Fear|XPHB} ({@variantrule Cone [Area of Effect]|XPHB|Cone} de 60 pés)",
+      "data.text.rules.1.entries.1.rows.1.1": "3",
+      "data.text.rules.2.name": "Recuperando Cargas",
+      "data.text.rules.2.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-fireballs:srd-5.2": {
+      "name": "Varinha de Bolas de Fogo",
+      "data.activities.0.name": "Conjurar Bola de Fogo",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode gastar no máximo 3 cargas para conjurar {@spell Fireball|XPHB} (salvaguarda {@dc 15}) por meio dela. Com 1 carga, você conjura a versão de nível 3 da magia. Você pode aumentar o nível da magia em 1 para cada carga adicional gasta.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-lightning-bolts:srd-5.2": {
+      "name": "Varinha de Relâmpagos",
+      "data.activities.0.name": "Conjurar Relâmpago",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode gastar no máximo 3 cargas para conjurar {@spell Lightning Bolt|XPHB} (salvaguarda {@dc 15}) por meio dela. Com 1 carga, você conjura a versão de nível 3 da magia. Você pode aumentar o nível da magia em 1 para cada carga adicional gasta.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-magic-detection:srd-5.2": {
+      "name": "Varinha de Detecção de Magia",
+      "data.activities.0.name": "Conjurar Detectar Magia",
+      "data.text.rules.0": "Esta varinha possui 3 cargas. Enquanto a segura, você pode gastar 1 carga para conjurar {@spell Detect Magic|XPHB} por meio dela. A varinha recupera {@dice 1d3} cargas gastas diariamente ao amanhecer."
+    },
+    "dnd2024:2024:item:wand-of-magic-missiles:srd-5.2": {
+      "name": "Varinha de Mísseis Mágicos",
+      "data.activities.0.name": "Conjurar Mísseis Mágicos",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode gastar no máximo 3 cargas para conjurar {@spell Magic Missile|XPHB} por meio dela. Com 1 carga, você conjura a versão de nível 1 da magia. Você pode aumentar o nível da magia em 1 para cada carga adicional gasta.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-paralysis:srd-5.2": {
+      "name": "Varinha de Paralisia",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga e fazer um fino raio azul disparar da ponta em direção a uma criatura que possa ver a até 60 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Paralyzed|XPHB} por 1 minuto. Ao final de cada um dos turnos do alvo, ele repete a salvaguarda, encerrando o efeito sobre si em caso de sucesso.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-polymorph:srd-5.2": {
+      "name": "Varinha de Polimorfia",
+      "data.activities.0.name": "Conjurar Polimorfia",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode gastar 1 carga para conjurar {@spell Polymorph|XPHB} (salvaguarda {@dc 15}) por meio dela.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-secrets:srd-5.2": {
+      "name": "Varinha dos Segredos",
+      "data.text.rules.0": "Esta varinha possui 3 cargas e recupera {@dice 1d3} cargas gastas diariamente ao amanhecer. Enquanto a segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga; se houver uma porta secreta ou armadilha a até 60 pés de você, a varinha pulsa e aponta para a mais próxima."
+    },
+    "dnd2024:2024:item:wand-of-web:srd-5.2": {
+      "name": "Varinha de Teia",
+      "data.activities.0.name": "Conjurar Teia",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode gastar 1 carga para conjurar {@spell Web|XPHB} (salvaguarda {@dc 13}) por meio dela.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em cinzas e é destruída."
+    },
+    "dnd2024:2024:item:wand-of-wonder:srd-5.2": {
+      "name": "Varinha das Maravilhas",
+      "data.activities.0.name": "Conjurar Escuridão",
+      "data.activities.1.name": "Conjurar Aumentar/Reduzir",
+      "data.activities.2.name": "Conjurar Fogo das Fadas",
+      "data.activities.3.name": "Conjurar Bola de Fogo",
+      "data.activities.4.name": "Conjurar Restauração Maior",
+      "data.activities.5.name": "Conjurar Rajada de Vento",
+      "data.activities.6.name": "Conjurar Invisibilidade",
+      "data.activities.7.name": "Conjurar Relâmpago",
+      "data.activities.8.name": "Conjurar Polimorfia",
+      "data.activities.9.name": "Conjurar Lentidão",
+      "data.activities.10.name": "Conjurar Nuvem Fétida",
+      "data.text.rules.0": "Esta varinha possui 7 cargas. Enquanto a segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga e escolher um ponto a até 120 pés de você. Esse local se torna o ponto de origem de uma magia ou outro efeito mágico determinado por uma rolagem na tabela Efeitos da Varinha das Maravilhas. Magias conjuradas pela varinha possuem CD de salvaguarda 15. Se o alcance máximo normal de uma magia for inferior a 120 pés, ele se torna 120 pés quando a magia é conjurada pela varinha. Se um efeito possuir vários alvos possíveis, o Mestre determina aleatoriamente quais deles são afetados.",
+      "data.text.rules.1.name": "Recuperando Cargas",
+      "data.text.rules.1.entries.0": "A varinha recupera {@dice 1d6 + 1} cargas gastas diariamente ao amanhecer. Se você gastar a última carga da varinha, role {@dice 1d20}. Em um resultado 1, a varinha se desfaz em pó e é destruída.",
+      "data.text.rules.2.caption": "Efeitos da Varinha das Maravilhas",
+      "data.text.rules.2.columns.0": "1d100",
+      "data.text.rules.2.columns.1": "Efeito",
+      "data.text.rules.2.rows.0.0": "01-20",
+      "data.text.rules.2.rows.0.1": "Você conjura uma magia originada do ponto escolhido. Role {@dice 1d10} para determinar a magia: com {@b 1-2}, {@spell Darkness|XPHB}; com {@b 3-4}, {@spell Faerie Fire|XPHB}; com {@b 5-6}, {@spell Fireball|XPHB}; com {@b 7-8}, {@spell Slow|XPHB}; com {@b 9-10}, {@spell Stinking Cloud|XPHB}.",
+      "data.text.rules.2.rows.1.0": "21-25",
+      "data.text.rules.2.rows.1.1": "Nada acontece no ponto de origem escolhido. Em vez disso, você recebe a condição {@condition Stunned|XPHB} até o início do seu próximo turno, acreditando que algo incrível acabou de acontecer.",
+      "data.text.rules.2.rows.2.0": "26-30",
+      "data.text.rules.2.rows.2.1": "Você conjura {@spell Gust of Wind|XPHB}. A {@variantrule Line [Area of Effect]|XPHB|Linha} criada pela magia se estende de você até o ponto de origem escolhido.",
+      "data.text.rules.2.rows.3.0": "31-35",
+      "data.text.rules.2.rows.3.1": "Nada acontece no ponto de origem escolhido. Em vez disso, você sofre {@damage 1d6} de dano Psíquico.",
+      "data.text.rules.2.rows.4.0": "36-40",
+      "data.text.rules.2.rows.4.1": "Chuva forte cai por 1 minuto em um {@variantrule Cylinder [Area of Effect]|XPHB|Cilindro} de 120 pés de altura e 60 pés de raio, centrado no ponto de origem escolhido. Durante esse período, a área de efeito fica {@variantrule Lightly Obscured|XPHB|Levemente Obscurecida}.",
+      "data.text.rules.2.rows.5.0": "41-45",
+      "data.text.rules.2.rows.5.1": "Uma nuvem de 600 borboletas gigantes preenche um {@variantrule Cylinder [Area of Effect]|XPHB|Cilindro} de 60 pés de altura e 30 pés de raio, centrado no ponto de origem escolhido. As borboletas permanecem por 10 minutos, período durante o qual a área de efeito fica {@variantrule Heavily Obscured|XPHB|Fortemente Obscurecida}.",
+      "data.text.rules.2.rows.6.0": "46-50",
+      "data.text.rules.2.rows.6.1": "Você conjura {@spell Lightning Bolt|XPHB}. A {@variantrule Line [Area of Effect]|XPHB|Linha} criada pela magia se estende de você até o ponto de origem escolhido.",
+      "data.text.rules.2.rows.7.0": "51-55",
+      "data.text.rules.2.rows.7.1": "A criatura mais próxima do ponto de origem escolhido aumenta de tamanho como se você tivesse conjurado {@spell Enlarge/Reduce|XPHB} nela. Se o alvo não for você e não puder ser afetado por essa magia, você se torna o alvo em vez disso.",
+      "data.text.rules.2.rows.8.0": "56-60",
+      "data.text.rules.2.rows.8.1": "Uma criatura formada magicamente aparece em um espaço desocupado o mais próximo possível do ponto de origem escolhido. A criatura não está sob seu controle, age normalmente e desaparece após 1 hora ou quando é reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Role {@dice 1d4} para determinar qual criatura aparece. Com {@b 1}, aparece um {@creature Rhinoceros|XMM}; com {@b 2}, um {@creature Elephant|XMM}; e com {@b 3-4}, um {@creature Rat|XMM}.",
+      "data.text.rules.2.rows.9.0": "61-64",
+      "data.text.rules.2.rows.9.1": "Grama cobre um círculo de terreno com 60 pés de raio, com o centro desse círculo o mais próximo possível do ponto de origem escolhido. A grama que já estiver ali cresce até dez vezes o tamanho normal e permanece assim por 1 minuto.",
+      "data.text.rules.2.rows.10.0": "65-68",
+      "data.text.rules.2.rows.10.1": "Um objeto à escolha do Mestre desaparece no Plano Etéreo. O objeto não pode estar sendo vestido nem carregado, deve estar a até 120 pés do ponto de origem escolhido e não pode ter mais de 10 pés em nenhuma dimensão. Se não houver objetos assim ao alcance, nada acontece.",
+      "data.text.rules.2.rows.11.0": "69-72",
+      "data.text.rules.2.rows.11.1": "Nada acontece no ponto de origem escolhido. Em vez disso, você diminui de tamanho como se tivesse conjurado {@spell Enlarge/Reduce|XPHB} sobre si mesmo e permanece nesse estado por 1 minuto.",
+      "data.text.rules.2.rows.12.0": "73-77",
+      "data.text.rules.2.rows.12.1": "Folhas brotam da criatura mais próxima do ponto de origem escolhido. A menos que sejam arrancadas, as folhas ficam marrons e caem após 24 horas.",
+      "data.text.rules.2.rows.13.0": "78-82",
+      "data.text.rules.2.rows.13.1": "Nada acontece no ponto de origem escolhido. Em vez disso, uma explosão de luz colorida e cintilante se estende a partir de você em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés. Cada criatura na área deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Blinded|XPHB} por 1 minuto. Uma criatura repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso.",
+      "data.text.rules.2.rows.14.0": "83-87",
+      "data.text.rules.2.rows.14.1": "Nada acontece no ponto de origem escolhido. Em vez disso, você conjura {@spell Invisibility|XPHB} sobre si mesmo.",
+      "data.text.rules.2.rows.15.0": "88-92",
+      "data.text.rules.2.rows.15.1": "Nada acontece no ponto de origem escolhido. Em vez disso, um fluxo de {@dice 1d4 × 10} gemas, cada uma valendo 1 PO, dispara da ponta da varinha em uma {@variantrule Line [Area of Effect]|XPHB|Linha} de 30 pés de comprimento e 5 pés de largura na direção do ponto de origem escolhido. Cada gema causa 1 de dano de Concussão, e o dano total das gemas é dividido igualmente entre todas as criaturas na {@variantrule Line [Area of Effect]|XPHB|Linha}.",
+      "data.text.rules.2.rows.16.0": "93-97",
+      "data.text.rules.2.rows.16.1": "Você conjura {@spell Polymorph|XPHB}, tendo como alvo a criatura mais próxima do ponto de origem escolhido. Role {@dice 1d4} para determinar a nova forma do alvo. Com {@b 1}, a nova forma é um {@creature Black Bear|XMM}; com {@b 2}, uma {@creature Giant Wasp|XMM}; e com {@b 3-4}, um {@creature Frog|XMM}.",
+      "data.text.rules.2.rows.17.0": "98-00",
+      "data.text.rules.2.rows.17.1": "A criatura mais próxima do ponto de origem escolhido realiza uma salvaguarda de Constituição {@dc 15}. Em caso de falha, a criatura recebe a condição {@condition Restrained|XPHB} e começa a se transformar em pedra. Enquanto estiver {@condition Restrained|XPHB} dessa forma, a criatura repete a salvaguarda ao final de seu próximo turno. Em caso de sucesso, o efeito termina. Em caso de falha, a criatura recebe a condição {@condition Petrified|XPHB} em vez da condição {@condition Restrained|XPHB}. A petrificação dura até a criatura ser libertada pela magia {@spell Greater Restoration|XPHB} ou por magia semelhante."
+    }
+  }
+}
