@@ -17,11 +17,11 @@ The AI must never receive a direct state-mutation capability. Mechanical truth b
 
 ## AI-1 — Contracts & Turn Orchestrator
 
-**Status: IN PROGRESS**
+**Status: COMPLETE**
 
-Define provider-agnostic contracts for turn intent, authoritative state snapshots, context packages, AI proposals, validation, execution, persistence, and orchestration.
+Implemented provider-agnostic contracts for turn intent, authoritative state snapshots, context packages, AI proposals, validation, execution, persistence, and orchestration.
 
-Acceptance criteria:
+Validated guarantees:
 
 - AI package has no provider dependency.
 - Runtime owns state loading and mutation.
@@ -32,9 +32,28 @@ Acceptance criteria:
 
 ## AI-2 — Context Engine 2.0
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Build typed context sections for campaign, scene, actors, entities, knowledge, recent events, narrative context, and mechanical context. Context construction must be independent of prompts and model providers.
+Implemented a provider- and prompt-independent Context Engine with a typed `OracleContextPackage` v2.
+
+Context sections:
+
+- campaign;
+- scene;
+- actors;
+- entities;
+- perspective-aware knowledge;
+- mechanical context.
+
+Validated guarantees:
+
+- context is aligned with authoritative campaign, actor, and state revision;
+- non-present actors are excluded by default;
+- unrelated entities are excluded by default;
+- `PUBLIC` and `DISCOVERED` knowledge may enter player context;
+- `ACTOR_ONLY` knowledge is restricted to listed actors;
+- `GM_ONLY` and `HIDDEN` knowledge never enter a normal player turn;
+- legacy v1 context remains accepted during migration, while new engine output is v2.
 
 ## AI-3 — Structured AI Actions
 
