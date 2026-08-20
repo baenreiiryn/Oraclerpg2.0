@@ -1,0 +1,36 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "cleric",
+  "entries": {
+    "dnd2024:2024:feature:cleric:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:cleric:blessed-strikes:srd-5.2": { "name": "Golpes Abençoados" },
+    "dnd2024:2024:feature:cleric:channel-divinity:srd-5.2": { "name": "Canalizar Divindade" },
+    "dnd2024:2024:feature:cleric:divine-intervention:srd-5.2": { "name": "Intervenção Divina" },
+    "dnd2024:2024:feature:cleric:greater-divine-intervention:srd-5.2": { "name": "Intervenção Divina Maior" },
+    "dnd2024:2024:feature:cleric:divine-order:srd-5.2": {
+      "name": "Ordem Divina",
+      "data.text.rules.0": "Você se dedicou a uma das seguintes funções sagradas, à sua escolha."
+    },
+    "dnd2024:2024:feature:cleric:divine-spark:srd-5.2": { "name": "Centelha Divina" },
+    "dnd2024:2024:feature:cleric:divine-strike:srd-5.2": { "name": "Golpe Divino" },
+    "dnd2024:2024:feature:cleric:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:cleric:improved-blessed-strikes:srd-5.2": { "name": "Golpes Abençoados Aprimorados" },
+    "dnd2024:2024:feature:cleric:potent-spellcasting:srd-5.2": { "name": "Conjuração Potente" },
+    "dnd2024:2024:feature:cleric:protector:srd-5.2": { "name": "Protetor" },
+    "dnd2024:2024:feature:cleric:sear-undead:srd-5.2": { "name": "Consumir Mortos-vivos" },
+    "dnd2024:2024:feature:cleric:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:cleric:thaumaturge:srd-5.2": { "name": "Taumaturgo" },
+    "dnd2024:2024:feature:cleric:turn-undead:srd-5.2": { "name": "Expulsar Mortos-vivos" },
+
+    "dnd2024:2024:feature:cleric:life:blessed-healer:srd-5.2": { "name": "Curandeiro Abençoado" },
+    "dnd2024:2024:feature:cleric:life:disciple-of-life:srd-5.2": { "name": "Discípulo da Vida" },
+    "dnd2024:2024:feature:cleric:life:life-domain-spells:srd-5.2": { "name": "Magias do Domínio da Vida" },
+    "dnd2024:2024:feature:cleric:life:preserve-life:srd-5.2": { "name": "Preservar a Vida" },
+    "dnd2024:2024:feature:cleric:life:supreme-healing:srd-5.2": { "name": "Cura Suprema" }
+  }
+}
