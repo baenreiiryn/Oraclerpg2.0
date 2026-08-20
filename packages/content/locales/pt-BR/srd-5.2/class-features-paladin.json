@@ -1,0 +1,42 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "paladin",
+  "entries": {
+    "dnd2024:2024:feature:paladin:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:paladin:abjure-foes:srd-5.2": { "name": "Abjurar Inimigos" },
+    "dnd2024:2024:feature:paladin:aura-expansion:srd-5.2": {
+      "name": "Expansão da Aura",
+      "data.text.rules.0": "Sua Aura de Proteção agora é uma {@variantrule Emanation [Area of Effect]|XPHB|Emanation} de 30 pés."
+    },
+    "dnd2024:2024:feature:paladin:aura-of-courage:srd-5.2": { "name": "Aura de Coragem" },
+    "dnd2024:2024:feature:paladin:aura-of-protection:srd-5.2": { "name": "Aura de Proteção" },
+    "dnd2024:2024:feature:paladin:channel-divinity:srd-5.2": { "name": "Canalizar Divindade" },
+    "dnd2024:2024:feature:paladin:divine-sense:srd-5.2": { "name": "Sentido Divino" },
+    "dnd2024:2024:feature:paladin:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:paladin:extra-attack:srd-5.2": { "name": "Ataque Extra" },
+    "dnd2024:2024:feature:paladin:faithful-steed:srd-5.2": { "name": "Corcel Fiel" },
+    "dnd2024:2024:feature:paladin:fighting-style:srd-5.2": { "name": "Estilo de Luta" },
+    "dnd2024:2024:feature:paladin:lay-on-hands:srd-5.2": {
+      "name": "Imposição das Mãos",
+      "data.activities.0.name": "Imposição das Mãos — Cura",
+      "data.activities.0.description": "Gaste qualquer quantidade de pontos de Imposição das Mãos, até o total restante, restaurando a mesma quantidade de Pontos de Vida.",
+      "data.activities.1.name": "Imposição das Mãos — Curar Envenenado",
+      "data.activities.1.description": "Gaste 5 pontos de Imposição das Mãos para remover a condição Envenenado; esses pontos não restauram Pontos de Vida."
+    },
+    "dnd2024:2024:feature:paladin:paladin-s-smite:srd-5.2": { "name": "Destruição do Paladino" },
+    "dnd2024:2024:feature:paladin:radiant-strikes:srd-5.2": { "name": "Golpes Radiantes" },
+    "dnd2024:2024:feature:paladin:restoring-touch:srd-5.2": { "name": "Toque Restaurador" },
+    "dnd2024:2024:feature:paladin:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:paladin:weapon-mastery:srd-5.2": { "name": "Maestria com Armas" },
+    "dnd2024:2024:feature:paladin:devotion:aura-of-devotion:srd-5.2": { "name": "Aura de Devoção" },
+    "dnd2024:2024:feature:paladin:devotion:holy-nimbus:srd-5.2": { "name": "Nimbus Sagrado" },
+    "dnd2024:2024:feature:paladin:devotion:oath-of-devotion-spells:srd-5.2": { "name": "Magias do Juramento de Devoção" },
+    "dnd2024:2024:feature:paladin:devotion:sacred-weapon:srd-5.2": { "name": "Arma Sagrada", "data.activities.0.name": "Arma Sagrada" },
+    "dnd2024:2024:feature:paladin:devotion:smite-of-protection:srd-5.2": { "name": "Destruição Protetora" }
+  }
+}
