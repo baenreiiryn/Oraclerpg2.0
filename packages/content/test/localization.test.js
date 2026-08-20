@@ -52,8 +52,11 @@ test("only presentation paths are accepted", () => {
   assert.equal(isPresentationPath("name"), true);
   assert.equal(isPresentationPath("data.text.rules.0"), true);
   assert.equal(isPresentationPath("data.actionRules.0.activity.description"), true);
+  assert.equal(isPresentationPath("data.activities.0.target.restrictions.0.description"), true);
   assert.equal(isPresentationPath("canonicalId"), false);
   assert.equal(isPresentationPath("data.actionRules.0.activity.id"), false);
   assert.equal(isPresentationPath("data.actionRules.0.activity.rolls.0.formula"), false);
+  assert.equal(isPresentationPath("data.activities.0.target.type"), false);
+  assert.equal(isPresentationPath("data.activities.0.target.restrictions.0.type"), false);
   assert.equal(isPresentationPath("data.modifiers.0.mode"), false);
 });
