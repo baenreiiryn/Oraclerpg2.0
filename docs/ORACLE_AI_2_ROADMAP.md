@@ -91,9 +91,42 @@ Validated guarantees:
 
 ## AI-8 — Oracle AI Gateway
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Introduce stable Oracle model aliases, provider routing, authentication, retries/fallbacks, BYOK as an advanced option, usage tracking, quotas, and secret isolation.
+Implemented a provider-neutral gateway boundary with stable Oracle aliases and server-side route configuration.
+
+Stable aliases:
+
+- `oracle-fast`;
+- `oracle-story`;
+- `oracle-reasoning`;
+- `oracle-vision`;
+- `oracle-background`;
+- `oracle-embedding`.
+
+Implemented components:
+
+- `OracleAiGateway` with priority-based provider/model routing;
+- route capability filtering for text, structured output, reasoning, vision, and embeddings;
+- retry/fallback behavior for retryable provider errors while non-retryable failures stop immediately;
+- `AiProviderPort` adapter boundary so Vercel AI Gateway, direct providers, local models, or future transports can be plugged in without changing product contracts;
+- platform-auth, BYOK-only, and mixed route policies;
+- BYOK credential references resolved server-side through `AiSecretResolverPort` rather than raw keys entering requests/context;
+- quota checks before any provider execution;
+- normalized usage/cost accounting through `AiUsageSinkPort`;
+- provider/model identity restricted to server-side routing/audit events and deliberately absent from product-facing gateway responses.
+
+Validated guarantees:
+
+- product code addresses stable Oracle aliases rather than model slugs;
+- provider/model changes do not alter the response contract;
+- retryable primary failure falls back according to route priority;
+- non-retryable failures do not silently fall through;
+- BYOK raw secrets never appear in the gateway request or product response;
+- quota rejection occurs before provider invocation;
+- required capabilities remove incompatible routes before execution;
+- provider/model metadata remains available for internal accounting without leaking through public contracts;
+- Schema CI, full AI/runtime tests, the prior authority gate, and class/compendium regression remain green.
 
 ## AI-9 — Complete GM Runtime
 
