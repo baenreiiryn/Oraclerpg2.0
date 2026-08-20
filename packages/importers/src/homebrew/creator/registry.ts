@@ -1,163 +1,135 @@
 import type { CanonicalContentType } from "@oraclerpg/schema";
-import type { CreatorFormDefinition } from "./types.js";
+import type { CreatorFieldDefinition, CreatorFormDefinition, CreatorSectionDefinition } from "./types.js";
 
-const abilityOptions = ["str", "dex", "con", "int", "wis", "cha"] as const;
-const damageOptions = ["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"] as const;
-const sizeOptions = ["tiny", "small", "medium", "large", "huge", "gargantuan"] as const;
+const ABILITIES = ["str", "dex", "con", "int", "wis", "cha"] as const;
+const DAMAGE_TYPES = ["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"] as const;
+const SIZES = ["tiny", "small", "medium", "large", "huge", "gargantuan"] as const;
 
-const textSection = {
-  id: "text",
-  label: "Texto e descrição",
-  fields: [
-    { id: "text", path: "text", label: "Texto de regras", kind: "richEntries" as const },
-  ],
-};
+const field = (id: string, path: string, label: string, kind: CreatorFieldDefinition["kind"], extra: Omit<CreatorFieldDefinition, "id" | "path" | "label" | "kind"> = {}): CreatorFieldDefinition => ({ id, path, label, kind, ...extra });
+const section = (id: string, label: string, fields: readonly CreatorFieldDefinition[], extra: Omit<CreatorSectionDefinition, "id" | "label" | "fields"> = {}): CreatorSectionDefinition => ({ id, label, fields, ...extra });
+const textSection = section("text", "Texto e descrição", [field("text", "text", "Texto de regras", "richEntries")]);
 
 export const HOME_BREW_CREATOR_FORMS = {
   item: {
     type: "item",
     label: "Item",
-    description: "Armas, armaduras, equipamentos, consumíveis, ferramentas, recipientes, pacotes, montarias e outros itens.",
+    description: "Editor canônico de armas, armaduras, equipamentos, consumíveis, ferramentas, recipientes, packs, montarias e outros itens.",
     sections: [
-      {
-        id: "item-core",
-        label: "Dados básicos",
-        fields: [
-          { id: "itemKind", path: "itemKind", label: "Tipo de item", kind: "select", required: true, options: ["weapon", "armor", "equipment", "consumable", "tool", "container", "pack", "mount", "vehiclePurchase", "loot", "charm", "upgrade"] },
-          { id: "rarity", path: "rarity", label: "Raridade", kind: "select", options: ["common", "uncommon", "rare", "veryRare", "legendary", "artifact", "varies", "unknown"] },
-          { id: "magical", path: "magical", label: "Mágico", kind: "boolean" },
-          { id: "cursed", path: "cursed", label: "Amaldiçoado", kind: "boolean" },
-          { id: "attunement", path: "attunement", label: "Sintonia", kind: "select", options: ["none", "required", "optional", "special"] },
-          { id: "weight", path: "weight", label: "Peso", kind: "object" },
-          { id: "price", path: "price", label: "Preço", kind: "object" },
-          { id: "properties", path: "properties", label: "Propriedades", kind: "collection" },
-        ],
-      },
-      {
-        id: "weapon",
-        label: "Arma",
-        condition: { path: "itemKind", equals: "weapon" },
-        fields: [
-          { id: "category", path: "category", label: "Categoria", kind: "select", required: true, options: ["simple", "martial", "improvised", "natural", "special"] },
-          { id: "mode", path: "mode", label: "Modo", kind: "select", required: true, options: ["melee", "ranged"] },
-          { id: "damage", path: "damage", label: "Dano", kind: "object", required: true },
-          { id: "range", path: "range", label: "Alcance", kind: "object" },
-          { id: "mastery", path: "mastery", label: "Mastery", kind: "text" },
-          { id: "magicalBonus", path: "magicalBonus", label: "Bônus mágico", kind: "object" },
-        ],
-      },
-      {
-        id: "armor",
-        label: "Armadura",
-        condition: { path: "itemKind", equals: "armor" },
-        fields: [
-          { id: "armorCategory", path: "category", label: "Categoria", kind: "select", required: true, options: ["light", "medium", "heavy", "shield", "natural", "other"] },
-          { id: "armorClass", path: "armorClass", label: "Classe de Armadura", kind: "object", required: true },
-          { id: "strengthRequirement", path: "strengthRequirement", label: "Força mínima", kind: "number" },
-          { id: "stealthDisadvantage", path: "stealthDisadvantage", label: "Desvantagem em Furtividade", kind: "boolean" },
-        ],
-      },
-      {
-        id: "consumable",
-        label: "Consumível",
-        condition: { path: "itemKind", equals: "consumable" },
-        fields: [
-          { id: "consumableType", path: "consumableType", label: "Tipo", kind: "select", options: ["potion", "poison", "food", "scroll", "ammo", "charge", "other"] },
-          { id: "consumeOnUse", path: "consumeOnUse", label: "Consumir ao usar", kind: "boolean" },
-          { id: "spellScrollLevel", path: "spellScrollLevel", label: "Nível de scroll", kind: "number", min: 0, max: 9 },
-        ],
-      },
-      {
-        id: "container",
-        label: "Recipiente",
-        condition: { path: "itemKind", equals: "container" },
-        fields: [
-          { id: "containerType", path: "containerType", label: "Tipo", kind: "select", options: ["quiver", "pouch", "sack", "backpack", "chest", "case", "vessel", "other"] },
-          { id: "capacity", path: "capacity", label: "Capacidade", kind: "object" },
-          { id: "compartments", path: "compartments", label: "Compartimentos", kind: "collection" },
-          { id: "contents", path: "contents", label: "Conteúdo padrão", kind: "collection" },
-        ],
-      },
-      {
-        id: "pack",
-        label: "Pacote",
-        condition: { path: "itemKind", equals: "pack" },
-        fields: [
-          { id: "packType", path: "packType", label: "Tipo de pacote", kind: "select", options: ["equipment", "ammunition", "toolKit", "bundle", "other"] },
-          { id: "packContents", path: "contents", label: "Itens do pacote", kind: "collection", required: true },
-          { id: "unpackBehavior", path: "unpackBehavior", label: "Ao desempacotar", kind: "select", options: ["addContents", "replacePack"] },
-        ],
-      },
-      {
-        id: "item-mechanics",
-        label: "Mecânicas",
-        fields: [
-          { id: "uses", path: "uses", label: "Usos", kind: "object", advanced: true },
-          { id: "activities", path: "activities", label: "Atividades", kind: "collection", advanced: true },
-          { id: "effects", path: "effects", label: "Efeitos", kind: "collection", advanced: true },
-          { id: "modifiers", path: "modifiers", label: "Modificadores", kind: "collection", advanced: true },
-          { id: "grantedFeatures", path: "grantedFeatures", label: "Features concedidas", kind: "referenceList", referenceTypes: ["feature"] },
-          { id: "damageResistances", path: "damageResistances", label: "Resistências", kind: "multiselect", options: damageOptions },
-          { id: "damageImmunities", path: "damageImmunities", label: "Imunidades", kind: "multiselect", options: damageOptions },
-        ],
-      },
+      section("item-core", "Dados básicos", [
+        field("itemKind", "itemKind", "Tipo de item", "select", { required: true, options: ["weapon", "armor", "equipment", "consumable", "tool", "container", "pack", "mount", "vehiclePurchase", "loot", "charm", "upgrade"] }),
+        field("quantity", "quantity", "Quantidade de referência", "number", { min: 0 }),
+        field("weight", "weight", "Peso", "object"),
+        field("price", "price", "Preço", "object"),
+        field("rarity", "rarity", "Raridade", "select", { options: ["common", "uncommon", "rare", "veryRare", "legendary", "artifact", "varies", "unknown"] }),
+        field("magical", "magical", "Mágico", "boolean"),
+        field("cursed", "cursed", "Amaldiçoado", "boolean"),
+        field("attunement", "attunement", "Sintonia", "select", { options: ["none", "required", "optional", "special"] }),
+        field("attunementRequirements", "attunementRequirements", "Requisitos de sintonia", "object"),
+        field("properties", "properties", "Propriedades", "collection"),
+      ]),
+      section("weapon", "Arma", [
+        field("weaponCategory", "category", "Categoria", "select", { required: true, options: ["simple", "martial", "improvised", "natural", "special"] }),
+        field("mode", "mode", "Modo", "select", { required: true, options: ["melee", "ranged"] }),
+        field("damage", "damage", "Dano", "object", { required: true }),
+        field("range", "range", "Alcance", "object"),
+        field("mastery", "mastery", "Mastery", "text"),
+        field("ammunitionType", "ammunitionType", "Tipo de munição", "text"),
+        field("magicalBonus", "magicalBonus", "Bônus mágico", "object"),
+      ], { condition: { path: "itemKind", equals: "weapon" } }),
+      section("armor", "Armadura", [
+        field("armorCategory", "category", "Categoria", "select", { required: true, options: ["light", "medium", "heavy", "shield", "natural", "other"] }),
+        field("armorClass", "armorClass", "Classe de Armadura", "object", { required: true }),
+        field("strengthRequirement", "strengthRequirement", "Força mínima", "number", { min: 0 }),
+        field("stealthDisadvantage", "stealthDisadvantage", "Desvantagem em Furtividade", "boolean"),
+      ], { condition: { path: "itemKind", equals: "armor" } }),
+      section("consumable", "Consumível", [
+        field("consumableType", "consumableType", "Tipo", "select", { options: ["potion", "poison", "food", "scroll", "ammo", "charge", "other"] }),
+        field("consumeOnUse", "consumeOnUse", "Consumir ao usar", "boolean"),
+        field("poisonApplicationTypes", "poisonApplicationTypes", "Aplicação de veneno", "multiselect", { options: ["contact", "ingested", "inhaled", "injury"] }),
+        field("spellScrollLevel", "spellScrollLevel", "Nível de scroll", "number", { min: 0, max: 9 }),
+      ], { condition: { path: "itemKind", equals: "consumable" } }),
+      section("tool", "Ferramenta", [field("toolType", "toolType", "Tipo de ferramenta", "text"), field("ability", "ability", "Atributo associado", "text")], { condition: { path: "itemKind", equals: "tool" } }),
+      section("container", "Recipiente", [
+        field("containerType", "containerType", "Tipo", "select", { options: ["quiver", "pouch", "sack", "backpack", "chest", "case", "vessel", "other"] }),
+        field("capacity", "capacity", "Capacidade", "object"),
+        field("compartments", "compartments", "Compartimentos", "collection"),
+        field("contents", "contents", "Conteúdo padrão", "collection"),
+        field("restrictsTo", "restrictsTo", "Restrições", "collection"),
+      ], { condition: { path: "itemKind", equals: "container" } }),
+      section("pack", "Pacote", [
+        field("packType", "packType", "Tipo de pacote", "select", { options: ["equipment", "ammunition", "toolKit", "bundle", "other"] }),
+        field("packContents", "contents", "Itens do pacote", "collection", { required: true }),
+        field("unpackBehavior", "unpackBehavior", "Ao desempacotar", "select", { options: ["addContents", "replacePack"] }),
+      ], { condition: { path: "itemKind", equals: "pack" } }),
+      section("mount", "Montaria", [field("speed", "speed", "Deslocamento", "number", { required: true }), field("carryingCapacity", "carryingCapacity", "Capacidade de carga", "number"), field("creature", "creature", "Criatura vinculada", "reference", { referenceTypes: ["monster"] })], { condition: { path: "itemKind", equals: "mount" } }),
+      section("vehicle-purchase", "Compra de veículo", [field("vehicle", "vehicle", "Veículo vinculado", "reference", { referenceTypes: ["vehicle"] }), field("armorClass", "armorClass", "CA", "number"), field("hitPoints", "hitPoints", "PV", "number"), field("damageThreshold", "damageThreshold", "Limiar de dano", "number"), field("speed", "speed", "Velocidade", "number"), field("crew", "crew", "Tripulação", "number"), field("passengers", "passengers", "Passageiros", "number")], { condition: { path: "itemKind", equals: "vehiclePurchase" } }),
+      section("item-mechanics", "Mecânicas compartilhadas", [
+        field("abilityAdjustments", "abilityAdjustments", "Ajustes de atributos", "collection"),
+        field("damageResistances", "damageResistances", "Resistências", "multiselect", { options: DAMAGE_TYPES }),
+        field("damageImmunities", "damageImmunities", "Imunidades", "multiselect", { options: DAMAGE_TYPES }),
+        field("movementModifications", "movementModifications", "Movimento", "collection"),
+        field("light", "light", "Emissão de luz", "collection"),
+        field("grants", "grants", "Concessões", "collection"),
+        field("spellcastingFocusFor", "spellcastingFocusFor", "Foco para classes", "collection"),
+        field("uses", "uses", "Usos", "object", { advanced: true }),
+        field("activities", "activities", "Atividades", "collection", { advanced: true }),
+        field("grantedFeatures", "grantedFeatures", "Features concedidas", "referenceList", { referenceTypes: ["feature"] }),
+        field("benefitGrants", "benefitGrants", "Benefícios", "collection", { advanced: true }),
+        field("effects", "effects", "Efeitos", "collection", { advanced: true }),
+        field("modifiers", "modifiers", "Modificadores", "collection", { advanced: true }),
+        field("states", "states", "Estados", "collection", { advanced: true }),
+        field("triggers", "triggers", "Gatilhos", "collection", { advanced: true }),
+        field("manualAdjudication", "manualAdjudication", "Adjudicação manual", "object", { advanced: true }),
+      ]),
       textSection,
     ],
   },
   spell: {
     type: "spell",
     label: "Magia",
-    description: "Magias com execução estruturada por Activities.",
+    description: "Editor completo da estrutura SpellData.",
     sections: [
-      { id: "spell-core", label: "Dados básicos", fields: [
-        { id: "level", path: "level", label: "Nível", kind: "number", required: true, min: 0, max: 9 },
-        { id: "school", path: "school", label: "Escola", kind: "select", required: true, options: ["abjuration", "conjuration", "divination", "enchantment", "evocation", "illusion", "necromancy", "transmutation"] },
-        { id: "ritual", path: "ritual", label: "Ritual", kind: "boolean" },
-        { id: "concentration", path: "concentration", label: "Concentração", kind: "boolean" },
-        { id: "aliases", path: "aliases", label: "Nomes alternativos", kind: "collection" },
-      ]},
-      { id: "spell-casting", label: "Conjuração", fields: [
-        { id: "castingTimes", path: "castingTimes", label: "Tempo de conjuração", kind: "collection", required: true },
-        { id: "range", path: "range", label: "Alcance/área", kind: "object", required: true },
-        { id: "durations", path: "durations", label: "Duração", kind: "collection", required: true },
-        { id: "components", path: "components", label: "Componentes", kind: "object", required: true },
-      ]},
-      { id: "spell-mechanics", label: "Mecânicas", fields: [
-        { id: "activities", path: "activities", label: "Atividades executáveis", kind: "collection", required: true },
-        { id: "scaling", path: "scaling", label: "Escalonamento", kind: "collection", advanced: true },
-        { id: "spellLists", path: "spellLists", label: "Listas de magia", kind: "referenceList", referenceTypes: ["class", "subclass"] },
-        { id: "mechanicIndex", path: "mechanicIndex", label: "Índice mecânico", kind: "object", advanced: true },
-      ]},
+      section("spell-core", "Dados básicos", [
+        field("level", "level", "Nível", "number", { required: true, min: 0, max: 9 }),
+        field("school", "school", "Escola", "select", { required: true, options: ["abjuration", "conjuration", "divination", "enchantment", "evocation", "illusion", "necromancy", "transmutation"] }),
+        field("aliases", "aliases", "Nomes alternativos", "collection"),
+        field("ritual", "ritual", "Ritual", "boolean"),
+        field("concentration", "concentration", "Concentração", "boolean"),
+        field("spellcastingAbility", "spellcastingAbility", "Atributo de conjuração", "select", { options: ABILITIES }),
+      ]),
+      section("spell-casting", "Conjuração", [field("castingTimes", "castingTimes", "Tempo de conjuração", "collection", { required: true }), field("range", "range", "Alcance/área", "object", { required: true }), field("durations", "durations", "Durações", "collection", { required: true }), field("components", "components", "Componentes", "object", { required: true })]),
+      section("spell-mechanics", "Mecânicas", [field("activities", "activities", "Atividades executáveis", "collection", { required: true }), field("scaling", "scaling", "Escalonamento", "collection", { advanced: true }), field("spellLists", "spellLists", "Listas de magia", "referenceList", { referenceTypes: ["class", "subclass"] }), field("mechanicIndex", "mechanicIndex", "Índice mecânico", "object", { advanced: true }), field("tags", "tags", "Tags", "collection")]),
       textSection,
-      { id: "spell-higher", label: "Níveis superiores", fields: [{ id: "higherLevelText", path: "higherLevelText", label: "Em níveis superiores", kind: "richEntries" }] },
+      section("spell-higher", "Níveis superiores", [field("higherLevelText", "higherLevelText", "Em níveis superiores", "richEntries")]),
+    ],
+  },
+  feature: {
+    type: "feature",
+    label: "Feature / Habilidade",
+    description: "Feat, class feature, subclass feature, species feature, background feature e outras features canônicas.",
+    sections: [
+      section("feature-core", "Identidade mecânica", [
+        field("featureKind", "featureKind", "Tipo de feature", "select", { required: true, options: ["feat", "classFeature", "subclassFeature", "speciesFeature", "backgroundFeature", "monsterFeature", "optionalFeature", "darkGift", "charm"] }),
+        field("category", "category", "Categoria", "text"),
+        field("featCategory", "featCategory", "Categoria de feat", "select", { options: ["origin", "general", "fightingStyle", "epicBoon", "other"] }),
+        field("subtype", "subtype", "Subtipo", "text"),
+        field("repeatable", "repeatable", "Repetível", "boolean"),
+      ]),
+      section("feature-requirements", "Pré-requisitos e escolhas", [field("prerequisiteMode", "prerequisiteMode", "Modo de pré-requisitos", "select", { options: ["all", "any"] }), field("prerequisites", "prerequisites", "Pré-requisitos", "collection"), field("abilityScoreOptions", "abilityScoreOptions", "Opções de atributo", "collection"), field("proficiencyChoices", "proficiencyChoices", "Escolhas de proficiência", "collection")]),
+      section("feature-grants", "Concessões", [field("spellGrants", "spellGrants", "Magias concedidas", "collection"), field("spellGrantChoices", "spellGrantChoices", "Escolhas de magias", "collection"), field("grants", "grants", "Concessões", "collection"), field("advancement", "advancement", "Progressão", "collection")]),
+      section("feature-mechanics", "Mecânicas", [field("activities", "activities", "Atividades", "collection"), field("effects", "effects", "Efeitos", "collection", { advanced: true }), field("modifiers", "modifiers", "Modificadores", "collection", { advanced: true }), field("states", "states", "Estados", "collection", { advanced: true }), field("patches", "patches", "Patches", "collection", { advanced: true }), field("classMechanics", "classMechanics", "Mecânicas de classe", "object", { advanced: true }), field("classRules", "classRules", "Regras de classe", "object", { advanced: true }), field("monsterTemplate", "monsterTemplate", "Template de monstro", "object", { advanced: true }), field("speciesTemplate", "speciesTemplate", "Template de espécie", "object", { advanced: true }), field("manualAdjudication", "manualAdjudication", "Adjudicação manual", "object", { advanced: true }), field("properties", "properties", "Propriedades", "collection")]),
+      textSection,
     ],
   },
   class: {
     type: "class",
     label: "Classe",
-    description: "Classe completa com progressão de 20 níveis, equipamento e mecânicas.",
+    description: "Classe completa, incluindo progressão, equipamento e spellcasting.",
     sections: [
-      { id: "class-core", label: "Dados básicos", fields: [
-        { id: "hitDie", path: "hitDie", label: "Dado de Vida", kind: "select", required: true, options: ["6", "8", "10", "12"] },
-        { id: "primaryAbilities", path: "primaryAbilities", label: "Atributos primários", kind: "multiselect", options: abilityOptions },
-        { id: "savingThrowProficiencies", path: "savingThrowProficiencies", label: "Salvaguardas", kind: "multiselect", options: abilityOptions },
-        { id: "armorTraining", path: "armorTraining", label: "Treinamento em armaduras", kind: "collection" },
-        { id: "weaponProficiencies", path: "weaponProficiencies", label: "Proficiências em armas", kind: "collection" },
-        { id: "toolProficiencies", path: "toolProficiencies", label: "Proficiências em ferramentas", kind: "collection" },
-      ]},
-      { id: "class-equipment", label: "Equipamento inicial", fields: [
-        { id: "startingEquipment", path: "startingEquipment", label: "Concessões", kind: "collection" },
-        { id: "equipmentBundles", path: "equipmentBundles", label: "Pacotes/escolhas", kind: "collection" },
-      ]},
-      { id: "class-progression", label: "Progressão", fields: [
-        { id: "spellcasting", path: "spellcasting", label: "Conjuração", kind: "object" },
-        { id: "advancement", path: "advancement", label: "Níveis e features", kind: "collection", required: true },
-        { id: "subclassLevel", path: "subclassLevel", label: "Nível da subclasse", kind: "number", min: 1, max: 20 },
-      ]},
-      { id: "class-advanced", label: "Mecânicas avançadas", fields: [
-        { id: "mechanics", path: "mechanics", label: "Mecânicas", kind: "object", advanced: true },
-        { id: "classRules", path: "classRules", label: "Regras da classe", kind: "object", advanced: true },
-      ]},
+      section("class-core", "Dados básicos", [field("hitDie", "hitDie", "Dado de Vida", "select", { required: true, options: ["6", "8", "10", "12"] }), field("primaryAbilities", "primaryAbilities", "Atributos primários", "multiselect", { options: ABILITIES }), field("savingThrowProficiencies", "savingThrowProficiencies", "Salvaguardas", "multiselect", { options: ABILITIES }), field("armorTraining", "armorTraining", "Treinamento em armaduras", "collection"), field("weaponProficiencies", "weaponProficiencies", "Proficiências em armas", "collection"), field("toolProficiencies", "toolProficiencies", "Proficiências em ferramentas", "collection"), field("skillChoices", "skillChoices", "Escolhas de perícias", "object")]),
+      section("class-equipment", "Equipamento inicial", [field("startingEquipment", "startingEquipment", "Concessões", "collection"), field("equipmentBundles", "equipmentBundles", "Pacotes/escolhas", "collection")]),
+      section("class-progression", "Progressão", [field("spellcasting", "spellcasting", "Conjuração", "object"), field("advancement", "advancement", "Progressão por nível", "collection", { required: true }), field("subclassLevel", "subclassLevel", "Nível de subclasse", "number", { min: 1, max: 20 })]),
+      section("class-advanced", "Mecânicas avançadas", [field("mechanics", "mechanics", "Mecânicas", "object", { advanced: true }), field("classRules", "classRules", "Regras", "object", { advanced: true })]),
       textSection,
     ],
   },
@@ -165,168 +137,42 @@ export const HOME_BREW_CREATOR_FORMS = {
     type: "subclass",
     label: "Subclasse",
     description: "Subclasse ligada a uma classe canônica.",
-    sections: [
-      { id: "subclass-core", label: "Dados básicos", fields: [
-        { id: "parentClass", path: "parentClass", label: "Classe-pai", kind: "reference", required: true, referenceTypes: ["class"] },
-        { id: "advancement", path: "advancement", label: "Progressão e features", kind: "collection", required: true },
-      ]},
-      { id: "subclass-advanced", label: "Mecânicas avançadas", fields: [
-        { id: "mechanics", path: "mechanics", label: "Mecânicas", kind: "object", advanced: true },
-        { id: "classRules", path: "classRules", label: "Regras", kind: "object", advanced: true },
-      ]},
-      textSection,
-    ],
+    sections: [section("subclass-core", "Dados básicos", [field("parentClass", "parentClass", "Classe-pai", "reference", { required: true, referenceTypes: ["class"] }), field("advancement", "advancement", "Progressão e features", "collection", { required: true })]), section("subclass-advanced", "Mecânicas avançadas", [field("mechanics", "mechanics", "Mecânicas", "object", { advanced: true }), field("classRules", "classRules", "Regras", "object", { advanced: true })]), textSection],
   },
   species: {
     type: "species",
     label: "Espécie",
-    description: "Espécie jogável, variantes, features e escolhas.",
-    sections: [
-      { id: "species-core", label: "Dados básicos", fields: [
-        { id: "size", path: "size", label: "Tamanhos", kind: "multiselect", required: true, options: sizeOptions },
-        { id: "speed", path: "speed", label: "Deslocamento", kind: "number", required: true, min: 0 },
-        { id: "creatureType", path: "creatureType", label: "Tipo de criatura", kind: "text" },
-        { id: "darkvision", path: "darkvision", label: "Visão no escuro", kind: "number", min: 0 },
-        { id: "resistances", path: "resistances", label: "Resistências", kind: "multiselect", options: damageOptions },
-      ]},
-      { id: "species-features", label: "Features e concessões", fields: [
-        { id: "features", path: "features", label: "Features", kind: "referenceList", referenceTypes: ["feature"] },
-        { id: "spellGrants", path: "spellGrants", label: "Magias concedidas", kind: "collection" },
-        { id: "grants", path: "grants", label: "Concessões", kind: "collection" },
-        { id: "choices", path: "choices", label: "Escolhas", kind: "collection" },
-      ]},
-      { id: "species-variants", label: "Variantes", fields: [{ id: "variants", path: "variants", label: "Variantes", kind: "collection" }] },
-      { id: "species-advancement", label: "Progressão", fields: [{ id: "advancement", path: "advancement", label: "Avanços", kind: "collection", advanced: true }] },
-      textSection,
-    ],
+    description: "Espécie jogável com variantes, features, escolhas e concessões.",
+    sections: [section("species-core", "Dados básicos", [field("size", "size", "Tamanhos", "multiselect", { required: true, options: SIZES }), field("sizeChoice", "sizeChoice", "Escolha de tamanho", "object"), field("speed", "speed", "Deslocamento", "number", { required: true, min: 0 }), field("creatureType", "creatureType", "Tipo de criatura", "text"), field("darkvision", "darkvision", "Visão no escuro", "number", { min: 0 }), field("resistances", "resistances", "Resistências", "multiselect", { options: DAMAGE_TYPES }), field("resistanceChoice", "resistanceChoice", "Escolha de resistência", "object")]), section("species-features", "Features e concessões", [field("features", "features", "Features", "referenceList", { referenceTypes: ["feature"] }), field("featureParameters", "featureParameters", "Parâmetros de features", "collection"), field("spellGrants", "spellGrants", "Magias concedidas", "collection"), field("grants", "grants", "Concessões", "collection"), field("choices", "choices", "Escolhas", "collection")]), section("species-variants", "Variantes e progressão", [field("variants", "variants", "Variantes", "collection"), field("advancement", "advancement", "Progressão", "collection", { advanced: true }), field("patches", "patches", "Patches", "collection", { advanced: true })]), textSection],
   },
   background: {
     type: "background",
     label: "Antecedente",
-    description: "Antecedente com perícias, ferramentas, idiomas, feat e equipamento.",
-    sections: [
-      { id: "background-core", label: "Proficiências e atributos", fields: [
-        { id: "abilityScoreOptions", path: "abilityScoreOptions", label: "Opções de atributos", kind: "object" },
-        { id: "skillProficiencies", path: "skillProficiencies", label: "Perícias", kind: "collection" },
-        { id: "toolProficiencies", path: "toolProficiencies", label: "Ferramentas", kind: "collection" },
-        { id: "languages", path: "languages", label: "Idiomas", kind: "object" },
-        { id: "originFeat", path: "originFeat", label: "Feat de origem", kind: "reference", referenceTypes: ["feature"] },
-      ]},
-      { id: "background-equipment", label: "Equipamento", fields: [
-        { id: "equipment", path: "equipment", label: "Concessões", kind: "collection" },
-        { id: "equipmentBundles", path: "equipmentBundles", label: "Pacotes", kind: "collection" },
-      ]},
-      { id: "background-extra", label: "Escolhas e concessões", fields: [
-        { id: "choices", path: "choices", label: "Escolhas", kind: "collection" },
-        { id: "grants", path: "grants", label: "Concessões", kind: "collection" },
-      ]},
-      textSection,
-    ],
-  },
-  feature: {
-    type: "feature",
-    label: "Feature / Habilidade",
-    description: "Feature independente para classes, subclasses, espécies, feats e itens.",
-    sections: [
-      { id: "feature-core", label: "Configuração", fields: [
-        { id: "featureType", path: "featureType", label: "Tipo de feature", kind: "text" },
-        { id: "level", path: "level", label: "Nível", kind: "number", min: 1, max: 20 },
-        { id: "requirements", path: "requirements", label: "Requisitos", kind: "object" },
-      ]},
-      { id: "feature-mechanics", label: "Mecânicas", fields: [
-        { id: "uses", path: "uses", label: "Usos", kind: "object" },
-        { id: "activities", path: "activities", label: "Atividades", kind: "collection" },
-        { id: "grants", path: "grants", label: "Concessões", kind: "collection" },
-        { id: "choices", path: "choices", label: "Escolhas", kind: "collection" },
-        { id: "effects", path: "effects", label: "Efeitos", kind: "collection", advanced: true },
-        { id: "modifiers", path: "modifiers", label: "Modificadores", kind: "collection", advanced: true },
-      ]},
-      textSection,
-    ],
+    description: "Antecedente com atributos, proficiências, feat e equipamento.",
+    sections: [section("background-core", "Dados básicos", [field("abilityScoreOptions", "abilityScoreOptions", "Opções de atributos", "object"), field("skillProficiencies", "skillProficiencies", "Perícias", "collection"), field("toolProficiencies", "toolProficiencies", "Ferramentas", "collection"), field("languages", "languages", "Idiomas", "object"), field("originFeat", "originFeat", "Feat de origem", "reference", { referenceTypes: ["feature"] })]), section("background-equipment", "Equipamento", [field("equipment", "equipment", "Concessões", "collection"), field("equipmentBundles", "equipmentBundles", "Pacotes", "collection")]), section("background-extra", "Escolhas e concessões", [field("choices", "choices", "Escolhas", "collection"), field("grants", "grants", "Concessões", "collection")]), textSection],
   },
   monster: {
     type: "monster",
     label: "Monstro",
-    description: "Bloco completo de criatura/monstro.",
+    description: "Bloco completo MonsterData, inclusive features e Activities.",
     sections: [
-      { id: "monster-core", label: "Dados básicos", fields: [
-        { id: "size", path: "size", label: "Tamanho", kind: "select", options: sizeOptions },
-        { id: "creatureType", path: "type", label: "Tipo", kind: "object" },
-        { id: "alignment", path: "alignment", label: "Alinhamento", kind: "collection" },
-        { id: "armorClass", path: "armorClass", label: "CA", kind: "collection" },
-        { id: "hitPoints", path: "hitPoints", label: "PV", kind: "object" },
-        { id: "speed", path: "speed", label: "Deslocamentos", kind: "object" },
-      ]},
-      { id: "monster-stats", label: "Atributos e defesas", fields: [
-        { id: "abilities", path: "abilities", label: "Atributos", kind: "object" },
-        { id: "saves", path: "savingThrows", label: "Salvaguardas", kind: "object" },
-        { id: "skills", path: "skills", label: "Perícias", kind: "object" },
-        { id: "resistances", path: "damageResistances", label: "Resistências", kind: "collection" },
-        { id: "immunities", path: "damageImmunities", label: "Imunidades", kind: "collection" },
-        { id: "conditionImmunities", path: "conditionImmunities", label: "Imunidades a condições", kind: "collection" },
-      ]},
-      { id: "monster-actions", label: "Traços e ações", fields: [
-        { id: "traits", path: "traits", label: "Traços", kind: "collection" },
-        { id: "actions", path: "actions", label: "Ações", kind: "collection" },
-        { id: "bonusActions", path: "bonusActions", label: "Ações bônus", kind: "collection" },
-        { id: "reactions", path: "reactions", label: "Reações", kind: "collection" },
-        { id: "legendaryActions", path: "legendaryActions", label: "Ações lendárias", kind: "collection" },
-      ]},
-      { id: "monster-meta", label: "Desafio e sentidos", fields: [
-        { id: "challengeRating", path: "challengeRating", label: "ND", kind: "object" },
-        { id: "senses", path: "senses", label: "Sentidos", kind: "object" },
-        { id: "languages", path: "languages", label: "Idiomas", kind: "collection" },
-      ]},
+      section("monster-core", "Dados básicos", [field("creatureType", "creatureType", "Tipo de criatura", "text", { required: true }), field("creatureSubtype", "creatureSubtype", "Subtipo", "text"), field("size", "size", "Tamanho", "select", { required: true, options: SIZES }), field("alignment", "alignment", "Alinhamento", "text"), field("challengeRating", "challengeRating", "ND", "number", { required: true, min: 0 }), field("proficiencyBonus", "proficiencyBonus", "Bônus de proficiência", "number"), field("experience", "experience", "XP", "number", { min: 0 })]),
+      section("monster-defense", "Atributos e defesas", [field("abilities", "abilities", "Atributos", "object", { required: true }), field("armorClass", "armorClass", "CA", "collection", { required: true }), field("hitPoints", "hitPoints", "PV", "object", { required: true }), field("initiative", "initiative", "Iniciativa", "object"), field("movement", "movement", "Movimentos", "collection", { required: true }), field("savingThrows", "savingThrows", "Salvaguardas", "collection"), field("skills", "skills", "Perícias", "collection"), field("passivePerception", "passivePerception", "Percepção passiva", "number"), field("senses", "senses", "Sentidos", "collection"), field("languages", "languages", "Idiomas", "collection")]),
+      section("monster-resistance", "Resistências", [field("vulnerabilities", "vulnerabilities", "Vulnerabilidades", "multiselect", { options: DAMAGE_TYPES }), field("resistances", "resistances", "Resistências", "multiselect", { options: DAMAGE_TYPES }), field("damageImmunities", "damageImmunities", "Imunidades a dano", "multiselect", { options: DAMAGE_TYPES }), field("conditionImmunities", "conditionImmunities", "Imunidades a condições", "collection")]),
+      section("monster-actions", "Features e ações", [field("features", "features", "Features instanciadas", "collection"), field("traits", "traits", "Traits legados", "referenceList", { referenceTypes: ["feature"] }), field("actions", "actions", "Ações", "collection"), field("bonusActions", "bonusActions", "Ações bônus", "collection"), field("reactions", "reactions", "Reações", "collection"), field("legendaryActions", "legendaryActions", "Ações lendárias", "collection"), field("lairActions", "lairActions", "Ações de covil", "collection"), field("legendaryActionUses", "legendaryActionUses", "Usos de ação lendária", "number"), field("legendaryResistanceUses", "legendaryResistanceUses", "Resistências lendárias", "number"), field("spellcasting", "spellcasting", "Conjuração", "referenceList", { referenceTypes: ["spell", "feature"] })]),
+      section("monster-world", "Habitat e tesouro", [field("habitats", "habitats", "Habitats", "collection"), field("treasure", "treasure", "Tesouro", "collection"), field("gear", "gear", "Equipamento", "referenceList", { referenceTypes: ["item"] })]),
+      textSection,
     ],
   },
   vehicle: {
     type: "vehicle",
     label: "Veículo",
-    description: "Veículo com estatísticas e componentes próprios.",
-    sections: [
-      { id: "vehicle-core", label: "Dados básicos", fields: [
-        { id: "vehicleType", path: "vehicleType", label: "Tipo", kind: "text" },
-        { id: "armorClass", path: "armorClass", label: "CA", kind: "number" },
-        { id: "hitPoints", path: "hitPoints", label: "PV", kind: "number" },
-        { id: "damageThreshold", path: "damageThreshold", label: "Limiar de dano", kind: "number" },
-        { id: "speed", path: "speed", label: "Velocidade", kind: "object" },
-        { id: "crew", path: "crew", label: "Tripulação", kind: "number" },
-        { id: "passengers", path: "passengers", label: "Passageiros", kind: "number" },
-      ]},
-      { id: "vehicle-parts", label: "Componentes e ações", fields: [
-        { id: "components", path: "components", label: "Componentes", kind: "collection" },
-        { id: "actions", path: "actions", label: "Ações", kind: "collection" },
-      ]},
-      textSection,
-    ],
+    description: "Veículo completo VehicleData com estações e Activities.",
+    sections: [section("vehicle-core", "Dados básicos", [field("size", "size", "Tamanho", "text", { required: true }), field("weight", "weight", "Peso", "number"), field("capacity", "capacity", "Capacidade", "object"), field("armorClass", "armorClass", "CA", "collection", { required: true }), field("hitPoints", "hitPoints", "PV", "object", { required: true }), field("thresholds", "thresholds", "Limiares", "object"), field("speed", "speed", "Velocidade", "object"), field("travelPace", "travelPace", "Ritmo de viagem", "object")]), section("vehicle-defense", "Atributos e defesas", [field("abilities", "abilities", "Atributos", "object"), field("damageImmunities", "damageImmunities", "Imunidades a dano", "multiselect", { options: DAMAGE_TYPES }), field("conditionImmunities", "conditionImmunities", "Imunidades a condições", "collection")]), section("vehicle-actions", "Traits, estações e ações", [field("traits", "traits", "Traits", "referenceList", { referenceTypes: ["feature"] }), field("activities", "activities", "Atividades", "collection"), field("reactions", "reactions", "Reações", "collection"), field("stations", "stations", "Estações", "collection"), field("effects", "effects", "Efeitos", "collection", { advanced: true }), field("triggers", "triggers", "Gatilhos", "collection", { advanced: true })]), textSection],
   },
-  rule: {
-    type: "rule",
-    label: "Regra",
-    description: "Regra textual de sistema ou módulo homebrew.",
-    sections: [{ id: "rule-core", label: "Regra", fields: [
-      { id: "category", path: "category", label: "Categoria", kind: "text" },
-      { id: "entries", path: "entries", label: "Conteúdo", kind: "richEntries", required: true },
-    ]}],
-  },
-  table: {
-    type: "table",
-    label: "Tabela",
-    description: "Tabela estruturada, inclusive tabelas aleatórias.",
-    sections: [{ id: "table-core", label: "Tabela", fields: [
-      { id: "formula", path: "formula", label: "Fórmula de rolagem", kind: "text" },
-      { id: "columns", path: "columns", label: "Colunas", kind: "collection", required: true },
-      { id: "rows", path: "rows", label: "Linhas", kind: "collection", required: true },
-    ]}],
-  },
-  condition: {
-    type: "condition",
-    label: "Condição",
-    description: "Condição com texto de regras estruturado.",
-    sections: [{ id: "condition-core", label: "Condição", fields: [
-      { id: "entries", path: "entries", label: "Efeitos da condição", kind: "richEntries", required: true },
-    ]}],
-  },
+  rule: { type: "rule", label: "Regra", description: "Regra textual estruturada.", sections: [section("rule", "Regra", [field("category", "category", "Categoria", "text"), field("entries", "entries", "Conteúdo", "richEntries", { required: true })])] },
+  table: { type: "table", label: "Tabela", description: "Tabela estruturada e tabelas aleatórias.", sections: [section("table", "Tabela", [field("formula", "formula", "Fórmula", "text"), field("columns", "columns", "Colunas", "collection", { required: true }), field("rows", "rows", "Linhas", "collection", { required: true })])] },
+  condition: { type: "condition", label: "Condição", description: "Condição com entradas de regras.", sections: [section("condition", "Condição", [field("entries", "entries", "Efeitos", "richEntries", { required: true })])] },
 } satisfies Record<CanonicalContentType, CreatorFormDefinition>;
 
 export function getHomebrewCreatorForm(type: CanonicalContentType): CreatorFormDefinition {
