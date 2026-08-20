@@ -23,4 +23,6 @@ export * from "./homebrew/sources/fiveetools-markdown.js";
 export * from "./homebrew/sources/text-analysis.js";
 export * from "./homebrew/creator/types.js";
 export * from "./homebrew/creator/registry.js";
+export * from "./homebrew/creator/resolved-registry.js";
+export * from "./homebrew/creator/subforms.js";
 export * from "./homebrew/creator/service.js";
