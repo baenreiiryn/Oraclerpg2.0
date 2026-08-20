@@ -47,6 +47,11 @@ export function localizeEntities(entities, catalog) {
 
 export function isPresentationPath(path) {
   if (typeof path !== "string" || path.length === 0) return false;
+
+  // Target restriction descriptions are explanatory UI copy only. The
+  // restriction type/value remains canonical and cannot be localized.
+  if (/^data\.activities\.\d+\.target\.restrictions\.\d+\.description$/.test(path)) return true;
+
   const segments = path.split(".");
   if (segments.some((segment) => FORBIDDEN_PATH_SEGMENTS.has(segment))) return false;
 
