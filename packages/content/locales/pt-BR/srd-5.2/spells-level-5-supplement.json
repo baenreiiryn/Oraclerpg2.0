@@ -1,0 +1,24 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "spell",
+  "scope": "level-5",
+  "entries": {
+    "dnd2024:2024:spell:reincarnate:srd-5.2": {
+      "name": "Reencarnação",
+      "data.text.rules.0": "Você toca um Humanoide morto ou uma parte de um. Se a criatura estiver morta há no máximo 10 dias, a magia cria para ela um novo corpo adulto e chama sua alma para habitá-lo. A magia falha se a alma não estiver livre ou disposta a retornar. Quando a criatura retorna à vida, seu corpo original é destruído.",
+      "data.text.rules.1": "A magia forma um novo corpo, o que pode alterar a espécie da criatura. Determine a nova forma conforme a tabela da magia. A criatura se lembra de sua vida anterior e mantém as capacidades que não dependem de sua espécie anterior, substituindo os traços de espécie pelos da nova forma.",
+      "data.activities.0.name": "Conjurar Reencarnação",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ter morrido há no máximo 10 dias."
+    },
+    "dnd2024:2024:spell:summon-dragon:srd-5.2": {
+      "name": "Invocar Dragão",
+      "data.text.rules.0": "Você invoca um espírito dracônico. Ele se manifesta em um espaço desocupado que você possa ver dentro do alcance e usa o bloco de estatísticas de Espírito Dracônico. Ao conjurar a magia, escolha a natureza dracônica do espírito; essa escolha determina certas características, resistências e o tipo de dano de seu sopro. A criatura desaparece quando cai a 0 Pontos de Vida ou quando a magia termina.",
+      "data.text.rules.1": "A criatura é aliada a você e seus aliados. Em combate, ela compartilha sua contagem de {@variantrule Initiative|XPHB}, mas realiza seu turno imediatamente após o seu. Ela obedece aos seus comandos verbais sem exigir uma ação sua. Se você não emitir comando, ela realiza a ação {@action Dodge|XPHB} e usa seu movimento para evitar perigo.",
+      "data.activities.0.name": "Invocar Dragão"
+    }
+  }
+}
