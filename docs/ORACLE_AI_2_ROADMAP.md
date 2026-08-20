@@ -65,74 +65,59 @@ Validated guarantees include independent memory/session revisions, episodic appe
 
 Implemented provider-agnostic hybrid retrieval and hard context budgeting in the Runtime.
 
-Implemented components:
-
-- `HybridRetrievalEngine` combining lexical, optional semantic, entity, reference, importance, recency, and confidence signals;
-- `RetrievalQuery`, `RetrievalCandidate`, ranked result, score-breakdown, and source-port contracts;
-- hard `maxTokens` and optional `maxItems` selection budget with deterministic token estimation fallback;
-- source filtering across `MEMORY`, `WORLD_FACT`, `ENTITY`, `COMPENDIUM`, `DOCUMENT`, and `SESSION_SUMMARY`;
-- `MemoryRetrievalSource` over AI-6 Memory State;
-- `WorldStateRetrievalSource` over AI-5 entities, facts, and knowledge grants;
-- `ExternalRetrievalSource` boundary for future document/compendium indexes, lexical search, embeddings, or vector stores without provider dependencies in Runtime;
-- stable deduplication by retrieval ID and deterministic ranking ties.
-
-Validated guarantees:
-
-- `GM_ONLY` and `HIDDEN` candidates are removed before ranking and budgeting;
-- `ACTOR_ONLY` memories and world facts are retrievable only for the granted actor;
-- the final selected context never exceeds the configured token budget;
-- invalid negative/non-integer budgets are rejected;
-- high-ranked oversized candidates are skipped rather than forcing budget overflow;
-- semantic scores may be supplied by future embedding adapters but no embedding/model provider is required by the retrieval engine;
-- entity/reference relevance combines with lexical/semantic relevance rather than replacing it;
-- source allowlists can constrain retrieval to a specific context class;
-- duplicate retrieval IDs from multiple indexes are included only once;
-- AI-1…AI-6 architecture remains provider-agnostic and Runtime-authoritative.
+Implemented components include lexical/semantic/entity/reference/importance/recency/confidence ranking, hard token/item budgets, Memory and World State retrieval adapters, external index ports, visibility filtering before ranking, and deterministic deduplication.
 
 ## AI-8 — Oracle AI Gateway
 
 **Status: COMPLETE**
 
-Implemented a provider-neutral gateway boundary with stable Oracle aliases and server-side route configuration.
-
-Stable aliases:
-
-- `oracle-fast`;
-- `oracle-story`;
-- `oracle-reasoning`;
-- `oracle-vision`;
-- `oracle-background`;
-- `oracle-embedding`.
-
-Implemented components:
-
-- `OracleAiGateway` with priority-based provider/model routing;
-- route capability filtering for text, structured output, reasoning, vision, and embeddings;
-- retry/fallback behavior for retryable provider errors while non-retryable failures stop immediately;
-- `AiProviderPort` adapter boundary so Vercel AI Gateway, direct providers, local models, or future transports can be plugged in without changing product contracts;
-- platform-auth, BYOK-only, and mixed route policies;
-- BYOK credential references resolved server-side through `AiSecretResolverPort` rather than raw keys entering requests/context;
-- quota checks before any provider execution;
-- normalized usage/cost accounting through `AiUsageSinkPort`;
-- provider/model identity restricted to server-side routing/audit events and deliberately absent from product-facing gateway responses.
-
-Validated guarantees:
-
-- product code addresses stable Oracle aliases rather than model slugs;
-- provider/model changes do not alter the response contract;
-- retryable primary failure falls back according to route priority;
-- non-retryable failures do not silently fall through;
-- BYOK raw secrets never appear in the gateway request or product response;
-- quota rejection occurs before provider invocation;
-- required capabilities remove incompatible routes before execution;
-- provider/model metadata remains available for internal accounting without leaking through public contracts;
-- Schema CI, full AI/runtime tests, the prior authority gate, and class/compendium regression remain green.
+Implemented a provider-neutral gateway boundary with stable Oracle aliases, server-side routing, capability filtering, retry/fallback, platform/BYOK auth policy, secret isolation, quota checks, and usage/cost accounting. Provider/model identity stays out of product-facing responses.
 
 ## AI-9 — Complete GM Runtime
 
-**Status: PENDING**
+**Status: COMPLETE**
 
-Run a complete server-authoritative RPG turn end-to-end: intent → state → context → AI proposal → rules resolution → state mutation → narration → memory extraction → persistence.
+Implemented `OracleGmRuntime` as the end-to-end application pipeline over the already-validated AI-1…AI-8 primitives.
+
+Turn pipeline:
+
+```text
+intent
+→ authoritative state
+→ perspective-safe context
+→ hybrid retrieval + context budget
+→ per-turn capability manifest
+→ Oracle AI Gateway structured proposal
+→ capability gate
+→ mechanical validator
+→ authoritative executor
+→ Oracle AI Gateway final narration
+→ turn persistence
+→ memory extraction/write
+→ Session State turn registration
+```
+
+Implemented components:
+
+- `OracleGmRuntime` composition layer without replacing the smaller AI-1 `TurnOrchestrator` primitive;
+- structured proposal generation through `oracle-reasoning` / `gm.interpret-turn`;
+- final narration through `oracle-story` / `gm.narrate` after authoritative action resolution;
+- `AiProposalDecoderPort` boundary for structured-output validation/parsing;
+- `GmRetrievalPort` for AI-7 retrieval injection;
+- `GmMemoryExtractionPort` and `GmMemoryWriterPort` for AI-6 derived-memory persistence;
+- `GmSessionWriterPort` for session turn registration;
+- final `TurnRecord` persistence with resolved actions and final narration.
+
+Validated guarantees:
+
+- state and context identity/revision are checked before any Gateway generation;
+- an action outside the capability manifest never reaches the mechanical validator or executor;
+- validator rejection prevents executor invocation;
+- final narration happens only after action resolution;
+- the persisted turn contains the final narrative and resolved actions;
+- memory extraction happens after the turn has been finalized and persisted;
+- Session State is updated only when a session is present;
+- AI-1…AI-8 tests and class/compendium regression remain green.
 
 ## AI-10 — Model Router & Specialized AI Operations
 
@@ -164,6 +149,7 @@ packages/
     gateway/
   runtime/
     turn-orchestrator/
+    gm-runtime/
     rules-resolver/
     state/
     memory/
