@@ -24,18 +24,18 @@ function presentationStrings(root, prefix = "", out = {}) {
   return out;
 }
 
-test("inventory SRD 5.2 very rare wondrous item presentation strings", () => {
+test("inventory SRD 5.2 legendary wondrous item presentation strings", () => {
   const items = canonical.items.filter((item) =>
     item.data?.itemKind === "equipment" &&
     item.data?.equipmentType === "wondrous" &&
-    item.data?.rarity === "veryRare"
+    item.data?.rarity === "legendary"
   );
-  console.log(`WONDROUS_VERY_RARE_COUNT=${items.length}`);
-  for (let start = 0; start < items.length; start += 4) {
-    console.log(`WONDROUS_VERY_RARE_CHUNK_${start / 4}_BEGIN`);
-    for (const item of items.slice(start, start + 4)) {
+  console.log(`WONDROUS_LEGENDARY_COUNT=${items.length}`);
+  for (let start = 0; start < items.length; start += 3) {
+    console.log(`WONDROUS_LEGENDARY_CHUNK_${start / 3}_BEGIN`);
+    for (const item of items.slice(start, start + 3)) {
       console.log(JSON.stringify({ canonicalId: item.canonicalId, attunement: item.data?.attunement, strings: presentationStrings(item) }));
     }
-    console.log(`WONDROUS_VERY_RARE_CHUNK_${start / 4}_END`);
+    console.log(`WONDROUS_LEGENDARY_CHUNK_${start / 3}_END`);
   }
 });
