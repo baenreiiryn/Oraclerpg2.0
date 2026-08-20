@@ -17,11 +17,13 @@ test("PT-BR level-5 catalog exactly covers every canonical level-5 spell", () =>
   const localizedIds = Object.keys(catalog.entries);
   const missing = spells.filter((spell) => !catalog.entries[spell.canonicalId]).map((spell) => spell.canonicalId);
   const unexpected = localizedIds.filter((canonicalId) => !canonicalIds.has(canonicalId));
+  console.log("LEVEL5_UNEXPECTED", JSON.stringify(unexpected));
+  console.log("LEVEL5_MISSING", JSON.stringify(missing));
 
   assert.equal(spells.length, 38);
-  assert.equal(localizedIds.length, spells.length);
   assert.deepEqual(missing, []);
   assert.deepEqual(unexpected, []);
+  assert.equal(localizedIds.length, spells.length);
 });
 
 test("level-5 localization contains only presentation paths", () => {
@@ -38,7 +40,6 @@ test("level-5 localization preserves canonical identity and mechanics", () => {
   for (const spell of spells) {
     const before = structuredClone(spell);
     const localized = localizeEntity(spell, catalog);
-
     assert.equal(localized.id, spell.id);
     assert.equal(localized.canonicalId, spell.canonicalId);
     assert.deepEqual(localized.system, spell.system);
