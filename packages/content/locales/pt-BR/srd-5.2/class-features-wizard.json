@@ -1,0 +1,25 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "wizard",
+  "entries": {
+    "dnd2024:2024:feature:wizard:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:wizard:arcane-recovery:srd-5.2": { "name": "Recuperação Arcana" },
+    "dnd2024:2024:feature:wizard:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:wizard:memorize-spell:srd-5.2": { "name": "Memorizar Magia" },
+    "dnd2024:2024:feature:wizard:ritual-adept:srd-5.2": { "name": "Adepto de Rituais" },
+    "dnd2024:2024:feature:wizard:scholar:srd-5.2": { "name": "Erudito" },
+    "dnd2024:2024:feature:wizard:signature-spells:srd-5.2": { "name": "Magias Características" },
+    "dnd2024:2024:feature:wizard:spell-mastery:srd-5.2": { "name": "Maestria em Magias" },
+    "dnd2024:2024:feature:wizard:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:wizard:evoker:empowered-evocation:srd-5.2": { "name": "Evocação Potencializada" },
+    "dnd2024:2024:feature:wizard:evoker:evocation-savant:srd-5.2": { "name": "Prodígio em Evocação" },
+    "dnd2024:2024:feature:wizard:evoker:overchannel:srd-5.2": { "name": "Sobrecarga" },
+    "dnd2024:2024:feature:wizard:evoker:potent-cantrip:srd-5.2": { "name": "Truque Potente" },
+    "dnd2024:2024:feature:wizard:evoker:sculpt-spells:srd-5.2": { "name": "Esculpir Magias" }
+  }
+}
