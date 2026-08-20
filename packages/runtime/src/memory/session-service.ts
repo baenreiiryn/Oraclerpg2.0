@@ -50,7 +50,11 @@ export class OracleSessionStateService {
           next = { ...next, summaryBlocks: [...next.summaryBlocks, mutation.block] };
           break;
         case "CLOSE_SESSION":
-          next = { ...next, status: "CLOSED", endedAt: mutation.endedAt };
+          next = {
+            ...next,
+            status: "CLOSED",
+            ...(mutation.endedAt !== undefined ? { endedAt: mutation.endedAt } : {}),
+          };
           break;
       }
     }
