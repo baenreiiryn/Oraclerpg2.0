@@ -39,8 +39,8 @@ test("cantrip localization preserves canonical identity and mechanics", () => {
 
     assert.equal(localized.id, spell.id);
     assert.equal(localized.canonicalId, spell.canonicalId);
-    assert.equal(localized.system, spell.system);
-    assert.equal(localized.schemaVersion, spell.schemaVersion);
+    assert.deepEqual(localized.system, spell.system);
+    assert.deepEqual(localized.schemaVersion, spell.schemaVersion);
     assert.equal(localized.data?.level, spell.data?.level);
     assert.deepEqual(localized.data?.school, spell.data?.school);
     assert.deepEqual(localized.data?.components, spell.data?.components);
