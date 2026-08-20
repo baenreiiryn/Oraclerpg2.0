@@ -27,6 +27,9 @@ export class HybridRetrievalEngine {
     if (!Number.isFinite(query.maxTokens) || query.maxTokens < 0) {
       throw new Error("retrieval maxTokens must be a non-negative finite number");
     }
+    if (query.maxItems !== undefined && (!Number.isInteger(query.maxItems) || query.maxItems < 0)) {
+      throw new Error("retrieval maxItems must be a non-negative integer");
+    }
 
     const batches = await Promise.all(this.sources.map((source) => source.retrieve(query)));
     const allowedSources = query.allowedSources ? new Set(query.allowedSources) : undefined;
@@ -55,11 +58,7 @@ export class HybridRetrievalEngine {
     const maxItems = query.maxItems ?? Number.POSITIVE_INFINITY;
 
     for (const item of ranked) {
-      if (items.length >= maxItems) {
-        droppedForBudget += 1;
-        continue;
-      }
-      if (usedTokens + item.estimatedTokens > query.maxTokens) {
+      if (items.length >= maxItems || usedTokens + item.estimatedTokens > query.maxTokens) {
         droppedForBudget += 1;
         continue;
       }
@@ -92,23 +91,16 @@ export class HybridRetrievalEngine {
   private rank(candidate: RetrievalCandidate, query: RetrievalQuery): RankedRetrievalItem {
     const queryEntityIds = new Set(query.entityIds ?? []);
     const queryReferenceIds = new Set(query.referenceIds ?? []);
-    const entityScore = this.overlap(candidate.entityIds, queryEntityIds);
-    const referenceScore = this.overlap(candidate.referenceIds, queryReferenceIds);
-    const lexicalScore = candidate.lexicalScore ?? this.lexicalOverlap(query.text, candidate.text);
-    const semanticScore = candidate.semanticScore ?? 0;
-    const importance = candidate.importance ?? 0.5;
-    const recency = candidate.recency ?? 0.5;
-    const confidence = candidate.confidence ?? 0.5;
-    const estimatedTokens = candidate.estimatedTokens ?? estimateTokens(candidate.text);
     const scoreBreakdown = {
-      lexical: clamp01(lexicalScore),
-      semantic: clamp01(semanticScore),
-      entity: entityScore,
-      reference: referenceScore,
-      importance: clamp01(importance),
-      recency: clamp01(recency),
-      confidence: clamp01(confidence),
+      lexical: clamp01(candidate.lexicalScore ?? this.lexicalOverlap(query.text, candidate.text)),
+      semantic: clamp01(candidate.semanticScore ?? 0),
+      entity: this.overlap(candidate.entityIds, queryEntityIds),
+      reference: this.overlap(candidate.referenceIds, queryReferenceIds),
+      importance: clamp01(candidate.importance ?? 0.5),
+      recency: clamp01(candidate.recency ?? 0.5),
+      confidence: clamp01(candidate.confidence ?? 0.5),
     };
+    const estimatedTokens = candidate.estimatedTokens ?? estimateTokens(candidate.text);
     const score =
       scoreBreakdown.lexical * this.weights.lexical +
       scoreBreakdown.semantic * this.weights.semantic +
