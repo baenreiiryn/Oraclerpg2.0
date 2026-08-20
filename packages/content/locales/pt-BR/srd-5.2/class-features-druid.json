@@ -1,0 +1,56 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "druid",
+  "entries": {
+    "dnd2024:2024:feature:druid:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:druid:archdruid:srd-5.2": { "name": "Arquedruida" },
+    "dnd2024:2024:feature:druid:beast-spells:srd-5.2": {
+      "name": "Magias Bestiais",
+      "data.text.rules.0": "Enquanto estiver usando Forma Selvagem, você pode conjurar magias em forma de Besta, exceto qualquer magia que tenha um componente Material com custo especificado ou que consuma seu componente Material."
+    },
+    "dnd2024:2024:feature:druid:land:circle-of-the-land-spells:srd-5.2": { "name": "Magias do Círculo da Terra" },
+    "dnd2024:2024:feature:druid:druidic:srd-5.2": { "name": "Druídico" },
+    "dnd2024:2024:feature:druid:elemental-fury:srd-5.2": { "name": "Fúria Elemental" },
+    "dnd2024:2024:feature:druid:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:druid:improved-elemental-fury:srd-5.2": { "name": "Fúria Elemental Aprimorada" },
+    "dnd2024:2024:feature:druid:land:land-s-aid:srd-5.2": {
+      "name": "Auxílio da Terra",
+      "data.text.rules.0": "Como uma {@action Magic|XPHB}, você pode gastar um uso de sua Forma Selvagem e escolher um ponto a até 60 pés de você. Flores que concedem vitalidade e espinhos que drenam a vida aparecem por um instante em uma {@variantrule Sphere [Area of Effect]|XPHB|Sphere} de 10 pés de raio centrada nesse ponto. Cada criatura à sua escolha na esfera deve realizar uma salvaguarda de Constituição contra sua CD de magia, sofrendo {@damage 2d6} de dano Necrótico em caso de falha ou metade desse dano em caso de sucesso. Uma criatura à sua escolha nessa área recupera {@dice 2d6} {@variantrule Hit Points|XPHB}.",
+      "data.text.rules.1": "O dano e a cura aumentam em {@dice 1d6} quando você alcança os níveis 10 ({@dice 3d6}) e 14 ({@dice 4d6}) de Druida."
+    },
+    "dnd2024:2024:feature:druid:magician:srd-5.2": { "name": "Mago da Natureza" },
+    "dnd2024:2024:feature:druid:land:natural-recovery:srd-5.2": { "name": "Recuperação Natural" },
+    "dnd2024:2024:feature:druid:land:nature-s-sanctuary:srd-5.2": {
+      "name": "Santuário da Natureza",
+      "data.text.rules.0": "Como uma {@action Magic|XPHB}, você pode gastar um uso de sua Forma Selvagem e fazer com que árvores e vinhas espectrais apareçam em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 15 pés sobre o solo, em um ponto a até 120 pés de você. Elas permanecem ali por 1 minuto, até você ficar {@condition Incapacitated|XPHB} ou morrer. Você e seus aliados têm {@variantrule Cover|XPHB|Half Cover} enquanto estiverem nessa área, e seus aliados recebem a resistência atual de sua Proteção da Natureza enquanto estiverem nela.",
+      "data.text.rules.1": "Como uma {@variantrule Bonus Action|XPHB}, você pode mover o cubo em até 60 pés para outro ponto no solo a até 120 pés de você."
+    },
+    "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2": {
+      "name": "Proteção da Natureza",
+      "data.text.rules.0": "Você é imune à condição {@condition Poisoned|XPHB} e possui {@variantrule Resistance|XPHB} a um tipo de dano associado à sua escolha atual de terreno na feature Magias do Círculo, conforme mostrado na tabela Proteção da Natureza.",
+      "data.text.rules.1.entries.0.caption": "Proteção da Natureza",
+      "data.text.rules.1.entries.0.colLabels.0": "Tipo de Terreno",
+      "data.text.rules.1.entries.0.colLabels.1": "Resistência"
+    },
+    "dnd2024:2024:feature:druid:potent-spellcasting:srd-5.2": { "name": "Conjuração Potente" },
+    "dnd2024:2024:feature:druid:primal-order:srd-5.2": { "name": "Ordem Primal" },
+    "dnd2024:2024:feature:druid:primal-strike:srd-5.2": {
+      "name": "Golpe Primal",
+      "data.text.rules.0": "Uma vez em cada um de seus turnos, quando atingir uma criatura com uma jogada de ataque usando uma arma ou um ataque de uma forma de Besta em Forma Selvagem, você pode fazer o alvo sofrer {@damage 1d8} de dano adicional de Frio, Fogo, Elétrico ou Trovejante (escolha quando atingir)."
+    },
+    "dnd2024:2024:feature:druid:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:druid:warden:srd-5.2": { "name": "Guardião" },
+    "dnd2024:2024:feature:druid:wild-companion:srd-5.2": {
+      "name": "Companheiro Selvagem",
+      "data.text.rules.0": "Você pode convocar um espírito da natureza que assume forma animal para ajudá-lo. Como uma {@action Magic|XPHB}, você pode gastar um espaço de magia ou um uso de Forma Selvagem para conjurar {@spell Find Familiar|XPHB} sem componentes Materiais.",
+      "data.text.rules.1": "Quando conjura a magia dessa forma, o familiar é uma Fada e desaparece quando você termina um {@variantrule Long Rest|XPHB}."
+    },
+    "dnd2024:2024:feature:druid:wild-resurgence:srd-5.2": { "name": "Ressurgência Selvagem" },
+    "dnd2024:2024:feature:druid:wild-shape:srd-5.2": { "name": "Forma Selvagem" }
+  }
+}
