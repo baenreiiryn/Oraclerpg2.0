@@ -9,10 +9,12 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/items.json"), "utf8"));
 const common = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-common.json"), "utf8"));
 const uncommon = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-uncommon.json"), "utf8"));
+const rare = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wondrous-rare.json"), "utf8"));
 const wondrous = canonical.items.filter((item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "wondrous");
-const currentItems = wondrous.filter((item) => item.data?.rarity === "common" || item.data?.rarity === "uncommon");
-const catalogs = [common, uncommon];
-const entries = Object.assign({}, ...catalogs.map((catalog) => catalog.entries));
+const includedRarities = new Set(["common", "uncommon", "rare"]);
+const currentItems = wondrous.filter((item) => includedRarities.has(item.data?.rarity));
+const catalogs = { common, uncommon, rare };
+const entries = Object.assign({}, common.entries, uncommon.entries, rare.entries);
 
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[part], root);
@@ -28,25 +30,23 @@ function setPath(root, pathKey, value) {
   cursor[parts.at(-1)] = value;
 }
 
-function catalogFor(item) {
-  return item.data?.rarity === "common" ? common : uncommon;
-}
-
-test("PT-BR wondrous catalogs exactly cover the common and uncommon canonical wondrous items", () => {
+test("PT-BR wondrous catalogs exactly cover common through rare canonical wondrous items", () => {
   assert.equal(wondrous.length, 148);
   assert.equal(wondrous.filter((item) => item.data?.rarity === "common").length, 1);
   assert.equal(wondrous.filter((item) => item.data?.rarity === "uncommon").length, 52);
-  assert.equal(currentItems.length, 53);
-  assert.equal(Object.keys(entries).length, 53);
+  assert.equal(wondrous.filter((item) => item.data?.rarity === "rare").length, 41);
+  assert.equal(currentItems.length, 94);
+  assert.equal(Object.keys(entries).length, 94);
   assert.equal(common.scope, "wondrous-common");
   assert.equal(uncommon.scope, "wondrous-uncommon");
+  assert.equal(rare.scope, "wondrous-rare");
 
   const expected = new Set(currentItems.map((item) => item.canonicalId));
   assert.deepEqual(Object.keys(entries).filter((id) => !expected.has(id)), []);
   assert.deepEqual(currentItems.filter((item) => !entries[item.canonicalId]).map((item) => item.canonicalId), []);
 });
 
-test("common and uncommon wondrous localization uses only existing presentation string paths", () => {
+test("localized wondrous items use only existing presentation string paths", () => {
   const byId = new Map(currentItems.map((item) => [item.canonicalId, item]));
   for (const [canonicalId, overlay] of Object.entries(entries)) {
     const item = byId.get(canonicalId);
@@ -61,10 +61,10 @@ test("common and uncommon wondrous localization uses only existing presentation 
   }
 });
 
-test("common and uncommon wondrous localization preserves rarity, attunement, charges, DCs, spell refs and every mechanical field", () => {
+test("localized wondrous items preserve rarity, attunement, charges, DCs, spell refs and every mechanical field", () => {
   for (const item of currentItems) {
     const original = structuredClone(item);
-    const catalog = catalogFor(item);
+    const catalog = catalogs[item.data?.rarity];
     const overlay = catalog.entries[item.canonicalId];
     const localized = localizeEntity(item, catalog);
     assert.deepEqual(item, original, `${item.canonicalId}: canonical wondrous item was mutated`);
@@ -75,7 +75,7 @@ test("common and uncommon wondrous localization preserves rarity, attunement, ch
   }
 });
 
-test("common and uncommon wondrous localization keeps inline markup balanced", () => {
+test("localized wondrous items keep inline markup balanced", () => {
   for (const overlay of Object.values(entries)) {
     for (const value of Object.values(overlay)) {
       if (typeof value !== "string") continue;
