@@ -10,6 +10,7 @@ import type {
   EntityContextEntry,
   KnowledgeFact,
   OracleContextSections,
+  RelationshipContextEntry,
 } from "./types.js";
 
 export interface OracleContextEngineOptions {
@@ -45,6 +46,14 @@ export class OracleContextEngine implements ContextBuilderPort {
       for (const id of fact.entityIds ?? []) visibleEntityIds.add(id);
     }
 
+    const relationships = source.relationships.filter((relationship) =>
+      this.canActorSeeRelationship(relationship, input.intent.actorId, visibleEntityIds),
+    );
+    for (const relationship of relationships) {
+      visibleEntityIds.add(relationship.fromEntityId);
+      visibleEntityIds.add(relationship.toEntityId);
+    }
+
     const entities = this.projectEntities(source.entities, visibleEntityIds);
 
     const sections: OracleContextSections = {
@@ -52,6 +61,7 @@ export class OracleContextEngine implements ContextBuilderPort {
       scene: source.scene,
       actors,
       entities,
+      relationships,
       knowledge: { facts: knowledge },
       mechanics: source.mechanics,
     };
@@ -88,6 +98,26 @@ export class OracleContextEngine implements ContextBuilderPort {
         return true;
       case "ACTOR_ONLY":
         return Boolean(fact.actorIds?.includes(actorId));
+      case "GM_ONLY":
+      case "HIDDEN":
+        return false;
+    }
+  }
+
+  private canActorSeeRelationship(
+    relationship: RelationshipContextEntry,
+    actorId: string,
+    visibleEntityIds: ReadonlySet<string>,
+  ): boolean {
+    if (!visibleEntityIds.has(relationship.fromEntityId) && !visibleEntityIds.has(relationship.toEntityId)) {
+      return false;
+    }
+    switch (relationship.visibility ?? "PUBLIC") {
+      case "PUBLIC":
+      case "DISCOVERED":
+        return true;
+      case "ACTOR_ONLY":
+        return Boolean(relationship.actorIds?.includes(actorId));
       case "GM_ONLY":
       case "HIDDEN":
         return false;
