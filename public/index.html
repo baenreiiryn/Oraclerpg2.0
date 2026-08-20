@@ -1,22 +1,520 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OracleRPG 2.0</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#0c0a0f" />
+    <title>OracleRPG</title>
     <style>
-      body { font-family: system-ui, sans-serif; margin: 0; min-height: 100vh; display: grid; place-items: center; background: #111; color: #eee; }
-      main { max-width: 680px; padding: 32px; }
-      h1 { margin: 0 0 12px; }
-      p { line-height: 1.6; color: #bbb; }
-      code { color: #fff; }
+      :root {
+        color-scheme: dark;
+        --bg: #0c0a0f;
+        --surface: rgba(26, 21, 31, 0.86);
+        --surface-strong: rgba(33, 27, 39, 0.98);
+        --surface-soft: rgba(255, 255, 255, 0.045);
+        --border: rgba(239, 201, 132, 0.18);
+        --border-strong: rgba(239, 201, 132, 0.42);
+        --text: #f5f0e8;
+        --muted: #a8a0ad;
+        --gold: #efc984;
+        --gold-deep: #aa7640;
+        --violet: #a990d9;
+        --shadow: 0 20px 50px rgba(0, 0, 0, 0.34);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        background: var(--bg);
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        min-height: 100dvh;
+        color: var(--text);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background:
+          radial-gradient(circle at 50% -12%, rgba(169, 144, 217, 0.14), transparent 32rem),
+          radial-gradient(circle at 105% 35%, rgba(193, 130, 70, 0.09), transparent 22rem),
+          linear-gradient(180deg, #0f0c13 0%, #0b090d 100%);
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        opacity: 0.14;
+        background-image:
+          linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255,255,255,.012) 1px, transparent 1px);
+        background-size: 28px 28px;
+        mask-image: linear-gradient(to bottom, black, transparent 75%);
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .app-shell {
+        width: min(100%, 520px);
+        min-height: 100dvh;
+        margin: 0 auto;
+        padding:
+          max(22px, env(safe-area-inset-top))
+          20px
+          max(30px, env(safe-area-inset-bottom));
+        position: relative;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 56px;
+        margin-bottom: 26px;
+      }
+
+      .brand-mark {
+        position: relative;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(28px, 8vw, 38px);
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        line-height: 1;
+        text-transform: uppercase;
+        text-shadow: 0 0 28px rgba(239, 201, 132, 0.08);
+      }
+
+      .brand-mark::after {
+        content: "";
+        position: absolute;
+        left: 18%;
+        right: 18%;
+        bottom: -11px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, rgba(239, 201, 132, 0.68), transparent);
+      }
+
+      .brand-accent {
+        color: var(--gold);
+      }
+
+      .section {
+        margin-top: 26px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .eyebrow {
+        margin: 0 0 5px;
+        color: var(--gold);
+        font-size: 11px;
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 24px;
+        font-weight: 500;
+        letter-spacing: -0.02em;
+      }
+
+      .section-caption {
+        margin: 6px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.5;
+      }
+
+      .campaign-strip {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 104px;
+        gap: 16px;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+        scroll-snap-type: inline mandatory;
+        padding: 2px 1px 12px;
+        margin: 0 -20px;
+        padding-inline: 20px;
+        scrollbar-width: none;
+      }
+
+      .campaign-strip::-webkit-scrollbar {
+        display: none;
+      }
+
+      .campaign-token {
+        appearance: none;
+        border: 0;
+        background: transparent;
+        color: inherit;
+        padding: 0;
+        text-align: center;
+        cursor: default;
+        scroll-snap-align: start;
+      }
+
+      .token-ring {
+        width: 92px;
+        aspect-ratio: 1;
+        margin: 0 auto 10px;
+        padding: 3px;
+        border-radius: 50%;
+        position: relative;
+        background:
+          linear-gradient(#17121b, #17121b) padding-box,
+          conic-gradient(from 210deg, #694727, #f1d595 23%, #885a2f 50%, #e3bd70 74%, #694727) border-box;
+        border: 2px solid transparent;
+        box-shadow:
+          0 12px 25px rgba(0,0,0,.34),
+          0 0 0 1px rgba(255,255,255,.025) inset;
+      }
+
+      .token-ring::after {
+        content: "";
+        position: absolute;
+        inset: 7px;
+        border: 1px solid rgba(255, 232, 187, 0.18);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .portrait {
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        position: relative;
+        background:
+          radial-gradient(circle at 50% 35%, rgba(255,255,255,.14), transparent 23%),
+          linear-gradient(145deg, #3c3244 0%, #18131d 74%);
+      }
+
+      .portrait::before {
+        content: "";
+        position: absolute;
+        width: 36%;
+        aspect-ratio: .82;
+        top: 18%;
+        border-radius: 50% 50% 44% 44%;
+        background: rgba(13, 10, 16, 0.72);
+        box-shadow: 0 31px 0 12px rgba(13, 10, 16, 0.74);
+      }
+
+      .portrait::after {
+        content: "";
+        position: absolute;
+        inset: auto 14% 7%;
+        height: 34%;
+        border-radius: 52% 52% 20% 20%;
+        background: rgba(13, 10, 16, 0.74);
+      }
+
+      .portrait--ember {
+        background:
+          radial-gradient(circle at 46% 28%, rgba(255, 210, 143, .22), transparent 20%),
+          linear-gradient(145deg, #5d342c, #1d1118 72%);
+      }
+
+      .portrait--moon {
+        background:
+          radial-gradient(circle at 53% 28%, rgba(208, 214, 255, .22), transparent 20%),
+          linear-gradient(145deg, #304263, #12151f 72%);
+      }
+
+      .portrait--forest {
+        background:
+          radial-gradient(circle at 50% 28%, rgba(203, 235, 189, .18), transparent 20%),
+          linear-gradient(145deg, #334a39, #121914 72%);
+      }
+
+      .portrait--violet {
+        background:
+          radial-gradient(circle at 50% 28%, rgba(228, 194, 255, .18), transparent 20%),
+          linear-gradient(145deg, #49355c, #18111f 72%);
+      }
+
+      .campaign-name {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 13px;
+        font-weight: 750;
+        letter-spacing: -0.01em;
+      }
+
+      .character-name {
+        display: block;
+        margin-top: 3px;
+        color: var(--muted);
+        font-size: 11px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .divider {
+        height: 1px;
+        margin: 19px 0 0;
+        background: linear-gradient(90deg, transparent, rgba(239, 201, 132, 0.17), transparent);
+      }
+
+      .action-stack {
+        display: grid;
+        gap: 12px;
+        margin-top: 18px;
+      }
+
+      .action-card {
+        width: 100%;
+        min-height: 82px;
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 17px 18px;
+        display: grid;
+        grid-template-columns: 48px 1fr 28px;
+        align-items: center;
+        gap: 14px;
+        color: inherit;
+        text-align: left;
+        background:
+          linear-gradient(145deg, rgba(255,255,255,.035), transparent 58%),
+          var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        cursor: default;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .action-card::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 2px;
+        background: linear-gradient(180deg, transparent, var(--gold), transparent);
+        opacity: .8;
+      }
+
+      .action-card--homebrew::before {
+        background: linear-gradient(180deg, transparent, var(--violet), transparent);
+      }
+
+      .action-icon {
+        width: 48px;
+        aspect-ratio: 1;
+        display: grid;
+        place-items: center;
+        border-radius: 15px;
+        color: var(--gold);
+        background: rgba(239, 201, 132, 0.08);
+        border: 1px solid rgba(239, 201, 132, 0.12);
+      }
+
+      .action-card--homebrew .action-icon {
+        color: #c6afe8;
+        background: rgba(169, 144, 217, 0.09);
+        border-color: rgba(169, 144, 217, 0.14);
+      }
+
+      .action-icon svg {
+        width: 24px;
+        height: 24px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .action-title {
+        display: block;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 18px;
+        font-weight: 600;
+      }
+
+      .action-subtitle {
+        display: block;
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.35;
+      }
+
+      .action-chevron {
+        display: grid;
+        place-items: center;
+        color: rgba(245, 240, 232, 0.35);
+      }
+
+      .action-chevron svg {
+        width: 20px;
+        height: 20px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.8;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+
+      .prototype-note {
+        margin: 24px auto 0;
+        max-width: 360px;
+        color: rgba(168, 160, 173, 0.68);
+        font-size: 11px;
+        line-height: 1.55;
+        text-align: center;
+      }
+
+      @media (min-width: 600px) {
+        .app-shell {
+          padding-inline: 28px;
+        }
+
+        .campaign-strip {
+          margin-inline: -28px;
+          padding-inline: 28px;
+        }
+      }
+
+      @media (prefers-reduced-motion: no-preference) {
+        .action-card,
+        .token-ring {
+          transition: transform 160ms ease, border-color 160ms ease, background-color 160ms ease;
+        }
+
+        .campaign-token:active .token-ring,
+        .action-card:active {
+          transform: scale(0.98);
+        }
+      }
     </style>
   </head>
   <body>
-    <main>
-      <h1>OracleRPG 2.0</h1>
-      <p>The OracleRPG 2.0 core workspace is online. The current repository is focused on the structured compendium, schemas, importers, and validation pipelines. The web application will be connected here when <code>apps/web</code> is introduced.</p>
-      <!-- Vercel checkpoint: 2026-08-20 -->
+    <main class="app-shell">
+      <header class="brand" aria-label="OracleRPG">
+        <div class="brand-mark">Oracle<span class="brand-accent">RPG</span></div>
+      </header>
+
+      <section class="section" aria-labelledby="continue-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Suas histórias</p>
+            <h1 class="section-title" id="continue-title">Continuar campanha</h1>
+            <p class="section-caption">Escolha um personagem para retornar à aventura.</p>
+          </div>
+        </div>
+
+        <div class="campaign-strip" aria-label="Campanhas recentes">
+          <button class="campaign-token" type="button" aria-label="Continuar campanha Descida a Avernus com Vaxii">
+            <span class="token-ring"><span class="portrait portrait--ember" aria-hidden="true"></span></span>
+            <span class="campaign-name">Avernus</span>
+            <span class="character-name">Vaxii</span>
+          </button>
+
+          <button class="campaign-token" type="button" aria-label="Continuar campanha Mytharyn com Tenzai">
+            <span class="token-ring"><span class="portrait portrait--moon" aria-hidden="true"></span></span>
+            <span class="campaign-name">Mytharyn</span>
+            <span class="character-name">Tenzai</span>
+          </button>
+
+          <button class="campaign-token" type="button" aria-label="Continuar campanha Costa da Espada com Dio">
+            <span class="token-ring"><span class="portrait portrait--forest" aria-hidden="true"></span></span>
+            <span class="campaign-name">Costa da Espada</span>
+            <span class="character-name">Dio</span>
+          </button>
+
+          <button class="campaign-token" type="button" aria-label="Continuar campanha Night City com Kanami">
+            <span class="token-ring"><span class="portrait portrait--violet" aria-hidden="true"></span></span>
+            <span class="campaign-name">Night City</span>
+            <span class="character-name">Kanami</span>
+          </button>
+        </div>
+      </section>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <section class="section" aria-labelledby="actions-title">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Oracle</p>
+            <h2 class="section-title" id="actions-title">O que vamos criar?</h2>
+          </div>
+        </div>
+
+        <div class="action-stack">
+          <button class="action-card" type="button" aria-disabled="true">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3v18M3 12h18" />
+                <path d="M7.5 7.5 12 3l4.5 4.5M7.5 16.5 12 21l4.5-4.5" opacity=".45" />
+              </svg>
+            </span>
+            <span>
+              <span class="action-title">Iniciar nova campanha</span>
+              <span class="action-subtitle">Comece uma nova história no OracleRPG.</span>
+            </span>
+            <span class="action-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" /></svg>
+            </span>
+          </button>
+
+          <button class="action-card action-card--homebrew" type="button" aria-disabled="true">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M9 3h6M10 3v5l-5.3 8.5A3 3 0 0 0 7.25 21h9.5a3 3 0 0 0 2.55-4.5L14 8V3" />
+                <path d="M7.5 15h9" />
+                <path d="M10 12.5h.01M14.5 17.5h.01" />
+              </svg>
+            </span>
+            <span>
+              <span class="action-title">Homebrew</span>
+              <span class="action-subtitle">Crie e organize seu próprio conteúdo.</span>
+            </span>
+            <span class="action-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" /></svg>
+            </span>
+          </button>
+
+          <button class="action-card" type="button" aria-disabled="true">
+            <span class="action-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="3" />
+                <path d="M19.4 15a1.7 1.7 0 0 0 .34 1.88l.06.06-2.83 2.83-.06-.06A1.7 1.7 0 0 0 15 19.4a1.7 1.7 0 0 0-1 .6 1.7 1.7 0 0 0-.4 1.1V21h-4v-.1A1.7 1.7 0 0 0 8.6 19.4a1.7 1.7 0 0 0-1.88.34l-.06.06-2.83-2.83.06-.06A1.7 1.7 0 0 0 4.2 15a1.7 1.7 0 0 0-.6-1 1.7 1.7 0 0 0-1.1-.4H2.4v-4h.1A1.7 1.7 0 0 0 4.2 8.6a1.7 1.7 0 0 0-.34-1.88l-.06-.06 2.83-2.83.06.06A1.7 1.7 0 0 0 8.6 4.2a1.7 1.7 0 0 0 1-.6 1.7 1.7 0 0 0 .4-1.1V2.4h4v.1A1.7 1.7 0 0 0 15 4.2a1.7 1.7 0 0 0 1.88-.34l.06-.06 2.83 2.83-.06.06A1.7 1.7 0 0 0 19.4 8.6a1.7 1.7 0 0 0 .6 1 1.7 1.7 0 0 0 1.1.4h.1v4h-.1a1.7 1.7 0 0 0-1.7 1Z" opacity=".62" />
+              </svg>
+            </span>
+            <span>
+              <span class="action-title">Configurações</span>
+              <span class="action-subtitle">Preferências, conta e aparência do aplicativo.</span>
+            </span>
+            <span class="action-chevron" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6" /></svg>
+            </span>
+          </button>
+        </div>
+      </section>
+
+      <p class="prototype-note">Protótipo visual mobile. Os botões e campanhas ainda não possuem navegação nesta etapa.</p>
     </main>
   </body>
 </html>
