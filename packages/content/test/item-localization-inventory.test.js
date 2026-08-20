@@ -24,22 +24,18 @@ function presentationStrings(root, prefix = "", out = {}) {
   return out;
 }
 
-test("inventory SRD 5.2 wondrous item presentation strings", () => {
-  const items = canonical.items.filter((item) => item.data?.itemKind === "equipment" && item.data?.equipmentType === "wondrous");
-  console.log(`WONDROUS_COUNT=${items.length}`);
-  const rarityCounts = {};
-  for (const item of items) rarityCounts[item.data?.rarity ?? "none"] = (rarityCounts[item.data?.rarity ?? "none"] ?? 0) + 1;
-  console.log(`WONDROUS_RARITY_COUNTS=${JSON.stringify(rarityCounts)}`);
+test("inventory SRD 5.2 rare wondrous item presentation strings", () => {
+  const items = canonical.items.filter((item) =>
+    item.data?.itemKind === "equipment" &&
+    item.data?.equipmentType === "wondrous" &&
+    item.data?.rarity === "rare"
+  );
+  console.log(`WONDROUS_RARE_COUNT=${items.length}`);
   for (let start = 0; start < items.length; start += 5) {
-    console.log(`WONDROUS_CHUNK_${start / 5}_BEGIN`);
+    console.log(`WONDROUS_RARE_CHUNK_${start / 5}_BEGIN`);
     for (const item of items.slice(start, start + 5)) {
-      console.log(JSON.stringify({
-        canonicalId: item.canonicalId,
-        rarity: item.data?.rarity,
-        attunement: item.data?.attunement,
-        strings: presentationStrings(item)
-      }));
+      console.log(JSON.stringify({ canonicalId: item.canonicalId, attunement: item.data?.attunement, strings: presentationStrings(item) }));
     }
-    console.log(`WONDROUS_CHUNK_${start / 5}_END`);
+    console.log(`WONDROUS_RARE_CHUNK_${start / 5}_END`);
   }
 });
