@@ -11,6 +11,7 @@ const rings = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5
 const rods = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-rods.json"), "utf8"));
 const wands = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-wands.json"), "utf8"));
 const mundane = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-equipment-mundane.json"), "utf8"));
+const magicFoci = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/items-spellcasting-foci-magic.json"), "utf8"));
 
 const groups = {
   rings: {
@@ -115,10 +116,16 @@ test("ring, rod and wand localization keeps inline markup balanced", () => {
 
 test("all 10 spellcasting foci are covered by the PT-BR equipment localization", () => {
   assert.equal(foci.length, 10);
-  const missing = foci.filter((item) => !mundane.entries[item.canonicalId]).map((item) => item.canonicalId);
+  assert.equal(magicFoci.scope, "spellcasting-foci-magic");
+  assert.deepEqual(Object.keys(magicFoci.entries), ["dnd2024:2024:item:hat-of-many-spells:srd-5.2"]);
+
+  const catalogFor = (item) => magicFoci.entries[item.canonicalId] ? magicFoci : mundane;
+  const missing = foci.filter((item) => !catalogFor(item).entries[item.canonicalId]).map((item) => item.canonicalId);
   assert.deepEqual(missing, [], `missing PT-BR spellcasting foci: ${missing.join(", ")}`);
+
   for (const item of foci) {
-    const overlay = mundane.entries[item.canonicalId];
+    const catalog = catalogFor(item);
+    const overlay = catalog.entries[item.canonicalId];
     assert.equal(typeof overlay.name, "string");
     assert.notEqual(overlay.name.trim(), "");
     for (const [pathKey, value] of Object.entries(overlay)) {
@@ -128,10 +135,12 @@ test("all 10 spellcasting foci are covered by the PT-BR equipment localization",
     }
 
     const original = structuredClone(item);
-    const localized = localizeEntity(item, mundane);
+    const localized = localizeEntity(item, catalog);
     assert.deepEqual(item, original, `${item.canonicalId}: canonical focus was mutated`);
     const restored = structuredClone(localized);
     for (const pathKey of Object.keys(overlay)) setPath(restored, pathKey, getPath(item, pathKey));
     assert.deepEqual(restored, item, `${item.canonicalId}: focus localization changed mechanics or undeclared data`);
   }
+
+  assertMarkupBalanced(magicFoci);
 });
