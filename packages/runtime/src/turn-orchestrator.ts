@@ -1,8 +1,9 @@
 import {
-  DEFAULT_AI_OPERATIONS,
+  capabilityAllowsProposal,
   type ActionExecutorPort,
   type ActionValidatorPort,
   type AiDirectorPort,
+  type CapabilityBuilderPort,
   type ContextBuilderPort,
   type ResolvedAction,
   type StateLoaderPort,
@@ -15,6 +16,7 @@ import {
 export interface TurnOrchestratorDependencies {
   stateLoader: StateLoaderPort;
   contextBuilder: ContextBuilderPort;
+  capabilityBuilder: CapabilityBuilderPort;
   aiDirector: AiDirectorPort;
   actionValidator: ActionValidatorPort;
   actionExecutor: ActionExecutorPort;
@@ -31,8 +33,8 @@ export interface ProcessedTurn {
 
 /**
  * Coordinates a turn without granting the AI authority over state.
- * State is loaded by the runtime, AI emits proposals, validation gates every
- * proposal, and only the runtime-owned executor may apply accepted actions.
+ * AI-3 adds a second gate: the runtime publishes an explicit capability manifest
+ * for the turn, and proposals outside that manifest never reach validation/execution.
  */
 export class TurnOrchestrator {
   constructor(private readonly deps: TurnOrchestratorDependencies) {}
@@ -54,20 +56,26 @@ export class TurnOrchestrator {
       throw new Error("Context package is not aligned with authoritative state");
     }
 
+    const capabilityManifest = await this.deps.capabilityBuilder.buildCapabilities({
+      intent,
+      state,
+      context,
+    });
+
     const proposal = await this.deps.aiDirector.generateTurn({
       intent,
       context,
-      allowedOperations: DEFAULT_AI_OPERATIONS,
+      capabilityManifest,
     });
 
     const resolvedActions: ResolvedAction[] = [];
     for (const action of proposal.actions) {
-      if (!DEFAULT_AI_OPERATIONS.includes(action.operation)) {
+      if (!capabilityAllowsProposal(capabilityManifest, action)) {
         resolvedActions.push({
           proposalId: action.proposalId,
           operation: action.operation,
           status: "rejected",
-          reason: "operation_not_allowed",
+          reason: "capability_not_exposed",
         });
         continue;
       }
@@ -93,6 +101,7 @@ export class TurnOrchestrator {
       intent,
       stateRevision: state.revision,
       narrative: proposal.narrativeDraft,
+      capabilityManifest,
       proposedActions: proposal.actions,
       resolvedActions,
     };
