@@ -7,7 +7,9 @@ import { isPresentationPath, localizeEntity } from "../localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/spells.json"), "utf8"));
-const catalog = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/spells-level-5.json"), "utf8"));
+const primary = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/spells-level-5.json"), "utf8"));
+const supplement = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/spells-level-5-supplement.json"), "utf8"));
+const catalog = { ...primary, entries: { ...primary.entries, ...supplement.entries } };
 const spells = canonical.items.filter((spell) => spell.data?.level === 5);
 
 test("PT-BR level-5 catalog exactly covers every canonical level-5 spell", () => {
