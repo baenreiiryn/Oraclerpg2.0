@@ -68,6 +68,22 @@ function sourcePort(): ContextSourcePort {
           { entityId: "location-fortress", kind: "LOCATION", name: "Fortress" },
           { entityId: "cult", kind: "FACTION", name: "Hidden Cult" },
         ],
+        relationships: [
+          {
+            relationshipId: "rel-public",
+            fromEntityId: "npc-duke",
+            toEntityId: "cult",
+            type: "investigates",
+            visibility: "PUBLIC",
+          },
+          {
+            relationshipId: "rel-hidden",
+            fromEntityId: "npc-duke",
+            toEntityId: "cult",
+            type: "secretlyServes",
+            visibility: "GM_ONLY",
+          },
+        ],
         knowledge: [
           {
             factId: "fact-public",
@@ -134,6 +150,17 @@ test("player context excludes GM-only, hidden, and other-actor knowledge", async
 
   const factIds = context.sections.knowledge.facts.map((fact) => fact.factId);
   assert.deepEqual(factIds, ["fact-public", "fact-discovered", "fact-actor"]);
+});
+
+test("relationship projection excludes GM-only relationships", async () => {
+  const engine = new OracleContextEngine(sourcePort());
+  const context = await engine.buildContext({ intent, state });
+  if (context.version !== 2) throw new Error("expected v2 context");
+
+  assert.deepEqual(
+    context.sections.relationships.map((relationship) => relationship.relationshipId),
+    ["rel-public"],
+  );
 });
 
 test("context projection excludes non-present actors and unrelated entities by default", async () => {
