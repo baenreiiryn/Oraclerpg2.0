@@ -1,0 +1,17 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "vehicles",
+  "entries": {
+    "dnd2024:2024:item:galley:srd-5.2": { "name": "Galera" },
+    "dnd2024:2024:item:keelboat:srd-5.2": { "name": "Barco de Quilha" },
+    "dnd2024:2024:item:longship:srd-5.2": { "name": "Navio Longo" },
+    "dnd2024:2024:item:rowboat:srd-5.2": { "name": "Barco a Remo" },
+    "dnd2024:2024:item:sailing-ship:srd-5.2": { "name": "Navio à Vela" },
+    "dnd2024:2024:item:warship:srd-5.2": { "name": "Navio de Guerra" }
+  }
+}
