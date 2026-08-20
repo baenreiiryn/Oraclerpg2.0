@@ -5,3 +5,6 @@ export * from "./rules/bridge.js";
 export * from "./state/types.js";
 export * from "./state/world-state-service.js";
 export * from "./state/context-source.js";
+export * from "./memory/types.js";
+export * from "./memory/memory-service.js";
+export * from "./memory/session-service.js";
