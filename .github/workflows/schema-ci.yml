@@ -19,3 +19,5 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       - run: pnpm typecheck
       - run: pnpm test
+      - name: AI-1 to AI-5 release gate
+        run: node scripts/audit-ai-release-gate.mjs

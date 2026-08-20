@@ -1,0 +1,23 @@
+{
+  "name": "@oraclerpg/runtime",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "build": "tsc -p tsconfig.json",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@oraclerpg/ai": "workspace:*",
+    "@oraclerpg/core": "workspace:*",
+    "@oraclerpg/schema": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.3",
+    "tsx": "^4.20.5"
+  }
+}
