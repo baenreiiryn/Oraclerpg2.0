@@ -13,5 +13,8 @@
   },
   "dependencies": {
     "@oraclerpg/ai": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "22.18.3"
   }
 }
