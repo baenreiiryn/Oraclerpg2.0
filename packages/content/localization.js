@@ -74,5 +74,16 @@ function setPath(root, path, value) {
   }
   const finalRaw = parts.at(-1);
   const finalKey = /^\d+$/.test(finalRaw) ? Number(finalRaw) : finalRaw;
-  if (cursor != null && typeof cursor === "object" && finalKey in cursor) cursor[finalKey] = value;
+
+  // Localization overlays contain strings only. Never let a stale or malformed
+  // presentation path replace an object/array (for example a structured rules
+  // entry) with text. Missing and non-string leaves are safely ignored.
+  if (
+    cursor != null &&
+    typeof cursor === "object" &&
+    finalKey in cursor &&
+    typeof cursor[finalKey] === "string"
+  ) {
+    cursor[finalKey] = value;
+  }
 }
