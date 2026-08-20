@@ -64,7 +64,7 @@ test("consumable localization keeps inline markup balanced", () => {
   for (const overlay of Object.values(catalog.entries)) {
     for (const value of Object.values(overlay)) {
       if (typeof value !== "string") continue;
-      assert.equal((value.match(/\{@/g) ?? []).length, (value.match(/\}/g) ?? []).length, value);
+      assert.equal((value.match(/\{[@#]/g) ?? []).length, (value.match(/\}/g) ?? []).length, value);
       assert.equal((value.match(/\[\[/g) ?? []).length, (value.match(/\]\]/g) ?? []).length, value);
     }
   }
