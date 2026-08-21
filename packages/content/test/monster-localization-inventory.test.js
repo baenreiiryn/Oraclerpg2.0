@@ -17,7 +17,8 @@ const featureCatalogs = [
 ].map((file) => JSON.parse(fs.readFileSync(path.join(localeDir, file), "utf8")));
 const variantCatalogs = [
   "monster-materialized-variants-01.json",
-  "monster-materialized-variants-02.json"
+  "monster-materialized-variants-02.json",
+  "monster-materialized-variants-03.json"
 ].map((file) => JSON.parse(fs.readFileSync(path.join(localeDir, file), "utf8")));
 const variantTranslations = Object.assign({}, ...variantCatalogs.map((catalog) => catalog.translations ?? {}));
 const nameMap = JSON.parse(fs.readFileSync(path.join(localeDir, "monster-name-map.json"), "utf8"));
@@ -31,7 +32,7 @@ const catalog = buildCompleteMonsterLocalizationCatalog({
   variantTranslations
 });
 
-test("inventory remaining explicit monster localization variants", () => {
+test("inventory complete PT-BR monster localization coverage", () => {
   const unresolved = [];
   let total = 0;
   for (const monster of monsters) {
@@ -58,5 +59,9 @@ test("inventory remaining explicit monster localization variants", () => {
   console.log(`MONSTER_SAFE_UNRESOLVED_LEAVES=${unresolved.length}`);
   console.log(`MONSTER_SAFE_UNRESOLVED_UNIQUE=${unique.length}`);
   for (const [index, row] of unique.entries()) console.log(`MONSTER_REMAINING_${index}=${JSON.stringify(row)}`);
+  assert.equal(monsters.length, 331);
   assert.equal(Object.keys(nameMap.names).length, 331);
+  assert.equal(total, 5497);
+  assert.equal(unresolved.length, 0);
+  assert.equal(unique.length, 0);
 });
