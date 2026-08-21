@@ -1,4 +1,5 @@
 import { isPresentationPath } from "./localization.js";
+import { translateAdditionalMonsterVariant } from "./monster-localization-patterns.js";
 
 const MATERIALIZED_FEATURE_NAMES = new Map([
   ["Acid Breath", "Sopro Ácido"],
@@ -355,6 +356,7 @@ export function buildMonsterLocalizationCatalog({ monsters, featureDefinitions, 
       if (typeof translated !== "string" && exactMap.has(source)) translated = exactMap.get(source);
       if (typeof translated !== "string" && MATERIALIZED_FEATURE_NAMES.has(source)) translated = MATERIALIZED_FEATURE_NAMES.get(source);
       if (typeof translated !== "string") translated = translateStructuredVariant(source, exactMap);
+      if (typeof translated !== "string") translated = translateAdditionalMonsterVariant(source, exactMap);
       if (typeof translated !== "string") {
         const match = pathKey.match(/^data\.features\.(\d+)\.text\.description$/);
         if (match) {
