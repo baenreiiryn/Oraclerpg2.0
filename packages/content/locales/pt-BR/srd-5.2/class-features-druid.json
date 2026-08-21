@@ -27,7 +27,7 @@
     "dnd2024:2024:feature:druid:land:natural-recovery:srd-5.2": { "name": "Recuperação Natural" },
     "dnd2024:2024:feature:druid:land:nature-s-sanctuary:srd-5.2": {
       "name": "Santuário da Natureza",
-      "data.text.rules.0": "Como uma {@action Magic|XPHB}, você pode gastar um uso de sua Forma Selvagem e fazer com que árvores e vinhas espectrais apareçam em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 15 pés sobre o solo, em um ponto a até 120 pés de você. Elas permanecem ali por 1 minuto, até você ficar {@condition Incapacitated|XPHB} ou morrer. Você e seus aliados têm {@variantrule Cover|XPHB|Half Cover} enquanto estiverem nessa área, e seus aliados recebem a resistência atual de sua Proteção da Natureza enquanto estiverem nela.",
+      "data.text.rules.0": "Como uma {@action Magic|XPHB}, você pode gastar um uso de sua Forma Selvagem e fazer com que árvores e vinhas espectrais apareçam em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 15 pés sobre o solo, em um ponto a até 120 pés de você. Elas permanecem ali por 1 minuto, até você ficar {@condition Incapacitated|XPHB} ou morrer. Você e seus aliados têm {@variantrule Cover|XPHB|Half Cover} enquanto estiverem nessa área, e seus aliados recebem a {@variantrule Resistance|XPHB|Resistência} atual de sua Proteção da Natureza enquanto estiverem nela.",
       "data.text.rules.1": "Como uma {@variantrule Bonus Action|XPHB}, você pode mover o cubo em até 60 pés para outro ponto no solo a até 120 pés de você."
     },
     "dnd2024:2024:feature:druid:land:nature-s-ward:srd-5.2": {
