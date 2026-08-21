@@ -26,7 +26,17 @@ test("inventory safe monster localization coverage", () => {
     const overlay = catalog.entries[monster.canonicalId] ?? {};
     for (const [pathKey, value] of Object.entries(strings)) {
       total += 1;
-      if (typeof overlay[pathKey] !== "string") unresolved.push({canonicalId: monster.canonicalId, monster: monster.name, path: pathKey, value});
+      if (typeof overlay[pathKey] === "string") continue;
+      const featureMatch = pathKey.match(/^data\.features\.(\d+)\./);
+      const instance = featureMatch ? monster.data?.features?.[Number(featureMatch[1])] : null;
+      unresolved.push({
+        canonicalId: monster.canonicalId,
+        monster: monster.name,
+        path: pathKey,
+        definitionId: instance?.definition?.canonicalId ?? null,
+        featureName: instance?.name ?? null,
+        value
+      });
     }
   }
   const unique = [...new Map(unresolved.map((row) => [row.value, row])).values()];
@@ -36,6 +46,6 @@ test("inventory safe monster localization coverage", () => {
   console.log(`MONSTER_SAFE_UNRESOLVED_UNIQUE=${unique.length}`);
   const byPath = Object.fromEntries(Object.entries(Object.groupBy(unresolved, (row) => row.path.replace(/\.\d+/g, ".*"))).map(([key, rows]) => [key, rows.length]));
   console.log(`MONSTER_SAFE_UNRESOLVED_BY_PATH=${JSON.stringify(byPath)}`);
-  for (const [index, row] of unique.entries()) console.log(`MONSTER_VARIANT_${index}=${JSON.stringify(row)}`);
+  for (const [index, row] of unique.slice(0, 60).entries()) console.log(`MONSTER_VARIANT_${index}=${JSON.stringify(row)}`);
   assert.equal(Object.keys(nameMap.names).length, 331);
 });
