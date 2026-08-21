@@ -24,9 +24,12 @@ test("GM interpretation routes to reasoning without exposing provider/model", as
 });
 
 test("specialized operations select stable Oracle aliases", async () => {
-  const { router } = buildRouter();
+  const { router, requests } = buildRouter();
   assert.equal((await router.run({ requestId: "n", operation: "gm.narrate", input: "x" })).alias, "oracle-story");
   assert.equal((await router.run({ requestId: "b", operation: "character.backstory", input: "x" })).alias, "oracle-story");
+  assert.equal((await router.run({ requestId: "cv", operation: "character.visual-description", input: "{}" })).alias, "oracle-vision");
+  assert.deepEqual(requests.at(-1)?.requiredCapabilities, ["VISION", "TEXT"]);
+  assert.equal(requests.at(-1)?.outputMode, "TEXT");
   assert.equal((await router.run({ requestId: "m", operation: "memory.extract", input: "x" })).alias, "oracle-background");
   assert.equal((await router.run({ requestId: "v", operation: "vision.inspect", input: "x" })).alias, "oracle-vision");
   assert.equal((await router.run({ requestId: "e", operation: "embedding.generate", input: "x" })).alias, "oracle-embedding");
