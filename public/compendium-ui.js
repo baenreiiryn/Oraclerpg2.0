@@ -15,7 +15,7 @@ const homebrewKey='oraclerpg.homebrew.v1';
 const state={mode:'srd',category:'classes',manifest:null,cache:new Map(),selected:null,selectedHomebrew:false,editing:null};
 const $=(id)=>document.getElementById(id);
 const list=$('list'),search=$('search'),categories=$('categories'),add=$('add'),count=$('count'),storage=$('storage');
-function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[c]))}
+function esc(text=''){return String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function clone(v){return typeof structuredClone==='function'?structuredClone(v):JSON.parse(JSON.stringify(v))}
 function loadHomebrew(){try{const value=JSON.parse(localStorage.getItem(homebrewKey)||'[]');return Array.isArray(value)?value:[]}catch{return[]}}
 function saveHomebrew(items){localStorage.setItem(homebrewKey,JSON.stringify(items))}
