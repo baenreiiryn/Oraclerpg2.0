@@ -10,6 +10,15 @@
     cyberpunk: '#070b0e'
   });
 
+  function ensureRefinementStyles() {
+    if (document.querySelector('link[data-oracle-theme-refinements]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/theme-refinements.css';
+    link.dataset.oracleThemeRefinements = 'true';
+    document.head.appendChild(link);
+  }
+
   function normalizeTheme(value) {
     return THEMES.includes(value) ? value : 'oracle';
   }
@@ -67,6 +76,7 @@
     });
   }
 
+  ensureRefinementStyles();
   const initialTheme = readStoredTheme();
   document.documentElement.dataset.theme = initialTheme;
 

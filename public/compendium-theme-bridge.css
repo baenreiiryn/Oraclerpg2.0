@@ -1,0 +1,74 @@
+/* Extends the global OracleRPG themes to the hierarchical compendium and Homebrew creator. */
+
+html[data-theme="fantasy"] :is(.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  border-color:rgba(201,155,79,.3)!important;
+  background-image:
+    radial-gradient(circle at 10px 10px,rgba(238,193,94,.18) 0 1px,rgba(72,38,13,.55) 2px,transparent 3px),
+    repeating-linear-gradient(9deg,rgba(255,234,198,.014) 0 1px,transparent 1px 9px),
+    linear-gradient(145deg,rgba(83,48,24,.95),rgba(34,21,13,.98))!important;
+  box-shadow:inset 0 1px rgba(255,235,194,.045),0 10px 28px rgba(18,8,2,.22)!important;
+}
+html[data-theme="fantasy"] :is(.section-group-icon,.section-entry-icon,.section-card-expand,.section-card-nav,.hb-method-icon,.hb-section-title>span){
+  border-color:rgba(217,170,77,.46)!important;
+  background:linear-gradient(145deg,#5c4631,#21170f)!important;
+  color:var(--gold-soft)!important;
+}
+html[data-theme="fantasy"] .section-card-image{
+  border-color:rgba(217,170,77,.3)!important;
+  background:radial-gradient(circle at 50% 32%,rgba(217,170,77,.12),transparent 52%),linear-gradient(180deg,#3b2617,#171009)!important;
+}
+html[data-theme="fantasy"] :is(.hb-head,.hb-footer){background:linear-gradient(180deg,#4b2e19,#24150c)!important;border-color:rgba(201,155,79,.28)!important}
+html[data-theme="fantasy"] :is(.hb-field input,.hb-field select,.hb-field textarea,.hb-category-line select,.hb-prompt){background:#21140c!important;border-color:rgba(201,155,79,.28)!important}
+
+html[data-theme="horror"] :is(.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  border-color:rgba(111,166,124,.28)!important;
+  background-image:
+    radial-gradient(circle at 18% 20%,rgba(205,255,225,.045) 0 1px,transparent 2px 11px),
+    repeating-radial-gradient(ellipse at 42% 62%,rgba(255,255,255,.012) 0 1px,transparent 2px 7px),
+    linear-gradient(145deg,rgba(24,48,39,.96),rgba(8,21,18,.985))!important;
+  box-shadow:inset 0 1px rgba(205,255,225,.035),0 13px 34px rgba(0,0,0,.28)!important;
+}
+html[data-theme="horror"] :is(.section-group-icon,.section-entry-icon,.section-card-expand,.section-card-nav,.hb-method-icon,.hb-section-title>span){
+  border-color:rgba(139,196,127,.34)!important;
+  background:radial-gradient(circle at 35% 20%,rgba(145,201,119,.11),transparent 55%),#0a1c17!important;
+  color:var(--gold-soft)!important;
+}
+html[data-theme="horror"] .section-card-image{
+  border-color:rgba(139,196,127,.28)!important;
+  background:radial-gradient(circle at 50% 30%,rgba(145,201,119,.11),transparent 47%),radial-gradient(circle at 50% 92%,rgba(159,102,200,.18),transparent 54%),#07110e!important;
+}
+html[data-theme="horror"] :is(.hb-head,.hb-footer){background:linear-gradient(180deg,#142820,#08120f)!important;border-color:rgba(111,166,124,.24)!important}
+html[data-theme="horror"] :is(.hb-field input,.hb-field select,.hb-field textarea,.hb-category-line select,.hb-prompt){background:#07130f!important;border-color:rgba(111,166,124,.27)!important}
+html[data-theme="horror"] .hb-ai-kit{box-shadow:inset 0 0 32px rgba(159,102,200,.055)!important}
+
+html[data-theme="cyberpunk"] :is(.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  border-color:rgba(22,224,235,.3)!important;
+  border-radius:7px!important;
+  background-image:
+    radial-gradient(circle at 14% 82%,rgba(154,72,31,.12) 0 1px,transparent 2px 8px),
+    repeating-linear-gradient(165deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px),
+    linear-gradient(145deg,rgba(19,30,34,.98),rgba(6,11,14,.99))!important;
+  box-shadow:inset 2px 0 rgba(244,232,36,.12),inset -1px 0 rgba(255,56,157,.09),0 0 24px rgba(0,224,240,.055)!important;
+}
+html[data-theme="cyberpunk"] :is(.section-group,.section-card-face,.section-entry,.hb-method){border-left-color:rgba(244,232,36,.58)!important;border-right-color:rgba(255,56,157,.34)!important}
+html[data-theme="cyberpunk"] :is(.section-group-icon,.section-entry-icon,.section-card-expand,.section-card-nav,.hb-method-icon,.hb-section-title>span){
+  border-color:rgba(18,225,237,.45)!important;
+  border-radius:4px!important;
+  background:linear-gradient(145deg,#152329,#05090b)!important;
+  color:#16e5ee!important;
+  box-shadow:inset 2px 0 rgba(244,232,36,.22),0 0 14px rgba(0,228,241,.08)!important;
+}
+html[data-theme="cyberpunk"] .section-card-image{
+  border-color:rgba(21,225,236,.36)!important;
+  border-radius:4px!important;
+  background:linear-gradient(180deg,rgba(0,221,235,.04),transparent 35%),radial-gradient(circle at 50% 90%,rgba(255,56,157,.13),transparent 52%),#060b0d!important;
+}
+html[data-theme="cyberpunk"] :is(.hb-head,.hb-footer){background:linear-gradient(180deg,#111a1e,#060a0c)!important;border-color:rgba(22,224,235,.25)!important}
+html[data-theme="cyberpunk"] :is(.hb-field input,.hb-field select,.hb-field textarea,.hb-category-line select,.hb-prompt){background:#050a0d!important;border-color:rgba(22,224,235,.3)!important;border-radius:4px!important}
+html[data-theme="cyberpunk"] :is(.section-card-dot.is-active,.hb-toggle input:checked+span:after){background:#13e4ed!important;box-shadow:0 0 9px rgba(19,228,237,.4)}
+html[data-theme="cyberpunk"] .homebrew-badge{color:var(--violet-soft)!important;border-color:rgba(255,62,173,.35)!important}
+
+html[data-theme]:not([data-theme="oracle"]) :is(.section-card-face,.section-card-face:before){border-color:color-mix(in srgb,var(--gold) 46%,transparent)}
+html[data-theme]:not([data-theme="oracle"]) :is(.section-card-kicker span,.section-card-stats span,.section-card-scroll dl div,.section-entry-meta span){border-color:color-mix(in srgb,var(--gold) 18%,transparent)}
+html[data-theme]:not([data-theme="oracle"]) :is(.section-card-body h3,.section-card-back h3,.hb-head h2){color:var(--gold-soft)}
+html[data-theme]:not([data-theme="oracle"]) :is(.section-card-scroll h4,.section-eyebrow,.hb-category-line>label,.hb-review-head span,.hb-prompt-label){color:var(--gold)}
