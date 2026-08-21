@@ -1,0 +1,19 @@
+{
+  "format": "oraclerpg-homebrew",
+  "version": 1,
+  "systemId": "dnd-srd-5e",
+  "contents": [
+    {
+      "type": "feature",
+      "name": "Example Feature",
+      "sourceId": "homebrew:example-feature",
+      "confidence": 1,
+      "data": {
+        "canonicalId": "homebrew:example-feature",
+        "name": "Example Feature",
+        "summary": "Short summary.",
+        "description": "Full rules text goes here. Replace this example with the canonical OracleRPG schema for the selected content type."
+      }
+    }
+  ]
+}

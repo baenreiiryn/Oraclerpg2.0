@@ -14,6 +14,15 @@ export interface ImportResult<T> {
 }
 
 export * from "./audit.js";
-
-// Source-specific adapters will live under src/sources/<provider>/.
-// They may depend on canonical schemas; canonical schemas must never depend on them.
+export * from "./homebrew/types.js";
+export * from "./homebrew/pipeline.js";
+export * from "./homebrew/canonicalizer.js";
+export * from "./homebrew/sources/oracle-json.js";
+export * from "./homebrew/sources/foundry.js";
+export * from "./homebrew/sources/fiveetools-markdown.js";
+export * from "./homebrew/sources/text-analysis.js";
+export * from "./homebrew/creator/types.js";
+export * from "./homebrew/creator/registry.js";
+export * from "./homebrew/creator/resolved-registry.js";
+export * from "./homebrew/creator/subforms.js";
+export * from "./homebrew/creator/service.js";
