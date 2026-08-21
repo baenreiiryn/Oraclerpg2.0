@@ -8,6 +8,22 @@ const MATERIALIZED_FEATURE_NAMES = new Map([
   ["Poison Breath", "Sopro Venenoso"]
 ]);
 
+const DAMAGE_LABELS = new Map([
+  ["Acid", "de Ácido"],
+  ["Bludgeoning", "de Concussão"],
+  ["Cold", "de Frio"],
+  ["Fire", "de Fogo"],
+  ["Force", "de Força"],
+  ["Lightning", "Elétrico"],
+  ["Necrotic", "Necrótico"],
+  ["Piercing", "Perfurante"],
+  ["Poison", "de Veneno"],
+  ["Psychic", "Psíquico"],
+  ["Radiant", "Radiante"],
+  ["Slashing", "Cortante"],
+  ["Thunder", "Trovejante"]
+]);
+
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[/^\d+$/.test(part) ? Number(part) : part], root);
 }
@@ -121,6 +137,75 @@ function projectVariant(baseEn, basePt, variantEn) {
   return projected;
 }
 
+function translateRangeClause(clause) {
+  if (!/^(?:reach \d+(?:\/\d+)? ft\.|range \d+(?:\/\d+)? ft\.|reach \d+(?:\/\d+)? ft\. or range \d+(?:\/\d+)? ft\.)$/.test(clause)) return null;
+  return clause
+    .replace(/^reach /, "alcance ")
+    .replace(/^range /, "distância ")
+    .replace(/ or range /, " ou distância ")
+    .replace(/ ft\./g, " pés.");
+}
+
+function translateDamageTail(tail) {
+  const match = tail.match(/^(\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage(?: plus (\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage)?\.$/);
+  if (!match) return null;
+  const firstType = DAMAGE_LABELS.get(match[2]);
+  const secondType = match[4] ? DAMAGE_LABELS.get(match[4]) : null;
+  if (!firstType || (match[4] && !secondType)) return null;
+  let out = `${match[1]} de dano ${firstType}`;
+  if (match[3]) out += ` mais ${match[3]} de dano ${secondType}`;
+  return `${out}.`;
+}
+
+function translateStandardAttack(source) {
+  const match = source.match(/^(\{@atkr [^}]+\}) (\{@hit [^}]+\})( to hit)?, (.+?) \{@h\}(.+)$/);
+  if (!match) return null;
+  const range = translateRangeClause(match[4]);
+  const damage = translateDamageTail(match[5]);
+  if (!range || !damage) return null;
+  return `${match[1]} ${match[2]}${match[3] ? " para acertar" : ""}, ${range} {@h}${damage}`;
+}
+
+function translatedDamageLabel(type) {
+  return DAMAGE_LABELS.get(type) ?? null;
+}
+
+function translateBreathWeapon(source) {
+  const line = source.match(/^(\{@actSave [^}]+\}) (\{@dc [^}]+\}), each creature in an? (\d+)-foot-long, (\d+)-foot-wide (\{@variantrule Line \[Area of Effect\]\|XPHB\|Line\})\. (\{@actSaveFail\}) (\d+ \(\{@damage [^}]+\}\)) ([A-Za-z]+) damage\. (\{@actSaveSuccess\}) Half damage\.$/);
+  if (line) {
+    const type = translatedDamageLabel(line[8]);
+    if (!type) return null;
+    const area = line[5].replace(/\|Line\}$/, "|Linha}");
+    return `${line[1]} ${line[2]}, cada criatura em uma ${area} de ${line[3]} pés de comprimento e ${line[4]} pés de largura. ${line[6]} ${line[7]} de dano ${type}. ${line[9]} Metade do dano.`;
+  }
+
+  const cone = source.match(/^(\{@actSave [^}]+\}) (\{@dc [^}]+\}), each creature in an? (\d+)-foot (\{@variantrule Cone \[Area of Effect\]\|XPHB\|Cone\})\. (\{@actSaveFail\}) (\d+ \(\{@damage [^}]+\}\)) ([A-Za-z]+) damage\. (\{@actSaveSuccess\}) Half damage\.$/);
+  if (cone) {
+    const type = translatedDamageLabel(cone[7]);
+    if (!type) return null;
+    return `${cone[1]} ${cone[2]}, cada criatura em um ${cone[4]} de ${cone[3]} pés. ${cone[5]} ${cone[6]} de dano ${type}. ${cone[8]} Metade do dano.`;
+  }
+  return null;
+}
+
+function translateSimpleMaterializedVariant(source, exactMap) {
+  if (/^The [^.]+ can breathe air and water\.$/.test(source)) return "A criatura pode respirar ar e água.";
+  if (/^If the [^.]+ fails a saving throw, it can choose to succeed instead\.$/.test(source)) return "Se a criatura falhar em uma salvaguarda, ela pode escolher obter sucesso em vez disso.";
+
+  const moveAttack = source.match(/^The [^.]+ moves up to half its \{@variantrule Speed\|XPHB\}, and it makes one (.+) attack\.$/);
+  if (moveAttack) {
+    const attack = exactMap.get(moveAttack[1]);
+    if (attack) return `A criatura se move até metade de seu {@variantrule Speed|XPHB|Deslocamento} e realiza um ataque de ${attack}.`;
+  }
+  return null;
+}
+
+function translateStructuredVariant(source, exactMap) {
+  return translateStandardAttack(source)
+    ?? translateBreathWeapon(source)
+    ?? translateSimpleMaterializedVariant(source, exactMap);
+}
+
 export function buildMonsterLocalizationCatalog({ monsters, featureDefinitions, featureCatalogs, nameMap, variantTranslations = {}, explicitEntries = {} }) {
   const exactMap = buildFeatureSourceTranslationMap(featureDefinitions, featureCatalogs);
   const definitions = new Map((featureDefinitions ?? []).map((feature) => [feature.canonicalId, feature]));
@@ -137,6 +222,7 @@ export function buildMonsterLocalizationCatalog({ monsters, featureDefinitions, 
       if (typeof translated !== "string") translated = variantTranslations[source];
       if (typeof translated !== "string" && exactMap.has(source)) translated = exactMap.get(source);
       if (typeof translated !== "string" && MATERIALIZED_FEATURE_NAMES.has(source)) translated = MATERIALIZED_FEATURE_NAMES.get(source);
+      if (typeof translated !== "string") translated = translateStructuredVariant(source, exactMap);
       if (typeof translated !== "string") {
         const match = pathKey.match(/^data\.features\.(\d+)\.text\.description$/);
         if (match) {
