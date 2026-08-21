@@ -77,8 +77,9 @@
   });
 
   const ready = () => {
-    syncThemeColor(initialTheme);
-    syncThemeButtons(initialTheme);
+    const currentTheme = normalizeTheme(document.documentElement.dataset.theme);
+    syncThemeColor(currentTheme);
+    syncThemeButtons(currentTheme);
     bindThemeButtons();
   };
 
