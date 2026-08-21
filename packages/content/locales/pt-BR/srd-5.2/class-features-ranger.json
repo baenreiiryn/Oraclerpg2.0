@@ -1,0 +1,40 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "ranger",
+  "entries": {
+    "dnd2024:2024:feature:ranger:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:ranger:deft-explorer:srd-5.2": { "name": "Explorador Hábil" },
+    "dnd2024:2024:feature:ranger:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:ranger:expertise:srd-5.2": { "name": "Especialização" },
+    "dnd2024:2024:feature:ranger:extra-attack:srd-5.2": { "name": "Ataque Extra" },
+    "dnd2024:2024:feature:ranger:favored-enemy:srd-5.2": { "name": "Inimigo Favorito" },
+    "dnd2024:2024:feature:ranger:feral-senses:srd-5.2": { "name": "Sentidos Selvagens" },
+    "dnd2024:2024:feature:ranger:fighting-style:srd-5.2": { "name": "Estilo de Luta" },
+    "dnd2024:2024:feature:ranger:foe-slayer:srd-5.2": { "name": "Assassino de Inimigos" },
+    "dnd2024:2024:feature:ranger:nature-s-veil:srd-5.2": { "name": "Véu da Natureza" },
+    "dnd2024:2024:feature:ranger:precise-hunter:srd-5.2": { "name": "Caçador Preciso" },
+    "dnd2024:2024:feature:ranger:relentless-hunter:srd-5.2": { "name": "Caçador Implacável" },
+    "dnd2024:2024:feature:ranger:roving:srd-5.2": { "name": "Andarilho" },
+    "dnd2024:2024:feature:ranger:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:ranger:tireless:srd-5.2": { "name": "Incansável" },
+    "dnd2024:2024:feature:ranger:weapon-mastery:srd-5.2": { "name": "Maestria com Armas" },
+    "dnd2024:2024:feature:ranger:hunter:defensive-tactics:srd-5.2": {
+      "name": "Táticas Defensivas",
+      "data.text.rules.0.entries.0.name": "Escapar da Horda",
+      "data.text.rules.0.entries.1.name": "Defesa contra Ataques Múltiplos"
+    },
+    "dnd2024:2024:feature:ranger:hunter:hunter-s-lore:srd-5.2": { "name": "Conhecimento do Caçador" },
+    "dnd2024:2024:feature:ranger:hunter:hunter-s-prey:srd-5.2": {
+      "name": "Presa do Caçador",
+      "data.text.rules.0.entries.0.name": "Matador de Colossos",
+      "data.text.rules.0.entries.1.name": "Destruidor de Hordas"
+    },
+    "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-defense:srd-5.2": { "name": "Defesa Superior do Caçador" },
+    "dnd2024:2024:feature:ranger:hunter:superior-hunter-s-prey:srd-5.2": { "name": "Presa Superior do Caçador" }
+  }
+}

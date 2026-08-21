@@ -1,0 +1,37 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "sorcerer",
+  "entries": {
+    "dnd2024:2024:feature:sorcerer:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:sorcerer:arcane-apotheosis:srd-5.2": { "name": "Apoteose Arcana" },
+    "dnd2024:2024:feature:sorcerer:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:sorcerer:font-of-magic:srd-5.2": { "name": "Fonte de Magia" },
+    "dnd2024:2024:feature:sorcerer:innate-sorcery:srd-5.2": { "name": "Feitiçaria Inata" },
+    "dnd2024:2024:feature:sorcerer:metamagic:srd-5.2": { "name": "Metamagia" },
+    "dnd2024:2024:feature:sorcerer:sorcerous-restoration:srd-5.2": { "name": "Restauração Feiticeira" },
+    "dnd2024:2024:feature:sorcerer:sorcery-incarnate:srd-5.2": { "name": "Feitiçaria Encarnada" },
+    "dnd2024:2024:feature:sorcerer:spellcasting:srd-5.2": { "name": "Conjuração" },
+
+    "dnd2024:2024:feature:sorcerer:metamagic:careful-spell:srd-5.2": { "name": "Magia Cuidadosa" },
+    "dnd2024:2024:feature:sorcerer:metamagic:distant-spell:srd-5.2": { "name": "Magia Distante" },
+    "dnd2024:2024:feature:sorcerer:metamagic:empowered-spell:srd-5.2": { "name": "Magia Potencializada" },
+    "dnd2024:2024:feature:sorcerer:metamagic:extended-spell:srd-5.2": { "name": "Magia Estendida" },
+    "dnd2024:2024:feature:sorcerer:metamagic:heightened-spell:srd-5.2": { "name": "Magia Intensificada" },
+    "dnd2024:2024:feature:sorcerer:metamagic:quickened-spell:srd-5.2": { "name": "Magia Acelerada" },
+    "dnd2024:2024:feature:sorcerer:metamagic:seeking-spell:srd-5.2": { "name": "Magia Perseguidora" },
+    "dnd2024:2024:feature:sorcerer:metamagic:subtle-spell:srd-5.2": { "name": "Magia Sutil" },
+    "dnd2024:2024:feature:sorcerer:metamagic:transmuted-spell:srd-5.2": { "name": "Magia Transmutada" },
+    "dnd2024:2024:feature:sorcerer:metamagic:twinned-spell:srd-5.2": { "name": "Magia Geminada" },
+
+    "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-resilience:srd-5.2": { "name": "Resiliência Dracônica" },
+    "dnd2024:2024:feature:sorcerer:draconic-sorcery:draconic-spells:srd-5.2": { "name": "Magias Dracônicas" },
+    "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-companion:srd-5.2": { "name": "Companheiro Dragão" },
+    "dnd2024:2024:feature:sorcerer:draconic-sorcery:dragon-wings:srd-5.2": { "name": "Asas de Dragão" },
+    "dnd2024:2024:feature:sorcerer:draconic-sorcery:elemental-affinity:srd-5.2": { "name": "Afinidade Elemental" }
+  }
+}

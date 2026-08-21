@@ -1,0 +1,284 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "spell",
+  "scope": "level-4",
+  "entries": {
+    "dnd2024:2024:spell:arcane-eye:srd-5.2": {
+      "name": "Olho Arcano",
+      "data.text.rules.0": "Você cria dentro do alcance um olho {@condition Invisible|XPHB} e invulnerável, que flutua pela duração. Você recebe mentalmente as informações visuais do olho, que pode enxergar em todas as direções. Ele também possui {@sense Darkvision|XPHB} com alcance de 30 pés.",
+      "data.text.rules.1": "Como uma {@variantrule Bonus Action|XPHB}, você pode mover o olho até 30 pés em qualquer direção. Uma barreira sólida impede o movimento do olho, mas ele pode atravessar uma abertura de apenas 1 polegada de diâmetro.",
+      "data.activities.0.name": "Conjurar Olho Arcano"
+    },
+    "dnd2024:2024:spell:aura-of-life:srd-5.2": {
+      "name": "Aura da Vida",
+      "data.text.rules.0": "Uma aura irradia de você em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés pela duração. Enquanto estiverem na aura, você e seus aliados têm {@variantrule Resistance|XPHB} a dano Necrótico, e seus máximos de {@variantrule Hit Points|XPHB|Pontos de Vida} não podem ser reduzidos. Se um aliado com 0 {@variantrule Hit Points|XPHB} iniciar o turno na aura, ele recupera 1 {@variantrule Hit Points|XPHB|Ponto de Vida}.",
+      "data.activities.0.name": "Criar Aura",
+      "data.activities.0.effects.0.description": "Enquanto estiverem na aura, você e seus aliados têm Resistência a dano Necrótico, e seus máximos de Pontos de Vida não podem ser reduzidos. Se um aliado com 0 Pontos de Vida iniciar o turno na aura, ele recupera [[/healing 1 type=healing]]{1 Ponto de Vida}."
+    },
+    "dnd2024:2024:spell:banishment:srd-5.2": {
+      "name": "Banimento",
+      "data.text.rules.0": "Uma criatura que você possa ver dentro do alcance deve ser bem-sucedida em uma salvaguarda de Carisma ou será transportada para um semiplano inofensivo pela duração. Enquanto estiver lá, o alvo fica com a condição {@condition Incapacitated|XPHB}. Quando a magia termina, o alvo reaparece no espaço que deixou ou no espaço desocupado mais próximo se aquele espaço estiver ocupado.",
+      "data.text.rules.1": "Se o alvo for uma Aberração, Celestial, Elemental, Fada ou Ínfero, ele não retorna se a magia durar 1 minuto. Em vez disso, o alvo é transportado para um local aleatório em um plano (à escolha do Mestre) associado ao seu tipo de criatura.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Banido",
+      "data.activities.0.effects.0.description": "Enquanto estiver lá, o alvo fica com a condição &Reference[Incapacitated apply=false]. Quando a magia termina, o alvo reaparece no espaço que deixou ou no espaço desocupado mais próximo se aquele espaço estiver ocupado. Se o alvo for uma Aberração, Celestial, Elemental, Fada ou Ínfero, ele não retorna se a magia durar 1 minuto. Em vez disso, o alvo é transportado para um local aleatório em um plano (à escolha do Mestre) associado ao seu tipo de criatura."
+    },
+    "dnd2024:2024:spell:black-tentacles:srd-5.2": {
+      "name": "Tentáculos Negros",
+      "data.text.rules.0": "Tentáculos negros e contorcidos preenchem um quadrado de 20 pés no chão que você possa ver dentro do alcance. Pela duração, esses tentáculos transformam o solo da área em {@variantrule Difficult Terrain|XPHB}.",
+      "data.text.rules.1": "Cada criatura nessa área faz uma salvaguarda de Força. Em uma falha, sofre {@damage 3d6} de dano Contundente e fica com a condição {@condition Restrained|XPHB} até a magia terminar. Uma criatura também faz essa salvaguarda se entrar na área ou terminar o turno nela. Uma criatura faz essa salvaguarda apenas uma vez por turno.",
+      "data.text.rules.2": "Uma criatura {@condition Restrained|XPHB} pode usar uma ação para fazer um teste de Força ({@skill Athletics|XPHB}) contra a CD de salvaguarda de suas magias, encerrando a condição em si mesma em caso de sucesso.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Contido",
+      "data.activities.0.effects.0.description": "Uma criatura &Reference[Restrained apply=false] pode usar uma ação para fazer um teste de [[/check ability=str skill=ath dc=@attributes.spell.dc]] contra a CD de salvaguarda de suas magias, encerrando a condição em si mesma em caso de sucesso."
+    },
+    "dnd2024:2024:spell:blight:srd-5.2": {
+      "name": "Praga",
+      "data.text.rules.0": "Uma criatura que você possa ver dentro do alcance faz uma salvaguarda de Constituição, sofrendo {@damage 8d8} de dano Necrótico em uma falha ou metade desse dano em um sucesso. Uma criatura Planta falha automaticamente na salvaguarda.",
+      "data.text.rules.1": "Alternativamente, escolha como alvo uma planta não mágica que não seja uma criatura, como uma árvore ou arbusto. Ela não faz salvaguarda; simplesmente murcha e morre.",
+      "data.activities.0.name": "Conjurar Praga"
+    },
+    "dnd2024:2024:spell:charm-monster:srd-5.2": {
+      "name": "Enfeitiçar Monstro",
+      "data.text.rules.0": "Uma criatura que você possa ver dentro do alcance faz uma salvaguarda de Sabedoria. Ela faz a salvaguarda com {@variantrule Advantage|XPHB} se você ou seus aliados estiverem lutando contra ela. Em uma falha, o alvo fica com a condição {@condition Charmed|XPHB} até a magia terminar ou até você ou seus aliados causarem dano a ele. A criatura {@condition Charmed|XPHB} é {@variantrule Friendly [Attitude]|XPHB|Amigável} a você. Quando a magia termina, o alvo sabe que foi {@condition Charmed|XPHB} por você.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Enfeitiçado",
+      "data.activities.0.effects.0.description": "O alvo fica com a condição &Reference[Charmed apply=false] até a magia terminar ou até você ou seus aliados causarem dano a ele. A criatura Enfeitiçada é Amigável a você. Quando a magia termina, o alvo sabe que foi Enfeitiçado por você."
+    },
+    "dnd2024:2024:spell:compulsion:srd-5.2": {
+      "name": "Compulsão",
+      "data.text.rules.0": "Cada criatura à sua escolha que você possa ver dentro do alcance deve ser bem-sucedida em uma salvaguarda de Sabedoria ou ficar com a condição {@condition Charmed|XPHB} até a magia terminar.",
+      "data.text.rules.1": "Pela duração, você pode usar uma {@variantrule Bonus Action|XPHB} para indicar uma direção horizontal em relação a você. Cada alvo {@condition Charmed|XPHB} deve usar o máximo possível de seu movimento para se deslocar nessa direção no próximo turno, seguindo a rota mais segura. Depois de se mover dessa forma, o alvo repete a salvaguarda, encerrando a magia sobre si em caso de sucesso.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Enfeitiçado",
+      "data.activities.0.effects.0.description": "Você pode usar uma Ação Bônus para indicar uma direção horizontal em relação a você. Cada alvo &Reference[Charmed apply=false] deve usar o máximo possível de seu movimento para se deslocar nessa direção no próximo turno, seguindo a rota mais segura. Depois de se mover dessa forma, o alvo repete a [[/save ability=wis]] salvaguarda, encerrando a magia sobre si em caso de sucesso."
+    },
+    "dnd2024:2024:spell:confusion:srd-5.2": {
+      "name": "Confusão",
+      "data.text.rules.0": "Cada criatura em uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 10 pés de raio centrada em um ponto à sua escolha dentro do alcance deve ser bem-sucedida em uma salvaguarda de Sabedoria, ou não poderá realizar Ações Bônus nem Reações e deverá rolar {@dice 1d10} no início de cada um de seus turnos para determinar seu comportamento naquele turno, consultando a tabela abaixo.",
+      "data.text.rules.1.columns.0": "1d10",
+      "data.text.rules.1.columns.1": "Comportamento no Turno",
+      "data.text.rules.1.rows.0.1": "O alvo não realiza ação e usa todo o movimento para se mover. Role {@dice 1d4} para a direção: {@b 1}, norte; {@b 2}, leste; {@b 3}, sul; ou {@b 4}, oeste.",
+      "data.text.rules.1.rows.1.1": "O alvo não se move nem realiza ações.",
+      "data.text.rules.1.rows.2.1": "O alvo não se move e realiza a ação {@action Attack|XPHB} para fazer um ataque corpo a corpo contra uma criatura aleatória ao alcance. Se não houver nenhuma, o alvo não realiza ação.",
+      "data.text.rules.1.rows.3.1": "O alvo escolhe seu comportamento.",
+      "data.text.rules.2": "No fim de cada um de seus turnos, um alvo afetado repete a salvaguarda, encerrando a magia sobre si em caso de sucesso.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Confuso"
+    },
+    "dnd2024:2024:spell:conjure-minor-elementals:srd-5.2": {
+      "name": "Conjurar Elementais Menores",
+      "data.text.rules.0": "Você conjura espíritos dos Planos Elementais que esvoaçam ao seu redor em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 15 pés pela duração. Até a magia terminar, qualquer ataque que você faça causa {@damage 2d8} de dano adicional quando acerta uma criatura na Emanação. Esse dano é Ácido, Frio, Fogo ou Elétrico (à sua escolha quando faz o ataque).",
+      "data.text.rules.1": "Além disso, o solo na {@variantrule Emanation [Area of Effect]|XPHB|Emanação} é {@variantrule Difficult Terrain|XPHB} para seus inimigos.",
+      "data.activities.0.name": "Dano Adicional de Ataque",
+      "data.activities.1.name": "Conjurar"
+    },
+    "dnd2024:2024:spell:conjure-woodland-beings:srd-5.2": {
+      "name": "Conjurar Seres da Floresta",
+      "data.text.rules.0": "Você conjura espíritos da natureza que esvoaçam ao seu redor em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 10 pés pela duração. Sempre que a Emanação entrar no espaço de uma criatura que você possa ver, e sempre que uma criatura que você possa ver entrar na Emanação ou terminar o turno nela, você pode forçar essa criatura a fazer uma salvaguarda de Sabedoria. A criatura sofre {@damage 5d8} de dano de Força em uma falha ou metade desse dano em um sucesso. Uma criatura faz essa salvaguarda apenas uma vez por turno.",
+      "data.text.rules.1": "Além disso, você pode realizar a ação {@action Disengage|XPHB} como uma {@variantrule Bonus Action|XPHB} pela duração da magia.",
+      "data.activities.0.name": "Conjurar",
+      "data.activities.1.name": "Desengajar",
+      "data.activities.2.name": "Salvaguarda da Emanação"
+    },
+    "dnd2024:2024:spell:control-water:srd-5.2": {
+      "name": "Controlar Água",
+      "data.text.rules.0": "Até a magia terminar, você controla toda a água dentro de uma área à sua escolha que seja um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de até 100 pés de lado, usando um dos efeitos a seguir. Como uma ação {@action Magic|XPHB} em seus turnos posteriores, você pode repetir o mesmo efeito ou escolher outro.",
+      "data.text.rules.1.name": "Inundação",
+      "data.text.rules.1.entries.0": "Você faz o nível de toda água parada na área subir em até 20 pés. Se escolher uma área em um grande corpo d'água, em vez disso cria uma onda de 20 pés de altura que viaja de um lado da área ao outro e então quebra. Qualquer veículo Enorme ou menor no caminho da onda é carregado até o outro lado. Qualquer veículo Enorme ou menor atingido pela onda tem {@chance 25|||Vira!|Sem efeito} de chance de virar.",
+      "data.text.rules.1.entries.1": "O nível da água permanece elevado até a magia terminar ou você escolher outro efeito. Se este efeito produziu uma onda, ela se repete no início de seu próximo turno enquanto o efeito de inundação durar.",
+      "data.text.rules.2.name": "Separar Águas",
+      "data.text.rules.2.entries.0": "Você separa a água na área e cria uma trincheira. A trincheira se estende por toda a área da magia, e a água separada forma uma parede em cada lado. A trincheira permanece até a magia terminar ou você escolher outro efeito. A água então preenche lentamente a trincheira ao longo da rodada seguinte, até que o nível normal seja restaurado.",
+      "data.text.rules.3.name": "Redirecionar Fluxo",
+      "data.text.rules.3.entries.0": "Você faz a água corrente na área se mover em uma direção à sua escolha, mesmo que precise fluir sobre obstáculos, subir paredes ou seguir outras direções improváveis. A água na área se move conforme você ordena, mas ao sair da área da magia retoma seu fluxo de acordo com o terreno. Ela continua se movendo na direção escolhida até a magia terminar ou você escolher outro efeito.",
+      "data.text.rules.4.name": "Redemoinho",
+      "data.text.rules.4.entries.0": "Você faz um redemoinho se formar no centro da área, que deve ter pelo menos 50 pés quadrados e 25 pés de profundidade. O redemoinho dura até você escolher outro efeito ou a magia terminar. Ele tem 5 pés de largura na base, até 50 pés no topo e 25 pés de altura. Qualquer criatura na água e a até 25 pés do redemoinho é puxada 10 pés em direção a ele. Quando uma criatura entra no redemoinho pela primeira vez em um turno ou termina o turno ali, faz uma salvaguarda de Força. Em uma falha, sofre {@damage 2d8} de dano Contundente. Em um sucesso, sofre metade desse dano. Uma criatura só pode nadar para longe do redemoinho se primeiro usar uma ação para se afastar e for bem-sucedida em um teste de Força ({@skill Athletics|XPHB}) contra a CD de salvaguarda de suas magias.",
+      "data.activities.0.name": "Criar Redemoinho",
+      "data.activities.1.name": "Inundar, Separar ou Redirecionar",
+      "data.activities.1.rolls.0.name": "25% de Chance de Virar"
+    },
+    "dnd2024:2024:spell:death-ward:srd-5.2": {
+      "name": "Proteção contra a Morte",
+      "data.text.rules.0": "Você toca uma criatura e concede a ela uma medida de proteção contra a morte. Na primeira vez em que o alvo cairia a 0 {@variantrule Hit Points|XPHB} antes da magia terminar, ele cai a 1 {@variantrule Hit Points|XPHB|Ponto de Vida} em vez disso, e a magia termina.",
+      "data.text.rules.1": "Se a magia ainda estiver ativa quando o alvo for submetido a um efeito que o mataria instantaneamente sem causar dano, esse efeito é anulado contra o alvo, e a magia termina.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Proteção contra a Morte",
+      "data.activities.0.effects.0.description": "Na primeira vez em que o alvo cairia a 0 Pontos de Vida antes da magia terminar, ele cai a 1 Ponto de Vida em vez disso, e a magia termina. Se a magia ainda estiver ativa quando o alvo for submetido a um efeito que o mataria instantaneamente sem causar dano, esse efeito é anulado contra o alvo, e a magia termina."
+    },
+    "dnd2024:2024:spell:dimension-door:srd-5.2": {
+      "name": "Porta Dimensional",
+      "data.text.rules.0": "Você se teleporta para um local dentro do alcance. Você chega exatamente ao ponto desejado. Pode ser um lugar que você veja, que consiga visualizar ou que possa descrever indicando distância e direção, como \"200 pés diretamente para baixo\" ou \"300 pés para cima, a noroeste, em um ângulo de 45 graus\".",
+      "data.text.rules.1": "Você também pode teleportar uma criatura voluntária. A criatura deve estar a até 5 pés de você quando você se teleporta, e ela se teleporta para um espaço a até 5 pés de seu destino.",
+      "data.text.rules.2": "Se você, a outra criatura ou ambos chegariam a um espaço ocupado por uma criatura ou completamente preenchido por um ou mais objetos, você e qualquer criatura viajando com você sofrem {@damage 4d6} de dano de Força cada, e o teleporte falha.",
+      "data.activities.0.name": "Dano"
+    },
+    "dnd2024:2024:spell:divination:srd-5.2": {
+      "name": "Adivinhação",
+      "data.text.rules.0": "Esta magia coloca você em contato com um deus ou com servos de um deus. Você faz uma pergunta sobre um objetivo, evento ou atividade específica que ocorrerá dentro de 7 dias. O Mestre oferece uma resposta verdadeira, que pode ser uma frase curta ou uma rima enigmática. A magia não considera circunstâncias que possam mudar a resposta, como a conjuração de outras magias.",
+      "data.text.rules.1": "Se você conjurar a magia mais de uma vez antes de terminar um {@variantrule Long Rest|XPHB}, existe uma chance cumulativa de {@chance 25|||Sem resposta!|Resposta normal} para cada conjuração depois da primeira de você não receber resposta.",
+      "data.activities.0.name": "Conjurar Adivinhação"
+    },
+    "dnd2024:2024:spell:dominate-beast:srd-5.2": {
+      "name": "Dominar Fera",
+      "data.text.rules.0": "Uma Fera que você possa ver dentro do alcance deve ser bem-sucedida em uma salvaguarda de Sabedoria ou ficar com a condição {@condition Charmed|XPHB} pela duração. O alvo tem {@variantrule Advantage|XPHB} na salvaguarda se você ou seus aliados estiverem lutando contra ele. Sempre que o alvo sofrer dano, ele repete a salvaguarda, encerrando a magia sobre si em caso de sucesso.",
+      "data.text.rules.1": "Você possui um elo telepático com o alvo {@condition Charmed|XPHB} enquanto ambos estiverem no mesmo plano de existência. Em seu turno, pode usar esse elo para dar ordens ao alvo (nenhuma ação necessária), como \"{@action Attack|XPHB} aquela criatura\", \"Vá até ali\" ou \"Pegue aquele objeto\". O alvo faz o possível para obedecer em seu turno. Se cumprir uma ordem e não receber novas instruções, age e se move como quiser, priorizando sua própria proteção.",
+      "data.text.rules.2": "Você pode ordenar que o alvo realize uma {@variantrule Reaction|XPHB}, mas deve usar sua própria {@variantrule Reaction|XPHB} para isso.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Dominado",
+      "data.activities.0.effects.0.description": "Sempre que o alvo &Reference[Charmed apply=false] sofrer dano, ele repete a [[/save ability=wis]] salvaguarda, encerrando a magia sobre si em caso de sucesso."
+    },
+    "dnd2024:2024:spell:fabricate:srd-5.2": {
+      "name": "Fabricar",
+      "data.text.rules.0": "Você converte matérias-primas em produtos feitos do mesmo material. Por exemplo, pode fabricar uma ponte de madeira a partir de um grupo de árvores, uma corda a partir de cânhamo ou roupas a partir de linho ou lã.",
+      "data.text.rules.1": "Escolha matérias-primas que você possa ver dentro do alcance. Você pode fabricar um objeto Grande ou menor (contido em um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de 10 pés ou em oito Cubos conectados de 5 pés), desde que haja material suficiente. Se estiver trabalhando com metal, pedra ou outra substância mineral, porém, o objeto fabricado não pode ser maior que Médio (contido em um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de 5 pés). A qualidade dos objetos fabricados depende da qualidade das matérias-primas.",
+      "data.text.rules.2": "Criaturas e itens mágicos não podem ser criados por esta magia. Você também não pode usá-la para criar itens que exigem alto grau de habilidade — como armas e armaduras — a menos que tenha proficiência com o tipo de {@item Artisan's Tools|XPHB} usado para fabricar tais objetos.",
+      "data.activities.0.name": "Conjurar Fabricar"
+    },
+    "dnd2024:2024:spell:faithful-hound:srd-5.2": {
+      "name": "Cão Fiel",
+      "data.text.rules.0": "Você conjura um cão de guarda fantasmagórico em um espaço desocupado que você possa ver dentro do alcance. O cão permanece pela duração ou até que vocês fiquem a mais de 300 pés um do outro.",
+      "data.text.rules.1": "Ninguém além de você pode ver o cão, e ele é intangível e invulnerável. Quando uma criatura Pequena ou maior chega a até 30 pés dele sem antes pronunciar a senha definida quando você conjurou a magia, o cão começa a latir alto. O cão possui {@sense Truesight|XPHB} com alcance de 30 pés.",
+      "data.text.rules.2": "No início de cada um de seus turnos, o cão tenta morder um inimigo a até 5 pés dele. Esse inimigo deve ser bem-sucedido em uma salvaguarda de Destreza ou sofrer {@damage 4d8} de dano de Força.",
+      "data.text.rules.3": "Em seus turnos posteriores, você pode usar uma ação {@action Magic|XPHB} para mover o cão até 30 pés.",
+      "data.activities.0.name": "Invocar",
+      "data.activities.1.name": "Mover Cão"
+    },
+    "dnd2024:2024:spell:fire-shield:srd-5.2": {
+      "name": "Escudo de Fogo",
+      "data.text.rules.0": "Chamas tênues envolvem seu corpo pela duração, emitindo {@variantrule Bright Light|XPHB} em um raio de 10 pés e {@variantrule Dim Light|XPHB} por mais 10 pés.",
+      "data.text.rules.1": "As chamas fornecem um escudo quente ou um escudo frio, à sua escolha. O escudo quente concede {@variantrule Resistance|XPHB} a dano de Frio, e o escudo frio concede {@variantrule Resistance|XPHB} a dano de Fogo.",
+      "data.text.rules.2": "Além disso, sempre que uma criatura a até 5 pés de você acertar você com uma jogada de ataque corpo a corpo, o escudo irrompe em chamas. O atacante sofre {@damage 2d8} de dano de Fogo por um escudo quente ou {@damage 2d8} de dano de Frio por um escudo frio.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Escudo Quente",
+      "data.activities.0.effects.0.description": "Sempre que uma criatura a até 5 pés de você acertar você com uma jogada de ataque corpo a corpo, o atacante sofre [[/damage 2d8 type=fire]] de dano.",
+      "data.activities.0.effects.1.name": "Escudo Frio",
+      "data.activities.0.effects.1.description": "Sempre que uma criatura a até 5 pés de você acertar você com uma jogada de ataque corpo a corpo, o atacante sofre [[/damage 2d8 type=cold]] de dano."
+    },
+    "dnd2024:2024:spell:freedom-of-movement:srd-5.2": {
+      "name": "Liberdade de Movimento",
+      "data.text.rules.0": "Você toca uma criatura voluntária. Pela duração, o movimento do alvo não é afetado por {@variantrule Difficult Terrain|XPHB}, e magias e outros efeitos mágicos não podem reduzir o {@variantrule Speed|XPHB} do alvo nem fazer com que ele fique com as condições {@condition Paralyzed|XPHB} ou {@condition Restrained|XPHB}. O alvo também possui {@variantrule Swim Speed|XPHB} igual ao seu {@variantrule Speed|XPHB}.",
+      "data.text.rules.1": "Além disso, o alvo pode gastar 5 pés de movimento para escapar automaticamente de restrições não mágicas, como algemas ou uma criatura impondo a condição {@condition Grappled|XPHB} sobre ele.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Movimento Irrestrito",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ser voluntário."
+    },
+    "dnd2024:2024:spell:giant-insect:srd-5.2": {
+      "name": "Inseto Gigante",
+      "data.text.rules.0": "Você invoca uma centopeia, aranha ou vespa gigante (escolhida quando conjura a magia). Ela se manifesta em um espaço desocupado que você possa ver dentro do alcance e usa o bloco de estatísticas {@creature Giant Insect|XPHB}. A forma escolhida determina certos detalhes do bloco. A criatura desaparece quando cai a 0 {@variantrule Hit Points|XPHB} ou quando a magia termina.",
+      "data.text.rules.1": "A criatura é aliada sua e de seus aliados. Em combate, ela compartilha sua contagem de {@variantrule Initiative|XPHB}, mas realiza o turno imediatamente depois do seu. Ela obedece a seus comandos verbais (nenhuma ação necessária). Se você não der comando algum, ela realiza a ação {@action Dodge|XPHB} e usa o movimento para evitar perigo.",
+      "data.activities.0.name": "Invocar"
+    },
+    "dnd2024:2024:spell:greater-invisibility:srd-5.2": {
+      "name": "Invisibilidade Maior",
+      "data.text.rules.0": "Uma criatura que você toca fica com a condição {@condition Invisible|XPHB} até a magia terminar.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.effects.0.name": "Invisível"
+    },
+    "dnd2024:2024:spell:guardian-of-faith:srd-5.2": {
+      "name": "Guardião da Fé",
+      "data.text.rules.0": "Um guardião espectral Grande aparece e flutua pela duração em um espaço desocupado que você possa ver dentro do alcance. O guardião ocupa esse espaço, é invulnerável e assume uma forma apropriada à sua divindade ou panteão.",
+      "data.text.rules.1": "Qualquer inimigo que se mova para um espaço a até 10 pés do guardião pela primeira vez em um turno ou inicie o turno ali faz uma salvaguarda de Destreza, sofrendo 20 de dano Radiante em uma falha ou metade desse dano em um sucesso. O guardião desaparece quando tiver causado um total de 60 de dano.",
+      "data.activities.0.name": "Invocar",
+      "data.activities.1.name": "Salvaguarda"
+    },
+    "dnd2024:2024:spell:hallucinatory-terrain:srd-5.2": {
+      "name": "Terreno Alucinatório",
+      "data.text.rules.0": "Você faz um terreno natural em um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de 150 pés dentro do alcance parecer, soar e cheirar como outro tipo de terreno natural. Assim, campos abertos ou uma estrada podem parecer um pântano, colina, fenda ou outro terreno difícil ou intransponível. Um lago pode parecer um prado gramado, um precipício uma encosta suave ou um desfiladeiro pedregoso uma estrada larga e lisa. Estruturas construídas, equipamentos e criaturas na área não são alterados.",
+      "data.text.rules.1": "As características táteis do terreno permanecem inalteradas, portanto criaturas que entrem na área provavelmente perceberão a ilusão. Se a diferença não for óbvia ao toque, uma criatura examinando a ilusão pode usar a ação {@action Study|XPHB} para fazer um teste de Inteligência ({@skill Investigation|XPHB}) contra a CD de salvaguarda de suas magias para desacreditá-la. Se uma criatura perceber que o terreno é ilusório, ela vê uma imagem vaga sobreposta ao terreno real.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.1.name": "Estudar"
+    },
+    "dnd2024:2024:spell:ice-storm:srd-5.2": {
+      "name": "Tempestade de Gelo",
+      "data.text.rules.0": "Granizo cai em um {@variantrule Cylinder [Area of Effect]|XPHB|Cilindro} de 20 pés de raio e 40 pés de altura centrado em um ponto dentro do alcance. Cada criatura no Cilindro faz uma salvaguarda de Destreza. Uma criatura sofre {@damage 2d10} de dano Contundente e {@damage 4d6} de dano de Frio em uma falha ou metade desses danos em um sucesso.",
+      "data.text.rules.1": "As pedras de granizo transformam o solo no {@variantrule Cylinder [Area of Effect]|XPHB|Cilindro} em {@variantrule Difficult Terrain|XPHB} até o fim de seu próximo turno.",
+      "data.activities.0.name": "Salvaguarda"
+    },
+    "dnd2024:2024:spell:locate-creature:srd-5.2": {
+      "name": "Localizar Criatura",
+      "data.text.rules.0": "Descreva ou nomeie uma criatura que lhe seja familiar. Você sente a direção da localização da criatura se ela estiver a até 1.000 pés de você. Se a criatura estiver se movendo, você sabe a direção de seu movimento.",
+      "data.text.rules.1": "A magia pode localizar uma criatura específica que você conheça ou a criatura mais próxima de um tipo específico (como um humano ou unicórnio), desde que você tenha visto uma criatura desse tipo de perto — a até 30 pés — pelo menos uma vez. Se a criatura descrita ou nomeada estiver em uma forma diferente, como sob os efeitos das magias {@spell Flesh to Stone|XPHB} ou {@spell Polymorph|XPHB}, esta magia não a localiza.",
+      "data.text.rules.2": "Esta magia não pode localizar uma criatura se qualquer espessura de chumbo bloquear um caminho direto entre você e ela.",
+      "data.activities.0.name": "Conjurar Localizar Criatura"
+    },
+    "dnd2024:2024:spell:phantasmal-killer:srd-5.2": {
+      "name": "Assassino Fantasmagórico",
+      "data.text.rules.0": "Você invade os pesadelos de uma criatura que possa ver dentro do alcance e cria uma ilusão de seus medos mais profundos, visível apenas para ela. O alvo faz uma salvaguarda de Sabedoria. Em uma falha, sofre {@damage 4d10} de dano Psíquico e tem {@variantrule Disadvantage|XPHB} em testes de atributo e jogadas de ataque pela duração. Em um sucesso, o alvo sofre metade desse dano, e a magia termina.",
+      "data.text.rules.1": "Pela duração, o alvo faz uma salvaguarda de Sabedoria ao fim de cada um de seus turnos. Em uma falha, sofre novamente o dano Psíquico. Em um sucesso, a magia termina.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Medos Manifestados",
+      "data.activities.0.effects.0.description": "O alvo tem Desvantagem em testes de atributo e jogadas de ataque pela duração. Pela duração, o alvo faz uma [[/save ability=wis]] salvaguarda ao fim de cada um de seus turnos. Em uma falha, sofre novamente o dano Psíquico. Em um sucesso, a magia termina."
+    },
+    "dnd2024:2024:spell:polymorph:srd-5.2": {
+      "name": "Polimorfia",
+      "data.text.rules.0": "Você tenta transformar uma criatura que possa ver dentro do alcance em uma Fera. O alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria ou mudará de forma para uma Fera pela duração. A forma pode ser qualquer {@filter Beast|bestiary|type=beast|miscellaneous=!swarm} à sua escolha que tenha {@variantrule Challenge Rating|XPHB} igual ou menor que o do alvo (ou que o nível do alvo, se ele não tiver {@variantrule Challenge Rating|XPHB}). As estatísticas de jogo do alvo são substituídas pelo bloco de estatísticas da Fera escolhida, mas o alvo mantém seu alinhamento, personalidade, tipo de criatura, {@variantrule Hit Points|XPHB} e {@variantrule Hit Point Dice|XPHB}.",
+      "data.text.rules.1": "O alvo recebe uma quantidade de {@variantrule Temporary Hit Points|XPHB} igual aos {@variantrule Hit Points|XPHB} da forma de Fera. Esses Pontos de Vida Temporários desaparecem se ainda restarem quando a magia terminar. A magia termina antecipadamente sobre o alvo se ele ficar sem {@variantrule Temporary Hit Points|XPHB}.",
+      "data.text.rules.2": "As ações que o alvo pode realizar ficam limitadas pela anatomia da nova forma, e ele não pode falar nem conjurar magias.",
+      "data.text.rules.3": "O equipamento do alvo se funde à nova forma. A criatura não pode usar nem se beneficiar de nenhum desses equipamentos.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.1.name": "Transformar"
+    },
+    "dnd2024:2024:spell:private-sanctum:srd-5.2": {
+      "name": "Santuário Privado",
+      "data.text.rules.0": "Você torna magicamente segura uma área dentro do alcance. A área é um {@variantrule Cube [Area of Effect]|XPHB|Cubo} que pode ter de 5 até 100 pés de lado. A magia dura pela duração.",
+      "data.text.rules.1": "Ao conjurar a magia, você decide que tipo de segurança ela oferece, escolhendo quaisquer das propriedades a seguir:",
+      "data.text.rules.2.items.0": "O som não pode atravessar a barreira na borda da área protegida.",
+      "data.text.rules.2.items.1": "A barreira da área protegida parece escura e enevoada, impedindo a visão (incluindo {@sense Darkvision|XPHB}) através dela.",
+      "data.text.rules.2.items.2": "Sensores criados por magias de Adivinhação não podem aparecer dentro da área protegida nem atravessar a barreira em seu perímetro.",
+      "data.text.rules.2.items.3": "Criaturas na área não podem ser alvo de magias de Adivinhação.",
+      "data.text.rules.2.items.4": "Nada pode se teleportar para dentro ou para fora da área protegida.",
+      "data.text.rules.2.items.5": "Viagem planar é bloqueada dentro da área protegida.",
+      "data.text.rules.3": "Conjurar esta magia no mesmo local todos os dias durante 365 dias faz com que ela dure até ser dissipada.",
+      "data.activities.0.name": "Conjurar Santuário Privado"
+    },
+    "dnd2024:2024:spell:resilient-sphere:srd-5.2": {
+      "name": "Esfera Resiliente",
+      "data.text.rules.0": "Uma esfera cintilante envolve uma criatura ou objeto Grande ou menor dentro do alcance. Uma criatura involuntária deve ser bem-sucedida em uma salvaguarda de Destreza ou ficará encerrada pela duração.",
+      "data.text.rules.1": "Nada — nem objetos físicos, energia ou outros efeitos de magia — pode atravessar a barreira para dentro ou para fora, embora uma criatura na esfera possa respirar ali. A esfera é imune a todo dano, e uma criatura ou objeto dentro dela não pode ser danificado por ataques ou efeitos originados do lado de fora, assim como uma criatura dentro da esfera não pode causar dano a nada do lado de fora.",
+      "data.text.rules.2": "A esfera não tem peso e é apenas grande o suficiente para conter a criatura ou objeto dentro dela. Uma criatura encerrada pode usar uma ação para empurrar as paredes da esfera e fazê-la rolar até metade do {@variantrule Speed|XPHB} da criatura. Da mesma forma, o globo pode ser erguido e movido por outras criaturas.",
+      "data.text.rules.3": "Uma magia {@spell Disintegrate|XPHB} que tenha o globo como alvo o destrói sem ferir nada em seu interior.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Encerrado na Esfera",
+      "data.activities.0.effects.0.description": "Uma criatura encerrada pode usar uma ação para empurrar as paredes da esfera e fazê-la rolar até metade do Deslocamento da criatura."
+    },
+    "dnd2024:2024:spell:secret-chest:srd-5.2": {
+      "name": "Baú Secreto",
+      "data.text.rules.0": "Você esconde um baú e todo o seu conteúdo no Plano Etéreo. Você deve tocar o baú e a réplica em miniatura que servem como componentes Materiais da magia. O baú pode conter até 12 pés cúbicos de material não vivo (3 pés por 2 pés por 2 pés).",
+      "data.text.rules.1": "Enquanto o baú permanecer no Plano Etéreo, você pode usar uma ação {@action Magic|XPHB} e tocar a réplica para trazer o baú de volta. Ele aparece em um espaço desocupado no chão a até 5 pés de você. Você pode enviar o baú de volta ao Plano Etéreo usando uma ação {@action Magic|XPHB} para tocar o baú e a réplica.",
+      "data.text.rules.2": "Depois de 60 dias, existe uma chance cumulativa de {@chance 5|||Efeito termina!|Efeito continua} ao fim de cada dia de a magia terminar. A magia também termina se você conjurá-la novamente ou se a réplica Minúscula do baú for destruída. Se a magia terminar e o baú maior estiver no Plano Etéreo, ele permanece lá para você ou outra pessoa encontrar.",
+      "data.activities.0.name": "Trazer Baú",
+      "data.activities.1.name": "Esconder Baú"
+    },
+    "dnd2024:2024:spell:stone-shape:srd-5.2": {
+      "name": "Moldar Pedra",
+      "data.text.rules.0": "Você toca um objeto de pedra de tamanho Médio ou menor, ou uma seção de pedra com no máximo 5 pés em qualquer dimensão, e a molda na forma que desejar. Por exemplo, poderia transformar uma grande rocha em uma arma, estátua ou cofre, ou abrir uma pequena passagem através de uma parede de 5 pés de espessura. Também poderia moldar uma porta de pedra ou sua moldura para selá-la. O objeto criado pode ter até duas dobradiças e um trinco, mas detalhes mecânicos mais finos não são possíveis.",
+      "data.activities.0.name": "Conjurar Moldar Pedra"
+    },
+    "dnd2024:2024:spell:stoneskin:srd-5.2": {
+      "name": "Pele de Pedra",
+      "data.text.rules.0": "Até a magia terminar, uma criatura voluntária que você toca tem {@variantrule Resistance|XPHB} a dano Contundente, Perfurante e Cortante.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.0.target.restrictions.0.description": "O alvo deve ser voluntário."
+    },
+    "dnd2024:2024:spell:vitriolic-sphere:srd-5.2": {
+      "name": "Esfera Vitriólica",
+      "data.text.rules.0": "Você aponta para um local dentro do alcance, e uma esfera brilhante de ácido com 1 pé de diâmetro dispara até lá e explode em uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 20 pés de raio. Cada criatura na área faz uma salvaguarda de Destreza. Em uma falha, a criatura sofre {@damage 10d4} de dano de Ácido e mais {@damage 5d4} de dano de Ácido ao fim de seu próximo turno. Em um sucesso, a criatura sofre apenas metade do dano inicial.",
+      "data.activities.0.name": "Salvaguarda",
+      "data.activities.0.effects.0.name": "Ácido Persistente",
+      "data.activities.0.effects.0.description": "A criatura sofre [[/damage 5d4 type=acid]] de dano ao fim de seu próximo turno.",
+      "data.activities.1.name": "Dano no Fim do Turno"
+    },
+    "dnd2024:2024:spell:wall-of-fire:srd-5.2": {
+      "name": "Muralha de Fogo",
+      "data.text.rules.0": "Você cria uma muralha de fogo sobre uma superfície sólida dentro do alcance. Pode fazer a muralha ter até 60 pés de comprimento, 20 pés de altura e 1 pé de espessura, ou criar uma muralha em anel de até 20 pés de diâmetro, 20 pés de altura e 1 pé de espessura. A muralha é opaca e dura pela duração.",
+      "data.text.rules.1": "Quando a muralha aparece, cada criatura em sua área faz uma salvaguarda de Destreza, sofrendo {@damage 5d8} de dano de Fogo em uma falha ou metade desse dano em um sucesso.",
+      "data.text.rules.2": "Um lado da muralha, escolhido por você quando conjura a magia, causa {@damage 5d8} de dano de Fogo a cada criatura que termine o turno a até 10 pés desse lado ou dentro da muralha. Uma criatura sofre o mesmo dano quando entra na muralha pela primeira vez em um turno ou termina o turno nela. O outro lado da muralha não causa dano.",
+      "data.activities.0.name": "Criar Muralha",
+      "data.activities.1.name": "Criar Anel"
+    }
+  }
+}

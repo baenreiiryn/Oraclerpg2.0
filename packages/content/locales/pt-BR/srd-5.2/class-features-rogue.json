@@ -1,0 +1,47 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "rogue",
+  "entries": {
+    "dnd2024:2024:feature:rogue:ability-score-improvement:srd-5.2": { "name": "Aprimoramento de Atributo" },
+    "dnd2024:2024:feature:rogue:cunning-action:srd-5.2": { "name": "Ação Ardilosa" },
+    "dnd2024:2024:feature:rogue:cunning-strike:srd-5.2": { "name": "Golpe Ardiloso" },
+    "dnd2024:2024:feature:rogue:daze-cost-2d6:srd-5.2": { "name": "Atordoar (Custo: 2d6)" },
+    "dnd2024:2024:feature:rogue:devious-strikes:srd-5.2": { "name": "Golpes Perversos" },
+    "dnd2024:2024:feature:rogue:elusive:srd-5.2": { "name": "Elusivo" },
+    "dnd2024:2024:feature:rogue:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:rogue:evasion:srd-5.2": { "name": "Evasão" },
+    "dnd2024:2024:feature:rogue:expertise:srd-5.2": { "name": "Especialização" },
+    "dnd2024:2024:feature:rogue:improved-cunning-strike:srd-5.2": {
+      "name": "Golpe Ardiloso Aprimorado",
+      "data.text.rules.0": "Você pode usar até dois efeitos de Golpe Ardiloso quando causar dano de Ataque Furtivo, pagando o custo em dados de cada efeito."
+    },
+    "dnd2024:2024:feature:rogue:knock-out-cost-6d6:srd-5.2": { "name": "Nocaute (Custo: 6d6)" },
+    "dnd2024:2024:feature:rogue:obscure-cost-3d6:srd-5.2": { "name": "Obscurecer (Custo: 3d6)" },
+    "dnd2024:2024:feature:rogue:poison-cost-1d6:srd-5.2": { "name": "Envenenar (Custo: 1d6)" },
+    "dnd2024:2024:feature:rogue:reliable-talent:srd-5.2": { "name": "Talento Confiável" },
+    "dnd2024:2024:feature:rogue:slippery-mind:srd-5.2": { "name": "Mente Escorregadia" },
+    "dnd2024:2024:feature:rogue:sneak-attack:srd-5.2": {
+      "name": "Ataque Furtivo",
+      "data.text.rules.0": "Você sabe atacar de forma sutil e explorar a distração de um inimigo. Uma vez por turno, pode causar {@damage 1d6} de dano adicional a uma criatura que atingir com uma jogada de ataque se tiver {@variantrule Advantage|XPHB} na jogada e o ataque usar uma arma com Acuidade ou uma arma à Distância. O tipo do dano adicional é o mesmo da arma.",
+      "data.text.rules.1": "Você não precisa ter {@variantrule Advantage|XPHB} na jogada de ataque se pelo menos um de seus aliados estiver a até 5 pés do alvo, esse aliado não estiver sob a condição {@condition Incapacitated|XPHB} e você não tiver {@variantrule Disadvantage|XPHB} na jogada de ataque.",
+      "data.text.rules.2": "O dano adicional aumenta conforme você ganha níveis de Ladino, como mostrado na coluna Ataque Furtivo da tabela de Features do Ladino."
+    },
+    "dnd2024:2024:feature:rogue:steady-aim:srd-5.2": { "name": "Mira Estável" },
+    "dnd2024:2024:feature:rogue:stroke-of-luck:srd-5.2": { "name": "Golpe de Sorte" },
+    "dnd2024:2024:feature:rogue:thieves-cant:srd-5.2": { "name": "Gíria dos Ladrões" },
+    "dnd2024:2024:feature:rogue:trip-cost-1d6:srd-5.2": { "name": "Derrubar (Custo: 1d6)" },
+    "dnd2024:2024:feature:rogue:uncanny-dodge:srd-5.2": { "name": "Esquiva Sobrenatural" },
+    "dnd2024:2024:feature:rogue:weapon-mastery:srd-5.2": { "name": "Maestria com Armas" },
+    "dnd2024:2024:feature:rogue:withdraw-cost-1d6:srd-5.2": { "name": "Recuar (Custo: 1d6)" },
+    "dnd2024:2024:feature:rogue:thief:fast-hands:srd-5.2": { "name": "Mãos Rápidas" },
+    "dnd2024:2024:feature:rogue:thief:second-story-work:srd-5.2": { "name": "Trabalho em Altura" },
+    "dnd2024:2024:feature:rogue:thief:supreme-sneak:srd-5.2": { "name": "Furtividade Suprema" },
+    "dnd2024:2024:feature:rogue:thief:thief-s-reflexes:srd-5.2": { "name": "Reflexos de Ladrão" },
+    "dnd2024:2024:feature:rogue:thief:use-magic-device:srd-5.2": { "name": "Usar Dispositivo Mágico" }
+  }
+}

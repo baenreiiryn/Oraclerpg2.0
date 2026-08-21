@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "typecheck": "node -e \"process.exit(0)\"",
-    "build": "node -e \"process.exit(0)\"",
+    "build": "node scripts/build-compendium-browser.mjs",
     "test": "node --test"
   }
 }

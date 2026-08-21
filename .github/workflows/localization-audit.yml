@@ -1,0 +1,26 @@
+name: Localization Audit
+
+on:
+  push:
+    branches:
+      - work/mobile-home-ui
+    paths:
+      - 'packages/content/locales/**'
+      - 'packages/content/localization.js'
+      - 'packages/content/test/class-feature-localization.test.js'
+      - '.github/workflows/localization-audit.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  class-feature-localization:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Audit class feature PT-BR localization
+        run: node --test packages/content/test/class-feature-localization.test.js

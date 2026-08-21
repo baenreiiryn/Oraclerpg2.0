@@ -1,0 +1,52 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "bard",
+  "entries": {
+    "dnd2024:2024:feature:bard:ability-score-improvement:srd-5.2": {
+      "name": "Aprimoramento de Atributo",
+      "data.text.rules.0": "Você recebe o talento {@feat Ability Score Improvement|XPHB} ou outro {@5etools feat|feats.html} à sua escolha para o qual cumpra os pré-requisitos. Você recebe esta feature novamente nos níveis 8, 12 e 16 de Bardo."
+    },
+    "dnd2024:2024:feature:bard:bardic-inspiration:srd-5.2": {
+      "name": "Inspiração de Bardo",
+      "data.text.rules.0": "Você pode inspirar sobrenaturalmente outras pessoas por meio de palavras, música ou dança. Essa inspiração é representada pelo seu dado de Inspiração de Bardo, que é um {@dice d6}.",
+      "data.text.rules.1.entries.0.name": "Usando Inspiração de Bardo",
+      "data.text.rules.1.entries.0.entries.0": "Como uma {@variantrule Bonus Action|XPHB}, você pode inspirar outra criatura a até 60 pés de você que possa vê-lo ou ouvi-lo. Essa criatura recebe um de seus dados de Inspiração de Bardo. Uma criatura pode ter apenas um dado de Inspiração de Bardo por vez.",
+      "data.text.rules.1.entries.0.entries.1": "Uma vez durante a próxima hora, quando a criatura falhar em um {@variantrule D20 Test|XPHB}, ela pode rolar o dado de Inspiração de Bardo e somar o resultado ao {@dice d20}, potencialmente transformando a falha em sucesso. O dado de Inspiração de Bardo é gasto quando é rolado.",
+      "data.text.rules.1.entries.1.name": "Número de Usos",
+      "data.text.rules.1.entries.1.entries.0": "Você pode conceder um dado de Inspiração de Bardo um número de vezes igual ao seu modificador de Carisma (mínimo de uma vez) e recupera todos os usos gastos ao terminar um {@variantrule Long Rest|XPHB}.",
+      "data.text.rules.1.entries.2.name": "Em Níveis Superiores",
+      "data.text.rules.1.entries.2.entries.0": "Seu dado de Inspiração de Bardo muda quando você alcança determinados níveis de Bardo, conforme mostrado na coluna Dado de Bardo da tabela de Features do Bardo. O dado se torna {@dice d8} no nível 5, {@dice d10} no nível 10 e {@dice d12} no nível 15."
+    },
+    "dnd2024:2024:feature:bard:spellcasting:srd-5.2": { "name": "Conjuração" },
+    "dnd2024:2024:feature:bard:expertise:srd-5.2": {
+      "name": "Especialização",
+      "data.text.rules.0": "Você recebe {@variantrule Expertise|XPHB} em duas perícias nas quais seja proficiente, à sua escolha. {@skill Performance|XPHB} e {@skill Persuasion|XPHB} são recomendadas caso você tenha proficiência nelas.",
+      "data.text.rules.1": "No nível 9 de Bardo, você recebe {@variantrule Expertise|XPHB} em mais duas perícias nas quais seja proficiente, à sua escolha."
+    },
+    "dnd2024:2024:feature:bard:jack-of-all-trades:srd-5.2": { "name": "Pau para Toda Obra" },
+    "dnd2024:2024:feature:bard:font-of-inspiration:srd-5.2": { "name": "Fonte de Inspiração" },
+    "dnd2024:2024:feature:bard:countercharm:srd-5.2": { "name": "Contrafeitiço Encantador" },
+    "dnd2024:2024:feature:bard:magical-secrets:srd-5.2": { "name": "Segredos Mágicos" },
+    "dnd2024:2024:feature:bard:superior-inspiration:srd-5.2": { "name": "Inspiração Superior" },
+    "dnd2024:2024:feature:bard:words-of-creation:srd-5.2": {
+      "name": "Palavras da Criação",
+      "data.text.rules.0": "Você dominou duas das Palavras da Criação: as palavras da vida e da morte. Por isso, você sempre tem as magias {@spell Power Word Heal|XPHB} e {@spell Power Word Kill|XPHB} preparadas. Quando conjura qualquer uma delas, você pode escolher uma segunda criatura como alvo se ela estiver a até 10 pés do primeiro alvo."
+    },
+    "dnd2024:2024:feature:bard:epic-boon:srd-5.2": { "name": "Dádiva Épica" },
+    "dnd2024:2024:feature:bard:lore:bonus-proficiencies:srd-5.2": { "name": "Proficiências Adicionais" },
+    "dnd2024:2024:feature:bard:lore:cutting-words:srd-5.2": {
+      "name": "Palavras Cortantes",
+      "data.text.rules.0": "Você aprende a usar sua sagacidade para distrair, confundir e abalar sobrenaturalmente a confiança e a competência dos outros. Quando uma criatura que você possa ver a até 60 pés de você fizer uma rolagem de dano ou obtiver sucesso em um teste de atributo ou jogada de ataque, você pode usar uma {@variantrule Reaction|XPHB} para gastar um uso de Inspiração de Bardo; role seu dado de Inspiração de Bardo e subtraia o resultado da rolagem da criatura, reduzindo o dano ou potencialmente transformando o sucesso em falha."
+    },
+    "dnd2024:2024:feature:bard:lore:magical-discoveries:srd-5.2": { "name": "Descobertas Mágicas" },
+    "dnd2024:2024:feature:bard:lore:peerless-skill:srd-5.2": {
+      "name": "Perícia Inigualável",
+      "data.text.rules.0": "Quando você fizer um teste de atributo ou uma jogada de ataque e falhar, pode gastar um uso de Inspiração de Bardo; role o dado de Inspiração de Bardo e some o resultado ao {@dice d20}, potencialmente transformando a falha em sucesso. Se ainda falhar, a Inspiração de Bardo não é gasta."
+    }
+  }
+}

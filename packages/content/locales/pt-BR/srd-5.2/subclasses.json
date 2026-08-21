@@ -1,0 +1,22 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "subclass",
+  "entries": {
+    "dnd2024:2024:subclass:barbarian:berserker:srd-5.2": { "name": "Caminho do Berserker", "data.parentClass.name": "Bárbaro", "data.shortName": "Berserker" },
+    "dnd2024:2024:subclass:bard:lore:srd-5.2": { "name": "Colégio do Conhecimento", "data.parentClass.name": "Bardo", "data.shortName": "Conhecimento" },
+    "dnd2024:2024:subclass:cleric:life:srd-5.2": { "name": "Domínio da Vida", "data.parentClass.name": "Clérigo", "data.shortName": "Vida" },
+    "dnd2024:2024:subclass:druid:land:srd-5.2": { "name": "Círculo da Terra", "data.parentClass.name": "Druida", "data.shortName": "Terra" },
+    "dnd2024:2024:subclass:fighter:champion:srd-5.2": { "name": "Campeão", "data.parentClass.name": "Guerreiro", "data.shortName": "Campeão" },
+    "dnd2024:2024:subclass:monk:open-hand:srd-5.2": { "name": "Guerreiro da Mão Aberta", "data.parentClass.name": "Monge", "data.shortName": "Mão Aberta" },
+    "dnd2024:2024:subclass:paladin:devotion:srd-5.2": { "name": "Juramento de Devoção", "data.parentClass.name": "Paladino", "data.shortName": "Devoção" },
+    "dnd2024:2024:subclass:ranger:hunter:srd-5.2": { "name": "Caçador", "data.parentClass.name": "Patrulheiro", "data.shortName": "Caçador" },
+    "dnd2024:2024:subclass:rogue:thief:srd-5.2": { "name": "Ladrão", "data.parentClass.name": "Ladino", "data.shortName": "Ladrão" },
+    "dnd2024:2024:subclass:sorcerer:draconic-sorcery:srd-5.2": { "name": "Feitiçaria Dracônica", "data.parentClass.name": "Feiticeiro", "data.shortName": "Dracônica" },
+    "dnd2024:2024:subclass:warlock:fiend:srd-5.2": { "name": "Patrono Ínfero", "data.parentClass.name": "Bruxo", "data.shortName": "Ínfero" },
+    "dnd2024:2024:subclass:wizard:evoker:srd-5.2": { "name": "Evocador", "data.parentClass.name": "Mago", "data.shortName": "Evocador" }
+  }
+}

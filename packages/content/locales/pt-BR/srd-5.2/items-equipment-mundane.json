@@ -1,0 +1,275 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "equipment-mundane",
+  "entries": {
+    "dnd2024:2024:item:acid:srd-5.2": {
+      "name": "Ácido",
+      "data.text.rules.0": "Quando você realiza a ação {@action Attack|XPHB}, pode substituir um de seus ataques por arremessar um frasco de Ácido. Escolha como alvo uma criatura ou objeto que possa ver a até 20 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ({@dc 8} + seu modificador de Destreza + seu {@variantrule Proficiency|XPHB|Bônus de Proficiência}) ou sofrer {@damage 2d6} de dano de Ácido."
+    },
+    "dnd2024:2024:item:alchemist-s-fire:srd-5.2": {
+      "name": "Fogo Alquímico",
+      "data.text.rules.0": "Quando você realiza a ação {@action Attack|XPHB}, pode substituir um de seus ataques por arremessar um frasco de Fogo Alquímico. Escolha como alvo uma criatura ou objeto que possa ver a até 20 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ({@dc 8} + seu modificador de Destreza + seu {@variantrule Proficiency|XPHB|Bônus de Proficiência}) ou sofrer {@damage 1d4} de dano de Fogo e começar a {@hazard burning|XPHB|queimar}."
+    },
+    "dnd2024:2024:item:ale-mug:srd-5.2": { "name": "Cerveja (caneca)" },
+    "dnd2024:2024:item:amulet:srd-5.2": {
+      "name": "Amuleto",
+      "data.text.rules.0": "Para que um Amuleto funcione como um Símbolo Sagrado, ele deve ser vestido ou segurado."
+    },
+    "dnd2024:2024:item:antitoxin:srd-5.2": {
+      "name": "Antitoxina",
+      "data.text.rules.0": "Como uma {@variantrule Bonus Action|XPHB|Ação Bônus}, você pode beber um frasco de Antitoxina para receber {@variantrule Advantage|XPHB|Vantagem} em salvaguardas para evitar ou encerrar a condição {@condition Poisoned|XPHB} por 1 hora."
+    },
+    "dnd2024:2024:item:ball-bearings:srd-5.2": {
+      "name": "Esferas de Metal",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode espalhar as Esferas de Metal de sua bolsa. Elas cobrem uma área plana quadrada de 10 pés a até 10 pés de você. Uma criatura que entrar nessa área pela primeira vez em um turno deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 10} ou receber a condição {@condition Prone|XPHB}. Leva 10 minutos para recolher as Esferas de Metal."
+    },
+    "dnd2024:2024:item:bedroll:srd-5.2": {
+      "name": "Saco de Dormir",
+      "data.text.rules.0": "Um Saco de Dormir acomoda uma criatura Pequena ou Média. Enquanto estiver dentro dele, você é automaticamente bem-sucedido em salvaguardas contra {@hazard extreme cold|XDMG|frio extremo} (veja o {@book Dungeon Master's Guide|XDMG})."
+    },
+    "dnd2024:2024:item:bell:srd-5.2": {
+      "name": "Sino",
+      "data.text.rules.0": "Quando tocado como uma ação de {@action Utilize|XPHB}, um Sino produz um som que pode ser ouvido a até 60 pés."
+    },
+    "dnd2024:2024:item:blanket:srd-5.2": {
+      "name": "Cobertor",
+      "data.text.rules.0": "Enquanto estiver envolto em um Cobertor, você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra {@hazard extreme cold|XDMG|frio extremo} (veja o {@book Dungeon Master's Guide|XDMG})."
+    },
+    "dnd2024:2024:item:block-and-tackle:srd-5.2": {
+      "name": "Roldana e Polia",
+      "data.text.rules.0": "Uma {@item Block and Tackle|XPHB|Roldana e Polia} permite que você erga até quatro vezes o peso que normalmente consegue levantar."
+    },
+    "dnd2024:2024:item:book:srd-5.2": {
+      "name": "Livro",
+      "data.text.rules.0": "Um Livro contém uma obra de ficção ou não ficção. Se você consultar um Livro de não ficção preciso sobre determinado assunto, recebe um bônus de +5 em testes de Inteligência ({@skill Arcana|XPHB}, {@skill History|XPHB}, {@skill Nature|XPHB} ou {@skill Religion|XPHB}) relacionados a esse assunto."
+    },
+    "dnd2024:2024:item:bread-loaf:srd-5.2": { "name": "Pão (filão)" },
+    "dnd2024:2024:item:bullseye-lantern:srd-5.2": {
+      "name": "Lanterna Direcional",
+      "data.text.rules.0": "Uma Lanterna Direcional queima Óleo como combustível para projetar {@variantrule Bright Light|XPHB|Luz Plena} em um Cone de 60 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 60 pés."
+    },
+    "dnd2024:2024:item:caltrops:srd-5.2": {
+      "name": "Estrepes",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode espalhar Estrepes da bolsa para cobrir uma área quadrada de 5 pés a até 5 pés de você. Uma criatura que entrar nessa área pela primeira vez em um turno deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 15} ou sofrer 1 de dano Perfurante e ter seu {@variantrule Speed|XPHB|Deslocamento} reduzido a 0 até o início do próximo turno dela. Leva 10 minutos para recolher os Estrepes."
+    },
+    "dnd2024:2024:item:candle:srd-5.2": {
+      "name": "Vela",
+      "data.text.rules.0": "Por 1 hora, uma Vela acesa emite {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 5 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 5 pés."
+    },
+    "dnd2024:2024:item:canvas-1-sq-yd:srd-5.2": { "name": "Lona (1 jarda quadrada)" },
+    "dnd2024:2024:item:carriage:srd-5.2": { "name": "Carruagem" },
+    "dnd2024:2024:item:cart:srd-5.2": { "name": "Carroça Pequena" },
+    "dnd2024:2024:item:chain:srd-5.2": {
+      "name": "Corrente",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode envolver uma Corrente em uma criatura involuntária a até 5 pés de você que esteja com a condição {@condition Grappled|XPHB}, {@condition Incapacitated|XPHB} ou {@condition Restrained|XPHB}, caso seja bem-sucedido em um teste de Força ({@skill Athletics|XPHB}) {@dc 13}. Se as pernas da criatura forem amarradas, ela recebe a condição {@condition Restrained|XPHB} até escapar. Escapar da Corrente exige que a criatura seja bem-sucedida em um teste de Destreza ({@skill Acrobatics|XPHB}) {@dc 18} como ação. Romper a Corrente exige um teste bem-sucedido de Força ({@skill Athletics|XPHB}) {@dc 20} como ação."
+    },
+    "dnd2024:2024:item:chariot:srd-5.2": { "name": "Biga" },
+    "dnd2024:2024:item:cheese-wedge:srd-5.2": { "name": "Queijo (pedaço)" },
+    "dnd2024:2024:item:chicken:srd-5.2": { "name": "Galinha" },
+    "dnd2024:2024:item:cinnamon:srd-5.2": { "name": "Canela" },
+    "dnd2024:2024:item:climber-s-kit:srd-5.2": {
+      "name": "Kit de Escalada",
+      "data.text.rules.0": "Um Kit de Escalada inclui ponteiras para botas, luvas, pítons e um arnês. Como uma ação de {@action Utilize|XPHB}, você pode usar o Kit de Escalada para se ancorar; ao fazer isso, não pode cair mais de 25 pés a partir do ponto de ancoragem e não pode se afastar mais de 25 pés dele sem desfazer a âncora como uma {@variantrule Bonus Action|XPHB|Ação Bônus}."
+    },
+    "dnd2024:2024:item:cloves:srd-5.2": { "name": "Cravo-da-Índia" },
+    "dnd2024:2024:item:copper:srd-5.2": { "name": "Cobre" },
+    "dnd2024:2024:item:costume:srd-5.2": {
+      "name": "Fantasia",
+      "data.text.rules.0": "Enquanto usa uma Fantasia, você tem {@variantrule Advantage|XPHB|Vantagem} em qualquer teste de habilidade feito para se passar pela pessoa ou pelo tipo de pessoa representado por ela."
+    },
+    "dnd2024:2024:item:cotton-cloth-1-sq-yd:srd-5.2": { "name": "Tecido de Algodão (1 jarda quadrada)" },
+    "dnd2024:2024:item:cow:srd-5.2": { "name": "Vaca" },
+    "dnd2024:2024:item:crowbar:srd-5.2": {
+      "name": "Pé de Cabra",
+      "data.text.rules.0": "Usar um Pé de Cabra concede {@variantrule Advantage|XPHB|Vantagem} em testes de Força nos quais sua alavanca possa ser aplicada."
+    },
+    "dnd2024:2024:item:crystal:srd-5.2": { "name": "Cristal" },
+    "dnd2024:2024:item:emblem:srd-5.2": {
+      "name": "Emblema",
+      "data.text.rules.0": "Para que um Emblema funcione como um Símbolo Sagrado, ele deve estar exibido em tecido (como um tabardo ou estandarte) ou em um {@item Shield|XPHB|Escudo}."
+    },
+    "dnd2024:2024:item:exotic-saddle:srd-5.2": {
+      "name": "Sela Exótica",
+      "data.text.rules.0": "Uma sela vem com freio, cabeçada, rédeas e qualquer outro equipamento necessário para usá-la. Uma Sela Exótica é necessária para montar uma montaria aquática ou voadora."
+    },
+    "dnd2024:2024:item:feed-per-day:srd-5.2": { "name": "Ração para Animal (por dia)" },
+    "dnd2024:2024:item:fine-clothes:srd-5.2": {
+      "name": "Roupas Finas",
+      "data.text.rules.0": "Roupas Finas são feitas de tecidos caros e adornadas com detalhes produzidos por artesãos habilidosos. Alguns eventos e locais admitem apenas pessoas vestindo essas roupas."
+    },
+    "dnd2024:2024:item:flour:srd-5.2": { "name": "Farinha" },
+    "dnd2024:2024:item:ginger:srd-5.2": { "name": "Gengibre" },
+    "dnd2024:2024:item:goat:srd-5.2": { "name": "Cabra" },
+    "dnd2024:2024:item:gold:srd-5.2": { "name": "Ouro" },
+    "dnd2024:2024:item:grappling-hook:srd-5.2": {
+      "name": "Arpéu",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode arremessar o Arpéu em um corrimão, saliência ou outro ponto de apoio a até 50 pés de você; o gancho se prende caso você seja bem-sucedido em um teste de Destreza ({@skill Acrobatics|XPHB}) {@dc 13}. Se tiver amarrado uma Corda ao gancho, você poderá então escalá-la."
+    },
+    "dnd2024:2024:item:healer-s-kit:srd-5.2": {
+      "name": "Kit de Curandeiro",
+      "data.text.rules.0": "Um Kit de Curandeiro possui dez usos. Como uma ação de {@action Utilize|XPHB}, você pode gastar um uso para estabilizar uma criatura {@condition Unconscious|XPHB} que tenha 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, sem precisar realizar um teste de Sabedoria ({@skill Medicine|XPHB})."
+    },
+    "dnd2024:2024:item:holy-water:srd-5.2": {
+      "name": "Água Benta",
+      "data.text.rules.0": "Quando você realiza a ação {@action Attack|XPHB}, pode substituir um de seus ataques por arremessar um frasco de Água Benta. Escolha como alvo uma criatura que possa ver a até 20 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ({@dc 8} + seu modificador de Destreza + seu {@variantrule Proficiency|XPHB|Bônus de Proficiência}) ou sofrer {@damage 2d8} de dano Radiante se for um Ínfero ou Morto-vivo."
+    },
+    "dnd2024:2024:item:hooded-lantern:srd-5.2": {
+      "name": "Lanterna Coberta",
+      "data.text.rules.0": "Uma Lanterna Coberta queima Óleo como combustível para emitir {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 30 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 30 pés. Como uma {@variantrule Bonus Action|XPHB|Ação Bônus}, você pode baixar a cobertura, reduzindo a iluminação a {@variantrule Dim Light|XPHB|Meia-luz} em um raio de 5 pés, ou levantá-la novamente."
+    },
+    "dnd2024:2024:item:hunting-trap:srd-5.2": {
+      "name": "Armadilha de Caça",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode armar uma Armadilha de Caça, um anel de aço serrilhado que se fecha quando uma criatura pisa na placa de pressão no centro. A armadilha é presa por uma corrente pesada a um objeto imóvel, como uma árvore ou um cravo fincado no chão. Uma criatura que pisa na placa deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 13} ou sofrer {@damage 1d4} de dano Perfurante e ter seu {@variantrule Speed|XPHB|Deslocamento} reduzido a 0 até o início do próximo turno dela. Depois disso, até se libertar, o movimento da criatura fica limitado pelo comprimento da corrente (normalmente 3 pés). Uma criatura pode usar sua ação para realizar um teste de Força ({@skill Athletics|XPHB}) {@dc 13}, libertando a si mesma ou outra criatura ao alcance em caso de sucesso. Cada teste fracassado causa 1 de dano Perfurante à criatura presa."
+    },
+    "dnd2024:2024:item:ink:srd-5.2": {
+      "name": "Tinta",
+      "data.text.rules.0": "A Tinta é vendida em um frasco de 1 onça, suficiente para escrever aproximadamente 500 páginas."
+    },
+    "dnd2024:2024:item:ink-pen:srd-5.2": {
+      "name": "Pena de Escrever",
+      "data.text.rules.0": "Usando {@item Ink|XPHB|Tinta}, uma Pena de Escrever serve para escrever ou desenhar."
+    },
+    "dnd2024:2024:item:iron:srd-5.2": { "name": "Ferro" },
+    "dnd2024:2024:item:iron-spike:srd-5.2": {
+      "name": "Cravo de Ferro",
+      "data.text.rules.0": "Cravos de Ferro são vendidos em conjuntos de dez. Como uma ação de {@action Utilize|XPHB}, você pode usar um objeto contundente, como um {@item Light Hammer|XPHB|Martelo Leve}, para martelar um cravo em madeira, terra ou material semelhante. Você pode fazer isso para travar uma porta fechada ou para então amarrar uma {@item Rope|XPHB|Corda} ou {@item Chain|XPHB|Corrente} ao Cravo."
+    },
+    "dnd2024:2024:item:ladder:srd-5.2": {
+      "name": "Escada",
+      "data.text.rules.0": "Uma Escada possui 10 pés de altura. Você precisa escalar para subir ou descer por ela."
+    },
+    "dnd2024:2024:item:lamp:srd-5.2": {
+      "name": "Lampião",
+      "data.text.rules.0": "Um Lampião queima {@item Oil|XPHB|Óleo} como combustível para emitir {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 15 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 30 pés."
+    },
+    "dnd2024:2024:item:linen-1-sq-yd:srd-5.2": { "name": "Linho (1 jarda quadrada)" },
+    "dnd2024:2024:item:lock:srd-5.2": {
+      "name": "Cadeado",
+      "data.text.rules.0": "Um Cadeado vem com uma chave. Sem a chave, uma criatura pode usar {@item Thieves' Tools|XPHB|Ferramentas de Ladrão} para abri-lo ao ser bem-sucedida em um teste de Destreza ({@skill Sleight of Hand|XPHB}) {@dc 15}."
+    },
+    "dnd2024:2024:item:magnifying-glass:srd-5.2": {
+      "name": "Lupa",
+      "data.text.rules.0": "Uma Lupa concede {@variantrule Advantage|XPHB|Vantagem} em qualquer teste de habilidade feito para avaliar ou inspecionar um item com muitos detalhes. Acender um fogo com uma Lupa exige luz tão intensa quanto a luz do sol para ser focalizada, material inflamável e cerca de 5 minutos para o fogo começar."
+    },
+    "dnd2024:2024:item:manacles:srd-5.2": {
+      "name": "Algemas",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode usar Algemas para prender uma criatura Pequena ou Média involuntária a até 5 pés de você que esteja com a condição {@condition Grappled|XPHB}, {@condition Incapacitated|XPHB} ou {@condition Restrained|XPHB}, caso seja bem-sucedido em um teste de Destreza ({@skill Sleight of Hand|XPHB}) {@dc 13}. Enquanto estiver presa, a criatura tem {@variantrule Disadvantage|XPHB|Desvantagem} em jogadas de ataque e fica {@condition Restrained|XPHB} se as Algemas estiverem presas a uma corrente ou gancho fixo. Escapar das Algemas exige um teste bem-sucedido de Destreza ({@skill Sleight of Hand|XPHB}) {@dc 20} como ação. Rompê-las exige um teste bem-sucedido de Força ({@skill Athletics|XPHB}) {@dc 25} como ação.",
+      "data.text.rules.1": "Cada conjunto de Algemas vem com uma chave. Sem a chave, uma criatura pode usar {@item Thieves' Tools|XPHB|Ferramentas de Ladrão} para abrir a fechadura das Algemas ao ser bem-sucedida em um teste de Destreza ({@skill Sleight of Hand|XPHB}) {@dc 15}."
+    },
+    "dnd2024:2024:item:military-saddle:srd-5.2": {
+      "name": "Sela Militar",
+      "data.text.rules.0": "Uma sela vem com freio, cabeçada, rédeas e qualquer outro equipamento necessário para usá-la. Uma Sela Militar concede {@variantrule Advantage|XPHB|Vantagem} em qualquer teste de habilidade feito para permanecer montado."
+    },
+    "dnd2024:2024:item:mirror:srd-5.2": {
+      "name": "Espelho",
+      "data.text.rules.0": "Um Espelho de aço de mão é útil para cuidados pessoais, mas também para observar ao redor de cantos e refletir luz como sinal."
+    },
+    "dnd2024:2024:item:net:srd-5.2": {
+      "name": "Rede",
+      "data.text.rules.0": "Quando você realiza a ação {@action Attack|XPHB}, pode substituir um de seus ataques por arremessar uma Rede. Escolha como alvo uma criatura que possa ver a até 15 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ({@dc 8} + seu modificador de Destreza + seu {@variantrule Proficiency|XPHB|Bônus de Proficiência}) ou receber a condição {@condition Restrained|XPHB} até escapar. O alvo é automaticamente bem-sucedido se for Enorme ou maior.",
+      "data.text.rules.1": "Para escapar, o alvo ou uma criatura a até 5 pés dele deve usar uma ação para realizar um teste de Força ({@skill Athletics|XPHB}) {@dc 10}, libertando a criatura {@condition Restrained|XPHB} em caso de sucesso. Destruir a Rede (CA 10; 5 PV; {@variantrule Immunity|XPHB|Imunidade} a dano Concussivo, Veneno e Psíquico) também liberta o alvo, encerrando o efeito."
+    },
+    "dnd2024:2024:item:oil:srd-5.2": {
+      "name": "Óleo",
+      "data.text.rules.0": "Você pode encharcar uma criatura, objeto ou espaço com Óleo ou usá-lo como combustível, conforme detalhado abaixo.",
+      "data.text.rules.1.name": "Encharcando uma Criatura ou Objeto",
+      "data.text.rules.1.entries.0": "Quando você realiza a ação {@action Attack|XPHB}, pode substituir um de seus ataques por arremessar um frasco de Óleo. Escolha como alvo uma criatura ou objeto a até 20 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ({@dc 8} + seu modificador de Destreza + seu {@variantrule Proficiency|XPHB|Bônus de Proficiência}) ou ficar coberto de óleo. Se o alvo sofrer dano de Fogo antes de o óleo secar (após 1 minuto), ele sofre 5 de dano de Fogo adicional causado pelo óleo em chamas.",
+      "data.text.rules.2.name": "Encharcando um Espaço",
+      "data.text.rules.2.entries.0": "Você pode realizar a ação {@action Utilize|XPHB} para derramar um frasco de Óleo sobre terreno plano, cobrindo uma área quadrada de 5 pés a até 5 pés de você. Se aceso, o óleo queima até o fim do turno de 2 rodadas após ter sido aceso (ou 12 segundos) e causa 5 de dano de Fogo a qualquer criatura que entre na área ou termine o turno nela. Uma criatura pode sofrer esse dano apenas uma vez por turno.",
+      "data.text.rules.3.name": "Combustível",
+      "data.text.rules.3.entries.0": "Óleo serve como combustível para Lampiões e Lanternas. Depois de aceso, um frasco de Óleo queima por 6 horas em um Lampião ou Lanterna. A duração não precisa ser consecutiva; você pode apagar o Óleo em chamas (como uma ação de {@action Utilize|XPHB}) e acendê-lo novamente até que tenha queimado por um total de 6 horas."
+    },
+    "dnd2024:2024:item:orb:srd-5.2": { "name": "Orbe" },
+    "dnd2024:2024:item:ox:srd-5.2": { "name": "Boi" },
+    "dnd2024:2024:item:paper:srd-5.2": {
+      "name": "Papel",
+      "data.text.rules.0": "Uma folha de Papel pode conter cerca de 250 palavras manuscritas."
+    },
+    "dnd2024:2024:item:parchment:srd-5.2": {
+      "name": "Pergaminho",
+      "data.text.rules.0": "Uma folha de Pergaminho pode conter cerca de 250 palavras manuscritas."
+    },
+    "dnd2024:2024:item:pepper:srd-5.2": { "name": "Pimenta" },
+    "dnd2024:2024:item:perfume:srd-5.2": {
+      "name": "Perfume",
+      "data.text.rules.0": "Perfume é vendido em um frasco de 4 onças. Durante 1 hora após aplicar Perfume em si mesmo, você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Carisma ({@skill Persuasion|XPHB}) feitos para influenciar um Humanoide Indiferente a até 5 pés de você."
+    },
+    "dnd2024:2024:item:pig:srd-5.2": { "name": "Porco" },
+    "dnd2024:2024:item:platinum:srd-5.2": { "name": "Platina" },
+    "dnd2024:2024:item:pole:srd-5.2": {
+      "name": "Vara",
+      "data.text.rules.0": "Uma Vara possui 10 pés de comprimento. Você pode usá-la para tocar algo a até 10 pés de distância. Se precisar realizar um teste de Força ({@skill Athletics|XPHB}) como parte de um Salto em Altura ou {@variantrule Long Jump|XPHB|Salto em Distância}, pode usar a Vara para se impulsionar, recebendo {@variantrule Advantage|XPHB|Vantagem} no teste."
+    },
+    "dnd2024:2024:item:portable-ram:srd-5.2": {
+      "name": "Aríete Portátil",
+      "data.text.rules.0": "Você pode usar um Aríete Portátil para derrubar portas. Ao fazer isso, recebe um bônus de +4 no teste de Força. Outro personagem pode ajudá-lo a usar o aríete, concedendo {@variantrule Advantage|XPHB|Vantagem} nesse teste."
+    },
+    "dnd2024:2024:item:rations:srd-5.2": {
+      "name": "Rações",
+      "data.text.rules.0": "Rações consistem em alimentos próprios para viagem, incluindo carne seca, frutas secas, biscoitos duros e castanhas. Veja \"{@hazard Malnutrition|XPHB|Desnutrição}\" para os riscos de não se alimentar."
+    },
+    "dnd2024:2024:item:reliquary:srd-5.2": {
+      "name": "Relicário",
+      "data.text.rules.0": "Para que um Relicário funcione como um Símbolo Sagrado, ele deve ser segurado."
+    },
+    "dnd2024:2024:item:riding-saddle:srd-5.2": {
+      "name": "Sela de Montaria",
+      "data.text.rules.0": "Uma sela vem com freio, cabeçada, rédeas e qualquer outro equipamento necessário para usá-la."
+    },
+    "dnd2024:2024:item:robe:srd-5.2": {
+      "name": "Veste",
+      "data.text.rules.0": "Uma Veste possui significado profissional ou cerimonial. Alguns eventos e locais admitem apenas pessoas usando uma Veste com determinadas cores ou símbolos."
+    },
+    "dnd2024:2024:item:rod:srd-5.2": { "name": "Bastão" },
+    "dnd2024:2024:item:rope:srd-5.2": {
+      "name": "Corda",
+      "data.text.rules.0": "Como uma ação de {@action Utilize|XPHB}, você pode dar um nó com uma Corda caso seja bem-sucedido em um teste de Destreza ({@skill Sleight of Hand|XPHB}) {@dc 10}. A Corda pode ser rompida com um teste bem-sucedido de Força ({@skill Athletics|XPHB}) {@dc 20}.",
+      "data.text.rules.1": "Você só pode amarrar uma criatura involuntária com a Corda se ela estiver com a condição {@condition Grappled|XPHB}, {@condition Incapacitated|XPHB} ou {@condition Restrained|XPHB}. Se as pernas da criatura forem amarradas, ela recebe a condição {@condition Restrained|XPHB} até escapar. Escapar da Corda exige que a criatura seja bem-sucedida em um teste de Destreza ({@skill Acrobatics|XPHB}) {@dc 15} como ação."
+    },
+    "dnd2024:2024:item:saffron:srd-5.2": { "name": "Açafrão" },
+    "dnd2024:2024:item:salt:srd-5.2": { "name": "Sal" },
+    "dnd2024:2024:item:sheep:srd-5.2": { "name": "Ovelha" },
+    "dnd2024:2024:item:shovel:srd-5.2": {
+      "name": "Pá",
+      "data.text.rules.0": "Trabalhando por 1 hora, você pode usar uma Pá para cavar em terra ou material semelhante um buraco com 5 pés de cada lado."
+    },
+    "dnd2024:2024:item:signal-whistle:srd-5.2": {
+      "name": "Apito de Sinalização",
+      "data.text.rules.0": "Quando soprado como uma ação de {@action Utilize|XPHB}, um Apito de Sinalização produz um som que pode ser ouvido a até 600 pés."
+    },
+    "dnd2024:2024:item:silk:srd-5.2": { "name": "Seda" },
+    "dnd2024:2024:item:silver:srd-5.2": { "name": "Prata" },
+    "dnd2024:2024:item:sled:srd-5.2": { "name": "Trenó" },
+    "dnd2024:2024:item:sprig-of-mistletoe:srd-5.2": { "name": "Ramo de Visco" },
+    "dnd2024:2024:item:spyglass:srd-5.2": {
+      "name": "Luneta",
+      "data.text.rules.0": "Objetos observados através de uma Luneta parecem ter o dobro do tamanho."
+    },
+    "dnd2024:2024:item:stabling-per-day:srd-5.2": { "name": "Estabulagem (por dia)" },
+    "dnd2024:2024:item:tent:srd-5.2": {
+      "name": "Tenda",
+      "data.text.rules.0": "Uma Tenda acomoda até duas criaturas Pequenas ou Médias."
+    },
+    "dnd2024:2024:item:tinderbox:srd-5.2": {
+      "name": "Caixa de Fogo",
+      "data.text.rules.0": "Uma Caixa de Fogo é um pequeno recipiente com pederneira, aço para produzir faíscas e material inflamável (normalmente tecido seco embebido em óleo leve) usado para acender fogo. Usá-la para acender uma {@item Candle|XPHB|Vela}, {@item Lamp|XPHB|Lampião}, {@item Hooded Lantern|XPHB|Lanterna} ou {@item Torch|XPHB|Tocha} — ou qualquer outra coisa com combustível exposto — exige uma {@variantrule Bonus Action|XPHB|Ação Bônus}. Acender qualquer outro fogo leva 1 minuto."
+    },
+    "dnd2024:2024:item:torch:srd-5.2": {
+      "name": "Tocha",
+      "data.text.rules.0": "Uma Tocha queima por 1 hora, emitindo {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 20 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 20 pés. Quando você realiza a ação {@action Attack|XPHB}, pode atacar com a Tocha, usando-a como uma arma Corpo a Corpo Simples. Em um acerto, o alvo sofre 1 de dano de Fogo."
+    },
+    "dnd2024:2024:item:traveler-s-clothes:srd-5.2": {
+      "name": "Roupas de Viajante",
+      "data.text.rules.0": "Roupas de Viajante são vestimentas resistentes projetadas para viagens em diversos ambientes."
+    },
+    "dnd2024:2024:item:wagon:srd-5.2": { "name": "Carroça" },
+    "dnd2024:2024:item:wand:srd-5.2": { "name": "Varinha" },
+    "dnd2024:2024:item:wheat:srd-5.2": { "name": "Trigo" },
+    "dnd2024:2024:item:yew-wand:srd-5.2": { "name": "Varinha de Teixo" }
+  }
+}

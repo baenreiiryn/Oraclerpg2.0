@@ -1,0 +1,168 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "packs-containers",
+  "entries": {
+    "dnd2024:2024:item:arrows-20:srd-5.2": {
+      "name": "Flechas (20)",
+      "data.text.rules.0": "Flechas são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Flechas normalmente são armazenadas em uma {@item Quiver|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:backpack:srd-5.2": {
+      "name": "Mochila",
+      "data.text.rules.0": "Uma Mochila comporta até 30 libras em 1 pé cúbico. Ela também pode servir como alforje."
+    },
+    "dnd2024:2024:item:bag-of-holding:srd-5.2": {
+      "name": "Bolsa de Carga",
+      "data.text.rules.0": "Esta bolsa possui um espaço interno consideravelmente maior do que suas dimensões externas — por dentro, mede aproximadamente 2 pés quadrados por 4 pés de profundidade. A bolsa pode comportar até 500 libras, sem exceder um volume de 64 pés cúbicos. Ela pesa 5 libras independentemente de seu conteúdo. Retirar um item da bolsa exige uma ação de {@action Utilize|XPHB}.",
+      "data.text.rules.1": "Se a bolsa for sobrecarregada, perfurada ou rasgada, ela é destruída e seu conteúdo é espalhado pelo Plano Astral. Se a bolsa for virada do avesso, seu conteúdo é derramado sem sofrer dano, mas ela precisa ser desvirada antes de poder ser usada novamente. A bolsa contém ar suficiente para 10 minutos de respiração, divididos pelo número de criaturas que respiram em seu interior.",
+      "data.text.rules.2": "Colocar uma Bolsa de Carga dentro de um espaço extradimensional criado por uma {@item Heward's Handy Haversack|XDMG}, um Buraco Portátil ou item semelhante destrói instantaneamente ambos os itens e abre um portal para o Plano Astral. O portal se origina no ponto onde um item foi colocado dentro do outro. Qualquer criatura em uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 10 pés de raio centrada no portal é sugada através dele para um local aleatório no Plano Astral. O portal então se fecha. Ele é de mão única e não pode ser reaberto."
+    },
+    "dnd2024:2024:item:barrel:srd-5.2": {
+      "name": "Barril",
+      "data.text.rules.0": "Um Barril comporta até 40 galões de líquido ou até 4 pés cúbicos de produtos secos."
+    },
+    "dnd2024:2024:item:basket:srd-5.2": {
+      "name": "Cesto",
+      "data.text.rules.0": "Um Cesto comporta até 40 libras em 2 pés cúbicos."
+    },
+    "dnd2024:2024:item:bolts-20:srd-5.2": {
+      "name": "Virotes (20)",
+      "data.text.rules.0": "Virotes de besta são usados com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Virotes normalmente são armazenados em um {@item Crossbow Bolt Case|XPHB} (comprado separadamente)."
+    },
+    "dnd2024:2024:item:bucket:srd-5.2": {
+      "name": "Balde",
+      "data.text.rules.0": "Um Balde comporta até meio pé cúbico de conteúdo."
+    },
+    "dnd2024:2024:item:burglar-s-pack:srd-5.2": {
+      "name": "Pacote de Ladrão",
+      "data.text.rules.0": "Um Pacote de Ladrão contém os seguintes itens: {@item Backpack|XPHB}, {@item Ball Bearings|XPHB}, {@item Bell|XPHB}, 10 {@item Candle|XPHB|Candles}, {@item Crowbar|XPHB}, {@item Hooded Lantern|XPHB}, 7 frascos de {@item Oil|XPHB}, 5 dias de {@item Rations|XPHB}, {@item Rope|XPHB}, {@item Tinderbox|XPHB} e {@item Waterskin|XPHB}."
+    },
+    "dnd2024:2024:item:chest:srd-5.2": {
+      "name": "Baú",
+      "data.text.rules.0": "Um Baú comporta até 12 pés cúbicos de conteúdo."
+    },
+    "dnd2024:2024:item:common-wine-bottle:srd-5.2": {
+      "name": "Vinho Comum (garrafa)"
+    },
+    "dnd2024:2024:item:component-pouch:srd-5.2": {
+      "name": "Bolsa de Componentes",
+      "data.text.rules.0": "Uma Bolsa de Componentes é impermeável e possui compartimentos preenchidos com todos os componentes Materiais gratuitos de suas magias."
+    },
+    "dnd2024:2024:item:crossbow-bolt-case:srd-5.2": {
+      "name": "Estojo de Virotes de Besta",
+      "data.text.rules.0": "Um {@item Crossbow Bolt Case|XPHB} comporta até 20 Virotes."
+    },
+    "dnd2024:2024:item:diplomat-s-pack:srd-5.2": {
+      "name": "Pacote de Diplomata",
+      "data.text.rules.0": "Um Pacote de Diplomata contém os seguintes itens: {@item Chest|XPHB}, {@item Fine Clothes|XPHB}, {@item Ink|XPHB}, 5 {@item Ink Pen|XPHB|Ink Pens}, {@item Lamp|XPHB}, 2 {@item Map or Scroll Case|XPHB|Map or Scroll Cases}, 4 frascos de {@item Oil|XPHB}, 5 folhas de {@item Paper|XPHB}, 5 folhas de {@item Parchment|XPHB}, {@item Perfume|XPHB} e {@item Tinderbox|XPHB}."
+    },
+    "dnd2024:2024:item:dungeoneer-s-pack:srd-5.2": {
+      "name": "Pacote de Explorador de Masmorras",
+      "data.text.rules.0": "Um Pacote de Explorador de Masmorras contém os seguintes itens: {@item Backpack|XPHB}, {@item Caltrops|XPHB}, {@item Crowbar|XPHB}, 2 frascos de {@item Oil|XPHB}, 10 dias de {@item Rations|XPHB}, {@item Rope|XPHB}, {@item Tinderbox|XPHB}, 10 {@item Torch|XPHB|Torches} e {@item Waterskin|XPHB}."
+    },
+    "dnd2024:2024:item:efreeti-bottle:srd-5.2": {
+      "name": "Garrafa do Efreeti",
+      "data.text.rules.0": "Quando você realiza uma ação de {@action Magic|XPHB} para remover a rolha desta garrafa de latão pintada, uma nuvem de fumaça espessa escapa dela. Ao fim do seu turno, a fumaça desaparece em um clarão de fogo inofensivo e um {@creature Efreeti|XMM} aparece em um espaço desocupado a até 30 pés de você.",
+      "data.text.rules.1": "Na primeira vez que a garrafa é aberta, o Mestre rola na tabela a seguir para determinar o que acontece.",
+      "data.text.rules.2.columns.1": "Efeito",
+      "data.text.rules.2.rows.0.1": "O {@creature efreeti|XMM} ataca você. Depois de lutar por 5 rodadas, o efreeti desaparece e a garrafa perde sua magia.",
+      "data.text.rules.2.rows.1.1": "O {@creature efreeti|XMM} compreende seus idiomas e obedece aos seus comandos por 1 hora, após a qual retorna à garrafa e uma nova rolha o mantém contido. A rolha não pode ser removida por 24 horas. Nas duas próximas vezes em que a garrafa for aberta, o mesmo efeito ocorre. Se a garrafa for aberta uma quarta vez, o efreeti escapa e desaparece, e a garrafa perde sua magia.",
+      "data.text.rules.2.rows.2.1": "O {@creature efreeti|XMM} compreende seus idiomas e pode conjurar {@spell Wish|XPHB} uma vez para você. Ele desaparece quando concede o desejo ou após 1 hora, e a garrafa perde sua magia.",
+      "data.activities.0.name": "Conjurar Desejo"
+    },
+    "dnd2024:2024:item:entertainer-s-pack:srd-5.2": {
+      "name": "Pacote de Artista",
+      "data.text.rules.0": "Um Pacote de Artista contém os seguintes itens: {@item Backpack|XPHB}, {@item Bedroll|XPHB}, {@item Bell|XPHB}, {@item Bullseye Lantern|XPHB}, 3 {@item Costume|XPHB|Costumes}, {@item Mirror|XPHB}, 8 frascos de {@item Oil|XPHB}, 9 dias de {@item Rations|XPHB}, {@item Tinderbox|XPHB} e {@item Waterskin|XPHB}."
+    },
+    "dnd2024:2024:item:eversmoking-bottle:srd-5.2": {
+      "name": "Garrafa de Fumaça Eterna",
+      "data.text.rules.0": "Como uma ação de {@action Magic|XPHB}, você pode abrir ou fechar esta garrafa.",
+      "data.text.rules.1": "Abrir a garrafa faz uma fumaça espessa jorrar, formando uma nuvem que preenche uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 60 pés originada na garrafa. A área dentro da fumaça fica {@variantrule Heavily Obscured|XPHB|Fortemente Obscurecida}.",
+      "data.text.rules.2": "A cada minuto que a garrafa permanece aberta, o tamanho da {@variantrule Emanation [Area of Effect]|XPHB|Emanação} aumenta em 10 pés até atingir seu tamanho máximo de 120 pés.",
+      "data.text.rules.3": "Fechar a garrafa faz a nuvem permanecer fixa no lugar até se dispersar após 10 minutos. Um vento forte (como o criado pela magia {@spell Gust of Wind|XPHB}) dispersa a nuvem após 1 minuto."
+    },
+    "dnd2024:2024:item:explorer-s-pack:srd-5.2": {
+      "name": "Pacote de Explorador",
+      "data.text.rules.0": "Um Pacote de Explorador contém os seguintes itens: {@item Backpack|XPHB}, {@item Bedroll|XPHB}, 2 frascos de {@item Oil|XPHB}, 10 dias de {@item Rations|XPHB}, {@item Rope|XPHB}, {@item Tinderbox|XPHB}, 10 {@item Torch|XPHB|Torches} e {@item Waterskin|XPHB}."
+    },
+    "dnd2024:2024:item:fine-wine-bottle:srd-5.2": {
+      "name": "Vinho Fino (garrafa)"
+    },
+    "dnd2024:2024:item:flask:srd-5.2": {
+      "name": "Frasco",
+      "data.text.rules.0": "Um Frasco comporta até 1 pinta."
+    },
+    "dnd2024:2024:item:glass-bottle:srd-5.2": {
+      "name": "Garrafa de Vidro",
+      "data.text.rules.0": "Uma Garrafa de Vidro comporta até 1½ pinta."
+    },
+    "dnd2024:2024:item:iron-flask:srd-5.2": {
+      "name": "Frasco de Ferro",
+      "data.text.rules.0": "Enquanto segura este frasco de ferro com rolha de latão, você pode realizar uma ação de {@action Magic|XPHB} para escolher como alvo uma criatura que possa ver a até 60 pés de você. Se o frasco estiver vazio e o alvo for nativo de um plano de existência diferente daquele em que você está, o alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria {@dc 17} ou ficará aprisionado no frasco. Se o alvo já tiver sido aprisionado pelo frasco anteriormente, ele tem {@variantrule Advantage|XPHB|Vantagem} na salvaguarda. Uma vez aprisionada, a criatura permanece no frasco até ser libertada. O frasco pode conter apenas uma criatura por vez. Uma criatura aprisionada no frasco não envelhece e não precisa respirar, comer nem beber.",
+      "data.text.rules.1": "Você pode realizar uma ação de {@action Magic|XPHB} para remover a rolha do frasco e libertar a criatura em seu interior. A criatura então obedece aos seus comandos por 1 hora, compreendendo-os mesmo que não conheça o idioma em que são dados. Se você não emitir comandos ou der à criatura um comando que provavelmente resultaria em sua morte ou aprisionamento, ela se defende, mas não realiza outras ações. Ao fim da duração, a criatura age de acordo com sua disposição e alinhamento normais.",
+      "data.text.rules.2": "A magia {@spell Identify|XPHB} revela se o frasco contém uma criatura, mas a única maneira de determinar o tipo da criatura é abrir o frasco. Um Frasco de Ferro recém-descoberto pode já conter uma criatura escolhida pelo Mestre ou determinada aleatoriamente rolando na tabela a seguir (consulte o {@book Monster Manual|XMM} para o bloco de estatísticas da criatura).",
+      "data.text.rules.3.columns.1": "Conteúdo",
+      "data.text.rules.3.rows.0.1": "Nenhuma criatura"
+    },
+    "dnd2024:2024:item:iron-pot:srd-5.2": {
+      "name": "Panela de Ferro",
+      "data.text.rules.0": "Uma Panela de Ferro comporta até 1 galão."
+    },
+    "dnd2024:2024:item:iron-spikes:srd-5.2": {
+      "name": "Cravos de Ferro",
+      "data.text.rules.0": "Cravos de Ferro vêm em conjuntos de dez. Como uma ação de {@action Utilize|XPHB}, você pode usar um objeto contundente, como um {@item Light Hammer|XPHB}, para martelar um cravo em madeira, terra ou material semelhante. Você pode fazer isso para travar uma porta fechada ou para então amarrar uma {@item Rope|XPHB} ou {@item Chain|XPHB} ao Cravo."
+    },
+    "dnd2024:2024:item:jug:srd-5.2": {
+      "name": "Jarro",
+      "data.text.rules.0": "Um Jarro comporta até 1 galão."
+    },
+    "dnd2024:2024:item:map-or-scroll-case:srd-5.2": {
+      "name": "Estojo de Mapa ou Pergaminho",
+      "data.text.rules.0": "Um {@item Map or Scroll Case|XPHB} comporta até 10 folhas de papel ou 5 folhas de pergaminho."
+    },
+    "dnd2024:2024:item:needles-50:srd-5.2": {
+      "name": "Agulhas (50)",
+      "data.text.rules.0": "Agulhas de zarabatana são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Agulhas normalmente são armazenadas em uma {@item Pouch|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:pouch:srd-5.2": {
+      "name": "Algibeira",
+      "data.text.rules.0": "Uma Algibeira comporta até 6 libras em um quinto de pé cúbico."
+    },
+    "dnd2024:2024:item:priest-s-pack:srd-5.2": {
+      "name": "Pacote de Sacerdote",
+      "data.text.rules.0": "Um Pacote de Sacerdote contém os seguintes itens: {@item Backpack|XPHB}, {@item Blanket|XPHB}, {@item Holy Water|XPHB}, {@item Lamp|XPHB}, 7 dias de {@item Rations|XPHB}, {@item Robe|XPHB} e {@item Tinderbox|XPHB}."
+    },
+    "dnd2024:2024:item:quiver:srd-5.2": {
+      "name": "Aljava",
+      "data.text.rules.0": "Uma Aljava comporta até 20 Flechas."
+    },
+    "dnd2024:2024:item:sack:srd-5.2": {
+      "name": "Saco",
+      "data.text.rules.0": "Um Saco comporta até 30 libras em 1 pé cúbico."
+    },
+    "dnd2024:2024:item:scholar-s-pack:srd-5.2": {
+      "name": "Pacote de Estudioso",
+      "data.text.rules.0": "Um Pacote de Estudioso contém os seguintes itens: {@item Backpack|XPHB}, {@item Book|XPHB}, {@item Ink|XPHB}, {@item Ink Pen|XPHB}, {@item Lamp|XPHB}, 10 frascos de {@item Oil|XPHB}, 10 folhas de {@item Parchment|XPHB} e {@item Tinderbox|XPHB}."
+    },
+    "dnd2024:2024:item:sling-bullets-20:srd-5.2": {
+      "name": "Balas de Funda (20)",
+      "data.text.rules.0": "Balas de funda são usadas com uma arma que possua a propriedade munição para realizar um ataque à distância. Sempre que você ataca com a arma, gasta uma unidade de munição. Retirar a munição de uma aljava, estojo ou outro recipiente faz parte do ataque (você precisa de uma mão livre para carregar uma arma de uma mão). Ao fim da batalha, você pode recuperar metade da munição gasta dedicando 1 minuto para procurar pelo campo de batalha.",
+      "data.text.rules.1": "Balas de Funda normalmente são armazenadas em uma {@item Pouch|XPHB} (comprada separadamente)."
+    },
+    "dnd2024:2024:item:vial:srd-5.2": {
+      "name": "Frasco Pequeno",
+      "data.text.rules.0": "Um Frasco Pequeno comporta até 4 onças."
+    },
+    "dnd2024:2024:item:waterskin:srd-5.2": {
+      "name": "Odre",
+      "data.text.rules.0": "Um Odre comporta até 4 pintas. Se você não beber água suficiente, corre risco de desidratação."
+    }
+  }
+}

@@ -1,0 +1,324 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "tools",
+  "entries": {
+    "dnd2024:2024:item:alchemist-s-supplies:srd-5.2": {
+      "name": "Suprimentos de Alquimista",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Identificar uma substância ({@dc 15}) ou iniciar um incêndio ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Acid|XPHB}, {@item Alchemist's Fire|XPHB}, {@item Component Pouch|XPHB}, {@item Oil|XPHB}, {@item Paper|XPHB}, {@item Perfume|XPHB}"
+    },
+    "dnd2024:2024:item:bagpipes:srd-5.2": {
+      "name": "Gaita de Foles",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:brewer-s-supplies:srd-5.2": {
+      "name": "Suprimentos de Cervejeiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Detectar uma bebida envenenada ({@dc 15}) ou identificar uma bebida alcoólica ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Antitoxin|XPHB}"
+    },
+    "dnd2024:2024:item:calligrapher-s-supplies:srd-5.2": {
+      "name": "Suprimentos de Calígrafo",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Escrever um texto com floreios elaborados que dificultem sua falsificação ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Ink|XPHB}, {@item Spell Scroll|XDMG}"
+    },
+    "dnd2024:2024:item:carpenter-s-tools:srd-5.2": {
+      "name": "Ferramentas de Carpinteiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Força",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Selar ou forçar a abertura de uma porta ou recipiente ({@dc 20})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Club|XPHB}, {@item Greatclub|XPHB}, {@item Quarterstaff|XPHB}, {@item Barrel|XPHB}, {@item Chest|XPHB}, {@item Ladder|XPHB}, {@item Pole|XPHB}, {@item Portable Ram|XPHB}, {@item Torch|XPHB}"
+    },
+    "dnd2024:2024:item:cartographer-s-tools:srd-5.2": {
+      "name": "Ferramentas de Cartógrafo",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Desenhar um mapa de uma pequena área ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Map|XPHB}"
+    },
+    "dnd2024:2024:item:cobbler-s-tools:srd-5.2": {
+      "name": "Ferramentas de Sapateiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Modificar um calçado para conceder {@variantrule Advantage|XPHB|Vantagem} no próximo teste de Destreza ({@skill Acrobatics|XPHB}) de quem o estiver usando ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Climber's Kit|XPHB}"
+    },
+    "dnd2024:2024:item:cook-s-utensils:srd-5.2": {
+      "name": "Utensílios de Cozinheiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Melhorar o sabor de uma comida ({@dc 10}) ou detectar comida estragada ou envenenada ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Rations|XPHB}"
+    },
+    "dnd2024:2024:item:dice-set:srd-5.2": {
+      "name": "Conjunto de Dados",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Perceber se alguém está trapaceando ({@dc 10}) ou vencer o jogo ({@dc 20})"
+    },
+    "dnd2024:2024:item:disguise-kit:srd-5.2": {
+      "name": "Kit de Disfarce",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Aplicar maquiagem ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Costume|XPHB}"
+    },
+    "dnd2024:2024:item:drum:srd-5.2": {
+      "name": "Tambor",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:dulcimer:srd-5.2": {
+      "name": "Dulcimer",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:flute:srd-5.2": {
+      "name": "Flauta",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:forgery-kit:srd-5.2": {
+      "name": "Kit de Falsificação",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Imitar até 10 palavras da caligrafia de outra pessoa ({@dc 15}) ou reproduzir um selo de cera ({@dc 20})"
+    },
+    "dnd2024:2024:item:glassblower-s-tools:srd-5.2": {
+      "name": "Ferramentas de Vidreiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Determinar o que um objeto de vidro conteve nas últimas 24 horas ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Glass Bottle|XPHB}, {@item Magnifying Glass|XPHB}, {@item Spyglass|XPHB}, {@item Vial|XPHB}"
+    },
+    "dnd2024:2024:item:herbalism-kit:srd-5.2": {
+      "name": "Kit de Herbalismo",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Identificar uma planta ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Antitoxin|XPHB}, {@item Candle|XPHB}, {@item Healer's Kit|XPHB}, {@item Potion of Healing|XDMG}"
+    },
+    "dnd2024:2024:item:horn:srd-5.2": {
+      "name": "Trompa",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:horn-of-blasting:srd-5.2": {
+      "name": "Trompa da Explosão",
+      "data.text.rules.0": "Você pode realizar uma ação de {@action Magic|XPHB} para soprar a trompa, que emite uma explosão trovejante em um {@variantrule Cone [Area of Effect]|XPHB|Cone} de 30 pés, audível a até 600 pés. Cada criatura no {@variantrule Cone [Area of Effect]|XPHB|Cone} realiza uma salvaguarda de Constituição {@dc 15}. Em caso de falha, a criatura sofre {@damage 5d8} de dano Trovejante e recebe a condição {@condition Deafened|XPHB} por 1 minuto. Em caso de sucesso, sofre apenas metade desse dano. Objetos de vidro ou cristal no {@variantrule Cone [Area of Effect]|XPHB|Cone} que não estejam sendo vestidos nem carregados sofrem {@damage 10d8} de dano Trovejante.",
+      "data.text.rules.1": "Cada uso da magia da trompa tem {@chance 20} de chance de fazer a trompa explodir. A explosão causa {@damage 10d6} de dano de Força ao usuário e destrói a trompa."
+    },
+    "dnd2024:2024:item:horn-of-valhalla-brass:srd-5.2": {
+      "name": "Trompa de Valhalla, Latão",
+      "data.text.rules.0": "Você pode realizar uma ação de {@action Magic|XPHB} para soprar esta trompa. Em resposta, espíritos guerreiros do plano de Ysgard aparecem em espaços desocupados a até 60 pés de você. Cada espírito usa o bloco de estatísticas do {@creature Berserker|XMM} e retorna a Ysgard após 1 hora ou quando cai a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Os espíritos parecem guerreiros vivos e respirando e possuem {@variantrule Immunity|XPHB|Imunidade} às condições {@condition Charmed|XPHB} e {@condition Frightened|XPHB}. Depois que você usa a trompa, ela não pode ser usada novamente até que se passem 7 dias.",
+      "data.text.rules.1": "Uma trompa de latão invoca 3 {@creature Berserker|XMM|Berserkers}. Para usar a trompa de latão, você deve ter {@variantrule Proficiency|XPHB|Proficiência} com todas as armas Simples.",
+      "data.text.rules.2": "Se você soprar a trompa sem cumprir seu requisito, os {@creature Berserker|XMM|Berserkers} invocados atacam você. Se cumprir o requisito, eles são {@variantrule Friendly [Attitude]|XPHB|Amigáveis} com você e seus aliados e seguem seus comandos."
+    },
+    "dnd2024:2024:item:horn-of-valhalla-bronze:srd-5.2": {
+      "name": "Trompa de Valhalla, Bronze",
+      "data.text.rules.0": "Você pode realizar uma ação de {@action Magic|XPHB} para soprar esta trompa. Em resposta, espíritos guerreiros do plano de Ysgard aparecem em espaços desocupados a até 60 pés de você. Cada espírito usa o bloco de estatísticas do {@creature Berserker|XMM} e retorna a Ysgard após 1 hora ou quando cai a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Os espíritos parecem guerreiros vivos e respirando e possuem {@variantrule Immunity|XPHB|Imunidade} às condições {@condition Charmed|XPHB} e {@condition Frightened|XPHB}. Depois que você usa a trompa, ela não pode ser usada novamente até que se passem 7 dias.",
+      "data.text.rules.1": "Uma trompa de bronze invoca 4 {@creature Berserker|XMM|Berserkers}. Para usar a trompa de bronze, você deve ter treinamento com todas as armaduras Médias.",
+      "data.text.rules.2": "Se você soprar a trompa sem cumprir seu requisito, os {@creature Berserker|XMM|Berserkers} invocados atacam você. Se cumprir o requisito, eles são {@variantrule Friendly [Attitude]|XPHB|Amigáveis} com você e seus aliados e seguem seus comandos."
+    },
+    "dnd2024:2024:item:horn-of-valhalla-iron:srd-5.2": {
+      "name": "Trompa de Valhalla, Ferro",
+      "data.text.rules.0": "Você pode realizar uma ação de {@action Magic|XPHB} para soprar esta trompa. Em resposta, espíritos guerreiros do plano de Ysgard aparecem em espaços desocupados a até 60 pés de você. Cada espírito usa o bloco de estatísticas do {@creature Berserker|XMM} e retorna a Ysgard após 1 hora ou quando cai a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Os espíritos parecem guerreiros vivos e respirando e possuem {@variantrule Immunity|XPHB|Imunidade} às condições {@condition Charmed|XPHB} e {@condition Frightened|XPHB}. Depois que você usa a trompa, ela não pode ser usada novamente até que se passem 7 dias.",
+      "data.text.rules.1": "Uma trompa de ferro invoca 5 {@creature Berserker|XMM|Berserkers}. Para usar a trompa de ferro, você deve ter {@variantrule Proficiency|XPHB|Proficiência} com todas as armas Marciais.",
+      "data.text.rules.2": "Se você soprar a trompa sem cumprir seu requisito, os {@creature Berserker|XMM|Berserkers} invocados atacam você. Se cumprir o requisito, eles são {@variantrule Friendly [Attitude]|XPHB|Amigáveis} com você e seus aliados e seguem seus comandos."
+    },
+    "dnd2024:2024:item:horn-of-valhalla-silver:srd-5.2": {
+      "name": "Trompa de Valhalla, Prata",
+      "data.text.rules.0": "Você pode realizar uma ação de {@action Magic|XPHB} para soprar esta trompa. Em resposta, espíritos guerreiros do plano de Ysgard aparecem em espaços desocupados a até 60 pés de você. Cada espírito usa o bloco de estatísticas do {@creature Berserker|XMM} e retorna a Ysgard após 1 hora ou quando cai a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Os espíritos parecem guerreiros vivos e respirando e possuem {@variantrule Immunity|XPHB|Imunidade} às condições {@condition Charmed|XPHB} e {@condition Frightened|XPHB}. Depois que você usa a trompa, ela não pode ser usada novamente até que se passem 7 dias.",
+      "data.text.rules.1": "Uma trompa de prata invoca 2 {@creature Berserker|XMM|Berserkers}. Eles são {@variantrule Friendly [Attitude]|XPHB|Amigáveis} com você e seus aliados e seguem seus comandos."
+    },
+    "dnd2024:2024:item:jeweler-s-tools:srd-5.2": {
+      "name": "Ferramentas de Joalheiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Determinar o valor de uma gema ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Arcane Focus|XPHB}, {@item Holy Symbol|XPHB}"
+    },
+    "dnd2024:2024:item:leatherworker-s-tools:srd-5.2": {
+      "name": "Ferramentas de Coureiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Adicionar um desenho a um item de couro ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Sling|XPHB}, {@item Whip|XPHB}, {@item Hide Armor|XPHB}, {@item Leather Armor|XPHB}, {@item Studded Leather Armor|XPHB}, {@item Backpack|XPHB}, {@item Crossbow Bolt Case|XPHB}, {@item Map or Scroll Case|XPHB}, {@item Parchment|XPHB}, {@item Pouch|XPHB}, {@item Quiver|XPHB}, {@item Waterskin|XPHB}"
+    },
+    "dnd2024:2024:item:lute:srd-5.2": {
+      "name": "Alaúde",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:lyre:srd-5.2": {
+      "name": "Lira",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:mason-s-tools:srd-5.2": {
+      "name": "Ferramentas de Pedreiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Força",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Cinzelar um símbolo ou um buraco em pedra ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Block and Tackle|XPHB}"
+    },
+    "dnd2024:2024:item:navigator-s-tools:srd-5.2": {
+      "name": "Ferramentas de Navegador",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Traçar uma rota ({@dc 10}) ou determinar sua posição observando as estrelas ({@dc 15})"
+    },
+    "dnd2024:2024:item:painter-s-supplies:srd-5.2": {
+      "name": "Suprimentos de Pintor",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Pintar uma imagem reconhecível de algo que você tenha visto ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Druidic Focus|XPHB}, {@item Holy Symbol|XPHB}"
+    },
+    "dnd2024:2024:item:pan-flute:srd-5.2": {
+      "name": "Flauta de Pã",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:playing-cards:srd-5.2": {
+      "name": "Baralho",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Sabedoria",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Perceber se alguém está trapaceando ({@dc 10}) ou vencer o jogo ({@dc 20})"
+    },
+    "dnd2024:2024:item:poisoner-s-kit:srd-5.2": {
+      "name": "Kit de Venenos",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Detectar um objeto envenenado ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Basic Poison|XPHB}"
+    },
+    "dnd2024:2024:item:potter-s-tools:srd-5.2": {
+      "name": "Ferramentas de Oleiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Inteligência",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Determinar o que um objeto de cerâmica conteve nas últimas 24 horas ({@dc 15})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Jug|XPHB}, {@item Lamp|XPHB}"
+    },
+    "dnd2024:2024:item:shawm:srd-5.2": {
+      "name": "Charamela",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:smith-s-tools:srd-5.2": {
+      "name": "Ferramentas de Ferreiro",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Força",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Forçar a abertura de uma porta ou recipiente ({@dc 20})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "Qualquer arma Corpo a Corpo (exceto {@item Club|XPHB}, {@item Greatclub|XPHB}, {@item Quarterstaff|XPHB} e {@item Whip|XPHB}), armadura Média (exceto {@item Hide Armor|XPHB|Hide}), armadura Pesada, {@item Ball Bearings|XPHB}, {@item Bucket|XPHB}, {@item Caltrops|XPHB}, {@item Chain|XPHB}, {@item Crowbar|XPHB}, {@item Firearm Bullets (10)|XPHB|Firearm Bullets}, {@item Grappling Hook|XPHB}, {@item Iron Pot|XPHB}, {@item Iron Spikes|XPHB}, {@item Sling Bullets (20)|XPHB|Sling Bullets}"
+    },
+    "dnd2024:2024:item:thieves-tools:srd-5.2": {
+      "name": "Ferramentas de Ladrão",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Abrir uma fechadura ({@dc 15}) ou desarmar uma armadilha ({@dc 15})"
+    },
+    "dnd2024:2024:item:tinker-s-tools:srd-5.2": {
+      "name": "Ferramentas de Reparador",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Montar um item Minúsculo feito de sucata, que se desfaz após 1 minuto ({@dc 20})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Musket|XPHB}, {@item Pistol|XPHB}, {@item Bell|XPHB}, {@item Bullseye Lantern|XPHB}, {@item Flask|XPHB}, {@item Hooded Lantern|XPHB}, {@item Hunting Trap|XPHB}, {@item Lock|XPHB}, {@item Manacles|XPHB}, {@item Mirror|XPHB}, {@item Shovel|XPHB}, {@item Signal Whistle|XPHB}, {@item Tinderbox|XPHB}"
+    },
+    "dnd2024:2024:item:viol:srd-5.2": {
+      "name": "Viola",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Carisma",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Tocar uma melodia conhecida ({@dc 10}) ou improvisar uma música ({@dc 15})"
+    },
+    "dnd2024:2024:item:weaver-s-tools:srd-5.2": {
+      "name": "Ferramentas de Tecelão",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Remendar um rasgo em uma roupa ({@dc 10}) ou costurar um desenho Minúsculo ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Padded Armor|XPHB}, {@item Basket|XPHB}, {@item Bedroll|XPHB}, {@item Blanket|XPHB}, {@item Fine Clothes|XPHB}, {@item Net|XPHB}, {@item Robe|XPHB}, {@item Rope|XPHB}, {@item Sack|XPHB}, {@item String|XPHB}, {@item Tent|XPHB}, {@item Traveler's Clothes|XPHB}"
+    },
+    "dnd2024:2024:item:woodcarver-s-tools:srd-5.2": {
+      "name": "Ferramentas de Entalhador",
+      "data.text.rules.0.items.0.name": "Habilidade",
+      "data.text.rules.0.items.0.entries.0": "Destreza",
+      "data.text.rules.0.items.1.name": "Utilizar",
+      "data.text.rules.0.items.1.entries.0": "Entalhar um padrão em madeira ({@dc 10})",
+      "data.text.rules.0.items.2.name": "Fabricar",
+      "data.text.rules.0.items.2.entries.0": "{@item Club|XPHB}, {@item Greatclub|XPHB}, {@item Quarterstaff|XPHB}, armas à Distância (exceto {@item Pistol|XPHB}, {@item Musket|XPHB} e {@item Sling|XPHB}), {@item Arcane Focus|XPHB}, {@item Arrows (20)|XPHB|Arrows}, {@item Bolts (20)|XPHB|Bolts}, {@item Druidic Focus|XPHB}, {@item Ink Pen|XPHB}, {@item Needles (50)|XPHB|Needles}"
+    }
+  }
+}

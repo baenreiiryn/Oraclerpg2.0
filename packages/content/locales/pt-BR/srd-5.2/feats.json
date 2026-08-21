@@ -1,0 +1,130 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "entries": {
+    "dnd2024:2024:feature:feat-ability-score-improvement:srd-5.2": {
+      "name": "Aprimoramento de Atributo",
+      "data.text.rules.0": "Aumente um atributo à sua escolha em 2, ou aumente dois atributos à sua escolha em 1. Este talento não pode aumentar um atributo acima de 20.",
+      "data.text.rules.1.name": "Repetível",
+      "data.text.rules.1.entries.0": "Você pode escolher este talento mais de uma vez."
+    },
+    "dnd2024:2024:feature:feat-alert:srd-5.2": {
+      "name": "Alerta",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Proficiência em Iniciativa",
+      "data.text.rules.1.entries.0": "Quando você fizer uma rolagem de {@variantrule Initiative|XPHB}, poderá adicionar seu {@variantrule Proficiency|XPHB|Proficiency Bonus} à rolagem.",
+      "data.text.rules.2.name": "Troca de Iniciativa",
+      "data.text.rules.2.entries.0": "Imediatamente após rolar {@variantrule Initiative|XPHB}, você pode trocar sua {@variantrule Initiative|XPHB} pela {@variantrule Initiative|XPHB} de um aliado voluntário no mesmo combate. Você não pode fazer essa troca se você ou o aliado estiver com a condição {@condition Incapacitated|XPHB}.",
+      "data.actionRules.0.activity.name": "Troca de Iniciativa",
+      "data.actionRules.0.activity.description": "Troque sua Iniciativa com a de um aliado voluntário no mesmo combate que não esteja Incapacitado."
+    },
+    "dnd2024:2024:feature:feat-archery:srd-5.2": {
+      "name": "Arquearia",
+      "data.text.rules.0": "Você recebe +2 de bônus nas jogadas de ataque realizadas com armas à distância."
+    },
+    "dnd2024:2024:feature:feat-boon-of-combat-prowess:srd-5.2": {
+      "name": "Dádiva da Proeza em Combate",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Mira Inigualável",
+      "data.text.rules.1.entries.0": "Quando você errar uma jogada de ataque, pode acertar em vez disso. Depois de usar este benefício, você não poderá usá-lo novamente até o início do seu próximo turno."
+    },
+    "dnd2024:2024:feature:feat-boon-of-dimensional-travel:srd-5.2": {
+      "name": "Dádiva da Viagem Dimensional",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Passos Cintilantes",
+      "data.text.rules.1.entries.0": "Imediatamente após realizar a ação {@action Attack|XPHB} ou a ação {@action Magic|XPHB}, você pode se teleportar até 30 pés para um espaço desocupado que possa ver."
+    },
+    "dnd2024:2024:feature:feat-boon-of-fate:srd-5.2": {
+      "name": "Dádiva do Destino",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Alterar o Destino",
+      "data.text.rules.1.entries.0": "Quando você ou outra criatura a até 60 pés de você obtiver sucesso ou falha em um {@variantrule D20 Test|XPHB}, você pode rolar {@dice 2d4} e aplicar o total obtido como bônus ou penalidade à rolagem de {@dice d20}. Depois de usar este benefício, você não poderá usá-lo novamente até rolar {@variantrule Initiative|XPHB} ou terminar um {@variantrule Short Rest|XPHB|Short} ou {@variantrule Long Rest|XPHB}.",
+      "data.actionRules.0.activity.name": "Alterar o Destino",
+      "data.actionRules.0.activity.rolls.0.name": "Bônus/Penalidade",
+      "data.actionRules.0.activity.description": "Aplique a rolagem como bônus ou penalidade. Este uso também é recuperado quando você rola Iniciativa."
+    },
+    "dnd2024:2024:feature:feat-boon-of-irresistible-offense:srd-5.2": {
+      "name": "Dádiva da Ofensiva Irresistível",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Superar Defesas",
+      "data.text.rules.1.entries.0": "O dano de Concussão, Perfurante e Cortante que você causa sempre ignora {@variantrule Resistance|XPHB|Resistência}.",
+      "data.text.rules.2.name": "Golpe Avassalador",
+      "data.text.rules.2.entries.0": "Quando você obtiver 20 no {@dice d20} de uma jogada de ataque, poderá causar dano extra ao alvo igual ao valor do atributo aumentado por este talento. O tipo do dano extra é o mesmo do ataque."
+    },
+    "dnd2024:2024:feature:feat-boon-of-spell-recall:srd-5.2": {
+      "name": "Dádiva da Recordação de Magias",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Conjuração Gratuita",
+      "data.text.rules.1.entries.0": "Sempre que conjurar uma magia usando um espaço de magia de nível 1–4, role {@dice 1d4}. Se o número obtido for igual ao nível do espaço, o espaço não é gasto.",
+      "data.resourcePreservationRules.0.trigger.description": "Ao conjurar usando um espaço de magia de nível 1–4."
+    },
+    "dnd2024:2024:feature:feat-boon-of-the-night-spirit:srd-5.2": {
+      "name": "Dádiva do Espírito da Noite",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Fundir-se às Sombras",
+      "data.text.rules.1.entries.0": "Enquanto estiver em {@variantrule Dim Light|XPHB|Luz Fraca} ou {@variantrule Darkness|XPHB|Escuridão}, você pode conceder a si mesmo a condição {@condition Invisible|XPHB|Invisível} como uma {@variantrule Bonus Action|XPHB|Ação Bônus}. A condição termina em você imediatamente após realizar uma ação, uma {@variantrule Bonus Action|XPHB|Ação Bônus} ou uma {@variantrule Reaction|XPHB|Reação}.",
+      "data.text.rules.2.name": "Forma Sombria",
+      "data.text.rules.2.entries.0": "Enquanto estiver em {@variantrule Dim Light|XPHB|Luz Fraca} ou {@variantrule Darkness|XPHB|Escuridão}, você possui {@variantrule Resistance|XPHB|Resistência} a todos os tipos de dano, exceto Psíquico e Radiante.",
+      "data.actionRules.0.activity.name": "Fundir-se às Sombras"
+    },
+    "dnd2024:2024:feature:feat-boon-of-truesight:srd-5.2": {
+      "name": "Dádiva da Visão Verdadeira",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Visão Verdadeira",
+      "data.text.rules.1.entries.0": "Você possui {@sense Truesight|XPHB|Visão Verdadeira} com alcance de 60 pés."
+    },
+    "dnd2024:2024:feature:feat-defense:srd-5.2": {
+      "name": "Defesa",
+      "data.text.rules.0": "Enquanto estiver vestindo uma armadura Leve, Média ou Pesada, você recebe +1 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura}."
+    },
+    "dnd2024:2024:feature:feat-grappler:srd-5.2": {
+      "name": "Agarrador",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Golpear e Agarrar",
+      "data.text.rules.1.entries.0": "Quando você acerta uma criatura com um {@variantrule Unarmed Strike|XPHB|Ataque Desarmado} como parte da ação {@action Attack|XPHB|Atacar} no seu turno, pode usar ao mesmo tempo as opções Dano e Agarrar. Você pode usar este benefício apenas uma vez por turno.",
+      "data.text.rules.2.name": "Vantagem no Ataque",
+      "data.text.rules.2.entries.0": "Você possui {@variantrule Advantage|XPHB|Vantagem} nas jogadas de ataque contra uma criatura {@condition Grappled|XPHB|Agarrada} por você.",
+      "data.text.rules.3.name": "Lutador Ágil",
+      "data.text.rules.3.entries.0": "Você não precisa gastar movimento adicional para mover uma criatura {@condition Grappled|XPHB|Agarrada} por você se ela for do seu tamanho ou menor.",
+      "data.actionRules.0.activity.name": "Golpear e Agarrar",
+      "data.actionRules.0.activity.description": "Uma vez por turno, use ao mesmo tempo as opções Dano e Agarrar do Ataque Desarmado."
+    },
+    "dnd2024:2024:feature:feat-great-weapon-fighting:srd-5.2": {
+      "name": "Combate com Armas Grandes",
+      "data.text.rules.0": "Quando você rolar o dano de um ataque realizado com uma arma corpo a corpo que esteja empunhando com as duas mãos, poderá tratar qualquer resultado 1 ou 2 em um dado de dano como 3. A arma deve possuir a propriedade {@itemProperty 2h|XPHB|Duas Mãos} ou {@itemProperty V|XPHB|Versátil} para receber este benefício."
+    },
+    "dnd2024:2024:feature:feat-magic-initiate:srd-5.2": {
+      "name": "Iniciado em Magia",
+      "data.text.rules.0": "Você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Dois Truques",
+      "data.text.rules.1.entries.0": "Você aprende dois truques à sua escolha da lista de magias de {@filter Clérigo|spells|level=0;1|class=Cleric}, {@filter Druida|spells|level=0;1|class=Druid} ou {@filter Mago|spells|level=0;1|class=Wizard}. Inteligência, Sabedoria ou Carisma é seu atributo de conjuração para as magias deste talento (escolha ao selecionar este talento).",
+      "data.text.rules.2.name": "Magia de Nível 1",
+      "data.text.rules.2.entries.0": "Escolha uma magia de nível 1 da mesma lista selecionada para os truques deste talento. Você sempre tem essa magia preparada. Pode conjurá-la uma vez sem gastar um espaço de magia e recupera a capacidade de conjurá-la dessa forma ao terminar um {@variantrule Long Rest|XPHB|Descanso Longo}. Você também pode conjurar a magia usando quaisquer espaços de magia que possua.",
+      "data.text.rules.3.name": "Troca de Magia",
+      "data.text.rules.3.entries.0": "Sempre que ganhar um novo nível, você pode substituir uma das magias escolhidas para este talento por outra magia do mesmo nível da lista de magias escolhida.",
+      "data.text.rules.4.name": "Repetível",
+      "data.text.rules.4.entries.0": "Você pode escolher este talento mais de uma vez, mas deve escolher uma lista de magias diferente a cada vez.",
+      "data.spellGrantChoices.0.options.0.name": "Magias de Clérigo",
+      "data.spellGrantChoices.0.options.1.name": "Magias de Druida",
+      "data.spellGrantChoices.0.options.2.name": "Magias de Mago"
+    },
+    "dnd2024:2024:feature:feat-savage-attacker:srd-5.2": {
+      "name": "Atacante Selvagem",
+      "data.text.rules.0": "Você treinou para desferir golpes especialmente devastadores. Uma vez por turno, quando acertar um alvo com uma arma, pode rolar os dados de dano da arma duas vezes e usar qualquer uma das rolagens contra o alvo."
+    },
+    "dnd2024:2024:feature:feat-skilled:srd-5.2": {
+      "name": "Habilidoso",
+      "data.text.rules.0": "Você recebe proficiência em qualquer combinação de três {@table Skill List; Skills|XPHB|perícias} ou {@filter ferramentas|items|type=tool;artisan's tools;instrument;gaming set} à sua escolha.",
+      "data.text.rules.1.name": "Repetível",
+      "data.text.rules.1.entries.0": "Você pode escolher este talento mais de uma vez."
+    },
+    "dnd2024:2024:feature:feat-two-weapon-fighting:srd-5.2": {
+      "name": "Combate com Duas Armas",
+      "data.text.rules.0": "Quando você fizer um ataque extra como resultado do uso de uma arma que possua a propriedade {@itemProperty L|XPHB|Leve}, poderá adicionar seu modificador de atributo ao dano desse ataque se ainda não estiver adicionando esse modificador ao dano."
+    }
+  }
+}

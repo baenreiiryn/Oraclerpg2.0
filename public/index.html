@@ -1,22 +1,34 @@
 <!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>OracleRPG 2.0</title>
-    <style>
-      body { font-family: system-ui, sans-serif; margin: 0; min-height: 100vh; display: grid; place-items: center; background: #111; color: #eee; }
-      main { max-width: 680px; padding: 32px; }
-      h1 { margin: 0 0 12px; }
-      p { line-height: 1.6; color: #bbb; }
-      code { color: #fff; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <h1>OracleRPG 2.0</h1>
-      <p>The OracleRPG 2.0 core workspace is online. The current repository is focused on the structured compendium, schemas, importers, and validation pipelines. The web application will be connected here when <code>apps/web</code> is introduced.</p>
-      <!-- Vercel checkpoint: 2026-08-20 -->
-    </main>
-  </body>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>OracleRPG</title>
+  <style>
+    @font-face{font-family:"Black Chancery";src:url("https://db.onlinewebfonts.com/t/753833d2833e9f73b56cffae357cf95f.woff2") format("woff2");font-display:swap;font-style:normal;font-weight:400}
+    :root{color-scheme:dark;--bg:#0b090c;--surface:rgba(24,20,27,.9);--border:rgba(223,190,130,.18);--text:#f4eee4;--muted:#a69da8;--gold:#e7c580;--violet:#aa92d1}
+    *{box-sizing:border-box}html{background:var(--bg)}body{margin:0;min-height:100dvh;color:var(--text);font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -10%,rgba(145,112,177,.16),transparent 31rem),radial-gradient(circle at 105% 42%,rgba(151,103,55,.09),transparent 25rem),linear-gradient(180deg,#100d12,#0a080b);overflow-x:hidden}body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.018) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.012) 1px,transparent 1px);background-size:30px 30px;mask-image:linear-gradient(to bottom,black,transparent 76%)}button{font:inherit}.shell{width:min(100%,520px);min-height:100dvh;margin:0 auto;padding:max(22px,env(safe-area-inset-top)) 20px max(30px,env(safe-area-inset-bottom));position:relative}.brand{display:flex;justify-content:center;align-items:center;min-height:76px;margin-bottom:18px}.brand-mark{position:relative;font-family:"Black Chancery",Georgia,serif;font-size:clamp(42px,12vw,58px);line-height:.9;color:#f3eadb;text-shadow:0 4px 22px rgba(0,0,0,.5)}.brand-mark span{color:var(--gold)}.brand-mark::after{content:"";position:absolute;left:12%;right:12%;bottom:-13px;height:1px;background:linear-gradient(90deg,transparent,rgba(231,197,128,.62),transparent)}.section{margin-top:27px}.section-head{margin-bottom:17px}.eyebrow{margin:0 0 2px;color:var(--gold);font-family:"Black Chancery",Georgia,serif;font-size:17px;line-height:1}.section-title{margin:0;font-family:"Black Chancery",Georgia,serif;font-size:32px;font-weight:400;line-height:1.02}.section-caption{margin:7px 0 0;color:var(--muted);font-size:12px;line-height:1.5}.campaign-strip{display:grid;grid-auto-flow:column;grid-auto-columns:118px;gap:15px;overflow-x:auto;scroll-snap-type:inline mandatory;margin:0 -20px;padding:5px 20px 14px;scrollbar-width:none}.campaign-strip::-webkit-scrollbar{display:none}.campaign-token{appearance:none;border:0;background:transparent;color:inherit;padding:0;text-align:center;scroll-snap-align:start}.token-ring{width:108px;aspect-ratio:1;margin:0 auto 8px;border-radius:50%;position:relative;padding:7px;background:#090909;border:2px solid #020202;box-shadow:0 11px 22px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.06) inset,0 0 0 2px rgba(0,0,0,.62)}.token-ring::before{content:"";position:absolute;inset:4px;border-radius:50%;border:2px solid rgba(90,87,80,.78);z-index:3}.token-ring::after{content:"";position:absolute;inset:9px;border-radius:50%;border:1px solid rgba(5,5,5,.9);box-shadow:inset 0 0 0 1px rgba(255,255,255,.04);z-index:3}.portrait{width:100%;height:100%;border-radius:50%;overflow:hidden;position:relative;display:block;box-shadow:inset 0 0 18px rgba(0,0,0,.36)}.portrait::before{content:"";position:absolute;width:34%;aspect-ratio:.84;left:33%;top:17%;border-radius:48% 48% 44% 44%;background:rgba(12,10,13,.66);box-shadow:0 31px 0 15px rgba(12,10,13,.7)}.portrait::after{content:"";position:absolute;left:12%;right:12%;bottom:4%;height:38%;border-radius:52% 52% 24% 24%;background:rgba(12,10,13,.7)}.ember{background:radial-gradient(circle at 44% 27%,rgba(255,193,119,.26),transparent 22%),linear-gradient(145deg,#744333,#231317 72%)}.moon{background:radial-gradient(circle at 52% 27%,rgba(200,214,255,.27),transparent 22%),linear-gradient(145deg,#344967,#11151d 72%)}.forest{background:radial-gradient(circle at 50% 27%,rgba(190,229,176,.22),transparent 22%),linear-gradient(145deg,#35503b,#111814 72%)}.violet{background:radial-gradient(circle at 50% 27%,rgba(218,186,255,.24),transparent 22%),linear-gradient(145deg,#4d3861,#18111f 72%)}.campaign-name{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"Black Chancery",Georgia,serif;font-size:19px;line-height:1}.character-name{display:block;margin-top:3px;color:var(--muted);font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.divider{height:1px;margin:18px 0 0;background:linear-gradient(90deg,transparent,rgba(231,197,128,.16),transparent)}.action-stack{display:grid;gap:12px;margin-top:18px}.action-card{width:100%;min-height:82px;border:1px solid var(--border);border-radius:18px;padding:16px 17px;display:grid;grid-template-columns:46px 1fr 24px;align-items:center;gap:14px;color:inherit;text-align:left;background:linear-gradient(145deg,rgba(255,255,255,.034),transparent 58%),var(--surface);box-shadow:0 16px 40px rgba(0,0,0,.3);position:relative;overflow:hidden}.action-card::before{content:"";position:absolute;left:0;top:10%;bottom:10%;width:2px;background:linear-gradient(180deg,transparent,var(--gold),transparent)}.action-card.homebrew::before{background:linear-gradient(180deg,transparent,var(--violet),transparent)}.action-icon{width:46px;aspect-ratio:1;display:grid;place-items:center;border-radius:14px;color:var(--gold);background:rgba(231,197,128,.075);border:1px solid rgba(231,197,128,.12)}.homebrew .action-icon{color:#c2ade2;background:rgba(170,146,209,.08);border-color:rgba(170,146,209,.14)}.action-icon svg,.chevron svg{fill:none;stroke:currentColor;stroke-linecap:round;stroke-linejoin:round}.action-icon svg{width:23px;height:23px;stroke-width:1.7}.chevron{color:rgba(245,240,232,.35);display:grid;place-items:center}.chevron svg{width:19px;height:19px;stroke-width:1.8}.action-title{display:block;font-family:"Black Chancery",Georgia,serif;font-size:24px;line-height:1}.action-subtitle{display:block;margin-top:5px;color:var(--muted);font-size:11px;line-height:1.35}.settings{cursor:pointer}.prototype{margin:24px auto 0;max-width:360px;color:rgba(166,157,168,.62);font-size:10px;line-height:1.5;text-align:center}@media(prefers-reduced-motion:no-preference){.action-card,.token-ring{transition:transform 160ms ease}.campaign-token:active .token-ring,.action-card:active{transform:scale(.98)}}
+  </style>
+  <link rel="stylesheet" href="/theme.css" />
+  <script src="/theme.js"></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="brand"><div class="brand-mark">Oracle<span>RPG</span></div></header>
+    <section class="section"><div class="section-head"><p class="eyebrow">Suas histórias</p><h1 class="section-title">Continuar campanha</h1><p class="section-caption">Escolha um personagem para retornar à aventura.</p></div><div class="campaign-strip">
+      <button class="campaign-token"><span class="token-ring"><span class="portrait ember"></span></span><span class="campaign-name">Avernus</span><span class="character-name">Vaxii</span></button>
+      <button class="campaign-token"><span class="token-ring"><span class="portrait moon"></span></span><span class="campaign-name">Mytharyn</span><span class="character-name">Tenzai</span></button>
+      <button class="campaign-token"><span class="token-ring"><span class="portrait forest"></span></span><span class="campaign-name">Costa da Espada</span><span class="character-name">Dio</span></button>
+      <button class="campaign-token"><span class="token-ring"><span class="portrait violet"></span></span><span class="campaign-name">Night City</span><span class="character-name">Kanami</span></button>
+    </div></section>
+    <div class="divider"></div>
+    <section class="section"><div class="section-head"><p class="eyebrow">Oracle</p><h2 class="section-title">O que vamos criar?</h2></div><div class="action-stack">
+      <button class="action-card" type="button" aria-disabled="true"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M12 3v18M3 12h18"/></svg></span><span><span class="action-title">Iniciar nova campanha</span><span class="action-subtitle">Comece uma nova história no OracleRPG.</span></span><span class="chevron"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+      <button class="action-card homebrew" type="button" onclick="location.href='compendium.html'" aria-label="Abrir compêndio"><span class="action-icon"><svg viewBox="0 0 24 24"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H11v16H6.5A2.5 2.5 0 0 0 4 21.5z"/><path d="M20 5.5A2.5 2.5 0 0 0 17.5 3H13v16h4.5a2.5 2.5 0 0 1 2.5 2.5z"/></svg></span><span><span class="action-title">Compêndio</span><span class="action-subtitle">Consulte o SRD e crie ou edite conteúdo Homebrew.</span></span><span class="chevron"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+      <button class="action-card settings" type="button" onclick="location.href='settings.html'" aria-label="Abrir configurações"><span class="action-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" opacity=".55"/></svg></span><span><span class="action-title">Configurações</span><span class="action-subtitle">Preferências, conta e aparência do aplicativo.</span></span><span class="chevron"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></span></button>
+    </div></section>
+    <p class="prototype">Compêndio e Configurações possuem navegação. A criação de campanha continua apenas visual.</p>
+  </main>
+</body>
 </html>

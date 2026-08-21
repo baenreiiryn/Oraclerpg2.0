@@ -1,0 +1,210 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "spell",
+  "scope": "cantrips",
+  "entries": {
+    "dnd2024:2024:spell:acid-splash:srd-5.2": {
+      "name": "Espirro Ácido",
+      "data.text.rules.0": "Você cria uma bolha ácida em um ponto dentro do alcance, onde ela explode em uma {@variantrule Sphere [Area of Effect]|XPHB|Sphere} de 5 pés de raio. Cada criatura nessa {@variantrule Sphere [Area of Effect]|XPHB|Sphere} deve ser bem-sucedida em uma salvaguarda de Destreza ou sofrer {@damage 1d6} de dano Ácido.",
+      "data.activities.0.name": "Conjurar Espirro Ácido"
+    },
+    "dnd2024:2024:spell:chill-touch:srd-5.2": {
+      "name": "Toque Arrepiante",
+      "data.text.rules.0": "Canalizando o frio da sepultura, faça um ataque mágico corpo a corpo contra um alvo ao seu alcance. Se acertar, o alvo sofre {@damage 1d10} de dano Necrótico e não pode recuperar {@variantrule Hit Points|XPHB} até o final do seu próximo turno.",
+      "data.activities.0.name": "Ataque"
+    },
+    "dnd2024:2024:spell:dancing-lights:srd-5.2": {
+      "name": "Luzes Dançantes",
+      "data.text.rules.0": "Você cria até quatro luzes do tamanho de tochas dentro do alcance, fazendo com que pareçam tochas, lanternas ou orbes luminosos que pairam pela duração. Como alternativa, você combina as quatro luzes em uma única forma luminosa Média, vagamente humanoide. Independentemente da forma escolhida, cada luz emite {@variantrule Dim Light|XPHB} em um raio de 10 pés.",
+      "data.text.rules.1": "Como uma {@variantrule Bonus Action|XPHB}, você pode mover as luzes em até 60 pés para um espaço dentro do alcance. Uma luz deve permanecer a até 20 pés de outra luz criada por esta magia e desaparece se ultrapassar o alcance da magia.",
+      "data.activities.0.name": "Criar Luzes",
+      "data.activities.1.name": "Mover Luzes"
+    },
+    "dnd2024:2024:spell:druidcraft:srd-5.2": {
+      "name": "Druidismo",
+      "data.text.rules.0": "Sussurrando para os espíritos da natureza, você cria um dos efeitos a seguir dentro do alcance.",
+      "data.text.rules.1.name": "Previsor do Clima",
+      "data.text.rules.1.entries.0": "Você cria um efeito sensorial Minúsculo e inofensivo que prevê como estará o clima em sua localização nas próximas 24 horas. O efeito pode se manifestar como um orbe dourado para céu limpo, uma nuvem para chuva, flocos caindo para neve e assim por diante. Esse efeito persiste por 1 rodada.",
+      "data.text.rules.2.name": "Florescer",
+      "data.text.rules.2.entries.0": "Você faz instantaneamente uma flor desabrochar, uma vagem de sementes se abrir ou um broto de folha florescer.",
+      "data.text.rules.3.name": "Efeito Sensorial",
+      "data.text.rules.3.entries.0": "Você cria um efeito sensorial inofensivo, como folhas caindo, fadas espectrais dançando, uma brisa suave, o som de um animal ou o leve odor de um gambá. O efeito deve caber em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 5 pés.",
+      "data.text.rules.4.name": "Manipular Fogo",
+      "data.text.rules.4.entries.0": "Você acende ou apaga uma vela, uma tocha ou uma fogueira.",
+      "data.activities.0.name": "Utilidade"
+    },
+    "dnd2024:2024:spell:eldritch-blast:srd-5.2": {
+      "name": "Rajada Mística",
+      "data.text.rules.0": "Você lança um raio de energia crepitante. Faça um ataque mágico à distância contra uma criatura ou objeto dentro do alcance. Se acertar, o alvo sofre {@damage 1d10} de dano de Força.",
+      "data.activities.0.name": "Conjurar Rajada Mística"
+    },
+    "dnd2024:2024:spell:elementalism:srd-5.2": {
+      "name": "Elementalismo",
+      "data.text.rules.0": "Você exerce controle sobre os elementos, criando um dos efeitos a seguir dentro do alcance.",
+      "data.text.rules.1.name": "Invocar Ar",
+      "data.text.rules.1.entries.0": "Você cria uma brisa forte o bastante para ondular tecidos, levantar poeira, agitar folhas e fechar portas e venezianas abertas, tudo em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 5 pés. Portas e venezianas mantidas abertas por alguém ou alguma coisa não são afetadas.",
+      "data.text.rules.2.name": "Invocar Terra",
+      "data.text.rules.2.entries.0": "Você cria uma fina camada de poeira ou areia que cobre superfícies em uma área quadrada de 5 pés, ou faz uma única palavra aparecer com sua caligrafia em um trecho de terra ou areia.",
+      "data.text.rules.3.name": "Invocar Fogo",
+      "data.text.rules.3.entries.0": "Você cria uma fina nuvem de brasas inofensivas e fumaça colorida e perfumada em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 5 pés. Você escolhe a cor e o aroma, e as brasas podem acender velas, tochas ou lamparinas nessa área. O aroma da fumaça permanece por 1 minuto.",
+      "data.text.rules.4.name": "Invocar Água",
+      "data.text.rules.4.entries.0": "Você cria um borrifo de névoa fresca que umedece levemente criaturas e objetos em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 5 pés. Como alternativa, você cria 1 xícara de água limpa em um recipiente aberto ou sobre uma superfície, e a água evapora em 1 minuto.",
+      "data.text.rules.5.name": "Moldar Elemento",
+      "data.text.rules.5.entries.0": "Você faz terra, areia, fogo, fumaça, névoa ou água que caiba em um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 1 pé assumir uma forma rudimentar (como a de uma criatura) por 1 hora.",
+      "data.activities.0.name": "Invocar Elemento",
+      "data.activities.0.description": "Escolha um dos efeitos elementais descritos na magia.",
+      "data.activities.1.name": "Moldar Elemento"
+    },
+    "dnd2024:2024:spell:fire-bolt:srd-5.2": {
+      "name": "Raio de Fogo",
+      "data.text.rules.0": "Você arremessa uma centelha de fogo contra uma criatura ou objeto dentro do alcance. Faça um ataque mágico à distância contra o alvo. Se acertar, o alvo sofre {@damage 1d10} de dano de Fogo. Um objeto inflamável atingido por esta magia começa a {@hazard burning|XPHB} se não estiver sendo vestido ou carregado.",
+      "data.activities.0.name": "Conjurar Raio de Fogo"
+    },
+    "dnd2024:2024:spell:guidance:srd-5.2": {
+      "name": "Orientação",
+      "data.text.rules.0": "Você toca uma criatura voluntária e escolhe uma perícia. Até a magia terminar, a criatura adiciona {@dice 1d4} a qualquer teste de atributo que use a perícia escolhida.",
+      "data.activities.0.name": "Utilidade"
+    },
+    "dnd2024:2024:spell:light:srd-5.2": {
+      "name": "Luz",
+      "data.text.rules.0": "Você toca um objeto Grande ou menor que não esteja sendo vestido ou carregado por outra pessoa. Até a magia terminar, o objeto emite {@variantrule Bright Light|XPHB} em um raio de 20 pés e {@variantrule Dim Light|XPHB} por mais 20 pés. A luz pode ter a cor que você desejar.",
+      "data.text.rules.1": "Cobrir o objeto com algo opaco bloqueia a luz. A magia termina se você conjurá-la novamente.",
+      "data.activities.0.name": "Conjurar Luz"
+    },
+    "dnd2024:2024:spell:mage-hand:srd-5.2": {
+      "name": "Mão Mágica",
+      "data.text.rules.0": "Uma mão espectral flutuante aparece em um ponto à sua escolha dentro do alcance. A mão permanece pela duração. Ela desaparece se ficar a mais de 30 pés de você ou se você conjurar esta magia novamente.",
+      "data.text.rules.1": "Ao conjurar a magia, você pode usar a mão para manipular um objeto, abrir uma porta ou recipiente destrancado, guardar ou retirar um item de um recipiente aberto ou despejar o conteúdo de um frasco.",
+      "data.text.rules.2": "Como uma ação de {@action Magic|XPHB} em seus turnos posteriores, você pode controlar a mão novamente dessa forma. Como parte dessa ação, pode mover a mão em até 30 pés.",
+      "data.text.rules.3": "A mão não pode atacar, ativar itens mágicos nem carregar mais de 10 libras.",
+      "data.activities.0.name": "Conjurar Mão Mágica"
+    },
+    "dnd2024:2024:spell:mending:srd-5.2": {
+      "name": "Consertar",
+      "data.text.rules.0": "Esta magia repara uma única quebra ou rasgo em um objeto que você toca, como um elo partido de uma corrente, duas metades de uma chave quebrada, uma capa rasgada ou um odre furado. Desde que a quebra ou o rasgo não exceda 1 pé em nenhuma dimensão, você o conserta sem deixar vestígios do dano anterior.",
+      "data.text.rules.1": "Esta magia pode reparar fisicamente um item mágico, mas não pode restaurar a magia desse objeto.",
+      "data.activities.0.name": "Conjurar Consertar"
+    },
+    "dnd2024:2024:spell:message:srd-5.2": {
+      "name": "Mensagem",
+      "data.text.rules.0": "Você aponta para uma criatura dentro do alcance e sussurra uma mensagem. O alvo (e somente ele) ouve a mensagem e pode responder em um sussurro que somente você consegue ouvir.",
+      "data.text.rules.1": "Você pode conjurar esta magia através de objetos sólidos se estiver familiarizado com o alvo e souber que ele está além da barreira. Silêncio mágico; 1 pé de pedra, metal ou madeira; ou uma fina folha de chumbo bloqueiam a magia.",
+      "data.activities.0.name": "Conjurar Mensagem"
+    },
+    "dnd2024:2024:spell:minor-illusion:srd-5.2": {
+      "name": "Ilusão Menor",
+      "data.text.rules.0": "Você cria um som ou a imagem de um objeto dentro do alcance, que permanece pela duração. Veja abaixo a descrição de cada efeito. A ilusão termina se você conjurar esta magia novamente.",
+      "data.text.rules.1": "Se uma criatura realizar uma ação de {@action Study|XPHB} para examinar o som ou a imagem, ela pode determinar que se trata de uma ilusão com um teste bem-sucedido de Inteligência ({@skill Investigation|XPHB}) contra a CD de salvaguarda de sua magia. Se uma criatura discernir a ilusão pelo que ela é, a ilusão se torna tênue para ela.",
+      "data.text.rules.2.name": "Som",
+      "data.text.rules.2.entries.0": "Se você criar um som, seu volume pode variar de um sussurro a um grito. Pode ser sua voz, a voz de outra pessoa, o rugido de um leão, o rufar de tambores ou qualquer outro som à sua escolha. O som continua sem interrupção durante toda a duração, ou você pode produzir sons distintos em momentos diferentes antes de a magia terminar.",
+      "data.text.rules.3.name": "Imagem",
+      "data.text.rules.3.entries.0": "Se você criar a imagem de um objeto — como uma cadeira, pegadas enlameadas ou um pequeno baú — ela não pode ser maior que um {@variantrule Cube [Area of Effect]|XPHB|Cube} de 5 pés. A imagem não pode produzir som, luz, cheiro ou qualquer outro efeito sensorial. A interação física com a imagem revela que se trata de uma ilusão, pois objetos podem atravessá-la.",
+      "data.activities.0.name": "Utilidade",
+      "data.activities.1.name": "Estudar"
+    },
+    "dnd2024:2024:spell:poison-spray:srd-5.2": {
+      "name": "Spray Venenoso",
+      "data.text.rules.0": "Você borrifa uma névoa tóxica contra uma criatura dentro do alcance. Faça um ataque mágico à distância contra o alvo. Se acertar, o alvo sofre {@damage 1d12} de dano de Veneno.",
+      "data.activities.0.name": "Conjurar Spray Venenoso"
+    },
+    "dnd2024:2024:spell:prestidigitation:srd-5.2": {
+      "name": "Prestidigitação",
+      "data.text.rules.0": "Você cria um efeito mágico dentro do alcance. Escolha um dos efeitos abaixo. Se conjurar esta magia várias vezes, pode manter até três de seus efeitos não instantâneos ativos ao mesmo tempo.",
+      "data.text.rules.1.name": "Efeito Sensorial",
+      "data.text.rules.1.entries.0": "Você cria um efeito sensorial instantâneo e inofensivo, como uma chuva de faíscas, uma rajada de vento, notas musicais suaves ou um odor peculiar.",
+      "data.text.rules.2.name": "Manipular Fogo",
+      "data.text.rules.2.entries.0": "Você acende ou apaga instantaneamente uma vela, uma tocha ou uma pequena fogueira.",
+      "data.text.rules.3.name": "Limpar ou Sujar",
+      "data.text.rules.3.entries.0": "Você limpa ou suja instantaneamente um objeto de até 1 pé cúbico.",
+      "data.text.rules.4.name": "Sensação Menor",
+      "data.text.rules.4.entries.0": "Você esfria, aquece ou dá sabor a até 1 pé cúbico de material inanimado por 1 hora.",
+      "data.text.rules.5.name": "Marca Mágica",
+      "data.text.rules.5.entries.0": "Você faz uma cor, uma pequena marca ou um símbolo aparecer em um objeto ou superfície por 1 hora.",
+      "data.text.rules.6.name": "Criação Menor",
+      "data.text.rules.6.entries.0": "Você cria uma bugiganga não mágica ou uma imagem ilusória que caiba em sua mão. Ela dura até o final do seu próximo turno. Uma bugiganga não pode causar dano e não possui valor monetário.",
+      "data.activities.0.name": "Conjurar Prestidigitação"
+    },
+    "dnd2024:2024:spell:produce-flame:srd-5.2": {
+      "name": "Produzir Chama",
+      "data.text.rules.0": "Uma chama tremeluzente aparece em sua mão e permanece ali pela duração. Enquanto estiver ali, a chama não emite calor nem incendeia nada e produz {@variantrule Bright Light|XPHB} em um raio de 20 pés e {@variantrule Dim Light|XPHB} por mais 20 pés. A magia termina se você conjurá-la novamente.",
+      "data.text.rules.1": "Até a magia terminar, você pode realizar uma ação de {@action Magic|XPHB} para arremessar fogo contra uma criatura ou objeto a até 60 pés de você. Faça um ataque mágico à distância. Se acertar, o alvo sofre {@damage 1d8} de dano de Fogo.",
+      "data.activities.0.name": "Conjurar",
+      "data.activities.1.name": "Arremessar Fogo"
+    },
+    "dnd2024:2024:spell:ray-of-frost:srd-5.2": {
+      "name": "Raio de Gelo",
+      "data.text.rules.0": "Um raio gélido de luz azul-esbranquiçada dispara em direção a uma criatura dentro do alcance. Faça um ataque mágico à distância contra o alvo. Se acertar, ele sofre {@damage 1d8} de dano de Frio e sua {@variantrule Speed|XPHB} é reduzida em 10 pés até o início do seu próximo turno.",
+      "data.activities.0.name": "Ataque"
+    },
+    "dnd2024:2024:spell:resistance:srd-5.2": {
+      "name": "Resistência",
+      "data.text.rules.0": "Você toca uma criatura voluntária e escolhe um tipo de dano: Ácido, Contundente, Frio, Fogo, Elétrico, Necrótico, Perfurante, Veneno, Radiante, Cortante ou Trovejante. Quando a criatura sofrer dano do tipo escolhido antes de a magia terminar, ela reduz o dano total sofrido em {@dice 1d4}. Uma criatura pode se beneficiar desta magia apenas uma vez por turno.",
+      "data.activities.0.name": "Utilidade"
+    },
+    "dnd2024:2024:spell:sacred-flame:srd-5.2": {
+      "name": "Chama Sagrada",
+      "data.text.rules.0": "Uma radiância semelhante a chamas desce sobre uma criatura que você possa ver dentro do alcance. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza ou sofrer {@damage 1d8} de dano Radiante. O alvo não recebe benefício de {@variantrule Cover|XPHB|Half Cover} nem de {@variantrule Cover|XPHB} de Três Quartos nessa salvaguarda.",
+      "data.activities.0.name": "Conjurar Chama Sagrada"
+    },
+    "dnd2024:2024:spell:shillelagh:srd-5.2": {
+      "name": "Bordão Místico",
+      "data.text.rules.0": "Uma Clava ou Bordão que você esteja segurando é imbuído com o poder da natureza. Pela duração, você pode usar sua habilidade de conjuração em vez de Força nas jogadas de ataque e dano de ataques corpo a corpo feitos com essa arma, e o dado de dano da arma se torna {@dice d8}. Se o ataque causar dano, ele pode causar dano de Força ou o tipo de dano normal da arma (à sua escolha).",
+      "data.text.rules.1": "A magia termina antecipadamente se você a conjurar novamente ou soltar a arma.",
+      "data.activities.0.name": "Imbuir Arma"
+    },
+    "dnd2024:2024:spell:shocking-grasp:srd-5.2": {
+      "name": "Toque Chocante",
+      "data.text.rules.0": "Um relâmpago salta de você para uma criatura que você tenta tocar. Faça um ataque mágico corpo a corpo contra o alvo. Se acertar, o alvo sofre {@damage 1d8} de dano Elétrico e não pode realizar {@action Opportunity Attack|XPHB|Opportunity Attacks} até o início do próximo turno dele.",
+      "data.activities.0.name": "Ataque"
+    },
+    "dnd2024:2024:spell:sorcerous-burst:srd-5.2": {
+      "name": "Explosão Feiticeira",
+      "data.text.rules.0": "Você lança energia feiticeira contra uma criatura ou objeto dentro do alcance. Faça uma jogada de ataque à distância contra o alvo. Se acertar, o alvo sofre {@damage 1d8} de dano de um tipo à sua escolha: Ácido, Frio, Fogo, Elétrico, Veneno, Psíquico ou Trovejante.",
+      "data.text.rules.1": "Se você obtiver 8 em um {@dice d8} desta magia, pode rolar outro {@dice d8} e adicioná-lo ao dano. Quando conjura esta magia, o número máximo desses d8 que você pode adicionar ao dano da magia é igual ao modificador de sua habilidade de conjuração.",
+      "data.activities.0.name": "Ataque"
+    },
+    "dnd2024:2024:spell:spare-the-dying:srd-5.2": {
+      "name": "Poupar os Moribundos",
+      "data.text.rules.0": "Escolha uma criatura dentro do alcance que tenha 0 {@variantrule Hit Points|XPHB} e não esteja morta. A criatura se torna {@variantrule Stable|XPHB}.",
+      "data.activities.0.name": "Utilidade"
+    },
+    "dnd2024:2024:spell:starry-wisp:srd-5.2": {
+      "name": "Fagulha Estelar",
+      "data.text.rules.0": "Você lança uma centelha de luz contra uma criatura ou objeto dentro do alcance. Faça um ataque mágico à distância contra o alvo. Se acertar, o alvo sofre {@damage 1d8} de dano Radiante e, até o final do seu próximo turno, emite {@variantrule Dim Light|XPHB} em um raio de 10 pés e não pode se beneficiar da condição {@condition Invisible|XPHB}.",
+      "data.activities.0.name": "Ataque"
+    },
+    "dnd2024:2024:spell:thaumaturgy:srd-5.2": {
+      "name": "Taumaturgia",
+      "data.text.rules.0": "Você manifesta uma pequena maravilha dentro do alcance. Crie um dos efeitos abaixo dentro do alcance. Se conjurar esta magia várias vezes, pode manter até três de seus efeitos de 1 minuto ativos ao mesmo tempo.",
+      "data.text.rules.1.name": "Olhos Alterados",
+      "data.text.rules.1.entries.0": "Você altera a aparência dos seus olhos por 1 minuto.",
+      "data.text.rules.2.name": "Voz Trovejante",
+      "data.text.rules.2.entries.0": "Sua voz ressoa até três vezes mais alto que o normal por 1 minuto. Pela duração, você tem {@variantrule Advantage|XPHB} em testes de Carisma ({@skill Intimidation|XPHB}).",
+      "data.text.rules.3.name": "Manipular Fogo",
+      "data.text.rules.3.entries.0": "Você faz chamas tremeluzirem, brilharem mais ou menos intensamente ou mudarem de cor por 1 minuto.",
+      "data.text.rules.4.name": "Mão Invisível",
+      "data.text.rules.4.entries.0": "Você faz instantaneamente uma porta ou janela destrancada se abrir de súbito ou bater ao fechar.",
+      "data.text.rules.5.name": "Som Fantasma",
+      "data.text.rules.5.entries.0": "Você cria um som instantâneo que se origina de um ponto à sua escolha dentro do alcance, como o estrondo de um trovão, o grasnar de um corvo ou sussurros ameaçadores.",
+      "data.text.rules.6.name": "Tremores",
+      "data.text.rules.6.entries.0": "Você provoca tremores inofensivos no solo por 1 minuto.",
+      "data.activities.0.name": "Utilidade"
+    },
+    "dnd2024:2024:spell:true-strike:srd-5.2": {
+      "name": "Ataque Certeiro",
+      "data.text.rules.0": "Guiado por um lampejo de percepção mágica, você realiza um ataque com a arma usada na conjuração da magia. O ataque usa sua habilidade de conjuração nas jogadas de ataque e dano em vez de Força ou Destreza. Se o ataque causar dano, ele pode causar dano Radiante ou o tipo de dano normal da arma (à sua escolha).",
+      "data.activities.0.name": "Encantar Arma",
+      "data.activities.1.name": "Ataque com Conjuração",
+      "data.activities.2.name": "Ataque com Conjuração"
+    },
+    "dnd2024:2024:spell:vicious-mockery:srd-5.2": {
+      "name": "Zombaria Viciosa",
+      "data.text.rules.0": "Você profere uma sequência de insultos entremeados de encantamentos sutis contra uma criatura que possa ver ou ouvir dentro do alcance. O alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria ou sofrer {@damage 1d6} de dano Psíquico e ter {@variantrule Disadvantage|XPHB} na próxima jogada de ataque que fizer antes do final do próximo turno dele.",
+      "data.activities.0.name": "Salvaguarda"
+    }
+  }
+}

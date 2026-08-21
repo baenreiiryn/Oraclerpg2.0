@@ -1,0 +1,134 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wondrous-legendary",
+  "entries": {
+    "dnd2024:2024:item:belt-of-cloud-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante das Nuvens",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 27. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:belt-of-storm-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante da Tempestade",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 29. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:cloak-of-invisibility:srd-5.2": {
+      "name": "Manto da Invisibilidade",
+      "data.text.rules.0": "Este manto possui 3 cargas e recupera {@dice 1d3} cargas gastas diariamente ao amanhecer. Enquanto o usa, você pode realizar uma ação {@action Magic|XPHB} para puxar o capuz sobre a cabeça e gastar 1 carga, recebendo a condição {@condition Invisible|XPHB} por 1 hora. O efeito termina antecipadamente se você abaixar o capuz (nenhuma ação necessária) ou deixar de usá-lo."
+    },
+    "dnd2024:2024:item:crystal-ball-of-mind-reading:srd-5.2": {
+      "name": "Bola de Cristal de Leitura de Mentes",
+      "data.activities.0.name": "Conjurar Detectar Pensamentos",
+      "data.activities.1.name": "Conjurar Vidência",
+      "data.text.rules.0": "Enquanto toca esta esfera de cristal, você pode conjurar {@spell Scrying|XPHB} (salvaguarda {@dc 17}) por meio dela. Além disso, pode conjurar {@spell Detect Thoughts|XPHB} (salvaguarda {@dc 17}) tendo como alvo criaturas que possa ver a até 30 pés do sensor da magia. Você não precisa se concentrar nessa magia {@spell Detect Thoughts|XPHB} para mantê-la durante sua duração, mas ela termina se a magia {@spell Scrying|XPHB} terminar."
+    },
+    "dnd2024:2024:item:crystal-ball-of-telepathy:srd-5.2": {
+      "name": "Bola de Cristal da Telepatia",
+      "data.activities.0.name": "Conjurar Vidência",
+      "data.activities.1.name": "Conjurar Sugestão",
+      "data.text.rules.0": "Enquanto toca esta esfera de cristal, você pode conjurar {@spell Scrying|XPHB} (salvaguarda {@dc 17}) por meio dela. Além disso, pode se comunicar telepaticamente com criaturas que possa ver a até 30 pés do sensor da magia. Você também pode conjurar {@spell Suggestion|XPHB} (salvaguarda {@dc 17}) através do sensor sobre uma dessas criaturas. Você não precisa se concentrar nessa magia {@spell Suggestion|XPHB} para mantê-la durante sua duração, mas ela termina se {@spell Scrying|XPHB} terminar. Você não pode conjurar {@spell Suggestion|XPHB} dessa forma novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:crystal-ball-of-true-seeing:srd-5.2": {
+      "name": "Bola de Cristal da Visão Verdadeira",
+      "data.activities.0.name": "Conjurar Vidência",
+      "data.text.rules.0": "Enquanto toca esta esfera de cristal, você pode conjurar {@spell Scrying|XPHB} (salvaguarda {@dc 17}) por meio dela. Além disso, você possui {@sense Truesight|XPHB|Visão Verdadeira} com alcance de 120 pés centrado no sensor da magia."
+    },
+    "dnd2024:2024:item:cubic-gate:srd-5.2": {
+      "name": "Portal Cúbico",
+      "data.activities.0.name": "Conjurar Portal",
+      "data.activities.1.name": "Conjurar Viagem Planar",
+      "data.text.rules.0": "Este cubo mede 3 polegadas de lado e irradia uma energia mágica perceptível. Cada uma de suas seis faces está vinculada a um plano de existência diferente, sendo uma delas o Plano Material. As outras faces estão ligadas a planos determinados pelo Mestre.",
+      "data.text.rules.1": "O cubo possui 3 cargas e recupera {@dice 1d3} cargas gastas diariamente ao amanhecer. Como uma ação {@action Magic|XPHB}, você pode gastar 1 carga do cubo para conjurar uma das magias a seguir por meio dele.",
+      "data.text.rules.2.name": "Portal",
+      "data.text.rules.2.entries.0": "Ao pressionar uma face do cubo, você conjura {@spell Gate|XPHB}, abrindo um portal para o plano de existência vinculado àquela face.",
+      "data.text.rules.3.name": "Viagem Planar",
+      "data.text.rules.3.entries.0": "Ao pressionar duas vezes uma face do cubo, você conjura {@spell Plane Shift|XPHB}, transportando os alvos para o plano de existência vinculado àquela face."
+    },
+    "dnd2024:2024:item:ioun-stone-greater-absorption:srd-5.2": {
+      "name": "Pedra Ioun, Absorção Maior",
+      "data.text.rules.1": "Enquanto este elipsoide marmorizado em lavanda e verde orbita sua cabeça, você pode usar uma {@variantrule Reaction|XPHB|Reação} para cancelar uma magia de nível 8 ou inferior conjurada por uma criatura que possa ver. Uma magia cancelada não produz efeito, e quaisquer recursos usados para conjurá-la são desperdiçados. Depois que a pedra tiver cancelado 20 níveis de magias, ela se queima, torna-se cinza opaca e perde sua magia."
+    },
+    "dnd2024:2024:item:ioun-stone-mastery:srd-5.2": {
+      "name": "Pedra Ioun, Maestria",
+      "data.text.rules.1": "Seu {@variantrule Proficiency|XPHB|Bônus de Proficiência} aumenta em 1 enquanto este prisma verde-claro orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-regeneration:srd-5.2": {
+      "name": "Pedra Ioun, Regeneração",
+      "data.text.rules.1": "Você recupera 15 {@variantrule Hit Points|XPHB|Pontos de Vida} ao final de cada hora em que este fuso branco-perolado orbitar sua cabeça, desde que tenha pelo menos 1 {@variantrule Hit Points|XPHB|Ponto de Vida}."
+    },
+    "dnd2024:2024:item:robe-of-the-archmagi:srd-5.2": {
+      "name": "Manto do Arquimago",
+      "data.text.rules.0": "Esta elegante veste é feita de tecido extraordinário e adornada com runas.",
+      "data.text.rules.1": "Você recebe os benefícios a seguir enquanto usa o manto.",
+      "data.text.rules.2.name": "Armadura",
+      "data.text.rules.2.entries.0": "Se não estiver usando armadura, sua {@variantrule Armor Class|XPHB|Classe de Armadura} base é 15 + seu modificador de Destreza.",
+      "data.text.rules.3.name": "Resistência à Magia",
+      "data.text.rules.3.entries.0": "Você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias e outros efeitos mágicos.",
+      "data.text.rules.4.name": "Mago de Guerra",
+      "data.text.rules.4.entries.0": "Sua CD de salvaguarda de magia e seu bônus de ataque mágico aumentam em 2."
+    },
+    "dnd2024:2024:item:scarab-of-protection:srd-5.2": {
+      "name": "Escaravelho de Proteção",
+      "data.text.rules.0": "Este medalhão em forma de besouro concede três benefícios enquanto estiver com você.",
+      "data.text.rules.1.name": "Defesa",
+      "data.text.rules.1.entries.0": "Você recebe +1 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura}.",
+      "data.text.rules.2.name": "Preservação",
+      "data.text.rules.2.entries.0": "O escaravelho possui 12 cargas. Se você falhar em uma salvaguarda contra uma magia de Necromancia ou contra um efeito nocivo originado de um Morto-vivo, pode usar uma {@variantrule Reaction|XPHB|Reação} para gastar 1 carga e transformar a falha em sucesso. O escaravelho se desfaz em pó e é destruído quando sua última carga é gasta.",
+      "data.text.rules.3.name": "Resistência à Magia",
+      "data.text.rules.3.entries.0": "Você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias."
+    },
+    "dnd2024:2024:item:sovereign-glue:srd-5.2": {
+      "name": "Cola Soberana",
+      "data.text.rules.0": "Esta substância viscosa e branco-leitosa pode formar uma ligação adesiva permanente entre quaisquer dois objetos. Ela deve ser armazenada em um pote ou frasco cujo interior tenha sido revestido com {@item Oil of Slipperiness|XDMG}. Quando encontrado, um recipiente contém {@dice 1d6 + 1} onças.",
+      "data.text.rules.1": "Uma onça da cola cobre uma superfície quadrada de 1 pé de lado. Aplicar uma onça de Cola Soberana exige uma ação {@action Utilize|XPHB}, e a cola aplicada leva 1 minuto para aderir. Depois disso, a ligação criada só pode ser rompida pela aplicação de {@item Universal Solvent|XDMG}, {@item Oil of Etherealness|XDMG} ou pela magia {@spell Wish|XPHB}."
+    },
+    "dnd2024:2024:item:sphere-of-annihilation:srd-5.2": {
+      "name": "Esfera da Aniquilação",
+      "data.text.rules.0": "Esta esfera negra de 2 pés de diâmetro é um buraco no multiverso, pairando no espaço e estabilizado por um campo mágico ao seu redor.",
+      "data.text.rules.1": "A esfera oblitera toda matéria pela qual passa e toda matéria que passa através dela. Artefatos são a exceção. A menos que um Artefato seja suscetível a dano causado por uma Esfera da Aniquilação, ele atravessa a esfera ileso. Qualquer outra coisa que toque a esfera sem ser completamente engolfada e obliterada por ela sofre {@damage 8d10} de dano de Força.",
+      "data.text.rules.2.name": "Controlando a Esfera",
+      "data.text.rules.2.entries.0": "Uma Esfera da Aniquilação permanece imóvel até alguém assumir seu controle. Se estiver a até 60 pés de uma esfera, você pode realizar uma ação {@action Magic|XPHB} para fazer um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 25}. Em caso de sucesso, você controla a esfera até o início de seu próximo turno e, se ela estava sob o controle de outra criatura, essa criatura perde o controle. Em caso de falha, a esfera se move 10 pés em linha reta na sua direção.",
+      "data.text.rules.2.entries.1": "Enquanto controla a esfera, você pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para fazê-la se mover em uma direção à sua escolha por uma quantidade de pés igual a 5 vezes seu modificador de Inteligência (mínimo de 5 pés). Qualquer criatura cujo espaço seja invadido pela esfera deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 19} ou ser tocada por ela, sofrendo {@damage 8d10} de dano de Força. Uma criatura reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} por esse dano é obliterada, deixando suas posses para trás, mas nenhum outro vestígio físico.",
+      "data.text.rules.3.name": "Interações da Esfera",
+      "data.text.rules.3.entries.0": "Se a esfera entrar em contato com um portal planar, como o criado pela magia {@spell Gate|XPHB}, ou com um espaço extradimensional, como o interior de um Buraco Portátil, o Mestre determina aleatoriamente o que acontece usando a tabela a seguir.",
+      "data.text.rules.3.entries.1.columns.1": "Resultado",
+      "data.text.rules.3.entries.1.rows.0.1": "A esfera é destruída.",
+      "data.text.rules.3.entries.1.rows.1.1": "A esfera atravessa o portal ou entra no espaço extradimensional.",
+      "data.text.rules.3.entries.1.rows.2.1": "Uma fenda espacial envia a esfera e cada criatura e objeto a até 180 pés dela para um plano de existência aleatório."
+    },
+    "dnd2024:2024:item:talisman-of-pure-good:srd-5.2": {
+      "name": "Talismã do Bem Puro",
+      "data.text.rules.0": "Este talismã é um poderoso símbolo do bem. Um Ínfero ou Morto-vivo que tocar o talismã sofre {@damage 8d6} de dano Radiante e sofre esse dano novamente sempre que terminar o turno segurando ou carregando o talismã.",
+      "data.text.rules.1.name": "Símbolo Sagrado",
+      "data.text.rules.1.entries.0": "Você pode usar o talismã como Símbolo Sagrado. Enquanto o usa ou segura, recebe +2 de bônus nas jogadas de ataque mágico.",
+      "data.text.rules.2.name": "Repreensão Pura",
+      "data.text.rules.2.entries.0": "O talismã possui 7 cargas. Enquanto o usa ou segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga e escolher como alvo uma criatura que possa ver no chão a até 120 pés de você. Uma fissura em chamas se abre sob o alvo, que realiza uma salvaguarda de Destreza {@dc 20}. Se o alvo for um Ínfero ou Morto-vivo, ele tem {@variantrule Disadvantage|XPHB|Desvantagem} na salvaguarda. Em caso de falha, o alvo cai na fissura e é destruído, sem deixar restos. Em caso de sucesso, o alvo não é lançado na fissura, mas sofre {@damage 4d6} de dano Psíquico pela provação. Em ambos os casos, a fissura então se fecha sem deixar vestígios de sua existência. Quando você gasta a última carga, o talismã se dispersa em partículas de luz dourada e é destruído."
+    },
+    "dnd2024:2024:item:talisman-of-the-sphere:srd-5.2": {
+      "name": "Talismã da Esfera",
+      "data.text.rules.0": "Enquanto segura ou usa este talismã, você tem {@variantrule Advantage|XPHB|Vantagem} em qualquer teste de Inteligência ({@skill Arcana|XPHB}) feito para controlar uma {@item Sphere of Annihilation|XDMG}. Além disso, quando inicia seu turno controlando uma {@item Sphere of Annihilation|XDMG}, você pode realizar uma ação {@action Magic|XPHB} para movê-la 10 pés + uma quantidade adicional de pés igual a 10 vezes seu modificador de Inteligência. Esse movimento não precisa ser em linha reta."
+    },
+    "dnd2024:2024:item:talisman-of-ultimate-evil:srd-5.2": {
+      "name": "Talismã do Mal Supremo",
+      "data.text.rules.0": "Este item simboliza o mal impenitente. Uma criatura que não seja um Ínfero nem um Morto-vivo e que toque o talismã sofre {@damage 8d6} de dano Necrótico e sofre esse dano novamente sempre que terminar o turno segurando ou carregando o talismã.",
+      "data.text.rules.1.name": "Símbolo Sagrado",
+      "data.text.rules.1.entries.0": "Você pode usar o talismã como Símbolo Sagrado. Enquanto o usa ou segura, recebe +2 de bônus nas jogadas de ataque mágico.",
+      "data.text.rules.2.name": "Fim Supremo",
+      "data.text.rules.2.entries.0": "O talismã possui 6 cargas. Enquanto o usa ou segura, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga e escolher como alvo uma criatura que possa ver no chão a até 120 pés de você. Uma fissura em chamas se abre sob o alvo, que realiza uma salvaguarda de Destreza {@dc 20}. Se o alvo for um Celestial, ele tem {@variantrule Disadvantage|XPHB|Desvantagem} na salvaguarda. Em caso de falha, o alvo cai na fissura e é destruído, sem deixar restos. Em caso de sucesso, o alvo não é lançado na fissura, mas sofre {@damage 4d6} de dano Psíquico pela provação. Em ambos os casos, a fissura então se fecha sem deixar vestígios de sua existência. Quando você gasta a última carga, o talismã se dissolve em uma gosma fétida e é destruído."
+    },
+    "dnd2024:2024:item:universal-solvent:srd-5.2": {
+      "name": "Solvente Universal",
+      "data.text.rules.0": "Este tubo contém um líquido leitoso com forte odor de álcool. Quando encontrado, um tubo contém {@dice 1d6 + 1} onças.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Utilize|XPHB} para despejar 1 ou mais onças do solvente do tubo sobre uma superfície ao seu alcance. Cada onça dissolve instantaneamente até 1 pé quadrado de adesivo que tocar, incluindo Cola Soberana."
+    },
+    "dnd2024:2024:item:well-of-many-worlds:srd-5.2": {
+      "name": "Poço dos Muitos Mundos",
+      "data.text.rules.0": "Este fino tecido negro, macio como seda, é dobrado até ficar do tamanho de um lenço. Quando aberto, forma uma folha circular de 6 pés de diâmetro.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para desdobrar o Poço dos Muitos Mundos e colocá-lo sobre uma superfície sólida, quando então ele forma um portal circular bidirecional de 6 pés de diâmetro para outro mundo ou plano de existência. Cada vez que o item abre um portal, o Mestre decide para onde ele leva. O portal permanece aberto até uma criatura a até 5 pés dele realizar uma ação {@action Magic|XPHB} para fechá-lo, segurando as bordas do tecido e dobrando-o.",
+      "data.text.rules.2": "Depois que o Poço dos Muitos Mundos abre um portal, não pode fazê-lo novamente por {@dice 1d8} horas."
+    }
+  }
+}

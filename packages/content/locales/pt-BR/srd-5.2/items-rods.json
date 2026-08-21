@@ -1,0 +1,82 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "rods",
+  "entries": {
+    "dnd2024:2024:item:immovable-rod:srd-5.2": {
+      "name": "Bastão Imóvel",
+      "data.text.rules.0": "Este bastão de ferro possui um botão em uma das extremidades. Você pode realizar uma ação {@action Utilize|XPHB} para pressionar o botão, fazendo com que o bastão fique magicamente fixo no lugar. Até que você ou outra criatura realize uma ação {@action Utilize|XPHB} para pressionar o botão novamente, o bastão não se move, mesmo que isso desafie a gravidade. O bastão pode sustentar até 8.000 libras. Mais peso faz com que ele se desative e caia. Uma criatura pode realizar uma ação {@action Utilize|XPHB} para fazer um teste de Força ({@skill Athletics|XPHB}) {@dc 30}, movendo o bastão fixo até 10 pés em caso de sucesso."
+    },
+    "dnd2024:2024:item:rod-of-absorption:srd-5.2": {
+      "name": "Bastão de Absorção",
+      "data.text.rules.0": "Enquanto segura este bastão, você pode usar uma {@variantrule Reaction|XPHB|Reação} para absorver uma magia que tenha apenas você como alvo e não crie uma área de efeito. O efeito da magia absorvida é cancelado, e a energia da magia — não a magia em si — fica armazenada no bastão. A energia possui o mesmo nível que a magia tinha quando foi conjurada. Uma magia cancelada se dissipa sem produzir efeito, e quaisquer recursos usados para conjurá-la são desperdiçados. O bastão pode absorver e armazenar até 50 níveis de energia ao longo de sua existência. Depois de absorver 50 níveis de energia, ele não pode absorver mais. Se você for alvo de uma magia cuja energia o bastão não possa armazenar, ele não produz efeito sobre essa magia.",
+      "data.text.rules.1": "Quando você se sintoniza com o bastão, sabe quantos níveis de energia ele absorveu ao longo de sua existência e quantos níveis de energia mágica possui armazenados no momento.",
+      "data.text.rules.2": "Se você for um conjurador segurando o bastão, pode converter a energia armazenada nele em espaços de magia para conjurar magias que tenha preparadas ou conheça. Você só pode criar espaços de magia de nível igual ou inferior aos seus próprios espaços, até o máximo de nível 5. Você usa os níveis armazenados no lugar de seus espaços, mas, fora isso, conjura a magia normalmente. Por exemplo, pode usar 3 níveis armazenados no bastão como um espaço de magia de nível 3.",
+      "data.text.rules.3": "Um bastão recém-encontrado normalmente possui {@dice 1d10} níveis de energia mágica armazenados. Um bastão que não possa mais absorver energia mágica e não tenha energia restante torna-se não mágico."
+    },
+    "dnd2024:2024:item:rod-of-alertness:srd-5.2": {
+      "name": "Bastão de Alerta",
+      "data.activities.0.name": "Conjurar Detectar o Bem e o Mal",
+      "data.activities.1.name": "Conjurar Detectar Magia",
+      "data.activities.2.name": "Conjurar Detectar Veneno e Doença",
+      "data.activities.3.name": "Conjurar Ver Invisibilidade",
+      "data.text.rules.0": "Este bastão possui as propriedades a seguir.",
+      "data.text.rules.1.name": "Alerta",
+      "data.text.rules.1.entries.0": "Enquanto segura o bastão, você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Sabedoria ({@skill Perception|XPHB}) e nas rolagens de {@variantrule Initiative|XPHB|Iniciativa}.",
+      "data.text.rules.2.name": "Magias",
+      "data.text.rules.2.entries.0": "Enquanto segura o bastão, você pode conjurar as seguintes magias por meio dele:",
+      "data.text.rules.2.entries.1.items.0": "{@spell Detect Evil and Good|XPHB}",
+      "data.text.rules.2.entries.1.items.1": "{@spell Detect Magic|XPHB}",
+      "data.text.rules.2.entries.1.items.2": "{@spell Detect Poison and Disease|XPHB}",
+      "data.text.rules.2.entries.1.items.3": "{@spell See Invisibility|XPHB}",
+      "data.text.rules.3.name": "Aura Protetora",
+      "data.text.rules.3.entries.0": "Como uma ação {@action Magic|XPHB}, você pode fincar a extremidade do cabo do bastão no chão; então a cabeça do bastão emite {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 60 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 60 pés. Enquanto estiver nessa {@variantrule Bright Light|XPHB|Luz Plena}, você e seus aliados recebem +1 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura} e nas salvaguardas e podem perceber a localização de qualquer criatura {@condition Invisible|XPHB} que também esteja na {@variantrule Bright Light|XPHB|Luz Plena}.",
+      "data.text.rules.3.entries.1": "A cabeça do bastão deixa de brilhar e o efeito termina após 10 minutos ou quando uma criatura realiza uma ação {@action Magic|XPHB} para arrancar o bastão do chão. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:rod-of-lordly-might:srd-5.2": {
+      "name": "Bastão do Poder Soberano",
+      "data.text.rules.0": "Este bastão possui uma cabeça flangeada e funciona como uma Maça mágica que concede +3 de bônus nas jogadas de ataque e de dano feitas com ela. O bastão possui propriedades associadas a seis botões diferentes dispostos em uma fileira ao longo do cabo. Ele também possui três outras propriedades, detalhadas abaixo.",
+      "data.text.rules.1.name": "Botões",
+      "data.text.rules.1.entries.0": "Você pode pressionar um dos botões a seguir como uma {@variantrule Bonus Action|XPHB|Ação Bônus}; o efeito de um botão dura até você pressionar outro botão ou pressionar o mesmo novamente, fazendo o bastão retornar à forma normal:",
+      "data.text.rules.1.entries.1.items.0.name": "Botão 1",
+      "data.text.rules.1.entries.1.items.0.entries.0": "Uma lâmina flamejante surge da extremidade oposta à cabeça flangeada do bastão. As chamas emitem {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 40 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 40 pés, e a lâmina funciona como uma Espada Longa ou Espada Curta mágica (à sua escolha) que causa {@damage 2d6} de dano de Fogo adicional ao acertar.",
+      "data.text.rules.1.entries.1.items.1.name": "Botão 2",
+      "data.text.rules.1.entries.1.items.1.entries.0": "A cabeça flangeada do bastão se dobra e duas lâminas em forma de crescente saltam para fora, transformando o bastão em um Machado de Batalha mágico que concede +3 de bônus nas jogadas de ataque e de dano feitas com ele.",
+      "data.text.rules.1.entries.1.items.2.name": "Botão 3",
+      "data.text.rules.1.entries.1.items.2.entries.0": "A cabeça flangeada do bastão se dobra, uma ponta de lança surge na extremidade e o cabo se alonga até formar uma haste de 6 pés, transformando o bastão em uma Lança mágica que concede +3 de bônus nas jogadas de ataque e de dano feitas com ela.",
+      "data.text.rules.1.entries.1.items.3.name": "Botão 4",
+      "data.text.rules.1.entries.1.items.3.entries.0": "O bastão se transforma em uma vara de escalada de até 50 pés de comprimento (você determina o comprimento), embora os botões permaneçam ao seu alcance. Em superfícies tão duras quanto granito, uma ponta na base e três ganchos no topo fixam a vara. Barras horizontais de 3 polegadas de comprimento se abrem nas laterais, separadas por 1 pé, formando uma escada. A vara pode sustentar até 4.000 libras. Peso maior ou falta de fixação sólida faz o bastão retornar à forma normal.",
+      "data.text.rules.1.entries.1.items.4.name": "Botão 5",
+      "data.text.rules.1.entries.1.items.4.entries.0": "O bastão se transforma em um aríete de mão e concede ao usuário +10 de bônus em testes de Força ({@skill Athletics|XPHB}) feitos para romper portas, barricadas e outras barreiras.",
+      "data.text.rules.1.entries.1.items.5.name": "Botão 6",
+      "data.text.rules.1.entries.1.items.5.entries.0": "O bastão assume ou permanece em sua forma normal e indica o norte magnético. (Nada acontece se esta função for usada em um local sem norte magnético.) O bastão também lhe informa sua profundidade aproximada abaixo do solo ou sua altura acima dele.",
+      "data.text.rules.2.name": "Drenar Vida",
+      "data.text.rules.2.entries.0": "Quando você acerta uma criatura com um ataque corpo a corpo usando o bastão, pode forçar o alvo a realizar uma salvaguarda de Constituição {@dc 17}. Em caso de falha, o alvo sofre {@damage 4d6} de dano Necrótico adicional, e você recupera uma quantidade de {@variantrule Hit Points|XPHB|Pontos de Vida} igual à metade desse dano Necrótico. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer.",
+      "data.text.rules.3.name": "Paralisar",
+      "data.text.rules.3.entries.0": "Quando você acerta uma criatura com um ataque corpo a corpo usando o bastão, pode forçar o alvo a realizar uma salvaguarda de Constituição {@dc 17}. Em caso de falha, o alvo recebe a condição {@condition Paralyzed|XPHB} por 1 minuto. O alvo repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito em caso de sucesso. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer.",
+      "data.text.rules.4.name": "Aterrorizar",
+      "data.text.rules.4.entries.0": "Enquanto segura o bastão, você pode realizar uma ação {@action Magic|XPHB} para forçar cada criatura que possa ver a até 30 pés de você a realizar uma salvaguarda de Sabedoria {@dc 17}. Em caso de falha, o alvo recebe a condição {@condition Frightened|XPHB} por 1 minuto. Um alvo {@condition Frightened|XPHB} repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:rod-of-resurrection:srd-5.2": {
+      "name": "Bastão da Ressurreição",
+      "data.activities.0.name": "Conjurar Curar",
+      "data.activities.1.name": "Conjurar Ressurreição",
+      "data.text.rules.0": "O bastão possui 5 cargas. Enquanto o segura, você pode conjurar uma das seguintes magias por meio dele: {@spell Heal|XPHB} (gasta 1 carga) ou {@spell Resurrection|XPHB} (gasta 5 cargas).",
+      "data.text.rules.1": "O bastão recupera 1 carga gasta diariamente ao amanhecer. Se gastar a última carga, role {@dice 1d20}. Em um resultado 1, o bastão desaparece em uma explosão inofensiva de radiância."
+    },
+    "dnd2024:2024:item:rod-of-rulership:srd-5.2": {
+      "name": "Bastão da Regência",
+      "data.text.rules.0": "Você pode realizar uma ação {@action Magic|XPHB} para erguer o bastão e exigir obediência de cada criatura à sua escolha que possa ver a até 120 pés de você. Cada alvo deve ser bem-sucedido em uma salvaguarda de Sabedoria {@dc 15} ou receber a condição {@condition Charmed|XPHB} por 8 horas. Enquanto estiver {@condition Charmed|XPHB} dessa forma, a criatura considera você seu líder de confiança. Se for ferido por você ou seus aliados, ou receber uma ordem contrária à sua natureza, o alvo deixa de estar {@condition Charmed|XPHB} dessa forma. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:rod-of-security:srd-5.2": {
+      "name": "Bastão de Segurança",
+      "data.text.rules.0": "Enquanto segura este bastão, você pode realizar uma ação {@action Magic|XPHB} para ativá-lo. O bastão então transporta instantaneamente você e até outras 199 criaturas voluntárias que possa ver para um semiplano. Você escolhe a forma que o semiplano assume. Ele pode ser um jardim tranquilo, uma taverna alegre, um palácio imenso, uma ilha tropical, um carnaval fantástico ou qualquer outra coisa que possa imaginar. Independentemente de sua natureza, o semiplano contém água e alimento suficientes para sustentar seus visitantes, e seu ambiente não pode causar dano aos ocupantes. Tudo o mais com que se possa interagir ali só pode existir ali. Por exemplo, uma flor colhida de um jardim desaparece se for levada para fora do semiplano.",
+      "data.text.rules.1": "Para cada hora passada no semiplano, um visitante recupera {@variantrule Hit Points|XPHB|Pontos de Vida} como se tivesse gasto 1 {@variantrule Hit Point Dice|XPHB|Dado de Vida}. Além disso, as criaturas não envelhecem enquanto estão ali, embora o tempo passe normalmente. Os visitantes podem permanecer por até 200 dias divididos pelo número de criaturas presentes (arredonde para baixo).",
+      "data.text.rules.2": "Quando o tempo se esgota ou você realiza uma ação {@action Magic|XPHB} para encerrar o efeito, todos os visitantes reaparecem no local que ocupavam quando você ativou o bastão ou no espaço desocupado mais próximo desse local. Depois de usada, esta propriedade não pode ser usada novamente até que 10 dias tenham se passado."
+    }
+  }
+}

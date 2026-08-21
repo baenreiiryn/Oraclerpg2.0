@@ -1,0 +1,22 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "class",
+  "entries": {
+    "dnd2024:2024:class:barbarian:srd-5.2": { "name": "Bárbaro" },
+    "dnd2024:2024:class:bard:srd-5.2": { "name": "Bardo" },
+    "dnd2024:2024:class:cleric:srd-5.2": { "name": "Clérigo" },
+    "dnd2024:2024:class:druid:srd-5.2": { "name": "Druida" },
+    "dnd2024:2024:class:fighter:srd-5.2": { "name": "Guerreiro" },
+    "dnd2024:2024:class:monk:srd-5.2": { "name": "Monge" },
+    "dnd2024:2024:class:paladin:srd-5.2": { "name": "Paladino" },
+    "dnd2024:2024:class:ranger:srd-5.2": { "name": "Patrulheiro" },
+    "dnd2024:2024:class:rogue:srd-5.2": { "name": "Ladino" },
+    "dnd2024:2024:class:sorcerer:srd-5.2": { "name": "Feiticeiro" },
+    "dnd2024:2024:class:warlock:srd-5.2": { "name": "Bruxo" },
+    "dnd2024:2024:class:wizard:srd-5.2": { "name": "Mago" }
+  }
+}

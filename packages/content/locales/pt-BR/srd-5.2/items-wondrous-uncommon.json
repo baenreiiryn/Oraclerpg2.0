@@ -1,0 +1,300 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wondrous-uncommon",
+  "entries": {
+    "dnd2024:2024:item:amulet-of-proof-against-detection-and-location:srd-5.2": {
+      "name": "Amuleto contra Detecção e Localização",
+      "data.text.rules.0": "Enquanto usa este amuleto, você não pode ser alvo de magias de Adivinhação nem ser percebido por sensores mágicos de vidência, a menos que permita."
+    },
+    "dnd2024:2024:item:bag-of-tricks-gray:srd-5.2": {
+      "name": "Saco de Truques, Cinza",
+      "data.text.rules.0": "Este saco feito de tecido cinza parece vazio. Entretanto, ao colocar a mão dentro dele, você percebe a presença de um pequeno objeto felpudo.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para retirar o objeto felpudo do saco e arremessá-lo a até 20 pés. Quando o objeto aterrissa, ele se transforma em uma criatura determinada por uma rolagem na tabela abaixo. Consulte o {@book Monster Manual|XMM} para o bloco de estatísticas da criatura. A criatura desaparece no próximo amanhecer ou quando é reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}.",
+      "data.text.rules.2": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados e age imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Você pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para ordenar como a criatura se move e qual ação realiza no próximo turno, como atacar um inimigo. Na ausência de ordens, a criatura age de uma maneira apropriada à sua natureza.",
+      "data.text.rules.3": "Depois que três objetos felpudos forem retirados do saco, ele não poderá ser usado novamente até o próximo amanhecer.",
+      "data.text.rules.4.columns.1": "Criatura"
+    },
+    "dnd2024:2024:item:bag-of-tricks-rust:srd-5.2": {
+      "name": "Saco de Truques, Ferrugem",
+      "data.text.rules.0": "Este saco feito de tecido cor de ferrugem parece vazio. Entretanto, ao colocar a mão dentro dele, você percebe a presença de um pequeno objeto felpudo.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para retirar o objeto felpudo do saco e arremessá-lo a até 20 pés. Quando o objeto aterrissa, ele se transforma em uma criatura determinada por uma rolagem na tabela abaixo. Consulte o {@book Monster Manual|XMM} para o bloco de estatísticas da criatura. A criatura desaparece no próximo amanhecer ou quando é reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}.",
+      "data.text.rules.2": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados e age imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Você pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para ordenar como a criatura se move e qual ação realiza no próximo turno, como atacar um inimigo. Na ausência de ordens, a criatura age de uma maneira apropriada à sua natureza.",
+      "data.text.rules.3": "Depois que três objetos felpudos forem retirados do saco, ele não poderá ser usado novamente até o próximo amanhecer.",
+      "data.text.rules.4.columns.1": "Criatura"
+    },
+    "dnd2024:2024:item:bag-of-tricks-tan:srd-5.2": {
+      "name": "Saco de Truques, Bege",
+      "data.text.rules.0": "Este saco feito de tecido bege parece vazio. Entretanto, ao colocar a mão dentro dele, você percebe a presença de um pequeno objeto felpudo.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para retirar o objeto felpudo do saco e arremessá-lo a até 20 pés. Quando o objeto aterrissa, ele se transforma em uma criatura determinada por uma rolagem na tabela abaixo. Consulte o {@book Monster Manual|XMM} para o bloco de estatísticas da criatura. A criatura desaparece no próximo amanhecer ou quando é reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}.",
+      "data.text.rules.2": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados e age imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Você pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para ordenar como a criatura se move e qual ação realiza no próximo turno, como atacar um inimigo. Na ausência de ordens, a criatura age de uma maneira apropriada à sua natureza.",
+      "data.text.rules.3": "Depois que três objetos felpudos forem retirados do saco, ele não poderá ser usado novamente até o próximo amanhecer.",
+      "data.text.rules.4.columns.1": "Criatura"
+    },
+    "dnd2024:2024:item:boots-of-elvenkind:srd-5.2": {
+      "name": "Botas Élficas",
+      "data.text.rules.0": "Enquanto usa estas botas, seus passos não produzem som, independentemente da superfície sobre a qual você se move. Você também tem {@variantrule Advantage|XPHB|Vantagem} em testes de Destreza ({@skill Stealth|XPHB})."
+    },
+    "dnd2024:2024:item:boots-of-striding-and-springing:srd-5.2": {
+      "name": "Botas de Caminhar e Saltar",
+      "data.text.rules.0": "Enquanto usa estas botas, seu {@variantrule Speed|XPHB|Deslocamento} se torna 30 pés, a menos que já seja maior, e seu {@variantrule Speed|XPHB|Deslocamento} não é reduzido por carregar peso acima de sua capacidade de carga nem por usar Armadura Pesada.",
+      "data.text.rules.1": "Uma vez em cada um de seus turnos, você pode saltar até 30 pés gastando apenas 10 pés de movimento."
+    },
+    "dnd2024:2024:item:boots-of-the-winterlands:srd-5.2": {
+      "name": "Botas das Terras Invernais",
+      "data.text.rules.0": "Estas botas forradas de pele são confortáveis e permanecem aquecidas. Enquanto as usa, você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Resistência ao Frio",
+      "data.text.rules.1.entries.0": "Você tem {@variantrule Resistance|XPHB|Resistência} a dano de Frio e pode suportar temperaturas de 0 graus Fahrenheit ou inferiores sem proteção adicional.",
+      "data.text.rules.2.name": "Caminhante Invernal",
+      "data.text.rules.2.entries.0": "Você ignora {@variantrule Difficult Terrain|XPHB|Terreno Difícil} criado por gelo ou neve."
+    },
+    "dnd2024:2024:item:bracers-of-archery:srd-5.2": {
+      "name": "Braçadeiras de Arquearia",
+      "data.text.rules.0": "Enquanto usa estas braçadeiras, você tem proficiência com {@item Longbow|XPHB} e {@item Shortbow|XPHB} e recebe +2 de bônus nas rolagens de dano feitas com essas armas."
+    },
+    "dnd2024:2024:item:brooch-of-shielding:srd-5.2": {
+      "name": "Broche de Escudamento",
+      "data.text.rules.0": "Enquanto usa este broche, você tem {@variantrule Resistance|XPHB|Resistência} a dano de Força e {@variantrule Immunity|XPHB|Imunidade} ao dano da magia {@spell Magic Missile|XPHB}."
+    },
+    "dnd2024:2024:item:broom-of-flying:srd-5.2": {
+      "name": "Vassoura Voadora",
+      "data.text.rules.0": "Esta vassoura de madeira funciona como uma vassoura comum até você montá-la e realizar uma ação {@action Magic|XPHB} para fazê-la pairar sob você; a partir daí, ela pode ser montada no ar. Ela possui {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 50 pés. Pode carregar até 400 libras, mas seu {@variantrule Fly Speed|XPHB|Deslocamento de Voo} se torna 30 pés enquanto estiver carregando mais de 200 libras. A vassoura deixa de pairar quando você pousa ou quando não está mais montado nela.",
+      "data.text.rules.1": "Como uma ação {@action Magic|XPHB}, você pode mandar a vassoura viajar sozinha até um destino a no máximo 1 milha de você, desde que nomeie o local e esteja familiarizado com ele. A vassoura retorna até você quando realiza uma ação {@action Magic|XPHB} e usa uma palavra de comando, desde que ainda esteja a até 1 milha de você."
+    },
+    "dnd2024:2024:item:circlet-of-blasting:srd-5.2": {
+      "name": "Diadema de Explosão",
+      "data.activities.0.name": "Conjurar Raio Ardente",
+      "data.text.rules.0": "Enquanto usa este diadema, você pode conjurar {@spell Scorching Ray|XPHB} com ele ({@hit 5} para acertar). O diadema não pode conjurar essa magia novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:cloak-of-elvenkind:srd-5.2": {
+      "name": "Manto Élfico",
+      "data.text.rules.0": "Enquanto usa este manto, testes de Sabedoria ({@skill Perception|XPHB}) feitos para perceber você têm {@variantrule Disadvantage|XPHB|Desvantagem}, e você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Destreza ({@skill Stealth|XPHB})."
+    },
+    "dnd2024:2024:item:cloak-of-protection:srd-5.2": {
+      "name": "Manto de Proteção",
+      "data.text.rules.0": "Você recebe +1 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura} e nas salvaguardas enquanto usa este manto."
+    },
+    "dnd2024:2024:item:cloak-of-the-manta-ray:srd-5.2": {
+      "name": "Manto da Arraia",
+      "data.text.rules.0": "Enquanto usa este manto, você pode respirar debaixo d'água e possui {@variantrule Swim Speed|XPHB|Deslocamento de Natação} de 60 pés."
+    },
+    "dnd2024:2024:item:decanter-of-endless-water:srd-5.2": {
+      "name": "Decantador de Água Infinita",
+      "data.text.rules.0": "Este frasco com rolha faz som de água ao ser sacudido, como se estivesse cheio. O decantador pesa 2 libras.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para remover a rolha e pronunciar uma de três palavras de comando, fazendo uma quantidade de água doce ou salgada (à sua escolha) jorrar do frasco. A água para de sair no início de seu próximo turno. Escolha uma das seguintes palavras de comando:",
+      "data.text.rules.2.items.0.name": "Respingo",
+      "data.text.rules.2.items.0.entries.0": "O decantador produz 1 galão de água.",
+      "data.text.rules.2.items.1.name": "Fonte",
+      "data.text.rules.2.items.1.entries.0": "O decantador produz 5 galões de água.",
+      "data.text.rules.2.items.2.name": "Gêiser",
+      "data.text.rules.2.items.2.entries.0": "O decantador produz 30 galões de água que jorram em uma {@variantrule Line [Area of Effect]|XPHB|Linha} de 30 pés de comprimento e 1 pé de largura. Se estiver segurando o decantador, você pode apontar o gêiser em uma direção (nenhuma ação necessária). Uma criatura à sua escolha na {@variantrule Line [Area of Effect]|XPHB|Linha} deve ser bem-sucedida em uma salvaguarda de Força {@dc 13} ou sofrer {@damage 1d4} de dano de Concussão e receber a condição {@condition Prone|XPHB}. Em vez de uma criatura, você pode escolher como alvo um objeto na {@variantrule Line [Area of Effect]|XPHB|Linha} que não esteja sendo vestido nem carregado e pese no máximo 200 libras. O objeto é derrubado pelo gêiser."
+    },
+    "dnd2024:2024:item:deck-of-illusions:srd-5.2": {
+      "name": "Baralho de Ilusões",
+      "data.text.rules.0": "Esta caixa contém um conjunto de cartas. Um baralho completo possui 34 cartas: 32 retratando criaturas específicas e duas com superfície espelhada. Um baralho encontrado como tesouro normalmente está sem {@dice 1d20 - 1} cartas.",
+      "data.text.rules.1": "A magia do baralho funciona apenas se as cartas forem retiradas ao acaso. Você pode realizar uma ação {@action Magic|XPHB} para puxar uma carta aleatória do baralho e arremessá-la ao chão em um ponto a até 30 pés de você. Uma ilusão de uma criatura, determinada por uma rolagem na tabela Baralho de Ilusões, forma-se sobre a carta arremessada e permanece até ser dissipada. A criatura ilusória criada pela carta parece e se comporta como uma criatura real de seu tipo, exceto por não poder causar dano. Enquanto estiver a até 120 pés da criatura ilusória e puder vê-la, você pode realizar uma ação {@action Magic|XPHB} para movê-la para qualquer lugar a até 30 pés de sua carta.",
+      "data.text.rules.2": "Qualquer interação física com a criatura ilusória revela que ela é falsa, pois objetos atravessam seu corpo. Uma criatura que realiza uma ação {@action Study|XPHB} para inspecionar visualmente a criatura ilusória identifica a ilusão com um teste bem-sucedido de Inteligência ({@skill Investigation|XPHB}) {@dc 15}. A ilusão dura até que sua carta seja movida ou até ser dissipada (por uma magia {@spell Dispel Magic|XPHB} ou efeito semelhante). Quando a ilusão termina, a imagem na carta desaparece e essa carta não pode ser usada novamente.",
+      "data.text.rules.3.caption": "Baralho de Ilusões",
+      "data.text.rules.3.columns.1": "Ilusão",
+      "data.text.rules.3.rows.32.1": "A criatura que puxou a carta"
+    },
+    "dnd2024:2024:item:dust-of-disappearance:srd-5.2": {
+      "name": "Pó do Desaparecimento",
+      "data.text.rules.0": "Este pó se parece com areia fina. Há quantidade suficiente para um uso. Quando você realiza uma ação {@action Utilize|XPHB} para lançar o pó no ar, você e cada criatura e objeto em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 10 pés originada em você recebem a condição {@condition Invisible|XPHB} por {@dice 2d4} minutos. A duração é a mesma para todos os alvos, e o pó é consumido quando sua magia entra em efeito. Imediatamente depois que uma criatura afetada realiza uma jogada de ataque, causa dano ou conjura uma magia, a condição {@condition Invisible|XPHB} termina para ela."
+    },
+    "dnd2024:2024:item:dust-of-dryness:srd-5.2": {
+      "name": "Pó da Secura",
+      "data.text.rules.0": "Este pequeno pacote contém {@dice 1d6 + 4} pitadas de pó. Como uma ação {@action Utilize|XPHB}, você pode espalhar uma pitada sobre água, transformando até um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de 15 pés de água em uma única esfera do tamanho de uma bolinha de gude, que flutua ou repousa perto do local onde o pó foi espalhado. O peso da esfera é desprezível. Uma criatura pode realizar uma ação {@action Utilize|XPHB} para esmagá-la contra uma superfície dura, fazendo-a se partir e liberar a água absorvida. Isso destrói a esfera e encerra sua magia.",
+      "data.text.rules.1": "Como uma ação {@action Utilize|XPHB}, você pode espalhar uma pitada do pó sobre um Elemental a até 5 pés de você que seja composto principalmente de água (como um {@creature Water Elemental|XMM} ou um {@creature Water Weird|XMM}). Uma criatura assim exposta ao pó realiza uma salvaguarda de Constituição {@dc 13}, sofrendo {@damage 10d6} de dano Necrótico se falhar ou metade desse dano se for bem-sucedida."
+    },
+    "dnd2024:2024:item:dust-of-sneezing-and-choking:srd-5.2": {
+      "name": "Pó de Espirros e Sufocamento",
+      "data.text.rules.0": "Encontrado em um pequeno recipiente, este pó se parece com {@item Dust of Disappearance|XDMG}, e a magia {@spell Identify|XPHB} o identifica como tal. Há quantidade suficiente para um uso.",
+      "data.text.rules.1": "Como uma ação {@action Utilize|XPHB}, você pode lançar o pó no ar, forçando você e cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés originada em você a realizar uma salvaguarda de Constituição {@dc 15}. Constructos, Elementais, Limos, Plantas e Mortos-vivos são automaticamente bem-sucedidos na salvaguarda.",
+      "data.text.rules.2": "Se falhar, uma criatura começa a espirrar incontrolavelmente; ela recebe a condição {@condition Incapacitated|XPHB} e está sufocando. A criatura repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso. O efeito também termina sobre qualquer criatura que seja alvo da magia {@spell Lesser Restoration|XPHB}."
+    },
+    "dnd2024:2024:item:elemental-gem-blue-sapphire:srd-5.2": {
+      "name": "Gema Elemental, Safira Azul",
+      "data.text.rules.0": "Esta gema contém uma centelha de energia elemental. Quando você realiza uma ação {@action Utilize|XPHB} para quebrá-la, um {@creature Air Elemental|XMM} é invocado e a gema deixa de ser mágica. O elemental aparece no espaço desocupado mais próximo possível da gema quebrada, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}."
+    },
+    "dnd2024:2024:item:elemental-gem-emerald:srd-5.2": {
+      "name": "Gema Elemental, Esmeralda",
+      "data.text.rules.0": "Esta gema contém uma centelha de energia elemental. Quando você realiza uma ação {@action Utilize|XPHB} para quebrá-la, um {@creature Water Elemental|XMM} é invocado e a gema deixa de ser mágica. O elemental aparece no espaço desocupado mais próximo possível da gema quebrada, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}."
+    },
+    "dnd2024:2024:item:elemental-gem-red-corundum:srd-5.2": {
+      "name": "Gema Elemental, Coríndon Vermelho",
+      "data.text.rules.0": "Esta gema contém uma centelha de energia elemental. Quando você realiza uma ação {@action Utilize|XPHB} para quebrá-la, um {@creature Fire Elemental|XMM} é invocado e a gema deixa de ser mágica. O elemental aparece no espaço desocupado mais próximo possível da gema quebrada, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}."
+    },
+    "dnd2024:2024:item:elemental-gem-yellow-diamond:srd-5.2": {
+      "name": "Gema Elemental, Diamante Amarelo",
+      "data.text.rules.0": "Esta gema contém uma centelha de energia elemental. Quando você realiza uma ação {@action Utilize|XPHB} para quebrá-la, um {@creature Earth Elemental|XMM} é invocado e a gema deixa de ser mágica. O elemental aparece no espaço desocupado mais próximo possível da gema quebrada, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}."
+    },
+    "dnd2024:2024:item:eyes-of-charming:srd-5.2": {
+      "name": "Olhos do Encanto",
+      "data.activities.0.name": "Conjurar Enfeitiçar Pessoa",
+      "data.text.rules.0": "Estas lentes de cristal se ajustam sobre os olhos. Elas possuem 3 cargas. Enquanto as usa, você pode gastar 1 ou mais cargas para conjurar {@spell Charm Person|XPHB} (salvaguarda {@dc 13}). Por 1 carga, você conjura a versão de nível 1 da magia. O nível da magia aumenta em um para cada carga adicional gasta. As lentes recuperam todas as cargas gastas diariamente ao amanhecer."
+    },
+    "dnd2024:2024:item:eyes-of-minute-seeing:srd-5.2": {
+      "name": "Olhos da Visão Minuciosa",
+      "data.text.rules.0": "Estas lentes de cristal se ajustam sobre os olhos. Enquanto as usa, sua visão melhora significativamente até 1 pé de distância, concedendo {@sense Darkvision|XPHB|Visão no Escuro} dentro desse alcance e {@variantrule Advantage|XPHB|Vantagem} em testes de Inteligência ({@skill Investigation|XPHB}) feitos para examinar algo dentro desse alcance."
+    },
+    "dnd2024:2024:item:eyes-of-the-eagle:srd-5.2": {
+      "name": "Olhos da Águia",
+      "data.text.rules.0": "Estas lentes de cristal se ajustam sobre os olhos. Enquanto as usa, você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Sabedoria ({@skill Perception|XPHB}) que dependam da visão. Em condições de visibilidade clara, você consegue distinguir detalhes até de criaturas e objetos extremamente distantes com apenas 2 pés de largura."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-silver-raven:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Corvo de Prata",
+      "data.activities.0.name": "Conjurar Mensageiro Animal",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se não receber ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, volta à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la voltar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Corvo de Prata (Incomum)",
+      "data.text.rules.3.entries.0": "Esta estatueta de prata de um corvo pode se transformar em um {@creature Raven|XMM} por até 12 horas. Depois de usada, não pode ser usada novamente até que 2 dias tenham se passado. Enquanto estiver na forma de corvo, a estatueta permite que você conjure {@spell Animal Messenger|XPHB} sobre ela."
+    },
+    "dnd2024:2024:item:gauntlets-of-ogre-power:srd-5.2": {
+      "name": "Manoplas de Poder do Ogro",
+      "data.text.rules.0": "Seu valor de Força é 19 enquanto usa estas manoplas. Elas não têm efeito sobre você se sua Força já for 19 ou maior sem elas."
+    },
+    "dnd2024:2024:item:gem-of-brightness:srd-5.2": {
+      "name": "Gema de Brilho",
+      "data.text.rules.0": "Este prisma possui 50 cargas. Enquanto o segura, você pode realizar uma ação {@action Magic|XPHB} e usar uma de três palavras de comando para causar um dos efeitos a seguir:",
+      "data.text.rules.1.items.0.name": "Primeira Palavra de Comando",
+      "data.text.rules.1.items.0.entries.0": "A gema emite {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 30 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 30 pés. Esse efeito não gasta carga. Ele dura até você usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para repetir a palavra de comando ou até usar outra função da gema.",
+      "data.text.rules.1.items.1.name": "Segunda Palavra de Comando",
+      "data.text.rules.1.items.1.entries.0": "Você gasta 1 carga e faz a gema disparar um feixe de luz brilhante contra uma criatura que possa ver a até 60 pés de você. A criatura deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou receber a condição {@condition Blinded|XPHB} por 1 minuto. A criatura repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso.",
+      "data.text.rules.1.items.2.name": "Terceira Palavra de Comando",
+      "data.text.rules.1.items.2.entries.0": "Você gasta 5 cargas e faz a gema explodir em luz intensa em um {@variantrule Cone [Area of Effect]|XPHB|Cone} de 30 pés. Cada criatura no {@variantrule Cone [Area of Effect]|XPHB|Cone} realiza uma salvaguarda como se tivesse sido atingida pelo feixe criado pela segunda palavra de comando.",
+      "data.text.rules.2": "Quando todas as cargas da gema forem gastas, ela se torna uma joia não mágica no valor de 50 PO."
+    },
+    "dnd2024:2024:item:gloves-of-missile-snaring:srd-5.2": {
+      "name": "Luvas de Capturar Projéteis",
+      "data.text.rules.0": "Se você for atingido por uma jogada de ataque feita com uma arma à Distância ou de Arremesso enquanto usa estas luvas, pode usar uma {@variantrule Reaction|XPHB|Reação} para reduzir o dano em {@dice 1d10} + seu modificador de Destreza, desde que tenha uma mão livre. Se reduzir o dano a 0, você pode agarrar a munição ou arma caso ela seja pequena o bastante para ser segurada nessa mão."
+    },
+    "dnd2024:2024:item:gloves-of-swimming-and-climbing:srd-5.2": {
+      "name": "Luvas de Natação e Escalada",
+      "data.text.rules.0": "Enquanto usa estas luvas, escalar e nadar não custam movimento adicional, e você recebe +5 de bônus em testes de Força ({@skill Athletics|XPHB}) feitos para escalar ou nadar."
+    },
+    "dnd2024:2024:item:gloves-of-thievery:srd-5.2": {
+      "name": "Luvas de Ladroagem",
+      "data.text.rules.0": "Estas luvas são imperceptíveis enquanto usadas. Enquanto as usa, você recebe +5 de bônus em testes de Destreza ({@skill Sleight of Hand|XPHB})."
+    },
+    "dnd2024:2024:item:goggles-of-night:srd-5.2": {
+      "name": "Óculos da Noite",
+      "data.text.rules.0": "Enquanto usa estas lentes escuras, você possui {@sense Darkvision|XPHB|Visão no Escuro} com alcance de 60 pés. Se já possui {@sense Darkvision|XPHB|Visão no Escuro}, os óculos aumentam seu alcance em 60 pés."
+    },
+    "dnd2024:2024:item:hat-of-disguise:srd-5.2": {
+      "name": "Chapéu de Disfarce",
+      "data.activities.0.name": "Conjurar Disfarçar-se",
+      "data.text.rules.0": "Enquanto usa este chapéu, você pode conjurar a magia {@spell Disguise Self|XPHB}. A magia termina se o chapéu for removido."
+    },
+    "dnd2024:2024:item:headband-of-intellect:srd-5.2": {
+      "name": "Tiara do Intelecto",
+      "data.text.rules.0": "Seu valor de Inteligência é 19 enquanto usa esta tiara. Ela não tem efeito sobre você se sua Inteligência já for 19 ou maior sem ela."
+    },
+    "dnd2024:2024:item:helm-of-comprehending-languages:srd-5.2": {
+      "name": "Elmo de Compreensão de Idiomas",
+      "data.activities.0.name": "Conjurar Compreender Idiomas",
+      "data.text.rules.0": "Enquanto usa este elmo, você pode conjurar {@spell Comprehend Languages|XPHB} por meio dele."
+    },
+    "dnd2024:2024:item:helm-of-telepathy:srd-5.2": {
+      "name": "Elmo da Telepatia",
+      "data.activities.0.name": "Conjurar Detectar Pensamentos",
+      "data.activities.1.name": "Conjurar Sugestão",
+      "data.text.rules.0": "Enquanto usa este elmo, você possui telepatia com alcance de 30 pés e pode conjurar {@spell Detect Thoughts|XPHB} ou {@spell Suggestion|XPHB} (salvaguarda {@dc 13}) por meio do elmo. Depois que uma dessas magias for conjurada pelo elmo, ela não poderá ser conjurada por ele novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:lantern-of-revealing:srd-5.2": {
+      "name": "Lanterna Reveladora",
+      "data.text.rules.0": "Enquanto acesa, esta lanterna coberta queima por 6 horas usando 1 pinta de óleo, emitindo {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 30 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 30 pés. Criaturas e objetos {@condition Invisible|XPHB} ficam visíveis enquanto estiverem na {@variantrule Bright Light|XPHB|Luz Plena} da lanterna. Você pode realizar uma ação {@action Utilize|XPHB} para baixar a cobertura, reduzindo a luz da lanterna a {@variantrule Dim Light|XPHB|Meia-luz} em um raio de 5 pés."
+    },
+    "dnd2024:2024:item:medallion-of-thoughts:srd-5.2": {
+      "name": "Medalhão dos Pensamentos",
+      "data.activities.0.name": "Conjurar Detectar Pensamentos",
+      "data.text.rules.0": "O medalhão possui 5 cargas. Enquanto o usa, você pode gastar 1 carga para conjurar {@spell Detect Thoughts|XPHB} (salvaguarda {@dc 13}) por meio dele. O medalhão recupera {@dice 1d4} cargas gastas diariamente ao amanhecer."
+    },
+    "dnd2024:2024:item:necklace-of-adaptation:srd-5.2": {
+      "name": "Colar de Adaptação",
+      "data.text.rules.0": "Enquanto usa este colar, você pode respirar normalmente em qualquer ambiente e tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas feitas para evitar ou encerrar a condição {@condition Poisoned|XPHB}."
+    },
+    "dnd2024:2024:item:pearl-of-power:srd-5.2": {
+      "name": "Pérola de Poder",
+      "data.text.rules.0": "Enquanto esta pérola estiver com você, pode realizar uma ação {@action Magic|XPHB} para recuperar um espaço de magia gasto de nível 3 ou inferior. Depois que usar a pérola, ela não poderá ser usada novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:periapt-of-health:srd-5.2": {
+      "name": "Periapto da Saúde",
+      "data.text.rules.0": "Enquanto usa este pingente, você pode realizar uma ação {@action Magic|XPHB} para recuperar {@dice 2d4 + 2} {@variantrule Hit Points|XPHB|Pontos de Vida}. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer.",
+      "data.text.rules.1": "Além disso, você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas para evitar ou encerrar a condição {@condition Poisoned|XPHB} enquanto usa este pingente."
+    },
+    "dnd2024:2024:item:periapt-of-wound-closure:srd-5.2": {
+      "name": "Periapto do Fechamento de Feridas",
+      "data.text.rules.0": "Enquanto usa este pingente, você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Preservação da Vida",
+      "data.text.rules.1.entries.0": "Sempre que realizar uma {@variantrule Death Saving Throw|XPHB|Salvaguarda contra a Morte}, você pode transformar uma rolagem de 9 ou menos em 10, convertendo uma falha em sucesso.",
+      "data.text.rules.2.name": "Cura Natural Aprimorada",
+      "data.text.rules.2.entries.0": "Sempre que rolar um {@variantrule Hit Point Dice|XPHB|Dado de Vida} para recuperar {@variantrule Hit Points|XPHB|Pontos de Vida}, dobre a quantidade de {@variantrule Hit Points|XPHB|Pontos de Vida} restaurada."
+    },
+    "dnd2024:2024:item:pipes-of-haunting:srd-5.2": {
+      "name": "Flautas Assombradoras",
+      "data.text.rules.0": "Estas flautas possuem 3 cargas e recuperam {@dice 1d3} cargas gastas diariamente ao amanhecer. Você pode realizar uma ação {@action Magic|XPHB} para tocá-las e gastar 1 carga, criando uma melodia sobrenatural e hipnótica. Cada criatura à sua escolha a até 30 pés de você deve ser bem-sucedida em uma salvaguarda de Sabedoria {@dc 15} ou receber a condição {@condition Frightened|XPHB} por 1 minuto. Uma criatura que falhar repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso. Uma criatura que obtiver sucesso fica imune ao efeito destas flautas por 24 horas."
+    },
+    "dnd2024:2024:item:pipes-of-the-sewers:srd-5.2": {
+      "name": "Flautas dos Esgotos",
+      "data.text.rules.0": "Enquanto estas flautas estiverem com você, {@creature rat|XMM|ratos} e {@creature giant rat|XMM|ratos gigantes} comuns são {@variantrule Indifferent [Attitude]|XPHB|Indiferentes} em relação a você e não o atacam a menos que você os ameace ou machuque.",
+      "data.text.rules.1": "As flautas possuem 3 cargas e recuperam {@dice 1d3} cargas gastas diariamente ao amanhecer. Se você tocar as flautas como uma ação {@action Magic|XPHB}, pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para gastar de 1 a 3 cargas, convocando um {@creature Swarm of Rats|XMM} para cada carga gasta, desde que existam ratos suficientes em um raio de meia milha para serem chamados dessa maneira (a critério do Mestre). Se não houver ratos suficientes para formar um enxame, a carga é desperdiçada. Os enxames convocados se movem em direção à música pela rota disponível mais curta, mas fora isso não estão sob seu controle.",
+      "data.text.rules.2": "Sempre que um Enxame de Ratos que não esteja sob o controle de outra criatura chegar a até 30 pés de você enquanto toca as flautas, o enxame realiza uma salvaguarda de Sabedoria {@dc 15}. Em caso de sucesso, ele se comporta normalmente e não pode ser influenciado pela música das flautas pelas próximas 24 horas. Em caso de falha, é influenciado pela música e se torna {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados enquanto você continuar tocando as flautas a cada rodada como uma ação {@action Magic|XPHB}. Um enxame {@variantrule Friendly [Attitude]|XPHB|Amigável} obedece às suas ordens. Se você não der ordens, ele se defende, mas não realiza outras ações. Se um enxame {@variantrule Friendly [Attitude]|XPHB|Amigável} iniciar o turno a mais de 30 pés de você, seu controle sobre ele termina; o enxame volta a se comportar normalmente e não pode ser influenciado pela música das flautas pelas próximas 24 horas."
+    },
+    "dnd2024:2024:item:robe-of-useful-items:srd-5.2": {
+      "name": "Manto de Itens Úteis",
+      "data.text.rules.0": "Este manto é coberto por remendos de tecido de diversas formas e cores. Enquanto usa o manto, você pode realizar uma ação {@action Magic|XPHB} para destacar um dos remendos, fazendo-o se transformar no objeto ou criatura que representa. Depois que o último remendo é removido, o manto se torna uma peça de roupa comum.",
+      "data.text.rules.1": "O manto possui dois de cada um dos seguintes remendos:",
+      "data.text.rules.2.items.0": "{@item Bullseye Lantern|XPHB} (abastecida e acesa)",
+      "data.text.rules.2.items.4": "{@item Rope|XPHB} (enrolada)",
+      "data.text.rules.3": "Além disso, o manto possui {@dice 4d4} outros remendos. O Mestre escolhe os remendos ou os determina aleatoriamente rolando na tabela a seguir.",
+      "data.text.rules.4.columns.1": "Remendo",
+      "data.text.rules.4.rows.0.1": "Saco com 100 PO",
+      "data.text.rules.4.rows.1.1": "Cofre de prata (1 pé de comprimento, 6 polegadas de largura e profundidade) no valor de 500 PO",
+      "data.text.rules.4.rows.2.1": "Porta de ferro (até 10 pés de largura e 10 pés de altura, trancada com barra de um lado à sua escolha), que você pode colocar em uma abertura ao seu alcance; ela se ajusta à abertura, fixando-se e criando suas próprias dobradiças",
+      "data.text.rules.4.rows.3.1": "10 gemas no valor de 100 PO cada",
+      "data.text.rules.4.rows.4.1": "Escada de madeira (24 pés de comprimento)",
+      "data.text.rules.4.rows.5.1": "{@creature Riding Horse|XMM} com uma {@item Riding Saddle|XPHB}",
+      "data.text.rules.4.rows.6.1": "Poço aberto (um {@variantrule Cube [Area of Effect]|XPHB|Cubo} de 10 pés), que você pode colocar no chão a até 10 pés de você",
+      "data.text.rules.4.rows.7.1": "4 {@item Potion of Healing|XDMG|Poções de Cura}",
+      "data.text.rules.4.rows.8.1": "{@item Rowboat|XPHB} (12 pés de comprimento)",
+      "data.text.rules.4.rows.9.1": "{@item Spell Scroll|XDMG} contendo uma magia de nível 1, 2 ou 3 (à sua escolha)",
+      "data.text.rules.4.rows.10.1": "2 {@creature Mastiff|XMM|Mastins}",
+      "data.text.rules.4.rows.11.1": "Janela (2 pés por 4 pés, com até 2 pés de profundidade), que você pode colocar sobre uma superfície vertical ao seu alcance"
+    },
+    "dnd2024:2024:item:rope-of-climbing:srd-5.2": {
+      "name": "Corda de Escalada",
+      "data.text.rules.0": "Esta corda de 60 pés pode suportar até 3.000 libras. Enquanto segura uma de suas pontas, você pode realizar uma ação {@action Magic|XPHB} para ordenar que a outra ponta se anime e se mova em direção a um destino à sua escolha, a uma distância de até o comprimento da corda. Essa ponta se move 10 pés no seu turno quando você dá a ordem pela primeira vez e 10 pés no início de cada um de seus turnos seguintes até alcançar o destino ou até você ordenar que pare. Você também pode ordenar que a corda se prenda firmemente a um objeto ou se solte dele, faça ou desfaça nós, ou se enrole para ser carregada.",
+      "data.text.rules.1": "Se ordenar que a corda faça nós, grandes nós aparecem em intervalos de 1 pé ao longo dela. Enquanto estiver com nós, a corda encurta para 50 pés e concede {@variantrule Advantage|XPHB|Vantagem} em testes de habilidade feitos para escalá-la.",
+      "data.text.rules.2": "A corda possui CA 20, 20 PV e {@variantrule Immunity|XPHB|Imunidade} a dano de Veneno e Psíquico. Ela recupera 1 {@variantrule Hit Points|XPHB|Ponto de Vida} a cada 5 minutos enquanto tiver pelo menos 1 {@variantrule Hit Points|XPHB|Ponto de Vida}. Se cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, é destruída."
+    },
+    "dnd2024:2024:item:sending-stones:srd-5.2": {
+      "name": "Pedras Mensageiras",
+      "data.activities.0.name": "Conjurar Enviar Mensagem",
+      "data.text.rules.0": "Pedras Mensageiras vêm em pares, e cada pedra é entalhada para combinar com a outra, tornando o par fácil de reconhecer. Enquanto toca uma das pedras, você pode conjurar {@spell Sending|XPHB} por meio dela. O alvo é o portador da outra pedra. Se nenhuma criatura estiver portando a outra pedra, você percebe isso assim que usa a sua e não conjura a magia.",
+      "data.text.rules.1": "Depois que Sending for conjurada usando qualquer uma das pedras, elas não poderão ser usadas novamente até o próximo amanhecer. Se uma das pedras do par for destruída, a outra se torna não mágica."
+    },
+    "dnd2024:2024:item:slippers-of-spider-climbing:srd-5.2": {
+      "name": "Sapatilhas de Escalada de Aranha",
+      "data.text.rules.0": "Enquanto usa estes calçados leves, você pode se mover para cima, para baixo e através de superfícies verticais e ao longo de tetos, mantendo as mãos livres. Você possui {@variantrule Climb Speed|XPHB|Deslocamento de Escalada} igual ao seu {@variantrule Speed|XPHB|Deslocamento}. Entretanto, as sapatilhas não permitem que você se mova dessa forma sobre superfícies escorregadias, como as cobertas por gelo ou óleo."
+    },
+    "dnd2024:2024:item:stone-of-good-luck:srd-5.2": {
+      "name": "Pedra da Boa Sorte",
+      "data.text.rules.0": "Enquanto esta ágata polida estiver com você, recebe +1 de bônus em testes de habilidade e salvaguardas."
+    },
+    "dnd2024:2024:item:wind-fan:srd-5.2": {
+      "name": "Leque de Vento",
+      "data.activities.0.name": "Conjurar Rajada de Vento",
+      "data.text.rules.0": "Enquanto segura este leque, você pode conjurar {@spell Gust of Wind|XPHB} (salvaguarda {@dc 13}) por meio dele. A cada uso posterior do leque antes do próximo amanhecer, ele tem uma chance cumulativa de {@chance 20} de não funcionar; se o leque falhar, ele se rasga em farrapos inúteis e não mágicos."
+    },
+    "dnd2024:2024:item:winged-boots:srd-5.2": {
+      "name": "Botas Aladas",
+      "data.text.rules.0": "Estas botas possuem 4 cargas e recuperam {@dice 1d4} cargas gastas diariamente ao amanhecer. Enquanto usa as botas, você pode realizar uma ação {@action Magic|XPHB} para gastar 1 carga, recebendo {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 30 pés por 1 hora. Se estiver voando quando a duração terminar, você desce a uma taxa de 30 pés por rodada até pousar."
+    }
+  }
+}

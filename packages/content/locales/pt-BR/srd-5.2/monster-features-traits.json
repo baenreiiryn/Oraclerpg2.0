@@ -1,0 +1,434 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "feature",
+  "scope": "monster-features-traits",
+  "entries": {
+    "dnd2024:2024:feature:abduct:srd-5.2": {
+      "name": "Abduzir",
+      "data.text.rules.0": "O bugbear não precisa gastar movimento adicional para mover uma criatura que esteja agarrando."
+    },
+    "dnd2024:2024:feature:aberrant-ground:srd-5.2": {
+      "name": "Solo Aberrante",
+      "data.text.rules.0": "O solo em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 10 pés originada do bocarra é {@variantrule Difficult Terrain|XPHB|Terreno Difícil}."
+    },
+    "dnd2024:2024:feature:acid-absorption:srd-5.2": {
+      "name": "Absorção de Ácido",
+      "data.text.rules.0": "Sempre que o golem for submetido a dano de Ácido, ele não sofre dano e, em vez disso, recupera uma quantidade de {@variantrule Hit Points|XPHB|Pontos de Vida} igual ao dano de Ácido causado."
+    },
+    "dnd2024:2024:feature:adhesive-object-form-only:srd-5.2": {
+      "name": "Adesivo (Apenas Forma de Objeto)",
+      "data.text.rules.0": "O mímico adere a qualquer coisa que o toque. Uma criatura Enorme ou menor aderida ao mímico recebe a condição {@condition Grappled|XPHB|Agarrado} (escapar {@dc 13}). Testes de atributo feitos para escapar desse agarrão têm {@variantrule Disadvantage|XPHB|Desvantagem}."
+    },
+    "dnd2024:2024:feature:agile:srd-5.2": {
+      "name": "Ágil",
+      "data.text.rules.0": "O cervo não provoca um {@action Opportunity Attack|XPHB|Ataque de Oportunidade} quando sai do alcance de um inimigo."
+    },
+    "dnd2024:2024:feature:air-form:srd-5.2": {
+      "name": "Forma de Ar",
+      "data.text.rules.0": "O elemental pode entrar no espaço de uma criatura e parar ali. Ele pode atravessar um espaço de até 1 polegada de largura sem gastar movimento adicional para isso."
+    },
+    "dnd2024:2024:feature:amorphous:srd-5.2": {
+      "name": "Amorfo",
+      "data.text.rules.0": "O pudim pode atravessar um espaço de até 1 polegada de largura sem gastar movimento adicional para isso."
+    },
+    "dnd2024:2024:feature:amphibious:srd-5.2": {
+      "name": "Anfíbio",
+      "data.text.rules.0": "O aboleth pode respirar ar e água."
+    },
+    "dnd2024:2024:feature:aura-of-authority:srd-5.2": {
+      "name": "Aura de Autoridade",
+      "data.text.rules.0": "Enquanto estiverem em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 10 pés originada do hobgoblin, o hobgoblin e seus aliados têm {@variantrule Advantage|XPHB|Vantagem} em jogadas de ataque e salvaguardas, desde que o hobgoblin não esteja com a condição {@condition Incapacitated|XPHB|Incapacitado}."
+    },
+    "dnd2024:2024:feature:aversion-to-fire:srd-5.2": {
+      "name": "Aversão ao Fogo",
+      "data.text.rules.0": "Se o golem sofrer dano de Fogo, ele terá {@variantrule Disadvantage|XPHB|Desvantagem} em jogadas de ataque e testes de atributo até o final do próximo turno dele."
+    },
+    "dnd2024:2024:feature:barbed-hide:srd-5.2": {
+      "name": "Couro Farpado",
+      "data.text.rules.0": "No início de cada um de seus turnos, o diabo causa 5 ({@damage 1d10}) de dano Perfurante a qualquer criatura que esteja agarrando ou a qualquer criatura que o esteja agarrando."
+    },
+    "dnd2024:2024:feature:beast-of-burden:srd-5.2": {
+      "name": "Animal de Carga",
+      "data.text.rules.0": "A mula conta como uma categoria de tamanho maior para determinar sua capacidade de carga."
+    },
+    "dnd2024:2024:feature:berserk:srd-5.2": {
+      "name": "Frenético",
+      "data.text.rules.0": "Sempre que o golem iniciar seu turno {@status Bloodied|XPHB|Ferido}, role {@dice 1d6}. Com um 6, o golem entra em frenesi. Em cada um de seus turnos enquanto estiver em frenesi, o golem ataca a criatura mais próxima que puder ver. Se nenhuma criatura estiver perto o bastante para que ele se mova até ela e ataque, o golem ataca um objeto. Depois que entra em frenesi, o golem permanece assim até ser destruído ou deixar de estar {@status Bloodied|XPHB|Ferido}."
+    },
+    "dnd2024:2024:feature:blood-frenzy:srd-5.2": {
+      "name": "Frenesi de Sangue",
+      "data.text.rules.0": "O sahuagin tem {@variantrule Advantage|XPHB|Vantagem} em jogadas de ataque contra qualquer criatura que não esteja com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida}."
+    },
+    "dnd2024:2024:feature:bloodied-frenzy:srd-5.2": {
+      "name": "Frenesi do Ferido",
+      "data.text.rules.0": "Enquanto estiver {@status Bloodied|XPHB|Ferido}, o berserker tem {@variantrule Advantage|XPHB|Vantagem} em jogadas de ataque e salvaguardas."
+    },
+    "dnd2024:2024:feature:bloodied-fury:srd-5.2": {
+      "name": "Fúria do Ferido",
+      "data.text.rules.0": "Enquanto estiver {@status Bloodied|XPHB|Ferido}, o javali tem {@variantrule Advantage|XPHB|Vantagem} em jogadas de ataque."
+    },
+    "dnd2024:2024:feature:blurred-form:srd-5.2": {
+      "name": "Forma Borrada",
+      "data.text.rules.0": "Jogadas de ataque contra o mephit são feitas com {@variantrule Disadvantage|XPHB|Desvantagem}, a menos que o mephit esteja com a condição {@condition Incapacitated|XPHB|Incapacitado}."
+    },
+    "dnd2024:2024:feature:bound:srd-5.2": {
+      "name": "Vinculado",
+      "data.text.rules.0": "O guardião é magicamente vinculado a um amuleto. Enquanto o guardião e seu amuleto estiverem no mesmo plano de existência, o portador do amuleto pode chamar telepaticamente o guardião para que viaje até ele, e o guardião sabe a distância e a direção até o amuleto. Se o guardião estiver a até 60 pés do portador do amuleto, metade de qualquer dano sofrido pelo portador (arredondado para cima) é transferida ao guardião."
+    },
+    "dnd2024:2024:feature:celestial-restoration:srd-5.2": {
+      "name": "Restauração Celestial",
+      "data.text.rules.0": "Se a naga morrer, ela retorna à vida em {@dice 1d6} dias e recupera todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida}, a menos que {@spell Dispel Evil and Good|XPHB|Dissipar o Bem e o Mal} seja conjurada sobre seus restos mortais."
+    },
+    "dnd2024:2024:feature:compression:srd-5.2": {
+      "name": "Compressão",
+      "data.text.rules.0": "O polvo pode atravessar um espaço de até 1 polegada de largura sem gastar movimento adicional para isso."
+    },
+    "dnd2024:2024:feature:confer-fire-resistance:srd-5.2": {
+      "name": "Conceder Resistência ao Fogo",
+      "data.text.rules.0": "O pesadelo pode conceder {@variantrule Resistance|XPHB|Resistência} a dano de Fogo a um cavaleiro enquanto ele estiver montado no pesadelo."
+    },
+    "dnd2024:2024:feature:corrosive-form:srd-5.2": {
+      "name": "Forma Corrosiva",
+      "data.text.rules.0": "Uma criatura que acerte o pudim com uma jogada de ataque corpo a corpo sofre 4 ({@damage 1d8}) de dano de Ácido. Munição não mágica é destruída imediatamente após acertar o pudim e causar qualquer dano. Qualquer arma não mágica recebe uma penalidade cumulativa de -1 nas jogadas de ataque imediatamente após causar dano ao pudim e entrar em contato com ele. A arma é destruída se a penalidade chegar a -5. A penalidade pode ser removida conjurando a magia {@spell Mending|XPHB|Consertar} na arma. Em 1 minuto, o pudim pode corroer 2 pés de madeira ou metal não mágico."
+    },
+    "dnd2024:2024:feature:death-burst:srd-5.2": {
+      "name": "Explosão da Morte",
+      "data.text.rules.0": "O mephit explode quando morre. {@actSave dex} {@dc 10}, cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 5 pés originada do mephit. {@actSaveFail} 5 ({@damage 2d4}) de dano de Concussão. {@actSaveSuccess} Metade do dano."
+    },
+    "dnd2024:2024:feature:death-throes:srd-5.2": {
+      "name": "Estertores da Morte",
+      "data.text.rules.0": "O balor explode quando morre. {@actSave dex} {@dc 20}, cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés originada do balor. {@actSaveFail} 31 ({@damage 9d6}) de dano de Fogo mais 31 ({@damage 9d6}) de dano de Força. {@actSaveSuccess} Metade do dano. {@actSaveSuccessOrFail} Se o balor morrer fora do Abismo, ele recebe instantaneamente um novo corpo, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar do Abismo."
+    },
+    "dnd2024:2024:feature:demonic-restoration:srd-5.2": {
+      "name": "Restauração Demoníaca",
+      "data.text.rules.0": "Se o glabrezu morrer fora do Abismo, seu corpo se dissolve em ícor e ele recebe instantaneamente um novo corpo, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar do Abismo."
+    },
+    "dnd2024:2024:feature:diabolical-restoration:srd-5.2": {
+      "name": "Restauração Diabólica",
+      "data.text.rules.0": "Se o diabo morrer fora dos Nove Infernos, seu corpo desaparece em fumaça sulfurosa e ele recebe instantaneamente um novo corpo, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar dos Nove Infernos."
+    },
+    "dnd2024:2024:feature:divine-awareness:srd-5.2": {
+      "name": "Consciência Divina",
+      "data.text.rules.0": "O planetar sabe quando ouve uma mentira."
+    },
+    "dnd2024:2024:feature:draconic-origin:srd-5.2": {
+      "name": "Origem Dracônica",
+      "data.text.rules.0": "O meio-dragão é relacionado a um tipo de dragão associado a um dos seguintes tipos de dano (à escolha do Mestre): Ácido, Frio, Fogo, Elétrico ou Veneno. Essa escolha afeta outros aspectos do bloco de estatísticas."
+    },
+    "dnd2024:2024:feature:earth-glide:srd-5.2": {
+      "name": "Deslizar pela Terra",
+      "data.text.rules.0": "O elemental pode escavar através de terra e pedra não mágicas e não trabalhadas. Ao fazer isso, o elemental não perturba o material através do qual se move."
+    },
+    "dnd2024:2024:feature:eldritch-restoration:srd-5.2": {
+      "name": "Restauração Sobrenatural",
+      "data.text.rules.0": "Se for destruído, o aboleth recebe um novo corpo em {@dice 5d10} dias, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} no Reino Distante ou em outro local escolhido pelo Mestre."
+    },
+    "dnd2024:2024:feature:elemental-restoration:srd-5.2": {
+      "name": "Restauração Elemental",
+      "data.text.rules.0": "Se o djinni morrer fora do Plano Elemental do Ar, seu corpo se dissolve em névoa e ele recebe um novo corpo em {@dice 1d4} dias, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar do Plano do Ar."
+    },
+    "dnd2024:2024:feature:ephemeral:srd-5.2": {
+      "name": "Efêmero",
+      "data.text.rules.0": "O fogo-fátuo não pode vestir nem carregar nada."
+    },
+    "dnd2024:2024:feature:ethereal-sight:srd-5.2": {
+      "name": "Visão Etérea",
+      "data.text.rules.0": "O fantasma pode enxergar 60 pés dentro do Plano Etéreo enquanto estiver no Plano Material."
+    },
+    "dnd2024:2024:feature:evasion:srd-5.2": {
+      "name": "Evasão",
+      "data.text.rules.0": "Se o assassino for submetido a um efeito que permita uma salvaguarda de Destreza para sofrer apenas metade do dano, em vez disso ele não sofre dano se obtiver sucesso na salvaguarda e sofre apenas metade do dano se falhar. Ele não pode usar esta característica se estiver com a condição {@condition Incapacitated|XPHB|Incapacitado}."
+    },
+    "dnd2024:2024:feature:exalted-restoration:srd-5.2": {
+      "name": "Restauração Exaltada",
+      "data.text.rules.0": "Se o deva morrer fora do Monte Celestia, seu corpo desaparece e ele recebe instantaneamente um novo corpo, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar do Monte Celestia."
+    },
+    "dnd2024:2024:feature:fear-aura:srd-5.2": {
+      "name": "Aura de Medo",
+      "data.text.rules.0": "O diabo das profundezas emana uma aura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 20 pés enquanto não estiver com a condição {@condition Incapacitated|XPHB|Incapacitado}. {@actSave wis} {@dc 21}, qualquer inimigo que iniciar seu turno na aura. {@actSaveFail} O alvo recebe a condição {@condition Frightened|XPHB|Amedrontado} até o início do próximo turno dele. {@actSaveSuccess} O alvo fica imune à Aura deste diabo das profundezas por 24 horas."
+    },
+    "dnd2024:2024:feature:fiendish-restoration:srd-5.2": {
+      "name": "Restauração Ínfera",
+      "data.text.rules.0": "Se o rakshasa morrer fora dos Nove Infernos, seu corpo se transforma em ícor e ele recebe instantaneamente um novo corpo, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em algum lugar dos Nove Infernos."
+    },
+    "dnd2024:2024:feature:fire-absorption:srd-5.2": {
+      "name": "Absorção de Fogo",
+      "data.text.rules.0": "Sempre que o golem for submetido a dano de Fogo, ele recupera uma quantidade de {@variantrule Hit Points|XPHB|Pontos de Vida} igual ao dano de Fogo causado."
+    },
+    "dnd2024:2024:feature:fire-aura:srd-5.2": {
+      "name": "Aura de Fogo",
+      "data.text.rules.0": "Ao final de cada um dos turnos do azer, cada criatura escolhida pelo azer em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 5 pés originada dele sofre 5 ({@damage 1d10}) de dano de Fogo, a menos que o azer esteja com a condição {@condition Incapacitated|XPHB|Incapacitado}."
+    },
+    "dnd2024:2024:feature:fire-form:srd-5.2": {
+      "name": "Forma de Fogo",
+      "data.text.rules.0": "O elemental pode atravessar um espaço de até 1 polegada de largura sem gastar movimento adicional para isso, e pode entrar no espaço de uma criatura e parar ali. Na primeira vez em que entrar no espaço de uma criatura em um turno, essa criatura sofre 5 ({@damage 1d10}) de dano de Fogo."
+    },
+    "dnd2024:2024:feature:flyby:srd-5.2": {
+      "name": "Sobrevoo",
+      "data.text.rules.0": "A cobra não provoca um {@action Opportunity Attack|XPHB|Ataque de Oportunidade} quando voa para fora do alcance de um inimigo."
+    },
+    "dnd2024:2024:feature:freeze:srd-5.2": {
+      "name": "Congelamento",
+      "data.text.rules.0": "Se o elemental sofrer dano de Frio, seu {@variantrule Speed|XPHB|Deslocamento} diminui em 20 pés até o final do próximo turno dele."
+    },
+    "dnd2024:2024:feature:gibbering:srd-5.2": {
+      "name": "Balbucio",
+      "data.text.rules.0": "O bocarra balbucia incoerentemente enquanto não estiver com a condição {@condition Incapacitated|XPHB|Incapacitado}. {@actSave wis} {@dc 10}, qualquer criatura que iniciar seu turno a até 20 pés do bocarra enquanto ele estiver balbuciando. {@actSaveFail} O alvo rola {@dice 1d8} para determinar o que faz durante o turno atual: item 1-4 O alvo não faz nada. item 5-6 O alvo não realiza ação nem {@variantrule Bonus Action|XPHB|Ação Bônus} e usa todo o seu movimento para se mover em uma direção aleatória. item 7-8 O alvo realiza um ataque corpo a corpo contra uma criatura determinada aleatoriamente dentro de seu alcance, ou não faz nada se não puder realizar esse ataque."
+    },
+    "dnd2024:2024:feature:greater-magic-resistance:srd-5.2": {
+      "name": "Resistência à Magia Superior",
+      "data.text.rules.0": "O rakshasa obtém sucesso automaticamente em salvaguardas contra magias e outros efeitos mágicos, e as jogadas de ataque de magias erram automaticamente contra ele. Sem a permissão do rakshasa, nenhuma magia pode observá-lo remotamente nem detectar seus pensamentos, tipo de criatura ou alinhamento."
+    },
+    "dnd2024:2024:feature:heat-aura:srd-5.2": {
+      "name": "Aura de Calor",
+      "data.text.rules.0": "Ao final de cada um dos turnos do remorhaz, cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 5 pés originada do remorhaz sofre 16 ({@damage 3d10}) de dano de Fogo."
+    },
+    "dnd2024:2024:feature:hellish-restoration:srd-5.2": {
+      "name": "Restauração Infernal",
+      "data.text.rules.0": "Se o lêmure morrer nos Nove Infernos, ele revive com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida} em {@dice 1d10} dias, a menos que seja morto por uma criatura sob os efeitos da magia {@spell Bless|XPHB|Bênção} ou que seus restos sejam aspergidos com {@item Holy Water|XPHB|Água Benta}."
+    },
+    "dnd2024:2024:feature:hold-breath:srd-5.2": {
+      "name": "Prender a Respiração",
+      "data.text.rules.0": "O crocodilo pode prender a respiração por 1 hora."
+    },
+    "dnd2024:2024:feature:ice-walk:srd-5.2": {
+      "name": "Caminhar no Gelo",
+      "data.text.rules.0": "O dragão pode se mover e escalar superfícies geladas sem precisar fazer um teste de atributo. Além disso, {@variantrule Difficult Terrain|XPHB|Terreno Difícil} composto de gelo ou neve não lhe custa movimento adicional."
+    },
+    "dnd2024:2024:feature:illumination:srd-5.2": {
+      "name": "Iluminação",
+      "data.text.rules.0": "O azer emite {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 10 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 10 pés."
+    },
+    "dnd2024:2024:feature:immutable-form:srd-5.2": {
+      "name": "Forma Imutável",
+      "data.text.rules.0": "O golem não pode mudar de forma."
+    },
+    "dnd2024:2024:feature:incorporeal-movement:srd-5.2": {
+      "name": "Movimento Incorpóreo",
+      "data.text.rules.0": "O fantasma pode atravessar outras criaturas e objetos como se fossem {@variantrule Difficult Terrain|XPHB|Terreno Difícil}. Ele sofre 5 ({@damage 1d10}) de dano de Força se terminar seu turno dentro de um objeto."
+    },
+    "dnd2024:2024:feature:incubus-form:srd-5.2": {
+      "name": "Forma de Íncubo",
+      "data.text.rules.0": "Quando a súcubo termina um {@variantrule Long Rest|XPHB|Descanso Longo}, ela pode mudar de forma para um {@creature Incubus|XMM|Íncubo}, usando o bloco de estatísticas dele em vez deste."
+    },
+    "dnd2024:2024:feature:inscrutable:srd-5.2": {
+      "name": "Inescrutável",
+      "data.text.rules.0": "Nenhuma magia pode observar a esfinge remotamente nem detectar seus pensamentos sem sua permissão. Testes de Sabedoria ({@skill Insight|XPHB|Intuição}) feitos para discernir suas intenções ou sinceridade são realizados com {@variantrule Disadvantage|XPHB|Desvantagem}."
+    },
+    "dnd2024:2024:feature:invisibility:srd-5.2": {
+      "name": "Invisibilidade",
+      "data.text.rules.0": "O espreitador recebe a condição {@condition Invisible|XPHB|Invisível}."
+    },
+    "dnd2024:2024:feature:iron-scent:srd-5.2": {
+      "name": "Faro de Ferro",
+      "data.text.rules.0": "O monstro da ferrugem pode determinar com precisão a localização de metal ferroso a até 30 pés de si."
+    },
+    "dnd2024:2024:feature:jumper:srd-5.2": {
+      "name": "Saltador",
+      "data.text.rules.0": "A distância de salto do gato é determinada usando sua Destreza em vez de sua Força."
+    },
+    "dnd2024:2024:feature:legendary-resistance:srd-5.2": {
+      "name": "Resistência Lendária",
+      "data.text.rules.0": "Se o aboleth falhar em uma salvaguarda, ele pode escolher obter sucesso em vez disso."
+    },
+    "dnd2024:2024:feature:light-sensitivity:srd-5.2": {
+      "name": "Sensibilidade à Luz",
+      "data.text.rules.0": "Enquanto estiver sob {@variantrule Bright Light|XPHB|Luz Plena}, o cloaker tem {@variantrule Disadvantage|XPHB|Desvantagem} em jogadas de ataque."
+    },
+    "dnd2024:2024:feature:lightning-absorption:srd-5.2": {
+      "name": "Absorção de Eletricidade",
+      "data.text.rules.0": "Sempre que o golem for submetido a dano Elétrico, ele recupera uma quantidade de {@variantrule Hit Points|XPHB|Pontos de Vida} igual ao dano Elétrico causado."
+    },
+    "dnd2024:2024:feature:limited-amphibiousness:srd-5.2": {
+      "name": "Anfibiedade Limitada",
+      "data.text.rules.0": "O sahuagin pode respirar ar e água, mas precisa ficar submerso pelo menos uma vez a cada 4 horas para evitar sufocar fora da água."
+    },
+    "dnd2024:2024:feature:loathsome-limbs:srd-5.2": {
+      "name": "Membros Repugnantes",
+      "data.text.rules.0": "Se o troll terminar qualquer turno {@status Bloodied|XPHB|Ferido} e tiver sofrido 15 ou mais de dano Cortante durante esse turno, um dos membros do troll é decepado, cai no espaço do troll e se torna um {@creature Troll Limb|XMM|Membro de Troll}. O membro age imediatamente após o turno do troll. O troll tem 1 nível de {@condition Exhaustion|XPHB|Exaustão} para cada membro ausente e desenvolve membros substitutos na próxima vez em que recuperar {@variantrule Hit Points|XPHB|Pontos de Vida}."
+    },
+    "dnd2024:2024:feature:magic-resistance:srd-5.2": {
+      "name": "Resistência à Magia",
+      "data.text.rules.0": "O arquimago tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias e outros efeitos mágicos."
+    },
+    "dnd2024:2024:feature:magic-rope:srd-5.2": {
+      "name": "Corda Mágica",
+      "data.text.rules.0": "A erínia possui uma corda mágica. Enquanto a portar, a erínia pode usar a ação Corda Enredante. A corda tem CA 20, PV 90 e {@variantrule Immunity|XPHB|Imunidade} a dano de Veneno e Psíquico. A corda se transforma em pó se for reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, se ficar a 5 pés ou mais da erínia por 1 hora ou mais, ou se a erínia morrer. Se a corda for danificada ou destruída, a erínia pode restaurá-la completamente ao terminar um {@variantrule Short Rest|XPHB|Descanso Curto} ou {@variantrule Long Rest|XPHB|Descanso Longo}."
+    },
+    "dnd2024:2024:feature:mimicry:srd-5.2": {
+      "name": "Mimetismo",
+      "data.text.rules.0": "A bruxa pode imitar sons de animais e vozes humanoides. Uma criatura que ouvir os sons só consegue perceber que são imitações com um teste bem-sucedido de Sabedoria ({@skill Insight|XPHB|Intuição}) {@dc 14}."
+    },
+    "dnd2024:2024:feature:misty-escape:srd-5.2": {
+      "name": "Fuga Nebulosa",
+      "data.text.rules.0": "Se o vampiro cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} fora de seu local de repouso, ele usa Metamorfose para se tornar névoa (nenhuma ação necessária). Se não puder usar Metamorfose, é destruído. Enquanto tiver 0 {@variantrule Hit Points|XPHB|Pontos de Vida} na forma de névoa, ele não pode retornar à forma de vampiro e precisa alcançar seu local de repouso em até 2 horas ou será destruído. Quando chega ao local de repouso, retorna à forma de vampiro e recebe a condição {@condition Paralyzed|XPHB|Paralisado} até recuperar quaisquer {@variantrule Hit Points|XPHB|Pontos de Vida}; ele recupera 1 {@variantrule Hit Points|XPHB|Ponto de Vida} após permanecer ali por 1 hora."
+    },
+    "dnd2024:2024:feature:mucus-cloud:srd-5.2": {
+      "name": "Nuvem de Muco",
+      "data.text.rules.0": "Enquanto estiver debaixo d'água, o aboleth é cercado por muco. {@actSave con} {@dc 14}, cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 5 pés originada do aboleth ao final do turno do aboleth. {@actSaveFail} O alvo é amaldiçoado. Até a maldição terminar, a pele do alvo se torna viscosa, ele pode respirar ar e água e não pode recuperar {@variantrule Hit Points|XPHB|Pontos de Vida} a menos que esteja debaixo d'água. Enquanto a criatura amaldiçoada estiver fora de um corpo d'água, ela sofre 6 ({@damage 1d12}) de dano de Ácido ao final de cada 10 minutos, a menos que umidade seja aplicada à sua pele antes de esses minutos passarem."
+    },
+    "dnd2024:2024:feature:multiple-heads:srd-5.2": {
+      "name": "Múltiplas Cabeças",
+      "data.text.rules.0": "A hidra possui cinco cabeças. Sempre que a hidra sofrer 25 ou mais de dano em um único turno, uma de suas cabeças morre. A hidra morre se todas as suas cabeças estiverem mortas. Ao final de cada um de seus turnos em que tiver pelo menos uma cabeça viva, a hidra desenvolve duas cabeças para cada cabeça que morreu desde seu último turno, a menos que tenha sofrido dano de Fogo desde seu último turno. A hidra recupera 20 {@variantrule Hit Points|XPHB|Pontos de Vida} quando desenvolve novas cabeças."
+    },
+    "dnd2024:2024:feature:ooze-cube:srd-5.2": {
+      "name": "Cubo de Limo",
+      "data.text.rules.0": "O cubo preenche todo o seu espaço e é transparente. Outras criaturas podem entrar nesse espaço, mas uma criatura que fizer isso é submetida ao Engolfar do cubo e tem {@variantrule Disadvantage|XPHB|Desvantagem} na salvaguarda. Criaturas dentro do cubo têm {@variantrule Cover|XPHB|Cobertura Total}, e o cubo pode conter uma criatura Grande ou até quatro criaturas Médias ou Pequenas dentro de si ao mesmo tempo. Como uma ação, uma criatura a até 5 pés do cubo pode puxar uma criatura ou objeto para fora dele obtendo sucesso em um teste de Força ({@skill Athletics|XPHB|Atletismo}) {@dc 12}, e quem puxar sofre 10 ({@damage 3d6}) de dano de Ácido."
+    },
+    "dnd2024:2024:feature:pack-tactics:srd-5.2": {
+      "name": "Táticas de Matilha"
+    },
+    "dnd2024:2024:feature:probing-telepathy:srd-5.2": {
+      "name": "Telepatia Investigativa",
+      "data.text.rules.0": "Se uma criatura que o aboleth possa ver se comunicar telepaticamente com ele, o aboleth descobre os maiores desejos dessa criatura."
+    },
+    "dnd2024:2024:feature:reactive:srd-5.2": {
+      "name": "Reativo",
+      "data.text.rules.0": "A marilith pode realizar uma {@variantrule Reaction|XPHB|Reação} em cada turno de combate."
+    },
+    "dnd2024:2024:feature:reactive-heads:srd-5.2": {
+      "name": "Cabeças Reativas",
+      "data.text.rules.0": "Para cada cabeça que a hidra tiver além da primeira, ela recebe uma {@variantrule Reaction|XPHB|Reação} adicional que só pode ser usada para {@action Opportunity Attack|XPHB|Ataques de Oportunidade}."
+    },
+    "dnd2024:2024:feature:reflective-carapace:srd-5.2": {
+      "name": "Carapaça Reflexiva",
+      "data.text.rules.0": "Se o tarrasque for alvo da magia {@spell Magic Missile|XPHB|Mísseis Mágicos} ou de uma magia que exija uma jogada de ataque à distância, role {@dice 1d6}. Com 1-5, o tarrasque não é afetado. Com 6, o tarrasque não é afetado e reflete a magia, tornando o conjurador o alvo."
+    },
+    "dnd2024:2024:feature:regeneration:srd-5.2": {
+      "name": "Regeneração",
+      "data.text.rules.0": "O oni recupera 10 {@variantrule Hit Points|XPHB|Pontos de Vida} no início de cada um de seus turnos se tiver pelo menos 1 {@variantrule Hit Points|XPHB|Ponto de Vida}."
+    },
+    "dnd2024:2024:feature:running-leap:srd-5.2": {
+      "name": "Salto com Corrida",
+      "data.text.rules.0": "Com uma corrida preparatória de 10 pés, o leão pode realizar um {@variantrule Long Jump|XPHB|Salto em Distância} de até 25 pés."
+    },
+    "dnd2024:2024:feature:sense-magic:srd-5.2": {
+      "name": "Sentir Magia",
+      "data.text.rules.0": "O chuul sente magia a até 120 pés de si. Fora isso, esta característica funciona como a magia {@spell Detect Magic|XPHB|Detectar Magia}, mas não é, por si só, mágica."
+    },
+    "dnd2024:2024:feature:shark-telepathy:srd-5.2": {
+      "name": "Telepatia com Tubarões",
+      "data.text.rules.0": "O sahuagin pode controlar magicamente tubarões a até 120 pés de si usando uma forma especial de telepatia."
+    },
+    "dnd2024:2024:feature:shielded-mind:srd-5.2": {
+      "name": "Mente Protegida",
+      "data.text.rules.0": "Os pensamentos do couatl não podem ser lidos por nenhum meio, e outras criaturas só podem se comunicar telepaticamente com ele se ele permitir."
+    },
+    "dnd2024:2024:feature:siege-monster:srd-5.2": {
+      "name": "Monstro de Cerco",
+      "data.text.rules.0": "O elemental causa o dobro de dano a objetos e estruturas."
+    },
+    "dnd2024:2024:feature:soul-bag:srd-5.2": {
+      "name": "Saco de Almas",
+      "data.text.rules.0": "A bruxa possui um saco de almas. Enquanto estiver segurando ou carregando o saco, a bruxa pode usar sua ação Assombração de Pesadelo. O saco tem CA 15, PV 20 e {@variantrule Resistance|XPHB|Resistência} a todo dano. O saco se transforma em pó se for reduzido a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}. Se o saco for destruído, quaisquer almas que estiverem dentro dele são libertadas. A bruxa pode criar um novo saco após 7 dias."
+    },
+    "dnd2024:2024:feature:speak-with-beasts-and-plants:srd-5.2": {
+      "name": "Falar com Bestas e Plantas",
+      "data.text.rules.0": "A dríade pode se comunicar com Bestas e Plantas como se compartilhassem um idioma."
+    },
+    "dnd2024:2024:feature:spell-storing:srd-5.2": {
+      "name": "Armazenar Magia",
+      "data.text.rules.0": "Um conjurador que esteja usando o amuleto do guardião pode fazer com que o guardião armazene uma magia de nível 4 ou inferior. Para isso, o portador deve conjurar a magia sobre o guardião enquanto estiver a até 5 pés dele. A magia não produz efeito, sendo armazenada dentro do guardião. Qualquer magia anteriormente armazenada é perdida quando uma nova magia é armazenada. O guardião pode conjurar a magia armazenada com quaisquer parâmetros definidos pelo conjurador original, sem exigir componentes de magia e usando a habilidade de conjuração do conjurador. A magia armazenada é então perdida."
+    },
+    "dnd2024:2024:feature:spider-climb:srd-5.2": {
+      "name": "Escalada Aracnídea",
+      "data.text.rules.0": "O pudim pode escalar superfícies difíceis, inclusive tetos, sem precisar fazer um teste de atributo."
+    },
+    "dnd2024:2024:feature:spirit-jar:srd-5.2": {
+      "name": "Receptáculo Espiritual",
+      "data.text.rules.0": "Se for destruído, o lich se recompõe em {@dice 1d10} dias se possuir um receptáculo espiritual, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida}. O novo corpo aparece em um espaço desocupado dentro do covil do lich."
+    },
+    "dnd2024:2024:feature:standing-leap:srd-5.2": {
+      "name": "Salto Parado",
+      "data.text.rules.0": "O {@variantrule Long Jump|XPHB|Salto em Distância} do sapo é de até 10 pés e seu {@variantrule High Jump|XPHB|Salto em Altura} é de até 5 pés, com ou sem corrida preparatória."
+    },
+    "dnd2024:2024:feature:stench:srd-5.2": {
+      "name": "Fedor",
+      "data.text.rules.0": "{@actSave con} {@dc 10}, qualquer criatura que iniciar seu turno em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 5 pés originada do ghast. {@actSaveFail} O alvo recebe a condição {@condition Poisoned|XPHB|Envenenado} até o início do próximo turno dele. {@actSaveSuccess} O alvo fica imune ao Fedor deste ghast por 24 horas."
+    },
+    "dnd2024:2024:feature:succubus-form:srd-5.2": {
+      "name": "Forma de Súcubo",
+      "data.text.rules.0": "Quando o íncubo termina um {@variantrule Long Rest|XPHB|Descanso Longo}, ele pode mudar de forma para uma {@creature Succubus|XMM|Súcubo}, usando o bloco de estatísticas dela em vez deste. Qualquer equipamento que esteja vestindo ou carregando não é transformado."
+    },
+    "dnd2024:2024:feature:sunlight-sensitivity:srd-5.2": {
+      "name": "Sensibilidade à Luz Solar",
+      "data.text.rules.0": "Enquanto estiver sob luz solar, o drider tem {@variantrule Disadvantage|XPHB|Desvantagem} em testes de atributo e jogadas de ataque."
+    },
+    "dnd2024:2024:feature:sunlight-weakness:srd-5.2": {
+      "name": "Fraqueza à Luz Solar",
+      "data.text.rules.0": "Enquanto estiver sob luz solar, a sombra tem {@variantrule Disadvantage|XPHB|Desvantagem} em {@variantrule D20 Test|XPHB|Testes de d20}."
+    },
+    "dnd2024:2024:feature:swarm:srd-5.2": {
+      "name": "Enxame",
+      "data.text.rules.0": "O enxame pode ocupar o espaço de outra criatura e vice-versa, e pode atravessar qualquer abertura grande o bastante para um morcego Minúsculo. O enxame não pode recuperar {@variantrule Hit Points|XPHB|Pontos de Vida} nem receber {@variantrule Temporary Hit Points|XPHB|Pontos de Vida Temporários}."
+    },
+    "dnd2024:2024:feature:telepathic-bond:srd-5.2": {
+      "name": "Vínculo Telepático",
+      "data.text.rules.0": "Enquanto o homúnculo estiver no mesmo plano de existência que seu mestre, os dois podem se comunicar telepaticamente."
+    },
+    "dnd2024:2024:feature:training:srd-5.2": {
+      "name": "Treinamento",
+      "data.text.rules.0": "O plebeu possui proficiência em uma perícia à escolha do Mestre e tem {@variantrule Advantage|XPHB|Vantagem} sempre que realiza um teste de atributo usando essa perícia."
+    },
+    "dnd2024:2024:feature:transparent:srd-5.2": {
+      "name": "Transparente",
+      "data.text.rules.0": "Mesmo quando o cubo está claramente à vista, uma criatura deve obter sucesso em um teste de Sabedoria ({@skill Perception|XPHB|Percepção}) {@dc 15} para notá-lo se não tiver testemunhado o cubo se mover ou agir de alguma outra forma."
+    },
+    "dnd2024:2024:feature:treasure-sense:srd-5.2": {
+      "name": "Sentido de Tesouro",
+      "data.text.rules.0": "O xorn pode determinar com precisão a localização de metais e pedras preciosas a até 60 pés de si."
+    },
+    "dnd2024:2024:feature:troll-spawn:srd-5.2": {
+      "name": "Prole de Troll",
+      "data.text.rules.0": "De modo sobrenatural, o membro possui os mesmos sentidos de um troll inteiro. Se o membro não for destruído em até 24 horas, role {@dice 1d12}. Com 12, o membro se transforma em um {@creature Troll|XMM|Troll}. Caso contrário, o membro definha."
+    },
+    "dnd2024:2024:feature:tunneler:srd-5.2": {
+      "name": "Escavador de Túneis",
+      "data.text.rules.0": "O ankheg pode escavar através de rocha sólida usando metade de seu {@variantrule Burrow Speed|XPHB|Deslocamento de Escavação} e deixa para trás um túnel de 10 pés de diâmetro."
+    },
+    "dnd2024:2024:feature:undead-fortitude:srd-5.2": {
+      "name": "Fortitude de Morto-vivo",
+      "data.text.rules.0": "Se um dano reduzir o zumbi a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, ele faz uma salvaguarda de Constituição ({@dc 5} mais o dano sofrido), a menos que o dano seja Radiante ou provenha de um {@variantrule Critical Hit|XPHB|Acerto Crítico}. Em caso de sucesso, o zumbi cai para 1 {@variantrule Hit Points|XPHB|Ponto de Vida} em vez disso."
+    },
+    "dnd2024:2024:feature:undead-restoration:srd-5.2": {
+      "name": "Restauração Morta-viva",
+      "data.text.rules.0": "Se for destruída, a múmia recebe um novo corpo em 24 horas se seu coração estiver intacto, revivendo com todos os seus {@variantrule Hit Points|XPHB|Pontos de Vida}. O novo corpo aparece em um espaço desocupado dentro do covil da múmia. O coração é um objeto Minúsculo com CA 17, PV 10 e {@variantrule Immunity|XPHB|Imunidade} a todo dano, exceto Fogo."
+    },
+    "dnd2024:2024:feature:vampire-weakness:srd-5.2": {
+      "name": "Fraquezas do Vampiro",
+      "data.text.rules.0": "O vampiro possui as seguintes fraquezas: Proibição O vampiro não pode entrar em uma residência sem ser convidado por um ocupante. Água Corrente O vampiro sofre 20 de dano de Ácido se terminar seu turno em água corrente. Estaca no Coração Se uma arma que cause dano Perfurante for cravada no coração do vampiro enquanto ele estiver com a condição {@condition Incapacitated|XPHB|Incapacitado} em seu local de repouso, o vampiro recebe a condição {@condition Paralyzed|XPHB|Paralisado} até a arma ser removida. Luz Solar O vampiro sofre 20 de dano Radiante se iniciar seu turno sob luz solar. Enquanto estiver sob luz solar, ele tem {@variantrule Disadvantage|XPHB|Desvantagem} em jogadas de ataque e testes de atributo."
+    },
+    "dnd2024:2024:feature:vampiric-connection:srd-5.2": {
+      "name": "Conexão Vampírica",
+      "data.text.rules.0": "Enquanto o familiar e seu mestre vampiro estiverem no mesmo plano de existência, o vampiro pode se comunicar telepaticamente com o familiar e perceber através dos sentidos dele."
+    },
+    "dnd2024:2024:feature:vile-appearance:srd-5.2": {
+      "name": "Aparência Vil",
+      "data.text.rules.0": "{@actSave wis} {@dc 11}, qualquer Besta ou Humanoide que iniciar seu turno a até 30 pés da bruxa e puder ver a forma verdadeira dela. {@actSaveFail} O alvo recebe a condição {@condition Frightened|XPHB|Amedrontado} até o início do próximo turno dele. {@actSaveSuccess} O alvo fica imune à Aparência Vil desta bruxa por 24 horas."
+    },
+    "dnd2024:2024:feature:water-breathing:srd-5.2": {
+      "name": "Respiração Aquática",
+      "data.text.rules.0": "O polvo só pode respirar debaixo d'água. Ele pode prender a respiração por 1 hora fora da água."
+    },
+    "dnd2024:2024:feature:water-form:srd-5.2": {
+      "name": "Forma de Água",
+      "data.text.rules.0": "O elemental pode entrar no espaço de um inimigo e parar ali. Ele pode atravessar um espaço de até 1 polegada de largura sem gastar movimento adicional para isso."
+    },
+    "dnd2024:2024:feature:water-susceptibility:srd-5.2": {
+      "name": "Suscetibilidade à Água",
+      "data.text.rules.0": "O elemental sofre 3 ({@damage 1d6}) de dano de Frio para cada 5 pés que se mover na água ou para cada galão de água derramado sobre ele."
+    },
+    "dnd2024:2024:feature:web-walker:srd-5.2": {
+      "name": "Caminhante de Teias",
+      "data.text.rules.0": "O drider ignora restrições de movimento causadas por teias e sabe a localização de qualquer outra criatura em contato com a mesma teia."
+    },
+    "dnd2024:2024:feature:wishes:srd-5.2": {
+      "name": "Desejos",
+      "data.text.rules.0": "O djinni tem 30 por cento de chance de conhecer a magia {@spell Wish|XPHB|Desejo}. Se a conhecer, o djinni só pode conjurá-la em nome de uma criatura que não seja um gênio e que comunique um desejo de uma forma que ele possa compreender. Se o djinni conjurar a magia para a criatura, ele não sofre nenhum dos efeitos de estresse da magia. Depois de conjurá-la três vezes, o djinni não pode fazê-lo novamente por 365 dias."
+    }
+  }
+}

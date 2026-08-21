@@ -1,0 +1,19 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "mounts",
+  "entries": {
+    "dnd2024:2024:item:camel:srd-5.2": { "name": "Camelo" },
+    "dnd2024:2024:item:draft-horse:srd-5.2": { "name": "Cavalo de Tração" },
+    "dnd2024:2024:item:elephant:srd-5.2": { "name": "Elefante" },
+    "dnd2024:2024:item:mastiff:srd-5.2": { "name": "Mastim" },
+    "dnd2024:2024:item:mule:srd-5.2": { "name": "Mula" },
+    "dnd2024:2024:item:pony:srd-5.2": { "name": "Pônei" },
+    "dnd2024:2024:item:riding-horse:srd-5.2": { "name": "Cavalo de Montaria" },
+    "dnd2024:2024:item:warhorse:srd-5.2": { "name": "Cavalo de Guerra" }
+  }
+}

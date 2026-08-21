@@ -1,0 +1,234 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wondrous-very-rare",
+  "entries": {
+    "dnd2024:2024:item:amulet-of-the-planes:srd-5.2": {
+      "name": "Amuleto dos Planos",
+      "data.activities.0.name": "Conjurar Viagem Planar",
+      "data.text.rules.0": "Enquanto usa este amuleto, você pode realizar uma ação {@action Magic|XPHB} para nomear um local com o qual esteja familiarizado em outro plano de existência. Em seguida, faça um teste de Inteligência ({@skill Arcana|XPHB}) {@dc 15}. Em caso de sucesso, você conjura {@spell Plane Shift|XPHB}. Em caso de falha, você e cada criatura e objeto a até 15 pés de você viajam para um destino aleatório determinado rolando {@dice 1d100} e consultando a tabela a seguir.",
+      "data.text.rules.1.columns.1": "Destino",
+      "data.text.rules.1.rows.0.1": "Local aleatório no plano que você nomeou",
+      "data.text.rules.1.rows.1.1": "Local aleatório em um Plano Interior determinado rolando {@dice 1d6}: com {@b 1}, o Plano do Ar; com {@b 2}, o Plano da Terra; com {@b 3}, o Plano do Fogo; com {@b 4}, o Plano da Água; com {@b 5}, Faéria; com {@b 6}, Sombral",
+      "data.text.rules.1.rows.2.1": "Local aleatório em um Plano Exterior determinado rolando 1d8: com {@b 1}, Arbórea; com {@b 2}, Arcádia; com {@b 3}, Terras das Feras; com {@b 4}, Bitópia; com {@b 5}, Elísio; com {@b 6}, Mecânus; com {@b 7}, Monte Celéstia; com {@b 8}, Ysgard",
+      "data.text.rules.1.rows.3.1": "Local aleatório em um Plano Exterior determinado rolando {@dice 1d8}: com {@b 1}, o Abismo; com {@b 2}, Aqueronte; com {@b 3}, Cárceri; com {@b 4}, Geena; com {@b 5}, Hades; com {@b 6}, Limbo; com {@b 7}, os Nove Infernos; com {@b 8}, Pandemônio",
+      "data.text.rules.1.rows.4.1": "Local aleatório no Plano Astral"
+    },
+    "dnd2024:2024:item:bag-of-devouring:srd-5.2": {
+      "name": "Saco Devorador",
+      "data.text.rules.0": "Este saco se parece com uma {@item Bag of Holding|XDMG}, mas na verdade é um orifício de alimentação de uma gigantesca criatura extradimensional. Virar o saco do avesso fecha o orifício.",
+      "data.text.rules.1": "A criatura extradimensional ligada ao saco pode sentir tudo o que é colocado dentro dele. Matéria animal ou vegetal colocada inteiramente no saco é devorada e perdida para sempre. Quando parte de uma criatura viva é colocada no saco, como acontece quando alguém enfia a mão nele, há {@chance 50} de chance de a criatura ser puxada para dentro. Uma criatura dentro do saco pode realizar uma ação para tentar escapar, conseguindo com um teste bem-sucedido de Força ({@skill Athletics|XPHB}) {@dc 15}. Outra criatura pode realizar uma ação para alcançar o interior do saco e puxar uma criatura para fora, conseguindo com um teste bem-sucedido de Força ({@skill Athletics|XPHB}) {@dc 20}, desde que quem esteja puxando não seja levado para dentro do saco primeiro. Qualquer criatura que inicie o turno dentro do saco é devorada, e seu corpo é destruído.",
+      "data.text.rules.2": "Objetos inanimados podem ser armazenados no saco, que comporta 1 pé cúbico desse material. Entretanto, uma vez por dia, o saco engole quaisquer objetos em seu interior e os cospe em outro plano de existência. O Mestre determina o momento e o plano.",
+      "data.text.rules.3": "Se o saco for perfurado ou rasgado, ele é destruído, e tudo o que estiver contido nele é transportado para um local aleatório do Plano Astral."
+    },
+    "dnd2024:2024:item:belt-of-fire-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante do Fogo",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 25. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:belt-of-frost-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante do Gelo",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 23. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:belt-of-stone-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante da Pedra",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 23. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:candle-of-invocation:srd-5.2": {
+      "name": "Vela de Invocação",
+      "data.activities.0.name": "Conjurar Portal",
+      "data.text.rules.0": "A magia desta vela é ativada quando ela é acesa, o que exige uma ação {@action Magic|XPHB}. Depois de queimar por 4 horas, a vela é destruída. Você pode apagá-la antes para usá-la novamente mais tarde. Desconte o tempo em que ela queimou, em incrementos de 1 minuto, do tempo total de queima.",
+      "data.text.rules.1": "Enquanto acesa, a vela emite {@variantrule Dim Light|XPHB|Meia-luz} em um raio de 30 pés. Enquanto estiver nessa luz, você tem {@variantrule Advantage|XPHB|Vantagem} em {@variantrule D20 Test|XPHB|Testes de d20}. Além disso, um Clérigo ou Druida na luz pode conjurar magias preparadas de nível 1 sem gastar espaços de magia.",
+      "data.text.rules.2": "Como alternativa, quando acender a vela pela primeira vez, você pode conjurar {@spell Gate|XPHB} por meio dela. Fazer isso destrói a vela. O portal criado pela magia se conecta a um Plano Exterior específico escolhido pelo Mestre ou determinado rolando na tabela a seguir.",
+      "data.text.rules.3.columns.1": "Plano Exterior",
+      "data.text.rules.3.rows.0.1": "{@book Abyss|XDMG|5|Abismo}",
+      "data.text.rules.3.rows.1.1": "{@book Acheron|XDMG|5|Aqueronte}",
+      "data.text.rules.3.rows.2.1": "{@book Arborea|XDMG|5|Arbórea}",
+      "data.text.rules.3.rows.3.1": "{@book Arcadia|XDMG|5|Arcádia}",
+      "data.text.rules.3.rows.4.1": "{@book Beastlands|XDMG|5|Terras das Feras}",
+      "data.text.rules.3.rows.5.1": "{@book Bytopia|XDMG|5|Bitópia}",
+      "data.text.rules.3.rows.6.1": "{@book Carceri|XDMG|5|Cárceri}",
+      "data.text.rules.3.rows.7.1": "{@book Elysium|XDMG|5|Elísio}",
+      "data.text.rules.3.rows.8.1": "{@book Gehenna|XDMG|5|Geena}",
+      "data.text.rules.3.rows.9.1": "{@book Hades|XDMG|5|Hades}",
+      "data.text.rules.3.rows.10.1": "{@book Limbo|XDMG|5|Limbo}",
+      "data.text.rules.3.rows.11.1": "{@book Mechanus|XDMG|5|Mecânus}",
+      "data.text.rules.3.rows.12.1": "{@book Mount Celestia|XDMG|5|Monte Celéstia}",
+      "data.text.rules.3.rows.13.1": "{@book Nine Hells|XDMG|5|Nove Infernos}",
+      "data.text.rules.3.rows.14.1": "{@book Pandemonium|XDMG|5|Pandemônio}",
+      "data.text.rules.3.rows.15.1": "{@book Ysgard|XDMG|5|Ysgard}"
+    },
+    "dnd2024:2024:item:carpet-of-flying-3-ft-5-ft:srd-5.2": {
+      "name": "Tapete Voador, 3 pés × 5 pés",
+      "data.text.rules.0": "Você pode fazer este tapete pairar e voar realizando uma ação {@action Magic|XPHB} e usando a palavra de comando do tapete. Ele se move de acordo com suas instruções se você estiver a até 30 pés dele.",
+      "data.text.rules.1": "Um tapete de 3 pés × 5 pés pode carregar até 200 libras com {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 80 pés. Um tapete pode carregar até o dobro do peso indicado, mas seu {@variantrule Fly Speed|XPHB|Deslocamento de Voo} é reduzido pela metade se carregar mais do que sua capacidade normal."
+    },
+    "dnd2024:2024:item:carpet-of-flying-4-ft-6-ft:srd-5.2": {
+      "name": "Tapete Voador, 4 pés × 6 pés",
+      "data.text.rules.0": "Você pode fazer este tapete pairar e voar realizando uma ação {@action Magic|XPHB} e usando a palavra de comando do tapete. Ele se move de acordo com suas instruções se você estiver a até 30 pés dele.",
+      "data.text.rules.1": "Um tapete de 4 pés × 6 pés pode carregar até 400 libras com {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 60 pés. Um tapete pode carregar até o dobro do peso indicado, mas seu {@variantrule Fly Speed|XPHB|Deslocamento de Voo} é reduzido pela metade se carregar mais do que sua capacidade normal."
+    },
+    "dnd2024:2024:item:carpet-of-flying-5-ft-7-ft:srd-5.2": {
+      "name": "Tapete Voador, 5 pés × 7 pés",
+      "data.text.rules.0": "Você pode fazer este tapete pairar e voar realizando uma ação {@action Magic|XPHB} e usando a palavra de comando do tapete. Ele se move de acordo com suas instruções se você estiver a até 30 pés dele.",
+      "data.text.rules.1": "Um tapete de 5 pés × 7 pés pode carregar até 600 libras com {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 40 pés. Um tapete pode carregar até o dobro do peso indicado, mas seu {@variantrule Fly Speed|XPHB|Deslocamento de Voo} é reduzido pela metade se carregar mais do que sua capacidade normal."
+    },
+    "dnd2024:2024:item:carpet-of-flying-6-ft-9-ft:srd-5.2": {
+      "name": "Tapete Voador, 6 pés × 9 pés",
+      "data.text.rules.0": "Você pode fazer este tapete pairar e voar realizando uma ação {@action Magic|XPHB} e usando a palavra de comando do tapete. Ele se move de acordo com suas instruções se você estiver a até 30 pés dele.",
+      "data.text.rules.1": "Um tapete de 6 pés × 9 pés pode carregar até 800 libras com {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 30 pés. Um tapete pode carregar até o dobro do peso indicado, mas seu {@variantrule Fly Speed|XPHB|Deslocamento de Voo} é reduzido pela metade se carregar mais do que sua capacidade normal."
+    },
+    "dnd2024:2024:item:cloak-of-arachnida:srd-5.2": {
+      "name": "Manto da Aracnídea",
+      "data.activities.0.name": "Conjurar Teia",
+      "data.text.rules.0": "Esta peça refinada é feita de seda negra entrelaçada com fios prateados quase imperceptíveis. Enquanto a usa, você recebe os benefícios a seguir.",
+      "data.text.rules.1.name": "Resistência a Veneno",
+      "data.text.rules.1.entries.0": "Você possui {@variantrule Resistance|XPHB|Resistência} a dano de Veneno.",
+      "data.text.rules.2.name": "Escalada de Aranha",
+      "data.text.rules.2.entries.0": "Você possui {@variantrule Climb Speed|XPHB|Deslocamento de Escalada} igual ao seu {@variantrule Speed|XPHB|Deslocamento} e pode se mover para cima, para baixo e através de superfícies verticais e ao longo de tetos, mantendo as mãos livres.",
+      "data.text.rules.3.name": "Caminhar em Teias",
+      "data.text.rules.3.entries.0": "Você não pode ficar preso em teias de qualquer tipo e pode se mover através delas como se fossem {@variantrule Difficult Terrain|XPHB|Terreno Difícil}.",
+      "data.text.rules.4.name": "Teia",
+      "data.text.rules.4.entries.0": "Você pode conjurar {@spell Web|XPHB} (salvaguarda {@dc 13}). A teia criada pela magia ocupa o dobro da área normal. Depois de usada, esta propriedade não pode ser usada novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:crystal-ball:srd-5.2": {
+      "name": "Bola de Cristal",
+      "data.activities.0.name": "Conjurar Vidência",
+      "data.text.rules.0": "A bola de cristal típica, um item muito raro, possui cerca de 6 polegadas de diâmetro. Enquanto a toca, você pode conjurar a magia {@spell Scrying|XPHB} (salvaguarda {@dc 17}) por meio dela."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-obsidian-steed:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Corcel de Obsidiana",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Corcel de Obsidiana (Muito Raro)",
+      "data.text.rules.3.entries.0": "Este cavalo de obsidiana polida pode se transformar em um {@creature Nightmare|XMM} por até 24 horas. O pesadelo luta apenas para se defender. Depois de usado, não pode ser usado novamente até que 5 dias tenham se passado.",
+      "data.text.rules.3.entries.1": "A estatueta possui {@chance 10} de chance, a cada vez que você a utiliza, de ignorar suas ordens, incluindo uma ordem para retornar à forma de estatueta. Se você montar o pesadelo enquanto ele estiver ignorando suas ordens, você e o pesadelo são instantaneamente transportados para um local aleatório no plano de Hades, onde o pesadelo retorna à forma de estatueta."
+    },
+    "dnd2024:2024:item:helm-of-brilliance:srd-5.2": {
+      "name": "Elmo do Brilho",
+      "data.activities.0.name": "Conjurar Rajada Prismática",
+      "data.activities.1.name": "Conjurar Muralha de Fogo",
+      "data.activities.2.name": "Conjurar Bola de Fogo",
+      "data.activities.3.name": "Conjurar Luz do Dia",
+      "data.text.rules.0": "Este elmo é cravejado com {@dice 1d10} diamantes, {@dice 2d10} rubis, {@dice 3d10} opalas de fogo e {@dice 4d10} opalas. Qualquer gema arrancada do elmo se desfaz em pó. Quando todas as gemas forem removidas ou destruídas, o elmo perde sua magia.",
+      "data.text.rules.1": "Você recebe os benefícios a seguir enquanto usa o elmo.",
+      "data.text.rules.2.name": "Luz de Diamante",
+      "data.text.rules.2.entries.0": "Enquanto tiver pelo menos um diamante, o elmo emite uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés. Quando pelo menos um Morto-vivo estiver nessa área, a {@variantrule Emanation [Area of Effect]|XPHB|Emanação} fica preenchida por {@variantrule Dim Light|XPHB|Meia-luz}. Qualquer Morto-vivo que iniciar o turno nessa área sofre {@damage 1d6} de dano Radiante.",
+      "data.text.rules.3.name": "Chamas de Opala de Fogo",
+      "data.text.rules.3.entries.0": "Enquanto o elmo tiver pelo menos uma opala de fogo, você pode realizar uma ação {@action Magic|XPHB} para fazer uma arma que esteja segurando irromper em chamas. As chamas emitem {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 10 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 10 pés. As chamas são inofensivas para você e para a arma. Quando você acerta um ataque com a arma em chamas, o alvo sofre {@damage 1d6} de dano de Fogo adicional. As chamas duram até você usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para apagá-las ou até soltar ou guardar a arma.",
+      "data.text.rules.4.name": "Resistência do Rubi",
+      "data.text.rules.4.entries.0": "Enquanto o elmo tiver pelo menos um rubi, você possui {@variantrule Resistance|XPHB|Resistência} a dano de Fogo.",
+      "data.text.rules.5.name": "Magias",
+      "data.text.rules.5.entries.0": "Você pode conjurar uma das magias a seguir (salvaguarda {@dc 18}), usando uma das gemas do tipo especificado no elmo como componente: {@spell Daylight|XPHB} (opala), {@spell Fireball|XPHB} (opala de fogo), {@spell Prismatic Spray|XPHB} (diamante) ou {@spell Wall of Fire|XPHB} (rubi). A gema é destruída quando a magia é conjurada e desaparece do elmo.",
+      "data.text.rules.6.name": "Sofrer Dano de Fogo",
+      "data.text.rules.6.entries.0": "Role {@dice 1d20} se estiver usando o elmo e sofrer dano de Fogo como resultado de falhar em uma salvaguarda contra uma magia. Se obtiver 1, o elmo emite feixes de luz de suas gemas restantes e então é destruído. Cada criatura em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 60 pés originada em você deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 17} ou ser atingida por um feixe, sofrendo dano Radiante igual ao número de gemas no elmo."
+    },
+    "dnd2024:2024:item:horseshoes-of-a-zephyr:srd-5.2": {
+      "name": "Ferraduras do Zéfiro",
+      "data.text.rules.0": "Estas ferraduras vêm em um conjunto de quatro. Como uma ação {@action Magic|XPHB}, você pode tocar uma delas no casco de um cavalo ou criatura semelhante, fazendo com que a ferradura se fixe ao casco. Remover uma ferradura também exige uma ação {@action Magic|XPHB}.",
+      "data.text.rules.1": "Enquanto as quatro ferraduras estiverem presas aos cascos de um cavalo ou criatura semelhante, elas permitem que a criatura se mova normalmente enquanto flutua 4 polegadas acima de uma superfície. Esse efeito permite que a criatura atravesse ou permaneça sobre superfícies não sólidas ou instáveis, como água ou lava. A criatura não deixa rastros e ignora {@variantrule Difficult Terrain|XPHB|Terreno Difícil}. Além disso, pode viajar por até 12 horas por dia sem receber níveis de {@condition Exhaustion|XPHB} devido a viagens prolongadas."
+    },
+    "dnd2024:2024:item:ioun-stone-absorption:srd-5.2": {
+      "name": "Pedra Ioun, Absorção",
+      "data.text.rules.1": "Enquanto este elipsoide lavanda-claro orbita sua cabeça, você pode usar uma {@variantrule Reaction|XPHB|Reação} para cancelar uma magia de nível 4 ou inferior conjurada por uma criatura que possa ver. Uma magia cancelada não produz efeito, e quaisquer recursos usados para conjurá-la são desperdiçados. Depois que a pedra tiver cancelado 20 níveis de magias, ela se queima, torna-se cinza opaca e perde sua magia."
+    },
+    "dnd2024:2024:item:ioun-stone-agility:srd-5.2": {
+      "name": "Pedra Ioun, Agilidade",
+      "data.text.rules.1": "Sua Destreza aumenta em 2, até o máximo de 20, enquanto esta esfera vermelho-escura orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-fortitude:srd-5.2": {
+      "name": "Pedra Ioun, Fortitude",
+      "data.text.rules.1": "Sua Constituição aumenta em 2, até o máximo de 20, enquanto este romboide rosa orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-insight:srd-5.2": {
+      "name": "Pedra Ioun, Intuição",
+      "data.text.rules.1": "Sua Sabedoria aumenta em 2, até o máximo de 20, enquanto esta esfera azul incandescente orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-intellect:srd-5.2": {
+      "name": "Pedra Ioun, Intelecto",
+      "data.text.rules.1": "Sua Inteligência aumenta em 2, até o máximo de 20, enquanto esta esfera marmorizada em escarlate e azul orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-leadership:srd-5.2": {
+      "name": "Pedra Ioun, Liderança",
+      "data.text.rules.1": "Seu Carisma aumenta em 2, até o máximo de 20, enquanto esta esfera marmorizada em rosa e verde orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-strength:srd-5.2": {
+      "name": "Pedra Ioun, Força",
+      "data.text.rules.1": "Sua Força aumenta em 2, até o máximo de 20, enquanto este romboide azul-claro orbita sua cabeça."
+    },
+    "dnd2024:2024:item:manual-of-bodily-health:srd-5.2": {
+      "name": "Manual da Saúde Corporal",
+      "data.text.rules.0": "Este livro contém orientações sobre saúde e alimentação, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, sua Constituição aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    },
+    "dnd2024:2024:item:manual-of-clay-golems:srd-5.2": {
+      "name": "Manual dos Golens de Barro",
+      "data.text.rules.0": "Este tomo contém as informações e encantamentos necessários para criar um {@creature clay golem|XMM}. Para decifrar e usar o manual, você deve ser um conjurador com pelo menos dois espaços de magia de nível 5. Uma criatura incapaz de usar um {@i manual de golens} que tente lê-lo sofre {@damage 6d6} de dano Psíquico.",
+      "data.text.rules.1": "Para criar um golem de barro, você deve passar 30 dias trabalhando sem interrupção com o manual à mão e descansando no máximo 8 horas por dia. Você também deve pagar 65.000 PO para adquirir os materiais.",
+      "data.text.rules.2": "Quando terminar de criar o golem, o livro é consumido por chamas sobrenaturais. O golem se anima quando as cinzas do manual são espalhadas sobre ele. Ele fica sob seu controle e compreende e obedece às suas ordens faladas."
+    },
+    "dnd2024:2024:item:manual-of-flesh-golems:srd-5.2": {
+      "name": "Manual dos Golens de Carne",
+      "data.text.rules.0": "Este tomo contém as informações e encantamentos necessários para criar um {@creature flesh golem|XMM}. Para decifrar e usar o manual, você deve ser um conjurador com pelo menos dois espaços de magia de nível 5. Uma criatura incapaz de usar um {@i manual de golens} que tente lê-lo sofre {@damage 6d6} de dano Psíquico.",
+      "data.text.rules.1": "Para criar um golem de carne, você deve passar 60 dias trabalhando sem interrupção com o manual à mão e descansando no máximo 8 horas por dia. Você também deve pagar 50.000 PO para adquirir os materiais.",
+      "data.text.rules.2": "Quando terminar de criar o golem, o livro é consumido por chamas sobrenaturais. O golem se anima quando as cinzas do manual são espalhadas sobre ele. Ele fica sob seu controle e compreende e obedece às suas ordens faladas."
+    },
+    "dnd2024:2024:item:manual-of-gainful-exercise:srd-5.2": {
+      "name": "Manual dos Exercícios Benéficos",
+      "data.text.rules.0": "Este livro descreve exercícios físicos, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, sua Força aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    },
+    "dnd2024:2024:item:manual-of-iron-golems:srd-5.2": {
+      "name": "Manual dos Golens de Ferro",
+      "data.text.rules.0": "Este tomo contém as informações e encantamentos necessários para criar um {@creature iron golem|XMM}. Para decifrar e usar o manual, você deve ser um conjurador com pelo menos dois espaços de magia de nível 5. Uma criatura incapaz de usar um {@i manual de golens} que tente lê-lo sofre {@damage 6d6} de dano Psíquico.",
+      "data.text.rules.1": "Para criar um golem de ferro, você deve passar 120 dias trabalhando sem interrupção com o manual à mão e descansando no máximo 8 horas por dia. Você também deve pagar 100.000 PO para adquirir os materiais.",
+      "data.text.rules.2": "Quando terminar de criar o golem, o livro é consumido por chamas sobrenaturais. O golem se anima quando as cinzas do manual são espalhadas sobre ele. Ele fica sob seu controle e compreende e obedece às suas ordens faladas."
+    },
+    "dnd2024:2024:item:manual-of-quickness-of-action:srd-5.2": {
+      "name": "Manual da Rapidez de Ação",
+      "data.text.rules.0": "Este livro contém exercícios de coordenação e equilíbrio, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, sua Destreza aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    },
+    "dnd2024:2024:item:manual-of-stone-golems:srd-5.2": {
+      "name": "Manual dos Golens de Pedra",
+      "data.text.rules.0": "Este tomo contém as informações e encantamentos necessários para criar um {@creature stone golem|XMM}. Para decifrar e usar o manual, você deve ser um conjurador com pelo menos dois espaços de magia de nível 5. Uma criatura incapaz de usar um {@i manual de golens} que tente lê-lo sofre {@damage 6d6} de dano Psíquico.",
+      "data.text.rules.1": "Para criar um golem de pedra, você deve passar 90 dias trabalhando sem interrupção com o manual à mão e descansando no máximo 8 horas por dia. Você também deve pagar 80.000 PO para adquirir os materiais.",
+      "data.text.rules.2": "Quando terminar de criar o golem, o livro é consumido por chamas sobrenaturais. O golem se anima quando as cinzas do manual são espalhadas sobre ele. Ele fica sob seu controle e compreende e obedece às suas ordens faladas."
+    },
+    "dnd2024:2024:item:mirror-of-life-trapping:srd-5.2": {
+      "name": "Espelho de Aprisionar Vidas",
+      "data.text.rules.0": "Quando este espelho de 4 pés de altura e 2 pés de largura é visto indiretamente, sua superfície mostra imagens tênues de criaturas. O espelho pesa 50 libras e possui CA 11, 10 PV, {@variantrule Immunity|XPHB|Imunidade} a dano de Veneno e Psíquico e {@variantrule Vulnerability|XPHB|Vulnerabilidade} a dano de Concussão. Ele se estilhaça e é destruído quando reduzido a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}.",
+      "data.text.rules.1": "Se o espelho estiver pendurado em uma superfície vertical e você estiver a até 5 pés dele, pode realizar uma ação {@action Magic|XPHB} e usar uma palavra de comando para ativá-lo. Ele permanece ativado até você realizar uma ação {@action Magic|XPHB} e repetir a palavra de comando para desativá-lo.",
+      "data.text.rules.2": "Qualquer criatura que não seja você e veja o próprio reflexo no espelho ativado enquanto estiver a até 30 pés dele deve ser bem-sucedida em uma salvaguarda de Carisma {@dc 15} ou ser aprisionada, junto com tudo o que estiver vestindo ou carregando, em uma das doze celas extradimensionais do espelho. Uma criatura que conheça a natureza do espelho realiza a salvaguarda com {@variantrule Advantage|XPHB|Vantagem}, e Constructos são automaticamente bem-sucedidos.",
+      "data.text.rules.3": "Uma cela extradimensional é uma extensão infinita preenchida por neblina espessa que reduz a visibilidade a 10 pés. Criaturas aprisionadas nas celas do espelho não envelhecem e não precisam comer, beber nem dormir. Uma criatura aprisionada em uma cela pode escapar usando magia que permita viagem planar. Caso contrário, permanece confinada até ser libertada.",
+      "data.text.rules.4": "Se o espelho aprisionar uma criatura quando suas doze celas extradimensionais já estiverem ocupadas, ele liberta uma criatura aprisionada aleatoriamente para acomodar o novo prisioneiro. Uma criatura libertada aparece em um espaço desocupado à vista do espelho, mas voltada para longe dele. Se o espelho for estilhaçado, todas as criaturas contidas nele são libertadas e aparecem em espaços desocupados próximos.",
+      "data.text.rules.5": "Enquanto estiver a até 5 pés do espelho, você pode realizar uma ação {@action Magic|XPHB} para nomear uma criatura aprisionada nele ou mencionar uma cela específica pelo número. A criatura nomeada ou contida na cela indicada aparece como uma imagem na superfície do espelho. Você e a criatura podem então se comunicar.",
+      "data.text.rules.6": "De maneira semelhante, você pode realizar uma ação {@action Magic|XPHB} e usar uma segunda palavra de comando para libertar uma criatura aprisionada no espelho. A criatura libertada aparece, junto com suas posses, no espaço desocupado mais próximo do espelho e voltada para longe dele.",
+      "data.text.rules.7": "Colocar o espelho dentro de um espaço extradimensional criado por uma {@item Bag of Holding|XDMG}, um Buraco Portátil ou item semelhante destrói instantaneamente ambos os itens e abre um portal para o Plano Astral. O portal se origina onde um item foi colocado dentro do outro. Qualquer criatura a até 10 pés do portal que não esteja atrás de {@variantrule Cover|XPHB|Cobertura Total} é sugada através dele para um local aleatório do Plano Astral. Em seguida, o portal se fecha. O portal funciona apenas em uma direção e não pode ser reaberto."
+    },
+    "dnd2024:2024:item:robe-of-scintillating-colors:srd-5.2": {
+      "name": "Manto das Cores Cintilantes",
+      "data.text.rules.0": "Este manto possui 3 cargas e recupera {@dice 1d3} cargas gastas diariamente ao amanhecer. Enquanto o usa, você pode realizar uma ação {@action Magic|XPHB} e gastar 1 carga para fazer a roupa exibir um padrão mutável de cores deslumbrantes até o final de seu próximo turno. Durante esse período, o manto emite {@variantrule Bright Light|XPHB|Luz Plena} em um raio de 30 pés e {@variantrule Dim Light|XPHB|Meia-luz} por mais 30 pés, e criaturas que possam vê-lo têm {@variantrule Disadvantage|XPHB|Desvantagem} nas jogadas de ataque contra você. Qualquer criatura na {@variantrule Bright Light|XPHB|Luz Plena} que possa vê-lo quando o poder do manto é ativado deve ser bem-sucedida em uma salvaguarda de Sabedoria {@dc 15} ou receber a condição {@condition Stunned|XPHB} até o efeito terminar."
+    },
+    "dnd2024:2024:item:robe-of-stars:srd-5.2": {
+      "name": "Manto das Estrelas",
+      "data.activities.0.name": "Conjurar Mísseis Mágicos",
+      "data.text.rules.0": "Este manto preto ou azul-escuro é bordado com pequenas estrelas brancas ou prateadas. Você recebe +1 de bônus nas salvaguardas enquanto o usa.",
+      "data.text.rules.1": "Seis estrelas, localizadas na parte frontal superior do manto, são particularmente grandes. Enquanto usa este manto, você pode realizar uma ação {@action Magic|XPHB} para remover uma das estrelas e gastá-la para conjurar a versão de nível 5 de {@spell Magic Missile|XPHB}. Diariamente ao anoitecer, {@dice 1d6} estrelas removidas reaparecem no manto.",
+      "data.text.rules.2": "Enquanto usa o manto, você pode realizar uma ação {@action Magic|XPHB} para entrar no Plano Astral junto com tudo o que estiver vestindo e carregando. Você permanece lá até realizar uma ação {@action Magic|XPHB} para retornar ao plano em que estava. Você reaparece no último espaço que ocupava ou, se esse espaço estiver ocupado, no espaço desocupado mais próximo."
+    },
+    "dnd2024:2024:item:tome-of-clear-thought:srd-5.2": {
+      "name": "Tomo do Pensamento Claro",
+      "data.text.rules.0": "Este livro contém exercícios de memória e lógica, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, sua Inteligência aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    },
+    "dnd2024:2024:item:tome-of-leadership-and-influence:srd-5.2": {
+      "name": "Tomo da Liderança e Influência",
+      "data.text.rules.0": "Este livro contém orientações para influenciar e encantar outras pessoas, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, seu Carisma aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    },
+    "dnd2024:2024:item:tome-of-understanding:srd-5.2": {
+      "name": "Tomo da Compreensão",
+      "data.text.rules.0": "Este livro contém exercícios de intuição e discernimento, e suas palavras são carregadas de magia. Se você passar 48 horas ao longo de 6 dias ou menos estudando o conteúdo do livro e praticando suas recomendações, sua Sabedoria aumenta em 2, até o máximo de 30. O manual então perde sua magia, mas a recupera após um século."
+    }
+  }
+}

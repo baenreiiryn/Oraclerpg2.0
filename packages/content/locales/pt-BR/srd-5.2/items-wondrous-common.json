@@ -1,0 +1,15 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wondrous-common",
+  "entries": {
+    "dnd2024:2024:item:bead-of-nourishment:srd-5.2": {
+      "name": "Conta de Nutrição",
+      "data.text.rules.0": "Esta conta gelatinosa e sem sabor se dissolve sobre sua língua e fornece tanta nutrição quanto 1 dia de Rações."
+    }
+  }
+}

@@ -1,0 +1,311 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "wondrous-rare",
+  "entries": {
+    "dnd2024:2024:item:amulet-of-health:srd-5.2": {
+      "name": "Amuleto da Saúde",
+      "data.text.rules.0": "Seu valor de Constituição é 19 enquanto usa este amuleto. Ele não tem efeito sobre você se sua Constituição já for 19 ou maior sem ele."
+    },
+    "dnd2024:2024:item:bag-of-beans:srd-5.2": {
+      "name": "Saco de Feijões",
+      "data.text.rules.0": "Este pesado saco de tecido contém {@dice 3d4} feijões secos quando é encontrado. O saco pesa meia libra independentemente de quantos feijões contenha e se torna um item não mágico quando não houver mais feijões dentro dele.",
+      "data.text.rules.1": "Se você despejar um ou mais feijões para fora do saco, eles explodem em uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 10 pés de raio centrada neles. Todos os feijões despejados são destruídos na explosão, e cada criatura na {@variantrule Sphere [Area of Effect]|XPHB|Esfera}, incluindo você, realiza uma salvaguarda de Destreza {@dc 15}, sofrendo {@damage 5d4} de dano de Força se falhar ou metade desse dano se for bem-sucedida.",
+      "data.text.rules.2": "Se você retirar um feijão do saco, plantá-lo em terra ou areia e depois regá-lo, o feijão desaparece e produz, 1 minuto depois, um efeito no solo onde foi plantado. O Mestre pode escolher um efeito da tabela a seguir ou determiná-lo aleatoriamente.",
+      "data.text.rules.3.columns.1": "Efeito",
+      "data.text.rules.3.rows.0.1": "{@dice 5d4} cogumelos brotam. Se uma criatura comer um cogumelo, role qualquer dado. Em um resultado ímpar, a criatura deve ser bem-sucedida em uma salvaguarda de Constituição {@dc 15} ou sofrer {@damage 5d6} de dano de Veneno e receber a condição {@condition Poisoned|XPHB} por 1 hora. Em um resultado par, a criatura recebe {@dice 5d6} {@variantrule Temporary Hit Points|XPHB|Pontos de Vida Temporários} por 1 hora.",
+      "data.text.rules.3.rows.1.1": "Um gêiser entra em erupção e lança água, cerveja, maionese, chá, vinagre, vinho ou óleo (à escolha do Mestre) a 30 pés de altura durante {@dice 1d4} minutos.",
+      "data.text.rules.3.rows.2.1": "Um {@creature Treant|XMM|Ente} brota. Role qualquer dado. Em um resultado ímpar, o ente é Caótico e Mau. Em um resultado par, é Caótico e Bom.",
+      "data.text.rules.3.rows.3.1": "Uma estátua de pedra animada, porém imóvel, com sua aparência se ergue e faz ameaças verbais contra você. Se você for embora e outras criaturas se aproximarem, ela descreve você como o mais hediondo dos vilões e orienta os recém-chegados a encontrá-lo e atacá-lo. Se você estiver no mesmo plano de existência que a estátua, ela sabe onde você está. A estátua se torna inanimada após 24 horas.",
+      "data.text.rules.3.rows.4.1": "Uma fogueira de chamas verdes surge e queima por 24 horas ou até ser apagada.",
+      "data.text.rules.3.rows.5.1": "Três {@b Fungos Gritadores} brotam.",
+      "data.text.rules.3.rows.6.1": "{@dice 1d4 + 4} sapos rosa-vivo rastejam para fora do solo. Sempre que um sapo é tocado, ele se transforma em um monstro Grande ou menor, à escolha do Mestre, que age de acordo com seu alinhamento e natureza. O monstro permanece por 1 minuto e então desaparece em uma nuvem de fumaça rosa-vivo.",
+      "data.text.rules.3.rows.7.1": "Um {@creature Bulette|XMM} faminto emerge escavando e ataca.",
+      "data.text.rules.3.rows.8.1": "Uma árvore frutífera cresce. Ela possui {@dice 1d10 + 20} frutos, {@dice 1d8} dos quais funcionam como poções determinadas aleatoriamente. A árvore desaparece após 1 hora. Frutos colhidos permanecem e conservam qualquer magia por 30 dias.",
+      "data.text.rules.3.rows.9.1": "Um ninho com {@dice 1d4 + 3} ovos coloridos como arco-íris surge. Qualquer criatura que comer um ovo realiza uma salvaguarda de Constituição {@dc 20}. Em caso de sucesso, a criatura aumenta permanentemente em 1 seu menor valor de atributo, escolhendo aleatoriamente entre valores igualmente baixos. Em caso de falha, a criatura sofre {@damage 10d6} de dano de Força devido a uma explosão interna.",
+      "data.text.rules.3.rows.10.1": "Uma pirâmide com base quadrada de 60 pés irrompe do solo. Dentro dela há uma câmara funerária contendo uma {@creature Mummy|XMM|Múmia}, um {@creature Mummy Lord|XMM|Lorde Múmia} ou outro Morto-vivo à escolha do Mestre. Seu sarcófago contém um tesouro à escolha do Mestre.",
+      "data.text.rules.3.rows.11.1": "Um gigantesco pé de feijão brota, crescendo até uma altura à escolha do Mestre. Seu topo leva a um destino escolhido pelo Mestre, como uma vista extraordinária, o castelo de um gigante das nuvens ou outro plano de existência."
+    },
+    "dnd2024:2024:item:bead-of-force:srd-5.2": {
+      "name": "Conta de Força",
+      "data.text.rules.0": "Esta pequena esfera negra mede 3/4 de polegada de diâmetro e pesa 1 onça. Normalmente, {@dice 1d4 + 4} Contas de Força são encontradas juntas.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para arremessar a conta a até 60 pés. Ao atingir o destino, ela explode em uma {@variantrule Sphere [Area of Effect]|XPHB|Esfera} de 10 pés de raio e é destruída. Cada criatura na {@variantrule Sphere [Area of Effect]|XPHB|Esfera} deve ser bem-sucedida em uma salvaguarda de Destreza {@dc 15} ou sofrer {@damage 5d4} de dano de Força. Em seguida, uma esfera de força transparente envolve a área por 1 minuto. Qualquer criatura que tenha falhado na salvaguarda e esteja completamente dentro da área fica aprisionada nessa esfera. Criaturas que obtiveram sucesso ou estejam apenas parcialmente dentro da área são empurradas para longe do centro até não estarem mais dentro dela. Apenas ar respirável pode atravessar a parede da esfera. Nenhum ataque ou outro efeito pode atravessá-la.",
+      "data.text.rules.2": "Uma criatura aprisionada pode realizar uma ação {@action Utilize|XPHB} para empurrar a parede da esfera, movendo-a em até metade do {@variantrule Speed|XPHB|Deslocamento} da criatura. A esfera pode ser erguida, e sua magia faz com que pese apenas 1 libra, independentemente do peso das criaturas em seu interior."
+    },
+    "dnd2024:2024:item:belt-of-dwarvenkind:srd-5.2": {
+      "name": "Cinto dos Anões",
+      "data.text.rules.0": "Enquanto usa este cinto, você recebe os seguintes benefícios:",
+      "data.text.rules.1.items.0.name": "Anão",
+      "data.text.rules.1.items.0.entries.0": "Você conhece o idioma Anão.",
+      "data.text.rules.1.items.1.name": "Amigo dos Anões",
+      "data.text.rules.1.items.1.entries.0": "Você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Carisma ({@skill Persuasion|XPHB}) feitos para interagir com anões e duergar.",
+      "data.text.rules.1.items.2.name": "Robustez",
+      "data.text.rules.1.items.2.entries.0": "Sua Constituição aumenta em 2, até o máximo de 20.",
+      "data.text.rules.1.items.2.entries.1": "Além disso, enquanto estiver sintonizado com o cinto, você tem {@chance 50} de chance a cada amanhecer de desenvolver uma barba cheia se puder ter barba, ou uma barba mais espessa se já possuir uma.",
+      "data.text.rules.1.items.2.entries.2": "Se você não for anão nem duergar, também recebe os seguintes benefícios enquanto usa o cinto:",
+      "data.text.rules.1.items.3.name": "Visão no Escuro",
+      "data.text.rules.1.items.3.entries.0": "Você possui {@sense Darkvision|XPHB|Visão no Escuro} com alcance de 60 pés.",
+      "data.text.rules.1.items.4.name": "Resiliência",
+      "data.text.rules.1.items.4.entries.0": "Você possui {@variantrule Resistance|XPHB|Resistência} a dano de Veneno. Também tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas feitas para evitar ou encerrar a condição {@condition Poisoned|XPHB}."
+    },
+    "dnd2024:2024:item:belt-of-hill-giant-strength:srd-5.2": {
+      "name": "Cinto da Força do Gigante da Colina",
+      "data.text.rules.0": "Enquanto usa este cinto, seu valor de Força se torna 21. O item não tem efeito sobre você se sua Força sem o cinto for igual ou superior ao valor fornecido pelo cinto."
+    },
+    "dnd2024:2024:item:boots-of-levitation:srd-5.2": {
+      "name": "Botas de Levitação",
+      "data.activities.0.name": "Conjurar Levitação",
+      "data.text.rules.0": "Enquanto usa estas botas, você pode conjurar {@spell Levitate|XPHB|Levitação} sobre si mesmo."
+    },
+    "dnd2024:2024:item:boots-of-speed:srd-5.2": {
+      "name": "Botas de Velocidade",
+      "data.text.rules.0": "Enquanto usa estas botas, você pode usar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para bater os calcanhares delas um contra o outro. Ao fazer isso, as botas dobram seu {@variantrule Speed|XPHB|Deslocamento}, e qualquer criatura que realizar um {@action Opportunity Attack|XPHB|Ataque de Oportunidade} contra você tem {@variantrule Disadvantage|XPHB|Desvantagem} na jogada de ataque. Se bater os calcanhares novamente, você encerra o efeito.",
+      "data.text.rules.1": "Depois de usar essa propriedade das botas por um total de 10 minutos, a magia deixa de funcionar para você até que termine um {@variantrule Long Rest|XPHB|Descanso Longo}."
+    },
+    "dnd2024:2024:item:bowl-of-commanding-water-elementals:srd-5.2": {
+      "name": "Tigela de Comandar Elementais da Água",
+      "data.text.rules.0": "Enquanto esta tigela estiver cheia de água e você estiver a até 5 pés dela, pode realizar uma ação {@action Magic|XPHB} para invocar um {@creature Water Elemental|XMM|Elemental da Água}. O elemental aparece em um espaço desocupado tão próximo da tigela quanto possível, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}. A tigela não pode ser usada dessa forma novamente até o próximo amanhecer.",
+      "data.text.rules.1": "A tigela possui cerca de 1 pé de diâmetro e metade dessa profundidade. Ela comporta aproximadamente 3 galões."
+    },
+    "dnd2024:2024:item:bracers-of-defense:srd-5.2": {
+      "name": "Braçadeiras de Defesa",
+      "data.text.rules.0": "Enquanto usa estas braçadeiras, você recebe +2 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura} se não estiver usando armadura nem utilizando um {@item Shield|XPHB|Escudo}."
+    },
+    "dnd2024:2024:item:brazier-of-commanding-fire-elementals:srd-5.2": {
+      "name": "Braseiro de Comandar Elementais do Fogo",
+      "data.text.rules.0": "Enquanto estiver a até 5 pés deste braseiro, você pode realizar uma ação {@action Magic|XPHB} para invocar um {@creature Fire Elemental|XMM|Elemental do Fogo}. O elemental aparece em um espaço desocupado tão próximo do braseiro quanto possível, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}. O braseiro não pode ser usado dessa forma novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:cape-of-the-mountebank:srd-5.2": {
+      "name": "Capa do Saltimbanco",
+      "data.activities.0.name": "Conjurar Porta Dimensional",
+      "data.text.rules.0": "Esta capa exala um leve odor de enxofre. Enquanto a usa, você pode utilizá-la para conjurar {@spell Dimension Door|XPHB|Porta Dimensional} como uma ação {@action Magic|XPHB}. Esta propriedade não pode ser usada novamente até o próximo amanhecer.",
+      "data.text.rules.1": "Quando se teletransporta com essa magia, você deixa para trás uma nuvem de fumaça. O espaço que deixou fica {@variantrule Lightly Obscured|XPHB|Levemente Obscurecido} pela fumaça até o final de seu próximo turno."
+    },
+    "dnd2024:2024:item:censer-of-controlling-air-elementals:srd-5.2": {
+      "name": "Incensário de Controlar Elementais do Ar",
+      "data.text.rules.0": "Enquanto balança suavemente este incensário, você pode realizar uma ação {@action Magic|XPHB} para invocar um {@creature Air Elemental|XMM|Elemental do Ar}. O elemental aparece em um espaço desocupado tão próximo do incensário quanto possível, compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}. O incensário não pode ser usado dessa forma novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:chime-of-opening:srd-5.2": {
+      "name": "Carrilhão de Abertura",
+      "data.activities.0.name": "Conjurar Abrir",
+      "data.text.rules.0": "Este tubo oco de metal mede cerca de 1 pé de comprimento e pesa 1 libra. Como uma ação {@action Magic|XPHB}, você pode golpear o carrilhão para conjurar {@spell Knock|XPHB|Abrir}. O som habitual de batidas da magia é substituído pelo tom claro e ressonante do carrilhão, audível a até 300 pés. O carrilhão pode ser usado 10 vezes. Após a décima utilização, ele racha e se torna inútil."
+    },
+    "dnd2024:2024:item:cloak-of-displacement:srd-5.2": {
+      "name": "Manto de Deslocamento",
+      "data.text.rules.0": "Enquanto usa este manto, ele projeta magicamente uma ilusão que faz parecer que você está em um local próximo de sua posição real, fazendo com que qualquer criatura tenha {@variantrule Disadvantage|XPHB|Desvantagem} nas jogadas de ataque contra você. Se sofrer dano, a propriedade deixa de funcionar até o início de seu próximo turno. Esta propriedade é suprimida enquanto seu {@variantrule Speed|XPHB|Deslocamento} for 0."
+    },
+    "dnd2024:2024:item:cloak-of-the-bat:srd-5.2": {
+      "name": "Manto do Morcego",
+      "data.activities.0.name": "Conjurar Metamorfose",
+      "data.text.rules.0": "Enquanto usa este manto, você tem {@variantrule Advantage|XPHB|Vantagem} em testes de Destreza ({@skill Stealth|XPHB}). Em uma área de {@variantrule Dim Light|XPHB|Meia-luz} ou {@variantrule Darkness|XPHB|Escuridão}, você pode segurar as bordas do manto e usá-lo para receber {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 40 pés. Se deixar de segurar as bordas do manto enquanto voa dessa maneira, ou se não estiver mais em {@variantrule Dim Light|XPHB|Meia-luz} ou {@variantrule Darkness|XPHB|Escuridão}, você perde esse {@variantrule Fly Speed|XPHB|Deslocamento de Voo}.",
+      "data.text.rules.1": "Enquanto usa o manto em uma área de {@variantrule Dim Light|XPHB|Meia-luz} ou {@variantrule Darkness|XPHB|Escuridão}, você pode conjurar {@spell Polymorph|XPHB|Metamorfose} sobre si mesmo, transformando-se em um {@creature Bat|XMM|Morcego}. Nessa forma, você mantém seus valores de Inteligência, Sabedoria e Carisma. O manto não pode ser usado dessa forma novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:cube-of-force:srd-5.2": {
+      "name": "Cubo de Força",
+      "data.activities.0.name": "Conjurar Armadura Arcana",
+      "data.activities.1.name": "Conjurar Escudo",
+      "data.activities.2.name": "Conjurar Pequena Cabana de Leomund",
+      "data.activities.3.name": "Conjurar Santuário Privado de Mordenkainen",
+      "data.activities.4.name": "Conjurar Esfera Resiliente de Otiluke",
+      "data.activities.5.name": "Conjurar Muralha de Força",
+      "data.text.rules.0": "Este cubo mede cerca de 1 polegada de lado. Cada face possui uma marca distinta. Você pode pressionar uma dessas faces, gastar o número de cargas exigido e, assim, conjurar a magia associada a ela (salvaguarda {@dc 17}), conforme mostrado na tabela Faces do Cubo de Força.",
+      "data.text.rules.1": "O cubo começa com 10 cargas e recupera {@dice 1d6} cargas gastas diariamente ao amanhecer.",
+      "data.text.rules.2.caption": "Faces do Cubo de Força",
+      "data.text.rules.2.columns.0": "Magia",
+      "data.text.rules.2.columns.1": "Custo em Cargas",
+      "data.text.rules.2.rows.0.0": "{@spell Mage Armor|XPHB|Armadura Arcana}",
+      "data.text.rules.2.rows.1.0": "{@spell Shield|XPHB|Escudo}",
+      "data.text.rules.2.rows.2.0": "{@spell Leomund's Tiny Hut|XPHB|Pequena Cabana de Leomund}",
+      "data.text.rules.2.rows.3.0": "{@spell Mordenkainen's Private Sanctum|XPHB|Santuário Privado de Mordenkainen}",
+      "data.text.rules.2.rows.4.0": "{@spell Otiluke's Resilient Sphere|XPHB|Esfera Resiliente de Otiluke}",
+      "data.text.rules.2.rows.5.0": "{@spell Wall of Force|XPHB|Muralha de Força}"
+    },
+    "dnd2024:2024:item:dimensional-shackles:srd-5.2": {
+      "name": "Algemas Dimensionais",
+      "data.text.rules.0": "Você pode realizar uma ação {@action Utilize|XPHB} para colocar estas algemas em uma criatura que tenha a condição {@condition Incapacitated|XPHB}. As algemas se ajustam a criaturas de tamanho Pequeno a Grande. Elas impedem que a criatura presa use qualquer método de movimento extradimensional, incluindo teletransporte ou viagem para outro plano de existência. Elas não impedem que a criatura atravesse um portal interdimensional.",
+      "data.text.rules.1": "Você e qualquer criatura que designar ao usar as algemas podem realizar uma ação {@action Utilize|XPHB} para removê-las. Uma vez a cada 30 dias, a criatura presa pode realizar um teste de Força ({@skill Athletics|XPHB}) {@dc 30}. Em caso de sucesso, ela se liberta e destrói as algemas."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-bronze-griffon:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Grifo de Bronze",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Grifo de Bronze (Raro)",
+      "data.text.rules.3.entries.0": "Esta estatueta de bronze representa um grifo empinado. Ela pode se transformar em um {@creature Griffon|XMM|Grifo} por até 6 horas. Depois de usada, não pode ser usada novamente até que 5 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-ebony-fly:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Mosca de Ébano",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Mosca de Ébano (Raro)",
+      "data.text.rules.3.entries.0": "Esta estatueta de ébano, esculpida na forma de uma mutuca, pode se transformar em uma {@creature Giant Fly|XDMG|Mosca Gigante} por até 12 horas e pode ser montada como uma montaria. Depois de usada, não pode ser usada novamente até que 2 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-golden-lions:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Leões Dourados",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Leões Dourados (Raro)",
+      "data.text.rules.3.entries.0": "Estas estatuetas douradas de leões são sempre criadas em pares. Você pode usar uma estatueta ou ambas simultaneamente. Cada uma pode se transformar em um {@creature Lion|XMM|Leão} por até 1 hora. Depois que um leão for usado, ele não pode ser usado novamente até que 7 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-ivory-goats:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Cabras de Marfim",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Cabras de Marfim (Raro)",
+      "data.text.rules.3.entries.0": "Estas estatuetas de marfim de cabras são sempre criadas em conjuntos de três. Cada cabra possui aparência única e funciona de maneira diferente das outras. Suas propriedades são as seguintes:",
+      "data.text.rules.3.entries.1.items.0.name": "Cabra do Terror",
+      "data.text.rules.3.entries.1.items.0.entries.0": "Esta estatueta pode se transformar em uma {@creature Giant Goat|XMM|Cabra Gigante} por até 3 horas. A cabra não pode atacar, mas você pode remover seus chifres (sem machucá-la) e usá-los como armas. Um chifre se transforma em uma {@item +1 Lance|XDMG|Lança de Montaria +1}, e o outro em uma {@item +2 Longsword|XDMG|Espada Longa +2}. Remover um chifre exige uma ação {@action Magic|XPHB}; as armas desaparecem e os chifres retornam quando a cabra volta à forma de estatueta. Enquanto você monta a cabra, qualquer criatura {@variantrule Hostile [Attitude]|XPHB|Hostil} que iniciar o turno em uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} de 30 pés originada na cabra deve ser bem-sucedida em uma salvaguarda de Sabedoria {@dc 15} ou receber a condição {@condition Frightened|XPHB} por 1 minuto, até você deixar de montar a cabra ou até ela retornar à forma de estatueta. A criatura {@condition Frightened|XPHB} repete a salvaguarda ao final de cada um de seus turnos, encerrando o efeito sobre si em caso de sucesso. Depois de obter sucesso, a criatura fica imune a este efeito pelas próximas 24 horas. Depois que a estatueta for usada, ela não pode ser usada novamente até que 15 dias tenham se passado.",
+      "data.text.rules.3.entries.1.items.1.name": "Cabra de Viagem",
+      "data.text.rules.3.entries.1.items.1.entries.0": "Esta estatueta pode se transformar em uma cabra Grande com as mesmas estatísticas de um {@creature Riding Horse|XMM|Cavalo de Montaria}. Ela possui 24 cargas, e cada hora ou fração de hora passada na forma de cabra custa 1 carga. Enquanto possuir cargas, você pode usá-la quantas vezes quiser. Quando as cargas acabam, ela retorna à forma de estatueta e não pode ser usada novamente até que 7 dias tenham se passado, quando recupera todas as cargas gastas.",
+      "data.text.rules.3.entries.1.items.2.name": "Cabra do Labor",
+      "data.text.rules.3.entries.1.items.2.entries.0": "Esta estatueta pode se transformar em uma {@creature Giant Goat|XMM|Cabra Gigante} por até 3 horas. Depois de usada, não pode ser usada novamente até que 30 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-marble-elephant:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Elefante de Mármore",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Elefante de Mármore (Raro)",
+      "data.text.rules.3.entries.0": "Esta estatueta de mármore representa um elefante trombeteando. Ela pode se transformar em um {@creature Elephant|XMM|Elefante} por até 24 horas. Depois de usada, não pode ser usada novamente até que 7 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-onyx-dog:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Cão de Ônix",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Cão de Ônix (Raro)",
+      "data.text.rules.3.entries.0": "Esta estatueta de ônix de um cão pode se transformar em um {@creature Mastiff|XMM|Mastim} por até 6 horas. O mastim possui Inteligência 8 e pode falar Comum. Ele também possui {@sense Blindsight|XPHB|Percepção às Cegas} com alcance de 60 pés. Depois de usado, não pode ser usado novamente até que 7 dias tenham se passado."
+    },
+    "dnd2024:2024:item:figurine-of-wondrous-power-serpentine-owl:srd-5.2": {
+      "name": "Estatueta de Poder Maravilhoso, Coruja de Serpentina",
+      "data.text.rules.0": "Uma {@item Figurine of Wondrous Power|XDMG|Estatueta de Poder Maravilhoso} é uma pequena estatueta que cabe em um bolso. Se você realizar uma ação {@action Magic|XPHB} para arremessá-la a um ponto no chão a até 60 pés de você, ela se transforma na criatura viva indicada na descrição abaixo. Se o espaço onde a criatura apareceria estiver ocupado por outras criaturas ou objetos, ou não houver espaço suficiente para ela, a estatueta não se transforma.",
+      "data.text.rules.1": "A criatura é {@variantrule Friendly [Attitude]|XPHB|Amigável} com você e seus aliados. Ela compreende seus idiomas, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. Se você não der ordens, a criatura se defende, mas não realiza outras ações.",
+      "data.text.rules.2": "A criatura existe por uma duração específica de cada estatueta. Ao final dessa duração, retorna à forma de estatueta. Ela retorna antecipadamente se sua forma de criatura cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida} ou se você realizar uma ação {@action Magic|XPHB} enquanto toca a criatura para fazê-la retornar à forma de estatueta. Quando volta a ser uma estatueta, sua propriedade não pode ser usada novamente até transcorrer o período indicado abaixo.",
+      "data.text.rules.3.name": "Coruja de Serpentina (Raro)",
+      "data.text.rules.3.entries.0": "Esta estatueta de serpentina de uma coruja pode se transformar em uma {@creature Giant Owl|XMM|Coruja Gigante} por até 8 horas. A coruja pode se comunicar telepaticamente com você a qualquer distância se ambos estiverem no mesmo plano de existência. Depois de usada, não pode ser usada novamente até que 2 dias tenham se passado."
+    },
+    "dnd2024:2024:item:folding-boat:srd-5.2": {
+      "name": "Barco Dobrável",
+      "data.text.rules.0": "Este objeto parece uma caixa de madeira com 12 polegadas de comprimento, 6 polegadas de largura e 6 polegadas de profundidade. Pesa 4 libras e flutua. Pode ser aberto para armazenar itens em seu interior. Este item também possui três palavras de comando, cada uma exigindo uma ação {@action Magic|XPHB} para ser usada:",
+      "data.text.rules.1.items.0.name": "Primeira Palavra de Comando",
+      "data.text.rules.1.items.0.entries.0": "A caixa se desdobra em um Barco a Remo.",
+      "data.text.rules.1.items.1.name": "Segunda Palavra de Comando",
+      "data.text.rules.1.items.1.entries.0": "A caixa se desdobra em um Barco de Quilha.",
+      "data.text.rules.1.items.2.name": "Terceira Palavra de Comando",
+      "data.text.rules.1.items.2.entries.0": "O Barco Dobrável volta a se dobrar em uma caixa se nenhuma criatura estiver a bordo. Quaisquer objetos na embarcação que não caibam dentro da caixa permanecem do lado de fora enquanto ela se dobra. Quaisquer objetos que caibam dentro da caixa são guardados nela.",
+      "data.text.rules.2": "Quando a caixa se transforma em uma embarcação, seu peso passa a ser o de uma embarcação normal de seu tamanho, e qualquer coisa que estivesse armazenada dentro da caixa permanece no barco.",
+      "data.text.rules.3": "As estatísticas do {@item Rowboat|XPHB|Barco a Remo} e do {@item Keelboat|XPHB|Barco de Quilha} aparecem no {@book Player's Handbook|XPHB|Livro do Jogador}. Se qualquer uma das embarcações for reduzida a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, o Barco Dobrável é destruído."
+    },
+    "dnd2024:2024:item:gem-of-seeing:srd-5.2": {
+      "name": "Gema da Visão",
+      "data.text.rules.0": "Esta gema possui 3 cargas. Como uma ação {@action Magic|XPHB}, você pode gastar 1 carga. Pelos próximos 10 minutos, você possui {@sense Truesight|XPHB|Visão Verdadeira} com alcance de 120 pés enquanto olha através da gema.",
+      "data.text.rules.1": "A gema recupera {@dice 1d3} cargas gastas diariamente ao amanhecer."
+    },
+    "dnd2024:2024:item:helm-of-teleportation:srd-5.2": {
+      "name": "Elmo de Teletransporte",
+      "data.activities.0.name": "Conjurar Teletransporte",
+      "data.text.rules.0": "Este elmo possui 3 cargas. Enquanto o usa, você pode gastar 1 carga para conjurar {@spell Teleport|XPHB|Teletransporte} por meio dele. O elmo recupera {@dice 1d3} cargas gastas diariamente ao amanhecer."
+    },
+    "dnd2024:2024:item:horseshoes-of-speed:srd-5.2": {
+      "name": "Ferraduras de Velocidade",
+      "data.text.rules.0": "Estas ferraduras vêm em um conjunto de quatro. Como uma ação {@action Magic|XPHB}, você pode tocar uma delas no casco de um cavalo ou criatura semelhante, fazendo com que a ferradura se fixe ao casco. Remover uma ferradura também exige uma ação {@action Magic|XPHB}.",
+      "data.text.rules.1": "Enquanto as quatro ferraduras estiverem presas à mesma criatura, o {@variantrule Speed|XPHB|Deslocamento} dela aumenta em 30 pés."
+    },
+    "dnd2024:2024:item:ioun-stone-awareness:srd-5.2": {
+      "name": "Pedra Ioun, Consciência",
+      "data.text.rules.1": "Enquanto este romboide azul-escuro orbita sua cabeça, você tem {@variantrule Advantage|XPHB|Vantagem} nas rolagens de {@variantrule Initiative|XPHB|Iniciativa} e em testes de Sabedoria ({@skill Perception|XPHB})."
+    },
+    "dnd2024:2024:item:ioun-stone-protection:srd-5.2": {
+      "name": "Pedra Ioun, Proteção",
+      "data.text.rules.1": "Você recebe +1 de bônus na {@variantrule Armor Class|XPHB|Classe de Armadura} enquanto este prisma rosa-empoeirado orbita sua cabeça."
+    },
+    "dnd2024:2024:item:ioun-stone-reserve:srd-5.2": {
+      "name": "Pedra Ioun, Reserva",
+      "data.text.rules.1": "Este prisma violeta vibrante armazena magias conjuradas nele, mantendo-as até que você as utilize. A pedra pode armazenar até 4 níveis de magias de uma vez. Quando encontrada, contém {@dice 1d4} níveis de magias armazenadas escolhidas pelo Mestre.",
+      "data.text.rules.2": "Qualquer criatura pode conjurar uma magia de nível 1 a 4 para dentro da pedra tocando-a enquanto a magia é conjurada. A magia não produz efeito, além de ficar armazenada na pedra. Se a pedra não puder comportar a magia, ela é gasta sem produzir efeito. O nível do espaço usado para conjurar a magia determina quanto espaço ela ocupa.",
+      "data.text.rules.3": "Enquanto esta pedra orbita sua cabeça, você pode conjurar qualquer magia armazenada nela. A magia usa o nível do espaço, a CD da salvaguarda de magia, o bônus de ataque mágico e o atributo de conjuração do conjurador original, mas fora isso é tratada como se você tivesse conjurado a magia. A magia conjurada a partir da pedra deixa de estar armazenada nela, liberando espaço."
+    },
+    "dnd2024:2024:item:ioun-stone-sustenance:srd-5.2": {
+      "name": "Pedra Ioun, Sustento",
+      "data.text.rules.1": "Você não precisa comer nem beber enquanto este fuso transparente orbita sua cabeça."
+    },
+    "dnd2024:2024:item:mantle-of-spell-resistance:srd-5.2": {
+      "name": "Manto de Resistência à Magia",
+      "data.text.rules.0": "Você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias enquanto usa este manto."
+    },
+    "dnd2024:2024:item:necklace-of-fireballs:srd-5.2": {
+      "name": "Colar de Bolas de Fogo",
+      "data.activities.0.name": "Conjurar Bola de Fogo",
+      "data.text.rules.0": "Este colar possui {@dice 1d6 + 3} contas penduradas. Você pode realizar uma ação {@action Magic|XPHB} para destacar uma conta e arremessá-la a até 60 pés. Quando chega ao fim de sua trajetória, a conta detona como uma {@spell Fireball|XPHB|Bola de Fogo} de nível 3 (salvaguarda {@dc 15}).",
+      "data.text.rules.1": "Você pode arremessar várias contas, ou até mesmo o colar inteiro, de uma só vez. Ao fazer isso, aumente o dano da Bola de Fogo em {@damage 1d6} para cada conta além da primeira (máximo de {@dice 12d6})."
+    },
+    "dnd2024:2024:item:necklace-of-prayer-beads:srd-5.2": {
+      "name": "Colar de Contas de Oração",
+      "data.activities.0.name": "Conjurar Abençoar",
+      "data.activities.1.name": "Conjurar Curar Ferimentos",
+      "data.activities.2.name": "Conjurar Restauração Maior",
+      "data.activities.3.name": "Conjurar Guardião da Fé",
+      "data.activities.4.name": "Conjurar Destruição Brilhante",
+      "data.activities.5.name": "Conjurar Caminhar no Vento",
+      "data.text.rules.0": "Este colar possui {@dice 1d4 + 2} contas mágicas feitas de água-marinha, pérola negra ou topázio. Ele também possui muitas contas não mágicas feitas de pedras como âmbar, pedra-sangue, citrino, coral, jade, pérola ou quartzo. Se uma conta mágica for removida do colar, ela perde sua magia.",
+      "data.text.rules.1": "Existem seis tipos de contas mágicas. O Mestre decide o tipo de cada conta do colar ou o determina aleatoriamente rolando na tabela abaixo. Um colar pode ter mais de uma conta do mesmo tipo. Para usar uma, você deve estar usando o colar. Cada conta contém uma magia que você pode conjurar a partir dela como uma {@variantrule Bonus Action|XPHB|Ação Bônus} (usando sua CD de salvaguarda de magia, se uma salvaguarda for necessária). Depois que a magia de uma conta mágica for conjurada, essa conta não poderá ser usada novamente até o próximo amanhecer.",
+      "data.text.rules.2.columns.1": "Conta",
+      "data.text.rules.2.columns.2": "Magia",
+      "data.text.rules.2.rows.0.1": "Conta da Bênção",
+      "data.text.rules.2.rows.0.2": "{@spell Bless|XPHB|Abençoar}",
+      "data.text.rules.2.rows.1.1": "Conta da Cura",
+      "data.text.rules.2.rows.1.2": "{@spell Cure Wounds|XPHB|Curar Ferimentos} (versão de nível 2)",
+      "data.text.rules.2.rows.2.1": "Conta do Favor",
+      "data.text.rules.2.rows.2.2": "{@spell Greater Restoration|XPHB|Restauração Maior}",
+      "data.text.rules.2.rows.3.1": "Conta da Destruição",
+      "data.text.rules.2.rows.3.2": "{@spell Shining Smite|XPHB|Destruição Brilhante}",
+      "data.text.rules.2.rows.4.1": "Conta da Invocação",
+      "data.text.rules.2.rows.4.2": "{@spell Guardian of Faith|XPHB|Guardião da Fé}",
+      "data.text.rules.2.rows.5.1": "Conta do Caminhar no Vento",
+      "data.text.rules.2.rows.5.2": "{@spell Wind Walk|XPHB|Caminhar no Vento}"
+    },
+    "dnd2024:2024:item:periapt-of-proof-against-poison:srd-5.2": {
+      "name": "Periapto de Proteção contra Veneno",
+      "data.text.rules.0": "Esta delicada corrente de prata possui um pingente com uma gema negra de lapidação brilhante. Enquanto a usa, você possui {@variantrule Immunity|XPHB|Imunidade} à condição {@condition Poisoned|XPHB} e a dano de Veneno."
+    },
+    "dnd2024:2024:item:portable-hole:srd-5.2": {
+      "name": "Buraco Portátil",
+      "data.text.rules.0": "Este fino tecido negro, macio como seda, é dobrado até ficar do tamanho de um lenço. Quando aberto, forma uma folha circular de 6 pés de diâmetro.",
+      "data.text.rules.1": "Você pode realizar uma ação {@action Magic|XPHB} para desdobrar um Buraco Portátil e colocá-lo sobre ou contra uma superfície sólida, quando então ele cria um buraco extradimensional de 10 pés de profundidade. O espaço cilíndrico dentro do buraco existe em outro plano de existência, portanto não pode ser usado para criar passagens abertas. Qualquer criatura dentro de um Buraco Portátil aberto pode sair escalando para fora.",
+      "data.text.rules.2": "Você pode realizar uma ação {@action Magic|XPHB} para fechar um Buraco Portátil segurando as bordas do tecido e dobrando-o. Dobrar o tecido fecha o buraco, e quaisquer criaturas ou objetos em seu interior permanecem no espaço extradimensional. Não importa o que esteja dentro dele, o buraco praticamente não pesa nada.",
+      "data.text.rules.3": "Se o buraco estiver dobrado, uma criatura em seu espaço extradimensional pode realizar uma ação para fazer um teste de Força ({@skill Athletics|XPHB}) {@dc 10}. Em caso de sucesso, a criatura força sua saída e aparece a até 5 pés do Buraco Portátil. Um Buraco Portátil fechado contém ar suficiente para 1 hora de respiração, dividida pelo número de criaturas que respiram em seu interior.",
+      "data.text.rules.4": "Colocar um Buraco Portátil dentro de um espaço extradimensional criado por uma {@item Bag of Holding|XDMG|Bolsa de Carga}, uma {@item Heward's Handy Haversack|XDMG|Mochila Prática de Heward} ou item semelhante destrói instantaneamente ambos os itens e abre um portal para o Plano Astral. O portal se origina onde um item foi colocado dentro do outro. Qualquer criatura a até 10 pés do portal que não esteja atrás de {@variantrule Cover|XPHB|Cobertura Total} é sugada através dele e depositada em um local aleatório do Plano Astral. Em seguida, o portal se fecha. O portal funciona apenas em uma direção e não pode ser reaberto."
+    },
+    "dnd2024:2024:item:robe-of-eyes:srd-5.2": {
+      "name": "Manto de Olhos",
+      "data.text.rules.0": "Este manto é adornado com padrões semelhantes a olhos. Enquanto o usa, você recebe os seguintes benefícios:",
+      "data.text.rules.1.items.0.name": "Visão em Todas as Direções",
+      "data.text.rules.1.items.0.entries.0": "O manto concede {@variantrule Advantage|XPHB|Vantagem} em testes de Sabedoria ({@skill Perception|XPHB}) que dependam da visão.",
+      "data.text.rules.1.items.1.name": "Sentidos Especiais",
+      "data.text.rules.1.items.1.entries.0": "Você possui {@sense Darkvision|XPHB|Visão no Escuro} e {@sense Truesight|XPHB|Visão Verdadeira}, ambas com alcance de 120 pés.",
+      "data.text.rules.2.name": "Desvantagens",
+      "data.text.rules.2.entries.0": "Uma magia {@spell Light|XPHB|Luz} conjurada sobre o manto ou uma magia {@spell Daylight|XPHB|Luz do Dia} conjurada a até 5 pés dele faz você receber a condição {@condition Blinded|XPHB} por 1 minuto. Ao final de cada um de seus turnos, você realiza uma salvaguarda de Constituição ({@dc 11} para Luz ou {@dc 15} para Luz do Dia), encerrando a condição sobre si em caso de sucesso."
+    },
+    "dnd2024:2024:item:rope-of-entanglement:srd-5.2": {
+      "name": "Corda de Enredamento",
+      "data.text.rules.0": "Esta corda possui 30 pés de comprimento. Enquanto segura uma de suas pontas, você pode realizar uma ação {@action Magic|XPHB} para ordenar que a outra ponta avance e enrede uma criatura que possa ver a até 20 pés de você. O alvo deve ser bem-sucedido em uma salvaguarda de Destreza {@dc 15} ou receber a condição {@condition Restrained|XPHB}. Você pode libertar o alvo soltando sua ponta da corda (fazendo a corda se enrolar no espaço do alvo) ou usando uma {@variantrule Bonus Action|XPHB|Ação Bônus} para repetir a ordem (fazendo a corda se enrolar em sua mão).",
+      "data.text.rules.1": "Um alvo {@condition Restrained|XPHB} pela corda pode realizar uma ação para fazer, à sua escolha, um teste de Força ({@skill Athletics|XPHB}) {@dc 15} ou Destreza ({@skill Acrobatics|XPHB}) {@dc 15}. Em caso de sucesso, o alvo deixa de estar {@condition Restrained|XPHB} pela corda. Se você ainda estiver segurando a corda quando um alvo escapar, pode usar uma {@variantrule Reaction|XPHB|Reação} para ordenar que a corda se enrole em sua mão; caso contrário, ela se enrola no espaço do alvo.",
+      "data.text.rules.2": "A corda possui CA 20, 20 PV e {@variantrule Immunity|XPHB|Imunidade} a dano de Veneno e Psíquico. Ela recupera 1 {@variantrule Hit Points|XPHB|Ponto de Vida} a cada 5 minutos enquanto tiver pelo menos 1 {@variantrule Hit Points|XPHB|Ponto de Vida}. Se cair a 0 {@variantrule Hit Points|XPHB|Pontos de Vida}, é destruída."
+    },
+    "dnd2024:2024:item:stone-of-controlling-earth-elementals:srd-5.2": {
+      "name": "Pedra de Controlar Elementais da Terra",
+      "data.text.rules.0": "Enquanto mantém esta pedra de 5 libras em contato com o chão, você pode realizar uma ação {@action Magic|XPHB} para invocar um {@creature Earth Elemental|XMM|Elemental da Terra}. O elemental aparece em um espaço desocupado à sua escolha a até 30 pés de você, obedece às suas ordens e realiza seu turno imediatamente depois de você na sua contagem de {@variantrule Initiative|XPHB|Iniciativa}. O elemental desaparece após 1 hora, quando morre ou quando você o dispensa como uma {@variantrule Bonus Action|XPHB|Ação Bônus}. A pedra não pode ser usada dessa forma novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:wings-of-flying:srd-5.2": {
+      "name": "Asas Voadoras",
+      "data.text.rules.0": "Enquanto usa este manto, você pode realizar uma ação {@action Magic|XPHB} para transformá-lo em um par de asas em suas costas. As asas permanecem por 1 hora ou até você encerrar o efeito antecipadamente com uma ação {@action Magic|XPHB}. Elas concedem {@variantrule Fly Speed|XPHB|Deslocamento de Voo} de 60 pés. Se estiver no ar quando as asas desaparecerem, você cai. Quando as asas desaparecem, não podem ser usadas novamente por {@dice 1d12} horas."
+    }
+  }
+}

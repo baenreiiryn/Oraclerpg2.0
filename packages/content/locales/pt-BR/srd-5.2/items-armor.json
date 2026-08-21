@@ -1,0 +1,76 @@
+{
+  "format": "oraclerpg-localization",
+  "version": 1,
+  "locale": "pt-BR",
+  "sourceLocale": "en",
+  "contentSource": "srd-5.2",
+  "entityType": "item",
+  "scope": "armor",
+  "entries": {
+    "dnd2024:2024:item:animated-shield:srd-5.2": {
+      "name": "Escudo Animado",
+      "data.text.rules.0": "Enquanto segura este Escudo, você pode realizar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para fazê-lo se animar. O Escudo salta para o ar e paira em seu espaço para protegê-lo como se você o estivesse empunhando, deixando suas mãos livres. O Escudo permanece animado por 1 minuto, até você realizar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para encerrar esse efeito, ou até você morrer ou receber a condição {@condition Incapacitated|XPHB}; nesse momento, o Escudo cai no chão ou em sua mão, caso você tenha uma livre."
+    },
+    "dnd2024:2024:item:armor-of-invulnerability:srd-5.2": {
+      "name": "Armadura da Invulnerabilidade",
+      "data.text.rules.0": "Você possui {@variantrule Resistance|XPHB|Resistência} a dano Concussivo, Perfurante e Cortante enquanto veste esta armadura.",
+      "data.text.rules.1.name": "Carapaça Metálica",
+      "data.text.rules.1.entries.0": "Você pode realizar uma ação de {@action Magic|XPHB} para conceder a si mesmo {@variantrule Immunity|XPHB|Imunidade} a dano Concussivo, Perfurante e Cortante por 10 minutos ou até deixar de vestir a armadura. Depois de usar esta propriedade, você não pode usá-la novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:arrow-catching-shield:srd-5.2": {
+      "name": "Escudo Apanhador de Flechas",
+      "data.text.rules.0": "Enquanto empunha este Escudo, você recebe um bônus de +2 na {@variantrule Armor Class|XPHB|Classe de Armadura} contra jogadas de ataque à distância. Esse bônus é adicional ao bônus normal do Escudo na CA.",
+      "data.text.rules.1": "Sempre que um atacante fizer uma jogada de ataque à distância contra um alvo a até 5 pés de você, você pode realizar uma {@variantrule Reaction|XPHB|Reação} para se tornar o alvo do ataque no lugar dele."
+    },
+    "dnd2024:2024:item:black-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Negro" },
+    "dnd2024:2024:item:blue-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Azul" },
+    "dnd2024:2024:item:brass-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão de Latão" },
+    "dnd2024:2024:item:breastplate:srd-5.2": { "name": "Peitoral" },
+    "dnd2024:2024:item:bronze-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão de Bronze" },
+    "dnd2024:2024:item:chain-mail:srd-5.2": { "name": "Cota de Malha" },
+    "dnd2024:2024:item:chain-shirt:srd-5.2": { "name": "Camisão de Malha" },
+    "dnd2024:2024:item:copper-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão de Cobre" },
+    "dnd2024:2024:item:glamoured-studded-leather:srd-5.2": {
+      "name": "Couro Batido Glamouroso",
+      "data.text.rules.0": "Enquanto veste esta armadura, você recebe um bônus de +1 na {@variantrule Armor Class|XPHB|Classe de Armadura}. Você também pode realizar uma {@variantrule Bonus Action|XPHB|Ação Bônus} para fazer a armadura assumir a aparência de um conjunto normal de roupas ou de outro tipo de armadura. Você decide sua aparência — incluindo cor, estilo e acessórios —, mas a armadura mantém seu volume e peso normais. A aparência ilusória dura até você usar esta propriedade novamente ou retirar a armadura."
+    },
+    "dnd2024:2024:item:gold-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Dourado" },
+    "dnd2024:2024:item:green-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Verde" },
+    "dnd2024:2024:item:half-plate-armor:srd-5.2": { "name": "Meia-Armadura" },
+    "dnd2024:2024:item:hide-armor:srd-5.2": { "name": "Armadura de Peles" },
+    "dnd2024:2024:item:leather-armor:srd-5.2": { "name": "Armadura de Couro" },
+    "dnd2024:2024:item:padded-armor:srd-5.2": { "name": "Armadura Acolchoada" },
+    "dnd2024:2024:item:plate-armor:srd-5.2": { "name": "Armadura de Placas" },
+    "dnd2024:2024:item:red-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Vermelho" },
+    "dnd2024:2024:item:ring-mail:srd-5.2": { "name": "Cota de Anéis" },
+    "dnd2024:2024:item:scale-mail:srd-5.2": { "name": "Cota de Escamas" },
+    "dnd2024:2024:item:sentinel-shield:srd-5.2": {
+      "name": "Escudo Sentinela",
+      "data.text.rules.0": "Enquanto segura este Escudo, você tem {@variantrule Advantage|XPHB|Vantagem} em jogadas de {@variantrule Initiative|XPHB|Iniciativa} e em testes de Sabedoria ({@skill Perception|XPHB}). O Escudo é adornado com o símbolo de um olho."
+    },
+    "dnd2024:2024:item:shield:srd-5.2": { "name": "Escudo" },
+    "dnd2024:2024:item:shield-of-missile-attraction:srd-5.2": {
+      "name": "Escudo da Atração de Projéteis",
+      "data.text.rules.0": "Enquanto segura este Escudo, você possui {@variantrule Resistance|XPHB|Resistência} ao dano de ataques feitos com armas à Distância.",
+      "data.text.rules.1.name": "Maldição",
+      "data.text.rules.1.entries.0": "Este Escudo é amaldiçoado. Sintonizar-se com ele o amaldiçoa até você ser alvo da magia {@spell Remove Curse|XPHB} ou de magia semelhante. Retirar o Escudo não encerra a maldição sobre você. Sempre que um ataque com uma arma à Distância tiver como alvo uma criatura a até 10 pés de você, a maldição faz com que você se torne o alvo no lugar dela."
+    },
+    "dnd2024:2024:item:shield-of-the-cavalier:srd-5.2": {
+      "name": "Escudo do Cavaleiro",
+      "data.text.rules.0": "Enquanto segura este Escudo, você recebe um bônus de +2 na {@variantrule Armor Class|XPHB|Classe de Armadura}. Esse bônus é adicional ao bônus normal do Escudo na CA.",
+      "data.text.rules.1": "O Escudo possui as propriedades adicionais a seguir, que você pode usar enquanto o segura.",
+      "data.text.rules.2.name": "Golpe Impetuoso",
+      "data.text.rules.2.entries.0": "Quando você realiza a ação {@action Attack|XPHB}, pode fazer uma das jogadas de ataque usando o Escudo contra um alvo a até 5 pés de você. Aplique seu {@variantrule Proficiency|XPHB|Bônus de Proficiência} e seu modificador de Força à jogada de ataque. Em um acerto, o Escudo causa ao alvo dano de Força igual a {@dice 2d6 + 2} mais seu modificador de Força e, se o alvo for uma criatura, você pode empurrá-la até 10 pés diretamente para longe de você. Se a criatura for do seu tamanho ou menor, você também pode derrubá-la, fazendo com que receba a condição {@condition Prone|XPHB}.",
+      "data.text.rules.3.name": "Campo Protetor",
+      "data.text.rules.3.entries.0": "Como uma {@variantrule Reaction|XPHB|Reação}, quando você ou um aliado que possa ver a até 5 pés de você é alvo de um ataque ou realiza uma salvaguarda contra uma área de efeito, você pode usar o Escudo para criar uma {@variantrule Emanation [Area of Effect]|XPHB|Emanação} imóvel de 5 pés originada em você. Quando a {@variantrule Emanation [Area of Effect]|XPHB|Emanação} surge, quaisquer criaturas ou objetos que não estejam completamente contidos nela são empurrados para os espaços desocupados mais próximos fora dela. O ataque ou área de efeito que desencadeou a {@variantrule Reaction|XPHB|Reação} não produz efeito sobre criaturas e objetos dentro da {@variantrule Emanation [Area of Effect]|XPHB|Emanação}, que dura enquanto você mantiver {@status Concentration|XPHB|Concentração}, por até 1 minuto. Nada pode atravessar para dentro ou para fora da {@variantrule Emanation [Area of Effect]|XPHB|Emanação}. Uma criatura ou objeto dentro da {@variantrule Emanation [Area of Effect]|XPHB|Emanação} não pode sofrer dano de ataques ou efeitos originados do lado de fora, e uma criatura dentro da {@variantrule Emanation [Area of Effect]|XPHB|Emanação} não pode causar dano a nada do lado de fora. Depois de usar esta propriedade, você não pode usá-la novamente até o próximo amanhecer."
+    },
+    "dnd2024:2024:item:silver-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão de Prata" },
+    "dnd2024:2024:item:spellguard-shield:srd-5.2": {
+      "name": "Escudo Guardião de Magias",
+      "data.text.rules.0": "Enquanto segura este Escudo, você tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias e outros efeitos mágicos, e jogadas de ataque com magia têm {@variantrule Disadvantage|XPHB|Desvantagem} contra você."
+    },
+    "dnd2024:2024:item:splint-armor:srd-5.2": { "name": "Armadura de Talas" },
+    "dnd2024:2024:item:studded-leather-armor:srd-5.2": { "name": "Armadura de Couro Batido" },
+    "dnd2024:2024:item:white-dragon-scale-mail:srd-5.2": { "name": "Cota de Escamas de Dragão Branco" }
+  }
+}
