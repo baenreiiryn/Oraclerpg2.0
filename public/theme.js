@@ -19,6 +19,15 @@
     document.head.appendChild(link);
   }
 
+  function ensureThemeFontStyles() {
+    if (document.querySelector('link[data-oracle-theme-fonts]')) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = '/theme-fonts.css';
+    link.dataset.oracleThemeFonts = 'true';
+    document.head.appendChild(link);
+  }
+
   function normalizeTheme(value) {
     return THEMES.includes(value) ? value : 'oracle';
   }
@@ -100,6 +109,7 @@
   }
 
   ensureRefinementStyles();
+  ensureThemeFontStyles();
   const initialTheme = readStoredTheme();
   document.documentElement.dataset.theme = initialTheme;
 
