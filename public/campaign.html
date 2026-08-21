@@ -8,13 +8,33 @@
   <link rel="stylesheet" href="/theme.css" />
   <link rel="stylesheet" href="/campaign-runtime.css" />
   <script src="/theme.js"></script>
+  <script src="/system-registry.js" defer></script>
   <script src="/campaign-runtime.js" defer></script>
 </head>
 <body>
   <main class="runtime-shell" data-campaign-runtime>
-    <header class="runtime-topbar"><a href="/" class="runtime-back" aria-label="Início">‹</a><div><strong data-runtime-campaign>OracleRPG</strong><small data-runtime-system></small></div><button type="button" data-runtime-menu aria-label="Menu">⋯</button></header>
-    <section class="runtime-hero" data-runtime-hero></section>
-    <section class="runtime-placeholder" data-runtime-placeholder></section>
+    <header class="runtime-topbar">
+      <a href="/" class="runtime-back" aria-label="Início">‹</a>
+      <div class="runtime-title"><strong data-runtime-campaign>OracleRPG</strong><small data-runtime-system></small></div>
+      <button type="button" class="runtime-menu" data-runtime-menu aria-label="Menu">⋯</button>
+    </header>
+
+    <section class="runtime-stage" data-runtime-stage>
+      <div class="runtime-stage-hud" data-runtime-hud></div>
+      <div class="runtime-scene" data-runtime-scene></div>
+    </section>
+
+    <div class="runtime-scrim" data-runtime-scrim hidden></div>
+    <section class="runtime-panels" data-runtime-panels aria-live="polite"></section>
+
+    <nav class="runtime-dock" data-runtime-dock aria-label="Ferramentas da campanha">
+      <button type="button" data-runtime-open="character"><span>♙</span><small>Personagem</small></button>
+      <button type="button" data-runtime-open="inventory"><span>◇</span><small>Mochila</small></button>
+      <button type="button" data-runtime-open="powers"><span>✦</span><small>Habilidades</small></button>
+      <button type="button" data-runtime-open="journal"><span>✎</span><small>Diário</small></button>
+      <button type="button" data-runtime-open="dice"><span>⚄</span><small>Dados</small></button>
+      <button type="button" data-runtime-open="documents"><span>▤</span><small>Documentos</small></button>
+    </nav>
   </main>
 </body>
 </html>
