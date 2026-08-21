@@ -46,8 +46,8 @@ function macroIdentity(macro) {
   return `${kind} ${parts.slice(0, 2).join("|")}`.trim();
 }
 
-function sortedMatches(text, regex, map = (value) => value) {
-  return (text.match(regex) ?? []).map(map).sort();
+function uniqueSortedMatches(text, regex, map = (value) => value) {
+  return [...new Set((text.match(regex) ?? []).map(map))].sort();
 }
 
 function stripMachineTokens(text) {
@@ -61,11 +61,11 @@ function stripMachineTokens(text) {
 function mechanicalTextFingerprint(text) {
   const plain = stripMachineTokens(text);
   return {
-    macros: sortedMatches(text, /\{@[^}]+\}/g, macroIdentity),
-    rolls: sortedMatches(text, /\[\[[^\]]+\]\]/g),
-    uuids: sortedMatches(text, /@UUID\[[^\]]+\]/g),
-    placeholders: sortedMatches(text, /\{\{[^}]+\}\}/g),
-    numbers: sortedMatches(plain, /\d+(?:\.\d+)?(?:\/\d+)?\+?/g)
+    macros: uniqueSortedMatches(text, /\{@[^}]+\}/g, macroIdentity),
+    rolls: uniqueSortedMatches(text, /\[\[[^\]]+\]\]/g),
+    uuids: uniqueSortedMatches(text, /@UUID\[[^\]]+\]/g),
+    placeholders: uniqueSortedMatches(text, /\{\{[^}]+\}\}/g),
+    numbers: uniqueSortedMatches(plain, /\d+(?:\.\d+)?(?:\/\d+)?\+?/g)
   };
 }
 
