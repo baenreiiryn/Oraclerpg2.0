@@ -7,10 +7,12 @@
   <title>Nova campanha · OracleRPG</title>
   <link rel="stylesheet" href="/system-flow.css" />
   <link rel="stylesheet" href="/campaign-wizard.css" />
+  <link rel="stylesheet" href="/campaign-species.css" />
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
   <script src="/system-registry.js" defer></script>
   <script src="/system-flow.js" defer></script>
+  <script src="/campaign-species.js" defer></script>
   <script src="/campaign-wizard.js" defer></script>
 </head>
 <body>
@@ -20,6 +22,7 @@
   <nav class="campaign-stepper" data-stepper aria-label="Etapas de criação da campanha">
     <button type="button" class="wizard-step is-active" data-step-target="campaign"><span class="wizard-step-number">1</span><span class="wizard-step-copy"><strong>Campanha</strong><small data-step-summary="campaign">Sistema · nome · tom</small></span></button>
     <button type="button" class="wizard-step" data-step-target="class" disabled><span class="wizard-step-number">2</span><span class="wizard-step-copy"><strong>Classe</strong><small data-step-summary="class">Escolher classe</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="species" disabled><span class="wizard-step-number">3</span><span class="wizard-step-copy"><strong>Espécie</strong><small data-step-summary="species">Escolher espécie</small></span></button>
   </nav>
 
   <section class="wizard-panel" data-step-panel="campaign">
@@ -33,7 +36,13 @@
   <section class="wizard-panel" data-step-panel="class" hidden>
     <section class="flow-intro"><p class="flow-eyebrow">Etapa 2</p><h1>Escolha sua classe</h1><p>Selecione uma classe para consultar sua função geral, capacidades iniciais, equipamento e toda a progressão da classe base até o nível 20.</p></section>
     <section class="flow-section"><div class="flow-section-head"><h2>Classes disponíveis</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-class-loading>Carregando classes do compêndio…</div><div class="class-list" data-class-list></div><div class="class-detail" data-class-detail hidden></div></section>
-    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-class-continue disabled>Continuar</button><p class="flow-status" data-class-status></p></footer>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-class-continue disabled>Continuar para espécie</button><p class="flow-status" data-class-status></p></footer>
+  </section>
+
+  <section class="wizard-panel" data-step-panel="species" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Etapa 3</p><h1>Escolha sua espécie</h1><p>Selecione uma espécie do SRD 5.2 e consulte tamanho, deslocamento, sentidos, resistências, traços e as escolhas próprias de cada ancestralidade.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Espécies disponíveis</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-species-loading>Carregando espécies do compêndio…</div><div class="class-list species-list" data-species-list></div><div class="class-detail species-detail" data-species-detail hidden></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-species-continue disabled>Continuar</button><p class="flow-status" data-species-status></p></footer>
   </section>
 </main>
 </body>

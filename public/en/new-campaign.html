@@ -7,10 +7,12 @@
   <title>New campaign · OracleRPG</title>
   <link rel="stylesheet" href="/system-flow.css" />
   <link rel="stylesheet" href="/campaign-wizard.css" />
+  <link rel="stylesheet" href="/campaign-species.css" />
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
   <script src="/system-registry.js" defer></script>
   <script src="/system-flow.js" defer></script>
+  <script src="/campaign-species.js" defer></script>
   <script src="/campaign-wizard.js" defer></script>
 </head>
 <body>
@@ -20,6 +22,7 @@
   <nav class="campaign-stepper" data-stepper aria-label="Campaign creation steps">
     <button type="button" class="wizard-step is-active" data-step-target="campaign"><span class="wizard-step-number">1</span><span class="wizard-step-copy"><strong>Campaign</strong><small data-step-summary="campaign">System · name · tone</small></span></button>
     <button type="button" class="wizard-step" data-step-target="class" disabled><span class="wizard-step-number">2</span><span class="wizard-step-copy"><strong>Class</strong><small data-step-summary="class">Choose class</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="species" disabled><span class="wizard-step-number">3</span><span class="wizard-step-copy"><strong>Species</strong><small data-step-summary="species">Choose species</small></span></button>
   </nav>
 
   <section class="wizard-panel" data-step-panel="campaign">
@@ -33,7 +36,13 @@
   <section class="wizard-panel" data-step-panel="class" hidden>
     <section class="flow-intro"><p class="flow-eyebrow">Step 2</p><h1>Choose your class</h1><p>Select a class to review its general role, starting capabilities, equipment, and the complete base-class progression through level 20.</p></section>
     <section class="flow-section"><div class="flow-section-head"><h2>Available classes</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-class-loading>Loading classes from the compendium…</div><div class="class-list" data-class-list></div><div class="class-detail" data-class-detail hidden></div></section>
-    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-class-continue disabled>Continue</button><p class="flow-status" data-class-status></p></footer>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-class-continue disabled>Continue to species</button><p class="flow-status" data-class-status></p></footer>
+  </section>
+
+  <section class="wizard-panel" data-step-panel="species" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Step 3</p><h1>Choose your species</h1><p>Select an SRD 5.2 species and review its size, speed, senses, resistances, traits, and ancestry-specific choices.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Available species</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-species-loading>Loading species from the compendium…</div><div class="class-list species-list" data-species-list></div><div class="class-detail species-detail" data-species-detail hidden></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-species-continue disabled>Continue</button><p class="flow-status" data-species-status></p></footer>
   </section>
 </main>
 <script>localStorage.setItem('oraclerpg.locale','en');</script>
