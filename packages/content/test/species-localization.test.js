@@ -106,7 +106,12 @@ function assertMachineTextPreserved(source, translated, label) {
 }
 
 function assertBalancedMarkup(text, label) {
-  assert.equal((text.match(/\{@/g) ?? []).length, (text.match(/}/g) ?? []).length, `${label}: unbalanced 5etools markup`);
+  const withoutPlaceholders = text.replace(/\{\{[^}]+\}\}/g, "");
+  assert.equal(
+    (withoutPlaceholders.match(/\{@/g) ?? []).length,
+    (withoutPlaceholders.match(/}/g) ?? []).length,
+    `${label}: unbalanced 5etools markup`
+  );
   assert.equal((text.match(/\[\[/g) ?? []).length, (text.match(/\]\]/g) ?? []).length, `${label}: unbalanced Foundry roll markup`);
 }
 
