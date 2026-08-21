@@ -49,6 +49,10 @@ function initCampaign(){
   });
   sync();
 }
+function loadCampaignGuideSetup(){
+  if(document.querySelector('script[data-oracle-campaign-guide-setup]'))return;
+  const script=document.createElement('script');script.src='/campaign-guide-setup.js';script.async=false;script.dataset.oracleCampaignGuideSetup='true';document.head.appendChild(script);
+}
 function loadCampaignCreationTail(){
   const loadLevel=()=>{
     if(document.querySelector('script[data-oracle-campaign-level-bootstrap]'))return;
@@ -64,5 +68,5 @@ function loadCampaignCreationTail(){
   document.head.appendChild(script);
 }
 if(root.dataset.oracleFlow==='compendium')initCompendium();
-if(root.dataset.oracleFlow==='campaign'){initCampaign();loadCampaignCreationTail();}
+if(root.dataset.oracleFlow==='campaign'){initCampaign();loadCampaignGuideSetup();loadCampaignCreationTail();}
 })();
