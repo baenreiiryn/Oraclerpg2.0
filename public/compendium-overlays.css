@@ -1,0 +1,3 @@
+/* Keeps authoritative compendium dialogs above the hierarchical card fan. */
+body.compendium-hierarchy-active #viewer.modal{z-index:220}
+body.compendium-hierarchy-active #editor.modal{z-index:230}
