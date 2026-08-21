@@ -31,8 +31,8 @@
     "dnd2024:2024:feature:species-cloud-s-jaunt:srd-5.2": {
       "name": "Passo das Nuvens",
       "data.text.rules.0": "Opção de Ancestralidade Gigante do Golias: Passo das Nuvens.",
-      "data.activities.0.name": "Passo das Nuvens",
-      "data.activities.0.description": "Teleporte-se em até 30 pés para um espaço desocupado que você possa ver."
+      "data.actionRules.0.activity.name": "Passo das Nuvens",
+      "data.actionRules.0.activity.description": "Teleporte-se em até 30 pés para um espaço desocupado que você possa ver."
     },
     "dnd2024:2024:feature:species-damage-resistance:srd-5.2": {
       "name": "Resistência a Dano",
@@ -179,8 +179,8 @@
     "dnd2024:2024:feature:species-hill-s-tumble:srd-5.2": {
       "name": "Queda da Colina",
       "data.text.rules.0": "Opção de Ancestralidade Gigante do Golias: Queda da Colina.",
-      "data.activities.0.name": "Queda da Colina",
-      "data.activities.0.description": "Quando você acerta uma criatura Grande ou menor e causa dano a ela, aplique a condição Caído."
+      "data.actionRules.0.activity.name": "Queda da Colina",
+      "data.actionRules.0.activity.description": "Quando você acerta uma criatura Grande ou menor e causa dano a ela, aplique a condição Caído."
     },
     "dnd2024:2024:feature:species-keen-senses:srd-5.2": {
       "name": "Sentidos Aguçados",
@@ -191,8 +191,8 @@
       "name": "Forma Grande",
       "data.text.rules.0.name": "Forma Grande",
       "data.text.rules.0.entries.0": "A partir do nível de personagem 5, você pode mudar seu tamanho para Grande como uma {@variantrule Bonus Action|XPHB} se estiver em um espaço grande o bastante. Essa transformação dura 10 minutos ou até você encerrá-la (nenhuma ação necessária). Durante esse período, você possui {@variantrule Advantage|XPHB} em testes de Força e seu {@variantrule Speed|XPHB} aumenta em 10 pés. Depois de usar esta característica, você não pode usá-la novamente até terminar um {@variantrule Long Rest|XPHB}.",
-      "data.activities.0.name": "Forma Grande",
-      "data.activities.0.description": "Torne-se Grande, receba Vantagem em testes de Força e aumente seu Deslocamento em 10 pés."
+      "data.actionRules.0.activity.name": "Forma Grande",
+      "data.actionRules.0.activity.description": "Torne-se Grande, receba Vantagem em testes de Força e aumente seu Deslocamento em 10 pés."
     },
     "dnd2024:2024:feature:species-luck:srd-5.2": {
       "name": "Sorte",
@@ -225,7 +225,7 @@
       "name": "Engenhoso",
       "data.text.rules.0.name": "Engenhoso",
       "data.text.rules.0.entries.0": "Você recebe {@variantrule Heroic Inspiration|XPHB} sempre que termina um {@variantrule Long Rest|XPHB}.",
-      "data.triggers.0.description": "Após terminar um Descanso Longo."
+      "data.triggeredGrants.0.trigger.description": "Após terminar um Descanso Longo."
     },
     "dnd2024:2024:feature:species-skillful:srd-5.2": {
       "name": "Habilidoso",
@@ -246,7 +246,7 @@
     "dnd2024:2024:feature:species-storm-s-thunder:srd-5.2": {
       "name": "Trovão da Tempestade",
       "data.text.rules.0": "Opção de Ancestralidade Gigante do Golias: Trovão da Tempestade.",
-      "data.activities.0.name": "Trovão da Tempestade"
+      "data.actionRules.0.activity.name": "Trovão da Tempestade"
     },
     "dnd2024:2024:feature:species-trance:srd-5.2": {
       "name": "Transe",
