@@ -49,14 +49,20 @@ function initCampaign(){
   });
   sync();
 }
-function loadCampaignHistoryStep(){
-  if(document.querySelector('script[data-oracle-campaign-history-bootstrap]'))return;
+function loadCampaignCreationTail(){
+  const loadLevel=()=>{
+    if(document.querySelector('script[data-oracle-campaign-level-bootstrap]'))return;
+    const level=document.createElement('script');level.src='/campaign-level-bootstrap.js';level.async=false;level.dataset.oracleCampaignLevelBootstrap='true';document.head.appendChild(level);
+  };
+  const existing=document.querySelector('script[data-oracle-campaign-history-bootstrap]');
+  if(existing){if(root.querySelector('[data-step-panel="identity"]'))loadLevel();else existing.addEventListener('load',loadLevel,{once:true});return;}
   const script=document.createElement('script');
   script.src='/campaign-history-bootstrap.js';
   script.async=false;
   script.dataset.oracleCampaignHistoryBootstrap='true';
+  script.addEventListener('load',loadLevel,{once:true});
   document.head.appendChild(script);
 }
 if(root.dataset.oracleFlow==='compendium')initCompendium();
-if(root.dataset.oracleFlow==='campaign'){initCampaign();loadCampaignHistoryStep();}
+if(root.dataset.oracleFlow==='campaign'){initCampaign();loadCampaignCreationTail();}
 })();
