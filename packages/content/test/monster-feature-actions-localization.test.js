@@ -7,9 +7,8 @@ import { isPresentationPath, localizeEntity } from "../localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/monster-features.json"), "utf8"));
-const catalogs = [1, 2, 3].map((index) => JSON.parse(fs.readFileSync(path.join(here, `../locales/pt-BR/srd-5.2/monster-features-actions-0${index}.json`), "utf8")));
-const allActions = canonical.items.filter((feature) => feature.data?.category === "action");
-const actions = allActions.slice(0, 165);
+const catalogs = [1, 2, 3, 4].map((index) => JSON.parse(fs.readFileSync(path.join(here, `../locales/pt-BR/srd-5.2/monster-features-actions-0${index}.json`), "utf8")));
+const actions = canonical.items.filter((feature) => feature.data?.category === "action");
 const entries = Object.assign({}, ...catalogs.map((catalog) => catalog.entries));
 
 function getPath(root, pathKey) {
@@ -40,21 +39,20 @@ function collectPresentationPaths(root, prefix = "", out = []) {
   return out;
 }
 
-test("PT-BR creature action catalogs 01-03 exactly cover canonical actions 0-164", () => {
-  assert.deepEqual(catalogs.map((catalog) => catalog.scope), ["monster-features-actions-01", "monster-features-actions-02", "monster-features-actions-03"]);
-  assert.equal(allActions.length, 219);
-  assert.equal(actions.length, 165);
-  assert.equal(Object.keys(entries).length, 165);
+test("PT-BR creature action catalogs 01-04 exactly cover all 219 canonical actions", () => {
+  assert.deepEqual(catalogs.map((catalog) => catalog.scope), ["monster-features-actions-01", "monster-features-actions-02", "monster-features-actions-03", "monster-features-actions-04"]);
+  assert.equal(actions.length, 219);
+  assert.equal(Object.keys(entries).length, 219);
   assert.deepEqual(Object.keys(entries), actions.map((feature) => feature.canonicalId));
 });
 
-test("every visual string in creature action catalogs 01-03 has a PT-BR overlay", () => {
+test("every visual string in all creature actions has a PT-BR overlay", () => {
   for (const feature of actions) {
     assert.deepEqual(Object.keys(entries[feature.canonicalId]).sort(), collectPresentationPaths(feature).sort(), `${feature.canonicalId}: incomplete or stale presentation coverage`);
   }
 });
 
-test("creature action localization through batch 03 preserves every mechanical field", () => {
+test("all creature action localization preserves every mechanical field", () => {
   for (const feature of actions) {
     const overlay = entries[feature.canonicalId];
     for (const [pathKey, value] of Object.entries(overlay)) {
@@ -73,7 +71,7 @@ test("creature action localization through batch 03 preserves every mechanical f
   }
 });
 
-test("creature action localization through batch 03 keeps inline markup balanced", () => {
+test("all creature action localization keeps inline markup balanced", () => {
   for (const [canonicalId, overlay] of Object.entries(entries)) {
     for (const value of Object.values(overlay)) {
       assert.equal((value.match(/\{(?:@|#)/g) ?? []).length, (value.match(/\}/g) ?? []).length, `${canonicalId}: ${value}`);
