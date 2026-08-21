@@ -2,40 +2,44 @@ import fs from "node:fs";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import { buildMonsterLocalizationCatalog, collectMonsterPresentationStrings } from "../monster-localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const monstersDoc = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/monsters.json"), "utf8"));
 const featureDoc = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/monster-features.json"), "utf8"));
+const localeDir = path.join(here, "../locales/pt-BR/srd-5.2");
+const featureCatalogFiles = [
+  "monster-features-traits.json",
+  "monster-features-actions-01.json",
+  "monster-features-actions-02.json",
+  "monster-features-actions-03.json",
+  "monster-features-actions-04.json",
+  "monster-features-bonus-actions.json",
+  "monster-features-legendary-actions.json",
+  "monster-features-reactions.json"
+];
+const featureCatalogs = featureCatalogFiles.map((file) => JSON.parse(fs.readFileSync(path.join(localeDir, file), "utf8")));
+const nameMap = JSON.parse(fs.readFileSync(path.join(localeDir, "monster-name-map.json"), "utf8"));
 const monsters = monstersDoc.items ?? [];
-const featuresById = new Map((featureDoc.items ?? []).map((feature) => [feature.canonicalId, feature]));
+const catalog = buildMonsterLocalizationCatalog({monsters, featureDefinitions: featureDoc.items ?? [], featureCatalogs, nameMap});
 
-function canonicalDescription(definition) {
-  return definition?.data?.text?.description ?? definition?.data?.text?.rules?.[0] ?? "";
-}
-
-test("cluster monster localization variants", () => {
-  const byDefinition = new Map();
-  const byFamily = new Map();
+test("measure generated monster localization coverage", () => {
+  const unresolved = [];
+  let total = 0;
+  let covered = 0;
   for (const monster of monsters) {
-    for (const instance of monster.data?.features ?? []) {
-      const definition = featuresById.get(instance.definition?.canonicalId);
-      if (!definition) continue;
-      const source = canonicalDescription(definition);
-      const value = instance.text?.description ?? "";
-      if (!value || !source || value === source) continue;
-      const id = instance.definition.canonicalId;
-      const row = byDefinition.get(id) ?? {name: definition.name, family: definition.data?.monsterTemplate?.family ?? "<none>", count: 0, values: new Set()};
-      row.count += 1;
-      row.values.add(value);
-      byDefinition.set(id, row);
-      const family = row.family;
-      byFamily.set(family, (byFamily.get(family) ?? 0) + 1);
+    const strings = collectMonsterPresentationStrings(monster);
+    const overlay = catalog.entries[monster.canonicalId] ?? {};
+    for (const [pathKey, value] of Object.entries(strings)) {
+      total += 1;
+      if (typeof overlay[pathKey] === "string") covered += 1;
+      else unresolved.push({canonicalId: monster.canonicalId, monster: monster.name, path: pathKey, value});
     }
   }
-  console.log(`VARIANT_DEFINITION_COUNT=${byDefinition.size}`);
-  console.log(`VARIANT_FAMILY_COUNTS=${JSON.stringify(Object.fromEntries([...byFamily].sort()))}`);
-  console.log(`VARIANT_DEFINITION_COUNTS=${JSON.stringify(Object.fromEntries([...byDefinition].map(([id,row]) => [id,{name:row.name,family:row.family,count:row.count,unique:row.values.size}]).sort()))}`);
-  for (const [id, row] of [...byDefinition].filter(([,r]) => r.values.size <= 8).sort((a,b) => b[1].count - a[1].count)) {
-    console.log(`VARIANT_VALUES=${JSON.stringify({id,name:row.name,family:row.family,count:row.count,values:[...row.values]})}`);
-  }
+  console.log(`MONSTER_LOCALIZATION_TOTAL=${total}`);
+  console.log(`MONSTER_LOCALIZATION_COVERED=${covered}`);
+  console.log(`MONSTER_LOCALIZATION_UNRESOLVED=${unresolved.length}`);
+  const byPath = Object.fromEntries(Object.entries(Object.groupBy(unresolved, (row) => row.path.replace(/\.\d+/g, ".*"))).map(([key, rows]) => [key, rows.length]));
+  console.log(`MONSTER_UNRESOLVED_BY_PATH=${JSON.stringify(byPath)}`);
+  for (const row of unresolved) console.log(`MONSTER_UNRESOLVED=${JSON.stringify(row)}`);
 });
