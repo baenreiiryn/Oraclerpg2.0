@@ -24,6 +24,19 @@ const DAMAGE_LABELS = new Map([
   ["Thunder", "Trovejante"]
 ]);
 
+const SIZE_LABELS = new Map([
+  ["Medium", "Média"],
+  ["Large", "Grande"],
+  ["Huge", "Enorme"]
+]);
+
+const COUNT_LABELS = new Map([
+  ["one", "um"],
+  ["two", "dois"],
+  ["three", "três"],
+  ["four", "quatro"]
+]);
+
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[/^\d+$/.test(part) ? Number(part) : part], root);
 }
@@ -188,13 +201,129 @@ function translateBreathWeapon(source) {
   return null;
 }
 
+function featureLabel(source, exactMap) {
+  return exactMap.get(source) ?? MATERIALIZED_FEATURE_NAMES.get(source) ?? null;
+}
+
+function attackPhrase(count, source, exactMap) {
+  const label = featureLabel(source, exactMap);
+  const quantity = COUNT_LABELS.get(count);
+  if (!label || !quantity) return null;
+  return `${quantity} ataque${count === "one" ? "" : "s"} de ${label}`;
+}
+
+function translateMultiattack(source, exactMap) {
+  let match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\.$/);
+  if (match) {
+    const phrase = attackPhrase(match[1], match[2], exactMap);
+    if (phrase) return `A criatura realiza ${phrase}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks? and (one|two|three|four) (.+?) attacks?\.$/);
+  if (match) {
+    const first = attackPhrase(match[1], match[2], exactMap);
+    const second = attackPhrase(match[3], match[4], exactMap);
+    if (first && second) return `A criatura realiza ${first} e ${second}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes one (.+?) attack, one (.+?) attack, and one (.+?) attack\.$/);
+  if (match) {
+    const labels = match.slice(1).map((name) => featureLabel(name, exactMap));
+    if (labels.every(Boolean)) return `A criatura realiza um ataque de ${labels[0]}, um ataque de ${labels[1]} e um ataque de ${labels[2]}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (two|three|four) attacks, using (.+?) or (.+?) in any combination\.$/);
+  if (match) {
+    const quantity = COUNT_LABELS.get(match[1]);
+    const first = featureLabel(match[2], exactMap);
+    const second = featureLabel(match[3], exactMap);
+    if (quantity && first && second) return `A criatura realiza ${quantity} ataques, usando ${first} ou ${second} em qualquer combinação.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (two|three|four) (.+?) or (.+?) attacks\.$/);
+  if (match) {
+    const quantity = COUNT_LABELS.get(match[1]);
+    const first = featureLabel(match[2], exactMap);
+    const second = featureLabel(match[3], exactMap);
+    if (quantity && first && second) return `A criatura realiza ${quantity} ataques de ${first} ou ${second}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks? and uses (.+?)( if available)?\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const use = featureLabel(match[3], exactMap);
+    if (attacks && use) return `A criatura realiza ${attacks} e usa ${use}${match[4] ? " se disponível" : ""}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks? and uses either (.+?) or (.+?)( if available)?\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const first = featureLabel(match[3], exactMap);
+    const second = featureLabel(match[4], exactMap);
+    if (attacks && first && second) return `A criatura realiza ${attacks} e usa ${first} ou ${second}${match[5] ? ", se disponível" : ""}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\. It can replace one attack with a (.+?) attack\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const replacement = featureLabel(match[3], exactMap);
+    if (attacks && replacement) return `A criatura realiza ${attacks}. Ela pode substituir um ataque por um ataque de ${replacement}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes one (.+?) attack and one (.+?) attack, or it makes two (.+?) attacks\.$/);
+  if (match) {
+    const first = featureLabel(match[1], exactMap);
+    const second = featureLabel(match[2], exactMap);
+    const alternative = featureLabel(match[3], exactMap);
+    if (first && second && alternative) return `A criatura realiza um ataque de ${first} e um ataque de ${second}, ou realiza dois ataques de ${alternative}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes two (.+?) attacks, or it makes three (.+?) attacks if it used (.+?) this turn\.$/);
+  if (match && match[1] === match[2]) {
+    const attack = featureLabel(match[1], exactMap);
+    const used = featureLabel(match[3], exactMap);
+    if (attack && used) return `A criatura realiza dois ataques de ${attack}, ou realiza três ataques de ${attack} se tiver usado ${used} neste turno.`;
+  }
+
+  return null;
+}
+
+function translateCommonTrait(source) {
+  if (/^The [^.]+ has \{@variantrule Advantage\|XPHB\} on saving throws against spells and other magical effects\.$/.test(source)) {
+    return "A criatura tem {@variantrule Advantage|XPHB|Vantagem} em salvaguardas contra magias e outros efeitos mágicos.";
+  }
+
+  const pack = source.match(/^The (.+?) has \{@variantrule Advantage\|XPHB\} on an attack roll against a creature if at least one of the (.+?)'s allies is within 5 feet of the creature and the ally doesn't have the \{@condition Incapacitated\|XPHB\} condition\.$/);
+  if (pack && pack[1] === pack[2]) {
+    return "A criatura tem {@variantrule Advantage|XPHB|Vantagem} em uma jogada de ataque contra uma criatura se pelo menos um aliado dela estiver a até 5 pés da criatura e o aliado não tiver a condição {@condition Incapacitated|XPHB|Incapacitado}.";
+  }
+  return null;
+}
+
+function translateStandardAttackRider(source) {
+  let match = source.match(/^(.*damage\.) If the target is a (Medium|Large|Huge) or smaller creature, it has the \{@condition Prone\|XPHB\} condition\.$/);
+  if (match) {
+    const base = translateStandardAttack(match[1]);
+    const size = SIZE_LABELS.get(match[2]);
+    if (base && size) return `${base} Se o alvo for uma criatura ${size} ou menor, ele recebe a condição {@condition Prone|XPHB|Caído}.`;
+  }
+
+  match = source.match(/^(.*damage\.) If the target is a (Medium|Large|Huge) or smaller creature, it has the \{@condition Grappled\|XPHB\} condition \(escape (\{@dc [^}]+\})\)( from both claws)?\.$/);
+  if (match) {
+    const base = translateStandardAttack(match[1]);
+    const size = SIZE_LABELS.get(match[2]);
+    if (base && size) return `${base} Se o alvo for uma criatura ${size} ou menor, ele recebe a condição {@condition Grappled|XPHB|Agarrado} (escapar ${match[3]})${match[4] ? " por ambas as garras" : ""}.`;
+  }
+  return null;
+}
+
 function translateSimpleMaterializedVariant(source, exactMap) {
   if (/^The [^.]+ can breathe air and water\.$/.test(source)) return "A criatura pode respirar ar e água.";
   if (/^If the [^.]+ fails a saving throw, it can choose to succeed instead\.$/.test(source)) return "Se a criatura falhar em uma salvaguarda, ela pode escolher obter sucesso em vez disso.";
 
   const moveAttack = source.match(/^The [^.]+ moves up to half its \{@variantrule Speed\|XPHB\}, and it makes one (.+) attack\.$/);
   if (moveAttack) {
-    const attack = exactMap.get(moveAttack[1]);
+    const attack = featureLabel(moveAttack[1], exactMap);
     if (attack) return `A criatura se move até metade de seu {@variantrule Speed|XPHB|Deslocamento} e realiza um ataque de ${attack}.`;
   }
   return null;
@@ -202,7 +331,10 @@ function translateSimpleMaterializedVariant(source, exactMap) {
 
 function translateStructuredVariant(source, exactMap) {
   return translateStandardAttack(source)
+    ?? translateStandardAttackRider(source)
     ?? translateBreathWeapon(source)
+    ?? translateMultiattack(source, exactMap)
+    ?? translateCommonTrait(source)
     ?? translateSimpleMaterializedVariant(source, exactMap);
 }
 
