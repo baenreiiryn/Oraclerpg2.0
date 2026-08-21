@@ -42,12 +42,21 @@ function initCampaign(){
   nameInput.addEventListener('input',()=>{status.textContent='';sync();});customInput?.addEventListener('input',sync);
   continueButton.addEventListener('click',()=>{
     const name=nameInput.value.trim();if(!name){status.textContent=copy.nameMissing;return;}
-    const draft={version:1,systemId:selectedSystem,name,toneId:selectedTone,customTone:selectedTone==='custom'?(customInput?.value.trim()||''):'',updatedAt:new Date().toISOString()};
+    const previous=(()=>{try{const value=JSON.parse(localStorage.getItem('oraclerpg.campaignDraft.v1')||'null');return value&&typeof value==='object'?value:{}}catch{return{}}})();
+    const draft={...previous,version:1,systemId:selectedSystem,name,toneId:selectedTone,customTone:selectedTone==='custom'?(customInput?.value.trim()||''):'',updatedAt:new Date().toISOString()};
     try{localStorage.setItem('oraclerpg.campaignDraft.v1',JSON.stringify(draft));}catch{}
     status.textContent=copy.saved;status.classList.add('ok');window.dispatchEvent(new CustomEvent('oraclerpg:campaigndraft',{detail:draft}));
   });
   sync();
 }
+function loadCampaignHistoryStep(){
+  if(document.querySelector('script[data-oracle-campaign-history-bootstrap]'))return;
+  const script=document.createElement('script');
+  script.src='/campaign-history-bootstrap.js';
+  script.async=false;
+  script.dataset.oracleCampaignHistoryBootstrap='true';
+  document.head.appendChild(script);
+}
 if(root.dataset.oracleFlow==='compendium')initCompendium();
-if(root.dataset.oracleFlow==='campaign')initCampaign();
+if(root.dataset.oracleFlow==='campaign'){initCampaign();loadCampaignHistoryStep();}
 })();
