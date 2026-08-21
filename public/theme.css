@@ -1,0 +1,294 @@
+/* OracleRPG visual themes. The Oracle theme intentionally inherits the existing UI unchanged. */
+
+html[data-theme="fantasy"]{
+  --bg:#17100a;
+  --surface:rgba(48,31,19,.94);
+  --surface2:rgba(64,41,24,.94);
+  --surface3:rgba(29,18,11,.96);
+  --border:rgba(194,148,76,.28);
+  --border-strong:rgba(219,176,90,.5);
+  --text:#f4e7cf;
+  --muted:#bca98d;
+  --muted2:#84725c;
+  --gold:#d9aa4d;
+  --gold-soft:#f2cf7a;
+  --violet:#9b7a45;
+  --violet-soft:#d7bb80;
+  --danger:#e35b48;
+  --shadow:0 18px 60px rgba(18,8,2,.46);
+}
+html[data-theme="fantasy"] body{
+  background:
+    radial-gradient(circle at 12% 4%,rgba(226,174,82,.13),transparent 17rem),
+    radial-gradient(circle at 92% 35%,rgba(126,75,32,.18),transparent 24rem),
+    repeating-linear-gradient(92deg,rgba(255,255,255,.015) 0 1px,transparent 1px 11px),
+    repeating-linear-gradient(4deg,transparent 0 31px,rgba(43,19,6,.18) 32px 34px),
+    linear-gradient(180deg,#2b1a0f,#171009 44%,#110b07 100%);
+}
+html[data-theme="fantasy"] body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.42;
+  background:
+    repeating-radial-gradient(ellipse at 18% 40%,transparent 0 11px,rgba(255,218,155,.025) 12px 13px,transparent 14px 28px),
+    linear-gradient(90deg,rgba(255,255,255,.018),transparent 12%,rgba(0,0,0,.07) 50%,transparent 88%,rgba(255,255,255,.012));
+  mix-blend-mode:soft-light;
+  background-size:auto;
+  -webkit-mask-image:none;
+  mask-image:none;
+}
+html[data-theme="fantasy"] body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.72;
+  background:
+    radial-gradient(circle at 8% 11%,#f0ce77 0 2px,#9a6728 3px 5px,transparent 6px),
+    radial-gradient(circle at 92% 18%,#e2b858 0 2px,#81501d 3px 5px,transparent 6px),
+    radial-gradient(circle at 6% 88%,#c98f35 0 2px,#6e3f16 3px 5px,transparent 6px),
+    radial-gradient(circle at 95% 83%,#efca6c 0 2px,#80501e 3px 5px,transparent 6px);
+}
+html[data-theme="fantasy"] body>.shell,
+html[data-theme="fantasy"] body>main.shell{position:relative;z-index:1}
+html[data-theme="fantasy"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.metric,.level-card,.item-card-face,.item-card-nav,.back,.icon-btn,.close,.search,.tabs,.category,.theme){
+  box-shadow:inset 0 1px rgba(255,235,194,.045),0 10px 30px rgba(18,8,2,.16);
+}
+html[data-theme="fantasy"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.item-card-face){
+  background-image:
+    radial-gradient(circle at 10px 10px,rgba(238,193,94,.23) 0 1px,rgba(72,38,13,.7) 2px,transparent 3px),
+    radial-gradient(circle at calc(100% - 10px) calc(100% - 10px),rgba(238,193,94,.18) 0 1px,rgba(72,38,13,.65) 2px,transparent 3px),
+    repeating-linear-gradient(12deg,rgba(255,234,198,.014) 0 1px,transparent 1px 8px),
+    linear-gradient(145deg,rgba(92,53,25,.92),rgba(40,25,15,.96));
+}
+html[data-theme="fantasy"] :is(.token-ring,.ring){
+  background:linear-gradient(145deg,#5f432a,#24170e);
+  border-color:#9b6f35;
+  box-shadow:0 11px 22px rgba(15,7,2,.55),inset 0 0 0 2px rgba(229,188,98,.18);
+}
+html[data-theme="fantasy"] .item-card-image{
+  background:radial-gradient(circle at 50% 28%,rgba(218,169,74,.18),transparent 48%),linear-gradient(180deg,#3b2617,#171009);
+}
+html[data-theme="fantasy"] .item-card-face,
+html[data-theme="fantasy"] .item-card-face::before{border-color:rgba(217,170,77,.46)}
+html[data-theme="fantasy"] .item-card-back{
+  background:radial-gradient(circle at 50% 13%,rgba(217,170,77,.11),transparent 13rem),linear-gradient(180deg,#442b19,#20140c 72%,#150d08);
+}
+html[data-theme="fantasy"] .sheet{background:linear-gradient(180deg,#3b2516,#24160d 42%,#160e09)}
+html[data-theme="fantasy"] .sheet-head{background:linear-gradient(180deg,rgba(49,30,17,.99),rgba(49,30,17,.95) 78%,rgba(49,30,17,0))}
+
+html[data-theme="horror"]{
+  --bg:#07100d;
+  --surface:rgba(12,27,24,.94);
+  --surface2:rgba(21,38,31,.94);
+  --surface3:rgba(7,18,16,.96);
+  --border:rgba(107,156,121,.24);
+  --border-strong:rgba(142,199,132,.42);
+  --text:#e6eee8;
+  --muted:#9aaea4;
+  --muted2:#64796d;
+  --gold:#91c977;
+  --gold-soft:#c3e6a2;
+  --violet:#9f66c8;
+  --violet-soft:#d2a5ee;
+  --danger:#d75570;
+  --shadow:0 20px 65px rgba(0,0,0,.52);
+}
+html[data-theme="horror"] body{
+  background:
+    radial-gradient(circle at 46% -8%,rgba(112,58,139,.17),transparent 30rem),
+    radial-gradient(circle at 105% 52%,rgba(47,116,80,.18),transparent 27rem),
+    radial-gradient(circle at 14% 73%,rgba(77,42,91,.12),transparent 20rem),
+    linear-gradient(180deg,#0b1713,#07100d 56%,#050a09);
+}
+html[data-theme="horror"] body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.54;
+  background:
+    radial-gradient(ellipse at 20% 18%,rgba(209,240,222,.055) 0 1px,transparent 2px 12px),
+    radial-gradient(ellipse at 70% 48%,rgba(177,214,190,.04) 0 1px,transparent 2px 10px),
+    repeating-radial-gradient(ellipse at 20% 30%,rgba(255,255,255,.016) 0 1px,transparent 2px 8px),
+    linear-gradient(115deg,transparent 0 47%,rgba(206,255,226,.025) 48%,transparent 49% 100%);
+  background-size:83px 67px,117px 91px,61px 43px,100% 100%;
+  filter:contrast(1.15);
+  -webkit-mask-image:none;
+  mask-image:none;
+}
+html[data-theme="horror"] body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  background:
+    radial-gradient(circle at 22% 28%,rgba(209,255,227,.085) 0 1px,transparent 2px),
+    radial-gradient(circle at 68% 74%,rgba(207,183,231,.07) 0 1px,transparent 2px);
+  background-size:23px 29px,31px 37px;
+  opacity:.65;
+}
+html[data-theme="horror"] body>.shell,
+html[data-theme="horror"] body>main.shell{position:relative;z-index:1;isolation:isolate}
+html[data-theme="horror"] .shell::before,
+html[data-theme="horror"] .shell::after{
+  content:"";
+  position:fixed;
+  z-index:-1;
+  width:96px;
+  height:380px;
+  pointer-events:none;
+  opacity:.38;
+  border:13px solid rgba(91,145,103,.34);
+  border-top-color:transparent;
+  border-left-color:transparent;
+  border-radius:54% 46% 62% 38%;
+  filter:drop-shadow(0 0 15px rgba(113,72,145,.16));
+}
+html[data-theme="horror"] .shell::before{left:-54px;bottom:-95px;transform:rotate(-24deg)}
+html[data-theme="horror"] .shell::after{right:-60px;top:20%;transform:rotate(154deg) scale(.82)}
+html[data-theme="horror"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.metric,.level-card,.item-card-face,.item-card-nav,.back,.icon-btn,.close,.search,.tabs,.category,.theme){
+  box-shadow:inset 0 1px rgba(205,255,225,.035),0 13px 34px rgba(0,0,0,.25);
+}
+html[data-theme="horror"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.item-card-face){
+  background-image:
+    radial-gradient(circle at 18% 20%,rgba(205,255,225,.045) 0 1px,transparent 2px 11px),
+    repeating-radial-gradient(ellipse at 42% 62%,rgba(255,255,255,.012) 0 1px,transparent 2px 7px),
+    linear-gradient(145deg,rgba(24,48,39,.94),rgba(9,22,19,.97));
+}
+html[data-theme="horror"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.item-card-face)::selection{background:rgba(159,102,200,.45)}
+html[data-theme="horror"] .item-card-face,
+html[data-theme="horror"] .item-card-face::before{border-color:rgba(139,196,127,.35)}
+html[data-theme="horror"] .item-card-image{
+  background:radial-gradient(circle at 50% 35%,rgba(145,201,119,.12),transparent 47%),radial-gradient(circle at 50% 92%,rgba(159,102,200,.18),transparent 52%),#07110e;
+}
+html[data-theme="horror"] .item-card-back{
+  background:radial-gradient(circle at 50% 15%,rgba(159,102,200,.16),transparent 13rem),linear-gradient(160deg,rgba(145,201,119,.055),transparent 42%),linear-gradient(180deg,#13231e,#08120f);
+}
+html[data-theme="horror"] .sheet{background:linear-gradient(180deg,#13241e,#0b1713 42%,#07100d)}
+html[data-theme="horror"] .sheet-head{background:linear-gradient(180deg,rgba(13,29,24,.99),rgba(13,29,24,.95) 78%,rgba(13,29,24,0))}
+html[data-theme="horror"] :is(.token-ring,.ring){
+  background:linear-gradient(145deg,#29443a,#09130f);
+  border-color:#496b59;
+  box-shadow:0 11px 24px rgba(0,0,0,.58),0 0 22px rgba(137,92,164,.08);
+}
+
+html[data-theme="cyberpunk"]{
+  --bg:#070b0e;
+  --surface:rgba(12,18,22,.95);
+  --surface2:rgba(17,25,29,.96);
+  --surface3:rgba(6,10,13,.97);
+  --border:rgba(26,231,240,.25);
+  --border-strong:rgba(26,231,240,.52);
+  --text:#edf7f7;
+  --muted:#91a7a9;
+  --muted2:#5d7275;
+  --gold:#f4e824;
+  --gold-soft:#fff58a;
+  --violet:#ff3ead;
+  --violet-soft:#ff91d0;
+  --danger:#ff3a55;
+  --shadow:0 18px 58px rgba(0,0,0,.5);
+}
+html[data-theme="cyberpunk"] body{
+  background:
+    radial-gradient(circle at 102% 3%,rgba(255,56,157,.14),transparent 22rem),
+    radial-gradient(circle at -5% 61%,rgba(0,225,240,.14),transparent 24rem),
+    radial-gradient(ellipse at 66% 92%,rgba(120,55,25,.16),transparent 26rem),
+    linear-gradient(180deg,#0c1215,#070b0e 58%,#050709);
+}
+html[data-theme="cyberpunk"] body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.58;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 3px,rgba(173,250,255,.025) 4px),
+    repeating-linear-gradient(92deg,rgba(159,80,31,.035) 0 1px,transparent 1px 47px),
+    radial-gradient(circle at 20% 40%,rgba(171,80,29,.08) 0 1px,transparent 2px 9px);
+  background-size:auto,auto,73px 59px;
+  -webkit-mask-image:none;
+  mask-image:none;
+}
+html[data-theme="cyberpunk"] body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  opacity:.46;
+  background:
+    linear-gradient(90deg,transparent 0 4%,rgba(0,231,241,.22) 4% 4.18%,transparent 4.18% 100%),
+    linear-gradient(90deg,transparent 0 94%,rgba(255,46,157,.22) 94% 94.18%,transparent 94.18% 100%),
+    linear-gradient(180deg,transparent 0 9%,rgba(244,232,36,.12) 9% 9.12%,transparent 9.12% 100%);
+}
+html[data-theme="cyberpunk"] body>.shell,
+html[data-theme="cyberpunk"] body>main.shell{position:relative;z-index:1}
+html[data-theme="cyberpunk"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.metric,.level-card,.item-card-face,.item-card-nav,.back,.icon-btn,.close,.search,.tabs,.category,.theme){
+  border-color:rgba(23,224,235,.3);
+  box-shadow:0 0 0 1px rgba(255,56,157,.035),0 0 24px rgba(0,224,240,.055),inset 0 1px rgba(255,255,255,.025);
+}
+html[data-theme="cyberpunk"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.item-card-face){
+  background-image:
+    radial-gradient(circle at 14% 82%,rgba(154,72,31,.11) 0 1px,transparent 2px 8px),
+    radial-gradient(circle at 77% 18%,rgba(115,55,27,.08) 0 1px,transparent 2px 9px),
+    repeating-linear-gradient(165deg,rgba(255,255,255,.012) 0 1px,transparent 1px 7px),
+    linear-gradient(145deg,rgba(19,30,34,.97),rgba(7,12,15,.98));
+}
+html[data-theme="cyberpunk"] :is(.panel,.action-card,.card,.entry,.visual-detail .section,.detail-hero,.item-card-face,.item-card-nav,.back,.icon-btn,.close,.search,.tabs,.category,.theme){border-radius:7px}
+html[data-theme="cyberpunk"] :is(.action-card,.card,.entry,.detail-hero,.item-card-face){
+  border-left-color:rgba(244,232,36,.58);
+  border-right-color:rgba(255,56,157,.32);
+}
+html[data-theme="cyberpunk"] :is(.brand-mark,.brand,.eyebrow,.section-title,.title,.top-title,.intro h1,.entry-name,.sheet h2,.section-title,.item-card-browser__title,.item-card-front h3,.item-card-back h3,.campaign-name,.campaign,.action-title,.row-title,.theme-name,.name){
+  text-shadow:0 0 12px rgba(0,226,240,.08),2px 0 rgba(255,55,157,.045);
+}
+html[data-theme="cyberpunk"] :is(.token-ring,.ring){
+  border-color:#157f87;
+  background:linear-gradient(145deg,#152329,#05090b);
+  box-shadow:0 11px 22px rgba(0,0,0,.5),0 0 18px rgba(0,228,241,.11),inset 0 0 0 1px rgba(255,58,163,.12);
+}
+html[data-theme="cyberpunk"] .item-card-face,
+html[data-theme="cyberpunk"] .item-card-face::before{border-color:rgba(21,225,236,.44)}
+html[data-theme="cyberpunk"] .item-card-image{
+  background:linear-gradient(180deg,rgba(0,221,235,.04),transparent 35%),radial-gradient(circle at 50% 90%,rgba(255,56,157,.13),transparent 52%),#060b0d;
+}
+html[data-theme="cyberpunk"] .item-card-back{
+  background:radial-gradient(circle at 50% 14%,rgba(255,56,157,.12),transparent 13rem),linear-gradient(155deg,rgba(244,232,36,.04),transparent 40%),linear-gradient(180deg,#111a1e,#060b0d);
+}
+html[data-theme="cyberpunk"] .sheet{background:linear-gradient(180deg,#111a1e,#091014 42%,#05080a)}
+html[data-theme="cyberpunk"] .sheet-head{background:linear-gradient(180deg,rgba(8,14,17,.99),rgba(8,14,17,.95) 78%,rgba(8,14,17,0))}
+html[data-theme="cyberpunk"] .item-card-fan::before{
+  background:radial-gradient(ellipse,rgba(0,228,241,.12),rgba(255,56,157,.055) 43%,transparent 72%);
+}
+html[data-theme="cyberpunk"] .item-card-dot.is-active{background:rgba(0,232,242,.86)}
+html[data-theme="cyberpunk"] .action-card::before{background:linear-gradient(180deg,transparent,#f4e824,transparent)}
+html[data-theme="cyberpunk"] .action-card.homebrew::before{background:linear-gradient(180deg,transparent,#ff3ead,transparent)}
+
+html[data-theme]:not([data-theme="oracle"]) .group-title{color:var(--gold-soft)}
+html[data-theme]:not([data-theme="oracle"]) .card.homebrew .icon{color:var(--violet-soft)}
+html[data-theme]:not([data-theme="oracle"]) :is(.row,.choice){border-bottom-color:color-mix(in srgb,var(--border) 58%,transparent)}
+html[data-theme]:not([data-theme="oracle"]) :is(.icon,.flag,.action-icon){color:var(--gold);border-color:color-mix(in srgb,var(--gold) 22%,transparent);background:color-mix(in srgb,var(--gold) 8%,transparent)}
+html[data-theme]:not([data-theme="oracle"]) .homebrew .action-icon{color:var(--violet-soft);border-color:color-mix(in srgb,var(--violet) 25%,transparent);background:color-mix(in srgb,var(--violet) 8%,transparent)}
+
+/* Theme-picker previews stay descriptive even while another theme is active. */
+.theme[data-theme-option]{position:relative;overflow:hidden;transition:border-color .16s ease,transform .16s ease,box-shadow .16s ease}
+.theme[data-theme-option]:active{transform:scale(.985)}
+.theme[data-theme-option].active{box-shadow:0 0 0 1px var(--gold),0 8px 22px rgba(0,0,0,.2)}
+.theme[data-theme-option].active::after{content:"✓";position:absolute;right:9px;top:8px;width:20px;height:20px;border-radius:50%;display:grid;place-items:center;background:var(--gold);color:#0a0909;font-size:11px;font-weight:900}
+.swatch.oracle{background:radial-gradient(circle at 25% 20%,rgba(231,197,128,.3),transparent 35%),linear-gradient(140deg,#664c7d,#0b090c)}
+.swatch.fantasy{background:radial-gradient(circle at 82% 30%,#d6aa4e 0 3px,#6a441d 4px 5px,transparent 6px),repeating-linear-gradient(94deg,rgba(255,255,255,.035) 0 1px,transparent 1px 8px),linear-gradient(140deg,#70451f,#21150c)}
+.swatch.horror{background:radial-gradient(circle at 72% 28%,rgba(157,94,195,.48),transparent 28%),repeating-radial-gradient(ellipse at 22% 66%,rgba(220,255,230,.04) 0 1px,transparent 2px 7px),linear-gradient(140deg,#1b5946,#080d0c)}
+.swatch.cyber{background:repeating-linear-gradient(0deg,transparent 0 4px,rgba(123,240,247,.05) 5px),radial-gradient(circle at 22% 72%,rgba(138,64,27,.35),transparent 28%),linear-gradient(140deg,#ef2c91 0 2%,#121b1f 28%,#0bd8e7 94%,#efe31f)}
+
+@media (prefers-reduced-motion:reduce){
+  .theme[data-theme-option]{transition:none}
+}
