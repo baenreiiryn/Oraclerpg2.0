@@ -16,13 +16,14 @@ const systems=[Object.freeze({
     species:{pt:'/compendium/srd/pt-BR/species.json',en:'/compendium/srd/en/species.json'},
     speciesFeatures:{pt:'/compendium/srd/pt-BR/species-features.json',en:'/compendium/srd/en/species-features.json'},
     backgrounds:{pt:'/compendium/srd/pt-BR/backgrounds.json',en:'/compendium/srd/en/backgrounds.json'},
-    feats:{pt:'/compendium/srd/pt-BR/feats.json',en:'/compendium/srd/en/feats.json'}
+    feats:{pt:'/compendium/srd/pt-BR/feats.json',en:'/compendium/srd/en/feats.json'},
+    spells:{pt:'/compendium/srd/pt-BR/spells.json',en:'/compendium/srd/en/spells.json'}
   }
 })];
 const byId=new Map(systems.map(system=>[system.id,system]));
 const localized=(map,locale='pt')=>map?.[locale==='en'?'en':'pt']||null;
 window.OracleSystems=Object.freeze({
-  version:4,
+  version:5,
   all:Object.freeze([...systems]),
   get:id=>byId.get(id)||null,
   compendiumUrl:(id,locale='pt')=>localized(byId.get(id)?.compendium,locale),
@@ -31,6 +32,7 @@ window.OracleSystems=Object.freeze({
   speciesCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.species,locale),
   speciesFeatureCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.speciesFeatures,locale),
   backgroundCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.backgrounds,locale),
-  featCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.feats,locale)
+  featCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.feats,locale),
+  spellCatalogUrl:(id,locale='pt')=>localized(byId.get(id)?.campaign?.spells,locale)
 });
 })();

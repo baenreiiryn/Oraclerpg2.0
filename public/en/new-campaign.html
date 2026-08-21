@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="/campaign-backgrounds.css" />
   <link rel="stylesheet" href="/campaign-abilities.css" />
   <link rel="stylesheet" href="/campaign-proficiencies.css" />
+  <link rel="stylesheet" href="/campaign-spells.css" />
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
   <script src="/system-registry.js" defer></script>
@@ -19,6 +20,7 @@
   <script src="/campaign-backgrounds.js" defer></script>
   <script src="/campaign-abilities.js" defer></script>
   <script src="/campaign-proficiencies.js" defer></script>
+  <script src="/campaign-spells.js" defer></script>
   <script src="/campaign-wizard.js" defer></script>
 </head>
 <body>
@@ -32,6 +34,7 @@
     <button type="button" class="wizard-step" data-step-target="background" disabled><span class="wizard-step-number">4</span><span class="wizard-step-copy"><strong>Background</strong><small data-step-summary="background">Choose background</small></span></button>
     <button type="button" class="wizard-step" data-step-target="abilities" disabled><span class="wizard-step-number">5</span><span class="wizard-step-copy"><strong>Ability Scores</strong><small data-step-summary="abilities">Choose ability scores</small></span></button>
     <button type="button" class="wizard-step" data-step-target="proficiencies" disabled><span class="wizard-step-number">6</span><span class="wizard-step-copy"><strong>Proficiencies</strong><small data-step-summary="proficiencies">Choose proficiencies</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="spells" disabled><span class="wizard-step-number">7</span><span class="wizard-step-copy"><strong>Spells</strong><small data-step-summary="spells">Choose spells</small></span></button>
   </nav>
 
   <section class="wizard-panel" data-step-panel="campaign">
@@ -69,8 +72,14 @@
   <section class="wizard-panel" data-step-panel="proficiencies" hidden>
     <section class="flow-intro"><p class="flow-eyebrow">Step 6</p><h1>Choose your proficiencies</h1><p>Spend the points granted by your class and species. Each point raises a skill one step: not proficient, proficient, then Expertise.</p></section>
     <section class="flow-section"><div class="flow-section-head"><h2>Skills</h2><span class="flow-step">1 point = 1 step</span></div><div data-proficiency-points></div><div class="proficiency-grid" data-proficiency-grid></div><div data-other-proficiencies></div></section>
-    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-proficiency-continue disabled>Continue</button><p class="flow-status" data-proficiency-status></p></footer>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-proficiency-continue disabled>Continue to spells</button><p class="flow-status" data-proficiency-status></p></footer>
   </section>
+  <section class="wizard-panel" data-step-panel="spells" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Step 7</p><h1>Choose your spells</h1><p>Choose cantrips and spells granted by your class, background, and species. Each source uses its own spell list and level-1 limits.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Level 1 magic</h2><span class="flow-step">Class · Background · Species</span></div><div data-spell-overview></div><div data-spell-sources></div><div data-future-spells></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-spell-continue disabled>Continue</button><p class="flow-status" data-spell-status></p></footer>
+  </section>
+
 </main>
 <script>localStorage.setItem('oraclerpg.locale','en');</script>
 </body>
