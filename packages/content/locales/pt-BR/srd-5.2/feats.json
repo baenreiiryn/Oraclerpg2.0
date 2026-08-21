@@ -59,7 +59,8 @@
       "name": "Dádiva da Recordação de Magias",
       "data.text.rules.0": "Você recebe os benefícios a seguir.",
       "data.text.rules.1.name": "Conjuração Gratuita",
-      "data.text.rules.1.entries.0": "Sempre que conjurar uma magia usando um espaço de magia de nível 1–4, role {@dice 1d4}. Se o número obtido for igual ao nível do espaço, o espaço não é gasto."
+      "data.text.rules.1.entries.0": "Sempre que conjurar uma magia usando um espaço de magia de nível 1–4, role {@dice 1d4}. Se o número obtido for igual ao nível do espaço, o espaço não é gasto.",
+      "data.resourcePreservationRules.0.trigger.description": "Ao conjurar usando um espaço de magia de nível 1–4."
     },
     "dnd2024:2024:feature:feat-boon-of-the-night-spirit:srd-5.2": {
       "name": "Dádiva do Espírito da Noite",
