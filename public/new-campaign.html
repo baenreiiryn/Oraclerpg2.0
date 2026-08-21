@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>Nova campanha · OracleRPG</title>
+  <link rel="stylesheet" href="/system-flow.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <script src="/theme.js"></script>
+  <script src="/system-registry.js" defer></script>
+  <script src="/system-flow.js" defer></script>
+</head>
+<body>
+<main class="flow-shell" data-oracle-flow="campaign">
+  <header class="flow-topbar"><a class="flow-back" href="index.html" aria-label="Voltar">‹</a><div class="flow-top-title">Nova campanha</div><div></div></header>
+  <section class="flow-intro"><p class="flow-eyebrow">Criar história</p><h1>Prepare a campanha</h1><p>Escolha o sistema, dê um nome à história e defina o tom que o Oracle deve usar como base para a campanha.</p></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>Sistema</h2><span class="flow-step">1 de 3</span></div><div class="system-list" data-system-list></div></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>Nome da campanha</h2><span class="flow-step">2 de 3</span></div><div class="setup-panel"><label class="flow-label" for="campaignName">Nome</label><input id="campaignName" class="campaign-name-input" data-campaign-name maxlength="80" autocomplete="off" placeholder="Ex.: As Cinzas de Elturel" /></div></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>Tom da campanha</h2><span class="flow-step">3 de 3</span></div><div class="tone-grid" data-tone-grid></div><div class="custom-tone-wrap" data-custom-tone-wrap hidden><label class="flow-label" for="customTone">Descreva o tom</label><input id="customTone" class="custom-tone-input" data-custom-tone maxlength="120" placeholder="Ex.: fantasia melancólica com humor entre os personagens" /></div></section>
+  <footer class="flow-footer"><button class="flow-primary" type="button" data-continue disabled>Continuar</button><p class="flow-status" data-flow-status></p></footer>
+</main>
+</body>
+</html>

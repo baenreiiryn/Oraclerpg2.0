@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>New campaign · OracleRPG</title>
+  <link rel="stylesheet" href="/system-flow.css" />
+  <link rel="stylesheet" href="/theme.css" />
+  <script src="/theme.js"></script>
+  <script src="/system-registry.js" defer></script>
+  <script src="/system-flow.js" defer></script>
+</head>
+<body>
+<main class="flow-shell" data-oracle-flow="campaign">
+  <header class="flow-topbar"><a class="flow-back" href="index.html" aria-label="Back">‹</a><div class="flow-top-title">New campaign</div><div></div></header>
+  <section class="flow-intro"><p class="flow-eyebrow">Create story</p><h1>Prepare the campaign</h1><p>Choose the game system, name the story, and define the tone Oracle should use as the campaign foundation.</p></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>System</h2><span class="flow-step">1 of 3</span></div><div class="system-list" data-system-list></div></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>Campaign name</h2><span class="flow-step">2 of 3</span></div><div class="setup-panel"><label class="flow-label" for="campaignName">Name</label><input id="campaignName" class="campaign-name-input" data-campaign-name maxlength="80" autocomplete="off" placeholder="Example: The Ashes of Elturel" /></div></section>
+  <section class="flow-section"><div class="flow-section-head"><h2>Campaign tone</h2><span class="flow-step">3 of 3</span></div><div class="tone-grid" data-tone-grid></div><div class="custom-tone-wrap" data-custom-tone-wrap hidden><label class="flow-label" for="customTone">Describe the tone</label><input id="customTone" class="custom-tone-input" data-custom-tone maxlength="120" placeholder="Example: melancholic fantasy with humor between characters" /></div></section>
+  <footer class="flow-footer"><button class="flow-primary" type="button" data-continue disabled>Continue</button><p class="flow-status" data-flow-status></p></footer>
+</main>
+<script>localStorage.setItem('oraclerpg.locale','en');</script>
+</body>
+</html>
