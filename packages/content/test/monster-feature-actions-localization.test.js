@@ -7,8 +7,10 @@ import { isPresentationPath, localizeEntity } from "../localization.js";
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/monster-features.json"), "utf8"));
-const catalog = JSON.parse(fs.readFileSync(path.join(here, "../locales/pt-BR/srd-5.2/monster-features-actions-01.json"), "utf8"));
-const actions = canonical.items.filter((feature) => feature.data?.category === "action").slice(0, 55);
+const catalogs = [1, 2].map((index) => JSON.parse(fs.readFileSync(path.join(here, `../locales/pt-BR/srd-5.2/monster-features-actions-0${index}.json`), "utf8")));
+const allActions = canonical.items.filter((feature) => feature.data?.category === "action");
+const actions = allActions.slice(0, 110);
+const entries = Object.assign({}, ...catalogs.map((catalog) => catalog.entries));
 
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[part], root);
@@ -26,11 +28,7 @@ function setPath(root, pathKey, value) {
 
 function collectPresentationPaths(root, prefix = "", out = []) {
   if (typeof root === "string") {
-    if (
-      isPresentationPath(prefix) &&
-      !prefix.includes(".monsterTemplate.") &&
-      !prefix.endsWith(".invocation.entity.name")
-    ) out.push(prefix);
+    if (isPresentationPath(prefix) && !prefix.includes(".monsterTemplate.") && !prefix.endsWith(".invocation.entity.name")) out.push(prefix);
     return out;
   }
   if (root == null || typeof root !== "object") return out;
@@ -42,22 +40,23 @@ function collectPresentationPaths(root, prefix = "", out = []) {
   return out;
 }
 
-test("PT-BR creature action batch 01 exactly covers canonical actions 0-54", () => {
-  assert.equal(catalog.scope, "monster-features-actions-01");
-  assert.equal(actions.length, 55);
-  assert.equal(Object.keys(catalog.entries).length, 55);
-  assert.deepEqual(Object.keys(catalog.entries), actions.map((feature) => feature.canonicalId));
+test("PT-BR creature action catalogs 01-02 exactly cover canonical actions 0-109", () => {
+  assert.deepEqual(catalogs.map((catalog) => catalog.scope), ["monster-features-actions-01", "monster-features-actions-02"]);
+  assert.equal(allActions.length, 219);
+  assert.equal(actions.length, 110);
+  assert.equal(Object.keys(entries).length, 110);
+  assert.deepEqual(Object.keys(entries), actions.map((feature) => feature.canonicalId));
 });
 
-test("every visual string in creature action batch 01 has a PT-BR overlay", () => {
+test("every visual string in creature action catalogs 01-02 has a PT-BR overlay", () => {
   for (const feature of actions) {
-    assert.deepEqual(Object.keys(catalog.entries[feature.canonicalId]).sort(), collectPresentationPaths(feature).sort(), `${feature.canonicalId}: incomplete or stale presentation coverage`);
+    assert.deepEqual(Object.keys(entries[feature.canonicalId]).sort(), collectPresentationPaths(feature).sort(), `${feature.canonicalId}: incomplete or stale presentation coverage`);
   }
 });
 
-test("creature action batch 01 localization preserves every mechanical field", () => {
+test("creature action localization through batch 02 preserves every mechanical field", () => {
   for (const feature of actions) {
-    const overlay = catalog.entries[feature.canonicalId];
+    const overlay = entries[feature.canonicalId];
     for (const [pathKey, value] of Object.entries(overlay)) {
       assert.equal(isPresentationPath(pathKey), true, `${feature.canonicalId}: forbidden path ${pathKey}`);
       assert.equal(pathKey.includes(".monsterTemplate."), false, `${feature.canonicalId}: template path must stay canonical`);
@@ -66,6 +65,7 @@ test("creature action batch 01 localization preserves every mechanical field", (
       assert.equal(typeof getPath(feature, pathKey), "string", `${feature.canonicalId}: missing canonical string ${pathKey}`);
     }
     const original = structuredClone(feature);
+    const catalog = { entries };
     const localized = localizeEntity(feature, catalog);
     assert.deepEqual(feature, original, `${feature.canonicalId}: canonical feature mutated`);
     const restored = structuredClone(localized);
@@ -74,8 +74,8 @@ test("creature action batch 01 localization preserves every mechanical field", (
   }
 });
 
-test("creature action batch 01 keeps inline markup balanced", () => {
-  for (const [canonicalId, overlay] of Object.entries(catalog.entries)) {
+test("creature action localization through batch 02 keeps inline markup balanced", () => {
+  for (const [canonicalId, overlay] of Object.entries(entries)) {
     for (const value of Object.values(overlay)) {
       assert.equal((value.match(/\{(?:@|#)/g) ?? []).length, (value.match(/\}/g) ?? []).length, `${canonicalId}: ${value}`);
       assert.equal((value.match(/\[\[/g) ?? []).length, (value.match(/\]\]/g) ?? []).length, `${canonicalId}: ${value}`);
