@@ -1,0 +1,110 @@
+/* OracleRPG theme refinements: stronger material identity without changing the Oracle/default theme. */
+
+/* Medieval fantasy — leather faces, aged metal controls, gold rivets. */
+html[data-theme="fantasy"] :is(.panel,.action-card,.card,.entry,.detail-hero,.visual-detail .section,.item-card-face,.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  border-color:rgba(170,122,65,.42)!important;
+  background-image:
+    radial-gradient(circle at 9px 9px,#e2b866 0 1px,#76501f 2px 3px,transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) 9px,#d2a252 0 1px,#69431a 2px 3px,transparent 4px),
+    radial-gradient(circle at 9px calc(100% - 9px),#c9923d 0 1px,#5d3815 2px 3px,transparent 4px),
+    radial-gradient(circle at calc(100% - 9px) calc(100% - 9px),#edc86f 0 1px,#754a1b 2px 3px,transparent 4px),
+    repeating-linear-gradient(8deg,rgba(255,233,194,.022) 0 1px,transparent 1px 7px),
+    repeating-radial-gradient(ellipse at 28% 44%,rgba(72,31,13,.10) 0 1px,transparent 2px 8px),
+    linear-gradient(145deg,#6a3f23 0%,#432716 44%,#25160e 100%)!important;
+  box-shadow:inset 0 0 0 1px rgba(238,200,119,.055),inset 0 14px 28px rgba(255,224,168,.025),0 13px 30px rgba(18,8,2,.27)!important;
+}
+html[data-theme="fantasy"] :is(.back,.icon-btn,.close,.tab,.category,.search,.item-card-nav,.section-card-nav,.section-card-expand,.section-group-icon,.section-entry-icon,.hb-method-icon,.hb-section-title>span,.icon,.action-icon){
+  border-color:rgba(154,135,103,.58)!important;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.10),transparent 18% 62%,rgba(0,0,0,.24)),
+    repeating-linear-gradient(90deg,rgba(255,255,255,.025) 0 1px,transparent 1px 5px),
+    linear-gradient(145deg,#6f695d,#302d29 56%,#171513)!important;
+  color:#f0cb72!important;
+  box-shadow:inset 0 1px rgba(255,255,255,.14),inset 0 -2px rgba(0,0,0,.3),0 3px 8px rgba(13,6,2,.34)!important;
+}
+html[data-theme="fantasy"] :is(.sheet,.hb-sheet){
+  outline:1px solid rgba(229,185,96,.18);
+  outline-offset:-7px;
+}
+html[data-theme="fantasy"] :is(.item-card-back,.section-card-back,.hb-head,.hb-footer){
+  background-image:
+    repeating-linear-gradient(92deg,rgba(255,238,201,.018) 0 1px,transparent 1px 10px),
+    linear-gradient(180deg,#4c2d19,#29180f 62%,#17100a)!important;
+}
+
+/* Cosmic horror — wetter stone, stronger green/purple seep and more visible tentacles. */
+html[data-theme="horror"] body::before{
+  opacity:.66!important;
+  background:
+    radial-gradient(ellipse at 20% 18%,rgba(221,255,233,.09) 0 1px,transparent 2px 12px),
+    radial-gradient(ellipse at 70% 48%,rgba(176,218,191,.065) 0 1px,transparent 2px 10px),
+    repeating-radial-gradient(ellipse at 20% 30%,rgba(255,255,255,.021) 0 1px,transparent 2px 8px),
+    linear-gradient(115deg,transparent 0 46%,rgba(213,255,230,.04) 47%,transparent 49% 100%)!important;
+}
+html[data-theme="horror"] .shell::before,
+html[data-theme="horror"] .shell::after{
+  width:124px!important;
+  height:430px!important;
+  opacity:.55!important;
+  border-width:16px!important;
+  border-color:rgba(89,151,104,.44)!important;
+  border-top-color:transparent!important;
+  border-left-color:transparent!important;
+  filter:drop-shadow(0 0 18px rgba(151,89,183,.24)) drop-shadow(0 0 7px rgba(119,199,136,.18))!important;
+}
+html[data-theme="horror"] .shell::before{left:-66px!important;bottom:-88px!important;transform:rotate(-28deg) skewY(-4deg)!important}
+html[data-theme="horror"] .shell::after{right:-70px!important;top:17%!important;transform:rotate(158deg) scale(.9) skewY(5deg)!important}
+html[data-theme="horror"] :is(.panel,.action-card,.card,.entry,.detail-hero,.visual-detail .section,.item-card-face,.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  background-image:
+    linear-gradient(108deg,transparent 0 48%,rgba(215,255,230,.035) 49%,transparent 50%),
+    radial-gradient(ellipse at 24% 18%,rgba(219,255,231,.075) 0 1px,transparent 2px 13px),
+    repeating-radial-gradient(ellipse at 46% 66%,rgba(255,255,255,.016) 0 1px,transparent 2px 7px),
+    radial-gradient(circle at 82% 14%,rgba(144,75,176,.11),transparent 30%),
+    linear-gradient(145deg,#19342b,#0a1c17 62%,#07110e)!important;
+  box-shadow:inset 0 1px rgba(215,255,231,.08),inset 0 -10px 24px rgba(0,0,0,.2),0 14px 34px rgba(0,0,0,.34)!important;
+}
+
+/* Cyberpunk — corroded industrial metal, stronger rust, hazard details and neon seams. */
+html[data-theme="cyberpunk"] body::before{
+  opacity:.72!important;
+  background:
+    repeating-linear-gradient(0deg,transparent 0 3px,rgba(173,250,255,.028) 4px),
+    repeating-linear-gradient(92deg,rgba(174,83,34,.07) 0 1px,transparent 1px 47px),
+    radial-gradient(circle at 20% 40%,rgba(190,82,31,.15) 0 1px,transparent 2px 9px),
+    radial-gradient(ellipse at 76% 72%,rgba(131,52,22,.18),transparent 18rem)!important;
+}
+html[data-theme="cyberpunk"] :is(.panel,.action-card,.card,.entry,.detail-hero,.visual-detail .section,.item-card-face,.section-group,.section-card-face,.section-entry,.hb-sheet,.hb-method,.hb-category-line,.hb-field,.hb-ai-kit,.hb-review-head,.hb-file){
+  border-color:rgba(25,222,233,.34)!important;
+  border-left-color:rgba(244,232,36,.68)!important;
+  border-right-color:rgba(255,56,157,.38)!important;
+  background-image:
+    radial-gradient(ellipse at 13% 84%,rgba(182,76,28,.26) 0 1px,rgba(102,43,23,.10) 2px 8px,transparent 9px),
+    radial-gradient(ellipse at 76% 18%,rgba(150,59,25,.20) 0 1px,transparent 2px 10px),
+    repeating-linear-gradient(168deg,rgba(255,255,255,.018) 0 1px,transparent 1px 6px),
+    repeating-linear-gradient(91deg,transparent 0 26px,rgba(164,76,31,.045) 27px 28px),
+    linear-gradient(145deg,#202b2f,#0d1519 52%,#070b0e)!important;
+  box-shadow:inset 3px 0 rgba(244,232,36,.16),inset -2px 0 rgba(255,56,157,.11),inset 0 1px rgba(255,255,255,.055),0 0 28px rgba(0,224,240,.07)!important;
+}
+html[data-theme="cyberpunk"] :is(.topbar,.sheet-head,.hb-head){
+  background-image:
+    repeating-linear-gradient(135deg,rgba(244,232,36,.16) 0 5px,transparent 5px 11px),
+    linear-gradient(90deg,rgba(164,65,25,.22),transparent 14% 86%,rgba(108,45,26,.18)),
+    linear-gradient(180deg,#151f23,#080d10)!important;
+  background-size:72px 7px,100% 100%,100% 100%!important;
+  background-repeat:repeat-x,no-repeat,no-repeat!important;
+  background-position:left bottom,center,center!important;
+}
+html[data-theme="cyberpunk"] :is(.back,.icon-btn,.close,.tab,.category,.search,.item-card-nav,.section-card-nav,.section-card-expand,.section-group-icon,.section-entry-icon,.hb-method-icon,.hb-section-title>span,.icon,.action-icon){
+  background:
+    radial-gradient(circle at 18% 76%,rgba(184,75,28,.24) 0 1px,transparent 2px 7px),
+    repeating-linear-gradient(170deg,rgba(255,255,255,.018) 0 1px,transparent 1px 5px),
+    linear-gradient(145deg,#1c292e,#070c0f)!important;
+  border-color:rgba(18,225,237,.46)!important;
+  border-radius:3px!important;
+  box-shadow:inset 2px 0 rgba(244,232,36,.2),inset -1px 0 rgba(255,56,157,.13),0 0 13px rgba(0,228,241,.09)!important;
+}
+html[data-theme="cyberpunk"] :is(.eyebrow,.group-title,.section-eyebrow,.hb-category-line>label)::before{
+  content:'// ';
+  color:#ff3ead;
+  text-shadow:0 0 8px rgba(255,62,173,.28);
+}
