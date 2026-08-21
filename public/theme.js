@@ -76,6 +76,29 @@
     });
   }
 
+  function bindHomeCampaignButton() {
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    const isHome = path === '/' || path.endsWith('/index.html') || path === '/en';
+    if (!isHome) return;
+
+    const isEnglish = document.documentElement.lang === 'en';
+    const selector = isEnglish ? '.actions > .card:first-child' : '.action-stack > .action-card:first-child';
+    const button = document.querySelector(selector);
+    if (!button) return;
+
+    button.removeAttribute('aria-disabled');
+    button.setAttribute('aria-label', isEnglish ? 'Start new campaign' : 'Iniciar nova campanha');
+    button.style.cursor = 'pointer';
+    button.addEventListener('click', () => {
+      location.href = isEnglish ? './new-campaign.html' : 'new-campaign.html';
+    });
+
+    const note = document.querySelector(isEnglish ? '.note' : '.prototype');
+    if (note) note.textContent = isEnglish
+      ? 'Campaign creation now starts with system, name, and tone.'
+      : 'A criação de campanha agora começa pela escolha do sistema, nome e tom.';
+  }
+
   ensureRefinementStyles();
   const initialTheme = readStoredTheme();
   document.documentElement.dataset.theme = initialTheme;
@@ -91,6 +114,7 @@
     syncThemeColor(currentTheme);
     syncThemeButtons(currentTheme);
     bindThemeButtons();
+    bindHomeCampaignButton();
   };
 
   if (document.readyState === 'loading') {

@@ -17,6 +17,7 @@ const CATEGORY_BY_FILE = new Map([
   ["class-features.json", "class-features"],
   ["species.json", "species"],
   ["species-features.json", "species-features"],
+  ["backgrounds.json", "backgrounds"],
   ["feats.json", "feats"],
   ["items.json", "items"],
   ["spells.json", "spells"],

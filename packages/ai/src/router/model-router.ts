@@ -10,6 +10,8 @@ export const DEFAULT_OPERATION_POLICIES: readonly OracleOperationPolicy[] = [
   { operation: "gm.interpret-turn", alias: "oracle-reasoning", outputMode: "JSON", requiredCapabilities: ["STRUCTURED", "REASONING"], maxOutputTokens: 1400, temperature: 0.2 },
   { operation: "gm.narrate", alias: "oracle-story", outputMode: "TEXT", requiredCapabilities: ["TEXT"], maxOutputTokens: 1200, temperature: 0.8 },
   { operation: "gm.npc-dialogue", alias: "oracle-story", outputMode: "TEXT", requiredCapabilities: ["TEXT"], maxOutputTokens: 900, temperature: 0.9 },
+  { operation: "character.backstory", alias: "oracle-story", outputMode: "TEXT", requiredCapabilities: ["TEXT"], maxOutputTokens: 1400, temperature: 0.8 },
+  { operation: "character.visual-description", alias: "oracle-vision", outputMode: "TEXT", requiredCapabilities: ["VISION", "TEXT"], maxOutputTokens: 500, temperature: 0.2 },
   { operation: "memory.extract", alias: "oracle-background", outputMode: "JSON", requiredCapabilities: ["STRUCTURED"], maxOutputTokens: 900, temperature: 0 },
   { operation: "memory.consolidate", alias: "oracle-background", outputMode: "JSON", requiredCapabilities: ["STRUCTURED"], maxOutputTokens: 900, temperature: 0 },
   { operation: "session.summarize", alias: "oracle-background", outputMode: "JSON", requiredCapabilities: ["STRUCTURED"], maxOutputTokens: 1200, temperature: 0.1 },

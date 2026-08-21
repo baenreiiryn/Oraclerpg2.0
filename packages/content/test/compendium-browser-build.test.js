@@ -22,9 +22,14 @@ test("compendium browser build exposes the complete SRD in English and PT-BR wit
   const manifests = ["en", "pt-BR"].map((locale) => readJson(path.join(outputRoot, locale, "manifest.json")));
   for (const manifest of manifests) {
     assert.equal(manifest.contentSource, "srd-5.2");
-    assert.equal(manifest.total, 1984);
-    assert.equal(manifest.categories.length, 10);
-    assert.equal(manifest.categories.reduce((sum, category) => sum + category.count, 0), 1984);
+    assert.equal(manifest.total, 1988);
+    assert.equal(manifest.categories.length, 11);
+    assert.equal(manifest.categories.reduce((sum, category) => sum + category.count, 0), 1988);
+    assert.deepEqual(manifest.categories.find((category) => category.id === "backgrounds"), {
+      id: "backgrounds",
+      sourceFile: "backgrounds.json",
+      count: 4
+    });
   }
 
   assert.deepEqual(
@@ -51,7 +56,7 @@ test("compendium browser build exposes the complete SRD in English and PT-BR wit
     }
   }
 
-  assert.equal(checked, 1984);
+  assert.equal(checked, 1988);
   assert.ok(translatedNames > 0, "PT-BR browser output should contain translated presentation names");
-  assert.match(result.stdout, /COMPENDIUM_BROWSER_SRD_ENTITIES=1984/);
+  assert.match(result.stdout, /COMPENDIUM_BROWSER_SRD_ENTITIES=1988/);
 });
