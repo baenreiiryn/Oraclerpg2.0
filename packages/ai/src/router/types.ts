@@ -10,6 +10,7 @@ export type OracleAiOperation =
   | "gm.interpret-turn"
   | "gm.narrate"
   | "gm.npc-dialogue"
+  | "character.backstory"
   | "memory.extract"
   | "memory.consolidate"
   | "session.summarize"
