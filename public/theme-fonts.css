@@ -1,0 +1,59 @@
+/*
+ * OracleRPG alternate-theme typography.
+ * Families are loaded from Google Fonts and are distributed under the
+ * SIL Open Font License (OFL). The default Oracle theme is intentionally
+ * untouched and keeps the project's existing typography.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:wght@400;500;600;700&family=Cinzel:wght@500;600;700&family=Grenze+Gotisch:wght@500;600;700&family=Oxanium:wght@400;500;600;700&family=Rajdhani:wght@400;500;600;700&family=Spectral:wght@400;500;600;700&display=swap');
+
+html[data-theme="fantasy"]{
+  --oracle-theme-body-font:"Alegreya",Georgia,"Times New Roman",serif;
+  --oracle-theme-display-font:"Cinzel",Georgia,"Times New Roman",serif;
+}
+
+html[data-theme="horror"]{
+  --oracle-theme-body-font:"Spectral",Georgia,"Times New Roman",serif;
+  --oracle-theme-display-font:"Grenze Gotisch",Georgia,"Times New Roman",serif;
+}
+
+html[data-theme="cyberpunk"]{
+  --oracle-theme-body-font:"Rajdhani","Segoe UI",Arial,sans-serif;
+  --oracle-theme-display-font:"Oxanium","Segoe UI",Arial,sans-serif;
+}
+
+html[data-theme="fantasy"] body,
+html[data-theme="horror"] body,
+html[data-theme="cyberpunk"] body{
+  font-family:var(--oracle-theme-body-font)!important;
+}
+
+html[data-theme="fantasy"] :is(button,input,textarea,select,option),
+html[data-theme="horror"] :is(button,input,textarea,select,option),
+html[data-theme="cyberpunk"] :is(button,input,textarea,select,option){
+  font-family:var(--oracle-theme-body-font)!important;
+}
+
+/* Display typography: titles, named cards, navigation labels and prominent UI headings. */
+html[data-theme="fantasy"] :is(h1,h2,h3,h4,h5,h6,.brand,.title,.row-title,.theme-name,.flow-top-title,.flow-eyebrow,.wizard-step-copy strong,.class-hero h2,.class-info-head h3,.runtime-title strong,.runtime-panel-head strong,.runtime-section-head strong,.runtime-character-copy h2,.runtime-scene h1,.item-card-title,.item-card-name,.compendium-title,.section-title,summary),
+html[data-theme="horror"] :is(h1,h2,h3,h4,h5,h6,.brand,.title,.row-title,.theme-name,.flow-top-title,.flow-eyebrow,.wizard-step-copy strong,.class-hero h2,.class-info-head h3,.runtime-title strong,.runtime-panel-head strong,.runtime-section-head strong,.runtime-character-copy h2,.runtime-scene h1,.item-card-title,.item-card-name,.compendium-title,.section-title,summary),
+html[data-theme="cyberpunk"] :is(h1,h2,h3,h4,h5,h6,.brand,.title,.row-title,.theme-name,.flow-top-title,.flow-eyebrow,.wizard-step-copy strong,.class-hero h2,.class-info-head h3,.runtime-title strong,.runtime-panel-head strong,.runtime-section-head strong,.runtime-character-copy h2,.runtime-scene h1,.item-card-title,.item-card-name,.compendium-title,.section-title,summary){
+  font-family:var(--oracle-theme-display-font)!important;
+}
+
+/* Keep longer prose comfortably readable even inside components with hard-coded fonts. */
+html[data-theme="fantasy"] :is(p,li,dd,dt,.caption,.row-sub,.class-description,.runtime-story,.history-textarea,.history-ai-suggestion-text,.item-card-description,.structured-text),
+html[data-theme="horror"] :is(p,li,dd,dt,.caption,.row-sub,.class-description,.runtime-story,.history-textarea,.history-ai-suggestion-text,.item-card-description,.structured-text),
+html[data-theme="cyberpunk"] :is(p,li,dd,dt,.caption,.row-sub,.class-description,.runtime-story,.history-textarea,.history-ai-suggestion-text,.item-card-description,.structured-text){
+  font-family:var(--oracle-theme-body-font)!important;
+}
+
+/* Theme-specific tuning. */
+html[data-theme="fantasy"] body{letter-spacing:.003em}
+html[data-theme="fantasy"] :is(h1,h2,h3,.title,.brand,.flow-top-title,.runtime-title strong){letter-spacing:.025em}
+
+html[data-theme="horror"] body{letter-spacing:.002em}
+html[data-theme="horror"] :is(h1,h2,h3,.title,.brand,.flow-top-title,.runtime-title strong){letter-spacing:.018em}
+
+html[data-theme="cyberpunk"] body{letter-spacing:.018em}
+html[data-theme="cyberpunk"] :is(h1,h2,h3,.title,.brand,.flow-top-title,.runtime-title strong){letter-spacing:.055em;text-transform:uppercase}
+html[data-theme="cyberpunk"] :is(.runtime-chat-message,.history-textarea,.runtime-memo,.structured-text){letter-spacing:.012em}
