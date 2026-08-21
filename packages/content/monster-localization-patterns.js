@@ -3,7 +3,24 @@ const FEATURE_LABEL_OVERRIDES = new Map([
   ["Cold Breath", "Sopro de Frio"],
   ["Fire Breath", "Sopro de Fogo"],
   ["Lightning Breath", "Sopro Elétrico"],
-  ["Poison Breath", "Sopro Venenoso"]
+  ["Poison Breath", "Sopro Venenoso"],
+  ["Sleep Breath", "Sopro do Sono"],
+  ["Slowing Breath", "Sopro de Lentidão"],
+  ["Weakening Breath", "Sopro Enfraquecedor"],
+  ["Paralyzing Breath", "Sopro Paralisante"],
+  ["Repulsion Breath", "Sopro de Repulsão"],
+  ["Spellcasting", "Conjuração"]
+]);
+
+const SPELL_DISPLAY_NAMES = new Map([
+  ["Melf's Acid Arrow", "Flecha Ácida"],
+  ["Shatter", "Despedaçar"],
+  ["Scorching Ray", "Raio Ardente"],
+  ["Guiding Bolt", "Raio Guiador"],
+  ["Mind Spike", "Espinho Mental"],
+  ["Ice Knife", "Faca de Gelo"],
+  ["Fog Cloud", "Nuvem de Névoa"],
+  ["Charm Monster", "Enfeitiçar Monstro"]
 ]);
 
 const DAMAGE_LABELS = new Map([
@@ -46,6 +63,28 @@ function attackPhrase(count, source, exactMap) {
   return `${quantity} ataque${count === "one" ? "" : "s"} de ${label}`;
 }
 
+function localizeSpellMacro(macro) {
+  const match = macro.match(/^\{@spell ([^|}]+)\|XPHB\}$/);
+  if (!match) return null;
+  const display = SPELL_DISPLAY_NAMES.get(match[1]);
+  return display ? `{@spell ${match[1]}|XPHB|${display}}` : null;
+}
+
+function translateSpellcastingCast(clause) {
+  const match = clause.match(/^Spellcasting to cast (\{@spell [^}]+\})(?: \(level (\d+) version\))?$/);
+  if (!match) return null;
+  const spell = localizeSpellMacro(match[1]);
+  if (!spell) return null;
+  return `Conjuração para conjurar ${spell}${match[2] ? ` (versão de nível ${match[2]})` : ""}`;
+}
+
+function translateUseClause(clause, exactMap) {
+  const spellcasting = translateSpellcastingCast(clause);
+  if (spellcasting) return spellcasting;
+  const label = featureLabel(clause, exactMap);
+  return label ?? null;
+}
+
 function translateMultiattack(source, exactMap) {
   let match = source.match(/^The [^.]+ makes (two|three|four) attacks, using (.+?) (or|and) (.+?) in any combination\.$/);
   if (match) {
@@ -63,6 +102,54 @@ function translateMultiattack(source, exactMap) {
     if (attacks && use) return `A criatura realiza ${attacks} e pode usar ${use}.`;
   }
 
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\. It can replace one attack with a use of (.+?)\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const replacement = translateUseClause(match[3], exactMap);
+    if (attacks && replacement) return `A criatura realiza ${attacks}. Ela pode substituir um ataque por um uso de ${replacement}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\. It can replace any attack with a use of (.+?)\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const replacement = translateUseClause(match[3], exactMap);
+    if (attacks && replacement) return `A criatura realiza ${attacks}. Ela pode substituir qualquer ataque por um uso de ${replacement}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\. It can replace one attack with a use of \(A\) (.+?) or \(B\) (.+?)\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const first = translateUseClause(match[3], exactMap);
+    const second = translateUseClause(match[4], exactMap);
+    if (attacks && first && second) return `A criatura realiza ${attacks}. Ela pode substituir um ataque por um uso de (A) ${first} ou (B) ${second}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks?\. It can replace one attack with a use of \(A\) (.+?) or \(B\) (.+?) to cast (\{@spell [^}]+\})(?: \(level (\d+) version\))?\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const first = featureLabel(match[3], exactMap);
+    const second = featureLabel(match[4], exactMap);
+    const spell = localizeSpellMacro(match[5]);
+    if (attacks && first && second && spell) return `A criatura realiza ${attacks}. Ela pode substituir um ataque por um uso de (A) ${first} ou (B) ${second} para conjurar ${spell}${match[6] ? ` (versão de nível ${match[6]})` : ""}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (two|three|four) attacks, using (.+?) or (.+?) in any combination\. It can replace one attack with a use of (.+?)\.$/);
+  if (match) {
+    const quantity = COUNT_LABELS.get(match[1]);
+    const first = featureLabel(match[2], exactMap);
+    const second = featureLabel(match[3], exactMap);
+    const replacement = translateUseClause(match[4], exactMap);
+    if (quantity && first && second && replacement) return `A criatura realiza ${quantity} ataques, usando ${first} ou ${second} em qualquer combinação. Ela pode substituir um ataque por um uso de ${replacement}.`;
+  }
+
+  match = source.match(/^The [^.]+ makes (one|two|three|four) (.+?) attacks? and uses (.+?) or (.+?)\.$/);
+  if (match) {
+    const attacks = attackPhrase(match[1], match[2], exactMap);
+    const first = featureLabel(match[3], exactMap);
+    const second = featureLabel(match[4], exactMap);
+    if (attacks && first && second) return `A criatura realiza ${attacks} e usa ${first} ou ${second}.`;
+  }
+
   match = source.match(/^The [^.]+ makes one (.+?) attack, one (.+?) attack, and one (.+?) attack\. It can replace the (.+?) attack with a use of (.+?) if available\.$/);
   if (match && match[3] === match[4]) {
     const first = featureLabel(match[1], exactMap);
@@ -73,6 +160,8 @@ function translateMultiattack(source, exactMap) {
       return `A criatura realiza um ataque de ${first}, um ataque de ${second} e um ataque de ${third}. Ela pode substituir o ataque de ${third} por um uso de ${replacement}, se disponível.`;
     }
   }
+
+  if (/^The hydra makes as many Bite attacks as it has heads\.$/.test(source)) return "A hidra realiza tantos ataques de Mordida quanto o número de cabeças que possui.";
 
   return null;
 }
@@ -131,6 +220,40 @@ function translateAttackRider(source) {
     }
   }
 
+  match = source.match(/^(.*damage), or (\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage if the target is \{@status Bloodied\|XPHB\}\.$/);
+  if (match) {
+    const base = translatePlainAttack(`${match[1]} damage.`);
+    const type = translateDamage(match[3]);
+    if (base && type) return `${base.slice(0, -1)}, ou ${match[2]} de dano ${type} se o alvo estiver {@status Bloodied|XPHB|Sangrando}.`;
+  }
+
+  match = source.match(/^(.*damage), or (\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage if the [^.]+ had \{@variantrule Advantage\|XPHB\} on the attack roll\.$/);
+  if (match) {
+    const base = translatePlainAttack(`${match[1]} damage.`);
+    const type = translateDamage(match[3]);
+    if (base && type) return `${base.slice(0, -1)}, ou ${match[2]} de dano ${type} se a criatura tinha {@variantrule Advantage|XPHB|Vantagem} na jogada de ataque.`;
+  }
+
+  match = source.match(/^(.*damage), or (\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage if the [^.]+ moved (\d+\+) feet straight toward the target immediately before the hit\.$/);
+  if (match) {
+    const base = translatePlainAttack(`${match[1]} damage.`);
+    const type = translateDamage(match[3]);
+    if (base && type) return `${base.slice(0, -1)}, ou ${match[2]} de dano ${type} se a criatura tiver se movido ${match[4]} pés em linha reta em direção ao alvo imediatamente antes do acerto.`;
+  }
+
+  match = source.match(/^(.*damage), plus (\d+(?: \(\{@damage [^}]+\}\))?) ([A-Za-z]+) damage if the attack roll had \{@variantrule Advantage\|XPHB\}\.$/);
+  if (match) {
+    const base = translatePlainAttack(`${match[1]} damage.`);
+    const type = translateDamage(match[3]);
+    if (base && type) return `${base.slice(0, -1)}, mais ${match[2]} de dano ${type} se a jogada de ataque teve {@variantrule Advantage|XPHB|Vantagem}.`;
+  }
+
+  match = source.match(/^(.*damage), and the target has the \{@condition Poisoned\|XPHB\} condition until the (start|end) of the [^.]+ next turn\.$/);
+  if (match) {
+    const base = translatePlainAttack(`${match[1]} damage.`);
+    if (base) return `${base} O alvo recebe a condição {@condition Poisoned|XPHB|Envenenado} até o ${match[2] === "start" ? "início" : "fim"} do próximo turno da criatura.`;
+  }
+
   return null;
 }
 
@@ -168,6 +291,21 @@ function translateCommonTrait(source) {
   if (match) return `A criatura se teleporta até ${match[1]} pés para um espaço desocupado que possa ver.`;
 
   if (/^The [^.]+ takes the Disengage or Hide action\.$/.test(source)) return "A criatura realiza a ação Desengajar ou Esconder-se.";
+  if (/^The [^.]+ can move through a space as narrow as 1 inch without expending extra movement to do so\.$/.test(source)) return "A criatura pode se mover por um espaço de apenas 1 polegada de largura sem gastar movimento adicional para isso.";
+  if (/^While in sunlight, the [^.]+ has \{@variantrule Disadvantage\|XPHB\} on ability checks and attack rolls\.$/.test(source)) return "Enquanto estiver sob luz solar, a criatura tem {@variantrule Disadvantage|XPHB|Desvantagem} em testes de habilidade e jogadas de ataque.";
+  if (/^The [^.]+ has \{@variantrule Advantage\|XPHB\} on melee attack rolls while it is \{@status Bloodied\|XPHB\}\.$/.test(source)) return "A criatura tem {@variantrule Advantage|XPHB|Vantagem} em jogadas de ataque corpo a corpo enquanto estiver {@status Bloodied|XPHB|Sangrando}.";
+
+  match = source.match(/^The [^.]+ uses Spellcasting to cast (\{@spell [^}]+\})(?: \(level (\d+) version\))?\. The [^.]+ can't take this action again until the start of its next turn\.$/);
+  if (match) {
+    const spell = localizeSpellMacro(match[1]);
+    if (spell) return `A criatura usa Conjuração para conjurar ${spell}${match[2] ? ` (versão de nível ${match[2]})` : ""}. A criatura não pode realizar esta ação novamente até o início do próximo turno dela.`;
+  }
+
+  match = source.match(/^The [^.]+ uses Spellcasting to cast (\{@spell [^}]+\})(?: \(level (\d+) version\))?\.$/);
+  if (match) {
+    const spell = localizeSpellMacro(match[1]);
+    if (spell) return `A criatura usa Conjuração para conjurar ${spell}${match[2] ? ` (versão de nível ${match[2]})` : ""}.`;
+  }
 
   return null;
 }
