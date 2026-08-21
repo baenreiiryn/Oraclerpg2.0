@@ -46,6 +46,10 @@ test("inventory safe monster localization coverage", () => {
   console.log(`MONSTER_SAFE_UNRESOLVED_UNIQUE=${unique.length}`);
   const byPath = Object.fromEntries(Object.entries(Object.groupBy(unresolved, (row) => row.path.replace(/\.\d+/g, ".*"))).map(([key, rows]) => [key, rows.length]));
   console.log(`MONSTER_SAFE_UNRESOLVED_BY_PATH=${JSON.stringify(byPath)}`);
-  for (const [index, row] of unique.slice(0, 60).entries()) console.log(`MONSTER_VARIANT_${index}=${JSON.stringify(row)}`);
+  const byDefinition = Object.entries(Object.groupBy(unresolved, (row) => row.definitionId ?? "<none>"))
+    .map(([id, rows]) => [id, {count: rows.length, unique: new Set(rows.map((row) => row.value)).size, name: rows[0]?.featureName ?? null}])
+    .sort((a, b) => b[1].count - a[1].count);
+  console.log(`MONSTER_SAFE_UNRESOLVED_BY_DEFINITION=${JSON.stringify(Object.fromEntries(byDefinition))}`);
+  for (const [index, row] of unique.slice(0, 80).entries()) console.log(`MONSTER_VARIANT_${index}=${JSON.stringify(row)}`);
   assert.equal(Object.keys(nameMap.names).length, 331);
 });
