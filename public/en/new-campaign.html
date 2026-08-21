@@ -8,11 +8,15 @@
   <link rel="stylesheet" href="/system-flow.css" />
   <link rel="stylesheet" href="/campaign-wizard.css" />
   <link rel="stylesheet" href="/campaign-species.css" />
+  <link rel="stylesheet" href="/campaign-backgrounds.css" />
+  <link rel="stylesheet" href="/campaign-abilities.css" />
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
   <script src="/system-registry.js" defer></script>
   <script src="/system-flow.js" defer></script>
   <script src="/campaign-species.js" defer></script>
+  <script src="/campaign-backgrounds.js" defer></script>
+  <script src="/campaign-abilities.js" defer></script>
   <script src="/campaign-wizard.js" defer></script>
 </head>
 <body>
@@ -23,6 +27,8 @@
     <button type="button" class="wizard-step is-active" data-step-target="campaign"><span class="wizard-step-number">1</span><span class="wizard-step-copy"><strong>Campaign</strong><small data-step-summary="campaign">System · name · tone</small></span></button>
     <button type="button" class="wizard-step" data-step-target="class" disabled><span class="wizard-step-number">2</span><span class="wizard-step-copy"><strong>Class</strong><small data-step-summary="class">Choose class</small></span></button>
     <button type="button" class="wizard-step" data-step-target="species" disabled><span class="wizard-step-number">3</span><span class="wizard-step-copy"><strong>Species</strong><small data-step-summary="species">Choose species</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="background" disabled><span class="wizard-step-number">4</span><span class="wizard-step-copy"><strong>Background</strong><small data-step-summary="background">Choose background</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="abilities" disabled><span class="wizard-step-number">5</span><span class="wizard-step-copy"><strong>Ability Scores</strong><small data-step-summary="abilities">Choose ability scores</small></span></button>
   </nav>
 
   <section class="wizard-panel" data-step-panel="campaign">
@@ -42,8 +48,20 @@
   <section class="wizard-panel" data-step-panel="species" hidden>
     <section class="flow-intro"><p class="flow-eyebrow">Step 3</p><h1>Choose your species</h1><p>Select an SRD 5.2 species and review its size, speed, senses, resistances, traits, and ancestry-specific choices.</p></section>
     <section class="flow-section"><div class="flow-section-head"><h2>Available species</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-species-loading>Loading species from the compendium…</div><div class="class-list species-list" data-species-list></div><div class="class-detail species-detail" data-species-detail hidden></div></section>
-    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-species-continue disabled>Continue</button><p class="flow-status" data-species-status></p></footer>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-species-continue disabled>Continue to background</button><p class="flow-status" data-species-status></p></footer>
   </section>
+
+  <section class="wizard-panel" data-step-panel="background" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Step 4</p><h1>Choose your background</h1><p>Define the character's origin. A background determines skills, a tool, an Origin Feat, starting equipment, and which abilities can receive the background increases.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Available backgrounds</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-background-loading>Loading backgrounds from the compendium…</div><div class="class-list background-list" data-background-list></div><div class="class-detail background-detail" data-background-detail hidden></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-background-continue disabled>Continue to ability scores</button><p class="flow-status" data-background-status></p></footer>
+  </section>
+  <section class="wizard-panel" data-step-panel="abilities" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Step 5</p><h1>Choose your ability scores</h1><p>Generate the six base scores, assign them to the abilities, then apply the increases granted by your background.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Generation method</h2><span class="flow-step">D&D 2024</span></div><div class="ability-methods" data-ability-methods></div><div class="ability-workspace" data-ability-workspace></div><div class="background-bonus-host" data-background-bonus></div><div class="ability-summary-host" data-ability-summary></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-ability-continue disabled>Continue</button><p class="flow-status" data-ability-status></p></footer>
+  </section>
+
 </main>
 <script>localStorage.setItem('oraclerpg.locale','en');</script>
 </body>
