@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="/campaign-species.css" />
   <link rel="stylesheet" href="/campaign-backgrounds.css" />
   <link rel="stylesheet" href="/campaign-abilities.css" />
+  <link rel="stylesheet" href="/campaign-proficiencies.css" />
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
   <script src="/system-registry.js" defer></script>
@@ -17,6 +18,7 @@
   <script src="/campaign-species.js" defer></script>
   <script src="/campaign-backgrounds.js" defer></script>
   <script src="/campaign-abilities.js" defer></script>
+  <script src="/campaign-proficiencies.js" defer></script>
   <script src="/campaign-wizard.js" defer></script>
 </head>
 <body>
@@ -29,6 +31,7 @@
     <button type="button" class="wizard-step" data-step-target="species" disabled><span class="wizard-step-number">3</span><span class="wizard-step-copy"><strong>Espécie</strong><small data-step-summary="species">Escolher espécie</small></span></button>
     <button type="button" class="wizard-step" data-step-target="background" disabled><span class="wizard-step-number">4</span><span class="wizard-step-copy"><strong>Antecedente</strong><small data-step-summary="background">Escolher antecedente</small></span></button>
     <button type="button" class="wizard-step" data-step-target="abilities" disabled><span class="wizard-step-number">5</span><span class="wizard-step-copy"><strong>Atributos</strong><small data-step-summary="abilities">Escolher atributos</small></span></button>
+    <button type="button" class="wizard-step" data-step-target="proficiencies" disabled><span class="wizard-step-number">6</span><span class="wizard-step-copy"><strong>Proficiências</strong><small data-step-summary="proficiencies">Escolher proficiências</small></span></button>
   </nav>
 
   <section class="wizard-panel" data-step-panel="campaign">
@@ -56,12 +59,18 @@
     <section class="flow-section"><div class="flow-section-head"><h2>Antecedentes disponíveis</h2><span class="flow-step">SRD 5.2</span></div><div class="class-loading" data-background-loading>Carregando antecedentes do compêndio…</div><div class="class-list background-list" data-background-list></div><div class="class-detail background-detail" data-background-detail hidden></div></section>
     <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-background-continue disabled>Continuar para atributos</button><p class="flow-status" data-background-status></p></footer>
   </section>
+
   <section class="wizard-panel" data-step-panel="abilities" hidden>
     <section class="flow-intro"><p class="flow-eyebrow">Etapa 5</p><h1>Escolha seus atributos</h1><p>Gere os seis valores base, distribua-os entre os atributos e depois aplique os aumentos concedidos pelo seu antecedente.</p></section>
     <section class="flow-section"><div class="flow-section-head"><h2>Forma de geração</h2><span class="flow-step">D&D 2024</span></div><div class="ability-methods" data-ability-methods></div><div class="ability-workspace" data-ability-workspace></div><div class="background-bonus-host" data-background-bonus></div><div class="ability-summary-host" data-ability-summary></div></section>
-    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-ability-continue disabled>Continuar</button><p class="flow-status" data-ability-status></p></footer>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-ability-continue disabled>Continuar para proficiências</button><p class="flow-status" data-ability-status></p></footer>
   </section>
 
+  <section class="wizard-panel" data-step-panel="proficiencies" hidden>
+    <section class="flow-intro"><p class="flow-eyebrow">Etapa 6</p><h1>Escolha suas proficiências</h1><p>Distribua os pontos concedidos pela classe e espécie. Cada ponto aumenta a perícia em um estágio: não proficiente, proficiente e expertise.</p></section>
+    <section class="flow-section"><div class="flow-section-head"><h2>Perícias</h2><span class="flow-step">1 ponto = 1 estágio</span></div><div data-proficiency-points></div><div class="proficiency-grid" data-proficiency-grid></div><div data-other-proficiencies></div></section>
+    <footer class="flow-footer class-footer"><button class="flow-primary" type="button" data-proficiency-continue disabled>Continuar</button><p class="flow-status" data-proficiency-status></p></footer>
+  </section>
 </main>
 </body>
 </html>
