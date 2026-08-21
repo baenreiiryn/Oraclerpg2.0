@@ -10,9 +10,11 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const dataDir = path.join(here, "../data/srd-5.2");
 const localeDir = path.join(here, "../locales/pt-BR/srd-5.2");
 
-const DISPLAY_LABEL_TAGS = new Set([
-  "action", "condition", "hazard", "item", "sense", "skill", "spell", "status", "variantrule"
+const REFERENCE_TAGS = new Set([
+  "action", "condition", "creature", "feat", "hazard", "item", "itemProperty",
+  "sense", "skill", "spell", "status", "variantrule"
 ]);
+const FORMATTING_TAGS = new Set(["b", "i", "em", "s", "strike", "u", "sup", "sub"]);
 const FORBIDDEN_TEMPLATE_SEGMENTS = [".monsterTemplate.", ".speciesTemplate."];
 
 function readJson(file) {
@@ -41,13 +43,27 @@ function macroIdentity(macro) {
   const space = body.indexOf(" ");
   const kind = space < 0 ? body : body.slice(0, space);
   const payload = space < 0 ? "" : body.slice(space + 1);
-  if (!DISPLAY_LABEL_TAGS.has(kind)) return body;
   const parts = payload.split("|");
-  return `${kind} ${parts.slice(0, 2).join("|")}`.trim();
+
+  if (FORMATTING_TAGS.has(kind)) return null;
+  if (REFERENCE_TAGS.has(kind)) {
+    return `${kind} ${parts.slice(0, Math.min(2, parts.length)).join("|")}`.trim();
+  }
+  if (kind === "book") {
+    const identityLength = parts.length >= 3 && /^\d/.test(parts[2]) ? 3 : Math.min(2, parts.length);
+    return `${kind} ${parts.slice(0, identityLength).join("|")}`.trim();
+  }
+  if (kind === "filter") {
+    return `${kind} ${parts.slice(1).join("|")}`.trim();
+  }
+  if (kind === "chance") {
+    return `${kind} ${parts[0] ?? ""}`.trim();
+  }
+  return body;
 }
 
 function uniqueSortedMatches(text, regex, map = (value) => value) {
-  return [...new Set((text.match(regex) ?? []).map(map))].sort();
+  return [...new Set((text.match(regex) ?? []).map(map).filter((value) => value != null))].sort();
 }
 
 function stripMachineTokens(text) {
@@ -58,14 +74,27 @@ function stripMachineTokens(text) {
     .replace(/\{\{[^}]+\}\}/g, " ");
 }
 
-function mechanicalTextFingerprint(text) {
+function normalizeNumericToken(token) {
+  if (/^\d{1,3}(?:[.,]\d{3})+$/.test(token)) return token.replace(/[.,]/g, "");
+  return token.replace(",", ".");
+}
+
+function plainNumberTokens(text) {
   const plain = stripMachineTokens(text);
+  return uniqueSortedMatches(
+    plain,
+    /\d{1,3}(?:[.,]\d{3})+|\d+(?:[.,]\d+)?(?:\/\d+)?/g,
+    normalizeNumericToken
+  );
+}
+
+function mechanicalTextFingerprint(text) {
   return {
     macros: uniqueSortedMatches(text, /\{@[^}]+\}/g, macroIdentity),
     rolls: uniqueSortedMatches(text, /\[\[[^\]]+\]\]/g),
     uuids: uniqueSortedMatches(text, /@UUID\[[^\]]+\]/g),
     placeholders: uniqueSortedMatches(text, /\{\{[^}]+\}\}/g),
-    numbers: uniqueSortedMatches(plain, /\d+(?:\.\d+)?(?:\/\d+)?\+?/g)
+    numbers: plainNumberTokens(text)
   };
 }
 
@@ -150,10 +179,15 @@ function coverageRows() {
   });
 }
 
+function fingerprintsEqualPart(left, right, part) {
+  return JSON.stringify(left[part]) === JSON.stringify(right[part]);
+}
+
 test("all applied PT-BR SRD localization overlays are presentation-only and cannot mutate canonical mechanics", () => {
   const ignoredPaths = [];
   const stalePaths = [];
-  const textDrifts = [];
+  const referenceDrifts = [];
+  const numericDrifts = [];
   let checkedPaths = 0;
 
   for (const [canonicalId, { overlay, catalogFile, entityType }] of localizedEntries) {
@@ -184,8 +218,12 @@ test("all applied PT-BR SRD localization overlays are presentation-only and cann
       restorablePaths.push(pathKey);
       const sourceFingerprint = mechanicalTextFingerprint(source);
       const translatedFingerprint = mechanicalTextFingerprint(translated);
-      if (JSON.stringify(sourceFingerprint) !== JSON.stringify(translatedFingerprint)) {
-        textDrifts.push({ canonicalId, catalogFile, pathKey, sourceFingerprint, translatedFingerprint });
+      const hardParts = ["macros", "rolls", "uuids", "placeholders"];
+      if (hardParts.some((part) => !fingerprintsEqualPart(sourceFingerprint, translatedFingerprint, part))) {
+        referenceDrifts.push({ canonicalId, catalogFile, pathKey, sourceFingerprint, translatedFingerprint });
+      }
+      if (!fingerprintsEqualPart(sourceFingerprint, translatedFingerprint, "numbers")) {
+        numericDrifts.push({ canonicalId, catalogFile, pathKey, sourceNumbers: sourceFingerprint.numbers, translatedNumbers: translatedFingerprint.numbers });
       }
     }
 
@@ -207,12 +245,15 @@ test("all applied PT-BR SRD localization overlays are presentation-only and cann
   console.log(`SRD_LOCALIZATION_PATHS_VERIFIED=${checkedPaths}`);
   console.log(`SRD_IGNORED_NON_PRESENTATION_PATHS=${ignoredPaths.length}`);
   console.log(`SRD_STALE_OVERLAY_PATHS=${stalePaths.length}`);
-  console.log(`SRD_TEXT_TOKEN_DRIFTS=${textDrifts.length}`);
+  console.log(`SRD_REFERENCE_TOKEN_DRIFTS=${referenceDrifts.length}`);
+  console.log(`SRD_NUMERIC_TEXT_DRIFTS=${numericDrifts.length}`);
   for (const row of coverage) console.log(`SRD_COVERAGE_${row.file}=${row.localized}/${row.total}`);
   for (const ignored of ignoredPaths) console.log(`SRD_IGNORED_PATH=${ignored.catalogFile} ${ignored.canonicalId} ${ignored.pathKey}`);
   for (const stale of stalePaths) console.log(`SRD_STALE_PATH=${stale.catalogFile} ${stale.canonicalId} ${stale.pathKey}`);
-  for (const drift of textDrifts) console.log(`SRD_TEXT_DRIFT=${JSON.stringify(drift)}`);
-  assert.equal(textDrifts.length, 0, `${textDrifts.length} applied localized strings changed machine-significant references or values`);
+  for (const drift of referenceDrifts) console.log(`SRD_REFERENCE_DRIFT=${JSON.stringify(drift)}`);
+  for (const drift of numericDrifts) console.log(`SRD_NUMERIC_DRIFT=${JSON.stringify(drift)}`);
+  assert.equal(referenceDrifts.length, 0, `${referenceDrifts.length} applied localized strings changed machine-significant references`);
+  assert.equal(numericDrifts.length, 0, `${numericDrifts.length} applied localized strings changed displayed numeric values`);
 });
 
 test("every localized canonicalId resolves to exactly one SRD 5.2 canonical entity", () => {
