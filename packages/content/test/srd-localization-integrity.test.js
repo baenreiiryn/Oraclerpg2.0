@@ -152,6 +152,7 @@ function coverageRows() {
 
 test("all PT-BR SRD localization overlays are presentation-only and cannot mutate canonical mechanics", () => {
   const stalePaths = [];
+  const textDrifts = [];
   let checkedPaths = 0;
 
   for (const [canonicalId, { overlay, catalogFile, entityType }] of localizedEntries) {
@@ -177,11 +178,11 @@ test("all PT-BR SRD localization overlays are presentation-only and cannot mutat
 
       checkedPaths += 1;
       restorablePaths.push(pathKey);
-      assert.deepEqual(
-        mechanicalTextFingerprint(translated),
-        mechanicalTextFingerprint(source),
-        `${canonicalId}: machine-significant token/number drift at ${pathKey}`
-      );
+      const sourceFingerprint = mechanicalTextFingerprint(source);
+      const translatedFingerprint = mechanicalTextFingerprint(translated);
+      if (JSON.stringify(sourceFingerprint) !== JSON.stringify(translatedFingerprint)) {
+        textDrifts.push({ canonicalId, catalogFile, pathKey, sourceFingerprint, translatedFingerprint });
+      }
     }
 
     const before = structuredClone(entity);
@@ -201,8 +202,11 @@ test("all PT-BR SRD localization overlays are presentation-only and cannot mutat
   console.log(`SRD_UNLOCALIZED_ENTITIES=${missing}`);
   console.log(`SRD_LOCALIZATION_PATHS_VERIFIED=${checkedPaths}`);
   console.log(`SRD_STALE_OVERLAY_PATHS=${stalePaths.length}`);
+  console.log(`SRD_TEXT_TOKEN_DRIFTS=${textDrifts.length}`);
   for (const row of coverage) console.log(`SRD_COVERAGE_${row.file}=${row.localized}/${row.total}`);
   for (const stale of stalePaths) console.log(`SRD_STALE_PATH=${stale.catalogFile} ${stale.canonicalId} ${stale.pathKey}`);
+  for (const drift of textDrifts) console.log(`SRD_TEXT_DRIFT=${JSON.stringify(drift)}`);
+  assert.equal(textDrifts.length, 0, `${textDrifts.length} localized presentation strings changed machine-significant references or values`);
 });
 
 test("every localized canonicalId resolves to exactly one SRD 5.2 canonical entity", () => {
