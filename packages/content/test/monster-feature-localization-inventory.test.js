@@ -7,7 +7,7 @@ import { isPresentationPath } from "../localization.js";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const canonical = JSON.parse(fs.readFileSync(path.join(here, "../data/srd-5.2/monster-features.json"), "utf8"));
 const allActions = (canonical.items ?? []).filter((feature) => feature.data?.category === "action");
-const features = allActions.slice(110, 165);
+const features = allActions.slice(165, 219);
 
 function collectPresentationStrings(root, prefix = "", out = {}) {
   if (typeof root === "string") {
@@ -23,7 +23,7 @@ function collectPresentationStrings(root, prefix = "", out = {}) {
   return out;
 }
 
-test("inventory creature action localization batch 03", () => {
+test("inventory creature action localization batch 04", () => {
   console.log(`CREATURE_ACTION_BATCH_COUNT=${features.length}`);
   for (const feature of features) console.log("CREATURE_ACTION=" + JSON.stringify({canonicalId: feature.canonicalId, name: feature.name, strings: collectPresentationStrings(feature)}));
 });
