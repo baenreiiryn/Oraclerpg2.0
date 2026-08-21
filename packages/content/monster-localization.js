@@ -8,27 +8,6 @@ const MATERIALIZED_FEATURE_NAMES = new Map([
   ["Poison Breath", "Sopro Venenoso"]
 ]);
 
-const DAMAGE_TYPES = new Set(["acid", "bludgeoning", "cold", "fire", "force", "lightning", "necrotic", "piercing", "poison", "psychic", "radiant", "slashing", "thunder"]);
-const SIZES = new Set(["tiny", "small", "medium", "large", "huge", "gargantuan"]);
-const SUBJECTS = [
-  "invisible stalker", "purple worm", "shambling mound", "vampire spawn", "giant octopus",
-  "giant seahorse", "giant crocodile", "giant constrictor snake", "giant frog", "giant toad",
-  "giant owl", "giant rat", "giant elk", "giant boar", "giant goat", "warhorse skeleton",
-  "minotaur skeleton", "adult dragon", "ancient dragon", "young dragon", "dragon wyrmling",
-  "aboleth", "ape", "armor", "assassin", "balor", "bandit", "basilisk", "bear", "beetle",
-  "behir", "boar", "bugbear", "centaur", "cloaker", "couatl", "devil", "dog", "dragon",
-  "drider", "dryad", "efreeti", "elemental", "elk", "erinyes", "ettercap", "familiar",
-  "frog", "gargoyle", "giant", "gladiator", "gnoll", "goat", "goblin", "golem", "guardian",
-  "hezrou", "hippogriff", "hippopotamus", "horse", "hyena", "hydra", "jelly", "kobold",
-  "kraken", "limb", "lizard", "magmin", "marilith", "medusa", "mephit", "mouther", "mummy",
-  "naga", "nalfeshnee", "nightmare", "noble", "octopus", "ooze", "owl", "panther", "piranha",
-  "pirate", "planetar", "plesiosaurus", "pseudodragon", "pteranodon", "rat", "raven", "remorhaz",
-  "roc", "roper", "salamander", "satyr", "seahorse", "shark", "shadow", "skeleton", "snake",
-  "solar", "specter", "sphinx", "spider", "stalker", "swarm", "tarrasque", "tiger", "toad",
-  "treant", "troll", "unicorn", "vampire", "warrior", "wasp", "whale", "wight", "wisp",
-  "worm", "wraith", "wyvern", "xorn"
-].sort((a, b) => b.length - a.length);
-
 function getPath(root, pathKey) {
   return pathKey.split(".").reduce((cursor, part) => cursor?.[/^\d+$/.test(part) ? Number(part) : part], root);
 }
@@ -94,14 +73,14 @@ function macroToken(macro) {
 }
 
 function normalizedSkeleton(text) {
-  let out = text.toLowerCase().replace(/\{@[^}]+\}/g, (macro) => {
-    const {kind, primary} = macroToken(macro);
-    return ["dc", "damage", "dice", "hit"].includes(kind) ? `<${kind}>` : `<${kind}:${primary.toLowerCase()}>`;
-  });
-  for (const subject of SUBJECTS) out = out.replace(new RegExp(`\\b${subject.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:'s)?\\b`, "g"), "<subject>");
-  for (const type of DAMAGE_TYPES) out = out.replace(new RegExp(`\\b${type}\\b`, "g"), "<damage-type>");
-  for (const size of SIZES) out = out.replace(new RegExp(`\\b${size}\\b`, "g"), "<size>");
-  return out.replace(/\b\d+(?:\.\d+)?(?:\/\d+)?\+?\b/g, "<n>").replace(/\s+/g, " ").trim();
+  return text.toLowerCase()
+    .replace(/\{@[^}]+\}/g, (macro) => {
+      const {kind, primary} = macroToken(macro);
+      return ["dc", "damage", "dice", "hit"].includes(kind) ? `<${kind}>` : `<${kind}:${primary.toLowerCase()}>`;
+    })
+    .replace(/\b\d+(?:\.\d+)?(?:\/\d+)?\+?\b/g, "<n>")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
 function plainNumbers(text) {
