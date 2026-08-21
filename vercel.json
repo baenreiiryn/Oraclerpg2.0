@@ -5,7 +5,7 @@
   "outputDirectory": "public",
   "git": {
     "deploymentEnabled": {
-      "work/mobile-home-ui": true,
+      "work/mobile-home-ui": false,
       "work/*": false
     }
   }
