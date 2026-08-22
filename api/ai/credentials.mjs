@@ -45,7 +45,7 @@ export default async function handler(req, res) {
     if (req.method === 'GET') {
       const rows = await sql`
         SELECT provider_id, base_url, model_id, vision_model_id, updated_at
-        FROM public.oracle_ai_credentials
+        FROM oracle_private.ai_credentials
         WHERE user_id = ${user.id}
         ORDER BY provider_id
       `;
@@ -75,7 +75,7 @@ export default async function handler(req, res) {
       const visionModel = cleanString(body.visionModel, 300);
 
       await sql`
-        INSERT INTO public.oracle_ai_credentials (
+        INSERT INTO oracle_private.ai_credentials (
           user_id, provider_id, base_url, model_id, vision_model_id,
           secret_ciphertext, secret_iv, secret_tag, updated_at
         ) VALUES (
@@ -96,7 +96,7 @@ export default async function handler(req, res) {
 
     if (req.method === 'DELETE') {
       await sql`
-        DELETE FROM public.oracle_ai_credentials
+        DELETE FROM oracle_private.ai_credentials
         WHERE user_id = ${user.id} AND provider_id = ${provider}
       `;
       return res.status(200).json({ ok: true, provider, removed: true });
