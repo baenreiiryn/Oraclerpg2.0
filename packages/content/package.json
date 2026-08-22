@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "typecheck": "node -e \"process.exit(0)\"",
-    "build": "node scripts/build-compendium-browser.mjs",
+    "build": "node scripts/build-compendium-browser.mjs && node scripts/build-import-engine-browser.mjs",
     "test": "node --test"
   }
 }
