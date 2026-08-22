@@ -15,8 +15,9 @@ export async function ensureCredentialStore() {
   if (!initialized) {
     initialized = (async () => {
       const sql = sqlClient();
+      await sql`CREATE SCHEMA IF NOT EXISTS oracle_private`;
       await sql`
-        CREATE TABLE IF NOT EXISTS public.oracle_ai_credentials (
+        CREATE TABLE IF NOT EXISTS oracle_private.ai_credentials (
           user_id text NOT NULL,
           provider_id text NOT NULL,
           base_url text,
@@ -30,6 +31,8 @@ export async function ensureCredentialStore() {
           PRIMARY KEY (user_id, provider_id)
         )
       `;
+      await sql`REVOKE ALL ON SCHEMA oracle_private FROM PUBLIC`;
+      await sql`REVOKE ALL ON TABLE oracle_private.ai_credentials FROM PUBLIC`;
     })();
   }
   return initialized;
