@@ -121,9 +121,10 @@ function enrichSpeciesGraph(ir, compiled) {
   if (formChange) species.data.formChange = formChange;
   const dark = whole.match(/Darkvision[\s\S]*?within\s*(\d+)\s*feet/i);
   if (dark) species.data.darkvision = { range: Number(dark[1]), forms: /only have darkvision in hybrid and wolf form/i.test(whole) ? ['hybrid', 'wolf'] : [] };
+  const profBlock = whole.match(/(?:gain|have) proficiency in[\s\S]{0,180}?(?:skills?|\.)/i)?.[0] || whole;
   const skills = [];
-  if (/proficiency in (?:the )?Perception/i.test(whole)) skills.push('perception');
-  if (/proficiency in (?:the )?Survival/i.test(whole)) skills.push('survival');
+  if (/\bPerception\b/i.test(profBlock) && /proficien/i.test(profBlock)) skills.push('perception');
+  if (/\bSurvival\b/i.test(profBlock) && /proficien/i.test(profBlock)) skills.push('survival');
   if (skills.length) species.data.skillProficiencies = [...new Set(skills)];
   if (/same languages as your base race|same languages as your base species/i.test(whole)) species.data.languageInheritance = { fromBaseSpecies: true };
   return compiled;
