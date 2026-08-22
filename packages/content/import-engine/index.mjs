@@ -1,8 +1,9 @@
 import { parse5etoolsJson } from './5etools-adapter.mjs';
 import { parse5etoolsMarkdown } from './markdown-adapter.mjs';
+import { hardenMarkdown } from './markdown-hardening.mjs';
 import { compileClassDocument } from './class-compiler.mjs';
 import { createReferenceResolver, compileSpeciesDocument, compileBackgroundDocument, compileFeatDocument, compileItemDocument } from './domain-compilers.mjs';
-function adapter(source,{format='auto',sourceName='',expectedKind='class'}={}){if(format==='5etools-json'||(format==='auto'&&source&&typeof source==='object'))return parse5etoolsJson(source,{sourceName});return parse5etoolsMarkdown(String(source||''),{sourceName,expectedKind})}
+function adapter(source,{format='auto',sourceName='',expectedKind='class'}={}){if(format==='5etools-json'||(format==='auto'&&source&&typeof source==='object'))return parse5etoolsJson(source,{sourceName});const markdown=hardenMarkdown(String(source||''),{sourceName,expectedKind});return parse5etoolsMarkdown(markdown,{sourceName,expectedKind})}
 export function importClass(source,{format='auto',sourceName='',compendium=[]}={}){const ir=adapter(source,{format,sourceName,expectedKind:'class'});return{ir,...compileClassDocument(ir,{resolve:createReferenceResolver(compendium)})}}
 export function importDocument(source,{kind,format='auto',sourceName='',compendium=[]}={}){const aliases={race:'species'},target=aliases[kind]||kind,ir=adapter(source,{format,sourceName,expectedKind:target}),resolve=createReferenceResolver(compendium);if(target==='class')return{ir,...compileClassDocument(ir,{resolve})};const root=ir.entities?.find(e=>e.kind===target)||ir.root||ir,compiler={species:compileSpeciesDocument,background:compileBackgroundDocument,feat:compileFeatDocument,item:compileItemDocument}[target];if(!compiler)throw new Error(`Unsupported import kind: ${kind}`);return{ir,...compiler({root},{resolve})}}
-export { parse5etoolsJson, parse5etoolsMarkdown, compileClassDocument, createReferenceResolver, compileSpeciesDocument, compileBackgroundDocument, compileFeatDocument, compileItemDocument };
+export { parse5etoolsJson, parse5etoolsMarkdown, hardenMarkdown, compileClassDocument, createReferenceResolver, compileSpeciesDocument, compileBackgroundDocument, compileFeatDocument, compileItemDocument };
