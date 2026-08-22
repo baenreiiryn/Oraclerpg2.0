@@ -1,5 +1,8 @@
 (() => {
   const SDK_URL = 'https://esm.sh/@neondatabase/auth@0.5.0-beta?bundle';
+  const LEGACY_SECRET_STORAGE = 'oraclerpg.ai.providers.v1';
+
+  try { localStorage.removeItem(LEGACY_SECRET_STORAGE); } catch (_) {}
 
   let clientPromise;
   let configPromise;
