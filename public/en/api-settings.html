@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>API Settings · OracleRPG</title>
+  <link rel="stylesheet" href="/theme.css" />
+  <link rel="stylesheet" href="/api-settings.css" />
+  <script src="/theme.js"></script>
+  <script src="/api-settings.js" defer></script>
+</head>
+<body>
+  <main class="api-shell">
+    <header class="api-topbar"><a class="api-back" href="./settings.html" aria-label="Back">‹</a><div class="api-brand">Oracle<span>RPG</span></div><div></div></header>
+    <section>
+      <p class="api-eyebrow">Artificial intelligence</p>
+      <h1 class="api-title">API Settings</h1>
+      <p class="api-caption">Connect your own API key to test the Game Master and AI features while native Oracle AI is still in development.</p>
+      <div class="api-security"><strong>Security:</strong> keys are never sent to GitHub or written into the codebase. By default they live only for the current browser session. You may choose to remember them on this device while testing.</div>
+    </section>
+    <div data-api-settings></div>
+  </main>
+  <script>localStorage.setItem('oraclerpg.locale','en');</script>
+</body>
+</html>
