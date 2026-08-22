@@ -8,6 +8,7 @@ const clean = value => String(value || '')
   .trim();
 const ruleText = node => clean([node?.raw, ...(node?.data?.rules || []), ...(node?.rules || [])].filter(Boolean).join('\n'));
 const traitText = trait => `${clean(trait?.name)}. ${ruleText(trait)}`.trim();
+const isSupplementalSection = name => /^(?:random height(?: and weight)?|height and weight|suggested characteristics|suggested character(?:istic)?s|personality traits?|ideals?|bonds?|flaws?)$/i.test(clean(name));
 
 function parseRetainedBaseTraits(raw) {
   if (!/base race|base species/i.test(raw)) return null;
@@ -89,7 +90,7 @@ function groupForms(traits) {
     if (!/\bform\b/i.test(traits[i]?.name || '')) continue;
     const parts = [traitText(traits[i])];
     let j=i+1;
-    while (j<traits.length && !/\bform\b/i.test(traits[j]?.name || '') && !/random height|suggested characteristics/i.test(traits[j]?.name || '')) { parts.push(traitText(traits[j])); j++; }
+    while (j<traits.length && !/\bform\b/i.test(traits[j]?.name || '') && !isSupplementalSection(traits[j]?.name)) { parts.push(traitText(traits[j])); j++; }
     forms.push(parseForm({ name: traits[i].name, rules: [parts.join('\n')] }));
     i=j-1;
   }
@@ -128,6 +129,12 @@ function enrichSpeciesGraph(ir, compiled) {
   if (/\bSurvival\b/i.test(profBlock) && /proficien/i.test(profBlock)) skills.push('survival');
   if (skills.length) species.data.skillProficiencies = [...new Set(skills)];
   if (/same languages as your base race|same languages as your base species/i.test(whole)) species.data.languageInheritance = { fromBaseSpecies: true };
+
+  const supplemental = traits.filter(t => isSupplementalSection(t?.name)).map(t => ({ name: clean(t.name), text: ruleText(t) }));
+  if (supplemental.length) species.data.supplementalSections = supplemental;
+  const blockedNames = new Set(supplemental.map(x => x.name.toLowerCase()));
+  compiled.entities = compiled.entities.filter(entity => entity === species || !blockedNames.has(clean(entity?.name).toLowerCase()));
+  if (Array.isArray(species.data.traits)) species.data.traits = species.data.traits.filter(ref => !blockedNames.has(clean(ref?.name).toLowerCase()));
   return compiled;
 }
 
