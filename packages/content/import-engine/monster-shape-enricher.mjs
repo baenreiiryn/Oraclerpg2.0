@@ -75,8 +75,8 @@ function parseFeature(feature) {
     revertAtZeroHp: /reduced to 0 hit points/i.test(text),
     restrictions: []
   };
-  if (/can't use|cannot use/i.test(text) && /sunlight/i.test(text)) change.restrictions.push('sunlight');
-  if (/running water/i.test(text)) change.restrictions.push('runningWater');
+  if (/sunlight/i.test(text) && /(not in sunlight|isn't in sunlight|is not in sunlight|can't use|cannot use)/i.test(text)) change.restrictions.push('sunlight');
+  if (/running water/i.test(text) && /(not in sunlight or running water|not in running water|isn't in running water|is not in running water|can't use|cannot use)/i.test(text)) change.restrictions.push('runningWater');
   if (/can't speak|cannot speak/i.test(text)) change.formRules = { ...(change.formRules||{}), cannotSpeak:true };
   if (/can't take actions|cannot take actions/i.test(text)) change.formRules = { ...(change.formRules||{}), cannotTakeActions:true };
   return change;
