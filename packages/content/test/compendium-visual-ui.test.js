@@ -11,8 +11,10 @@ const publicRoot = path.join(repoRoot, "public");
 
 const uiScript = fs.readFileSync(path.join(publicRoot, "compendium-ui.js"), "utf8");
 const uiStyles = fs.readFileSync(path.join(publicRoot, "compendium-ui.css"), "utf8");
-const portugueseHtml = fs.readFileSync(path.join(publicRoot, "compendium.html"), "utf8");
-const englishHtml = fs.readFileSync(path.join(publicRoot, "en/compendium.html"), "utf8");
+const portugueseHtml = fs.readFileSync(path.join(publicRoot, "compendium-dnd.html"), "utf8");
+const englishHtml = fs.readFileSync(path.join(publicRoot, "en/compendium-dnd.html"), "utf8");
+const portuguesePicker = fs.readFileSync(path.join(publicRoot, "compendium.html"), "utf8");
+const englishPicker = fs.readFileSync(path.join(publicRoot, "en/compendium.html"), "utf8");
 
 const categories = [
   "classes",
@@ -31,7 +33,14 @@ test("shared visual compendium script is valid JavaScript", () => {
   assert.doesNotThrow(() => new vm.Script(uiScript));
 });
 
-test("PT-BR and English compendium pages use the shared visual renderer", () => {
+test("system pickers remain separate from the D&D visual compendium", () => {
+  assert.match(portuguesePicker, /data-oracle-flow="compendium"/);
+  assert.match(englishPicker, /data-oracle-flow="compendium"/);
+  assert.doesNotMatch(portuguesePicker, /id="viewerVisual"/);
+  assert.doesNotMatch(englishPicker, /id="viewerVisual"/);
+});
+
+test("PT-BR and English D&D compendium pages use the shared visual renderer", () => {
   for (const html of [portugueseHtml, englishHtml]) {
     assert.match(html, /id="viewerVisual"/);
     assert.match(html, /href="\/compendium-ui\.css"/);
