@@ -10,7 +10,11 @@
   "scripts": {
     "typecheck": "pnpm -r typecheck",
     "test": "pnpm -r test",
-    "build": "pnpm -r build"
+    "build": "pnpm -r build",
+    "security:audit": "node scripts/audit-public-repo-security.mjs"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^1.0.1"
   },
   "devDependencies": {
     "typescript": "5.9.3"
