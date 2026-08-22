@@ -1,0 +1,2 @@
+import { compileItemDocument as compileBaseItem } from './domain-compilers.mjs';
+export function compileItemDocument(ir,{resolve=()=>({status:'unresolved'})}={}){const root=ir?.root||ir,d=root?.data||root||{},out=compileBaseItem({root},{resolve}),item=out.entities?.[0];if(!item)return out;for(const key of ['rarity','sentience','attunementDetails','activationWindow','passiveEffects','temporaryWearer','persistence','randomTables','curse','sections'])if(d[key]!=null)item.data[key]=d[key];if(Array.isArray(d.activities))item.data.activities=d.activities;return out}
