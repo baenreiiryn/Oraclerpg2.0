@@ -5,6 +5,8 @@ const parentNames = ['Cleric','Druid','Fighter','Sorcerer','Warlock','Wizard','R
 const parentPattern = parentNames.join('|');
 const subclassHeading = new RegExp(`^(?:#{1,6}\\s+)?([A-Z][A-Z’' -]+?)\\s*\\((${parentPattern})\\)\\s*$`, 'im');
 const levelHeading = /^(?:#{1,6}\s+)?LEVEL\s+(\d{1,2})\s*:\s*(.+?)\s*$/i;
+const pathHeading = /^PATH OF THE (DEATH KNIGHT|LICH)\s*$/i;
+const pathFeatMeta = /^Path of the (Death Knight|Lich) Feat\s*\(Prerequisite:\s*([\s\S]+?)\)\s*$/i;
 
 const titleCase = (v) => clean(v).toLowerCase().replace(/(^|[\s-])([a-z])/g, (_m,p,c)=>p+c.toUpperCase());
 const canonicalParent = (v) => parentNames.find(n=>n.toLowerCase()===clean(v).toLowerCase()) || titleCase(v);
@@ -17,14 +19,16 @@ export function isMultiSubclassDocument(text) {
   return matches.length >= 2 && parents.size >= 2;
 }
 
+function firstVillainyLine(lines){const i=lines.findIndex(x=>/^PATHS OF VILLAINY\s*$/i.test(clean(x)));return i<0?lines.length:i;}
 function sectionize(text) {
   const lines = String(text || '').replace(/\r/g, '').split('\n');
+  const villainyStart=firstVillainyLine(lines);
   const starts = [];
-  for (let i=0;i<lines.length;i++) {
+  for (let i=0;i<villainyStart;i++) {
     const m = lines[i].match(subclassHeading);
     if (m) starts.push({i, name:titleCase(m[1]), parent:canonicalParent(m[2])});
   }
-  return starts.map((s, idx) => ({...s, end: starts[idx+1]?.i ?? lines.length, lines: lines.slice(s.i, starts[idx+1]?.i ?? lines.length)}));
+  return starts.map((s, idx) => ({...s, end: Math.min(starts[idx+1]?.i ?? villainyStart,villainyStart), lines: lines.slice(s.i, Math.min(starts[idx+1]?.i ?? villainyStart,villainyStart))}));
 }
 
 function semantic(raw, name='') {
@@ -84,6 +88,42 @@ function parseTitanForms(block, subclass) {
   attach(subclass,group);
 }
 
+function featSpellGrants(raw){
+  const known=['Wrathful Smite','Command','Bane','Fear','Find Steed','Chill Touch','True Resurrection','Wish'];
+  return known.filter(n=>new RegExp(`\\b${n.replace(/ /g,'\\s+')}\\b`,'i').test(raw)).map(name=>({name,spell:name}));
+}
+function featAbilities(raw){
+  const m=raw.match(/Increase your ([A-Za-z]+(?:,\s*[A-Za-z]+)*(?:,?\s*or\s*[A-Za-z]+)?) score by 1/i);if(!m)return null;
+  const map={strength:'STR',dexterity:'DEX',constitution:'CON',intelligence:'INT',wisdom:'WIS',charisma:'CHA'};
+  const options=m[1].split(/,|\bor\b/i).map(x=>map[clean(x).toLowerCase()]).filter(Boolean);return options.length?{count:1,options,increase:1,max:20}:null;
+}
+function featBenefits(raw){
+  const out=[];const re=/^(Ability Score Increase|Death Points|Dread Strike|Dread Command|Ill Omen|Awful Presence|Spectral Steed|Undead|Unholy Anatomy|Hellfire Orb|Creating Your Spirit Jar|Spirit Jar Destruction|Soul Siphon|Essence Rejuvenation|Soul Transference|Paralyzing Touch|Frightening Gaze|Rejuvenation)\.\s*([\s\S]*?)(?=^(?:Ability Score Increase|Death Points|Dread Strike|Dread Command|Ill Omen|Awful Presence|Spectral Steed|Undead|Unholy Anatomy|Hellfire Orb|Creating Your Spirit Jar|Spirit Jar Destruction|Soul Siphon|Essence Rejuvenation|Soul Transference|Paralyzing Touch|Frightening Gaze|Rejuvenation)\.|$)/gim;
+  for(const m of raw.matchAll(re))out.push({name:m[1],rules:clean(m[2])});return out;
+}
+function parseVillainyPaths(text,ir){
+  const lines=String(text||'').replace(/\r/g,'').split('\n');
+  const start=firstVillainyLine(lines);if(start>=lines.length)return;
+  let currentPath=null;
+  for(let i=start;i<lines.length;i++){
+    const line=clean(lines[i]);const pm=line.match(pathHeading);if(pm){currentPath=`Path of the ${titleCase(pm[1])}`;continue;}
+    if(!currentPath||!/^[A-Z][A-Z ’'\-]+$/.test(line)||/^(PATH|DEATH KNIGHT JOURNEYS|LICH RITES|SPIRIT JARS)/i.test(line))continue;
+    const name=titleCase(line);let metaIndex=-1,meta=null;
+    for(let j=i+1;j<Math.min(lines.length,i+6);j++){const candidate=clean(lines.slice(j,Math.min(lines.length,j+3)).join(' '));const mm=candidate.match(pathFeatMeta);if(mm){metaIndex=j;meta=mm;break;}if(lines[j].match(pathHeading))break;}
+    if(!meta)continue;
+    let end=lines.length;
+    for(let j=metaIndex+1;j<lines.length;j++){
+      const l=clean(lines[j]);if(l.match(pathHeading)){end=j;break;}
+      if(/^[A-Z][A-Z ’'\-]+$/.test(l)){const cand=clean(lines.slice(j+1,Math.min(lines.length,j+4)).join(' '));if(pathFeatMeta.test(cand)){end=j;break;}}
+    }
+    const raw=lines.slice(metaIndex+1,end).join('\n').trim();
+    const data={pathName:currentPath,prerequisite:clean(meta[2]),abilityChoices:featAbilities(raw),spellGrants:featSpellGrants(raw),features:featBenefits(raw)};
+    if(/Death Points equal to your Proficiency Bonus/i.test(raw))data.resource={name:'Death Points',maxFormula:'PB',recovery:'longRest'};
+    if(/creature type is Undead/i.test(raw))data.creatureTypeChange='undead';
+    ir.entities.push(createEntityIR({kind:'feat',name,sourcePath:`line:${i+1}`,raw,data}));i=end-1;
+  }
+}
+
 export function parseMultiSubclassDocument(text,{sourceName='document'}={}) {
   const ir=createDocumentIR({sourceType:'multi-subclass-document',sourceName,raw:text});
   for(const block of sectionize(text)) {
@@ -106,5 +146,6 @@ export function parseMultiSubclassDocument(text,{sourceName='document'}={}) {
     sub.data.description=lines.slice(1,firstFeature).join('\n').trim();
     parseTitanForms(block,sub);
   }
+  parseVillainyPaths(text,ir);
   return ir;
 }
