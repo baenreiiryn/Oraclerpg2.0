@@ -1,43 +1,6 @@
 <!doctype html>
-<html lang="pt-BR">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#0b090c" />
-  <title>D&D · Compêndio · OracleRPG</title>
-  <link rel="stylesheet" href="/compendium-ui.css" />
-  <link rel="stylesheet" href="/compendium-category-nav.css" />
-  <link rel="stylesheet" href="/compendium-item-cards.css" />
-  <link rel="stylesheet" href="/compendium-sections.css" />
-  <link rel="stylesheet" href="/compendium-overlays.css" />
-  <link rel="stylesheet" href="/compendium-homebrew.css" />
-  <link rel="stylesheet" href="/theme.css" />
-  <link rel="stylesheet" href="/compendium-theme-bridge.css" />
-  <script src="/theme.js"></script>
-  <script src="/item-image-normalizer.js"></script>
-</head>
-<body data-system-id="dnd-srd-5e">
-<main class="shell">
-  <header class="topbar"><a class="back" href="compendium.html" aria-label="Escolher outro sistema">‹</a><div id="topTitle" class="top-title">D&D · Compêndio</div><div></div></header>
-  <section class="intro"><p id="eyebrow" class="eyebrow">Dungeons & Dragons · SRD 5.2</p><h1 id="pageTitle">Conteúdo de jogo</h1><p id="introText"></p></section>
-  <div class="tabs"><button id="tabSrd" class="tab active" data-mode="srd">Compêndio SRD</button><button id="tabHomebrew" class="tab" data-mode="homebrew">Compêndio Homebrew</button></div>
-  <div class="toolbar"><div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Buscar no compêndio…" autocomplete="off"/></div><button id="add" class="add" hidden>＋ Novo</button></div>
-  <div id="categories" class="categories" aria-label="Categorias"></div>
-  <div class="status"><span id="count">Carregando…</span><span id="storage">SRD 5.2</span></div>
-  <div id="list" class="list"><div class="loading">Carregando o compêndio…</div></div>
-  <p id="localNote" class="local-note"></p>
-</main>
-<div id="viewer" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span id="viewerBadge" class="badge">SRD</span><h2 id="viewerTitle"></h2><p id="viewerMeta" class="sheet-sub"></p></div><button class="close" data-close="viewer" aria-label="Fechar">×</button></div><div id="viewerVisual" class="visual-detail"></div><div class="actions"><button id="clone" class="primary">Criar cópia Homebrew</button><button id="editViewer" class="secondary" hidden>Editar Homebrew</button></div><details class="json-wrap"><summary id="rawSummary">Ver dados técnicos (JSON)</summary><pre id="viewerJson" class="json"></pre></details></section></div>
-<div id="editor" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span class="badge homebrew-badge">HOMEBREW</span><h2 id="editorTitle">Editar conteúdo</h2><p id="editorSub" class="sheet-sub"></p></div><button class="close" data-close="editor" aria-label="Fechar">×</button></div><div class="field"><label id="nameLabel" for="editName">Nome</label><input id="editName" /></div><div class="field"><label id="categoryLabel" for="editCategory">Categoria</label><select id="editCategory"></select></div><div class="field"><label id="dataLabel" for="editJson">Dados da entidade</label><textarea id="editJson" spellcheck="false"></textarea></div><div id="editError" class="error"></div><div class="actions"><button id="save" class="primary">Salvar</button><button id="cancel" class="secondary">Cancelar</button><button id="delete" class="danger">Excluir</button></div></section></div>
-<script src="/compendium-ui.js" defer></script>
-<script src="/compendium-category-nav.js" defer></script>
-<script src="/compendium-class-progression.js" defer></script>
-<script src="/compendium-item-cards.js" defer></script>
-<script src="/compendium-sections.js" defer></script>
-<script src="/compendium-structured-text.js" defer></script>
-<script src="/oracle-homebrew-import-bridge.js" defer></script>
-<script src="/compendium-homebrew.js" defer></script>
-<script src="/homebrew-class-normalizer.js" defer></script>
-<script src="/compendium-homebrew-extensions.js" defer></script>
-</body>
-</html>
+<html lang="pt-BR"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/><meta name="theme-color" content="#0b090c"/><title>D&D · Compêndio · OracleRPG</title><link rel="stylesheet" href="/compendium-ui.css"/><link rel="stylesheet" href="/compendium-category-nav.css"/><link rel="stylesheet" href="/compendium-item-cards.css"/><link rel="stylesheet" href="/compendium-sections.css"/><link rel="stylesheet" href="/compendium-overlays.css"/><link rel="stylesheet" href="/compendium-homebrew.css"/><link rel="stylesheet" href="/theme.css"/><link rel="stylesheet" href="/compendium-theme-bridge.css"/><script src="/theme.js"></script><script src="/item-image-normalizer.js"></script></head>
+<body data-system-id="dnd-srd-5e"><main class="shell"><header class="topbar"><a class="back" href="compendium.html" aria-label="Escolher outro sistema">‹</a><div id="topTitle" class="top-title">D&D · Compêndio</div><div></div></header><section class="intro"><p id="eyebrow" class="eyebrow">Dungeons & Dragons · SRD 5.2</p><h1 id="pageTitle">Conteúdo de jogo</h1><p id="introText"></p></section><div class="tabs"><button id="tabSrd" class="tab active" data-mode="srd">Compêndio SRD</button><button id="tabHomebrew" class="tab" data-mode="homebrew">Compêndio Homebrew</button></div><div class="toolbar"><div class="search-wrap"><span class="search-icon">⌕</span><input id="search" class="search" type="search" placeholder="Buscar no compêndio…" autocomplete="off"/></div><button id="add" class="add" hidden>＋ Novo</button></div><div id="categories" class="categories" aria-label="Categorias"></div><div class="status"><span id="count">Carregando…</span><span id="storage">SRD 5.2</span></div><div id="list" class="list"><div class="loading">Carregando o compêndio…</div></div><p id="localNote" class="local-note"></p></main>
+<div id="viewer" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span id="viewerBadge" class="badge">SRD</span><h2 id="viewerTitle"></h2><p id="viewerMeta" class="sheet-sub"></p></div><button class="close" data-close="viewer">×</button></div><div id="viewerVisual" class="visual-detail"></div><div class="actions"><button id="clone" class="primary">Criar cópia Homebrew</button><button id="editViewer" class="secondary" hidden>Editar Homebrew</button></div><details class="json-wrap"><summary id="rawSummary">Ver dados técnicos (JSON)</summary><pre id="viewerJson" class="json"></pre></details></section></div>
+<div id="editor" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span class="badge homebrew-badge">HOMEBREW</span><h2 id="editorTitle">Editar conteúdo</h2><p id="editorSub" class="sheet-sub"></p></div><button class="close" data-close="editor">×</button></div><div class="field"><label id="nameLabel" for="editName">Nome</label><input id="editName"/></div><div class="field"><label id="categoryLabel" for="editCategory">Categoria</label><select id="editCategory"></select></div><div class="field"><label id="dataLabel" for="editJson">Dados da entidade</label><textarea id="editJson" spellcheck="false"></textarea></div><div id="editError" class="error"></div><div class="actions"><button id="save" class="primary">Salvar</button><button id="cancel" class="secondary">Cancelar</button><button id="delete" class="danger">Excluir</button></div></section></div>
+<script src="/compendium-ui.js" defer></script><script src="/compendium-category-nav.js" defer></script><script src="/compendium-class-progression.js" defer></script><script src="/compendium-item-cards.js" defer></script><script src="/compendium-sections.js" defer></script><script src="/compendium-structured-text.js" defer></script><script src="/oracle-homebrew-import-bridge.js" defer></script><script src="/compendium-homebrew.js" defer></script><script src="/homebrew-engine-ui-hook.js" defer></script><script src="/homebrew-class-normalizer.js" defer></script><script src="/compendium-homebrew-extensions.js" defer></script></body></html>
