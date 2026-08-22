@@ -7,7 +7,8 @@ import { isMultiSubclassDocument, parseMultiSubclassDocument } from './multi-sub
 import { isComplexItemMarkdown, parseComplexItemMarkdown } from './complex-item-markdown-adapter.mjs';
 import { isMonsterMarkdown, parseMonsterMarkdown } from './monster-markdown-adapter.mjs';
 import { compileClassDocument, compileClassBundleDocument } from './class-compiler.mjs';
-import { createReferenceResolver, compileSpeciesDocument, compileBackgroundDocument, compileFeatDocument } from './domain-compilers.mjs';
+import { createReferenceResolver, compileBackgroundDocument, compileFeatDocument } from './domain-compilers.mjs';
+import { compileSpeciesDocument } from './species-shape-compiler.mjs';
 import { compileItemDocument } from './item-compiler.mjs';
 import { compileMonsterDocument } from './monster-compiler.mjs';
 function adapter(source,{format='auto',sourceName='',expectedKind='class'}={}){if(format==='5etools-json'||(format==='auto'&&source&&typeof source==='object'))return parse5etoolsJson(source,{sourceName});const text=String(source||'');if(expectedKind==='background')return parseBackgroundMarkdown(text,{sourceName});if(expectedKind==='item'&&isComplexItemMarkdown(text))return parseComplexItemMarkdown(text,{sourceName});if(expectedKind==='monster'&&isMonsterMarkdown(text))return parseMonsterMarkdown(text,{sourceName});if(expectedKind==='class'&&isMultiSubclassDocument(text))return parseMultiSubclassDocument(text,{sourceName});if(expectedKind==='class'&&isStandaloneSubclassMarkdown(text))return parseStandaloneSubclassMarkdown(text,{sourceName});const markdown=hardenMarkdown(text,{sourceName,expectedKind});return parse5etoolsMarkdown(markdown,{sourceName,expectedKind})}
