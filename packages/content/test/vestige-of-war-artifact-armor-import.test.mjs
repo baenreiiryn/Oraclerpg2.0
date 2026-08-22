@@ -42,7 +42,7 @@ Once per month, the wearer can invoke **Blood Reckoning**. For **1 minute**:
 - **Attack rolls against the wearer have disadvantage**.
 - The wearer can **add 4d10 additional slashing damage** to any melee attack they make.
 
-**Aftermath**: After using Blood Reckoning, the wearer must make a **DC 22 Constitution saving throw**. On a failed save, they take **10d10 psychic damage** and become **incapacitated for 1d4 hours**.
+**Aftermath**: After using Blood Reckoning, the wearer must make a **DC 22 Constitution saving throw**. On a failed save, they are wracked by the armor's hunger, taking **10d10 psychic damage** and becoming **incapacitated for 1d4 hours**.
 
 ### **Curses**
 - **Insatiable Violence**: At the start of each combat, the wearer must make a **DC 17 Wisdom saving throw**. On a failed save, they must attack the nearest creature. If none are in sight, the wearer takes **1d10 psychic damage per round**.
