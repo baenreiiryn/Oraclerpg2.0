@@ -1,0 +1,9 @@
+(()=>{
+'use strict';
+const strip=document.querySelector('[data-campaign-strip]'),caption=document.querySelector('[data-campaign-caption]');if(!strip)return;
+const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot',"'":'&#39;'}[ch]));
+const read=()=>{try{const v=JSON.parse(localStorage.getItem('oraclerpg.campaigns.v1')||'[]');return Array.isArray(v)?v:[]}catch{return[]}};
+function render(){const campaigns=read();const item=x=>{const image=x.portrait||'',href=`campaign.html?id=${encodeURIComponent(x.id||'')}`;return `<button class="campaign-token" type="button" data-campaign-href="${esc(href)}"><span class="token-ring"><span class="portrait ${image?'has-image':'portrait-fallback'}"${image?` style="background-image:url('${esc(image).replace(/'/g,'&#39;')}')"`:''}></span></span><span class="campaign-name">${esc(x.name||'Campanha')}</span><span class="character-name">${esc(x.characterName||'Personagem')}</span></button>`};const add=`<button class="campaign-token" type="button" data-new-campaign><span class="token-ring new-campaign-ring"><span class="new-campaign-plus">＋</span></span><span class="campaign-name">Iniciar nova campanha</span><span class="character-name">Criar personagem e história</span></button>`;strip.innerHTML=campaigns.map(item).join('')+add;if(caption)caption.textContent=campaigns.length?'Escolha um personagem para retornar à aventura ou inicie uma nova campanha.':'Você ainda não possui campanhas. Inicie sua primeira história.'}
+strip.addEventListener('click',event=>{const target=event.target.closest('[data-new-campaign],[data-campaign-href]');if(!target)return;location.href=target.hasAttribute('data-new-campaign')?'new-campaign.html':target.dataset.campaignHref});
+window.addEventListener('oraclerpg:campaigns-changed',render);window.addEventListener('oracle:account-data-ready',render);render();
+})();
