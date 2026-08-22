@@ -22,7 +22,9 @@
   async function getClient() {
     if (!clientPromise) {
       clientPromise = Promise.all([import(SDK_URL), getConfig()])
-        .then(([{ createAuthClient }, config]) => createAuthClient(config.authBaseUrl));
+        .then(([{ createAuthClient }, config]) => createAuthClient(config.authBaseUrl, {
+          fetchOptions: { credentials: 'include' },
+        }));
     }
     return clientPromise;
   }
@@ -46,8 +48,10 @@
   }
 
   async function getApiAuthHeaders() {
-    const data = await getSession();
-    const token = data?.session?.token;
+    const auth = await getClient();
+    const tokenResult = await auth.token();
+    const tokenData = unwrap(tokenResult);
+    const token = tokenData?.token;
     if (!token) throw new Error('Sessão autenticada necessária.');
     return { Authorization: `Bearer ${token}` };
   }
