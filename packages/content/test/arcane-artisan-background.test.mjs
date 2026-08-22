@@ -1,0 +1,15 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {importDocument} from '../import-engine/index.mjs';
+const text=`Arcane Artisan (2024)
+ 
+You are a student dedicated to the art of fabricating the accoutrements intended to be wielded and adorned by heroes. Countless days and nights have been spent as an apprentice to a forge or workshop, in hopes of one day mastering the mystical secrets to create items of immense power.
+ 
+**Ability Scores:** Strength, Intelligence, Wisdom **Feat:** Magic Initiate (Choose one)
+ 
+**Skill Proficiencies:** [**Arcana**](https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game#Skills) and [**Athletics**](https://www.dndbeyond.com/sources/dnd/free-rules/playing-the-game#Skills)**Tool Proficiencies:** You are proficient in the tools of your trade. Select one set of Artisan tools from the list..**Equipment:** *Choose A or B:* (A) [**Light Hammer**](https://www.dndbeyond.com/equipment/10-light-hammer), set of Artisan's Tools, [**Explorer's Pack**](https://www.dndbeyond.com/equipment/522-explorers-pack), [**Traveler's Clothes**](https://www.dndbeyond.com/equipment/541-travelers-clothes), 13 GP; or (B) 50 GP`;
+const compendium=[
+ {canonicalId:'dnd:feat:magic-initiate',entityType:'feat',name:'Magic Initiate'},
+ {canonicalId:'dnd:item:light-hammer',entityType:'item',name:'Light Hammer'},
+ {canonicalId:'dnd:item:explorers-pack',entityType:'item',name:"Explorer's Pack"},
+ {canonicalId:'dnd:item:travelers-clothes',entityType:'item',name:"Traveler's Clothes"}
+];
+test('Arcane Artisan plain text becomes a structured 2024 background',()=>{const out=importDocument(text,{kind:'background',format:'markdown',sourceName:'arcane-artisan.txt',compendium});const bg=out.entities[0];assert.equal(bg.name,'Arcane Artisan (2024)');assert.match(bg.data.text.summary,/student dedicated to the art/);assert.deepEqual(bg.data.abilityScores,['STR','INT','WIS']);assert.equal(bg.data.originFeat.name,'Magic Initiate');assert.equal(bg.data.originFeat.choice,true);assert.equal(bg.data.originFeat.resolution.canonicalId,'dnd:feat:magic-initiate');assert.equal(bg.data.skillChoices.type,'fixed');assert.deepEqual(bg.data.skillChoices.options,['Arcana','Athletics']);assert.equal(bg.data.toolChoices.count,1);assert.equal(bg.data.toolChoices.category,'artisanTools');assert.equal(bg.data.startingEquipment.mode,'choice');assert.equal(bg.data.startingEquipment.options.length,2);const a=bg.data.startingEquipment.options[0].items,b=bg.data.startingEquipment.options[1].items;assert.equal(a.find(x=>x.name==='Light Hammer').resolution.status,'resolved');assert.equal(a.find(x=>x.name==="Explorer's Pack").resolution.status,'resolved');assert.equal(a.find(x=>x.name==="Traveler's Clothes").resolution.status,'resolved');assert.equal(a.find(x=>x.choice?.category==='artisanTools').resolution,undefined);assert.deepEqual(a.find(x=>x.kind==='currency'),{kind:'currency',currency:'GP',amount:13});assert.deepEqual(b[0],{kind:'currency',currency:'GP',amount:50});assert.equal(out.unresolved.length,0)});
