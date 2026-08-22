@@ -1,94 +1,71 @@
 (() => {
   const AUTH_BASE = 'https://ep-wandering-hill-ay3garr2.neonauth.c-5.us-east-2.aws.neon.tech/neondb/auth';
-  const PRODUCTION_ORIGIN = 'https://oraclerpg2-0.vercel.app';
+  const SDK_URL = 'https://esm.sh/@neondatabase/auth@0.5.0-beta?bundle';
+  const CANONICAL_ORIGIN = 'https://oraclerpg2-0.vercel.app';
 
-  function appOrigin() {
-    const host = location.hostname;
-    if (host === 'localhost' || host === '127.0.0.1') return location.origin;
-    return PRODUCTION_ORIGIN;
+  let clientPromise;
+
+  async function getClient() {
+    if (!clientPromise) {
+      clientPromise = import(SDK_URL).then(({ createAuthClient }) => createAuthClient(AUTH_BASE));
+    }
+    return clientPromise;
   }
 
-  async function request(path, options = {}) {
-    const response = await fetch(`${AUTH_BASE}${path}`, {
-      credentials: 'include',
-      headers: {
-        'Content-Type': 'application/json',
-        ...(options.headers || {}),
-      },
-      ...options,
-    });
-
-    const text = await response.text();
-    let data = null;
-    if (text) {
-      try { data = JSON.parse(text); } catch { data = { message: text }; }
-    }
-
-    if (!response.ok) {
-      const message = data?.message || data?.error?.message || data?.error || `Erro de autenticação (${response.status})`;
+  function unwrap(result) {
+    if (!result) return result;
+    if (result.error) {
+      const message = result.error.message || result.error.statusText || 'Erro de autenticação.';
       const error = new Error(message);
-      error.status = response.status;
-      error.data = data;
+      error.status = result.error.status;
+      error.data = result.error;
       throw error;
     }
-
-    return data;
+    return Object.prototype.hasOwnProperty.call(result, 'data') ? result.data : result;
   }
 
   async function getSession() {
-    try {
-      return await request('/get-session', { method: 'GET', headers: {} });
-    } catch (error) {
-      if (error.status === 401) return null;
-      throw error;
-    }
+    const auth = await getClient();
+    const result = await auth.getSession();
+    return unwrap(result);
   }
 
   async function signUpEmail({ name, email, password }) {
-    return request('/sign-up/email', {
-      method: 'POST',
-      body: JSON.stringify({
-        name: name.trim(),
-        email: email.trim().toLowerCase(),
-        password,
-        callbackURL: `${appOrigin()}/`,
-      }),
+    const auth = await getClient();
+    const result = await auth.signUp.email({
+      name: name.trim(),
+      email: email.trim().toLowerCase(),
+      password,
+      callbackURL: `${CANONICAL_ORIGIN}/`,
     });
+    return unwrap(result);
   }
 
   async function signInEmail({ email, password, rememberMe = true }) {
-    return request('/sign-in/email', {
-      method: 'POST',
-      body: JSON.stringify({
-        email: email.trim().toLowerCase(),
-        password,
-        rememberMe,
-        callbackURL: `${appOrigin()}/`,
-      }),
+    const auth = await getClient();
+    const result = await auth.signIn.email({
+      email: email.trim().toLowerCase(),
+      password,
+      rememberMe,
+      callbackURL: `${CANONICAL_ORIGIN}/`,
     });
+    return unwrap(result);
   }
 
   async function signInGoogle() {
-    const origin = appOrigin();
-    const data = await request('/sign-in/social', {
-      method: 'POST',
-      body: JSON.stringify({
-        provider: 'google',
-        callbackURL: `${origin}/`,
-        errorCallbackURL: `${origin}/account.html?authError=google`,
-      }),
+    const auth = await getClient();
+    const result = await auth.signIn.social({
+      provider: 'google',
+      callbackURL: `${CANONICAL_ORIGIN}/`,
+      errorCallbackURL: `${CANONICAL_ORIGIN}/account.html?authError=google`,
     });
-
-    if (data?.url) {
-      location.assign(data.url);
-      return;
-    }
-
-    throw new Error('O Google não retornou uma URL de autenticação.');
+    return unwrap(result);
   }
 
   async function signOut() {
-    return request('/sign-out', { method: 'POST', body: '{}' });
+    const auth = await getClient();
+    const result = await auth.signOut();
+    return unwrap(result);
   }
 
   window.OracleAuth = {
