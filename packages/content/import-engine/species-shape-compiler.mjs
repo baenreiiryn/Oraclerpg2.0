@@ -99,7 +99,7 @@ function groupForms(traits) {
 function parseFormChange(raw, forms) {
   if (!/change into|transform into|shapechanger/i.test(raw)) return null;
   return {
-    activation: /as a bonus action/i.test(raw) ? 'bonusAction' : /as an action/i.test(raw) ? 'action' : null,
+    activation: /as a bonus action/i.test(raw) ? 'bonusAction' : /as an action|use (?:your|its|an) action/i.test(raw) ? 'action' : null,
     options: forms.map(x => x.id),
     statistics: /game statistics, other than (?:your )?AC, remain the same/i.test(raw) ? { preserve: 'all', exceptions: ['AC'] } : /game statistics, other than (?:your )?speed, remain the same/i.test(raw) ? { preserve:'all', exceptions:['speed'] } : null,
     equipmentTransforms: /equipment[^.]*not transformed/i.test(raw) ? false : null,
@@ -117,7 +117,8 @@ function enrichSpeciesGraph(ir, compiled) {
   const template = parseRetainedBaseTraits(whole);
   if (template) species.data.template = template;
   if (forms.length) species.data.forms = forms;
-  const formChange = parseFormChange(whole, forms);
+  const shapeTrait = traits.find(t => /^shapechanger$/i.test(clean(t?.name)) || /^shapechanger\b/i.test(traitText(t)));
+  const formChange = parseFormChange(shapeTrait ? traitText(shapeTrait) : whole, forms);
   if (formChange) species.data.formChange = formChange;
   const dark = whole.match(/Darkvision[\s\S]*?within\s*(\d+)\s*feet/i);
   if (dark) species.data.darkvision = { range: Number(dark[1]), forms: /only have darkvision in hybrid and wolf form/i.test(whole) ? ['hybrid', 'wolf'] : [] };
