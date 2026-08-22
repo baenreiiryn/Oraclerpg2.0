@@ -7,98 +7,28 @@
   <title>Configurações da API · OracleRPG</title>
   <style>
     @font-face{font-family:"Black Chancery";src:url("https://db.onlinewebfonts.com/t/753833d2833e9f73b56cffae357cf95f.woff2") format("woff2");font-display:swap}
-    :root{color-scheme:dark;--surface:rgba(24,20,27,.94);--border:rgba(223,190,130,.18);--text:#f4eee4;--muted:#a69da8;--gold:#e7c580;--ok:#79d89a}
-    *{box-sizing:border-box}body{margin:0;min-height:100dvh;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -8%,rgba(145,112,177,.16),transparent 31rem),linear-gradient(180deg,#100d12,#0a080b)}button,input,select{font:inherit}.shell{width:min(100%,560px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(34px,env(safe-area-inset-bottom))}.topbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;min-height:60px;margin-bottom:22px}.back{width:42px;height:42px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);display:grid;place-items:center;text-decoration:none;font-size:22px}.brand{text-align:center;font:400 29px/1 "Black Chancery",Georgia,serif}.brand span{color:var(--gold)}.eyebrow{margin:0 0 4px;color:var(--gold);font:400 18px/1 "Black Chancery",Georgia,serif}.title{margin:0;font:400 38px/1 "Black Chancery",Georgia,serif}.caption{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.panel{margin-top:22px;border:1px solid var(--border);border-radius:20px;padding:17px;background:linear-gradient(145deg,rgba(255,255,255,.03),transparent 58%),var(--surface)}.providers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.provider{min-height:62px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.025);color:var(--text);padding:10px 12px;text-align:left}.provider strong{display:block;font-size:13px}.provider small{display:block;margin-top:3px;color:var(--muted);font-size:9px}.provider.active{border-color:rgba(231,197,128,.58);background:rgba(231,197,128,.075)}.form{display:grid;gap:14px;margin-top:17px}.field{display:grid;gap:7px}.field span{color:#d8cbb8;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.field input,.field select{width:100%;min-height:48px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:#100d12;color:var(--text);padding:0 13px;outline:none}.field input:focus,.field select:focus{border-color:rgba(231,197,128,.55);box-shadow:0 0 0 3px rgba(231,197,128,.08)}.field-note{margin:-1px 0 0;color:var(--muted);font-size:9px;line-height:1.4;text-transform:none!important;letter-spacing:0!important;font-weight:400!important}.secret{display:grid;grid-template-columns:1fr auto;gap:8px}.secret button{min-width:70px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:rgba(255,255,255,.04);color:var(--text)}.actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:4px}.save{min-height:50px;border:0;border-radius:14px;background:linear-gradient(180deg,#e7c580,#cda45a);color:#21170b;font-weight:900}.clear{min-height:50px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:transparent;color:var(--muted);padding:0 15px}.status{min-height:18px;margin:10px 0 0;color:var(--muted);font-size:10px;text-align:center}.status.ok{color:var(--ok)}.note{margin:18px auto 0;color:var(--muted);font-size:10px;line-height:1.5;text-align:center;max-width:440px}.hidden{display:none!important}@media(min-width:500px){.providers{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    :root{color-scheme:dark;--surface:rgba(24,20,27,.94);--border:rgba(223,190,130,.18);--text:#f4eee4;--muted:#a69da8;--gold:#e7c580;--ok:#79d89a;--danger:#ff817a}
+    *{box-sizing:border-box}body{margin:0;min-height:100dvh;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -8%,rgba(145,112,177,.16),transparent 31rem),linear-gradient(180deg,#100d12,#0a080b)}button,input{font:inherit}.shell{width:min(100%,560px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(34px,env(safe-area-inset-bottom))}.topbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;min-height:60px;margin-bottom:22px}.back{width:42px;height:42px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);display:grid;place-items:center;text-decoration:none;font-size:22px}.brand{text-align:center;font:400 29px/1 "Black Chancery",Georgia,serif}.brand span{color:var(--gold)}.eyebrow{margin:0 0 4px;color:var(--gold);font:400 18px/1 "Black Chancery",Georgia,serif}.title{margin:0;font:400 38px/1 "Black Chancery",Georgia,serif}.caption{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.panel{margin-top:22px;border:1px solid var(--border);border-radius:20px;padding:17px;background:linear-gradient(145deg,rgba(255,255,255,.03),transparent 58%),var(--surface)}.providers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.provider{min-height:62px;border:1px solid rgba(255,255,255,.08);border-radius:14px;background:rgba(255,255,255,.025);color:var(--text);padding:10px 12px;text-align:left}.provider strong{display:block;font-size:13px}.provider small{display:block;margin-top:3px;color:var(--muted);font-size:9px}.provider.active{border-color:rgba(231,197,128,.58);background:rgba(231,197,128,.075)}.provider.configured small{color:var(--ok)}.form{display:grid;gap:14px;margin-top:17px}.field{display:grid;gap:7px}.field>span{color:#d8cbb8;font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}.field input{width:100%;min-height:48px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:#100d12;color:var(--text);padding:0 13px;outline:none}.field input:focus{border-color:rgba(231,197,128,.55);box-shadow:0 0 0 3px rgba(231,197,128,.08)}.field-note{margin:-1px 0 0;color:var(--muted)!important;font-size:9px!important;line-height:1.4;text-transform:none!important;letter-spacing:0!important;font-weight:400!important}.secret{display:grid;grid-template-columns:1fr auto;gap:8px}.secret button{min-width:70px;border:1px solid rgba(255,255,255,.09);border-radius:13px;background:rgba(255,255,255,.04);color:var(--text)}.actions{display:grid;grid-template-columns:1fr auto;gap:10px;margin-top:4px}.save{min-height:50px;border:0;border-radius:14px;background:linear-gradient(180deg,#e7c580,#cda45a);color:#21170b;font-weight:900}.clear{min-height:50px;border:1px solid rgba(255,255,255,.1);border-radius:14px;background:transparent;color:var(--muted);padding:0 15px}.save:disabled,.clear:disabled{opacity:.45}.status{min-height:18px;margin:10px 0 0;color:var(--muted);font-size:10px;text-align:center}.status.ok{color:var(--ok)}.status.error{color:var(--danger)}.note{margin:18px auto 0;color:var(--muted);font-size:10px;line-height:1.5;text-align:center;max-width:440px}.hidden{display:none!important}@media(min-width:500px){.providers{grid-template-columns:repeat(3,minmax(0,1fr))}}
   </style>
   <link rel="stylesheet" href="/theme.css" />
   <script src="/theme.js"></script>
+  <script src="/auth-client.js" defer></script>
+  <script src="/api-settings.js" defer></script>
 </head>
 <body><main class="shell">
   <header class="topbar"><a class="back" href="./settings.html">‹</a><div class="brand">Oracle<span>RPG</span></div><div></div></header>
-  <section><p class="eyebrow">Inteligência artificial</p><h1 class="title">Configurações da API</h1><p class="caption">Escolha o provedor usado pelo OracleRPG ou configure manualmente uma API compatível.</p></section>
+  <section><p class="eyebrow">Inteligência artificial</p><h1 class="title">Configurações da API</h1><p class="caption">Escolha o provedor usado pelo OracleRPG ou conecte sua própria API. Chaves pessoais nunca são gravadas no navegador nem devolvidas ao frontend.</p></section>
   <section class="panel">
     <div class="providers" id="providers"></div>
     <form class="form" id="form">
       <label class="field"><span>Provedor ativo</span><input id="providerName" readonly /></label>
       <label class="field" id="baseField"><span>URL base</span><input id="baseUrl" type="url" autocomplete="off" placeholder="https://..." /></label>
       <label class="field" id="modelField"><span>Modelo de texto / narrativa</span><input id="model" autocomplete="off" placeholder="Nome/ID do modelo" /></label>
-      <label class="field hidden" id="visionModelField"><span>Modelo de visão</span><input id="visionModel" autocomplete="off" placeholder="Nome/ID do modelo multimodal ou de visão" /><span class="field-note">Usado para interpretar imagens, mapas, portraits e outras entradas visuais. Pode ser diferente do modelo narrativo.</span></label>
-      <label class="field" id="keyField"><span>Chave da API</span><div class="secret"><input id="apiKey" type="password" autocomplete="off" placeholder="Cole sua chave aqui" /><button type="button" id="toggleKey">Mostrar</button></div></label>
-      <div class="actions"><button class="save" type="submit">Salvar configuração</button><button class="clear" type="button" id="clear">Limpar</button></div>
+      <label class="field hidden" id="visionModelField"><span>Modelo de visão</span><input id="visionModel" autocomplete="off" placeholder="Nome/ID do modelo multimodal ou de visão" /><span class="field-note">Usado para interpretar imagens, mapas, portraits e outras entradas visuais.</span></label>
+      <label class="field" id="keyField"><span>Chave da API</span><div class="secret"><input id="credential" type="password" autocomplete="new-password" placeholder="Cole uma nova chave para salvar/substituir" /><button type="button" id="toggleKey">Mostrar</button></div><span class="field-note" id="credentialState">A chave será criptografada no servidor e não será exibida novamente.</span></label>
+      <div class="actions"><button class="save" type="submit" id="save">Salvar configuração</button><button class="clear" type="button" id="clear">Remover</button></div>
       <p class="status" id="status" role="status"></p>
     </form>
   </section>
-  <p class="note">Nesta versão, configurações BYOK são armazenadas somente neste navegador. Não use um dispositivo compartilhado para salvar chaves pessoais.</p>
-</main>
-<script>
-(() => {
-  const STORAGE = 'oraclerpg.ai.providers.v1';
-  const ACTIVE = 'oraclerpg.ai.activeProvider';
-  const definitions = {
-    oracle: { label:'Oracle AI', note:'Padrão do OracleRPG', baseUrl:'', model:'', needsKey:false },
-    openai: { label:'OpenAI', note:'API personalizada', baseUrl:'https://api.openai.com/v1', model:'', needsKey:true },
-    gemini: { label:'Gemini', note:'Google AI', baseUrl:'https://generativelanguage.googleapis.com/v1beta/openai', model:'', needsKey:true },
-    nvidia: { label:'NVIDIA NIM', note:'Texto + visão separados', baseUrl:'https://integrate.api.nvidia.com/v1', model:'', visionModel:'', needsKey:true },
-    openrouter: { label:'OpenRouter', note:'Múltiplos modelos', baseUrl:'https://openrouter.ai/api/v1', model:'', needsKey:true }
-  };
-  const providers = document.getElementById('providers');
-  const form = document.getElementById('form');
-  const providerName = document.getElementById('providerName');
-  const baseUrl = document.getElementById('baseUrl');
-  const model = document.getElementById('model');
-  const visionModel = document.getElementById('visionModel');
-  const apiKey = document.getElementById('apiKey');
-  const status = document.getElementById('status');
-  const keyField = document.getElementById('keyField');
-  const baseField = document.getElementById('baseField');
-  const modelField = document.getElementById('modelField');
-  const visionModelField = document.getElementById('visionModelField');
-  let active = localStorage.getItem(ACTIVE) || 'oracle';
-  let saved = {};
-  try { saved = JSON.parse(localStorage.getItem(STORAGE) || '{}') || {}; } catch (_) { saved = {}; }
-
-  function renderButtons(){
-    providers.innerHTML = '';
-    Object.entries(definitions).forEach(([id, def]) => {
-      const b = document.createElement('button'); b.type='button'; b.className='provider'+(id===active?' active':'');
-      b.innerHTML = `<strong>${def.label}</strong><small>${def.note}</small>`;
-      b.addEventListener('click',()=>{ active=id; localStorage.setItem(ACTIVE,id); renderButtons(); loadForm(); });
-      providers.appendChild(b);
-    });
-  }
-  function loadForm(){
-    const def = definitions[active]; const data = saved[active] || {};
-    providerName.value = def.label;
-    baseUrl.value = data.baseUrl ?? def.baseUrl;
-    model.value = data.model ?? def.model;
-    visionModel.value = data.visionModel ?? def.visionModel ?? '';
-    apiKey.value = data.apiKey ?? '';
-    const oracle = active === 'oracle';
-    baseField.classList.toggle('hidden', oracle); modelField.classList.toggle('hidden', oracle); keyField.classList.toggle('hidden', oracle);
-    visionModelField.classList.toggle('hidden', active !== 'nvidia');
-    status.textContent = oracle ? 'Oracle AI está selecionado como provedor padrão.' : '';
-    status.className = 'status';
-  }
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    const def = definitions[active];
-    if (active !== 'oracle') {
-      const config = { baseUrl:baseUrl.value.trim(), model:model.value.trim(), apiKey:apiKey.value.trim() };
-      if (active === 'nvidia') config.visionModel = visionModel.value.trim();
-      saved[active] = config;
-      localStorage.setItem(STORAGE, JSON.stringify(saved));
-    }
-    localStorage.setItem(ACTIVE, active);
-    status.textContent = `${def.label} salvo e definido como provedor ativo.`; status.className='status ok';
-    window.dispatchEvent(new CustomEvent('oraclerpg:ai-provider-change',{detail:{provider:active}}));
-  });
-  document.getElementById('clear').addEventListener('click',()=>{
-    if (active === 'oracle') return;
-    delete saved[active]; localStorage.setItem(STORAGE, JSON.stringify(saved)); loadForm(); status.textContent='Configuração personalizada removida.';
-  });
-  document.getElementById('toggleKey').addEventListener('click',e=>{
-    apiKey.type = apiKey.type === 'password' ? 'text' : 'password'; e.currentTarget.textContent = apiKey.type === 'password' ? 'Mostrar' : 'Ocultar';
-  });
-  renderButtons(); loadForm();
-})();
-</script></body></html>
+  <p class="note">As chaves BYOK são enviadas somente por HTTPS para um endpoint autenticado, criptografadas antes de serem persistidas e isoladas por conta. O frontend recebe apenas o estado da configuração.</p>
+</main></body></html>
