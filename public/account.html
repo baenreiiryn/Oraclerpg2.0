@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0b090c" />
+  <title>Conta · OracleRPG</title>
+  <style>
+    @font-face{font-family:"Black Chancery";src:url("https://db.onlinewebfonts.com/t/753833d2833e9f73b56cffae357cf95f.woff2") format("woff2");font-display:swap}
+    :root{color-scheme:dark;--surface:rgba(24,20,27,.94);--border:rgba(223,190,130,.18);--text:#f4eee4;--muted:#a69da8;--gold:#e7c580;--danger:#ff6d65;--ok:#7fcf9e}
+    *{box-sizing:border-box}body{margin:0;min-height:100dvh;color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:radial-gradient(circle at 50% -8%,rgba(145,112,177,.16),transparent 31rem),radial-gradient(circle at 106% 48%,rgba(151,103,55,.09),transparent 25rem),linear-gradient(180deg,#100d12,#0a080b)}button,input{font:inherit}.shell{width:min(100%,520px);margin:0 auto;padding:max(18px,env(safe-area-inset-top)) 20px max(34px,env(safe-area-inset-bottom))}.topbar{display:grid;grid-template-columns:44px 1fr 44px;align-items:center;min-height:60px;margin-bottom:22px}.back{width:42px;height:42px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03);color:var(--text);display:grid;place-items:center;text-decoration:none;font-size:22px}.brand{text-align:center;font:400 29px/1 "Black Chancery",Georgia,serif}.brand span{color:var(--gold)}.eyebrow{margin:0 0 4px;color:var(--gold);font:400 18px/1 "Black Chancery",Georgia,serif}.title{margin:0;font:400 38px/1 "Black Chancery",Georgia,serif}.caption{margin:8px 0 0;color:var(--muted);font-size:12px;line-height:1.55;max-width:420px}.panel{margin-top:24px;border:1px solid var(--border);border-radius:20px;background:linear-gradient(145deg,rgba(255,255,255,.03),transparent 58%),var(--surface);overflow:hidden}.tabs{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid rgba(223,190,130,.09)}.tab{min-height:52px;border:0;background:transparent;color:var(--muted);font-weight:800}.tab.active{color:var(--gold);background:rgba(231,197,128,.05)}.form{display:grid;gap:14px;padding:18px}.field{display:grid;gap:7px}.field span{font-size:11px;color:#d8cbb8;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.field input{width:100%;min-height:48px;border:1px solid rgba(255,255,255,.09);border-radius:14px;background:#100d12;color:var(--text);padding:0 14px;outline:none}.field input:focus{border-color:rgba(231,197,128,.55);box-shadow:0 0 0 3px rgba(231,197,128,.08)}.primary,.google,.logout{min-height:52px;border-radius:15px;border:1px solid transparent;font-weight:900}.primary{background:linear-gradient(180deg,#e7c580,#cda45a);color:#21170b}.google{display:flex;align-items:center;justify-content:center;gap:10px;background:#f7f7f7;color:#202124}.google-mark{font:700 19px/1 Arial,sans-serif;color:#4285f4}.or{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:10px}.or::before,.or::after{content:"";height:1px;flex:1;background:rgba(255,255,255,.08)}.message{min-height:18px;margin:0;color:var(--muted);font-size:11px;line-height:1.5}.message.error{color:var(--danger)}.message.ok{color:var(--ok)}.profile{display:none;padding:20px}.avatar{width:74px;height:74px;border-radius:50%;display:grid;place-items:center;margin:0 auto 12px;border:2px solid rgba(231,197,128,.28);background:rgba(231,197,128,.08);font:400 34px/1 "Black Chancery",Georgia,serif;color:var(--gold);overflow:hidden}.avatar img{width:100%;height:100%;object-fit:cover}.profile h2{text-align:center;margin:0;font:400 29px/1.05 "Black Chancery",Georgia,serif}.profile .email{text-align:center;color:var(--muted);font-size:12px;margin:6px 0 18px}.profile-grid{display:grid;gap:10px;margin:16px 0}.info{padding:13px 14px;border:1px solid rgba(255,255,255,.07);border-radius:14px;background:rgba(255,255,255,.025)}.info small{display:block;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.08em}.info strong{display:block;margin-top:4px;font-size:12px}.logout{width:100%;background:transparent;border-color:rgba(255,109,101,.35);color:#ff918b}.hidden{display:none!important}.busy{opacity:.65;pointer-events:none}.foot{margin:17px auto 0;color:rgba(166,157,168,.7);font-size:10px;line-height:1.5;text-align:center;max-width:390px}
+  </style>
+  <link rel="stylesheet" href="/theme.css" />
+  <script src="/theme.js"></script>
+  <script src="/auth-client.js"></script>
+</head>
+<body><main class="shell">
+  <header class="topbar"><a class="back" id="back" href="./settings.html">‹</a><div class="brand">Oracle<span>RPG</span></div><div></div></header>
+  <section><p class="eyebrow">Sua identidade</p><h1 class="title" id="page-title">Entrar no Oracle</h1><p class="caption" id="page-caption">Entre com Google ou use seu e-mail e senha. Sua sessão fica vinculada à sua conta do OracleRPG.</p></section>
+  <section class="panel" id="auth-panel">
+    <div class="tabs"><button class="tab active" type="button" data-mode="login">Entrar</button><button class="tab" type="button" data-mode="signup">Criar conta</button></div>
+    <form class="form" id="auth-form">
+      <button class="google" id="google" type="button"><span class="google-mark">G</span>Continuar com Google</button>
+      <div class="or">ou</div>
+      <label class="field hidden" id="name-field"><span>Nome</span><input id="name" name="name" autocomplete="name" maxlength="80" /></label>
+      <label class="field"><span>E-mail</span><input id="email" name="email" type="email" autocomplete="email" required /></label>
+      <label class="field"><span>Senha</span><input id="password" name="password" type="password" autocomplete="current-password" minlength="8" maxlength="128" required /></label>
+      <button class="primary" id="submit" type="submit">Entrar</button>
+      <p class="message" id="message" role="status" aria-live="polite"></p>
+    </form>
+    <div class="profile" id="profile">
+      <div class="avatar" id="avatar">O</div>
+      <h2 id="profile-name">Aventureiro</h2>
+      <p class="email" id="profile-email"></p>
+      <div class="profile-grid"><div class="info"><small>Status</small><strong>Conta autenticada</strong></div><div class="info"><small>Provedor</small><strong id="profile-provider">OracleRPG</strong></div></div>
+      <button class="logout" id="logout" type="button">Sair da conta</button>
+    </div>
+  </section>
+  <p class="foot">A autenticação usa Neon Auth/Better Auth. Senhas não são armazenadas no navegador nem no código do OracleRPG.</p>
+</main>
+<script>
+(() => {
+  const params = new URLSearchParams(location.search);
+  const next = params.get('next') || '/';
+  const form = document.getElementById('auth-form');
+  const profile = document.getElementById('profile');
+  const panel = document.getElementById('auth-panel');
+  const message = document.getElementById('message');
+  const nameField = document.getElementById('name-field');
+  const nameInput = document.getElementById('name');
+  const emailInput = document.getElementById('email');
+  const passwordInput = document.getElementById('password');
+  const submit = document.getElementById('submit');
+  const tabs = [...document.querySelectorAll('.tab')];
+  let mode = 'login';
+
+  function setMessage(text = '', kind = '') {
+    message.textContent = text;
+    message.className = `message ${kind}`.trim();
+  }
+
+  function setBusy(value) { panel.classList.toggle('busy', value); }
+
+  function setMode(value) {
+    mode = value;
+    tabs.forEach(t => t.classList.toggle('active', t.dataset.mode === value));
+    nameField.classList.toggle('hidden', value !== 'signup');
+    nameInput.required = value === 'signup';
+    passwordInput.autocomplete = value === 'signup' ? 'new-password' : 'current-password';
+    submit.textContent = value === 'signup' ? 'Criar conta' : 'Entrar';
+    setMessage();
+  }
+
+  function renderProfile(session) {
+    const user = session.user;
+    document.getElementById('page-title').textContent = 'Sua conta';
+    document.getElementById('page-caption').textContent = 'Você está conectado ao OracleRPG.';
+    form.classList.add('hidden');
+    document.querySelector('.tabs').classList.add('hidden');
+    profile.style.display = 'block';
+    document.getElementById('profile-name').textContent = user.name || 'Aventureiro';
+    document.getElementById('profile-email').textContent = user.email || '';
+    const avatar = document.getElementById('avatar');
+    if (user.image) avatar.innerHTML = `<img src="${String(user.image).replace(/"/g, '&quot;')}" alt="" />`;
+    else avatar.textContent = (user.name || user.email || 'O').charAt(0).toUpperCase();
+    document.getElementById('profile-provider').textContent = user.email ? 'Google ou e-mail/senha' : 'OracleRPG';
+    document.getElementById('back').href = './settings.html';
+  }
+
+  tabs.forEach(tab => tab.addEventListener('click', () => setMode(tab.dataset.mode)));
+
+  document.getElementById('google').addEventListener('click', async () => {
+    setBusy(true); setMessage('Abrindo o Google…');
+    try { await OracleAuth.signInGoogle(); }
+    catch (error) { setBusy(false); setMessage(error.message || 'Não foi possível entrar com Google.', 'error'); }
+  });
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    setBusy(true); setMessage(mode === 'signup' ? 'Criando sua conta…' : 'Entrando…');
+    try {
+      if (mode === 'signup') {
+        await OracleAuth.signUpEmail({ name: nameInput.value, email: emailInput.value, password: passwordInput.value });
+      } else {
+        await OracleAuth.signInEmail({ email: emailInput.value, password: passwordInput.value });
+      }
+      const session = await OracleAuth.getSession();
+      if (session?.user) location.replace(next);
+      else setMessage('Autenticação concluída. Atualizando sua sessão…', 'ok');
+    } catch (error) {
+      setMessage(error.message || 'Não foi possível autenticar.', 'error');
+    } finally { setBusy(false); }
+  });
+
+  document.getElementById('logout').addEventListener('click', async () => {
+    setBusy(true);
+    try { await OracleAuth.signOut(); location.replace('/account.html'); }
+    catch (error) { setBusy(false); alert(error.message || 'Não foi possível sair.'); }
+  });
+
+  if (params.get('authError') === 'google') setMessage('O login com Google não foi concluído. Tente novamente.', 'error');
+  if (params.get('authError') === 'unavailable') setMessage('A sessão não pôde ser validada. Tente entrar novamente.', 'error');
+
+  (async () => {
+    try {
+      const session = await OracleAuth.getSession();
+      if (session?.user) renderProfile(session);
+    } catch (error) {
+      setMessage('Não foi possível consultar sua sessão agora.', 'error');
+    }
+  })();
+})();
+</script></body></html>
