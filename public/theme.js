@@ -28,6 +28,61 @@
     document.head.appendChild(link);
   }
 
+  function loadStyle(href, key) {
+    if (document.querySelector(`link[data-oracle-enhancement="${key}"]`)) return;
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = href;
+    link.dataset.oracleEnhancement = key;
+    document.head.appendChild(link);
+  }
+
+  function loadScript(src, key) {
+    const existing = document.querySelector(`script[data-oracle-enhancement="${key}"]`);
+    if (existing) return existing.dataset.loaded === 'true' ? Promise.resolve() : new Promise((resolve) => existing.addEventListener('load', resolve, { once: true }));
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = src;
+      script.defer = true;
+      script.dataset.oracleEnhancement = key;
+      script.addEventListener('load', () => { script.dataset.loaded = 'true'; resolve(); }, { once: true });
+      script.addEventListener('error', reject, { once: true });
+      document.head.appendChild(script);
+    });
+  }
+
+  function loadOracleEnhancements() {
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    const newCampaign = path.endsWith('/new-campaign.html');
+    const campaign = path.endsWith('/campaign.html');
+    const settings = path.endsWith('/settings.html');
+
+    if (newCampaign) {
+      loadStyle('/campaign-languages.css', 'campaign-languages-css');
+      loadStyle('/dice-3d.css', 'dice-3d-css');
+      loadScript('/dice-3d.js', 'dice-3d-js').catch(() => {});
+      loadScript('/campaign-languages.js', 'campaign-languages-js').catch(() => {});
+    }
+
+    if (campaign) {
+      loadStyle('/dice-3d.css', 'dice-3d-css');
+      loadStyle('/dice-settings.css', 'dice-settings-css');
+      loadStyle('/campaign-sheet-v2.css', 'campaign-sheet-v2-css');
+      loadScript('/dice-3d.js', 'dice-3d-js')
+        .then(() => loadScript('/dice-settings.js', 'dice-settings-js'))
+        .then(() => loadScript('/campaign-sheet-v2.js', 'campaign-sheet-v2-js'))
+        .catch(() => {});
+    }
+
+    if (settings) {
+      loadStyle('/dice-3d.css', 'dice-3d-css');
+      loadStyle('/dice-settings.css', 'dice-settings-css');
+      loadScript('/dice-3d.js', 'dice-3d-js')
+        .then(() => loadScript('/dice-settings.js', 'dice-settings-js'))
+        .catch(() => {});
+    }
+  }
+
   function normalizeTheme(value) {
     return THEMES.includes(value) ? value : 'oracle';
   }
@@ -125,6 +180,7 @@
     syncThemeButtons(currentTheme);
     bindThemeButtons();
     bindHomeCampaignButton();
+    loadOracleEnhancements();
   };
 
   if (document.readyState === 'loading') {
