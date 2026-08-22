@@ -46,3 +46,10 @@ html[data-theme="cyberpunk"] :is(.eyebrow,.group-title,.section-eyebrow,.hb-cate
 .campaign-name{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;display:-webkit-box!important;-webkit-box-orient:vertical;-webkit-line-clamp:2;line-height:1.05!important;min-height:40px;padding:0 2px;overflow:hidden!important;font-size:19px!important}
 .character-name{white-space:normal!important;overflow:visible!important;text-overflow:clip!important;line-height:1.25!important;min-height:28px;padding:2px 3px 0;overflow-wrap:anywhere}
 @media(max-width:380px){.campaign-strip{grid-auto-columns:142px!important}.token-ring{width:106px!important}.campaign-name{font-size:18px!important}}
+
+/* Portrait images are real <img> elements now. Keep all decorative texture outside the photo. */
+.campaign-token .portrait.has-image{isolation:isolate;background:none!important;box-shadow:none!important;overflow:clip!important}
+.campaign-token .portrait.has-image::before,.campaign-token .portrait.has-image::after{content:none!important;display:none!important}
+.campaign-token .portrait.has-image img{display:block!important;width:100%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;border:0!important;border-radius:inherit!important;box-shadow:none!important;filter:none!important;transform:none!important}
+.campaign-token .token-ring:has(.portrait.has-image)::before,.campaign-token .token-ring:has(.portrait.has-image)::after{content:none!important}
+.campaign-token .token-ring:has(.portrait.has-image){padding:7px!important;border:2px solid #020202!important;box-shadow:0 11px 22px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08) inset,0 0 0 4px rgba(90,87,80,.78) inset,0 0 0 6px rgba(5,5,5,.92) inset!important}
