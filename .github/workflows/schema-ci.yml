@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
@@ -17,6 +19,8 @@ jobs:
       - run: pnpm install --no-frozen-lockfile
       - name: Public repository security gate
         run: pnpm security:audit
+      - name: Git history secret gate
+        run: node scripts/audit-git-history-secrets.mjs
       - run: pnpm typecheck
       - run: pnpm test
       - name: AI-1 to AI-10 release gate
