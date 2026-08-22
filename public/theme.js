@@ -164,6 +164,10 @@
     const isHome = path === '/' || path.endsWith('/index.html') || path === '/en';
     if (!isHome) return;
 
+    // The current home has its own dedicated "Iniciar nova campanha" token.
+    // Never rebind the first action card, which is now the Compêndio button.
+    if (document.querySelector('[data-campaign-strip]')) return;
+
     const isEnglish = document.documentElement.lang === 'en';
     const selector = isEnglish ? '.actions > .card:first-child' : '.action-stack > .action-card:first-child';
     const button = document.querySelector(selector);
