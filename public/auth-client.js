@@ -1,5 +1,12 @@
 (() => {
   const AUTH_BASE = 'https://ep-wandering-hill-ay3garr2.neonauth.c-5.us-east-2.aws.neon.tech/neondb/auth';
+  const PRODUCTION_ORIGIN = 'https://oraclerpg2-0.vercel.app';
+
+  function appOrigin() {
+    const host = location.hostname;
+    if (host === 'localhost' || host === '127.0.0.1') return location.origin;
+    return PRODUCTION_ORIGIN;
+  }
 
   async function request(path, options = {}) {
     const response = await fetch(`${AUTH_BASE}${path}`, {
@@ -44,7 +51,7 @@
         name: name.trim(),
         email: email.trim().toLowerCase(),
         password,
-        callbackURL: `${location.origin}/`,
+        callbackURL: `${appOrigin()}/`,
       }),
     });
   }
@@ -56,18 +63,19 @@
         email: email.trim().toLowerCase(),
         password,
         rememberMe,
-        callbackURL: `${location.origin}/`,
+        callbackURL: `${appOrigin()}/`,
       }),
     });
   }
 
   async function signInGoogle() {
+    const origin = appOrigin();
     const data = await request('/sign-in/social', {
       method: 'POST',
       body: JSON.stringify({
         provider: 'google',
-        callbackURL: `${location.origin}/`,
-        errorCallbackURL: `${location.origin}/account.html?authError=google`,
+        callbackURL: `${origin}/`,
+        errorCallbackURL: `${origin}/account.html?authError=google`,
       }),
     });
 
