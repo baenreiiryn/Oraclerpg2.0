@@ -35,7 +35,6 @@ function safeBaseUrl(value) {
 export default async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
   res.setHeader('X-Content-Type-Options', 'nosniff');
-
   if (!sameOrigin(req)) return fail(res, 403, 'Origem não autorizada.');
 
   try {
@@ -57,7 +56,7 @@ export default async function handler(req, res) {
           baseUrl: row.base_url || '',
           model: row.model_id || '',
           visionModel: row.vision_model_id || '',
-          hasKey: true,
+          hasCredential: true,
           updatedAt: row.updated_at,
         })),
       });
@@ -68,9 +67,9 @@ export default async function handler(req, res) {
     if (!PROVIDERS.has(provider)) return fail(res, 400, 'Provedor inválido.');
 
     if (req.method === 'PUT' || req.method === 'POST') {
-      const apiKey = cleanString(body.apiKey, 10000);
-      if (!apiKey || apiKey.length < 8) return fail(res, 400, 'Chave da API inválida.');
-      const encrypted = encryptSecret(apiKey);
+      const credential = cleanString(body.credential, 10000);
+      if (!credential || credential.length < 8) return fail(res, 400, 'Credencial inválida.');
+      const encrypted = encryptSecret(credential);
       const baseUrl = safeBaseUrl(body.baseUrl);
       const model = cleanString(body.model, 300);
       const visionModel = cleanString(body.visionModel, 300);
@@ -92,7 +91,7 @@ export default async function handler(req, res) {
           secret_tag = EXCLUDED.secret_tag,
           updated_at = now()
       `;
-      return res.status(200).json({ ok: true, provider, hasKey: true });
+      return res.status(200).json({ ok: true, provider, hasCredential: true });
     }
 
     if (req.method === 'DELETE') {
