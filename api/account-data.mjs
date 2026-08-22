@@ -91,7 +91,7 @@ export default async function handler(req, res) {
 
       await sql`
         INSERT INTO oracle_private.user_content (user_id, content_type, content_id, payload, updated_at)
-        VALUES (${user.id}, ${type}, ${id}, ${JSON.parse(serialized)}, now())
+        VALUES (${user.id}, ${type}, ${id}, ${serialized}::jsonb, now())
         ON CONFLICT (user_id, content_type, content_id) DO UPDATE SET
           payload = EXCLUDED.payload,
           updated_at = now()
