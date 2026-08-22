@@ -10,6 +10,11 @@
       return;
     }
     window.OracleSession = session;
+    try {
+      await window.OracleAccountData?.bootstrap?.(session);
+    } catch (syncError) {
+      console.error('OracleRPG account data bootstrap:', syncError);
+    }
     window.dispatchEvent(new CustomEvent('oracle:auth-ready', { detail: session }));
   } catch (error) {
     console.error('OracleRPG auth gate:', error);
