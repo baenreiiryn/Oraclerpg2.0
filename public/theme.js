@@ -62,6 +62,7 @@
     document.head.appendChild(style);
 
     loadScript('/auth-client.js', 'auth-client')
+      .then(() => loadScript('/account-data.js', 'account-data'))
       .then(() => loadScript('/auth-gate.js', 'auth-gate'))
       .catch((error) => {
         console.error('OracleRPG auth bootstrap:', error);
@@ -115,11 +116,7 @@
   }
 
   function writeStoredTheme(theme) {
-    try {
-      localStorage.setItem(STORAGE_KEY, theme);
-    } catch (_) {
-      // The theme still applies for the current page when storage is unavailable.
-    }
+    try { localStorage.setItem(STORAGE_KEY, theme); } catch (_) {}
   }
 
   function syncThemeColor(theme) {
@@ -138,52 +135,31 @@
   function applyTheme(value, options) {
     const theme = normalizeTheme(value);
     const persist = !options || options.persist !== false;
-
     document.documentElement.dataset.theme = theme;
     document.documentElement.style.colorScheme = 'dark';
     syncThemeColor(theme);
     syncThemeButtons(theme);
-
     if (persist) writeStoredTheme(theme);
-
-    window.dispatchEvent(new CustomEvent('oraclerpg:themechange', {
-      detail: { theme }
-    }));
-
+    window.dispatchEvent(new CustomEvent('oraclerpg:themechange', { detail: { theme } }));
     return theme;
   }
 
   function bindThemeButtons() {
-    document.querySelectorAll('[data-theme-option]').forEach((button) => {
-      button.addEventListener('click', () => applyTheme(button.dataset.themeOption));
-    });
+    document.querySelectorAll('[data-theme-option]').forEach((button) => button.addEventListener('click', () => applyTheme(button.dataset.themeOption)));
   }
 
   function bindHomeCampaignButton() {
     const path = location.pathname.replace(/\/+$/, '') || '/';
     const isHome = path === '/' || path.endsWith('/index.html') || path === '/en';
-    if (!isHome) return;
-
-    // The current home has its own dedicated "Iniciar nova campanha" token.
-    // Never rebind the first action card, which is now the Compêndio button.
-    if (document.querySelector('[data-campaign-strip]')) return;
-
+    if (!isHome || document.querySelector('[data-campaign-strip]')) return;
     const isEnglish = document.documentElement.lang === 'en';
     const selector = isEnglish ? '.actions > .card:first-child' : '.action-stack > .action-card:first-child';
     const button = document.querySelector(selector);
     if (!button) return;
-
     button.removeAttribute('aria-disabled');
     button.setAttribute('aria-label', isEnglish ? 'Start new campaign' : 'Iniciar nova campanha');
     button.style.cursor = 'pointer';
-    button.addEventListener('click', () => {
-      location.href = isEnglish ? './new-campaign.html' : 'new-campaign.html';
-    });
-
-    const note = document.querySelector(isEnglish ? '.note' : '.prototype');
-    if (note) note.textContent = isEnglish
-      ? 'Campaign creation now starts with system, name, and tone.'
-      : 'A criação de campanha agora começa pela escolha do sistema, nome e tom.';
+    button.addEventListener('click', () => { location.href = isEnglish ? './new-campaign.html' : 'new-campaign.html'; });
   }
 
   ensureRefinementStyles();
@@ -192,11 +168,7 @@
   const initialTheme = readStoredTheme();
   document.documentElement.dataset.theme = initialTheme;
 
-  window.OracleTheme = Object.freeze({
-    get: () => normalizeTheme(document.documentElement.dataset.theme),
-    set: (theme) => applyTheme(theme),
-    themes: THEMES
-  });
+  window.OracleTheme = Object.freeze({ get: () => normalizeTheme(document.documentElement.dataset.theme), set: (theme) => applyTheme(theme), themes: THEMES });
 
   const ready = () => {
     const currentTheme = normalizeTheme(document.documentElement.dataset.theme);
@@ -207,15 +179,8 @@
     loadOracleEnhancements();
   };
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', ready, { once: true });
-  } else {
-    ready();
-  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', ready, { once: true });
+  else ready();
 
-  window.addEventListener('storage', (event) => {
-    if (event.key === STORAGE_KEY) {
-      applyTheme(event.newValue, { persist: false });
-    }
-  });
+  window.addEventListener('storage', (event) => { if (event.key === STORAGE_KEY) applyTheme(event.newValue, { persist: false }); });
 })();
