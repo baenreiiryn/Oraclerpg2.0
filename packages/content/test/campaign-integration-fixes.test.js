@@ -12,8 +12,8 @@ const theme=read('public/theme.js'),classNormalizer=read('public/homebrew-class-
 test('campaign catalog bridge includes all playable Homebrew entity families',()=>{
  assert.doesNotThrow(()=>new vm.Script(theme));
  for(const token of ['classes','class-features','subclasses','species','species-features','backgrounds','feats','spells','items'])assert.match(theme,new RegExp(token.replace('-','\\-')));
- assert.match(theme,/entityType==='class'/);
- assert.match(theme,/entityType==='background'/);
+ assert.match(theme,/type==='class'/);
+ assert.match(theme,/type==='background'/);
 });
 
 test('5etools markdown class normalizer creates class features and advancement',()=>{
