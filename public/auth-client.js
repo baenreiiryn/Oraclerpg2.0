@@ -1,13 +1,28 @@
 (() => {
-  const AUTH_BASE = 'https://ep-wandering-hill-ay3garr2.neonauth.c-5.us-east-2.aws.neon.tech/neondb/auth';
   const SDK_URL = 'https://esm.sh/@neondatabase/auth@0.5.0-beta?bundle';
-  const CANONICAL_ORIGIN = 'https://oraclerpg2-0.vercel.app';
+  const LEGACY_SECRET_STORAGE = 'oraclerpg.ai.providers.v1';
+
+  try { localStorage.removeItem(LEGACY_SECRET_STORAGE); } catch (_) {}
 
   let clientPromise;
+  let configPromise;
+
+  async function getConfig() {
+    if (!configPromise) {
+      configPromise = fetch('/api/public-config', { cache: 'no-store', credentials: 'same-origin' })
+        .then(async (response) => {
+          const data = await response.json().catch(() => ({}));
+          if (!response.ok || !data.authBaseUrl) throw new Error(data.error || 'Configuração de autenticação indisponível.');
+          return data;
+        });
+    }
+    return configPromise;
+  }
 
   async function getClient() {
     if (!clientPromise) {
-      clientPromise = import(SDK_URL).then(({ createAuthClient }) => createAuthClient(AUTH_BASE));
+      clientPromise = Promise.all([import(SDK_URL), getConfig()])
+        .then(([{ createAuthClient }, config]) => createAuthClient(config.authBaseUrl));
     }
     return clientPromise;
   }
@@ -30,13 +45,20 @@
     return unwrap(result);
   }
 
+  async function getApiAuthHeaders() {
+    const data = await getSession();
+    const token = data?.session?.token;
+    if (!token) throw new Error('Sessão autenticada necessária.');
+    return { Authorization: `Bearer ${token}` };
+  }
+
   async function signUpEmail({ name, email, password }) {
     const auth = await getClient();
     const result = await auth.signUp.email({
       name: name.trim(),
       email: email.trim().toLowerCase(),
       password,
-      callbackURL: `${CANONICAL_ORIGIN}/`,
+      callbackURL: `${location.origin}/`,
     });
     return unwrap(result);
   }
@@ -47,7 +69,7 @@
       email: email.trim().toLowerCase(),
       password,
       rememberMe,
-      callbackURL: `${CANONICAL_ORIGIN}/`,
+      callbackURL: `${location.origin}/`,
     });
     return unwrap(result);
   }
@@ -56,8 +78,8 @@
     const auth = await getClient();
     const result = await auth.signIn.social({
       provider: 'google',
-      callbackURL: `${CANONICAL_ORIGIN}/`,
-      errorCallbackURL: `${CANONICAL_ORIGIN}/account.html?authError=google`,
+      callbackURL: `${location.origin}/`,
+      errorCallbackURL: `${location.origin}/account.html?authError=google`,
     });
     return unwrap(result);
   }
@@ -69,8 +91,8 @@
   }
 
   window.OracleAuth = {
-    baseURL: AUTH_BASE,
     getSession,
+    getApiAuthHeaders,
     signUpEmail,
     signInEmail,
     signInGoogle,
