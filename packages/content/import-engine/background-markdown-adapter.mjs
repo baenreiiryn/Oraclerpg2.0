@@ -3,7 +3,7 @@ import { createDocumentIR, createEntityIR } from './ir.mjs';
 const clean=v=>String(v||'').replace(/\r/g,'').replace(/\u00a0/g,' ').trim();
 const LABELS=['Ability Scores','Feat','Skill Proficiencies','Tool Proficiencies','Languages','Starting Equipment','Equipment','Feature'];
 const labelSource=LABELS.join('|');
-const makeLabelRe=()=>new RegExp(`(?:\\*\\*)?(${labelSource})(?:\\*\\*)?\\s*[:.—–-]\\s*`,'gi');
+const makeLabelRe=()=>new RegExp(`(?:\\*\\*)?(${labelSource})(?:\\*\\*)?[ \\t]*[:.—–-][ \\t]*`,'gi');
 
 function stripLinks(text){return String(text||'').replace(/\[\*\*([^*]+)\*\*\]\([^)]*\)/g,'$1').replace(/\[([^\]]+)\]\([^)]*\)/g,'$1').replace(/\*\*([^*]+)\*\*/g,'$1').replace(/\*([^*]+)\*/g,'$1');}
 function splitFields(text){const src=stripLinks(text).replace(/\u00a0/g,' '),matches=[...src.matchAll(makeLabelRe())],out=[];for(let i=0;i<matches.length;i++){const m=matches[i],next=matches[i+1];out.push({label:clean(m[1]),value:clean(src.slice(m.index+m[0].length,next?.index??src.length))});}return out;}
