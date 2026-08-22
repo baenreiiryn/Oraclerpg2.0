@@ -89,19 +89,21 @@ function applyFormSpecificRules(change, feature) {
   const text = clean(feature?.text || '');
   for (const form of change.forms || []) {
     const clause = formClause(text, form.id);
+    const noActions = /can't take actions|cannot take actions/i.test(clause);
+    const noSpeech = /can't speak|cannot speak|(?:can't|cannot) take actions or speak/i.test(clause);
     if (form.id === 'bat') {
       const fly = clause.match(/flying speed(?: of| is)?\s*(\d+)\s*feet/i);
       const walk = clause.match(/walking speed(?: of| is)?\s*(\d+)\s*feet/i);
       form.speed = { ...(walk?{walk:Number(walk[1])}:{}), ...(fly?{fly:Number(fly[1])}:{}) };
-      if (/can't speak|cannot speak/i.test(clause)) form.canSpeak=false;
-      if (/can't take actions|cannot take actions/i.test(clause)) form.canTakeActions=false;
+      if (noSpeech) form.canSpeak=false;
+      if (noActions) form.canTakeActions=false;
     }
     if (form.id === 'mist') {
       const fly = clause.match(/flying speed(?: of| is)?\s*(\d+)\s*feet/i);
       form.speed = fly ? { fly:Number(fly[1]) } : form.speed;
       form.hover = /\bhover\b/i.test(clause);
-      if (/can't take actions|cannot take actions/i.test(clause)) form.canTakeActions=false;
-      if (/can't speak|cannot speak/i.test(clause)) form.canSpeak=false;
+      if (noActions) form.canTakeActions=false;
+      if (noSpeech) form.canSpeak=false;
     }
   }
 }
