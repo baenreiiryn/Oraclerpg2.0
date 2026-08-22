@@ -1,6 +1,7 @@
 (()=>{
 'use strict';
 const strip=document.querySelector('[data-campaign-strip]'),caption=document.querySelector('[data-campaign-caption]');if(!strip)return;
+if(!document.querySelector('[data-campaign-actions-style]')){const style=document.createElement('style');style.dataset.campaignActionsStyle='';style.textContent='.campaign-entry{position:relative;min-width:0;scroll-snap-align:start}.campaign-entry .campaign-token{width:100%;scroll-snap-align:none}.campaign-delete{position:absolute;z-index:6;top:-2px;right:8px;width:28px;height:28px;border:1px solid rgba(255,96,91,.28);border-radius:999px;background:rgba(25,10,12,.94);color:#ff8c86;font-size:18px;line-height:1;display:grid;place-items:center;cursor:pointer;opacity:.7;box-shadow:0 5px 16px rgba(0,0,0,.35)}.campaign-entry:hover .campaign-delete,.campaign-delete:focus-visible{opacity:1}.campaign-delete:disabled{opacity:.3;cursor:wait}.campaign-entry-new .campaign-delete{display:none}@media(max-width:620px){.campaign-delete{top:0;right:5px;width:30px;height:30px;opacity:.88}}';document.head.appendChild(style)}
 const esc=value=>String(value??'').replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 const read=()=>{try{const v=JSON.parse(localStorage.getItem('oraclerpg.campaigns.v1')||'[]');return Array.isArray(v)?v:[]}catch{return[]}};
 function portraitOf(x){if(x?.portrait)return x.portrait;try{const s=JSON.parse(localStorage.getItem(`oraclerpg.campaign.${x?.id}.v1`)||'null');return s?.draft?.characterIdentity?.portrait?.dataUrl||''}catch{return''}}
