@@ -51,6 +51,25 @@
     });
   }
 
+  function loadAuthGate() {
+    const path = location.pathname.replace(/\/+$/, '') || '/';
+    if (path.endsWith('/account.html')) return;
+
+    document.documentElement.classList.add('auth-pending');
+    const style = document.createElement('style');
+    style.dataset.oracleAuthPending = 'true';
+    style.textContent = 'html.auth-pending body{visibility:hidden}';
+    document.head.appendChild(style);
+
+    loadScript('/auth-client.js', 'auth-client')
+      .then(() => loadScript('/auth-gate.js', 'auth-gate'))
+      .catch((error) => {
+        console.error('OracleRPG auth bootstrap:', error);
+        const current = `${location.pathname}${location.search}${location.hash}`;
+        location.replace(`/account.html?next=${encodeURIComponent(current)}&authError=unavailable`);
+      });
+  }
+
   function loadOracleEnhancements() {
     const path = location.pathname.replace(/\/+$/, '') || '/';
     const newCampaign = path.endsWith('/new-campaign.html');
@@ -165,6 +184,7 @@
 
   ensureRefinementStyles();
   ensureThemeFontStyles();
+  loadAuthGate();
   const initialTheme = readStoredTheme();
   document.documentElement.dataset.theme = initialTheme;
 
