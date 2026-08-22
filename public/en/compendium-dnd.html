@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#0b090c" />
   <title>D&D · Compendium · OracleRPG</title>
   <link rel="stylesheet" href="/compendium-ui.css" />
+  <link rel="stylesheet" href="/compendium-category-nav.css" />
   <link rel="stylesheet" href="/compendium-item-cards.css" />
   <link rel="stylesheet" href="/compendium-sections.css" />
   <link rel="stylesheet" href="/compendium-overlays.css" />
@@ -26,6 +27,7 @@
 <div id="viewer" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span id="viewerBadge" class="badge">SRD</span><h2 id="viewerTitle"></h2><p id="viewerMeta" class="sheet-sub"></p></div><button class="close" data-close="viewer" aria-label="Close">×</button></div><div id="viewerVisual" class="visual-detail"></div><div class="actions"><button id="clone" class="primary">Create Homebrew copy</button><button id="editViewer" class="secondary" hidden>Edit Homebrew</button></div><details class="json-wrap"><summary id="rawSummary">View technical data (JSON)</summary><pre id="viewerJson" class="json"></pre></details></section></div>
 <div id="editor" class="modal" role="dialog" aria-modal="true"><section class="sheet"><div class="sheet-head"><div><span class="badge homebrew-badge">HOMEBREW</span><h2 id="editorTitle">Edit content</h2><p id="editorSub" class="sheet-sub"></p></div><button class="close" data-close="editor" aria-label="Close">×</button></div><div class="field"><label id="nameLabel" for="editName">Name</label><input id="editName" /></div><div class="field"><label id="categoryLabel" for="editCategory">Category</label><select id="editCategory"></select></div><div class="field"><label id="dataLabel" for="editJson">Entity data</label><textarea id="editJson" spellcheck="false"></textarea></div><div id="editError" class="error"></div><div class="actions"><button id="save" class="primary">Save</button><button id="cancel" class="secondary">Cancel</button><button id="delete" class="danger">Delete</button></div></section></div>
 <script src="/compendium-ui.js" defer></script>
+<script src="/compendium-category-nav.js" defer></script>
 <script src="/compendium-class-progression.js" defer></script>
 <script src="/compendium-item-cards.js" defer></script>
 <script src="/compendium-sections.js" defer></script>
