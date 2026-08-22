@@ -18,10 +18,12 @@ test('campaign catalog bridge includes all playable Homebrew entity families',()
 
 test('5etools markdown class normalizer creates class features and advancement',()=>{
  assert.doesNotThrow(()=>new vm.Script(classNormalizer));
- assert.match(classNormalizer,/tableLevels/);
+ assert.match(classNormalizer,/parseTable/);
+ assert.match(classNormalizer,/classTable/);
  assert.match(classNormalizer,/class-features/);
  assert.match(classNormalizer,/featureKind:'classFeature'/);
  assert.match(classNormalizer,/advancement/);
+ assert.match(classNormalizer,/scaleValues/);
 });
 
 test('language guard removes pseudo System source and free ungranted languages',()=>{
