@@ -77,26 +77,31 @@ function parseFeature(feature) {
   };
   if (/sunlight/i.test(text) && /(not in sunlight|isn't in sunlight|is not in sunlight|can't use|cannot use)/i.test(text)) change.restrictions.push('sunlight');
   if (/running water/i.test(text) && /(not in sunlight or running water|not in running water|isn't in running water|is not in running water|can't use|cannot use)/i.test(text)) change.restrictions.push('runningWater');
-  if (/can't speak|cannot speak/i.test(text)) change.formRules = { ...(change.formRules||{}), cannotSpeak:true };
-  if (/can't take actions|cannot take actions/i.test(text)) change.formRules = { ...(change.formRules||{}), cannotTakeActions:true };
   return change;
 }
 
+function formClause(text, id) {
+  if (id === 'bat') return text.match(/(?:in )?bat form[\s\S]*?(?=(?:in )?mist form|$)/i)?.[0] || '';
+  if (id === 'mist') return text.match(/(?:in )?mist form[\s\S]*$/i)?.[0] || '';
+  return text;
+}
 function applyFormSpecificRules(change, feature) {
   const text = clean(feature?.text || '');
   for (const form of change.forms || []) {
+    const clause = formClause(text, form.id);
     if (form.id === 'bat') {
-      const fly = text.match(/bat form[^.]*?flying speed(?: of| is)?\s*(\d+)\s*feet/i);
-      const walk = text.match(/bat form[^.]*?walking speed(?: of| is)?\s*(\d+)\s*feet/i);
+      const fly = clause.match(/flying speed(?: of| is)?\s*(\d+)\s*feet/i);
+      const walk = clause.match(/walking speed(?: of| is)?\s*(\d+)\s*feet/i);
       form.speed = { ...(walk?{walk:Number(walk[1])}:{}), ...(fly?{fly:Number(fly[1])}:{}) };
-      if (/bat form[^.]*can't speak|bat form[^.]*cannot speak/i.test(text)) form.canSpeak=false;
+      if (/can't speak|cannot speak/i.test(clause)) form.canSpeak=false;
+      if (/can't take actions|cannot take actions/i.test(clause)) form.canTakeActions=false;
     }
     if (form.id === 'mist') {
-      const fly = text.match(/mist form[^.]*?flying speed(?: of| is)?\s*(\d+)\s*feet/i);
+      const fly = clause.match(/flying speed(?: of| is)?\s*(\d+)\s*feet/i);
       form.speed = fly ? { fly:Number(fly[1]) } : form.speed;
-      form.hover = /mist form[^.]*hover/i.test(text);
-      if (/mist form[^.]*can't take actions|mist form[^.]*cannot take actions/i.test(text)) form.canTakeActions=false;
-      if (/mist form[^.]*can't speak|mist form[^.]*cannot speak/i.test(text)) form.canSpeak=false;
+      form.hover = /\bhover\b/i.test(clause);
+      if (/can't take actions|cannot take actions/i.test(clause)) form.canTakeActions=false;
+      if (/can't speak|cannot speak/i.test(clause)) form.canSpeak=false;
     }
   }
 }
