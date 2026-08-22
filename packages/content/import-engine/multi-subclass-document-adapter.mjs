@@ -7,6 +7,7 @@ const subclassHeading = new RegExp(`^(?:#{1,6}\\s+)?([A-Z][A-Z’' -]+?)\\s*\\((
 const levelHeading = /^(?:#{1,6}\s+)?LEVEL\s+(\d{1,2})\s*:\s*(.+?)\s*$/i;
 
 const titleCase = (v) => clean(v).toLowerCase().replace(/(^|[\s-])([a-z])/g, (_m,p,c)=>p+c.toUpperCase());
+const canonicalParent = (v) => parentNames.find(n=>n.toLowerCase()===clean(v).toLowerCase()) || titleCase(v);
 const tableRow = (line) => clean(line).split(/\s{2,}|\s+\|\s+/).filter(Boolean);
 
 export function isMultiSubclassDocument(text) {
@@ -21,7 +22,7 @@ function sectionize(text) {
   const starts = [];
   for (let i=0;i<lines.length;i++) {
     const m = lines[i].match(subclassHeading);
-    if (m) starts.push({i, name:titleCase(m[1]), parent:m[2]});
+    if (m) starts.push({i, name:titleCase(m[1]), parent:canonicalParent(m[2])});
   }
   return starts.map((s, idx) => ({...s, end: starts[idx+1]?.i ?? lines.length, lines: lines.slice(s.i, starts[idx+1]?.i ?? lines.length)}));
 }
@@ -61,7 +62,7 @@ function parseFeatureTables(lines, start, end) {
         if (/^\d+$/.test(r[0])) rows.push([r[0], r.slice(1).join(' ')]);
         else if(rows.length && !/^[A-Z][A-Z ’'-]+$/.test(clean(lines[j]))) rows[rows.length-1][1] += ` ${clean(lines[j])}`;
       }
-      if(rows.length) tables.push({header:[`${header[1]} Level`, header[2]], rows});
+      if(rows.length) tables.push({header:[`${canonicalParent(header[1])} Level`, header[2]], rows});
     }
   }
   return tables;
